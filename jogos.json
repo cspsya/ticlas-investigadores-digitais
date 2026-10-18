@@ -92,49 +92,5 @@
       "MAB",
       "Emergência 112"
     ]
-  },
-  {
-    "id": "2026-10-19-4A",
-    "turma": "4A",
-    "ano": 4,
-    "titulo": "Treino DCB — Missão Digital",
-    "descricao": "Simulação de pasta, Word, pesquisa e email com anexo",
-    "disciplina": "TIC",
-    "data": "2026-10-22",
-    "semana": "19–23 out. 2026",
-    "url": "jogos/2026-10-19/4A_Ticlas_Jogo_19_23_outubro.html",
-    "duracao": "até 60 min",
-    "estado": "em validação",
-    "imagem": "assets/carta-digital.webp",
-    "destaque": false,
-    "novo": true,
-    "conteudos": [
-      "Treino DCB",
-      "Word",
-      "Pesquisa",
-      "Email com anexo"
-    ]
-  },
-  {
-    "id": "2026-10-19-4B",
-    "turma": "4B",
-    "ano": 4,
-    "titulo": "Desafio DCB — Investigadores",
-    "descricao": "Simulação de pasta, Word, pesquisa e email com anexo",
-    "disciplina": "TIC",
-    "data": "2026-10-22",
-    "semana": "19–23 out. 2026",
-    "url": "jogos/2026-10-19/4B_Ticlas_Jogo_19_23_outubro.html",
-    "duracao": "até 60 min",
-    "estado": "em validação",
-    "imagem": "assets/carta-digital.webp",
-    "destaque": false,
-    "novo": true,
-    "conteudos": [
-      "Treino DCB",
-      "Word",
-      "Pesquisa",
-      "Email com anexo"
-    ]
   }
 ]
