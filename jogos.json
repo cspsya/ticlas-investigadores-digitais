@@ -50,5 +50,91 @@
     "url": "jogos/2026-10-19/2B_Ticlas_Jogo_19_23_outubro.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-19-3A",
+    "turma": "3A",
+    "ano": 3,
+    "titulo": "O Mistério da Fruta Preferida",
+    "descricao": "Inquérito à turma, tabela e gráfico de barras",
+    "disciplina": "Matemática",
+    "data": "2026-10-23",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/3A_Ticlas_Jogo_19_23_outubro.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "imagem": "assets/carta-matematica.webp",
+    "destaque": false,
+    "novo": true,
+    "conteudos": [
+      "Questões estatísticas",
+      "Gráficos de barras",
+      "Recolha de dados"
+    ]
+  },
+  {
+    "id": "2026-10-19-3B",
+    "turma": "3B",
+    "ano": 3,
+    "titulo": "Missão 2000 e SOS 112",
+    "descricao": "MAB virtual, valor posicional e emergência",
+    "disciplina": "Matemática e Estudo do Meio",
+    "data": "2026-10-21",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/3B_Ticlas_Jogo_19_23_outubro.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "imagem": "assets/carta-matematica.webp",
+    "destaque": false,
+    "novo": true,
+    "conteudos": [
+      "Números até 2000",
+      "MAB",
+      "Emergência 112"
+    ]
+  },
+  {
+    "id": "2026-10-19-4A",
+    "turma": "4A",
+    "ano": 4,
+    "titulo": "Treino DCB — Missão Digital",
+    "descricao": "Simulação de pasta, Word, pesquisa e email com anexo",
+    "disciplina": "TIC",
+    "data": "2026-10-22",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/4A_Ticlas_Jogo_19_23_outubro.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "imagem": "assets/carta-digital.webp",
+    "destaque": false,
+    "novo": true,
+    "conteudos": [
+      "Treino DCB",
+      "Word",
+      "Pesquisa",
+      "Email com anexo"
+    ]
+  },
+  {
+    "id": "2026-10-19-4B",
+    "turma": "4B",
+    "ano": 4,
+    "titulo": "Desafio DCB — Investigadores",
+    "descricao": "Simulação de pasta, Word, pesquisa e email com anexo",
+    "disciplina": "TIC",
+    "data": "2026-10-22",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/4B_Ticlas_Jogo_19_23_outubro.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "imagem": "assets/carta-digital.webp",
+    "destaque": false,
+    "novo": true,
+    "conteudos": [
+      "Treino DCB",
+      "Word",
+      "Pesquisa",
+      "Email com anexo"
+    ]
   }
 ]
