@@ -362,6 +362,14 @@ footer .contentor{align-items:center}
 }
 @media (prefers-reduced-motion:reduce){.missao:hover,.placa button:hover,.comecar:hover{transform:none}}
 
+.ciclo-etiqueta{
+  display:inline-block;margin:0 0 10px;padding:4px 11px;
+  color:#587b77;background:rgba(234,245,232,.82);
+  border:1px solid rgba(155,195,172,.34);border-radius:999px;
+  font-family:var(--texto);font-size:12px;font-weight:700;
+  letter-spacing:.55px;line-height:1.4;
+}
+@media (max-width:640px){.ciclo-etiqueta{font-size:11px;margin-bottom:8px;padding:3px 9px}}
 </style>
 </head>
 <body>
@@ -376,6 +384,7 @@ footer .contentor{align-items:center}
   </div>
   <div class="contentor palco">
     <div class="balao">
+      <span class="ciclo-etiqueta">1.º Ciclo</span>
       <button class="ouvir" id="ouvir" type="button" aria-label="Ouvir o Ticl@s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="ouvir-texto">Ouvir</span></button>
       <p id="fala-1">Olá! Eu sou o Ticl@s.</p>
       <h1 id="pergunta">Em que ano andas?</h1>
@@ -415,7 +424,7 @@ footer .contentor{align-items:center}
 </section>
 
 <footer>
-  <div class="contentor"><span>Investigadores Digitais, TIC no 1.º ciclo</span><span>Criado por C. Sofia Oliveira</span></div>
+  <div class="contentor"><span>Investigadores Digitais, TIC no 1.º ciclo</span><span>Coordenadora TIC C. Sofia O.</span></div>
 </footer>
 
 <script>
