@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Investigadores Digitais com a Ticl@s</title>
+<title>Investigadores Digitais com o Ticl@s</title>
 <meta name="description" content="Jogos e missões de TIC para o 1.º ciclo, organizados por ano e turma.">
 <meta name="theme-color" content="#e8f5f1">
 <link rel="icon" href="assets/ticlas-ola.webp" type="image/webp">
@@ -383,20 +383,20 @@ footer .contentor{align-items:center}
   <div class="contentor topo">
     <a class="pilula marca" href="./">
       <span class="cara"><img src="assets/ticlas-ola.webp" alt=""></span>
-      <span><b>Investigadores Digitais</b><span class="sub">com a Ticl@s</span></span>
+      <span><b>Investigadores Digitais</b><span class="sub">com o Ticl@s</span></span>
     </a>
     <a class="pilula ligacao-prof" href="#professores"><span class="longo">Para professores</span><span class="curto">Professores</span></a>
   </div>
   <div class="contentor palco">
     <div class="balao">
       <span class="sobrelinha">A aventura começa aqui</span>
-      <button class="ouvir" id="ouvir" type="button" aria-label="Ouvir a Ticl@s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="ouvir-texto">Ouvir</span></button>
-      <p id="fala-1">Olá! Eu sou a Ticl@s.</p>
+      <button class="ouvir" id="ouvir" type="button" aria-label="Ouvir o Ticl@s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="ouvir-texto">Ouvir</span></button>
+      <p id="fala-1">Olá! Eu sou o Ticl@s.</p>
       <h1 id="pergunta">Em que ano andas?</h1>
       <span class="convite">Escolhe o teu ano e descobre as missões!</span>
     </div>
   </div>
-  <div class="corredora entra" id="ticlas"><img src="assets/ticlas-corre.webp" width="640" height="800" alt="A Ticl@s, um esquilo com auscultadores e óculos, a correr pelo caminho"></div>
+  <div class="corredora entra" id="ticlas"><img src="assets/ticlas-corre.webp" width="640" height="800" alt="O Ticl@s, um esquilo com auscultadores e óculos, a correr pelo caminho"></div>
   <div class="contentor placas" role="group" aria-label="Escolher o ano">
     <div class="placa" data-ano="1"><button type="button" data-ano="1" aria-pressed="false"><span class="medalha" aria-hidden="true">1</span><span class="rotulo">1.º ano</span></button></div>
     <div class="placa" data-ano="2"><button type="button" data-ano="2" aria-pressed="false"><span class="medalha" aria-hidden="true">2</span><span class="rotulo">2.º ano</span></button></div>
@@ -500,7 +500,7 @@ function mostrar(){
   const meus=ano?dados.filter(d=>Number(d.ano)===ano):dados;
   const cab=el('div','cabeca');cab.append(el('h2','',ano?'Missões do '+ANOS[ano]:'Missões da semana'));area.append(cab);
   if(!meus.length){const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';const t=el('div');
-    t.append(el('b','','Ainda não há missões para o '+ANOS[ano]+'.'),el('span','','A Ticl@s está a prepará-las. Volta na próxima semana!'));v.append(img,t);area.append(v);return}
+    t.append(el('b','','Ainda não há missões para o '+ANOS[ano]+'.'),el('span','','O Ticl@s está a prepará-las. Volta na próxima semana!'));v.append(img,t);area.append(v);return}
   const s=semanaRecente(meus);
   cab.append(el('span','quando',(s.k===segundaAtual()?'Esta semana, ':'Semana de ')+s.itens[0].semana));
   const g=el('div','cartoes');s.itens.forEach(d=>g.append(cartao(d)));area.append(g);
