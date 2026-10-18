@@ -1,6 +1,6 @@
-# Investigadores Digitais — com a Ticl@s
+# Investigadores Digitais — com o Ticl@s
 
-Portal HTML estático para GitHub Pages. Os alunos escolhem o ano nas placas da Ticl@s e veem as missões da semana; os professores têm um catálogo com filtros por disciplina, ano e pesquisa.
+Portal HTML estático para GitHub Pages. Os alunos escolhem o ano nas placas do Ticl@s e veem as missões da semana; os professores têm um catálogo com filtros por disciplina, ano e pesquisa.
 
 ## Publicar no GitHub Free
 
