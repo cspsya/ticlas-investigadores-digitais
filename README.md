@@ -1,6 +1,6 @@
 # Investigadores Digitais — com a Ticl@s
 
-Portal HTML estático para GitHub Pages. Inclui jogos educativos para 1.º e 2.º anos, filtros por ano e pesquisa.
+Portal HTML estático para GitHub Pages. Os alunos escolhem o ano nas placas da Ticl@s e veem as missões da semana; os professores têm um catálogo com filtros por disciplina, ano e pesquisa.
 
 ## Publicar no GitHub Free
 
@@ -18,6 +18,23 @@ Este URL é uma previsão até a publicação estar concluída.
 - Acrescentar um registo ao array em `jogos.json`, com `url` relativo à raiz do site.
 - Fazer commit das alterações no repositório público. O GitHub Pages atualiza a publicação.
 - Arquivar o mesmo HTML no Drive, de acordo com a organização por semana e turma.
+
+### Campos de cada missão em `jogos.json`
+
+| Campo | Obrigatório | Exemplo | Uso na página |
+|---|---|---|---|
+| `turma` | sim | `"2A"` | Autocolante «2.º A» no cartão |
+| `ano` | sim | `2` | Placa do ano e cor do autocolante |
+| `titulo`, `descricao`, `disciplina` | sim | | Texto do cartão; `disciplina` gera os filtros dos professores |
+| `data` | sim | `"2026-10-21"` | Agrupa por semana (a página mostra aos alunos só a semana mais recente) |
+| `semana` | sim | `"19–23 out. 2026"` | Texto da semana |
+| `url` | sim | `"jogos/2026-10-19/2A_….html"` | Botão «Começar» |
+| `duracao` | não | `"até 60 min"` | Informação no cartão |
+| `estado` | não | `"em validação"` | Mostra «Versão de teste» |
+| `tipo` | não | `"Quiz"` | Por omissão: «Jogo interativo» |
+| `ilustracao` | não | `{"tipo":"letras","letras":["nh","lh"]}` | Desenho do cartão. Tipos: `letras`, `numeros` (com `"conta":["7","+","3"]`), `mistura` (letras e conta), `natureza`, `digital`. Sem este campo, o desenho é escolhido a partir da disciplina e do título. |
+
+Para abrir diretamente um ano no painel: `https://cspsya.github.io/ticlas-investigadores-digitais/#ano-2`.
 
 ## Segurança e publicação
 

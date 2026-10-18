@@ -1,6 +1,319 @@
 <!doctype html>
-<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#183e56"><title>Investigadores Digitais | Ticl@s</title><meta name="description" content="Jogos educativos interativos para o 1.º Ciclo."><style>
-:root{--ink:#14324d;--blue:#1b6784;--orange:#ee8740;--sand:#fff7eb;--teal:#319f9d;--line:#dfebed}*{box-sizing:border-box}body{margin:0;background:#f5f9fa;color:var(--ink);font-family:system-ui,-apple-system,'Segoe UI',sans-serif}button,input{font:inherit}button,a{touch-action:manipulation}header{background:linear-gradient(120deg,#153955,#216780);color:white;overflow:hidden}.wrap{max-width:1130px;margin:auto;padding:0 24px}.top{display:flex;align-items:center;justify-content:space-between;padding:20px 0;gap:14px}.logo{display:flex;align-items:center;gap:12px;font-weight:850;font-size:22px}.dot{width:42px;height:42px;background:#f6a052;border-radius:15px;display:grid;place-items:center;font-size:22px;color:#183950}nav a{color:white;text-decoration:none;font-weight:650}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:center;padding:44px 0 56px}.kicker{font-size:14px;font-weight:900;letter-spacing:.1em;color:#b6fbec;text-transform:uppercase}.hero h1{font-size:clamp(35px,5vw,62px);line-height:1.05;letter-spacing:-.045em;margin:12px 0 18px}.hero h1 span{color:#ffbb79}.hero p{max-width:560px;font-size:19px;line-height:1.65;color:#e4f3fa}.hero figure{margin:0;background:#fff6e4;border:10px solid #ffffff26;box-shadow:0 15px 50px #08263955;border-radius:36px;overflow:hidden;aspect-ratio:1.1;display:flex;align-items:center;justify-content:center}.hero img{width:100%;height:100%;object-fit:contain}.pill{display:inline-block;background:#ffffff20;padding:10px 15px;border-radius:100px;color:white;font-size:14px;font-weight:700}.section-head{padding:38px 0 15px}.section-head h2{font-size:31px;letter-spacing:-.02em;margin:0 0 8px}.section-head p{color:#587080;margin:0}.controls{background:white;border:1px solid var(--line);border-radius:22px;padding:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:0 8px 25px #18364b0a}input[type=search]{flex:1;min-width:180px;border:2px solid #dce9ed;border-radius:13px;padding:12px 15px;background:#f8fafb;outline-offset:3px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{border:2px solid #dce8ed;background:white;border-radius:12px;padding:10px 15px;color:#31596d;font-weight:750;cursor:pointer}.filter.active{border-color:#d06924;background:#fff0df;color:#934814}main{padding-bottom:90px}.status{color:#667e8d;margin:18px 0;font-size:14px}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.game{background:white;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 8px 24px #18364b0a;display:flex;flex-direction:column;min-height:274px;transition:transform .2s,box-shadow .2s}.game:hover{transform:translateY(-3px);box-shadow:0 14px 30px #18364b18}.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.tag{display:inline-block;background:#e6f6f4;color:#146c69;padding:6px 10px;border-radius:10px;font-size:12px;font-weight:850}.grade{background:#fff0df;color:#a85618}.game h3{font-size:22px;line-height:1.25;margin:18px 0 9px}.game p{font-size:15px;color:#5b7381;line-height:1.55;margin:0 0 25px}.bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:14px}.date{font-size:12px;color:#718696}.play{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:13px;color:white;background:#cd6421;font-weight:850;text-decoration:none;white-space:nowrap}.play:hover{background:#aa4e14}.empty{padding:40px 18px;text-align:center;background:white;border-radius:16px;color:#5d7381}footer{border-top:1px solid var(--line);background:white;padding:28px 0;font-size:14px;color:#5d7381}footer .wrap{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #ef9b37;outline-offset:3px}@media(max-width:730px){.hero{grid-template-columns:1fr;padding:20px 0 40px}.hero figure{width:min(72%,290px);margin:auto}.cards{grid-template-columns:1fr}.top{padding:16px 0}.controls{align-items:stretch}.filters{width:100%}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}
-</style></head><body><header><div class="wrap"><div class="top"><div class="logo"><span class="dot">✦</span><span>Investigadores Digitais <small style="font-weight:500;font-size:13px;opacity:.8">com a Ticl@s</small></span></div><nav><a href="#jogos">Explorar jogos ↓</a></nav></div><div class="hero"><div><div class="kicker">Aprender • Descobrir • Jogar</div><h1>Explora, joga e <span>descobre!</span></h1><p>A Ticl@s acompanha-te em jogos e descobertas. Escolhe o teu ano e começa a jogar!</p><span class="pill">1.º Ciclo · Português de Portugal</span></div><figure><img src="assets/ticlas.jpg" alt="Mascote Ticl@s"></figure></div></div></header><main class="wrap" id="jogos"><div class="section-head"><h2>Escolhe o teu jogo</h2><p>Atividades organizadas por ano e conteúdo.</p></div><div class="controls"><input type="search" id="pesquisa" aria-label="Pesquisar jogos" placeholder="Pesquisar conteúdo ou jogo…"><div class="filters" role="group" aria-label="Filtrar por ano"><button class="filter active" data-year="0" aria-pressed="true">Todos</button><button class="filter" data-year="1" aria-pressed="false">1.º ano</button><button class="filter" data-year="2" aria-pressed="false">2.º ano</button><button class="filter" data-year="3" aria-pressed="false">3.º ano</button><button class="filter" data-year="4" aria-pressed="false">4.º ano</button></div></div><div id="resultado" class="status" role="status" aria-live="polite"></div><div id="lista" class="cards"></div></main><footer><div class="wrap"><span>Investigadores Digitais · TIC no 1.º Ciclo</span><span>Autora: Coordenadora TIC C. Sofia</span></div></footer><script>
-'use strict';const lista=document.querySelector('#lista'),resultado=document.querySelector('#resultado'),pesquisa=document.querySelector('#pesquisa');let dados=[],ano=0;function norm(s){return String(s).toLocaleLowerCase('pt-PT').normalize('NFD').replace(/[\u0300-\u036f]/g,'')}function make(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}function render(){const q=norm(pesquisa.value.trim());const shown=dados.filter(d=>(ano===0||d.ano===ano)&&norm(d.titulo+' '+d.descricao+' '+d.disciplina+' '+d.turma).includes(q));lista.replaceChildren();resultado.textContent=shown.length===1?'1 jogo encontrado':shown.length+' jogos encontrados';if(!shown.length){lista.append(make('div','empty','Não há jogos para estes filtros. Experimenta outro ano ou outra pesquisa.'));return;}shown.forEach(d=>{const card=make('article','game');const meta=make('div','meta');meta.append(make('span','tag grade',d.ano+'.º ano · Turma '+d.turma.slice(1)));meta.append(make('span','tag',d.disciplina));card.append(meta,make('h3','',d.titulo),make('p','',d.descricao));const bottom=make('div','bottom');bottom.append(make('span','date',d.semana));const link=make('a','play','Jogar →');link.href=d.url;link.setAttribute('aria-label','Abrir '+d.titulo);bottom.append(link);card.append(bottom);lista.append(card)});}document.querySelectorAll('[data-year]').forEach(b=>b.addEventListener('click',()=>{ano=Number(b.dataset.year);document.querySelectorAll('[data-year]').forEach(f=>{const active=f===b;f.classList.toggle('active',active);f.setAttribute('aria-pressed',String(active));});render()}));pesquisa.addEventListener('input',render);fetch('jogos.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{if(!Array.isArray(d))throw Error('catálogo inválido');dados=d;render()}).catch(()=>{resultado.textContent='Não foi possível carregar o catálogo. Abre o portal através de um servidor ou do GitHub Pages.'});
-</script></body></html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Investigadores Digitais com a Ticl@s</title>
+<meta name="description" content="Jogos e missões de TIC para o 1.º ciclo, organizados por ano e turma.">
+<meta name="theme-color" content="#5aa7e0">
+<link rel="icon" href="assets/ticlas-ola.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/paisagem.webp" imagesrcset="assets/paisagem-960.webp 960w, assets/paisagem.webp 1672w" imagesizes="100vw">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Grandstander:wght@800;900&display=swap" rel="stylesheet">
+<style>
+/* Sistema calmo: uma tinta, uma cor de ação, neutros. As cores dos anos só identificam a turma. */
+:root{
+  --tinta:#2b2257; --tinta-2:#5d5884; --tinta-3:#8d89a8;
+  --fundo:#f6f7fa; --papel:#fff; --linha:#e4e6ee; --ilus:#eceef6;
+  --acao:#c4501e; --acao-escura:#8f3610; --acao-suave:#f7c9a8;
+  --madeira:#9a5a2c; --madeira-clara:#b5743f; --madeira-escura:#5e3215; --creme:#fff3dc;
+  --ano1:#1f8483; --ano2:#a8467c; --ano3:#5f4aa0; --ano4:#c0602a;
+  --titulo:"Grandstander","Comic Sans MS","Trebuchet MS",sans-serif;
+  --texto:"Andika","Trebuchet MS","Segoe UI",sans-serif;
+  --r-grande:28px; --r-medio:18px; --r-pequeno:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--texto);font-size:18px;line-height:1.55;-webkit-tap-highlight-color:transparent}
+img,svg{display:block;max-width:100%}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:4px solid #ffcf3a;outline-offset:4px;border-radius:var(--r-pequeno)}
+.contentor{width:min(1180px,100% - 40px);margin-inline:auto}
+.so-leitor{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ================= ENTRADA ================= */
+.mundo{position:relative;min-height:clamp(560px,82svh,760px);display:flex;flex-direction:column;overflow:hidden;isolation:isolate;background:#6fb3e6}
+.mundo::before{content:"";position:absolute;inset:0;z-index:-2;background:url("assets/paisagem.webp") 62% 100%/cover no-repeat;filter:saturate(.8) brightness(1.04)}
+.mundo::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(246,247,250,.55) 0,rgba(246,247,250,.18) 45%,transparent 70%)}
+@media (max-width:960px){.mundo::before{background-image:url("assets/paisagem-960.webp")}}
+.topo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0}
+.pilula{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta);background:rgba(255,255,255,.94);border-radius:999px;box-shadow:0 4px 14px rgba(43,34,87,.12)}
+.marca{padding:6px 20px 6px 6px}
+.marca .cara{width:46px;height:46px;border-radius:50%;background:var(--ilus);overflow:hidden;flex:none}
+.marca .cara img{width:150%;max-width:none;margin:-3px 0 0 -16%}
+.marca b{font-family:var(--titulo);font-weight:800;font-size:20px;line-height:1}
+.marca .sub{display:block;font-size:14px;color:var(--tinta-2);line-height:1.2}
+.ligacao-prof{padding:10px 18px;font-weight:700;font-size:16px;gap:0}
+.ligacao-prof .curto{display:none}
+.ligacao-prof:hover{text-decoration:underline;text-underline-offset:4px}
+
+.palco{flex:1;padding-top:14px}
+.balao{position:relative;max-width:540px;background:var(--papel);border-radius:var(--r-grande);padding:26px 32px 28px;box-shadow:0 12px 30px rgba(43,34,87,.14)}
+.balao::after{content:"";position:absolute;right:-30px;top:60%;border-left:42px solid var(--papel);border-top:14px solid transparent;border-bottom:20px solid transparent}
+.balao p{margin:0;font-size:21px;color:var(--tinta-2);padding-right:60px}
+.balao h1{font-family:var(--titulo);font-weight:900;font-size:clamp(40px,5.2vw,64px);line-height:1.02;margin:6px 0 0}
+.ouvir{position:absolute;right:18px;top:16px;width:52px;height:52px;border-radius:50%;border:0;background:var(--fundo);cursor:pointer;display:grid;place-items:center;color:var(--tinta)}
+.ouvir svg{width:24px;height:24px}
+.ouvir:active{transform:scale(.94)}
+
+.corredora{position:absolute;z-index:1;left:clamp(380px,46%,640px);bottom:clamp(92px,15vh,140px);width:clamp(220px,22vw,330px)}
+.corredora img{width:100%;height:auto;filter:drop-shadow(0 22px 12px rgba(43,34,87,.22))}
+.corredora.entra{animation:corrida 1.1s cubic-bezier(.2,.8,.25,1) both}
+.corredora.salta img{animation:salto .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes corrida{0%{transform:translateX(-55vw)}70%{transform:translateX(10px)}100%{transform:none}}
+@keyframes salto{0%,100%{transform:translateY(0)}40%{transform:translateY(-28px)}}
+
+.placas{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:end;padding:0 0 30px;margin-top:auto}
+.placa{display:flex;flex-direction:column;align-items:center}
+.placa::after{content:"";width:16px;height:56px;background:linear-gradient(90deg,var(--madeira-escura),var(--madeira) 45%,var(--madeira-escura));border-radius:3px 3px 0 0;margin-top:-6px}
+.placa button{appearance:none;border:0;cursor:pointer;width:100%;position:relative;z-index:1;
+  clip-path:polygon(0 8%,85% 0,100% 50%,85% 100%,0 92%);
+  background:repeating-linear-gradient(177deg,rgba(255,255,255,.07) 0 3px,transparent 3px 12px),linear-gradient(180deg,var(--madeira-clara),var(--madeira));
+  color:var(--creme);padding:14px 34px 14px 14px;display:flex;align-items:center;gap:12px;min-height:86px;
+  transform:rotate(var(--r,-1.5deg));transition:transform .12s;touch-action:manipulation;filter:drop-shadow(0 6px 0 var(--madeira-escura))}
+.placa:nth-child(2) button{--r:1.5deg}.placa:nth-child(3) button{--r:-1deg}.placa:nth-child(4) button{--r:2deg}
+.placa button:hover{transform:rotate(0) translateY(-2px)}
+.placa button:active,.placa button[aria-pressed="true"]{transform:rotate(0) translateY(5px);filter:drop-shadow(0 1px 0 var(--madeira-escura))}
+.medalha{flex:none;width:50px;height:50px;border-radius:50%;background:var(--c);display:grid;place-items:center;font-family:var(--titulo);font-weight:900;font-size:28px;color:#fff;box-shadow:0 0 0 4px var(--creme)}
+.placa button[aria-pressed="true"] .medalha{box-shadow:0 0 0 4px #ffcf3a}
+.placa .rotulo{font-family:var(--titulo);font-weight:900;font-size:clamp(22px,2.3vw,28px);line-height:1;text-shadow:0 2px 0 var(--madeira-escura)}
+[data-ano="1"]{--c:var(--ano1)}[data-ano="2"]{--c:var(--ano2)}[data-ano="3"]{--c:var(--ano3)}[data-ano="4"]{--c:var(--ano4)}
+.relva{position:absolute;left:0;right:0;bottom:-2px;height:40px;z-index:2;background:var(--fundo);clip-path:polygon(0 62%,7% 44%,14% 60%,22% 40%,31% 58%,39% 45%,48% 62%,56% 42%,65% 58%,73% 44%,82% 60%,90% 46%,100% 58%,100% 100%,0 100%)}
+
+/* ================= MISSÕES ================= */
+.missoes{background:var(--fundo);padding:20px 0 72px}
+.cabeca{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.cabeca h2{font-family:var(--titulo);font-weight:800;font-size:clamp(30px,4vw,42px);line-height:1.1;margin:0}
+.cabeca .quando{color:var(--tinta-2)}
+.cartoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:24px;margin-top:22px}
+.missao{display:flex;flex-direction:column;background:var(--papel);border-radius:var(--r-grande);overflow:hidden;box-shadow:0 1px 0 var(--linha),0 10px 24px rgba(43,34,87,.06)}
+.ilus{position:relative;background:var(--ilus);aspect-ratio:2.15/1}
+.ilus svg{width:100%;height:100%}
+.turma{position:absolute;left:18px;bottom:-26px;width:64px;height:64px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-family:var(--titulo);font-weight:900;font-size:22px;line-height:1;box-shadow:0 0 0 5px var(--papel)}
+.missao .corpo{padding:36px 22px 22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.disciplina{font-size:15px;font-weight:700;color:var(--tinta-2)}
+.missao h3{font-size:23px;line-height:1.2;margin:0;font-weight:700}
+.missao p{margin:0;color:var(--tinta-2);font-size:17px}
+.info{display:flex;gap:16px;flex-wrap:wrap;font-size:15px;color:var(--tinta-2);margin-top:6px}
+.info span{display:inline-flex;align-items:center;gap:6px}
+.info svg{width:18px;height:18px;flex:none}
+.acoes{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:16px}
+.teste{font-size:14px;color:var(--tinta-3)}
+.comecar{display:inline-flex;align-items:center;gap:10px;background:var(--acao);color:#fff;text-decoration:none;font-weight:700;font-size:20px;padding:12px 22px;border-radius:var(--r-medio);box-shadow:0 5px 0 var(--acao-escura);transition:transform .08s,box-shadow .08s}
+.comecar:active{transform:translateY(4px);box-shadow:0 1px 0 var(--acao-escura)}
+.comecar svg{width:16px;height:16px}
+.vazio{display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:center;background:var(--papel);border-radius:var(--r-grande);padding:20px 28px;margin-top:22px}
+.vazio img{width:140px}
+.vazio b{font-size:24px;display:block;line-height:1.2}
+
+/* ================= PROFESSORES ================= */
+.professores{background:var(--papel);padding:52px 0 60px;border-top:1px solid var(--linha)}
+.professores h2{font-family:var(--titulo);font-weight:800;font-size:30px;margin:0 0 6px}
+.professores .intro{color:var(--tinta-2);max-width:68ch;margin:0 0 22px}
+.filtros{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--linha);background:var(--papel);border-radius:999px;padding:8px 16px;font-size:16px;cursor:pointer;color:var(--tinta-2)}
+.chip[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:#fff}
+.filtros select,.filtros input{border:1.5px solid var(--linha);border-radius:var(--r-pequeno);padding:9px 12px;font-size:16px;background:var(--papel)}
+.filtros input{flex:1;min-width:200px}
+.filtros select:focus-visible,.filtros input:focus-visible{outline:none;border-color:var(--tinta)}
+.tabela{width:100%;border-collapse:collapse;font-size:16px}
+.tabela th{text-align:left;font-weight:700;color:var(--tinta-2);padding:10px 12px;border-bottom:1.5px solid var(--linha);font-size:15px}
+.tabela td{padding:12px;border-bottom:1px solid var(--linha);vertical-align:middle}
+.tabela .ponto{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--c);color:#fff;font-family:var(--titulo);font-weight:900;font-size:15px}
+.tabela a{color:var(--acao);font-weight:700}
+.tabela .nada{color:var(--tinta-2);text-align:center;padding:24px}
+.nota{font-size:15px;color:var(--tinta-2);margin-top:16px}
+footer{background:var(--fundo);padding:24px 0 30px;font-size:15px;color:var(--tinta-2)}
+footer .contentor{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:980px){
+  .corredora{left:auto;right:3%;bottom:140px;width:clamp(170px,28vw,250px)}
+  .placas{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px}
+  .placa::after{height:24px}
+}
+@media (max-width:640px){
+  body{font-size:17px}
+  .mundo{min-height:0}
+  .mundo::after{background:linear-gradient(180deg,transparent 30%,rgba(246,247,250,.35))}
+  .marca .sub,.ligacao-prof .longo{display:none}
+  .ligacao-prof .curto{display:inline}
+  .palco{padding-top:150px}
+  .corredora{top:68px;bottom:auto;right:8%;width:150px}
+  .balao{padding:22px 22px 24px}
+  .balao::after{right:70px;top:-28px;border-left:20px solid transparent;border-right:14px solid transparent;border-bottom:34px solid var(--papel);border-top:0}
+  .placas{padding-top:22px;gap:12px 14px}
+  .placa button{min-height:76px;padding:12px 26px 12px 10px;gap:8px}
+  .medalha{width:42px;height:42px;font-size:24px}
+  .tabela .col-semana,.tabela .col-disc{display:none}
+  .vazio{grid-template-columns:1fr;text-align:center}.vazio img{margin:auto;width:110px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<section class="mundo" aria-labelledby="pergunta">
+  <div class="contentor topo">
+    <a class="pilula marca" href="./">
+      <span class="cara"><img src="assets/ticlas-ola.webp" alt=""></span>
+      <span><b>Investigadores Digitais</b><span class="sub">com a Ticl@s</span></span>
+    </a>
+    <a class="pilula ligacao-prof" href="#professores"><span class="longo">Para professores</span><span class="curto">Professores</span></a>
+  </div>
+  <div class="contentor palco">
+    <div class="balao">
+      <button class="ouvir" id="ouvir" type="button" aria-label="Ouvir a Ticl@s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <p id="fala-1">Olá! Eu sou a Ticl@s.</p>
+      <h1 id="pergunta">Em que ano andas?</h1>
+    </div>
+  </div>
+  <div class="corredora entra" id="ticlas"><img src="assets/ticlas-corre.webp" width="640" height="800" alt="A Ticl@s, um esquilo com auscultadores e óculos, a correr pelo caminho"></div>
+  <div class="contentor placas" role="group" aria-label="Escolher o ano">
+    <div class="placa" data-ano="1"><button type="button" data-ano="1" aria-pressed="false"><span class="medalha" aria-hidden="true">1</span><span class="rotulo">1.º ano</span></button></div>
+    <div class="placa" data-ano="2"><button type="button" data-ano="2" aria-pressed="false"><span class="medalha" aria-hidden="true">2</span><span class="rotulo">2.º ano</span></button></div>
+    <div class="placa" data-ano="3"><button type="button" data-ano="3" aria-pressed="false"><span class="medalha" aria-hidden="true">3</span><span class="rotulo">3.º ano</span></button></div>
+    <div class="placa" data-ano="4"><button type="button" data-ano="4" aria-pressed="false"><span class="medalha" aria-hidden="true">4</span><span class="rotulo">4.º ano</span></button></div>
+  </div>
+  <div class="relva" aria-hidden="true"></div>
+</section>
+
+<main id="missoes" class="missoes">
+  <div class="contentor" id="area"></div>
+</main>
+
+<section class="professores" id="professores" aria-labelledby="t-prof">
+  <div class="contentor">
+    <h2 id="t-prof">Para professores</h2>
+    <p class="intro">Todas as missões publicadas, de todas as semanas. Cada missão é um ficheiro HTML que funciona no browser, no painel ou no computador. Para abrir um ano diretamente no painel, use o endereço com o ano no fim, por exemplo <code>#ano-2</code>.</p>
+    <div class="filtros">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por disciplina"></div>
+      <label class="so-leitor" for="f-ano">Ano</label>
+      <select id="f-ano"><option value="0">Todos os anos</option><option value="1">1.º ano</option><option value="2">2.º ano</option><option value="3">3.º ano</option><option value="4">4.º ano</option></select>
+      <label class="so-leitor" for="f-texto">Procurar</label>
+      <input id="f-texto" type="search" placeholder="Procurar por turma, título ou conteúdo" autocomplete="off">
+    </div>
+    <table class="tabela">
+      <thead><tr><th>Turma</th><th>Missão</th><th class="col-disc">Disciplina</th><th class="col-semana">Semana</th><th><span class="so-leitor">Abrir</span></th></tr></thead>
+      <tbody id="linhas"></tbody>
+    </table>
+    <p class="nota" id="estado-catalogo"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="contentor"><span>Investigadores Digitais, TIC no 1.º ciclo</span><span>Criado por C. Sofia Oliveira</span></div>
+</footer>
+
+<script>
+'use strict';
+const ANOS={1:'1.º ano',2:'2.º ano',3:'3.º ano',4:'4.º ano'};
+const $=s=>document.querySelector(s);
+const area=$('#area'),ticlas=$('#ticlas'),fala1=$('#fala-1'),pergunta=$('#pergunta');
+let dados=[],ano=0;
+
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function norm(s){return String(s||'').toLocaleLowerCase('pt-PT').normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function turmaBonita(t){const m=String(t).match(/^(\d)\s*\.?º?\s*([A-Z])$/i);return m?m[1]+'.º '+m[2].toUpperCase():t}
+function segunda(d){const x=new Date(d+'T12:00:00');x.setDate(x.getDate()-(x.getDay()+6)%7);return x.toISOString().slice(0,10)}
+function segundaAtual(){const h=new Date();h.setHours(12);const dia=(h.getDay()+6)%7;h.setDate(h.getDate()+(dia>=5?7-dia:-dia));return h.toISOString().slice(0,10)}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ---------- ilustrações simples, geradas a partir do tema ---------- */
+const INK='#2b2257',SUAVE='#f7c9a8',ACENTO='#c4501e';
+function carta(x,y,r,txt,cheia,tam){return `<g transform="translate(${x} ${y}) rotate(${r})"><rect x="-34" y="-40" width="68" height="80" rx="12" fill="${cheia?SUAVE:'#fff'}" stroke="${INK}" stroke-width="2.5"/><text x="0" y="${tam>34?14:11}" text-anchor="middle" font-family="Grandstander,Comic Sans MS,sans-serif" font-weight="900" font-size="${tam||38}" fill="${INK}">${esc(txt)}</text></g>`}
+function brilho(x,y,s){return `<path transform="translate(${x} ${y}) scale(${s})" d="M0-10 2.5-2.5 10 0 2.5 2.5 0 10-2.5 2.5-10 0-2.5-2.5z" fill="${ACENTO}" opacity=".8"/>`}
+function temaDe(d){
+  if(d.ilustracao&&d.ilustracao.tipo)return d.ilustracao;
+  const t=norm(d.titulo+' '+d.descricao),disc=norm(d.disciplina);
+  let letras=null,m=t.match(/\b([a-zç]{1,3})\s*(?:\/|\be\b)\s*([a-zç]{1,3})\b/);
+  if(m&&m[1].length<=3&&!['de','do','da','os','as','um'].includes(m[1]))letras=[m[1],m[2]];
+  if(/ditong/.test(t))letras=['ei','ãe'];
+  let conta=/\b10\b|amigos do 10/.test(t)?['7','+','3']:/subtra/.test(t)?['9','−','4']:['2','+','3'];
+  const por=/portugu/.test(disc),mat=/matem/.test(disc);
+  if(por&&mat)return{tipo:'mistura',letras:letras||['a','b'],conta};
+  if(por)return{tipo:'letras',letras:letras||['a','b','c']};
+  if(mat)return{tipo:'numeros',conta};
+  if(/meio|ciencia|natureza/.test(disc))return{tipo:'natureza'};
+  return{tipo:'digital'};
+}
+function ilustracao(d){
+  const t=temaDe(d);let g='';
+  if(t.tipo==='letras'){const L=t.letras.slice(0,3);const xs=L.length===2?[130,200]:[105,165,225];L.forEach((c,i)=>g+=carta(xs[i],76+(i%2?-6:6),[-8,5,-3][i],c,i===1,c.length>1?30:42));g+=brilho(270,34,1)+brilho(56,110,.7)}
+  else if(t.tipo==='numeros'){const c=t.conta;g+=carta(110,78,-6,c[0],false,44)+`<circle cx="165" cy="76" r="17" fill="${SUAVE}" stroke="${INK}" stroke-width="2.5"/><text x="165" y="85" text-anchor="middle" font-family="Grandstander,sans-serif" font-weight="900" font-size="26" fill="${INK}">${esc(c[1])}</text>`+carta(220,74,5,c[2],true,44)+brilho(272,32,1)+brilho(52,40,.7)}
+  else if(t.tipo==='mistura'){g+=carta(115,78,-7,t.letras[0],false,40)+carta(165,72,3,t.letras[1],true,40)+`<g transform="translate(232 82) rotate(6)"><rect x="-30" y="-34" width="60" height="68" rx="12" fill="#fff" stroke="${INK}" stroke-width="2.5"/><text x="0" y="10" text-anchor="middle" font-family="Grandstander,sans-serif" font-weight="900" font-size="26" fill="${INK}">${esc(t.conta.join(''))}</text></g>`+brilho(60,36,.8)+brilho(285,120,.6)}
+  else if(t.tipo==='natureza'){g+=`<circle cx="160" cy="80" r="42" fill="#fff" stroke="${INK}" stroke-width="2.5"/><path d="M128 72c10-14 26-6 30 4s14 14 26 6M134 98c12-6 22 2 34-4" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/><path d="M84 112c-6-24 8-40 24-44-2 18-8 34-24 44z" fill="${SUAVE}" stroke="${INK}" stroke-width="2.5"/><path d="M236 112c6-24-8-40-24-44 2 18 8 34 24 44z" fill="${SUAVE}" stroke="${INK}" stroke-width="2.5"/>`+brilho(270,32,.9)}
+  else{g+=`<rect x="110" y="42" width="100" height="66" rx="10" fill="#fff" stroke="${INK}" stroke-width="2.5"/><path d="M96 116h128" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/><path d="M142 82a26 26 0 0 1 36 0M150 90a14 14 0 0 1 20 0" fill="none" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/><circle cx="160" cy="97" r="3.5" fill="${ACENTO}"/>`+brilho(250,36,.9)+brilho(70,100,.6)}
+  return `<svg viewBox="0 0 320 150" role="img" aria-hidden="true"><circle cx="40" cy="20" r="3" fill="${INK}" opacity=".18"/><circle cx="292" cy="80" r="3" fill="${INK}" opacity=".18"/><circle cx="70" cy="132" r="2.5" fill="${INK}" opacity=".18"/>${g}</svg>`;
+}
+
+const ICONE_TEMPO='<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 6v4.5l3 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const ICONE_JOGO='<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 7.5v5l4-2.5z" fill="currentColor"/></svg>';
+const ICONE_PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5l9 5.5-9 5.5z" fill="currentColor"/></svg>';
+
+function cartao(d){
+  const c=el('article','missao');c.dataset.ano=d.ano;
+  const il=el('div','ilus');il.innerHTML=ilustracao(d);
+  const tb=el('span','turma',turmaBonita(d.turma));tb.dataset.ano=d.ano;il.append(tb);
+  const corpo=el('div','corpo');
+  corpo.append(el('span','disciplina',d.disciplina||''),el('h3','',d.titulo),el('p','',d.descricao||''));
+  const info=el('div','info');
+  if(d.duracao){const s=el('span');s.innerHTML=ICONE_TEMPO;s.append(d.duracao);info.append(s)}
+  {const s=el('span');s.innerHTML=ICONE_JOGO;s.append(d.tipo||'Jogo interativo');info.append(s)}
+  const ac=el('div','acoes');ac.append(el('span','teste',d.estado==='em validação'?'Versão de teste':''));
+  const a=el('a','comecar');a.href=d.url;a.innerHTML='Começar '+ICONE_PLAY;a.setAttribute('aria-label','Começar '+d.titulo+', turma '+turmaBonita(d.turma));ac.append(a);
+  corpo.append(info,ac);c.append(il,corpo);return c}
+
+function semanaRecente(lista){if(!lista.length)return null;const k=lista.map(d=>segunda(d.data)).sort().pop();return{k,itens:lista.filter(d=>segunda(d.data)===k).sort((a,b)=>a.ano-b.ano||a.turma.localeCompare(b.turma))}}
+
+function mostrar(){
+  area.replaceChildren();if(!dados.length)return;
+  const meus=ano?dados.filter(d=>Number(d.ano)===ano):dados;
+  const cab=el('div','cabeca');cab.append(el('h2','',ano?'Missões do '+ANOS[ano]:'Missões da semana'));area.append(cab);
+  if(!meus.length){const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';const t=el('div');
+    t.append(el('b','','Ainda não há missões para o '+ANOS[ano]+'.'),el('span','','A Ticl@s está a prepará-las. Volta na próxima semana!'));v.append(img,t);area.append(v);return}
+  const s=semanaRecente(meus);
+  cab.append(el('span','quando',(s.k===segundaAtual()?'Esta semana, ':'Semana de ')+s.itens[0].semana));
+  const g=el('div','cartoes');s.itens.forEach(d=>g.append(cartao(d)));area.append(g);
+}
+
+function escolher(n,{rolar=true}={}){
+  ano=n;document.querySelectorAll('.placa button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ano)===n)));
+  const tem=dados.some(d=>Number(d.ano)===n);
+  fala1.textContent=tem?'Boa escolha! Procura a tua turma.':'O '+ANOS[n]+' ainda não tem missões.';
+  pergunta.textContent=tem?'Vamos às missões!':'Volta em breve!';
+  ticlas.classList.remove('salta');void ticlas.offsetWidth;ticlas.classList.add('salta');
+  mostrar();
+  if(history.replaceState)history.replaceState(null,'','#ano-'+n);
+  if(rolar)setTimeout(()=>$('#missoes').scrollIntoView({block:'start'}),420);
+}
+document.querySelectorAll('.placa button').forEach(b=>b.addEventListener('click',()=>escolher(Number(b.dataset.ano))));
+
+function falar(t){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='pt-PT';const v=speechSynthesis.getVoices().find(v=>v.lang==='pt-PT');if(v)u.voice=v;u.rate=.92;speechSynthesis.speak(u)}catch(e){}}
+$('#ouvir').addEventListener('click',()=>falar(fala1.textContent+' '+pergunta.textContent));
+ticlas.addEventListener('animationend',()=>ticlas.classList.remove('entra'),{once:true});
+
+/* ---------- catálogo dos professores ---------- */
+let disc='';
+function disciplinas(){const s=new Set();dados.forEach(d=>String(d.disciplina||'').split(/\s+e\s+|,\s*/).forEach(x=>x.trim()&&s.add(x.trim())));return [...s].sort((a,b)=>a.localeCompare(b,'pt'))}
+function chips(){const box=$('#chips');box.replaceChildren();['',...disciplinas()].forEach(nome=>{const b=el('button','chip',nome||'Todas');b.type='button';b.setAttribute('aria-pressed',String(nome===disc));b.onclick=()=>{disc=nome;chips();tabela()};box.append(b)})}
+function tabela(){
+  const fa=Number($('#f-ano').value),q=norm($('#f-texto').value.trim()),tb=$('#linhas');tb.replaceChildren();
+  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(!disc||String(d.disciplina).includes(disc))&&(!q||norm([d.titulo,d.descricao,d.disciplina,d.turma,turmaBonita(d.turma),d.semana].join(' ')).includes(q)))
+    .sort((a,b)=>segunda(b.data).localeCompare(segunda(a.data))||a.ano-b.ano||a.turma.localeCompare(b.turma));
+  if(!r.length){const tr=el('tr'),td=el('td','nada','Nenhuma missão com estes filtros.');td.colSpan=5;tr.append(td);tb.append(tr);return}
+  r.forEach(d=>{const tr=el('tr');const t1=el('td');const p=el('span','ponto',turmaBonita(d.turma).replace(' ',''));p.dataset.ano=d.ano;t1.append(p);
+    const t2=el('td');t2.append(el('b','',d.titulo));
+    const t5=el('td');const a=el('a','','Abrir');a.href=d.url;a.setAttribute('aria-label','Abrir '+d.titulo);t5.append(a);
+    tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',d.semana||''),t5);tb.append(tr)})}
+$('#f-ano').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
+
+fetch('jogos.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
+  if(!Array.isArray(d))throw Error('formato');dados=d;
+  $('#estado-catalogo').textContent=d.length===1?'1 missão publicada.':d.length+' missões publicadas.';
+  chips();tabela();
+  const m=location.hash.match(/ano-(\d)/);if(m&&ANOS[m[1]])escolher(Number(m[1]));else mostrar();
+}).catch(()=>{$('#estado-catalogo').textContent='Não foi possível ler a lista de missões (jogos.json). Abra o site a partir do GitHub Pages ou de um servidor local.'});
+</script>
+</body>
+</html>
