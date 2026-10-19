@@ -258,7 +258,7 @@ button{touch-action:manipulation}
 }
 .ilus svg{position:absolute;top:6%;left:6%;width:88%;height:88%;overflow:visible;filter:drop-shadow(0 5px 3px rgba(48,72,80,.08))}
 .ilus .turma{z-index:2;left:20px;bottom:-27px;width:70px;height:70px;border:4px solid #fff;box-shadow:0 4px 0 rgba(27,68,64,.12),0 5px 12px rgba(35,58,60,.11);font-size:24px}
-.missao .corpo{padding:42px 26px 26px;gap:9px;background:var(--papel)}
+.ilus .turma-ano{font-size:16px;text-align:center;line-height:1.12;padding:5px;white-space:normal}\n.missao .corpo{padding:42px 26px 26px;gap:9px;background:var(--papel)}
 .disciplina{font-size:15px;font-weight:700;color:#2a6b66}
 .missao h3{font-size:clamp(22px,2.1vw,27px);letter-spacing:-.6px;line-height:1.13;color:#29445e}
 .missao p{font-size:16px;line-height:1.45;color:#617083;min-height:44px}
@@ -476,7 +476,7 @@ const ICONE_PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5l9 
 function cartao(d){
   const c=el('article','missao');c.dataset.ano=d.ano;
   const il=el('div','ilus');il.dataset.tipo=temaDe(d).tipo;il.innerHTML=ilustracao(d);
-  const tb=el('span','turma',turmaBonita(d.turma));tb.dataset.ano=d.ano;il.append(tb);
+  const tb=el('span','turma',turmaBonita(d.turma));tb.dataset.ano=d.ano;if(d.turma==='2.º ano')tb.classList.add('turma-ano');il.append(tb);
   const corpo=el('div','corpo');
   corpo.append(el('span','disciplina',d.disciplina||''),el('h3','',d.titulo),el('p','',d.descricao||''));
   const info=el('div','info');
