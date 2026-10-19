@@ -211,6 +211,46 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #F2B2
 @media(max-width:460px){.topbar{gap:7px}.brand{flex:1 1 100%}.brand small{font-size:11px}.portal-link{order:2}.gear{order:2}.nav{flex-wrap:wrap}.nav button{flex:1 1 43%;font-size:14px}.hero .mascot{width:155px!important}.box{min-height:110px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
+<style id="rodape-portal-2026">
+/* Rodapé uniforme com o portal Investigadores Digitais. */
+#app > footer.site-footer {
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  align-self:stretch;
+  margin-top:30px;
+  padding:30px clamp(14px,2vw,26px);
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:12px 28px;
+  text-align:left;
+  font-family:'Nunito','Segoe UI',sans-serif;
+  font-weight:600;
+  font-size:18px;
+  line-height:1.5;
+  color:#536d74;
+  background:#eaf2ed;
+  box-shadow:none;
+}
+#app > footer.site-footer::before {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:100vw;
+  transform:translateX(-50%);
+  border-top:1px solid #d9e6dc;
+  background:#eaf2ed;
+  z-index:-1;
+}
+@media(max-width:680px){
+  #app > footer.site-footer {flex-direction:column;gap:6px;padding:22px 10px;text-align:center;font-size:15px}
+}
+</style>
 </head>
 <body>
 <canvas id="confetti"></canvas>
@@ -304,14 +344,9 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #F2B2
     </section>
   </main>
 
-  <footer>
-    <div class="nm">Investigadores Digitais com o Ticl@s · Gaveta de Fichas</div>
-    <div class="ln">
-      <a href="https://sites.google.com/view/investigadores-a-descoberta/p%C3%A1gina-inicial" target="_blank" rel="noopener">Investigadores à Descoberta</a>
-      <a href="https://gavetadefichas.wordpress.com/" target="_blank" rel="noopener">Site Gaveta de Fichas</a>
-      <a href="https://gavetadefichas.blogspot.com/?m=1" target="_blank" rel="noopener">Blog Gaveta de Fichas</a>
-      <a href="https://www.facebook.com/100071380264004/?locale=pt_PT" target="_blank" rel="noopener">Facebook</a>
-    </div>
+  <footer class="site-footer" aria-label="Rodapé dos Investigadores Digitais">
+    <span>Investigadores Digitais, TIC no 1.º ciclo</span>
+    <span>Coordenadora TIC C. Sofia O.</span>
   </footer>
 </div>
 
