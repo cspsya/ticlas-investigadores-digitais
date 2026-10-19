@@ -50,5 +50,18 @@
     "url": "jogos/2026-10-19/Jogos_3B_MAB_e_112_S07.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-19-2ano-casos-s-z",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Casos de leitura: S e Z",
+    "descricao": "14 minijogos de leitura e escrita com as, es, is, os, us, az, ez, iz, oz e uz",
+    "disciplina": "Português",
+    "data": "2026-10-21",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/Ticlas_Casos_S_e_Z_2ano.html",
+    "duracao": "por etapas",
+    "estado": "em validação"
   }
 ]
