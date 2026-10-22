@@ -76,5 +76,18 @@
     "url": "jogos/2026-10-19/1A_Ticlas_Jogo_19_23_outubro.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-22-3ano-devagar-se-vai-ao-longe",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Devagar se vai ao longe — s, ss, ç, c",
+    "descricao": "Ortografia e leitura: distinguir s, ss, ç e c, com desafios interativos e escrita",
+    "disciplina": "Português",
+    "data": "2026-10-22",
+    "semana": "19–23 out. 2026",
+    "url": "jogos/2026-10-19/Devagar_se_vai_ao_longe_Ticlas_3ano.html",
+    "duracao": "por etapas",
+    "estado": "em validação"
   }
 ]
