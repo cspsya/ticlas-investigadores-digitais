@@ -12,6 +12,10 @@ Portal HTML estático para GitHub Pages. Os alunos escolhem o ano nas placas do 
 
 Este URL é uma previsão até a publicação estar concluída.
 
+## Jogo-base V3 (novos jogos)
+
+Os jogos novos partem de `base/modelo-jogo.html`: copia-se o ficheiro e muda-se **apenas** o bloco AULA (JSON) com o conteúdo da aula. O formato, os 7 tipos de atividade e a instrução para a tarefa agendada no ChatGPT estão em [`base/LEIA-ME.md`](base/LEIA-ME.md). Opcionalmente, `python3 base/construir.py aula.json --publicar` valida o conteúdo, gera o jogo em `jogos/AAAA-MM-DD/` e regista-o em `jogos.json`.
+
 ## Adicionar jogos posteriormente
 
 - Colocar o HTML completo em `jogos/AAAA-MM-DD/`.

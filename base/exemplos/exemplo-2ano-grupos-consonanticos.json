@@ -1,0 +1,112 @@
+{
+  "id": "exemplo-2ano-grupos-consonanticos",
+  "titulo": "Grupos consonânticos: br, pr, fl, cl, gr, tr",
+  "ano": 2,
+  "turma": "2.º A",
+  "disciplina": "Português",
+  "data": "2026-10-28",
+  "descricao": "Ler, ligar, ordenar e escrever palavras com grupos consonânticos",
+  "objetivo": "Ler e escrever palavras com os grupos consonânticos br, pr, fl, cl, gr e tr.",
+  "minutos": 30,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões dos sons",
+      "instrucao": "Rebenta o balão com a palavra certa.",
+      "itens": [
+        { "pergunta": "Que palavra começa por BR?", "emoji": "💪", "certa": "braço", "erradas": ["prato", "flor"] },
+        { "pergunta": "Que palavra começa por FL?", "emoji": "🌸", "certa": "flor", "erradas": ["fruta", "pluma"] },
+        { "pergunta": "Que palavra começa por PR?", "emoji": "🍽️", "certa": "prato", "erradas": ["trigo", "braço"] },
+        { "pergunta": "Que palavra começa por GR?", "emoji": "🦗", "certa": "grilo", "erradas": ["cravo", "livro"] }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive dos grupos",
+      "itens": [
+        { "afirmacao": "A palavra «cravo» começa por CR.", "verdade": true, "explicacao": "cra-vo: começa pelo grupo CR." },
+        { "afirmacao": "A palavra «tigre» tem o grupo TR.", "verdade": false, "explicacao": "ti-gre: o grupo é GR." },
+        { "afirmacao": "A palavra «bicicleta» tem o grupo CL.", "verdade": true, "explicacao": "bi-ci-cle-ta: tem o grupo CL." },
+        { "afirmacao": "A palavra «livro» tem o grupo BR.", "verdade": false, "explicacao": "li-vro: o grupo é VR." }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Liga o grupo à palavra",
+      "itens": [
+        ["BR", "brinquedo"],
+        ["PR", "prenda"],
+        ["FL", "flauta"],
+        ["CL", "clube"],
+        ["GR", "grilo"],
+        ["TR", "trator"]
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos sons",
+      "caixas": ["BR", "PR", "TR"],
+      "itens": [
+        ["broa", "BR"], ["brinco", "BR"],
+        ["prego", "PR"], ["praia", "PR"],
+        ["trevo", "TR"], ["tronco", "TR"]
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Constrói a palavra",
+      "juntar": "",
+      "itens": [
+        { "pergunta": "Junta as sílabas.", "emoji": "🚜", "pecas": ["tra", "tor"] },
+        { "pergunta": "Junta as sílabas.", "emoji": "🚲", "pecas": ["bi", "ci", "cle", "ta"] },
+        { "pergunta": "Ordena a frase.", "pecas": ["O", "grilo", "canta", "no", "prado."], "juntar": " " }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "A palavra que falta",
+      "itens": [
+        { "frase": "O ___ salta na relva.", "certa": "grilo", "erradas": ["prato", "cravo"] },
+        { "frase": "A Rita toca ___.", "certa": "flauta", "erradas": ["floresta", "fruta"] },
+        { "frase": "Comi a sopa no ___.", "certa": "prato", "erradas": ["prado", "preto"] }
+      ]
+    },
+    {
+      "tipo": "escrever",
+      "titulo": "Escreve o nome",
+      "itens": [
+        { "pergunta": "Escreve o nome deste desenho.", "emoji": "🌸", "resposta": "flor", "dica": "Começa por FL." },
+        { "pergunta": "Escreve o nome deste desenho.", "emoji": "🦗", "resposta": "grilo", "dica": "Tem duas sílabas: gri-lo." },
+        { "pergunta": "Escreve o nome deste desenho.", "emoji": "🚜", "resposta": "trator", "dica": "Tem duas sílabas: tra-tor." }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "itens": [
+        { "pergunta": "Escreve uma frase com a palavra «prenda».", "palavra": "prenda", "minPalavras": 4 },
+        { "pergunta": "Escreve uma frase com a palavra «flor».", "palavra": "flor", "minPalavras": 4 }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória brilhante",
+      "itens": [["🦗", "grilo"], ["🌸", "flor"], ["🚜", "trator"], ["🍽️", "prato"]]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio das palavras",
+      "itens": [
+        { "pergunta": "Qual destas palavras tem o grupo CL?", "certa": "clara", "erradas": ["carta", "cola"] },
+        { "pergunta": "Qual destas palavras tem o grupo PR?", "certa": "primo", "erradas": ["pimenta", "porta"] }
+      ]
+    }
+  ]
+}
