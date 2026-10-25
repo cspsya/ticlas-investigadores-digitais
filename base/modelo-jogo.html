@@ -590,6 +590,9 @@ function pascoa(ano) { // algoritmo de Meeus/Jones/Butcher
     mes = Math.floor((h + l - 7 * m + 114) / 31), dia = ((h + l - 7 * m + 114) % 31) + 1;
   return new Date(ano, mes - 1, dia);
 }
+// Festa da Flor (Madeira): datas oficiais de cada edição, no formato MMDD. Acrescentar uma linha por ano.
+const FESTA_DA_FLOR = { 2027: [429, 530] };
+const FESTA_DA_FLOR_APROX = [425, 525]; // usado nos anos que não estão na tabela
 function temaDoDia(data = new Date()) {
   const ano = data.getFullYear(), hoje = new Date(ano, data.getMonth(), data.getDate());
   const md = (data.getMonth() + 1) * 100 + data.getDate();
@@ -604,7 +607,8 @@ function temaDoDia(data = new Date()) {
   if (md >= 1031 && md <= 1102) return 'paopordeus';
   if (md >= 1103 && md <= 1113) return 'saomartinho';
   if (md >= 1201 || md <= 106) return 'natal';
-  if (md >= 424 && md <= 510) return 'festadaflor'; // datas aproximadas: ajustar se a Festa da Flor mudar
+  const [ffIni, ffFim] = FESTA_DA_FLOR[ano] || FESTA_DA_FLOR_APROX;
+  if (md >= ffIni && md <= ffFim) return 'festadaflor';
   if (md >= 529 && md <= 602) return 'crianca';
   if (md >= 901 && md <= 930) return 'regresso';
   if (md >= 1001 && md <= 1130) return 'outono';
