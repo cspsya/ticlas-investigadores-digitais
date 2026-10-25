@@ -1,0 +1,545 @@
+{
+  "id": "2026-10-27-1a-portugues",
+  "titulo": "Histórias em imagens",
+  "ano": 1,
+  "turma": "1.º A",
+  "disciplina": "Português",
+  "data": "2026-10-27",
+  "descricao": "Ordenar acontecimentos simples a partir de imagens originais, sem reproduzir a obra do manual.",
+  "objetivo": "Ordenar acontecimentos simples a partir de imagens originais, sem reproduzir a obra do manual.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "titulo": "Primeira cena",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual aparece primeiro? 🌱🌿🌳",
+          "emoji": "🌱",
+          "certa": "🌱",
+          "erradas": [
+            "🌿",
+            "🌳"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? 🥚🐣🐔",
+          "emoji": "🥚",
+          "certa": "🥚",
+          "erradas": [
+            "🐣",
+            "🐔"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? 🌙🌅☀️",
+          "emoji": "🌙",
+          "certa": "🌙",
+          "erradas": [
+            "🌅",
+            "☀️"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? 🌱🌻🌻🐝",
+          "emoji": "🌱",
+          "certa": "🌱",
+          "erradas": [
+            "🌻",
+            "🌻🐝"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? 🐛🦋🦋🌼",
+          "emoji": "🐛",
+          "certa": "🐛",
+          "erradas": [
+            "🦋",
+            "🦋🌼"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? ☁️🌧️🌈",
+          "emoji": "☁️",
+          "certa": "☁️",
+          "erradas": [
+            "🌧️",
+            "🌈"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece primeiro? 🍏🍎🍎🧺",
+          "emoji": "🍏",
+          "certa": "🍏",
+          "erradas": [
+            "🍎",
+            "🍎🧺"
+          ]
+        }
+      ],
+      "visual": "cartoes"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Quem aparece depois?",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual aparece no fim? 🌰🌱🌿",
+          "emoji": "🌰",
+          "certa": "🌿",
+          "erradas": [
+            "🌰",
+            "🌱"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🧊💧☀️",
+          "emoji": "🧊",
+          "certa": "☀️",
+          "erradas": [
+            "🧊",
+            "💧"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🌷🌷🐝🌷🦋",
+          "emoji": "🌷",
+          "certa": "🌷🦋",
+          "erradas": [
+            "🌷",
+            "🌷🐝"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🍞🥪🥪😋",
+          "emoji": "🍞",
+          "certa": "🥪😋",
+          "erradas": [
+            "🍞",
+            "🥪"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🎨🖌️🖼️",
+          "emoji": "🎨",
+          "certa": "🖼️",
+          "erradas": [
+            "🎨",
+            "🖌️"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🎁🎀🎉",
+          "emoji": "🎁",
+          "certa": "🎉",
+          "erradas": [
+            "🎁",
+            "🎀"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no fim? 🌤️🌞🌙",
+          "emoji": "🌤️",
+          "certa": "🌙",
+          "erradas": [
+            "🌤️",
+            "🌞"
+          ]
+        }
+      ],
+      "visual": "comboio"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "A cena do meio",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual aparece no meio? 🌱🌿🌳",
+          "emoji": "🌱",
+          "certa": "🌿",
+          "erradas": [
+            "🌱",
+            "🌳"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? 🥚🐣🐔",
+          "emoji": "🥚",
+          "certa": "🐣",
+          "erradas": [
+            "🥚",
+            "🐔"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? 🌙🌅☀️",
+          "emoji": "🌙",
+          "certa": "🌅",
+          "erradas": [
+            "🌙",
+            "☀️"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? 🌱🌻🌻🐝",
+          "emoji": "🌱",
+          "certa": "🌻",
+          "erradas": [
+            "🌱",
+            "🌻🐝"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? 🐛🦋🦋🌼",
+          "emoji": "🐛",
+          "certa": "🦋",
+          "erradas": [
+            "🐛",
+            "🦋🌼"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? ☁️🌧️🌈",
+          "emoji": "☁️",
+          "certa": "🌧️",
+          "erradas": [
+            "☁️",
+            "🌈"
+          ]
+        },
+        {
+          "pergunta": "Qual aparece no meio? 🍏🍎🍎🧺",
+          "emoji": "🍏",
+          "certa": "🍎",
+          "erradas": [
+            "🍏",
+            "🍎🧺"
+          ]
+        }
+      ],
+      "visual": "aviao"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Histórias em ordem",
+      "instrucao": "Coloca as peças pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "🌰",
+          "pecas": [
+            "🌰",
+            "🌱",
+            "🌿"
+          ]
+        },
+        {
+          "emoji": "🧊",
+          "pecas": [
+            "🧊",
+            "💧",
+            "☀️"
+          ]
+        },
+        {
+          "emoji": "🌷",
+          "pecas": [
+            "🌷",
+            "🌷🐝",
+            "🌷🦋"
+          ]
+        },
+        {
+          "emoji": "🍞",
+          "pecas": [
+            "🍞",
+            "🥪",
+            "🥪😋"
+          ]
+        },
+        {
+          "emoji": "🎨",
+          "pecas": [
+            "🎨",
+            "🖌️",
+            "🖼️"
+          ]
+        },
+        {
+          "emoji": "🎁",
+          "pecas": [
+            "🎁",
+            "🎀",
+            "🎉"
+          ]
+        },
+        {
+          "emoji": "🌤️",
+          "pecas": [
+            "🌤️",
+            "🌞",
+            "🌙"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Novas sequências",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "O que aparece depois do início? 🌱🌿🌳",
+          "emoji": "🌱",
+          "certa": "🌿",
+          "erradas": [
+            "🌱",
+            "🌳"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? 🥚🐣🐔",
+          "emoji": "🥚",
+          "certa": "🐣",
+          "erradas": [
+            "🥚",
+            "🐔"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? 🌙🌅☀️",
+          "emoji": "🌙",
+          "certa": "🌅",
+          "erradas": [
+            "🌙",
+            "☀️"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? 🌱🌻🌻🐝",
+          "emoji": "🌱",
+          "certa": "🌻",
+          "erradas": [
+            "🌱",
+            "🌻🐝"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? 🐛🦋🦋🌼",
+          "emoji": "🐛",
+          "certa": "🦋",
+          "erradas": [
+            "🐛",
+            "🦋🌼"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? ☁️🌧️🌈",
+          "emoji": "☁️",
+          "certa": "🌧️",
+          "erradas": [
+            "☁️",
+            "🌈"
+          ]
+        },
+        {
+          "pergunta": "O que aparece depois do início? 🍏🍎🍎🧺",
+          "emoji": "🍏",
+          "certa": "🍎",
+          "erradas": [
+            "🍏",
+            "🍎🧺"
+          ]
+        }
+      ],
+      "visual": "buracos"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Liga a história",
+      "instrucao": "Liga cada desenho ao seu par.",
+      "itens": [
+        [
+          "🌰",
+          "🌿"
+        ],
+        [
+          "🧊",
+          "☀️"
+        ],
+        [
+          "🌷",
+          "🌷🦋"
+        ],
+        [
+          "🍞",
+          "🥪😋"
+        ],
+        [
+          "🎨",
+          "🖼️"
+        ],
+        [
+          "🎁",
+          "🎉"
+        ],
+        [
+          "🌤️",
+          "🌙"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Bónus: contar a história 1",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🌱🌿🌳",
+          "emoji": "🌳",
+          "certa": "🌳",
+          "erradas": [
+            "🌱",
+            "🌿"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🥚🐣🐔",
+          "emoji": "🐔",
+          "certa": "🐔",
+          "erradas": [
+            "🥚",
+            "🐣"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🌙🌅☀️",
+          "emoji": "☀️",
+          "certa": "☀️",
+          "erradas": [
+            "🌙",
+            "🌅"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🌱🌻🌻🐝",
+          "emoji": "🌻🐝",
+          "certa": "🌻🐝",
+          "erradas": [
+            "🌱",
+            "🌻"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🐛🦋🦋🌼",
+          "emoji": "🦋🌼",
+          "certa": "🦋🌼",
+          "erradas": [
+            "🐛",
+            "🦋"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? ☁️🌧️🌈",
+          "emoji": "🌈",
+          "certa": "🌈",
+          "erradas": [
+            "☁️",
+            "🌧️"
+          ]
+        },
+        {
+          "pergunta": "Bónus: o que aconteceu por último? 🍏🍎🍎🧺",
+          "emoji": "🍎🧺",
+          "certa": "🍎🧺",
+          "erradas": [
+            "🍏",
+            "🍎"
+          ]
+        }
+      ],
+      "visual": "baloes"
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Bónus: contar a história 2",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🌰🌱🌿",
+          "emoji": "🌰",
+          "certa": "🌰",
+          "erradas": [
+            "🌱",
+            "🌿"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🧊💧☀️",
+          "emoji": "🧊",
+          "certa": "🧊",
+          "erradas": [
+            "💧",
+            "☀️"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🌷🌷🐝🌷🦋",
+          "emoji": "🌷",
+          "certa": "🌷",
+          "erradas": [
+            "🌷🐝",
+            "🌷🦋"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🍞🥪🥪😋",
+          "emoji": "🍞",
+          "certa": "🍞",
+          "erradas": [
+            "🥪",
+            "🥪😋"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🎨🖌️🖼️",
+          "emoji": "🎨",
+          "certa": "🎨",
+          "erradas": [
+            "🖌️",
+            "🖼️"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🎁🎀🎉",
+          "emoji": "🎁",
+          "certa": "🎁",
+          "erradas": [
+            "🎀",
+            "🎉"
+          ]
+        },
+        {
+          "pergunta": "Bónus: qual foi a primeira cena? 🌤️🌞🌙",
+          "emoji": "🌤️",
+          "certa": "🌤️",
+          "erradas": [
+            "🌞",
+            "🌙"
+          ]
+        }
+      ],
+      "visual": "aviao"
+    }
+  ]
+}
