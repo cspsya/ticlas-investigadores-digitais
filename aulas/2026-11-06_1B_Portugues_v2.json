@@ -1,0 +1,592 @@
+{
+  "id": "2026-11-06-1b-portugues",
+  "titulo": "P e T: sons à descoberta",
+  "ano": 1,
+  "turma": "1.º B",
+  "disciplina": "Português",
+  "data": "2026-11-06",
+  "descricao": "Discriminar oralmente P e T e associar objetos familiares aos sons iniciais.",
+  "objetivo": "Discriminar oralmente P e T e associar objetos familiares aos sons iniciais.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "titulo": "Ouve os sons iniciais",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🐙",
+          "emoji": "🐙",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🖌️",
+          "emoji": "🖌️",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🥁",
+          "emoji": "🥁",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🍞",
+          "emoji": "🍞",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🌷",
+          "emoji": "🌷",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🐤",
+          "emoji": "🐤",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve a palavra. Que letra inicial? 🦃",
+          "emoji": "🦃",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        }
+      ],
+      "visual": "baloes"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Imagens à descoberta",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual é a primeira letra? 🐯",
+          "emoji": "🐯",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? 🐢",
+          "emoji": "🐢",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? 🍅",
+          "emoji": "🍅",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? ✂️",
+          "emoji": "✂️",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? 🍐",
+          "emoji": "🍐",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? 🪁",
+          "emoji": "🪁",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é a primeira letra? 🦆",
+          "emoji": "🦆",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        }
+      ],
+      "visual": "comboio"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Escuta com atenção",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Ouve e escolhe a letra. 📺",
+          "emoji": "📺",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🐟",
+          "emoji": "🐟",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🍿",
+          "emoji": "🍿",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🐙",
+          "emoji": "🐙",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🖌️",
+          "emoji": "🖌️",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🥁",
+          "emoji": "🥁",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Ouve e escolhe a letra. 🍞",
+          "emoji": "🍞",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        }
+      ],
+      "visual": "cartoes"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Escolhe a letra",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual é o som inicial? 🌷",
+          "emoji": "🌷",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? 🐤",
+          "emoji": "🐤",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? 🦃",
+          "emoji": "🦃",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? 🐯",
+          "emoji": "🐯",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? 🐢",
+          "emoji": "🐢",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? 🍅",
+          "emoji": "🍅",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Qual é o som inicial? ✂️",
+          "emoji": "✂️",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        }
+      ],
+      "visual": "buracos"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "O avião dos sons",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Que letra ouves primeiro? 🍐",
+          "emoji": "🍐",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 🪁",
+          "emoji": "🪁",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 🦆",
+          "emoji": "🦆",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 📺",
+          "emoji": "📺",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 🐟",
+          "emoji": "🐟",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 🍿",
+          "emoji": "🍿",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        },
+        {
+          "pergunta": "Que letra ouves primeiro? 🐙",
+          "emoji": "🐙",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ],
+          "dica": "Ouve novamente a palavra."
+        }
+      ],
+      "visual": "aviao"
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Caixas das primeiras letras",
+      "instrucao": "Coloca cada imagem na caixa certa.",
+      "itens": [
+        [
+          "🐙",
+          "P"
+        ],
+        [
+          "🖌️",
+          "P"
+        ],
+        [
+          "🥁",
+          "T"
+        ],
+        [
+          "🍞",
+          "P"
+        ],
+        [
+          "🌷",
+          "T"
+        ],
+        [
+          "🐤",
+          "P"
+        ],
+        [
+          "🦃",
+          "P"
+        ]
+      ],
+      "caixas": [
+        "P",
+        "T"
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Bónus: ouve e decide",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Desafio extra. Que letra inicia polvo? 🐙",
+          "emoji": "🐙",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia pincel? 🖌️",
+          "emoji": "🖌️",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia tambor? 🥁",
+          "emoji": "🥁",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia pão? 🍞",
+          "emoji": "🍞",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia tulipa? 🌷",
+          "emoji": "🌷",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia pinto? 🐤",
+          "emoji": "🐤",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Desafio extra. Que letra inicia peru? 🦃",
+          "emoji": "🦃",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        }
+      ],
+      "visual": "baloes"
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Bónus: desafio final",
+      "instrucao": "Ouve e toca na resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Última missão. Ouve tigre. Qual é o início? 🐯",
+          "emoji": "🐯",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve tartaruga. Qual é o início? 🐢",
+          "emoji": "🐢",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve tomate. Qual é o início? 🍅",
+          "emoji": "🍅",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve tesoura. Qual é o início? ✂️",
+          "emoji": "✂️",
+          "certa": "T",
+          "erradas": [
+            "P",
+            "D"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve pera. Qual é o início? 🍐",
+          "emoji": "🍐",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve papagaio. Qual é o início? 🪁",
+          "emoji": "🪁",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        },
+        {
+          "pergunta": "Última missão. Ouve pato. Qual é o início? 🦆",
+          "emoji": "🦆",
+          "certa": "P",
+          "erradas": [
+            "T",
+            "B"
+          ]
+        }
+      ],
+      "visual": "aviao"
+    }
+  ]
+}
