@@ -1,0 +1,115 @@
+{
+  "id": "2026-11-06_1B_Portugues_v1",
+  "titulo": "O T e o P",
+  "ano": 1,
+  "turma": "1.º B",
+  "disciplina": "Português",
+  "data": "2026-11-06",
+  "descricao": "Sílabas ta, te, ti, to, tu e palavras com p e t",
+  "objetivo": "Reconhecer as sílabas ta, te, ti, to, tu, distinguir o P do T e ler palavras com p e t.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões do T",
+      "instrucao": "Ouve e rebenta o balão certo.",
+      "itens": [
+        { "pergunta": "Rebenta o balão «ta».", "emoji": "👂", "certa": "ta", "erradas": ["to", "te"] },
+        { "pergunta": "Rebenta o balão «te».", "emoji": "👂", "certa": "te", "erradas": ["ti", "ta"] },
+        { "pergunta": "Rebenta o balão «ti».", "emoji": "👂", "certa": "ti", "erradas": ["te", "tu"] },
+        { "pergunta": "Rebenta o balão «to».", "emoji": "👂", "certa": "to", "erradas": ["tu", "ta"] },
+        { "pergunta": "Rebenta o balão «tu».", "emoji": "👂", "certa": "tu", "erradas": ["to", "ti"] },
+        { "pergunta": "Rebenta o balão «pe».", "emoji": "👂", "certa": "pe", "erradas": ["te", "pi"] },
+        { "pergunta": "Agora em letra maiúscula: rebenta o balão «TO».", "emoji": "👂", "certa": "TO", "erradas": ["TU", "PO"] },
+        { "pergunta": "Agora em letra maiúscula: rebenta o balão «PI».", "emoji": "👂", "certa": "PI", "erradas": ["TI", "PE"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Como começa?",
+      "instrucao": "Diz o nome do desenho. Toca no Ticl@s com a sílaba do início.",
+      "itens": [
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🍅", "certa": "to", "erradas": ["ta", "tu"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🐯", "certa": "ti", "erradas": ["te", "to"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "✂️", "certa": "te", "erradas": ["ti", "ta"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🦈", "certa": "tu", "erradas": ["to", "ti"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "☎️", "certa": "te", "erradas": ["ta", "ti"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🧱", "certa": "ti", "erradas": ["te", "tu"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🚕", "certa": "tá", "erradas": ["tó", "pá"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião do P e do T",
+      "instrucao": "Diz o nome do desenho. Começa por P ou por T? Leva o avião à nuvem certa.",
+      "itens": [
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🦆", "certa": "pa", "erradas": ["ta", "po"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "📺", "certa": "te", "erradas": ["pe", "ti"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🍐", "certa": "pe", "erradas": ["te", "pi"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🎹", "certa": "pi", "erradas": ["ti", "pe"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "👮", "certa": "po", "erradas": ["to", "pu"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🍮", "certa": "pu", "erradas": ["tu", "po"] },
+        { "pergunta": "Como começa o nome deste desenho?", "emoji": "🤡", "certa": "pa", "erradas": ["ta", "pe"] }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Lê e liga",
+      "instrucao": "Lê a palavra e liga-a ao desenho certo.",
+      "itens": [
+        ["pato", "🦆"],
+        ["pata", "🐾"],
+        ["pé", "🦶"],
+        ["pote", "🍯"],
+        ["papá", "👨‍🍼"],
+        ["teia", "🕸️"]
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "A sílaba que falta",
+      "instrucao": "Olha para o desenho e escolhe o pedaço que falta.",
+      "itens": [
+        { "frase": "___to", "emoji": "🦆", "certa": "pa", "erradas": ["ta", "po"] },
+        { "frase": "pa___", "emoji": "🐾", "certa": "ta", "erradas": ["to", "te"] },
+        { "frase": "___te", "emoji": "🍯", "certa": "po", "erradas": ["to", "pa"] },
+        { "frase": "pa___", "emoji": "👨‍🍼", "certa": "pá", "erradas": ["tá", "pó"] },
+        { "frase": "___a", "emoji": "🕸️", "certa": "tei", "erradas": ["teu", "pei"] },
+        { "frase": "p___", "emoji": "🦶", "certa": "é", "erradas": ["á", "ó"] }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas do P e do T",
+      "instrucao": "Diz o nome do desenho. Começa por P ou por T? Põe na caixa certa.",
+      "caixas": ["P", "T"],
+      "itens": [
+        ["🦚", "P"],
+        ["🐢", "T"],
+        ["🪶", "P"],
+        ["🚜", "T"],
+        ["🔋", "P"],
+        ["🥁", "T"],
+        ["🐧", "P"],
+        ["⛺", "T"]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "ordenar",
+      "titulo": "Constrói a palavra",
+      "instrucao": "Junta as sílabas pela ordem certa.",
+      "juntar": "",
+      "itens": [
+        { "pergunta": "Junta as sílabas.", "emoji": "🦆", "pecas": ["pa", "to"] },
+        { "pergunta": "Junta as sílabas.", "emoji": "🐾", "pecas": ["pa", "ta"] },
+        { "pergunta": "Junta as sílabas.", "emoji": "🍯", "pecas": ["po", "te"] },
+        { "pergunta": "Junta as sílabas.", "emoji": "🕸️", "pecas": ["tei", "a"] }
+      ]
+    }
+  ]
+}

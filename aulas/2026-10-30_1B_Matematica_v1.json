@@ -1,0 +1,114 @@
+{
+  "id": "2026-10-30_1B_Matematica_v1",
+  "titulo": "Detetives dos sólidos",
+  "ano": 1,
+  "turma": "1.º B",
+  "disciplina": "Matemática",
+  "data": "2026-10-30",
+  "descricao": "Reconhecer sólidos geométricos em objetos do dia a dia",
+  "objetivo": "Reconhecer a esfera, o cubo, o cilindro, o cone e o paralelepípedo em objetos do dia a dia.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões dos sólidos",
+      "instrucao": "Ouve e rebenta o balão certo.",
+      "itens": [
+        { "pergunta": "Qual tem a forma de uma esfera?", "emoji": "🔍", "certa": "⚽", "erradas": ["🎲", "🥫"] },
+        { "pergunta": "Qual tem a forma de um cubo?", "emoji": "🔍", "certa": "🎲", "erradas": ["⚽", "🧱"] },
+        { "pergunta": "Qual tem a forma de um cilindro?", "emoji": "🔍", "certa": "🥫", "erradas": ["🍦", "🎲"] },
+        { "pergunta": "Qual tem a forma de um cone?", "emoji": "🔍", "certa": "🍦", "erradas": ["🥫", "⚽"] },
+        { "pergunta": "Qual tem a forma de um paralelepípedo?", "emoji": "🔍", "certa": "🧱", "erradas": ["⚽", "🥫"] },
+        { "pergunta": "Qual tem a forma de uma esfera?", "emoji": "🔍", "certa": "🌍", "erradas": ["🧻", "🧃"] },
+        { "pergunta": "Qual tem a forma de um cubo?", "emoji": "🔍", "certa": "🧊", "erradas": ["🧃", "🔋"] }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Arruma os sólidos",
+      "instrucao": "Põe cada objeto na caixa do sólido com a mesma forma.",
+      "caixas": ["⚽ esfera", "🥫 cilindro", "🍦 cone"],
+      "itens": [
+        ["🏀", "⚽ esfera"],
+        ["🧻", "🥫 cilindro"],
+        ["🥕", "🍦 cone"],
+        ["🎱", "⚽ esfera"],
+        ["🕯️", "🥫 cilindro"],
+        ["🎉", "🍦 cone"]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "A mesma forma",
+      "instrucao": "Olha para o objeto. Toca no Ticl@s com o sólido da mesma forma.",
+      "itens": [
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🧶", "certa": "⚽", "erradas": ["🥫", "🍦"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🔋", "certa": "🥫", "erradas": ["🧱", "🍦"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "📕", "certa": "🧱", "erradas": ["🎲", "🥫"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🏐", "certa": "⚽", "erradas": ["🎲", "🍦"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🪵", "certa": "🥫", "erradas": ["⚽", "🧱"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🧽", "certa": "🧱", "erradas": ["🥫", "🍦"] },
+        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🛢️", "certa": "🥫", "erradas": ["🧱", "⚽"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio dos padrões",
+      "instrucao": "Descobre o padrão e escolhe a carruagem certa.",
+      "itens": [
+        { "pergunta": "O que vem a seguir? ⚽🎲⚽🎲⚽", "emoji": "🚂", "certa": "🎲", "erradas": ["⚽", "🥫"] },
+        { "pergunta": "O que vem a seguir? 🥫🥫🍦🥫🥫🍦🥫🥫", "emoji": "🚂", "certa": "🍦", "erradas": ["🥫", "⚽"] },
+        { "pergunta": "O que vem a seguir? 🍦⚽⚽🍦⚽⚽🍦", "emoji": "🚂", "certa": "⚽", "erradas": ["🍦", "🎲"] },
+        { "pergunta": "O que vem a seguir? 🎲🧱🥫🎲🧱🥫🎲", "emoji": "🚂", "certa": "🧱", "erradas": ["🥫", "🎲"] },
+        { "pergunta": "O que vem a seguir? 🧱🧱🎲🎲🧱🧱🎲", "emoji": "🚂", "certa": "🎲", "erradas": ["🧱", "⚽"] },
+        { "pergunta": "O que vem a seguir? ⚽🥫🍦⚽🥫🍦⚽🥫", "emoji": "🚂", "certa": "🍦", "erradas": ["⚽", "🥫"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião das contagens",
+      "instrucao": "Conta só os sólidos que o Ticl@s pede e leva o avião à nuvem certa.",
+      "itens": [
+        { "pergunta": "Quantas esferas? 🎲⚽🥫", "emoji": "✈️", "certa": "1", "erradas": ["2", "3"] },
+        { "pergunta": "Quantas esferas? ⚽🥫⚽", "emoji": "✈️", "certa": "2", "erradas": ["1", "3"] },
+        { "pergunta": "Quantos cubos? 🎲🎲⚽🎲", "emoji": "✈️", "certa": "3", "erradas": ["2", "4"] },
+        { "pergunta": "Quantos cilindros? 🥫🍦🥫🥫🍦🥫", "emoji": "✈️", "certa": "4", "erradas": ["3", "6"] },
+        { "pergunta": "Quantos cubos? 🎲🧱🎲🧱🎲🧱🎲", "emoji": "✈️", "certa": "4", "erradas": ["3", "7"] },
+        { "pergunta": "Quantos cones? 🍦⚽🍦🎲🍦🍦🍦", "emoji": "✈️", "certa": "5", "erradas": ["4", "7"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "titulo": "O intruso",
+      "instrucao": "Encontra o objeto que não pertence ao grupo.",
+      "itens": [
+        { "pergunta": "Qual não é uma esfera?", "emoji": "🕵️", "certa": "🥫", "erradas": ["🏀", "🌍"] },
+        { "pergunta": "Qual não é um cilindro?", "emoji": "🕵️", "certa": "🍦", "erradas": ["🧻", "🥁"] },
+        { "pergunta": "Qual não é um cubo?", "emoji": "🕵️", "certa": "🧱", "erradas": ["🎲", "🧊"] },
+        { "pergunta": "Qual não é um cone?", "emoji": "🕵️", "certa": "🔋", "erradas": ["🍦", "🥕"] },
+        { "pergunta": "Qual não é um paralelepípedo?", "emoji": "🕵️", "certa": "⚽", "erradas": ["📕", "🧃"] },
+        { "pergunta": "Qual não é um cilindro?", "emoji": "🕵️", "certa": "🧽", "erradas": ["🪵", "🛢️"] }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória das formas",
+      "instrucao": "Encontra dois objetos com a mesma forma.",
+      "itens": [
+        ["🔮", "🏀"],
+        ["🧊", "🎲"],
+        ["🥁", "🧻"],
+        ["🎉", "🥕"],
+        ["🧃", "📕"]
+      ]
+    }
+  ]
+}
