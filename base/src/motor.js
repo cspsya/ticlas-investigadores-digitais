@@ -1,29 +1,14 @@
-'use strict';
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · motor
    Para criar um jogo novo NÃO se altera este código:
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3';
+const VERSAO = 'V3.1';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
-const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'pares', 'classificar', 'ordenar'];
-const FASES = { aquecimento: 'Aquecimento', desafios: 'Desafios', escrita: 'Escrita', bonus: 'Bónus' };
-const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, pares: 20, classificar: 20, ordenar: 45 };
-const INSTRUCOES = {
-  escolher: 'Escolhe a resposta certa.',
-  verdadeiro_falso: 'Lê com atenção: é verdadeiro ou falso?',
-  completar: 'Completa a frase com a palavra que falta.',
-  escrever: 'Escreve a resposta e carrega em «Confirmar».',
-  frase: 'Escreve uma frase completa e carrega em «Confirmar».',
-  pares: 'Toca num elemento da esquerda e depois no seu par da direita.',
-  memoria: 'Vira duas cartas de cada vez e encontra os pares.',
-  classificar: 'Toca numa palavra e depois na caixa certa.',
-  ordenar: 'Toca nas peças pela ordem certa.'
-};
-const MSG_CERTO = ['Muito bem!', 'Isso mesmo!', 'Excelente investigação!', 'Boa! Acertaste!', 'Fantástico!'];
-const MSG_ERRADO = ['Ainda não. Pensa outra vez.', 'Quase! Lê com atenção.', 'Tenta de novo, com calma.'];
-const MSG_ANIMO = ['Vamos investigar!', 'Pensa com calma.', 'Tu consegues!', 'Lê com atenção.'];
+const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'pares', 'classificar', 'ordenar'];
+const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
+const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, pares: 20, classificar: 20, ordenar: 45 };
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
@@ -35,11 +20,11 @@ const TEMAS = {
   natal:       { nome: 'Natal', c: ['#2e7d4f', '#1b4d30', '#e2f3e8', '#c8323c', '#8f1f27', '#fffaf3', '#e7f2ea'], d: ['🎄', '⭐', '❄️', '🎁'], a: '🎁' },
   inverno:     { nome: 'Inverno', c: ['#3d7fb8', '#1f4d75', '#e3eef8', '#6f63c9', '#4a3f9a', '#f7fbff', '#e1edf8'], d: ['❄️', '☃️', '🧤', '🌨️'], a: '🧣' },
   internet:    { nome: 'Dia da Internet Segura', c: ['#3b6fd8', '#1d3f8a', '#e4ecfb', '#12a37a', '#0b7556', '#f6f9ff', '#e2ebfb'], d: ['🛡️', '💻', '🔒', '🌐'], a: '🛡️' },
-  carnaval:    { nome: 'Carnaval', c: ['#9b4fd0', '#5e2a85', '#f1e4fa', '#e0861a', '#a35f0c', '#fffaf2', '#f3e6fb'], d: ['🎭', '🎉', '🎊', '🪅'], a: '🎭' },
+  carnaval:    { nome: 'Carnaval', c: ['#9b4fd0', '#5e2a85', '#f1e4fa', '#e0861a', '#a35f0c', '#fffaf2', '#f3e6fb'], d: ['🎭', '🎉', '🎊', '🤡'], a: '🎭' },
   primavera:   { nome: 'Primavera', c: ['#4fa36b', '#2b6a40', '#e3f3e7', '#E8834A', '#b9582e', '#fbfff8', '#e5f4e8'], d: ['🌸', '🌼', '🦋', '🌱'], a: '🌼' },
   pascoa:      { nome: 'Páscoa', c: ['#5f9e59', '#3d6e38', '#e6f3e4', '#d9578a', '#a63a63', '#fffaf8', '#eef6ea'], d: ['🐣', '🌷', '🥚', '🐰'], a: '🐣' },
   festadaflor: { nome: 'Festa da Flor', c: ['#c93f80', '#8e2459', '#fbe3ef', '#e2802a', '#a85c12', '#fff8fb', '#fae5ef'], d: ['🌺', '🌸', '🌷', '💐'], a: '🌺' },
-  crianca:     { nome: 'Dia da Criança', c: ['#3a8fd6', '#1e5a8f', '#e3f0fb', '#f07a24', '#b5550f', '#fffaf2', '#e6f1fb'], d: ['🎈', '🪁', '🧸', '🎨'], a: '🎈' },
+  crianca:     { nome: 'Dia da Criança', c: ['#3a8fd6', '#1e5a8f', '#e3f0fb', '#f07a24', '#b5550f', '#fffaf2', '#e6f1fb'], d: ['🎈', '🧸', '🎨', '⚽'], a: '🎈' },
   verao:       { nome: 'Verão', c: ['#1a9bb5', '#0e6476', '#dff4f8', '#e28a12', '#a8620a', '#fffdf5', '#dff3f7'], d: ['☀️', '🏖️', '🌊', '🐚'], a: '🕶️' }
 };
 function pascoa(ano) { // algoritmo de Meeus/Jones/Butcher
@@ -92,6 +77,7 @@ function h(tag, props, ...filhos) {
   for (const f of filhos.flat()) { if (f == null || f === false) continue; e.append(f instanceof Node ? f : document.createTextNode(String(f))); }
   return e;
 }
+function encher(alvo, ...nos) { alvo.replaceChildren(...nos.flat().filter(Boolean)); }
 function baralhar(lista) { const a = lista.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function baralharDiferente(lista, igual = (x, y) => x === y) {
   if (lista.length < 2) return lista.slice();
@@ -102,7 +88,7 @@ function baralharDiferente(lista, igual = (x, y) => x === y) {
 const sorteio = lista => lista[Math.floor(Math.random() * lista.length)];
 const norm = s => String(s ?? '').trim().replace(/\s+/g, ' ').toLocaleLowerCase('pt-PT').normalize('NFC');
 const semAcentos = s => norm(s).normalize('NFD').replace(/[̀-ͯ]/g, '');
-const semPontuacaoFinal = s => norm(s).replace(/[.!?…]+$/, '');
+const semFim = s => String(s ?? '').trim().replace(/\s+/g, ' ').normalize('NFC').replace(/[.!?…]+$/, '');
 const palavras = s => String(s || '').normalize('NFC').split(/[^\p{L}\p{N}-]+/u).filter(Boolean);
 const temTexto = v => (typeof v === 'string' && v.trim() !== '') || typeof v === 'number';
 const timers = new Set();
@@ -111,6 +97,30 @@ function limparTimers() { timers.forEach(clearTimeout); timers.clear(); }
 function guardar(chave, valor) { try { localStorage.setItem(chave, JSON.stringify(valor)); } catch (e) { /* sem armazenamento: o jogo continua */ } }
 function ler(chave) { try { return JSON.parse(localStorage.getItem(chave) || 'null'); } catch (e) { return null; } }
 function apagar(chave) { try { localStorage.removeItem(chave); } catch (e) { } }
+
+/* ---------- língua da interface ---------- */
+function t(chave, vars) {
+  const L = T[prefs.lingua] || T.pt;
+  let s = L[chave] ?? T.pt[chave] ?? chave;
+  if (Array.isArray(s)) s = sorteio(s);
+  return vars ? String(s).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '') : s;
+}
+const nomeFase = f => t(f || 'desafios');
+
+/* ---------- comparação de respostas escritas ---------- */
+// Devolve 'certo', 'maiuscula', 'acentos' ou 'errado'.
+// Se a resposta esperada tiver maiúsculas (ex.: «Madeira»), a maiúscula conta, salvo "maiusculas": false.
+function compararResposta(aceites, escrito, exigirMaiuscula) {
+  const t1 = semFim(escrito);
+  for (const a of aceites) {
+    const a1 = semFim(a);
+    const exige = exigirMaiuscula ?? /\p{Lu}/u.test(a1);
+    if (exige ? a1 === t1 : norm(a1) === norm(t1)) return 'certo';
+  }
+  if (aceites.some(a => norm(semFim(a)) === norm(t1))) return 'maiuscula';
+  if (aceites.some(a => semAcentos(semFim(a)) === semAcentos(t1))) return 'acentos';
+  return 'errado';
+}
 
 /* ---------- validação do conteúdo (as mesmas regras de construir.py) ---------- */
 function validarAula(a) {
@@ -122,7 +132,7 @@ function validarAula(a) {
   a.rondas.forEach((r, ri) => {
     const onde = `Ronda ${ri + 1}${r && r.titulo ? ' («' + r.titulo + '»)' : ''}`;
     if (!r || !TIPOS.includes(r.tipo)) { e.push(`${onde}: tipo desconhecido «${r && r.tipo}». Tipos possíveis: ${TIPOS.join(', ')}.`); return; }
-    if (r.fase && !FASES[r.fase]) e.push(`${onde}: fase desconhecida «${r.fase}». Fases possíveis: ${Object.keys(FASES).join(', ')}.`);
+    if (r.fase && !FASES.includes(r.fase)) e.push(`${onde}: fase desconhecida «${r.fase}». Fases possíveis: ${FASES.join(', ')}.`);
     if (!Array.isArray(r.itens) || !r.itens.length) { e.push(`${onde}: falta a lista «itens».`); return; }
     if (r.tipo === 'classificar' && (!Array.isArray(r.caixas) || r.caixas.length < 2 || !r.caixas.every(temTexto))) e.push(`${onde}: «caixas» tem de ter pelo menos 2 caixas.`);
     r.itens.forEach((it, ii) => {
@@ -132,7 +142,8 @@ function validarAula(a) {
         if (it.erradas.some(x => norm(x) === norm(it.certa))) e.push(`${w}: a resposta certa também aparece em «erradas».`);
         if (new Set(it.erradas.map(norm)).size !== it.erradas.length) e.push(`${w}: há opções repetidas em «erradas».`);
       };
-      if (['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ordenar'].includes(r.tipo) && (!it || typeof it !== 'object' || Array.isArray(it))) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'ordenar'].includes(r.tipo) && (!it || typeof it !== 'object' || Array.isArray(it))) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (it && typeof it === 'object' && !Array.isArray(it) && it.maiusculas !== undefined && typeof it.maiusculas !== 'boolean') e.push(`${w}: «maiusculas» tem de ser true ou false (sem aspas).`);
       switch (r.tipo) {
         case 'escolher':
           if (!temTexto(it.pergunta)) e.push(`${w}: falta a «pergunta».`);
@@ -150,6 +161,9 @@ function validarAula(a) {
           if (!temTexto(it.pergunta)) e.push(`${w}: falta a «pergunta».`);
           if (it.resposta !== undefined && !(temTexto(it.resposta) || (Array.isArray(it.resposta) && it.resposta.length && it.resposta.every(temTexto)))) e.push(`${w}: «resposta» tem de ser um texto ou uma lista de respostas aceites.`);
           if (it.minPalavras !== undefined && !(Number.isInteger(it.minPalavras) && it.minPalavras > 0)) e.push(`${w}: «minPalavras» tem de ser um número inteiro.`);
+          break;
+        case 'ditado':
+          if (!temTexto(it.palavra)) e.push(`${w}: falta a «palavra» a ditar.`);
           break;
         case 'pares':
           if (!Array.isArray(it) || it.length !== 2 || !it.every(temTexto)) e.push(`${w}: cada par tem de ser ["esquerda", "direita"].`);
@@ -182,17 +196,21 @@ function minutosEstimados(rondas) {
 
 /* ---------- estado ---------- */
 const PREF = 'ticlas3-preferencias';
-let prefs = Object.assign({ modo: 'computador', perfil: 'turma', escala: 1, contraste: false, legivel: false, tema: 'auto', livre: false }, ler(PREF) || {});
+let prefs = Object.assign({ modo: 'computador', perfil: 'turma', escala: 1, contraste: false, legivel: false, tema: 'auto', livre: false, lingua: 'pt' }, ler(PREF) || {});
 let AULA = null, MASCOTE = {};
-const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], numero: '', profOk: false };
-const somLigado = () => prefs.modo === 'quadro' ? prefs.som !== false : prefs.som === true;
+const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], numero: '', concluido: false, profOk: false };
+const somLigado = () => prefs.som === true || (prefs.som !== false && prefs.modo === 'quadro');
 const apoio = () => prefs.perfil === 'apoio';
 const listaRondas = seq => AULA.rondas.map((r, i) => ({ r, i })).filter(x => seq === 'bonus' ? x.r.fase === 'bonus' : x.r.fase !== 'bonus').map(x => x.i);
-const chaveProgresso = () => 'ticlas3:' + (AULA.id || AULA.titulo) + ':' + (est.numero || 'sem-numero');
-function guardarProgresso() { guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases }); }
+const prefixoProgresso = () => 'ticlas3:' + (AULA.id || AULA.titulo) + ':';
+const chaveProgresso = () => prefixoProgresso() + (est.numero || 'sem-numero');
+function guardarProgresso() {
+  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, concluido: est.concluido, atualizado: new Date().toISOString() });
+}
 function totalEstrelas() { return Object.values(est.pontos).reduce((a, b) => a + b, 0); }
 function totalMaximo() { return Object.values(est.maximos).reduce((a, b) => a + b, 0); }
 function atualizarEstrelas() { $('#estrelas').textContent = '⭐ ' + totalEstrelas(); }
+function guardarPrefs() { guardar(PREF, prefs); }
 
 /* ---------- som e narração ---------- */
 let audio = null;
@@ -202,46 +220,62 @@ function som(tipo) {
     audio = audio || new (window.AudioContext || window.webkitAudioContext)();
     const notas = { certo: [660, 880], errado: [220, 185], fim: [523, 659, 784, 1046] }[tipo] || [440];
     notas.forEach((f, i) => {
-      const o = audio.createOscillator(), g = audio.createGain(), t = audio.currentTime + i * 0.12;
+      const o = audio.createOscillator(), g = audio.createGain(), tt = audio.currentTime + i * 0.12;
       o.type = tipo === 'errado' ? 'triangle' : 'sine'; o.frequency.value = f;
-      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.14, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.24);
-      o.connect(g).connect(audio.destination); o.start(t); o.stop(t + 0.26);
+      g.gain.setValueAtTime(0.0001, tt); g.gain.exponentialRampToValueAtTime(0.14, tt + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, tt + 0.24);
+      o.connect(g).connect(audio.destination); o.start(tt); o.stop(tt + 0.26);
     });
   } catch (e) { }
 }
-function falar(texto) {
-  if (!('speechSynthesis' in window) || !texto) return;
+const temFala = () => 'speechSynthesis' in window;
+function vozPT() {
+  if (!temFala()) return null;
+  const v = speechSynthesis.getVoices();
+  return v.find(x => /pt[-_]PT/i.test(x.lang)) || v.find(x => /^pt/i.test(x.lang)) || null;
+}
+const limparFala = s => String(s ?? '').replace(/\p{Extended_Pictographic}️?(?:‍\p{Extended_Pictographic}️?)*/gu, ' ').replace(/_{3,}/g, ' … ').replace(/\s+/g, ' ').trim();
+// Lê em voz alta uma sequência de partes; cada parte pode destacar um elemento enquanto é lida.
+function lerSequencia(partes, lento) {
+  if (!temFala()) return;
   try {
     speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(String(texto).replace(/_{3,}/g, ' … '));
-    u.lang = 'pt-PT'; u.rate = 0.9;
-    const vozes = speechSynthesis.getVoices();
-    const v = vozes.find(x => /pt[-_]PT/i.test(x.lang)) || vozes.find(x => /^pt/i.test(x.lang));
-    if (v) u.voice = v;
-    speechSynthesis.speak(u);
+    document.querySelectorAll('.a-ler').forEach(x => x.classList.remove('a-ler'));
+    const voz = vozPT();
+    partes.map(p => typeof p === 'string' ? { texto: p } : p).forEach(p => {
+      const txt = limparFala(p.texto);
+      if (!txt) return;
+      const u = new SpeechSynthesisUtterance(txt);
+      u.lang = 'pt-PT'; u.rate = lento ? 0.6 : 0.9; if (voz) u.voice = voz;
+      if (p.el) { u.onstart = () => p.el.classList.add('a-ler'); u.onend = u.onerror = () => p.el.classList.remove('a-ler'); }
+      speechSynthesis.speak(u);
+    });
   } catch (e) { }
 }
-function calar() { try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch (e) { } }
+const falar = (texto, lento) => lerSequencia([texto], lento);
+function calar() { try { if (temFala()) speechSynthesis.cancel(); } catch (e) { } document.querySelectorAll('.a-ler').forEach(x => x.classList.remove('a-ler')); }
+function atualizarBotaoSom() { const b = $('#btSom'); if (b) { b.textContent = somLigado() ? '🔊' : '🔇'; b.setAttribute('aria-pressed', String(somLigado())); } }
 
-/* ---------- aparência: tema, acessibilidade, modo ---------- */
+/* ---------- aparência: tema, acessibilidade, modo, língua ---------- */
 function temaAtual() { if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
 function aplicarAparencia() {
-  const t = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
-  ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, t.c[i]));
+  const tema = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
+  ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, tema.c[i]));
   s.setProperty('--escala', prefs.escala);
   const b = document.body;
   b.classList.toggle('contraste', !!prefs.contraste); b.classList.toggle('legivel', !!prefs.legivel);
   b.classList.toggle('quadro', prefs.modo === 'quadro');
   b.className = b.className.replace(/\bano-\d\b/g, '').trim(); if (AULA && AULA.ano) b.classList.add('ano-' + AULA.ano);
+  document.documentElement.lang = prefs.lingua === 'pt' ? 'pt-PT' : prefs.lingua;
   const decor = $('#decor'); decor.innerHTML = '';
   const pos = [[4, 12], [90, 18], [8, 70], [86, 76], [48, 92], [70, 6], [24, 40], [94, 48]];
-  pos.forEach(([x, y], i) => decor.append(h('span', { style: `left:${x}%;top:${y}%;animation-delay:${-i * 1.3}s` }, t.d[i % t.d.length])));
+  pos.forEach(([x, y], i) => decor.append(h('span', { style: `left:${x}%;top:${y}%;animation-delay:${-i * 1.3}s` }, tema.d[i % tema.d.length])));
+  atualizarBotaoSom();
 }
 function mascote(pose, extra) {
-  const t = TEMAS[temaAtual()] || TEMAS.neutro;
+  const tema = TEMAS[temaAtual()] || TEMAS.neutro;
   return h('div', { class: 'mascote' },
     h('img', { src: MASCOTE[pose] || MASCOTE.ola, alt: 'Ticl@s, o esquilo investigador', id: 'imgMascote' }),
-    t.a ? h('span', { class: 'acessorio', 'aria-hidden': 'true' }, t.a) : null,
+    tema.a ? h('span', { class: 'acessorio', 'aria-hidden': 'true' }, tema.a) : null,
     extra);
 }
 function poseMascote(pose, salta) {
@@ -263,37 +297,41 @@ function ecraErros(erros) {
 function ecraInicio() {
   limparTimers(); calar(); aplicarAparencia(); atualizarEstrelas();
   const guardado = ler(chaveProgresso());
-  const temGuardado = guardado && (Object.keys(guardado.feitas || {}).length || guardado.p > 0);
+  const temGuardado = guardado && !guardado.concluido && (Object.keys(guardado.feitas || {}).length || guardado.p > 0);
   const escolha = (grupo, valor, titulo, sub) => h('button', {
     class: 'escolha', 'aria-pressed': String(prefs[grupo] === valor),
-    onclick: () => { prefs[grupo] = valor; if (grupo === 'modo') delete prefs.som; guardar(PREF, prefs); ecraInicio(); }
+    onclick: () => { prefs[grupo] = valor; if (grupo === 'modo') delete prefs.som; guardarPrefs(); ecraInicio(); }
   }, titulo, h('small', null, sub));
   const tags = [AULA.ano + '.º ano', AULA.turma, AULA.disciplina, '≈ ' + (AULA.minutos || minutosEstimados(listaRondas('principal').map(i => AULA.rondas[i]))) + ' min'].filter(Boolean);
-  const numero = h('input', { id: 'numAluno', inputmode: 'numeric', maxlength: '3', value: est.numero, 'aria-label': 'Número do aluno', placeholder: 'ex.: 7' });
+  const numero = h('input', { id: 'numAluno', inputmode: 'numeric', maxlength: '3', value: est.numero, 'aria-label': t('numero'), placeholder: 'ex.: 7' });
   numero.addEventListener('input', () => { numero.value = numero.value.replace(/\D/g, ''); est.numero = numero.value; });
+  numero.addEventListener('change', () => ecraInicio());
+  const lingua = h('select', { id: 'lingua', 'aria-label': t('lingua'), onchange: e => { prefs.lingua = e.target.value; guardarPrefs(); ecraInicio(); } },
+    Object.entries(LINGUAS).map(([k, nome]) => h('option', { value: k, selected: k === prefs.lingua || null }, nome)));
   $('#app').replaceChildren(h('div', { class: 'inicio' },
-    mascote('ola', h('div', { class: 'balao', id: 'balao' }, 'Olá! Eu sou o Ticl@s.')),
+    mascote('ola', h('div', { class: 'balao', id: 'balao' }, t('ola'))),
     h('section', null,
-      h('div', { class: 'tags' }, tags.map(t => h('span', { class: 'tag' }, t))),
+      h('div', { class: 'linha-topo' },
+        h('div', { class: 'tags' }, tags.map(x => h('span', { class: 'tag' }, x))),
+        h('label', { class: 'seletor-lingua' }, '🌐', lingua)),
       h('h1', null, AULA.titulo),
       AULA.objetivo ? h('p', { class: 'instrucao' }, AULA.objetivo) : null,
-      h('div', { class: 'grupo-titulo' }, 'Onde vamos jogar?'),
+      h('div', { class: 'grupo-titulo' }, t('ondeJogar')),
       h('div', { class: 'escolhas' },
-        escolha('modo', 'quadro', '🖥️ Quadro interativo', 'Botões grandes, som e narração'),
-        escolha('modo', 'computador', '💻 Computador', 'Cada aluno no seu, sem som')),
-      h('div', { class: 'grupo-titulo' }, 'Como vamos jogar?'),
+        escolha('modo', 'quadro', t('quadro'), t('quadroSub')),
+        escolha('modo', 'computador', t('computador'), t('computadorSub'))),
+      h('div', { class: 'grupo-titulo' }, t('comoJogar')),
       h('div', { class: 'escolhas' },
-        escolha('perfil', 'turma', '👥 Modo turma', 'Todos os desafios'),
-        escolha('perfil', 'apoio', '🤝 Modo apoio', 'Menos opções e mais pistas')),
-      prefs.modo === 'computador' ? h('label', { class: 'numero' }, 'N.º do aluno (opcional):', numero) : null,
+        escolha('perfil', 'turma', t('turma'), t('turmaSub')),
+        escolha('perfil', 'apoio', t('apoio'), t('apoioSub'))),
+      prefs.modo === 'computador' ? h('label', { class: 'numero' }, t('numero'), numero) : null,
       h('div', { class: 'linha', style: 'justify-content:flex-start;margin-top:12px' },
-        h('button', { class: 'btn', id: 'btComecar', onclick: () => comecar(false) }, '▶ Começar'),
-        temGuardado ? h('button', { class: 'btn leve', id: 'btContinuar', onclick: () => comecar(true) }, '↺ Continuar onde parei') : null))));
-  numero.addEventListener('change', () => ecraInicio());
+        h('button', { class: 'btn', id: 'btComecar', onclick: () => comecar(false) }, t('comecar')),
+        temGuardado ? h('button', { class: 'btn leve', id: 'btContinuar', onclick: () => comecar(true) }, t('continuarOnde')) : null))));
 }
 function comecar(continuar) {
   const g = continuar ? ler(chaveProgresso()) : null;
-  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [] }, g || {});
+  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], concluido: false }, g || {});
   if (!g) apagar(chaveProgresso());
   if (audio && audio.state === 'suspended') audio.resume();
   iniciarRonda();
@@ -309,53 +347,59 @@ function iniciarRonda() {
   guardarProgresso(); atualizarEstrelas();
   const progresso = h('div', { class: 'progresso', 'aria-hidden': 'true' },
     lista.map((x, k) => h('i', { class: k === est.p ? 'atual' : est.feitas[x] ? 'feito' : '' })));
-  const fase = FASES[ronda.fase || 'desafios'];
   const area = h('div', { class: 'area', id: 'area' });
-  const btAnterior = h('button', { class: 'btn leve', id: 'btAnterior', disabled: est.p === 0, onclick: () => { est.p--; iniciarRonda(); } }, '◀ Anterior');
-  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? 'Terminar ▶' : 'Próximo ▶');
+  const btAnterior = h('button', { class: 'btn leve', id: 'btAnterior', disabled: est.p === 0, onclick: () => { est.p--; iniciarRonda(); } }, t('anterior'));
+  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
   $('#app').replaceChildren(
     progresso,
     h('div', { class: 'etiqueta' },
-      h('span', null, `${est.seq === 'bonus' ? 'Bónus' : 'Ronda'} ${est.p + 1} de ${lista.length}`),
-      h('span', { class: 'fase' }, fase)),
+      h('span', null, t(est.seq === 'bonus' ? 'rondaBonus' : 'ronda', { a: est.p + 1, b: lista.length })),
+      h('span', { class: 'fase' }, nomeFase(ronda.fase))),
     h('div', { class: 'palco' },
-      mascote(ronda.tipo === 'escrever' ? 'portatil' : 'aponta', h('div', { class: 'balao', id: 'balao' }, sorteio(MSG_ANIMO))),
+      mascote(['escrever', 'ditado'].includes(ronda.tipo) ? 'portatil' : 'aponta', h('div', { class: 'balao', id: 'balao' }, t('animo'))),
       area),
     h('div', { class: 'nav' }, btAnterior,
-      h('button', { class: 'btn leve', onclick: ecraInicio }, '🏠 Início'),
+      h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
       btProximo));
-  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
+  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
   est.feitas[ri] = true; guardarProgresso();
   const lista = listaRondas(est.seq), ultima = est.p === lista.length - 1;
-  poseMascote('trofeu', true); dizerBalao('Ronda concluída!'); som('fim');
-  const bt = $('#btProximo'); bt.disabled = false; bt.focus();
-  $('#area').replaceChildren(h('div', { style: 'text-align:center;padding:20px 0' },
+  poseMascote('trofeu', true); dizerBalao(t('rondaConcluida')); som('fim');
+  const bt = $('#btProximo'); bt.disabled = false;
+  encher($('#area'), h('div', { style: 'text-align:center;padding:20px 0' },
     h('div', { class: 'estrelas-grandes' }, '⭐'),
-    h('h2', { class: 'titulo-ronda' }, 'Ronda concluída!'),
-    h('p', { class: 'instrucao' }, `Conquistaste ${est.pontos[ri]} de ${est.maximos[ri]} estrelas nesta ronda.`),
+    h('h2', { class: 'titulo-ronda' }, t('rondaConcluida')),
+    h('p', { class: 'instrucao' }, t('estrelasRonda', { a: est.pontos[ri], b: est.maximos[ri] })),
     h('div', { class: 'linha' },
-      h('button', { class: 'btn leve', onclick: iniciarRonda }, '🔁 Repetir ronda'),
-      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? 'Ver resultado ▶' : 'Próxima ronda ▶'))));
+      h('button', { class: 'btn leve', onclick: iniciarRonda }, t('repetirRonda')),
+      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? t('verResultado') : t('proximaRonda')))));
+  $('#btSeguinte').focus({ preventScroll: true });
 }
 
 /* ---------- cabeçalho comum dentro da área ---------- */
-function encher(alvo, ...nos) { alvo.replaceChildren(...nos.flat().filter(Boolean)); }
-function cabecalhoRonda(ronda, instrucaoPadrao, contador) {
+// fala: função que devolve as partes a ler (com o elemento a destacar), para o botão 🔊 do cabeçalho
+function cabecalhoRonda(ronda, chaveInstrucao, contador, fala) {
+  const instr = ronda.instrucao || t(chaveInstrucao);
+  const traducao = prefs.lingua !== 'pt' && ronda.instrucao ? h('span', { class: 'traducao' }, t(chaveInstrucao)) : null;
   return [
-    h('h2', { class: 'titulo-ronda' }, ronda.titulo || FASES[ronda.fase || 'desafios']),
-    h('p', { class: 'instrucao' }, (ronda.instrucao || instrucaoPadrao) + (contador ? ' · ' + contador : ''))
+    h('div', { class: 'linha-titulo' },
+      h('h2', { class: 'titulo-ronda' }, ronda.titulo || nomeFase(ronda.fase)),
+      fala && somLigado() ? h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(fala()) }, '🔊') : null),
+    h('p', { class: 'instrucao' }, instr + (contador ? ' · ' + contador : ''), traducao)
   ];
 }
-function blocoPergunta(it, conteudo, textoFala) {
+// opcoes: função que devolve [{texto, el}] das opções, lidas a seguir à pergunta (útil no 1.º ano)
+function blocoPergunta(it, conteudo, textoFala, opcoes) {
   const filhos = [];
   if (it.emoji) filhos.push(h('span', { class: 'emoji', 'aria-hidden': 'true' }, it.emoji));
   if (it.imagem) filhos.push(h('img', { class: 'ilustra', src: it.imagem, alt: it.alt || '' }));
   if (conteudo) filhos.push(h('span', null, conteudo));
-  if (somLigado() && textoFala) filhos.push(h('button', { class: 'ouvir', 'aria-label': 'Ouvir', title: 'Ouvir', onclick: () => falar(textoFala) }, '🔊'));
-  if (somLigado() && textoFala && (AULA.ano <= 2 || AULA.lerAutomatico)) depois(350, () => falar(textoFala));
+  const partes = () => [textoFala, ...(opcoes ? opcoes() : [])];
+  if (somLigado() && (textoFala || opcoes)) filhos.push(h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(partes()) }, '🔊'));
+  if (somLigado() && (textoFala || opcoes) && (AULA.ano <= 2 || AULA.lerAutomatico)) depois(400, () => lerSequencia(partes()));
   return h('div', { class: 'pergunta' }, filhos);
 }
 
@@ -366,16 +410,17 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
   const fb = h('div', { class: 'feedback', role: 'status', 'aria-live': 'polite' });
   const dica = it.dica ? h('div', { class: 'dica', hidden: true }, '💡 ' + it.dica) : null;
   const explica = it.explicacao ? h('div', { class: 'explica', hidden: true }, it.explicacao) : null;
-  const btDica = it.dica && apoio() ? h('button', { class: 'btn leve', onclick: () => { dica.hidden = false; poseMascote('ideia'); btDica.hidden = true; } }, '💡 Pedir pista') : null;
-  const btContinuar = h('button', { class: 'btn azul', hidden: true }, 'Continuar ▶');
+  const btDica = it.dica && apoio() ? h('button', { class: 'btn leve', onclick: () => { dica.hidden = false; poseMascote('ideia'); btDica.hidden = true; } }, t('pista')) : null;
+  const btContinuar = h('button', { class: 'btn azul', hidden: true }, t('continuar'));
   const c = {
-    erros: 0, resolvido: false, bloqueado: false,
+    erros: 0, resolvido: false, bloqueado: false, fb,
     nos: [fb, dica, explica, h('div', { class: 'linha' }, btDica, btContinuar)],
-    aoContinuar(fn) { btContinuar.onclick = fn; },
+    aoContinuar(fn) { btContinuar.onclick = () => { calar(); fn(); }; },
+    aviso(msg) { fb.className = 'feedback bad'; fb.textContent = msg; poseMascote('duvida'); },
     errou(el, msg) {
       if (c.resolvido) return;
-      c.erros++; som('errado'); poseMascote('duvida', true); dizerBalao('Hmm… pensa outra vez.');
-      fb.className = 'feedback bad'; fb.textContent = msg || sorteio(MSG_ERRADO);
+      c.erros++; som('errado'); poseMascote('duvida', true); dizerBalao(t('pensaOutra'));
+      fb.className = 'feedback bad'; fb.textContent = msg || t('errado');
       if (el) { el.classList.add('errado'); el.disabled = true; }
       if (dica && c.erros >= 1) dica.hidden = false;
       if (c.erros >= limite) { c.revelar(); return; }
@@ -386,8 +431,8 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
       c.resolvido = true;
       const p = c.erros === 0 ? 3 : c.erros === 1 ? 1 : 0;
       est.pontos[ri] += p; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
-      som('certo'); poseMascote('ideia', true); dizerBalao(p === 3 ? 'À primeira! ⭐⭐⭐' : 'Conseguiste!');
-      fb.className = 'feedback ok'; fb.textContent = sorteio(MSG_CERTO) + (extra ? ' ' + extra : '');
+      som('certo'); poseMascote('ideia', true); dizerBalao(p === 3 ? t('primeira') : t('conseguiste'));
+      fb.className = 'feedback ok'; fb.textContent = t('certo') + (extra ? ' ' + extra : '');
       if (el) el.classList.add('certo');
       if (explica) explica.hidden = false;
       if (dica) dica.hidden = true; if (btDica) btDica.hidden = true;
@@ -395,9 +440,9 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
     },
     revelar() {
       c.resolvido = true; est.maximos[ri] += 3; guardarProgresso();
-      poseMascote('ideia'); dizerBalao('Vamos ver juntos.');
+      poseMascote('ideia'); dizerBalao(t('vamosVer'));
       fb.className = 'feedback bad';
-      fb.textContent = aoRevelar ? aoRevelar() : 'Vê a resposta certa.';
+      fb.textContent = aoRevelar ? aoRevelar() : '';
       if (explica) explica.hidden = false;
       if (btDica) btDica.hidden = true;
       btContinuar.hidden = false; btContinuar.focus({ preventScroll: true });
@@ -406,16 +451,16 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
   return c;
 }
 
-/* ---------- rondas item a item: escolher, verdadeiro_falso, completar, escrever, ordenar ---------- */
+/* ---------- rondas item a item ---------- */
 function rondaItens(ri, ronda, area) {
   const itens = ronda.baralhar ? baralhar(ronda.itens) : ronda.itens.slice();
   let i = 0;
   const seguinte = () => {
     limparTimers(); calar();
     if (i >= itens.length) { rondaConcluida(ri); return; }
-    poseMascote(ronda.tipo === 'escrever' ? 'portatil' : 'aponta'); dizerBalao(sorteio(MSG_ANIMO));
-    const it = itens[i], contador = itens.length > 1 ? `${i + 1} de ${itens.length}` : '';
-    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ordenar: itemOrdenar }[ronda.tipo];
+    poseMascote(['escrever', 'ditado'].includes(ronda.tipo) ? 'portatil' : 'aponta'); dizerBalao(t('animo'));
+    const it = itens[i], contador = itens.length > 1 ? `${i + 1} / ${itens.length}` : '';
+    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ditado: itemEscrever, ordenar: itemOrdenar }[ronda.tipo];
     desenhar(ri, ronda, it, area, contador, () => { i++; seguinte(); });
   };
   seguinte();
@@ -425,65 +470,81 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
   if (completar && !Array.isArray(it.erradas)) return itemEscrever(ri, ronda, Object.assign({}, it, { resposta: it.certa }), area, contador, proximo);
   const erradas = apoio() ? [sorteio(it.erradas)] : it.erradas;
   const opcoes = baralhar([it.certa, ...erradas]);
-  let lacuna = null, pergunta;
+  let lacuna = null, conteudo, fala;
   if (completar) {
     const [a, b] = String(it.frase).split('___');
     lacuna = h('span', { class: 'lacuna' }, '?');
-    pergunta = blocoPergunta(it, h('span', null, a, lacuna, b), String(it.frase));
-  } else pergunta = blocoPergunta(it, it.pergunta, it.pergunta);
+    conteudo = h('span', null, a, lacuna, b); fala = String(it.frase);
+  } else { conteudo = it.pergunta; fala = it.pergunta; }
   const botoes = [];
   const c = criarItem(ri, it, opcoes.length, () => {
     botoes.forEach(b => { b.disabled = true; if (b.dataset.certa) b.classList.add('revela'); });
     if (lacuna) lacuna.textContent = it.certa;
-    return `A resposta certa é «${it.certa}».`;
+    return t('respostaCerta', { r: it.certa });
   });
   const cores = ['#e8834a', '#5ba3d0', '#9b6bc9', '#4fa36b', '#d9578a'];
   const visual = completar ? 'cartoes' : (ronda.visual || 'cartoes');
-  const grelha = h('div', { class: 'opcoes v-' + visual });
+  const grelha = h('div', { class: 'opcoes v-' + visual }, visual === 'comboio' ? h('span', { class: 'loco', 'aria-hidden': 'true' }, '🚂') : null);
   opcoes.forEach((op, k) => {
     const b = h('button', { class: 'opcao', style: visual === 'baloes' ? `--bc:${cores[k % cores.length]}` : null, 'data-certa': op === it.certa ? '1' : null }, String(op));
     b.onclick = () => {
       if (c.resolvido || c.bloqueado) return;
+      calar();
       if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (lacuna) lacuna.textContent = it.certa; c.acertou(b); }
       else c.errou(b);
     };
     botoes.push(b); grelha.append(b);
   });
   c.aoContinuar(proximo);
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES[ronda.tipo], contador), pergunta, grelha, ...c.nos);
+  encher(area, cabecalhoRonda(ronda, 'i_' + ronda.tipo, contador),
+    blocoPergunta(it, conteudo, fala, () => botoes.map(b => ({ texto: b.textContent, el: b }))), grelha, c.nos);
 }
 function itemVF(ri, ronda, it, area, contador, proximo) {
   const botoes = [];
   const c = criarItem(ri, it, 2, () => {
     botoes.forEach(b => { b.disabled = true; if (b.dataset.certa) b.classList.add('revela'); });
-    return `Esta afirmação é ${it.verdade ? 'verdadeira' : 'falsa'}.`;
+    return it.verdade ? t('eVerdade') : t('eFalso');
   });
   const grelha = h('div', { class: 'opcoes' });
-  [[true, '✅ Verdadeiro'], [false, '❌ Falso']].forEach(([v, txt]) => {
+  [[true, t('verdadeiro')], [false, t('falso')]].forEach(([v, txt]) => {
     const b = h('button', { class: 'opcao', 'data-certa': v === it.verdade ? '1' : null }, txt);
-    b.onclick = () => { if (c.resolvido || c.bloqueado) return; if (v === it.verdade) { botoes.forEach(x => x.disabled = true); c.acertou(b); } else c.errou(b); };
+    b.onclick = () => { if (c.resolvido || c.bloqueado) return; calar(); if (v === it.verdade) { botoes.forEach(x => x.disabled = true); c.acertou(b); } else c.errou(b); };
     botoes.push(b); grelha.append(b);
   });
   c.aoContinuar(proximo);
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES.verdadeiro_falso, contador), blocoPergunta(it, it.afirmacao, it.afirmacao), grelha, ...c.nos);
+  encher(area, cabecalhoRonda(ronda, 'i_verdadeiro_falso', contador), blocoPergunta(it, it.afirmacao, it.afirmacao), grelha, c.nos);
 }
+// escrever (resposta exata ou frase livre), completar sem opções e ditado
 function itemEscrever(ri, ronda, it, area, contador, proximo) {
-  const livre = it.resposta === undefined;
-  const aceites = livre ? [] : [].concat(it.resposta).map(String);
+  const ditado = ronda.tipo === 'ditado';
+  const livre = !ditado && it.resposta === undefined;
+  const aceites = ditado ? [String(it.palavra)] : livre ? [] : [].concat(it.resposta).map(String);
   const minimo = it.minPalavras || (AULA.ano <= 1 ? 3 : 4);
   const campo = livre
-    ? h('textarea', { id: 'resposta', 'aria-label': 'A tua frase', spellcheck: 'false', autocomplete: 'off', placeholder: 'Escreve aqui a tua frase…' })
-    : h('input', { id: 'resposta', 'aria-label': 'A tua resposta', spellcheck: 'false', autocomplete: 'off', autocapitalize: 'off', placeholder: 'Escreve aqui' });
-  let lacuna = null, conteudo = it.pergunta;
-  if (ronda.tipo === 'completar') { const [a, b] = String(it.frase).split('___'); lacuna = h('span', { class: 'lacuna' }, '?'); conteudo = h('span', null, a, lacuna, b); }
-  const c = criarItem(ri, it, 0, () => { campo.disabled = true; btOk.disabled = true; if (lacuna) lacuna.textContent = aceites[0]; return `A resposta certa é «${aceites[0]}».`; });
-  const btOk = h('button', { class: 'btn' }, 'Confirmar');
-  let criterios = null;
+    ? h('textarea', { id: 'resposta', 'aria-label': t('escreveFrase'), spellcheck: 'false', autocomplete: 'off', placeholder: t('escreveFrase') })
+    : h('input', { id: 'resposta', 'aria-label': t('escreveAqui'), spellcheck: 'false', autocomplete: 'off', autocapitalize: 'off', placeholder: t('escreveAqui') });
+  let lacuna = null, conteudo = it.pergunta, fala = it.pergunta, chaveInstr = livre ? 'i_frase' : 'i_escrever';
+  if (ronda.tipo === 'completar') { const [a, b] = String(it.frase).split('___'); lacuna = h('span', { class: 'lacuna' }, '?'); conteudo = h('span', null, a, lacuna, b); fala = it.frase; chaveInstr = 'i_completar'; }
+  const btOk = h('button', { class: 'btn' }, t('confirmar'));
+  const c = criarItem(ri, it, 0, () => { campo.disabled = true; btOk.disabled = true; if (lacuna) lacuna.textContent = aceites[0]; return t('respostaCerta', { r: aceites[0] }); });
+  let topo, criterios = null;
+  if (ditado) {
+    chaveInstr = 'i_ditado';
+    const dizer = lento => lerSequencia(it.frase ? [it.palavra, it.frase, it.palavra] : [it.palavra, it.palavra], lento);
+    const aviso = !temFala() || (speechSynthesis.getVoices().length && !vozPT()) ? h('div', { class: 'dica' }, t('semVoz')) : null;
+    topo = h('div', { class: 'pergunta' },
+      it.emoji && apoio() ? h('span', { class: 'emoji', 'aria-hidden': 'true' }, it.emoji) : null,
+      h('button', { class: 'btn azul grande', onclick: () => dizer(false) }, t('ouvirOutra')),
+      h('button', { class: 'btn leve', onclick: () => dizer(true) }, t('devagar')),
+      apoio() ? h('span', { class: 'tag' }, t('letras', { n: [...String(it.palavra)].filter(x => /\p{L}/u.test(x)).length })) : null);
+    topo = [topo, aviso];
+    if (somLigado()) depois(400, () => dizer(false));
+  } else topo = blocoPergunta(it, conteudo, fala);
   const regras = livre ? [
-    it.palavra ? ['Usa a palavra «' + it.palavra + '»', t => palavras(t).some(p => norm(p) === norm(it.palavra))] : null,
-    [`Pelo menos ${minimo} palavras`, t => palavras(t).length >= minimo],
-    ['Começa com maiúscula', t => /^\p{Lu}/u.test(t.trim())],
-    ['Termina com . ! ou ?', t => /[.!?]$/.test(t.trim())]
+    it.palavra ? [t('cPalavra', { p: it.palavra }), x => palavras(x).some(p => norm(p) === norm(it.palavra))] : null,
+    [t('cMin', { n: minimo }), x => palavras(x).length >= minimo],
+    [t('cMaiuscula'), x => /^\p{Lu}/u.test(x.trim())],
+    [t('cPonto'), x => /[.!?]$/.test(x.trim())]
   ].filter(Boolean) : [];
   if (livre) {
     criterios = h('ul', { class: 'criterios' }, regras.map(([txt]) => h('li', null, txt)));
@@ -491,37 +552,35 @@ function itemEscrever(ri, ronda, it, area, contador, proximo) {
   }
   const verificar = () => {
     if (c.resolvido || c.bloqueado) return;
-    const t = campo.value;
-    if (!t.trim()) { campo.focus(); return; }
+    const escrito = campo.value;
+    if (!escrito.trim()) { campo.focus(); return; }
     if (livre) {
-      const falta = regras.filter(([, f]) => !f(t)).map(([txt]) => txt.toLowerCase());
-      if (falta.length) { const fb = c.nos[0]; fb.className = 'feedback bad'; fb.textContent = 'Falta: ' + falta.join('; ') + '.'; poseMascote('duvida'); return; }
-      est.frases.push({ pergunta: it.pergunta, frase: t.trim() });
-      campo.disabled = true; btOk.disabled = true; c.acertou(null, 'Frase completa!');
+      const falta = regras.filter(([, f]) => !f(escrito)).map(([txt]) => txt.toLowerCase());
+      if (falta.length) { c.aviso(t('falta', { r: falta.join('; ') })); return; }
+      est.frases.push({ pergunta: it.pergunta, frase: escrito.trim() });
+      campo.disabled = true; btOk.disabled = true; c.acertou(null, t('fraseCompleta'));
       return;
     }
-    if (aceites.some(a => semPontuacaoFinal(a) === semPontuacaoFinal(t))) { campo.disabled = true; btOk.disabled = true; campo.classList.add('certo'); if (lacuna) lacuna.textContent = t.trim(); c.acertou(null); }
-    else if (aceites.some(a => semAcentos(a).replace(/[.!?…]+$/, '') === semAcentos(t).replace(/[.!?…]+$/, ''))) c.errou(null, 'Quase! Verifica os acentos.');
-    else c.errou(null);
-    if (!c.resolvido) { campo.select(); }
+    const r = compararResposta(aceites, escrito, it.maiusculas);
+    if (r === 'certo') { campo.disabled = true; btOk.disabled = true; campo.classList.add('certo'); if (lacuna) lacuna.textContent = escrito.trim(); c.acertou(null, ditado ? '«' + it.palavra + '»' : ''); }
+    else c.errou(null, r === 'maiuscula' ? t('quaseMaiuscula') : r === 'acentos' ? t('quaseAcentos') : null);
+    if (!c.resolvido) campo.select();
   };
   btOk.onclick = verificar;
   if (!livre) campo.addEventListener('keydown', e => { if (e.key === 'Enter') verificar(); });
   c.aoContinuar(proximo);
-  const instr = ronda.tipo === 'completar' ? INSTRUCOES.completar : livre ? INSTRUCOES.frase : INSTRUCOES.escrever;
-  encher(area, ...cabecalhoRonda(ronda, instr, contador), blocoPergunta(it, conteudo, ronda.tipo === 'completar' ? it.frase : it.pergunta),
-    h('div', { class: 'escrita' }, campo, btOk), criterios, ...c.nos);
+  encher(area, cabecalhoRonda(ronda, chaveInstr, contador), topo, h('div', { class: 'escrita' }, campo, btOk), criterios, c.nos);
   if (prefs.modo === 'computador') depois(50, () => campo.focus({ preventScroll: true }));
 }
 function itemOrdenar(ri, ronda, it, area, contador, proximo) {
   const juntar = it.juntar ?? ronda.juntar ?? ' ';
   const certas = it.pecas.map(String);
-  const pecas = certas.map((t, k) => ({ t, k }));
+  const pecas = certas.map((x, k) => ({ t: x, k }));
   const fixas = apoio() ? 1 : 0; // no modo apoio a primeira peça já vem colocada
   let montadas = pecas.slice(0, fixas);
   let soltas = baralharDiferente(pecas.slice(fixas), (x, y) => x.k === y.k);
-  const montagem = h('div', { class: 'montagem', 'aria-live': 'polite' }), bandeja = h('div', { class: 'pecas' });
-  const c = criarItem(ri, it, 0, () => { montadas = pecas.slice(); soltas = []; desenhar(true); return `A ordem certa é: «${certas.join(juntar)}».`; });
+  const montagem = h('div', { class: 'montagem', 'aria-live': 'polite', 'data-vazio': t('montagemVazia') }), bandeja = h('div', { class: 'pecas' });
+  const c = criarItem(ri, it, 0, () => { montadas = pecas.slice(); soltas = []; desenhar(true); return t('ordemCerta', { r: certas.join(juntar) }); });
   function desenhar(fim) {
     montagem.replaceChildren(...montadas.map((p, k) => h('button', {
       class: 'peca' + (fim || k < fixas || p.ok ? ' fixa' : ''), disabled: fim || k < fixas || p.ok || null,
@@ -535,16 +594,17 @@ function itemOrdenar(ri, ronda, it, area, contador, proximo) {
   function verificar() {
     const certo = montadas.every((p, k) => norm(p.t) === norm(certas[k]));
     if (certo) { montadas.forEach(p => p.ok = true); desenhar(true); c.acertou(null, '«' + certas.join(juntar) + '»'); return; }
-    // as peças bem colocadas ficam; as outras voltam para a bandeja
+    // as peças bem colocadas no início ficam; as outras voltam para a bandeja
     const ficam = [], voltam = [];
     montadas.forEach((p, k) => { if (k < fixas || (norm(p.t) === norm(certas[k]) && ficam.length === k)) { p.ok = true; ficam.push(p); } else voltam.push(p); });
     montadas = ficam; soltas = baralhar(voltam);
-    c.errou(null, 'Ainda não. As peças verdes estão no sítio certo.');
+    c.errou(null, t('pecasVerdes'));
     if (!c.resolvido) desenhar();
   }
   desenhar();
   c.aoContinuar(proximo);
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES.ordenar, contador), blocoPergunta(it, it.pergunta || null, it.pergunta), montagem, bandeja, ...c.nos);
+  const fala = () => [...bandeja.querySelectorAll('.peca')].map(b => ({ texto: b.textContent, el: b }));
+  encher(area, cabecalhoRonda(ronda, 'i_ordenar', contador, fala), blocoPergunta(it, it.pergunta || null, it.pergunta), montagem, bandeja, c.nos);
 }
 
 /* ---------- rondas por ecrãs: pares e classificar ---------- */
@@ -552,7 +612,7 @@ function porEcras(lista) { const n = apoio() ? 3 : 6, out = []; for (let k = 0; 
 function rondaPares(ri, ronda, area) {
   const ecras = porEcras(ronda.baralhar ? baralhar(ronda.itens) : ronda.itens.slice());
   let e = 0;
-  const seguinte = () => { if (e >= ecras.length) { rondaConcluida(ri); return; } (ronda.visual === 'memoria' ? ecraMemoria : ecraLigar)(ri, ronda, area, ecras[e], ecras.length > 1 ? `parte ${e + 1} de ${ecras.length}` : '', () => { e++; seguinte(); }); };
+  const seguinte = () => { if (e >= ecras.length) { rondaConcluida(ri); return; } (ronda.visual === 'memoria' ? ecraMemoria : ecraLigar)(ri, ronda, area, ecras[e], ecras.length > 1 ? t('parte', { a: e + 1, b: ecras.length }) : '', () => { e++; seguinte(); }); };
   seguinte();
 }
 function ecraLigar(ri, ronda, area, pares, contador, proximo) {
@@ -567,7 +627,7 @@ function ecraLigar(ri, ronda, area, pares, contador, proximo) {
     const ie = esq.findIndex(x => x.k === k), id = dir.findIndex(x => x.k === k), cor = cores[k % cores.length];
     [bE[ie], bD[id]].forEach(b => { b.disabled = true; b.classList.remove('sel'); b.classList.add('fixa'); b.style.borderColor = cor; b.style.boxShadow = `0 4px 0 ${cor}`; if (revelado) b.style.borderStyle = 'dashed'; });
     feitos++;
-    if (feitos === pares.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = 'Todos os pares ligados!'; depois(900, proximo); }
+    if (feitos === pares.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = t('paresLigados'); depois(900, proximo); }
   };
   const tentar = () => {
     if (selE == null || selD == null) return;
@@ -575,18 +635,19 @@ function ecraLigar(ri, ronda, area, pares, contador, proximo) {
     selE = selD = null; be.classList.remove('sel'); bd.classList.remove('sel');
     if (a.k === b.k) {
       const p = a.erros === 0 ? 3 : a.erros === 1 ? 1 : 0; est.pontos[ri] += p; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
-      som('certo'); poseMascote('ideia', true); fb.className = 'feedback ok'; fb.textContent = sorteio(MSG_CERTO); fixar(a.k);
+      som('certo'); poseMascote('ideia', true); fb.className = 'feedback ok'; fb.textContent = t('certo'); fixar(a.k);
     } else {
       a.erros++; som('errado'); poseMascote('duvida', true); fb.className = 'feedback bad';
       be.classList.add('errado'); bd.classList.add('errado'); bloqueado = true;
       depois(600, () => { be.classList.remove('errado'); bd.classList.remove('errado'); bloqueado = false; });
-      if (a.erros >= limite) { fb.textContent = `«${a.t}» liga com «${pares[a.k][1]}».`; est.maximos[ri] += 3; guardarProgresso(); depois(600, () => fixar(a.k, true)); }
-      else fb.textContent = sorteio(MSG_ERRADO);
+      if (a.erros >= limite) { fb.textContent = t('ligaCom', { a: a.t, b: pares[a.k][1] }); est.maximos[ri] += 3; guardarProgresso(); depois(600, () => fixar(a.k, true)); }
+      else fb.textContent = t('errado');
     }
   };
   bE.forEach((b, k) => b.onclick = () => { if (bloqueado) return; bE.forEach(x => x.classList.remove('sel')); selE = k; b.classList.add('sel'); tentar(); });
   bD.forEach((b, k) => b.onclick = () => { if (bloqueado) return; bD.forEach(x => x.classList.remove('sel')); selD = k; b.classList.add('sel'); tentar(); });
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES.pares, contador),
+  const fala = () => [...bE, ...bD].filter(b => !b.disabled).map(b => ({ texto: b.textContent, el: b }));
+  encher(area, cabecalhoRonda(ronda, 'i_pares', contador, fala),
     h('div', { class: 'colunas' }, h('div', { class: 'col' }, bE), h('div', { class: 'col' }, bD)), fb);
 }
 function ecraMemoria(ri, ronda, area, pares, contador, proximo) {
@@ -597,91 +658,100 @@ function ecraMemoria(ri, ronda, area, pares, contador, proximo) {
   botoes.forEach((b, i) => b.onclick = () => {
     if (ocupado || viradas.includes(i) || b.classList.contains('par')) return;
     b.textContent = cartas[i].t; b.classList.add('virada'); viradas.push(i);
+    if (somLigado()) falar(cartas[i].t);
     if (viradas.length < 2) return;
     const [x, y] = viradas;
     if (cartas[x].k === cartas[y].k) {
       viradas = []; feitos++; est.pontos[ri] += 3; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
       [x, y].forEach(n => { botoes[n].classList.add('par'); botoes[n].disabled = true; });
-      som('certo'); fb.className = 'feedback ok'; fb.textContent = 'Encontraste um par!';
-      if (feitos === pares.length) { fb.textContent = 'Encontraste todos os pares!'; poseMascote('ideia', true); depois(900, proximo); }
+      som('certo'); fb.className = 'feedback ok'; fb.textContent = t('umPar');
+      if (feitos === pares.length) { fb.textContent = t('todosPares'); poseMascote('ideia', true); depois(900, proximo); }
     } else {
-      ocupado = true; fb.className = 'feedback'; fb.textContent = 'Não é par. Memoriza e tenta outra vez.';
+      ocupado = true; fb.className = 'feedback'; fb.textContent = t('naoPar');
       depois(1000, () => { [x, y].forEach(n => { botoes[n].textContent = '?'; botoes[n].classList.remove('virada'); }); viradas = []; ocupado = false; });
     }
   });
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES.memoria, contador), h('div', { class: 'memoria' }, botoes), fb);
+  encher(area, cabecalhoRonda(ronda, 'i_memoria', contador), h('div', { class: 'memoria' }, botoes), fb);
 }
 function rondaClassificar(ri, ronda, area) {
   const ecras = porEcras(baralhar(ronda.itens));
   let e = 0;
-  const seguinte = () => { if (e >= ecras.length) { rondaConcluida(ri); return; } ecraClassificar(ri, ronda, area, ecras[e], ecras.length > 1 ? `parte ${e + 1} de ${ecras.length}` : '', () => { e++; seguinte(); }); };
+  const seguinte = () => { if (e >= ecras.length) { rondaConcluida(ri); return; } ecraClassificar(ri, ronda, area, ecras[e], ecras.length > 1 ? t('parte', { a: e + 1, b: ecras.length }) : '', () => { e++; seguinte(); }); };
   seguinte();
 }
 function ecraClassificar(ri, ronda, area, itens, contador, proximo) {
   const limite = apoio() ? 3 : 2;
-  const pecas = itens.map(([t, cx]) => ({ t: String(t), cx, erros: 0 }));
+  const pecas = itens.map(([x, cx]) => ({ t: String(x), cx, erros: 0 }));
   let sel = null, feitos = 0, bloqueado = false;
   const fb = h('div', { class: 'feedback', role: 'status' });
   const bandeja = h('div', { class: 'pecas' });
-  const caixas = ronda.caixas.map(nome => {
-    const lista = h('div', { style: 'display:flex;flex-wrap:wrap;gap:6px;justify-content:center' });
-    const el = h('div', { class: 'caixa', role: 'button', tabindex: '0', 'aria-label': 'Caixa ' + nome }, h('h4', null, String(nome)), lista);
-    el.onclick = () => largar(nome, el, lista);
-    el.onkeydown = ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); largar(nome, el, lista); } };
-    el.ondragover = ev => { ev.preventDefault(); el.classList.add('alvo'); };
-    el.ondragleave = () => el.classList.remove('alvo');
-    el.ondrop = ev => { ev.preventDefault(); el.classList.remove('alvo'); const k = +ev.dataTransfer.getData('text/plain'); if (Number.isInteger(k) && botoes[k] && !botoes[k].disabled) { escolher(k); largar(nome, el, lista); } };
-    return { nome, el, lista };
-  });
   const botoes = pecas.map((p, k) => {
     const b = h('button', { class: 'peca', draggable: 'true' }, p.t);
     b.onclick = () => escolher(k);
     b.ondragstart = ev => { ev.dataTransfer.setData('text/plain', String(k)); escolher(k); };
     return b;
   });
-  function escolher(k) { if (bloqueado || botoes[k].disabled) return; botoes.forEach(b => b.classList.remove('sel')); sel = k; botoes[k].classList.add('sel'); }
+  const caixas = ronda.caixas.map(nome => {
+    const lista = h('div', { class: 'lista-caixa' });
+    const el = h('div', { class: 'caixa', role: 'button', tabindex: '0', 'aria-label': String(nome) }, h('h4', null, String(nome)), lista);
+    el.onclick = () => largar(nome, el);
+    el.onkeydown = ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); largar(nome, el); } };
+    el.ondragover = ev => { ev.preventDefault(); el.classList.add('alvo'); };
+    el.ondragleave = () => el.classList.remove('alvo');
+    el.ondrop = ev => { ev.preventDefault(); el.classList.remove('alvo'); const k = +ev.dataTransfer.getData('text/plain'); if (Number.isInteger(k) && botoes[k] && !botoes[k].disabled) { escolher(k); largar(nome, el); } };
+    return { nome, el, lista };
+  });
+  function escolher(k) {
+    if (bloqueado || botoes[k].disabled) return;
+    botoes.forEach(b => b.classList.remove('sel')); sel = k; botoes[k].classList.add('sel');
+    if (somLigado() && AULA.ano <= 2) falar(pecas[k].t);
+  }
   function colocar(k, revelado) {
     const p = pecas[k], cx = caixas.find(c => c.nome === p.cx), b = botoes[k];
     b.classList.remove('sel'); b.classList.add('fixa'); b.disabled = true; b.draggable = false; if (revelado) b.style.borderStyle = 'dashed';
     cx.lista.append(b); feitos++;
-    if (feitos === pecas.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = 'Tudo arrumado!'; poseMascote('ideia', true); depois(900, proximo); }
+    if (feitos === pecas.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = t('arrumado'); poseMascote('ideia', true); depois(900, proximo); }
   }
   function largar(nome, el) {
-    if (bloqueado || sel == null) { if (sel == null) { fb.className = 'feedback'; fb.textContent = 'Primeiro toca numa palavra.'; } return; }
+    if (bloqueado) return;
+    if (sel == null) { fb.className = 'feedback'; fb.textContent = t('tocaPrimeiro'); return; }
     const k = sel, p = pecas[k]; sel = null;
     if (p.cx === nome) {
       const pts = p.erros === 0 ? 3 : p.erros === 1 ? 1 : 0; est.pontos[ri] += pts; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
-      som('certo'); fb.className = 'feedback ok'; fb.textContent = sorteio(MSG_CERTO); colocar(k);
+      som('certo'); fb.className = 'feedback ok'; fb.textContent = t('certo'); colocar(k);
     } else {
       p.erros++; som('errado'); poseMascote('duvida', true); fb.className = 'feedback bad';
       botoes[k].classList.remove('sel'); botoes[k].classList.add('errado'); el.classList.add('alvo'); bloqueado = true;
       depois(650, () => { botoes[k].classList.remove('errado'); el.classList.remove('alvo'); bloqueado = false; });
-      if (p.erros >= limite) { fb.textContent = `«${p.t}» vai para a caixa «${p.cx}».`; est.maximos[ri] += 3; guardarProgresso(); depois(650, () => colocar(k, true)); }
-      else fb.textContent = sorteio(MSG_ERRADO);
+      if (p.erros >= limite) { fb.textContent = t('vaiPara', { a: p.t, b: p.cx }); est.maximos[ri] += 3; guardarProgresso(); depois(650, () => colocar(k, true)); }
+      else fb.textContent = t('errado');
     }
   }
   bandeja.append(...botoes);
-  encher(area, ...cabecalhoRonda(ronda, INSTRUCOES.classificar, contador), bandeja, h('div', { class: 'caixas' }, caixas.map(c => c.el)), fb);
+  const fala = () => [...caixas.map(c => ({ texto: c.nome, el: c.el })), ...botoes.filter(b => !b.disabled).map(b => ({ texto: b.textContent, el: b }))];
+  encher(area, cabecalhoRonda(ronda, 'i_classificar', contador, fala), bandeja, h('div', { class: 'caixas' }, caixas.map(c => c.el)), fb);
 }
 
 /* ---------- fim e certificado ---------- */
 function ecraFim() {
-  limparTimers(); calar(); guardarProgresso();
+  limparTimers(); calar();
+  if (est.seq === 'principal') est.concluido = true;
+  guardarProgresso();
   const pts = totalEstrelas(), max = totalMaximo() || 1, pct = pts / max;
   const grandes = pct >= 0.8 ? 3 : pct >= 0.5 ? 2 : 1;
   const temBonus = est.seq === 'principal' && listaRondas('bonus').length > 0;
   som('fim');
   $('#app').replaceChildren(h('div', { style: 'text-align:center' },
     mascote('trofeu'),
-    h('div', { class: 'estrelas-grandes', 'aria-label': grandes + ' estrelas' }, '⭐'.repeat(grandes) + '☆'.repeat(3 - grandes)),
-    h('h2', { class: 'titulo-ronda' }, est.seq === 'bonus' ? 'Desafios bónus concluídos!' : 'Missão cumprida!'),
-    h('p', { class: 'instrucao' }, `Conquistaste ${pts} de ${max} estrelas.`),
-    est.frases.length ? h('div', { class: 'frases-lista' }, h('strong', null, 'As tuas frases:'), h('ul', null, est.frases.map(f => h('li', null, f.frase)))) : null,
+    h('div', { class: 'estrelas-grandes', 'aria-label': grandes + ' / 3' }, '⭐'.repeat(grandes) + '☆'.repeat(3 - grandes)),
+    h('h2', { class: 'titulo-ronda' }, est.seq === 'bonus' ? t('bonusFeitos') : t('missao')),
+    h('p', { class: 'instrucao' }, t('estrelasTotal', { a: pts, b: max })),
+    est.frases.length ? h('div', { class: 'frases-lista' }, h('strong', null, t('tuasFrases')), h('ul', null, est.frases.map(f => h('li', null, f.frase)))) : null,
     h('div', { class: 'linha', style: 'margin-top:14px' },
-      h('button', { class: 'btn', onclick: certificado }, '🏅 Certificado'),
-      temBonus ? h('button', { class: 'btn azul', id: 'btBonus', onclick: () => { est.seq = 'bonus'; est.p = 0; iniciarRonda(); } }, '⭐ Desafios bónus') : null,
-      h('button', { class: 'btn leve', onclick: () => comecar(false) }, '🔁 Jogar outra vez'),
-      h('button', { class: 'btn leve', onclick: ecraInicio }, '🏠 Início'))));
+      h('button', { class: 'btn', onclick: certificado }, t('certificado')),
+      temBonus ? h('button', { class: 'btn azul', id: 'btBonus', onclick: () => { est.seq = 'bonus'; est.p = 0; iniciarRonda(); } }, t('desafiosBonus')) : null,
+      h('button', { class: 'btn leve', onclick: () => comecar(false) }, t('outraVez')),
+      h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')))));
 }
 function certificado() {
   const hoje = new Date().toLocaleDateString('pt-PT', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -703,18 +773,17 @@ function janela(...conteudo) {
 }
 function abrirAcessibilidade() {
   const j = janela(
-    h('h3', null, 'Aa  Opções de leitura'),
-    h('label', null, 'Tamanho da letra', h('span', { class: 'linha' },
-      h('button', { class: 'icon', onclick: () => mudar('escala', Math.max(0.85, +(prefs.escala - 0.15).toFixed(2))) }, 'A−'),
-      h('button', { class: 'icon', onclick: () => mudar('escala', Math.min(1.45, +(prefs.escala + 0.15).toFixed(2))) }, 'A+'))),
+    h('h3', null, 'Aa'),
+    h('label', null, 'A− / A+', h('span', { class: 'linha' },
+      h('button', { class: 'icon', 'aria-label': 'Letra mais pequena', onclick: () => mudar('escala', Math.max(0.85, +(prefs.escala - 0.15).toFixed(2))) }, 'A−'),
+      h('button', { class: 'icon', 'aria-label': 'Letra maior', onclick: () => mudar('escala', Math.min(1.45, +(prefs.escala + 0.15).toFixed(2))) }, 'A+'))),
     h('label', null, 'Alto contraste', h('input', { type: 'checkbox', checked: prefs.contraste || null, onchange: e => mudar('contraste', e.target.checked) })),
     h('label', null, 'Letra mais legível', h('input', { type: 'checkbox', checked: prefs.legivel || null, onchange: e => mudar('legivel', e.target.checked) })),
-    h('div', { class: 'linha' }, h('button', { class: 'btn', onclick: () => j.remove() }, 'Fechar')));
-  function mudar(k, v) { prefs[k] = v; guardar(PREF, prefs); aplicarAparencia(); }
+    h('div', { class: 'linha' }, h('button', { class: 'btn', onclick: () => j.remove() }, '✔')));
+  function mudar(k, v) { prefs[k] = v; guardarPrefs(); aplicarAparencia(); }
 }
 async function sha256(texto) {
-  const dados = new TextEncoder().encode(texto);
-  const r = await crypto.subtle.digest('SHA-256', dados);
+  const r = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
   return [...new Uint8Array(r)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 function abrirProfessor() {
@@ -730,32 +799,76 @@ function abrirProfessor() {
     h('div', { class: 'linha', style: 'margin-top:10px' }, h('button', { class: 'btn leve', onclick: () => j.remove() }, 'Fechar'), h('button', { class: 'btn', onclick: entrar }, 'Entrar')));
   campo.focus();
 }
+// resultados guardados neste computador para este jogo (um registo por número de aluno)
+function resultadosLocais() {
+  const pref = prefixoProgresso(), out = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (!k || !k.startsWith(pref)) continue;
+      const v = ler(k); if (!v) continue;
+      const soma = o => Object.values(o || {}).reduce((a, b) => a + b, 0);
+      const principais = listaRondas('principal');
+      out.push({
+        chave: k, numero: k.slice(pref.length) === 'sem-numero' ? '—' : k.slice(pref.length),
+        estrelas: soma(v.pontos), maximo: soma(v.maximos),
+        rondas: principais.filter(ri => v.feitas && v.feitas[ri]).length + '/' + principais.length,
+        concluido: !!v.concluido, data: v.atualizado ? new Date(v.atualizado).toLocaleString('pt-PT', { dateStyle: 'short', timeStyle: 'short' }) : '',
+        frases: (v.frases || []).map(f => f.frase)
+      });
+    }
+  } catch (e) { }
+  return out.sort((a, b) => (parseInt(a.numero) || 999) - (parseInt(b.numero) || 999));
+}
+function tabelaResultados() {
+  const res = resultadosLocais();
+  if (!res.length) return h('p', { class: 'info' }, 'Ainda não há resultados deste jogo neste computador.');
+  const copiar = h('button', {
+    class: 'btn leve', onclick: async () => {
+      const tsv = ['N.º\tEstrelas\tMáximo\tRondas\tConcluído\tData\tFrases', ...res.map(r => [r.numero, r.estrelas, r.maximo, r.rondas, r.concluido ? 'sim' : 'não', r.data, r.frases.join(' | ')].join('\t'))].join('\n');
+      try { await navigator.clipboard.writeText(tsv); copiar.textContent = 'Copiado ✓'; }
+      catch (e) { const ta = h('textarea', { style: 'width:100%;height:120px' }); ta.value = tsv; copiar.replaceWith(ta); ta.select(); }
+    }
+  }, '📋 Copiar (para colar no Excel)');
+  return h('div', null,
+    h('table', { class: 'resultados' },
+      h('thead', null, h('tr', null, ['N.º', '⭐', 'Rondas', 'Fim', 'Data', 'Frases'].map(x => h('th', null, x)))),
+      h('tbody', null, res.map(r => h('tr', null,
+        h('td', null, r.numero), h('td', null, `${r.estrelas}/${r.maximo}`), h('td', null, r.rondas),
+        h('td', null, r.concluido ? '✔' : '…'), h('td', null, r.data),
+        h('td', null, r.frases.length ? h('details', null, h('summary', null, r.frases.length), h('ul', null, r.frases.map(f => h('li', null, f)))) : '—'))))),
+    h('div', { class: 'linha', style: 'justify-content:flex-start;margin-top:6px' }, copiar,
+      h('button', { class: 'btn leve', onclick: e => { if (confirm('Apagar todos os resultados deste jogo neste computador?')) { res.forEach(r => apagar(r.chave)); e.target.closest('.janela').remove(); painelProfessor(); } } }, '🗑️ Apagar resultados')));
+}
 function painelProfessor() {
-  const sel = (valor, opcoes, aoMudar) => h('select', { onchange: e => aoMudar(e.target.value) }, opcoes.map(([v, t]) => h('option', { value: v, selected: v === valor || null }, t)));
+  const sel = (valor, opcoes, aoMudar) => h('select', { onchange: e => aoMudar(e.target.value) }, opcoes.map(([v, x]) => h('option', { value: v, selected: v === valor || null }, x)));
   const principais = listaRondas('principal'), bonus = listaRondas('bonus');
   const destino = sel('', [['', '— escolher —'],
     ...principais.map((ri, k) => ['principal:' + k, `${k + 1}. ${AULA.rondas[ri].titulo || AULA.rondas[ri].tipo}`]),
     ...bonus.map((ri, k) => ['bonus:' + k, `Bónus ${k + 1}. ${AULA.rondas[ri].titulo || AULA.rondas[ri].tipo}`])], () => { });
-  const guardarPref = (k, v) => { prefs[k] = v; guardar(PREF, prefs); aplicarAparencia(); };
-  const nItens = AULA.rondas.reduce((t, r) => t + r.itens.length, 0);
+  const mudar = (k, v) => { prefs[k] = v; guardarPrefs(); aplicarAparencia(); };
+  const nItens = AULA.rondas.reduce((s, r) => s + r.itens.length, 0);
+  const voz = vozPT();
   const j = janela(
     h('h3', null, '⚙️ Painel do professor'),
-    h('div', { class: 'info' }, `«${AULA.titulo}» · ${principais.length} rondas + ${bonus.length} de bónus · ${nItens} itens · duração estimada ≈ ${minutosEstimados(principais.map(i => AULA.rondas[i]))} min (+ ${minutosEstimados(bonus.map(i => AULA.rondas[i]))} min de bónus) · tema de hoje: ${TEMAS[temaDoDia()].nome} · motor ${VERSAO}`),
-    h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, t]) => [k, t.nome])], v => guardarPref('tema', v))),
-    h('label', null, 'Modo', sel(prefs.modo, [['quadro', 'Quadro interativo'], ['computador', 'Computador']], v => { delete prefs.som; guardarPref('modo', v); })),
-    h('label', null, 'Perfil', sel(prefs.perfil, [['turma', 'Turma'], ['apoio', 'Apoio']], v => guardarPref('perfil', v))),
-    h('label', null, 'Som e narração', h('input', { type: 'checkbox', checked: somLigado() || null, onchange: e => guardarPref('som', e.target.checked) })),
-    h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { guardarPref('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
+    h('div', { class: 'info' }, `«${AULA.titulo}» · ${principais.length} rondas + ${bonus.length} de bónus · ${nItens} itens · duração estimada ≈ ${minutosEstimados(principais.map(i => AULA.rondas[i]))} min (+ ${minutosEstimados(bonus.map(i => AULA.rondas[i]))} min de bónus) · tema de hoje: ${TEMAS[temaDoDia()].nome} · voz em português: ${voz ? voz.name : 'não encontrada neste computador'} · motor ${VERSAO}`),
+    h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
+    h('label', null, 'Modo', sel(prefs.modo, [['quadro', 'Quadro interativo'], ['computador', 'Computador']], v => { delete prefs.som; mudar('modo', v); })),
+    h('label', null, 'Perfil', sel(prefs.perfil, [['turma', 'Turma'], ['apoio', 'Apoio']], v => mudar('perfil', v))),
+    h('label', null, 'Língua da interface', sel(prefs.lingua, Object.entries(LINGUAS), v => mudar('lingua', v))),
+    h('label', null, 'Som e narração', h('input', { type: 'checkbox', checked: somLigado() || null, onchange: e => mudar('som', e.target.checked) })),
+    h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
     h('label', null, 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
       class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); est.seq = s; est.p = +k; j.remove(); iniciarRonda(); }
     }, 'Ir'))),
-    h('label', null, 'Progresso guardado neste computador', h('button', { class: 'btn leve', onclick: e => { apagar(chaveProgresso()); e.target.textContent = 'Apagado ✓'; } }, 'Apagar')),
-    h('p', { style: 'font-size:.7rem;color:var(--muted)' }, 'As alterações de modo e perfil aplicam-se na ronda seguinte ou ao voltar ao início. Só se guarda o número do aluno, neste computador.'),
+    h('h4', { style: 'margin:12px 0 4px' }, 'Resultados neste computador'),
+    tabelaResultados(),
+    h('p', { style: 'font-size:.7rem;color:var(--muted)' }, 'Cada computador guarda apenas os resultados de quem jogou nele, identificados pelo número do aluno (sem nomes). As alterações de modo, perfil e língua aplicam-se na ronda seguinte ou ao voltar ao início.'),
     h('div', { class: 'linha' }, h('button', { class: 'btn leve', onclick: () => { j.remove(); ecraInicio(); } }, '🏠 Início'), h('button', { class: 'btn', onclick: () => j.remove() }, 'Fechar')));
 }
 function ecraInteiro() {
-  const el = document.documentElement;
   if (document.fullscreenElement) { document.exitFullscreen(); return; }
+  const el = document.documentElement;
   if (el.requestFullscreen && document.fullscreenEnabled) el.requestFullscreen().catch(() => window.open(location.href, '_blank'));
   else window.open(location.href, '_blank'); // ex.: dentro do Google Sites sem permissão de ecrã inteiro
 }
@@ -765,8 +878,10 @@ function ecraInteiro() {
   $('#btAcess').onclick = abrirAcessibilidade;
   $('#btProf').onclick = abrirProfessor;
   $('#btEcra').onclick = ecraInteiro;
+  $('#btSom').onclick = () => { prefs.som = !somLigado(); guardarPrefs(); atualizarBotaoSom(); if (!prefs.som) calar(); };
+  if (!T[prefs.lingua]) prefs.lingua = 'pt';
   try { MASCOTE = JSON.parse($('#mascote').textContent); } catch (e) { MASCOTE = {}; }
-  if ('speechSynthesis' in window) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices(); }
+  if (temFala()) { speechSynthesis.getVoices(); speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices(); }
   let erros;
   try { AULA = JSON.parse($('#aula').textContent); erros = validarAula(AULA); }
   catch (e) { erros = ['O bloco AULA não é JSON válido: ' + e.message + '. Verifica vírgulas, aspas e chavetas.']; }

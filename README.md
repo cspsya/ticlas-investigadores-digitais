@@ -16,6 +16,8 @@ Este URL é uma previsão até a publicação estar concluída.
 
 Os jogos novos partem de `base/modelo-jogo.html`: copia-se o ficheiro e muda-se **apenas** o bloco AULA (JSON) com o conteúdo da aula. O formato, os 7 tipos de atividade e a instrução para a tarefa agendada no ChatGPT estão em [`base/LEIA-ME.md`](base/LEIA-ME.md). Opcionalmente, `python3 base/construir.py aula.json --publicar` valida o conteúdo, gera o jogo em `jogos/AAAA-MM-DD/` e regista-o em `jogos.json`.
 
+**Publicação verificada:** o GitHub verifica todos os jogos e o `jogos.json` antes de publicar e só publica se estiver tudo certo; ao publicar, embute em cada jogo as imagens dos emojis, para não aparecerem retângulos nos computadores da escola. Requer, uma vez, **Settings → Pages → Source: «GitHub Actions»** (em vez de «Deploy from a branch»).
+
 ## Adicionar jogos posteriormente
 
 - Colocar o HTML completo em `jogos/AAAA-MM-DD/`.

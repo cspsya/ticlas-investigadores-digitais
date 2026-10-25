@@ -7,10 +7,18 @@ Uso (a partir da raiz do repositório):
   python3 base/construir.py aula.json -o jogo.html  valida e gera no caminho indicado
   python3 base/construir.py aula.json --publicar    gera em jogos/AAAA-MM-DD/ e acrescenta a jogos.json
   python3 base/construir.py --validar ficheiro      só valida (aceita .json ou um .html já gerado)
+  python3 base/construir.py --imagens a.html b.html  embute as imagens dos emojis em jogos já feitos
+  python3 base/construir.py --verificar-site         verifica todos os jogos e o jogos.json (usado no GitHub)
+  python3 base/construir.py --preparar-site _site    copia o site e embute as imagens (usado no GitHub)
 
-Não precisa de bibliotecas externas.
+As imagens dos emojis (Noto Emoji, Apache 2.0) precisam de: pip install emoji
+e de acesso à Internet (descarregadas uma vez e guardadas em base/.cache-emojis/).
 """
 import argparse
+import shutil
+import urllib.error
+import urllib.parse
+import urllib.request
 import datetime as dt
 import json
 import re
@@ -23,11 +31,14 @@ RAIZ = BASE.parent
 SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
 MODELO = BASE / "modelo-jogo.html"
-TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "pares", "classificar", "ordenar"]
+TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "pares", "classificar", "ordenar"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
 MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
 SEGUNDOS = {"escolher": 30, "verdadeiro_falso": 25, "completar": 35, "escrever": 60, "frase": 180,
-            "pares": 20, "classificar": 20, "ordenar": 45}
+            "ditado": 45, "pares": 20, "classificar": 20, "ordenar": 45}
+CACHE = BASE / ".cache-emojis"
+NOTO = "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u{}.svg"
+BLOCO_EMOJIS = re.compile(r"\n?<!-- EMOJIS:INICIO -->.*?<!-- EMOJIS:FIM -->\n?", re.S)
 BLOCO = re.compile(r'(<!-- AULA:INICIO -->\s*<script type="application/json" id="aula">)(.*?)(</script>\s*<!-- AULA:FIM -->)', re.S)
 
 
@@ -80,9 +91,11 @@ def validar(a):
                 if len({norm(x) for x in er}) != len(er):
                     e.append(f"{w}: há opções repetidas em «erradas».")
 
-            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ordenar") and not isinstance(it, dict):
+            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "ordenar") and not isinstance(it, dict):
                 e.append(f"{w}: tem de ser um objeto {{ ... }}.")
                 continue
+            if isinstance(it, dict) and "maiusculas" in it and not isinstance(it["maiusculas"], bool):
+                e.append(f"{w}: «maiusculas» tem de ser true ou false (sem aspas).")
             if tipo == "escolher":
                 if not tem_texto(it.get("pergunta")):
                     e.append(f"{w}: falta a «pergunta».")
@@ -112,6 +125,9 @@ def validar(a):
                         e.append(f"{w}: «resposta» tem de ser um texto ou uma lista de respostas aceites.")
                 if "minPalavras" in it and not (isinstance(it["minPalavras"], int) and not isinstance(it["minPalavras"], bool) and it["minPalavras"] > 0):
                     e.append(f"{w}: «minPalavras» tem de ser um número inteiro.")
+            elif tipo == "ditado":
+                if not tem_texto(it.get("palavra")):
+                    e.append(f"{w}: falta a «palavra» a ditar.")
             elif tipo == "pares":
                 if not (isinstance(it, list) and len(it) == 2 and all(tem_texto(x) for x in it)):
                     e.append(f"{w}: cada par tem de ser [\"esquerda\", \"direita\"].")
@@ -157,6 +173,7 @@ def montar_modelo():
     molde = (SRC / "molde.html").read_text(encoding="utf-8")
     return (molde.replace("/*ESTILO*/", (SRC / "estilo.css").read_text(encoding="utf-8").strip())
                  .replace("__MASCOTE__", (SRC / "mascote.json").read_text(encoding="utf-8").strip())
+                 .replace("/*LINGUAS*/", (SRC / "linguas.js").read_text(encoding="utf-8").strip())
                  .replace("/*MOTOR*/", (SRC / "motor.js").read_text(encoding="utf-8").strip()))
 
 
@@ -239,13 +256,209 @@ def publicar(aula, html):
     print(f"✓ Publicado em {url} e registado em jogos.json (semana {texto_semana}).")
 
 
+# ---------- imagens dos emojis (iguais em todos os computadores) ----------
+def _modulo_emoji():
+    try:
+        import emoji
+        return emoji
+    except ImportError:
+        sys.exit("Para embutir as imagens dos emojis é preciso instalar: pip install emoji")
+
+
+def emojis_no_texto(texto):
+    """Emojis desenhados como imagem colorida (os mesmos que src/emojis.js troca)."""
+    emoji = _modulo_emoji()
+    texto = BLOCO_EMOJIS.sub("", texto)
+    texto = re.sub(r"data:[\w/+.-]+;base64,[A-Za-z0-9+/=]+", "", texto)
+    encontrados = set()
+    for m in emoji.emoji_list(texto):
+        e = m["emoji"]
+        info = emoji.EMOJI_DATA.get(e, {})
+        if "\ufe0f" in e or "\u200d" in e or "\u20e3" in e or info.get("status") == emoji.STATUS["fully_qualified"]:
+            encontrados.add(e.replace("\ufe0f", ""))
+    return encontrados
+
+
+def svg_noto(e):
+    nome = "_".join(f"{ord(c):04x}" for c in e)
+    CACHE.mkdir(exist_ok=True)
+    f = CACHE / f"{nome}.svg"
+    if f.exists():
+        return f.read_text(encoding="utf-8") or None
+    try:
+        with urllib.request.urlopen(NOTO.format(nome), timeout=30) as r:
+            svg = r.read().decode("utf-8")
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            f.write_text("", encoding="utf-8")
+            return None
+        raise
+    f.write_text(svg, encoding="utf-8")
+    return svg
+
+
+SVG_NS, XLINK_NS = "http://www.w3.org/2000/svg", "http://www.w3.org/1999/xlink"
+
+
+def limpar_svg(svg):
+    """Fica só com o desenho: tira dados do Illustrator, metadados e atributos de outros programas."""
+    import xml.etree.ElementTree as ET
+    svg = re.sub(r"<\?xml.*?\?>", "", svg, flags=re.S)
+    try:
+        raiz = ET.fromstring(svg)
+    except ET.ParseError:
+        return svg
+
+    def limpar(el):
+        for filho in list(el):
+            tag = filho.tag if isinstance(filho.tag, str) else ""
+            if not tag.startswith("{%s}" % SVG_NS) or tag.endswith(("}foreignObject", "}metadata", "}title", "}desc")):
+                el.remove(filho)
+            else:
+                limpar(filho)
+        for a in list(el.attrib):
+            if a.startswith("{") and not a.startswith("{%s}" % XLINK_NS):
+                del el.attrib[a]
+    limpar(raiz)
+    ET.register_namespace("", SVG_NS)
+    ET.register_namespace("xlink", XLINK_NS)
+    return ET.tostring(raiz, encoding="unicode")
+
+
+def data_uri(svg):
+    """SVG compacto: só o desenho, sem espaços, coordenadas com 1 casa decimal e codificação mínima."""
+    svg = limpar_svg(svg)
+    svg = re.sub(r"<!--.*?-->", "", svg, flags=re.S)
+    svg = re.sub(r">\s+<", "><", svg).strip()
+    svg = re.sub(r"\s+", " ", svg)
+    svg = re.sub(r"(\d*\.\d)\d+", r"\1", svg)
+    svg = re.sub(r"(?<![\d.])0\.(\d)", r".\1", svg)
+    svg = svg.replace('"', "'").replace("%", "%25").replace("#", "%23")
+    return "data:image/svg+xml," + svg
+
+
+def embutir_emojis(html):
+    """Acrescenta (ou atualiza) o bloco com as imagens dos emojis usados no ficheiro."""
+    html = BLOCO_EMOJIS.sub("\n", html)
+    mapa, falta = {}, []
+    for e in sorted(emojis_no_texto(html)):
+        svg = svg_noto(e)
+        if svg:
+            mapa[e] = data_uri(svg)
+        else:
+            falta.append(e)
+    if not mapa:
+        return html, 0, falta
+    motor = (SRC / "emojis.js").read_text(encoding="utf-8").strip()
+    bloco = ("<!-- EMOJIS:INICIO -->\n<!-- Imagens dos emojis: Noto Emoji, Google, licença Apache 2.0 (github.com/googlefonts/noto-emoji) -->\n"
+             f'<script type="application/json" id="emojis-svg">{json.dumps(mapa, ensure_ascii=False, separators=(",", ":"))}</script>\n'
+             f"<script>\n{motor}\n</script>\n<!-- EMOJIS:FIM -->\n")
+    i = html.lower().rfind("</body>")
+    html = html[:i] + bloco + html[i:] if i >= 0 else html + bloco
+    return html, len(mapa), falta
+
+
+def imagens(ficheiros):
+    for f in ficheiros:
+        p = Path(f)
+        html, n, falta = embutir_emojis(p.read_text(encoding="utf-8"))
+        p.write_text(html, encoding="utf-8")
+        print(f"✓ {p}: {n} imagens embutidas" + (f" · sem imagem Noto: {' '.join(falta)}" if falta else ""))
+
+
+# ---------- verificação do site inteiro (GitHub Actions) ----------
+def verificar_site():
+    erros, avisos = [], []
+    cat_path = RAIZ / "jogos.json"
+    try:
+        catalogo = json.loads(cat_path.read_text(encoding="utf-8"))
+        if not isinstance(catalogo, list):
+            raise ValueError("tem de ser uma lista [ ... ]")
+    except Exception as err:
+        erros.append(f"jogos.json não é válido: {err}")
+        catalogo = []
+    ids = set()
+    for i, c in enumerate(catalogo, 1):
+        onde = f"jogos.json, registo {i}" + (f" («{c.get('titulo')}»)" if isinstance(c, dict) and c.get("titulo") else "")
+        if not isinstance(c, dict):
+            erros.append(f"{onde}: tem de ser um objeto {{ ... }}.")
+            continue
+        for campo in ("turma", "ano", "titulo", "descricao", "disciplina", "data", "semana", "url"):
+            if not tem_texto(c.get(campo)):
+                erros.append(f"{onde}: falta «{campo}».")
+        if c.get("ano") not in (1, 2, 3, 4):
+            erros.append(f"{onde}: «ano» tem de ser 1, 2, 3 ou 4.")
+        try:
+            dt.date.fromisoformat(str(c.get("data")))
+        except ValueError:
+            erros.append(f"{onde}: «data» tem de ter o formato AAAA-MM-DD.")
+        if c.get("id"):
+            if c["id"] in ids:
+                erros.append(f"{onde}: o id «{c['id']}» está repetido.")
+            ids.add(c["id"])
+        if tem_texto(c.get("url")) and not (RAIZ / c["url"]).is_file():
+            erros.append(f"{onde}: o ficheiro «{c['url']}» não existe.")
+    registados = {c.get("url") for c in catalogo if isinstance(c, dict)}
+    for f in sorted((RAIZ / "jogos").rglob("*.html")):
+        rel = f.relative_to(RAIZ).as_posix()
+        texto = f.read_text(encoding="utf-8")
+        m = BLOCO.search(texto)
+        if m:
+            try:
+                aula = json.loads(m.group(2))
+            except json.JSONDecodeError as err:
+                erros.append(f"{rel}: o bloco AULA não é JSON válido (linha {err.lineno}): {err.msg}.")
+            else:
+                erros.extend(f"{rel}: {x}" for x in validar(aula))
+        if rel not in registados:
+            avisos.append(f"{rel} não está registado em jogos.json (não aparece no portal).")
+    for x in avisos:
+        print("  ! Aviso:", x)
+    if erros:
+        print("✗ Há problemas que impedem a publicação:")
+        for x in erros:
+            print("  -", x)
+        return False
+    print(f"✓ Site verificado: {len(catalogo)} jogos em jogos.json, todos os jogos V3 com conteúdo válido.")
+    return True
+
+
+def preparar_site(destino):
+    destino = Path(destino).resolve()
+    if destino.exists():
+        shutil.rmtree(destino)
+    shutil.copytree(RAIZ, destino, ignore=shutil.ignore_patterns(".git", ".github", ".cache-emojis", "__pycache__", destino.name))
+    total = 0
+    for f in sorted(destino.rglob("*.html")):
+        texto = f.read_text(encoding="utf-8")
+        html, n, falta = embutir_emojis(texto)
+        if n:
+            f.write_text(html, encoding="utf-8")
+            total += 1
+        if falta:
+            print(f"  ! {f.relative_to(destino)}: sem imagem Noto para {' '.join(falta)}")
+    print(f"✓ Site preparado em {destino.name}/ ({total} páginas com imagens embutidas).")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Construir e validar jogos Investigadores Digitais (V3).")
     ap.add_argument("aula", nargs="?", help="ficheiro JSON com a AULA")
     ap.add_argument("-o", "--saida", help="ficheiro HTML a gerar")
     ap.add_argument("--publicar", action="store_true", help="gerar em jogos/AAAA-MM-DD/ e registar em jogos.json")
     ap.add_argument("--validar", metavar="FICHEIRO", help="só validar um .json ou um .html já gerado")
+    ap.add_argument("--imagens", nargs="+", metavar="HTML", help="embutir as imagens dos emojis em jogos já feitos")
+    ap.add_argument("--verificar-site", action="store_true", help="verificar todos os jogos e o jogos.json")
+    ap.add_argument("--preparar-site", metavar="PASTA", help="copiar o site para PASTA e embutir as imagens")
     a = ap.parse_args()
+
+    if a.imagens:
+        imagens(a.imagens)
+        return
+    if a.verificar_site:
+        sys.exit(0 if verificar_site() else 1)
+    if a.preparar_site:
+        preparar_site(a.preparar_site)
+        return
 
     if a.validar:
         aula = ler_aula(a.validar)
@@ -256,14 +469,14 @@ def main():
         aula = ler_aula(str(EXEMPLO))
         if not relatorio(aula, validar(aula)):
             sys.exit(1)
-        MODELO.write_text(com_aula(modelo, aula), encoding="utf-8")
+        MODELO.write_text(embutir_emojis(com_aula(modelo, aula))[0], encoding="utf-8")
         print(f"✓ Modelo reconstruído: {MODELO.relative_to(RAIZ)}")
         return
 
     aula = ler_aula(a.aula)
     if not relatorio(aula, validar(aula)):
         sys.exit(1)
-    html = com_aula(modelo, aula)
+    html = embutir_emojis(com_aula(modelo, aula))[0]
     if a.publicar:
         publicar(aula, html)
         return

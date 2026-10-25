@@ -9,7 +9,7 @@ Um único motor de jogo para todas as aulas de TIC curricular. **Para criar um j
 | `modelo-jogo.html` | Jogo completo pronto a usar, com uma aula de exemplo. É este ficheiro que se copia. |
 | `exemplos/` | Aulas de exemplo em JSON. |
 | `construir.py` | Valida o conteúdo e gera o jogo (opcional: publica em `jogos/` e regista em `jogos.json`). |
-| `src/` | Código do motor (estilo, motor, molde, imagens do Ticl@s). Só se mexe aqui para melhorar o motor de todos os jogos. |
+| `src/` | Código do motor (estilo, motor, línguas, imagens dos emojis, molde, imagens do Ticl@s). Só se mexe aqui para melhorar o motor de todos os jogos. |
 
 ## Criar um jogo novo
 
@@ -21,7 +21,10 @@ Um único motor de jogo para todas as aulas de TIC curricular. **Para criar um j
 python3 base/construir.py minha-aula.json               # gera minha-aula.html
 python3 base/construir.py minha-aula.json --publicar    # gera em jogos/AAAA-MM-DD/ e regista em jogos.json
 python3 base/construir.py --validar jogo.html           # verifica um jogo já feito
+python3 base/construir.py --imagens jogo.html           # embute as imagens dos emojis num jogo já feito
 ```
+
+As imagens dos emojis precisam de `pip install emoji` e de Internet na primeira vez (ficam guardadas em `base/.cache-emojis/`).
 
 ## Formato do bloco AULA
 
@@ -53,7 +56,7 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 - `instrucao` é opcional (há uma instrução por omissão para cada tipo).
 - `baralhar: true` baralha a ordem dos itens. As **opções de resposta são sempre baralhadas**.
 
-### Os 7 tipos de atividade
+### Os 8 tipos de atividade
 
 | Tipo | Itens | Exemplo |
 |---|---|---|
@@ -61,6 +64,7 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 | `verdadeiro_falso` | `afirmacao`, `verdade` (true/false) | `{"afirmacao":"«tigre» tem o grupo TR.","verdade":false,"explicacao":"ti-gre: o grupo é GR."}` |
 | `completar` | `frase` com `___`, `certa`, `erradas` (sem `erradas`, o aluno escreve) | `{"frase":"O ___ salta na relva.","certa":"grilo","erradas":["prato","cravo"]}` |
 | `escrever` (resposta exata) | `pergunta`, `resposta` (texto ou lista de respostas aceites) | `{"pergunta":"Escreve o nome do desenho.","emoji":"🌸","resposta":"flor","dica":"Começa por FL."}` |
+| `ditado` | `palavra`, `frase` (opcional, para dar contexto) | `{"palavra":"prato","frase":"Comi a sopa no prato.","emoji":"🍽️"}` — o Ticl@s dita; há botões «Ouvir» e «Mais devagar» |
 | `escrever` (frase livre) | `pergunta`, `palavra` (opcional), `minPalavras` (opcional) | `{"pergunta":"Escreve uma frase com «flor».","palavra":"flor","minPalavras":4}` |
 | `pares` | `["esquerda","direita"]` | `["BR","brinquedo"]` — com `"visual":"memoria"` na ronda passa a jogo da memória |
 | `classificar` | `["texto","caixa"]` + `caixas` na ronda | `"caixas":["BR","PR"], "itens":[["broa","BR"],["prego","PR"]]` |
@@ -68,15 +72,20 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 
 Campos que qualquer item pode ter: `emoji` (desenho grande, útil no 1.º ano), `imagem` (endereço de uma imagem), `dica` (aparece após o 1.º erro ou no botão «Pedir pista» do modo apoio) e `explicacao` (aparece depois de responder).
 
+**Maiúsculas:** nas respostas escritas e no ditado, se a resposta certa tiver maiúscula (ex.: `"Madeira"`), a maiúscula é obrigatória e o aluno vê «Quase! Este nome começa com letra maiúscula.». Se não tiver (ex.: `"flor"`), aceita-se «Flor». Para mudar isto num item: `"maiusculas": true` ou `false`. Os acentos contam sempre («Quase! Verifica os acentos.»).
+
 Opções de aspeto: em `escolher`, `"visual": "baloes"`, `"comboio"` ou `"cartoes"` (por omissão). Em `ordenar`, `"juntar": ""` junta as peças sem espaço (sílabas e letras); por omissão junta com espaço (frases).
 
 ## O que o motor faz sozinho
 
+- **Imagens iguais em todos os computadores:** todos os emojis são trocados por imagens Noto Emoji (Google, licença Apache 2.0) embutidas no próprio ficheiro. Assim, a escada, o xadrez e os outros emojis recentes deixam de aparecer como um retângulo nos computadores da escola.
+- **Leitura em voz alta:** com o som ligado, o 🔊 lê a pergunta e depois cada opção, destacando-a enquanto a lê. No 1.º e 2.º anos, em modo quadro, isto acontece sozinho. Nos pares, caixas e peças, o 🔊 do título lê as peças. O botão 🔇/🔊 do cabeçalho liga e desliga o som em qualquer computador.
+- **Línguas da interface (🌐):** português, inglês, espanhol, francês, alemão, italiano, ucraniano, hindi e nepalês. Mudam os botões, as instruções e as mensagens; o conteúdo da aula fica em português. As traduções devem ser confirmadas por falantes nativos, sobretudo hindi e nepalês.
 - **Pensar antes de clicar:** 3 estrelas à primeira, 1 à segunda e 0 depois disso. Após 2 erros (3 no modo apoio) mostra a resposta certa e a explicação. Cada opção errada fica bloqueada e há uma pausa curta depois de cada erro.
 - **Modos:** quadro interativo (botões e letra maiores, som e narração em pt-PT) ou computador (sem som por omissão).
 - **Perfis:** turma ou apoio (2 opções em vez de 3, 3 pares/peças por ecrã em vez de 6, 1.ª peça do `ordenar` já colocada, botão «Pedir pista»).
 - **Temas por data**, só visuais: regresso às aulas, outono, Pão-por-Deus, São Martinho, Natal, inverno, Dia da Internet Segura, Carnaval, Páscoa, primavera, Festa da Flor, Dia da Criança, verão e neutro. Carnaval, Páscoa e Internet Segura são calculados para cada ano. As datas da Festa da Flor estão na tabela `FESTA_DA_FLOR`, em `src/motor.js` (2027: 29 abr.–30 mai.); basta acrescentar uma linha por ano. Nos anos que não estão na tabela usa-se 25 abr.–25 mai.
-- **Painel do professor (⚙️)**, com a mesma palavra-passe dos outros jogos do Ticl@s: tema manual, modo, perfil, som, navegação livre, saltar para qualquer ronda e apagar o progresso. Mostra também a duração estimada.
+- **Painel do professor (⚙️)**, com a mesma palavra-passe dos outros jogos do Ticl@s: tema manual, modo, perfil, língua, som, navegação livre e saltar para qualquer ronda. Mostra a duração estimada, se o computador tem voz em português e os **resultados guardados nesse computador** (número do aluno, estrelas, rondas, frases escritas), com um botão para copiar para o Excel. Cada computador só guarda os resultados de quem jogou nele.
 - **Acessibilidade (Aa):** tamanho da letra, alto contraste e letra mais legível.
 - **Ecrã inteiro (⛶):** se o Google Sites não o permitir, abre o jogo num separador novo.
 - **Progresso** guardado só no computador da sala, com o número do aluno (opcional), sem nomes. Botão «Continuar onde parei».
@@ -84,8 +93,18 @@ Opções de aspeto: em `escolher`, `"visual": "baloes"`, `"comboio"` ou `"cartoe
 
 ## Duração
 
-Estimativa usada pelo motor: escolher 30 s, verdadeiro/falso 25 s, completar 35 s, escrever 60 s, frase livre 3 min, cada par ou peça 20 s, ordenar 45 s, mais 30 s por ronda. Para **30 minutos** contar com 25 a 30 itens; para **60 minutos**, 50 a 60 itens e 2 a 3 frases livres, mais 1 ou 2 rondas de bónus.
+Estimativa usada pelo motor: escolher 30 s, ditado 45 s, verdadeiro/falso 25 s, completar 35 s, escrever 60 s, frase livre 3 min, cada par ou peça 20 s, ordenar 45 s, mais 30 s por ronda. Para **30 minutos** contar com 25 a 30 itens; para **60 minutos**, 50 a 60 itens e 2 a 3 frases livres, mais 1 ou 2 rondas de bónus.
 
 ## Instrução para a tarefa agendada no ChatGPT
 
-> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes, por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Sem temas do Dia do Pai nem do Dia da Mãe. Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
+> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes (o ditado conta como um), por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Cada emoji tem de corresponder sem ambiguidade à palavra (não usar o mesmo emoji para duas palavras). Nomes próprios nas respostas com maiúscula. Sem temas do Dia do Pai nem do Dia da Mãe. Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
+
+## Publicação automática no GitHub
+
+O ficheiro `.github/workflows/verificar-e-publicar.yml` corre sempre que há alterações no repositório:
+
+1. Verifica o `jogos.json` (campos obrigatórios, datas, ficheiros que existem) e o conteúdo de todos os jogos V3.
+2. Se houver um erro, **não publica** e mostra a lista de problemas no separador «Actions» do GitHub (e o GitHub envia um email).
+3. Se estiver tudo certo, embute as imagens dos emojis em todos os jogos e publica o site.
+
+Para funcionar é preciso, uma única vez: **Settings → Pages → Build and deployment → Source: «GitHub Actions»**.

@@ -1,0 +1,53 @@
+# Verifica todos os jogos e o jogos.json e só publica o site se estiver tudo certo.
+# Antes de publicar, embute nos jogos as imagens dos emojis (Noto Emoji), para aparecerem
+# iguais em todos os computadores da escola.
+# Requisito (uma vez): Settings → Pages → Build and deployment → Source: «GitHub Actions».
+name: Verificar e publicar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verificar:
+    name: Verificar os jogos
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar o leitor de emojis
+        run: pip install emoji
+      - name: Verificar jogos e catálogo
+        run: python3 base/construir.py --verificar-site
+      - name: Preparar o site (imagens dos emojis embutidas)
+        run: python3 base/construir.py --preparar-site _site
+      - name: Guardar o site preparado
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    name: Publicar no GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: verificar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - id: publicacao
+        uses: actions/deploy-pages@v4

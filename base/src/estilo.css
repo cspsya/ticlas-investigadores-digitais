@@ -62,6 +62,10 @@ body.quadro .mascote img{width:190px}body.quadro .palco{grid-template-columns:20
 
 .area{min-height:300px;display:flex;flex-direction:column;gap:12px}
 .titulo-ronda{margin:0;color:var(--t-1d);font-size:1.25rem;line-height:1.15}
+.linha-titulo{display:flex;align-items:center;gap:10px}
+.traducao{display:block;font-style:italic;font-weight:700;color:var(--t-1d);margin-top:2px}
+.a-ler{outline:5px solid var(--yellow)!important;outline-offset:3px;transform:scale(1.05)}
+.btn.grande{font-size:1.15rem;padding:14px 26px}
 .instrucao{margin:0;font-weight:700;color:var(--muted);font-size:.85rem}
 .pergunta{background:var(--t-fundo);border:2px dashed var(--t-1l);border-radius:var(--radius);padding:14px 16px;font-weight:900;font-size:1.15rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
 .pergunta .emoji{font-size:2.6rem;line-height:1}
@@ -100,7 +104,7 @@ body.quadro .v-baloes .opcao{width:200px;height:230px;min-height:0}
 @keyframes rebenta{0%{transform:scale(1)}60%{transform:scale(1.18)}100%{transform:scale(1.05)}}
 /* visual: comboio */
 .v-comboio{display:flex;gap:6px;overflow:hidden;align-items:flex-end;padding:6px 0 18px;border-bottom:6px solid #8a6b52;position:relative}
-.v-comboio:before{content:'🚂';font-size:3rem;align-self:flex-end}
+.v-comboio .loco{font-size:3rem;align-self:flex-end;flex:none}
 .v-comboio .opcao{flex:1;min-width:0;border-radius:12px 12px 6px 6px;position:relative;animation:chega .8s ease-out both}
 .v-comboio .opcao:after{content:'● ●';position:absolute;bottom:-20px;left:0;right:0;color:#555;font-size:.8rem}
 @keyframes chega{from{transform:translateX(120%)}to{transform:translateX(0)}}
@@ -129,12 +133,13 @@ body.quadro .v-baloes .opcao{width:200px;height:230px;min-height:0}
 .peca:disabled{cursor:default}
 .peca.fixa{background:var(--okl);border-color:var(--ok);box-shadow:0 4px 0 var(--ok)}
 .montagem{min-height:76px;border:3px dashed var(--t-1);border-radius:18px;padding:8px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;background:var(--t-fundo)}
-.montagem:empty:before{content:'Toca nas peças pela ordem certa';color:var(--muted);font-weight:700;font-size:.8rem}
+.montagem:empty:before{content:attr(data-vazio);color:var(--muted);font-weight:700;font-size:.8rem}
 .caixas{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
 .caixa{border:3px dashed var(--t-1);border-radius:18px;min-height:130px;padding:8px;background:var(--t-fundo);cursor:pointer;display:flex;flex-direction:column;gap:6px;align-items:center}
 .caixa h4{margin:0 0 4px;color:var(--t-1d);font-size:1rem}
 .caixa.alvo{background:#fff1e8;border-color:var(--t-2)}
 .caixa .peca{min-height:44px;font-size:.9rem;padding:4px 10px;pointer-events:none}
+.lista-caixa{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .colunas{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
 .colunas .col{display:flex;flex-direction:column;gap:10px}
 .colunas .peca{width:100%}
@@ -148,6 +153,9 @@ body.quadro .v-baloes .opcao{width:200px;height:230px;min-height:0}
 .inicio .mascote img{width:200px}
 .inicio h1{margin:.1em 0 .2em;color:var(--t-1d);font-size:1.9rem;line-height:1.08}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
+.linha-topo{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.seletor-lingua{display:flex;align-items:center;gap:6px;font-size:.8rem;font-weight:800}
+.seletor-lingua select{font:inherit;font-size:.75rem;border:2px solid var(--t-1l);border-radius:10px;padding:4px 6px;background:#fff}
 .tag{background:var(--t-1l);color:var(--t-1d);border-radius:99px;padding:3px 11px;font-weight:900;font-size:.7rem}
 .escolhas{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
 .escolha{border:3px solid var(--t-1l);border-radius:18px;background:#fff;padding:10px;text-align:left;cursor:pointer;font-weight:900}
@@ -173,6 +181,10 @@ body.quadro .v-baloes .opcao{width:200px;height:230px;min-height:0}
 .janela select,.janela input[type=password]{font:inherit;padding:6px 8px;border-radius:10px;border:2px solid var(--line);max-width:60%}
 .janela .info{background:var(--t-fundo);border-radius:12px;padding:8px 10px;margin:8px 0;font-weight:700}
 .erros{color:var(--bad);font-weight:800}
+.resultados{width:100%;border-collapse:collapse;font-size:.72rem}
+.resultados th,.resultados td{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left;vertical-align:top}
+.resultados th{background:var(--t-1l)}
+.resultados details ul{margin:4px 0;padding-left:16px}
 
 /* certificado (só aparece na impressão) */
 #certificado{display:none}
