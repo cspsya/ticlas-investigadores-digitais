@@ -5,8 +5,8 @@
   "turma": "1.º B",
   "disciplina": "Matemática",
   "data": "2026-10-30",
-  "descricao": "Reconhecer sólidos geométricos em objetos do dia a dia",
-  "objetivo": "Reconhecer a esfera, o cubo, o cilindro, o cone e o paralelepípedo em objetos do dia a dia.",
+  "descricao": "Identificar e comparar sólidos geométricos em objetos do dia a dia",
+  "objetivo": "Identificar a esfera, o cubo, o paralelepípedo, o cilindro e o cone em objetos do dia a dia.",
   "minutos": 60,
   "rondas": [
     {
@@ -14,86 +14,342 @@
       "tipo": "escolher",
       "visual": "baloes",
       "titulo": "Balões dos sólidos",
-      "instrucao": "Ouve e rebenta o balão certo.",
+      "instrucao": "Olha para o desenho do sólido. Rebenta o balão com o objeto da mesma forma.",
       "itens": [
-        { "pergunta": "Qual tem a forma de uma esfera?", "emoji": "🔍", "certa": "⚽", "erradas": ["🎲", "🥫"] },
-        { "pergunta": "Qual tem a forma de um cubo?", "emoji": "🔍", "certa": "🎲", "erradas": ["⚽", "🧱"] },
-        { "pergunta": "Qual tem a forma de um cilindro?", "emoji": "🔍", "certa": "🥫", "erradas": ["🍦", "🎲"] },
-        { "pergunta": "Qual tem a forma de um cone?", "emoji": "🔍", "certa": "🍦", "erradas": ["🥫", "⚽"] },
-        { "pergunta": "Qual tem a forma de um paralelepípedo?", "emoji": "🔍", "certa": "🧱", "erradas": ["⚽", "🥫"] },
-        { "pergunta": "Qual tem a forma de uma esfera?", "emoji": "🔍", "certa": "🌍", "erradas": ["🧻", "🧃"] },
-        { "pergunta": "Qual tem a forma de um cubo?", "emoji": "🔍", "certa": "🧊", "erradas": ["🧃", "🔋"] }
+        {
+          "pergunta": "Qual tem a forma de uma esfera?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "alt": "esfera",
+          "certa": "⚽",
+          "erradas": [
+            "🎲",
+            "🥫"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cubo?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMzUsNDcgNTcsMjUgMTA3LDI1IDg1LDQ3IiBmaWxsPSIjZmZkMjdhIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iODUsNDcgMTA3LDI1IDEwNyw3NSA4NSw5NyIgZmlsbD0iI2YwYTAyMCIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIzNSIgeT0iNDciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmYmYzYyIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "cubo",
+          "certa": "🎲",
+          "erradas": [
+            "🧱",
+            "⚽"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "cilindro",
+          "certa": "🥫",
+          "erradas": [
+            "🍦",
+            "🎲"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cone?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJrIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdiNWNkNiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjYjlhNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmE0OWM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTM1LDk0IEw3MCwxMiBMMTA1LDk0IEEzNSwxMSAwIDAsMSAzNSw5NCBaIiBmaWxsPSJ1cmwoI2spIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNSw5NCBBMzUsMTEgMCAwLDEgMTA1LDk0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "alt": "cone",
+          "certa": "🍦",
+          "erradas": [
+            "🥫",
+            "⚽"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um paralelepípedo?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMTIsNjAgMzIsNDAgMTI4LDQwIDEwOCw2MCIgZmlsbD0iI2I5ZjBjOSIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjEwOCw2MCAxMjgsNDAgMTI4LDc4IDEwOCw5OCIgZmlsbD0iIzNmYWU2MiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIxMiIgeT0iNjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIzOCIgZmlsbD0iIzZmZDM4ZiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "paralelepípedo",
+          "certa": "🧱",
+          "erradas": [
+            "⚽",
+            "🍦"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de uma esfera?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "alt": "esfera",
+          "certa": "🌍",
+          "erradas": [
+            "🧻",
+            "🧃"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "cilindro",
+          "certa": "🧻",
+          "erradas": [
+            "🎲",
+            "🍦"
+          ]
+        }
       ]
     },
     {
       "tipo": "classificar",
       "titulo": "Arruma os sólidos",
-      "instrucao": "Põe cada objeto na caixa do sólido com a mesma forma.",
-      "caixas": ["⚽ esfera", "🥫 cilindro", "🍦 cone"],
+      "instrucao": "Põe cada objeto na caixa com a mesma forma.",
+      "caixas": [
+        "⚽ esfera",
+        "🥫 cilindro",
+        "🍦 cone"
+      ],
       "itens": [
-        ["🏀", "⚽ esfera"],
-        ["🧻", "🥫 cilindro"],
-        ["🥕", "🍦 cone"],
-        ["🎱", "⚽ esfera"],
-        ["🕯️", "🥫 cilindro"],
-        ["🎉", "🍦 cone"]
+        [
+          "🏀",
+          "⚽ esfera"
+        ],
+        [
+          "🕯️",
+          "🥫 cilindro"
+        ],
+        [
+          "🥕",
+          "🍦 cone"
+        ],
+        [
+          "🎱",
+          "⚽ esfera"
+        ],
+        [
+          "🔋",
+          "🥫 cilindro"
+        ],
+        [
+          "🎉",
+          "🍦 cone"
+        ]
       ]
     },
     {
       "tipo": "escolher",
       "visual": "buracos",
       "titulo": "A mesma forma",
-      "instrucao": "Olha para o objeto. Toca no Ticl@s com o sólido da mesma forma.",
+      "instrucao": "Olha para o objeto grande. Toca no Ticl@s com o objeto da mesma forma.",
       "itens": [
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🧶", "certa": "⚽", "erradas": ["🥫", "🍦"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🔋", "certa": "🥫", "erradas": ["🧱", "🍦"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "📕", "certa": "🧱", "erradas": ["🎲", "🥫"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🏐", "certa": "⚽", "erradas": ["🎲", "🍦"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🪵", "certa": "🥫", "erradas": ["⚽", "🧱"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🧽", "certa": "🧱", "erradas": ["🥫", "🍦"] },
-        { "pergunta": "Tem a mesma forma de qual?", "emoji": "🛢️", "certa": "🥫", "erradas": ["🧱", "⚽"] }
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🧶 = ❓",
+          "certa": "⚽",
+          "erradas": [
+            "🥫",
+            "🍦"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "📕 = ❓",
+          "certa": "🧱",
+          "erradas": [
+            "⚽",
+            "🥫"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🪵 = ❓",
+          "certa": "🥫",
+          "erradas": [
+            "⚽",
+            "🧱"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🧊 = ❓",
+          "certa": "🎲",
+          "erradas": [
+            "🥫",
+            "🍦"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🏐 = ❓",
+          "certa": "⚽",
+          "erradas": [
+            "🎲",
+            "🍦"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🧽 = ❓",
+          "certa": "🧱",
+          "erradas": [
+            "🥫",
+            "🍦"
+          ]
+        },
+        {
+          "pergunta": "Tem a mesma forma de qual?",
+          "emoji": "🛢️ = ❓",
+          "certa": "🥫",
+          "erradas": [
+            "🧱",
+            "⚽"
+          ]
+        }
       ]
     },
     {
       "tipo": "escolher",
       "visual": "comboio",
-      "titulo": "Comboio dos padrões",
-      "instrucao": "Descobre o padrão e escolhe a carruagem certa.",
+      "titulo": "Comboio dos parecidos",
+      "instrucao": "Olha bem para o desenho. Há sólidos parecidos! Escolhe a carruagem com o objeto da mesma forma.",
       "itens": [
-        { "pergunta": "O que vem a seguir? ⚽🎲⚽🎲⚽", "emoji": "🚂", "certa": "🎲", "erradas": ["⚽", "🥫"] },
-        { "pergunta": "O que vem a seguir? 🥫🥫🍦🥫🥫🍦🥫🥫", "emoji": "🚂", "certa": "🍦", "erradas": ["🥫", "⚽"] },
-        { "pergunta": "O que vem a seguir? 🍦⚽⚽🍦⚽⚽🍦", "emoji": "🚂", "certa": "⚽", "erradas": ["🍦", "🎲"] },
-        { "pergunta": "O que vem a seguir? 🎲🧱🥫🎲🧱🥫🎲", "emoji": "🚂", "certa": "🧱", "erradas": ["🥫", "🎲"] },
-        { "pergunta": "O que vem a seguir? 🧱🧱🎲🎲🧱🧱🎲", "emoji": "🚂", "certa": "🎲", "erradas": ["🧱", "⚽"] },
-        { "pergunta": "O que vem a seguir? ⚽🥫🍦⚽🥫🍦⚽🥫", "emoji": "🚂", "certa": "🍦", "erradas": ["⚽", "🥫"] }
+        {
+          "pergunta": "Qual tem a forma de um cubo?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMzUsNDcgNTcsMjUgMTA3LDI1IDg1LDQ3IiBmaWxsPSIjZmZkMjdhIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iODUsNDcgMTA3LDI1IDEwNyw3NSA4NSw5NyIgZmlsbD0iI2YwYTAyMCIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIzNSIgeT0iNDciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmYmYzYyIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "cubo",
+          "certa": "🧊",
+          "erradas": [
+            "🧈",
+            "📕"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "cilindro",
+          "certa": "🥁",
+          "erradas": [
+            "🥕",
+            "🍊"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cone?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJrIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdiNWNkNiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjYjlhNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmE0OWM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTM1LDk0IEw3MCwxMiBMMTA1LDk0IEEzNSwxMSAwIDAsMSAzNSw5NCBaIiBmaWxsPSJ1cmwoI2spIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNSw5NCBBMzUsMTEgMCAwLDEgMTA1LDk0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "alt": "cone",
+          "certa": "🎉",
+          "erradas": [
+            "🕯️",
+            "🔋"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um paralelepípedo?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMTIsNjAgMzIsNDAgMTI4LDQwIDEwOCw2MCIgZmlsbD0iI2I5ZjBjOSIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjEwOCw2MCAxMjgsNDAgMTI4LDc4IDEwOCw5OCIgZmlsbD0iIzNmYWU2MiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIxMiIgeT0iNjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIzOCIgZmlsbD0iIzZmZDM4ZiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "paralelepípedo",
+          "certa": "🧃",
+          "erradas": [
+            "🧻",
+            "🍊"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de uma esfera?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "alt": "esfera",
+          "certa": "🍊",
+          "erradas": [
+            "🎂",
+            "🧈"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "cilindro",
+          "certa": "🎂",
+          "erradas": [
+            "🧶",
+            "📕"
+          ]
+        }
       ]
     },
     {
       "tipo": "escolher",
       "visual": "aviao",
       "titulo": "Avião das contagens",
-      "instrucao": "Conta só os sólidos que o Ticl@s pede e leva o avião à nuvem certa.",
+      "instrucao": "Conta só os objetos iguais ao da pergunta e leva o avião ao número certo.",
       "itens": [
-        { "pergunta": "Quantas esferas? 🎲⚽🥫", "emoji": "✈️", "certa": "1", "erradas": ["2", "3"] },
-        { "pergunta": "Quantas esferas? ⚽🥫⚽", "emoji": "✈️", "certa": "2", "erradas": ["1", "3"] },
-        { "pergunta": "Quantos cubos? 🎲🎲⚽🎲", "emoji": "✈️", "certa": "3", "erradas": ["2", "4"] },
-        { "pergunta": "Quantos cilindros? 🥫🍦🥫🥫🍦🥫", "emoji": "✈️", "certa": "4", "erradas": ["3", "6"] },
-        { "pergunta": "Quantos cubos? 🎲🧱🎲🧱🎲🧱🎲", "emoji": "✈️", "certa": "4", "erradas": ["3", "7"] },
-        { "pergunta": "Quantos cones? 🍦⚽🍦🎲🍦🍦🍦", "emoji": "✈️", "certa": "5", "erradas": ["4", "7"] }
+        {
+          "pergunta": "Quantas esferas ⚽?",
+          "emoji": "🎲⚽🥫",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "3"
+          ]
+        },
+        {
+          "pergunta": "Quantas esferas ⚽?",
+          "emoji": "⚽🥫⚽",
+          "certa": "2",
+          "erradas": [
+            "1",
+            "3"
+          ]
+        },
+        {
+          "pergunta": "Quantos cubos 🎲?",
+          "emoji": "🎲🎲⚽🎲",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "4"
+          ]
+        },
+        {
+          "pergunta": "Quantos cilindros 🥫?",
+          "emoji": "🥫🍦🥫🥫🍦🥫",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "6"
+          ]
+        },
+        {
+          "pergunta": "Quantos cubos 🎲?",
+          "emoji": "🎲🧱🎲🧱🎲🧱🎲",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "7"
+          ]
+        },
+        {
+          "pergunta": "Quantos cones 🍦?",
+          "emoji": "🍦⚽🍦🎲🍦🍦🍦",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "7"
+          ]
+        }
       ]
     },
     {
-      "tipo": "escolher",
-      "visual": "cartoes",
-      "titulo": "O intruso",
-      "instrucao": "Encontra o objeto que não pertence ao grupo.",
+      "tipo": "pares",
+      "titulo": "Liga à mesma forma",
+      "instrucao": "Liga cada objeto ao objeto com a mesma forma.",
       "itens": [
-        { "pergunta": "Qual não é uma esfera?", "emoji": "🕵️", "certa": "🥫", "erradas": ["🏀", "🌍"] },
-        { "pergunta": "Qual não é um cilindro?", "emoji": "🕵️", "certa": "🍦", "erradas": ["🧻", "🥁"] },
-        { "pergunta": "Qual não é um cubo?", "emoji": "🕵️", "certa": "🧱", "erradas": ["🎲", "🧊"] },
-        { "pergunta": "Qual não é um cone?", "emoji": "🕵️", "certa": "🔋", "erradas": ["🍦", "🥕"] },
-        { "pergunta": "Qual não é um paralelepípedo?", "emoji": "🕵️", "certa": "⚽", "erradas": ["📕", "🧃"] },
-        { "pergunta": "Qual não é um cilindro?", "emoji": "🕵️", "certa": "🧽", "erradas": ["🪵", "🛢️"] }
+        [
+          "🔮",
+          "⚽"
+        ],
+        [
+          "🧈",
+          "🧱"
+        ],
+        [
+          "🥁",
+          "🥫"
+        ],
+        [
+          "🥕",
+          "🍦"
+        ],
+        [
+          "🧊",
+          "🎲"
+        ]
       ]
     },
     {
@@ -101,13 +357,28 @@
       "tipo": "pares",
       "visual": "memoria",
       "titulo": "Memória das formas",
-      "instrucao": "Encontra dois objetos com a mesma forma.",
+      "instrucao": "Vira as cartas e encontra dois objetos com a mesma forma.",
       "itens": [
-        ["🔮", "🏀"],
-        ["🧊", "🎲"],
-        ["🥁", "🧻"],
-        ["🎉", "🥕"],
-        ["🧃", "📕"]
+        [
+          "🏀",
+          "🍊"
+        ],
+        [
+          "🕯️",
+          "🛢️"
+        ],
+        [
+          "🎉",
+          "🍦"
+        ],
+        [
+          "📕",
+          "🧃"
+        ],
+        [
+          "🧊",
+          "🎲"
+        ]
       ]
     }
   ]
