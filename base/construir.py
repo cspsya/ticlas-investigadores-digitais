@@ -8,6 +8,7 @@ Uso (a partir da raiz do repositório):
   python3 base/construir.py aula.json --publicar    gera em jogos/AAAA-MM-DD/ e acrescenta a jogos.json
   python3 base/construir.py --validar ficheiro      só valida (aceita .json ou um .html já gerado)
   python3 base/construir.py --imagens a.html b.html  embute as imagens dos emojis em jogos já feitos
+  python3 base/construir.py --aulas                  gera os jogos de todas as aulas em aulas/ (usado no GitHub)
   python3 base/construir.py --verificar-site         verifica todos os jogos e o jogos.json (usado no GitHub)
   python3 base/construir.py --preparar-site _site    copia o site e embute as imagens (usado no GitHub)
 
@@ -30,6 +31,7 @@ BASE = Path(__file__).resolve().parent
 RAIZ = BASE.parent
 SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
+AULAS = RAIZ / "aulas"
 MODELO = BASE / "modelo-jogo.html"
 TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "pares", "classificar", "ordenar"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
@@ -154,14 +156,17 @@ def validar(a):
     return e
 
 
-def minutos(rondas):
+FATOR_ANO = {1: 1.5, 2: 1.2, 3: 1.0, 4: 0.9}  # os mais novos demoram mais em cada item
+
+
+def minutos(rondas, ano=3):
     s = 0
     for r in rondas:
         s += 30
         for it in r.get("itens", []):
             livre = r["tipo"] == "escrever" and isinstance(it, dict) and "resposta" not in it
             s += SEGUNDOS["frase"] if livre else SEGUNDOS.get(r["tipo"], 30)
-    return max(1, round(s / 60))
+    return max(1, round(s * FATOR_ANO.get(ano, 1.0) / 60))
 
 
 def json_seguro(aula):
@@ -205,10 +210,10 @@ def relatorio(aula, erros):
     princ = [r for r in aula["rondas"] if r.get("fase") != "bonus"]
     bonus = [r for r in aula["rondas"] if r.get("fase") == "bonus"]
     print(f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas + {len(bonus)} de bónus · "
-          f"≈ {minutos(princ)} min (+ {minutos(bonus)} min de bónus)" if bonus else
-          f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas · ≈ {minutos(princ)} min")
+          f"≈ {minutos(princ, aula['ano'])} min (+ {minutos(bonus, aula['ano'])} min de bónus)" if bonus else
+          f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas · ≈ {minutos(princ, aula['ano'])} min")
     alvo = aula.get("minutos")
-    if isinstance(alvo, (int, float)) and minutos(princ) < 0.6 * alvo:
+    if isinstance(alvo, (int, float)) and minutos(princ, aula["ano"]) < 0.6 * alvo:
         print(f"  ! Aviso: a duração estimada é bem inferior aos {alvo} min indicados. Acrescenta itens ou rondas.")
     return True
 
@@ -230,30 +235,89 @@ def nome_ficheiro(aula):
     return re.sub(r"[^A-Za-z0-9]+", "_", base).strip("_")[:70] + ".html"
 
 
-def publicar(aula, html):
-    for campo in ("data", "turma", "disciplina"):
-        if not tem_texto(aula.get(campo)):
-            sys.exit(f"Erro: para publicar, a AULA precisa do campo «{campo}».")
+def registar(aula, url, id_padrao):
+    """Acrescenta ou atualiza (pelo id) o registo da aula em jogos.json. Devolve True se mudou."""
     data = dt.date.fromisoformat(aula["data"])
-    seg, texto_semana = semana(data)
+    _, texto_semana = semana(data)
+    catalogo_path = RAIZ / "jogos.json"
+    catalogo = json.loads(catalogo_path.read_text(encoding="utf-8")) if catalogo_path.exists() else []
+    principais = [r for r in aula["rondas"] if r.get("fase") != "bonus"]
+    registo = {
+        "id": aula.get("id") or id_padrao,
+        "turma": aula["turma"], "ano": aula["ano"], "titulo": aula["titulo"],
+        "descricao": aula.get("descricao") or aula.get("objetivo") or "",
+        "disciplina": aula["disciplina"], "data": aula["data"], "semana": texto_semana, "url": url,
+        "duracao": f"até {aula['minutos']} min" if aula.get("minutos") else f"≈ {minutos(principais, aula['ano'])} min",
+        "estado": aula.get("estado", "em validação"),
+    }
+    antigo = next((c for c in catalogo if c.get("id") == registo["id"]), None)
+    if antigo == registo:
+        return False
+    if antigo:
+        catalogo[catalogo.index(antigo)] = registo
+    else:
+        catalogo.append(registo)
+    catalogo_path.write_text(json.dumps(catalogo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return True
+
+
+def campos_publicacao(aula):
+    erros = [f"falta o campo «{c}» (obrigatório para publicar)." for c in ("data", "turma", "disciplina") if not tem_texto(aula.get(c))]
+    if tem_texto(aula.get("data")):
+        try:
+            dt.date.fromisoformat(aula["data"])
+        except ValueError:
+            erros.append("«data» tem de ter o formato AAAA-MM-DD.")
+    return erros
+
+
+def publicar(aula, html):
+    erros = campos_publicacao(aula)
+    if erros:
+        sys.exit("Erro: " + " ".join(erros))
+    seg, texto_semana = semana(dt.date.fromisoformat(aula["data"]))
     pasta = RAIZ / "jogos" / seg.isoformat()
     pasta.mkdir(parents=True, exist_ok=True)
     destino = pasta / nome_ficheiro(aula)
     destino.write_text(html, encoding="utf-8")
     url = destino.relative_to(RAIZ).as_posix()
-    catalogo_path = RAIZ / "jogos.json"
-    catalogo = json.loads(catalogo_path.read_text(encoding="utf-8")) if catalogo_path.exists() else []
-    registo = {
-        "id": aula.get("id") or f"{aula['data']}-{nome_ficheiro(aula)[:-5]}",
-        "turma": aula["turma"], "ano": aula["ano"], "titulo": aula["titulo"],
-        "descricao": aula.get("descricao") or aula.get("objetivo") or "",
-        "disciplina": aula["disciplina"], "data": aula["data"], "semana": texto_semana, "url": url,
-        "duracao": f"até {aula['minutos']} min" if aula.get("minutos") else f"≈ {minutos([r for r in aula['rondas'] if r.get('fase') != 'bonus'])} min",
-        "estado": "em validação",
-    }
-    catalogo = [c for c in catalogo if c.get("id") != registo["id"]] + [registo]
-    catalogo_path.write_text(json.dumps(catalogo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    registar(aula, url, f"{aula['data']}-{destino.stem}")
     print(f"✓ Publicado em {url} e registado em jogos.json (semana {texto_semana}).")
+
+
+def gerar_aulas():
+    """Cada aulas/**/*.json dá origem a jogos/<segunda-feira da semana>/<mesmo nome>.html e a um registo em jogos.json."""
+    ficheiros = sorted(AULAS.rglob("*.json")) if AULAS.exists() else []
+    if not ficheiros:
+        print("Não há aulas em aulas/.")
+        return True
+    modelo, ok, gerados = montar_modelo(), True, 0
+    for f in ficheiros:
+        rel = f.relative_to(RAIZ).as_posix()
+        try:
+            aula = json.loads(f.read_text(encoding="utf-8-sig"))
+        except json.JSONDecodeError as err:
+            print(f"✗ {rel}: o JSON não é válido (linha {err.lineno}, coluna {err.colno}): {err.msg}. Verifica vírgulas, aspas e chavetas.")
+            ok = False
+            continue
+        erros = validar(aula) + (campos_publicacao(aula) if isinstance(aula, dict) else [])
+        if erros:
+            print(f"✗ {rel}:")
+            for x in erros:
+                print("   -", x)
+            ok = False
+            continue
+        seg, texto_semana = semana(dt.date.fromisoformat(aula["data"]))
+        destino = RAIZ / "jogos" / seg.isoformat() / (f.stem + ".html")
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        html = embutir_emojis(com_aula(modelo, aula))[0]
+        if not destino.exists() or destino.read_text(encoding="utf-8") != html:
+            destino.write_text(html, encoding="utf-8")
+            gerados += 1
+        mudou = registar(aula, destino.relative_to(RAIZ).as_posix(), f.stem)
+        print(f"✓ {rel} → {destino.relative_to(RAIZ).as_posix()} (semana {texto_semana}){' · jogos.json atualizado' if mudou else ''}")
+    print(f"{'✓' if ok else '✗'} Aulas: {len(ficheiros)} ficheiros, {gerados} jogos gerados ou atualizados.")
+    return ok
 
 
 # ---------- imagens dos emojis (iguais em todos os computadores) ----------
@@ -448,6 +512,7 @@ def main():
     ap.add_argument("--validar", metavar="FICHEIRO", help="só validar um .json ou um .html já gerado")
     ap.add_argument("--imagens", nargs="+", metavar="HTML", help="embutir as imagens dos emojis em jogos já feitos")
     ap.add_argument("--verificar-site", action="store_true", help="verificar todos os jogos e o jogos.json")
+    ap.add_argument("--aulas", action="store_true", help="gerar os jogos de todas as aulas em aulas/")
     ap.add_argument("--preparar-site", metavar="PASTA", help="copiar o site para PASTA e embutir as imagens")
     a = ap.parse_args()
 
@@ -456,6 +521,8 @@ def main():
         return
     if a.verificar_site:
         sys.exit(0 if verificar_site() else 1)
+    if a.aulas:
+        sys.exit(0 if gerar_aulas() else 1)
     if a.preparar_site:
         preparar_site(a.preparar_site)
         return
@@ -471,6 +538,13 @@ def main():
             sys.exit(1)
         MODELO.write_text(embutir_emojis(com_aula(modelo, aula))[0], encoding="utf-8")
         print(f"✓ Modelo reconstruído: {MODELO.relative_to(RAIZ)}")
+        for ex in sorted((BASE / "exemplos").glob("*.json")):
+            if ex == EXEMPLO:
+                continue
+            aula_ex = ler_aula(str(ex))
+            if relatorio(aula_ex, validar(aula_ex)):
+                ex.with_suffix(".html").write_text(embutir_emojis(com_aula(modelo, aula_ex))[0], encoding="utf-8")
+                print(f"✓ Exemplo: {ex.with_suffix('.html').relative_to(RAIZ)}")
         return
 
     aula = ler_aula(a.aula)

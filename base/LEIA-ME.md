@@ -7,13 +7,15 @@ Um único motor de jogo para todas as aulas de TIC curricular. **Para criar um j
 | Ficheiro | Para que serve |
 |---|---|
 | `modelo-jogo.html` | Jogo completo pronto a usar, com uma aula de exemplo. É este ficheiro que se copia. |
-| `exemplos/` | Aulas de exemplo em JSON. |
+| `exemplos/` | Aulas de exemplo: 2.º ano (Português, com escrita e ditado) e 1.º ano sem leitura (Matemática: contagens, padrões, buracos e avião), cada uma com o jogo já gerado. |
 | `construir.py` | Valida o conteúdo e gera o jogo (opcional: publica em `jogos/` e regista em `jogos.json`). |
 | `src/` | Código do motor (estilo, motor, línguas, imagens dos emojis, molde, imagens do Ticl@s). Só se mexe aqui para melhorar o motor de todos os jogos. |
 
 ## Criar um jogo novo
 
-**Opção A — sem programas (ChatGPT ou à mão):** copiar `modelo-jogo.html` e substituir **apenas** o texto entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->` (o conteúdo do `<script type="application/json" id="aula">`). Se o JSON tiver um erro, o jogo abre um ecrã a dizer exatamente o que está mal.
+**Opção recomendada — pasta `aulas/` no GitHub:** pôr o ficheiro `.json` da aula na pasta `aulas/` do repositório (à mão: *Add file → Upload files*). O GitHub verifica o conteúdo, gera o jogo em `jogos/AAAA-MM-DD/`, regista-o em `jogos.json` e publica. Se houver erros, não publica e envia um email com a lista. Ver [`aulas/LEIA-ME.md`](../aulas/LEIA-ME.md).
+
+**Opção A — sem programas (à mão):** copiar `modelo-jogo.html` e substituir **apenas** o texto entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->` (o conteúdo do `<script type="application/json" id="aula">`). Se o JSON tiver um erro, o jogo abre um ecrã a dizer exatamente o que está mal.
 
 **Opção B — com o script:**
 
@@ -74,13 +76,25 @@ Campos que qualquer item pode ter: `emoji` (desenho grande, útil no 1.º ano), 
 
 **Maiúsculas:** nas respostas escritas e no ditado, se a resposta certa tiver maiúscula (ex.: `"Madeira"`), a maiúscula é obrigatória e o aluno vê «Quase! Este nome começa com letra maiúscula.». Se não tiver (ex.: `"flor"`), aceita-se «Flor». Para mudar isto num item: `"maiusculas": true` ou `false`. Os acentos contam sempre («Quase! Verifica os acentos.»).
 
-Opções de aspeto: em `escolher`, `"visual": "baloes"`, `"comboio"` ou `"cartoes"` (por omissão). Em `ordenar`, `"juntar": ""` junta as peças sem espaço (sílabas e letras); por omissão junta com espaço (frases).
+Opções de aspeto em `escolher` (`"visual"`):
+
+| Visual | Como se joga |
+|---|---|
+| `cartoes` (por omissão) | Cartões grandes. |
+| `baloes` | Balões a flutuar; o certo rebenta. |
+| `comboio` | O comboio chega com as respostas nas carruagens e parte quando se acerta. |
+| `buracos` | O Ticl@s salta de buracos com uma resposta; toca-se quando aparece a certa. Sem pressa: ele volta sempre a aparecer. |
+| `aviao` | Toca-se numa nuvem (ou usa-se ▲ ▼ e «Apanhar!», ou as setas do teclado) e o avião voa até ela. |
+
+As respostas podem ser só emojis (ex.: `"certa": "🔵"`) ou grupos de emojis para contar (ex.: `"🌼🌼🌼"`), o que é ideal para o 1.º ano. Em `ordenar`, `"juntar": ""` junta as peças sem espaço (sílabas e letras); por omissão junta com espaço (frases).
 
 ## O que o motor faz sozinho
 
 - **Imagens iguais em todos os computadores:** todos os emojis são trocados por imagens Noto Emoji (Google, licença Apache 2.0) embutidas no próprio ficheiro. Assim, a escada, o xadrez e os outros emojis recentes deixam de aparecer como um retângulo nos computadores da escola.
 - **Leitura em voz alta:** com o som ligado, o 🔊 lê a pergunta e depois cada opção, destacando-a enquanto a lê. No 1.º e 2.º anos, em modo quadro, isto acontece sozinho. Nos pares, caixas e peças, o 🔊 do título lê as peças. O botão 🔇/🔊 do cabeçalho liga e desliga o som em qualquer computador.
 - **Línguas da interface (🌐):** português, inglês, espanhol, francês, alemão, italiano, ucraniano, hindi e nepalês. Mudam os botões, as instruções e as mensagens; o conteúdo da aula fica em português. As traduções devem ser confirmadas por falantes nativos, sobretudo hindi e nepalês.
+- **Mapa de missões:** depois de «Começar», cada ronda é uma missão. O aluno escolhe por onde começar, pode parar e retomar, e vê as estrelas de cada missão feita; a missão sugerida pulsa. As rondas de bónus abrem quando todas as missões estiverem feitas. Os botões «Anterior» e «Próximo» continuam a seguir a ordem da aula.
+- **Celebrações:** confetes em cada resposta certa e no fim de cada missão (desligam-se se o computador pedir menos animação).
 - **Pensar antes de clicar:** 3 estrelas à primeira, 1 à segunda e 0 depois disso. Após 2 erros (3 no modo apoio) mostra a resposta certa e a explicação. Cada opção errada fica bloqueada e há uma pausa curta depois de cada erro.
 - **Modos:** quadro interativo (botões e letra maiores, som e narração em pt-PT) ou computador (sem som por omissão).
 - **Perfis:** turma ou apoio (2 opções em vez de 3, 3 pares/peças por ecrã em vez de 6, 1.ª peça do `ordenar` já colocada, botão «Pedir pista»).
@@ -91,9 +105,13 @@ Opções de aspeto: em `escolher`, `"visual": "baloes"`, `"comboio"` ou `"cartoe
 - **Progresso** guardado só no computador da sala, com o número do aluno (opcional), sem nomes. Botão «Continuar onde parei».
 - **Fim:** estrelas, frases escritas pelo aluno, certificado imprimível e desafios bónus.
 
+## 1.º ano sem leitura
+
+Ver `exemplos/exemplo-1ano-contar-e-padroes.json`. Regras: `emoji` ou imagens em todos os itens; perguntas curtas, para serem ouvidas (o Ticl@s lê a pergunta e as opções no modo quadro); respostas com números, emojis ou grupos de emojis; tipos `escolher` (com `baloes`, `buracos`, `comboio`, `aviao`), `ordenar` (números), `classificar` (grupos para contar) e `pares` (número ↔ quantidade). Evitar `escrever` e `verdadeiro_falso` com frases enquanto os alunos não lerem.
+
 ## Duração
 
-Estimativa usada pelo motor: escolher 30 s, ditado 45 s, verdadeiro/falso 25 s, completar 35 s, escrever 60 s, frase livre 3 min, cada par ou peça 20 s, ordenar 45 s, mais 30 s por ronda. Para **30 minutos** contar com 25 a 30 itens; para **60 minutos**, 50 a 60 itens e 2 a 3 frases livres, mais 1 ou 2 rondas de bónus.
+Estimativa usada pelo motor (multiplicada por 1,5 no 1.º ano, 1,2 no 2.º e 0,9 no 4.º): escolher 30 s, ditado 45 s, verdadeiro/falso 25 s, completar 35 s, escrever 60 s, frase livre 3 min, cada par ou peça 20 s, ordenar 45 s, mais 30 s por ronda. Para **60 minutos** contar, como referência, com 6 rondas de cerca de 10 minutos: no 1.º ano 6 a 8 itens por ronda; do 2.º ao 4.º ano 8 a 10 itens por ronda e 2 a 3 frases livres; mais 1 ou 2 rondas de bónus. O painel do professor mostra a estimativa de cada jogo. São estimativas: só a observação das aulas diz a duração real.
 
 ## Instrução para a tarefa agendada no ChatGPT
 

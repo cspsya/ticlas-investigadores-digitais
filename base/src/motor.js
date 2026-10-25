@@ -4,7 +4,7 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.1';
+const VERSAO = 'V3.2';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
 const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'pares', 'classificar', 'ordenar'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
@@ -188,10 +188,11 @@ function validarAula(a) {
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
+const FATOR_ANO = { 1: 1.5, 2: 1.2, 3: 1.0, 4: 0.9 }; // os mais novos demoram mais em cada item
 function minutosEstimados(rondas) {
   const s = rondas.reduce((t, r) => t + 30 + (r.itens || []).reduce((u, it) =>
     u + (r.tipo === 'escrever' && it && it.resposta === undefined ? SEGUNDOS.frase : (SEGUNDOS[r.tipo] || 30)), 0), 0);
-  return Math.max(1, Math.round(s / 60));
+  return Math.max(1, Math.round(s * (FATOR_ANO[AULA && AULA.ano] || 1) / 60));
 }
 
 /* ---------- estado ---------- */
@@ -284,6 +285,16 @@ function poseMascote(pose, salta) {
   if (salta) { img.classList.remove('salta'); void img.offsetWidth; img.classList.add('salta'); }
 }
 function dizerBalao(texto) { const b = $('#balao'); if (b) b.textContent = texto; }
+// celebração: confetes a sair do elemento (ou do centro do ecrã)
+function festa(el, quantos = 18) {
+  try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) return; } catch (e) { }
+  const r = el ? el.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 3, width: 0, height: 0 };
+  const cores = ['#E8834A', '#5BA3D0', '#6BBF59', '#FFC857', '#9b6bc9', '#d9578a'];
+  for (let i = 0; i < quantos; i++) {
+    const c = h('span', { class: 'confete', 'aria-hidden': 'true', style: `left:${r.left + r.width / 2}px;top:${r.top + r.height / 2}px;background:${cores[i % cores.length]};--dx:${Math.round((Math.random() * 2 - 1) * 160)}px;--dy:${Math.round(-60 - Math.random() * 140)}px;--r:${Math.round(Math.random() * 720)}deg` });
+    document.body.append(c); setTimeout(() => c.remove(), 1200);
+  }
+}
 
 /* ---------- ecrã de erro do conteúdo ---------- */
 function ecraErros(erros) {
@@ -334,14 +345,51 @@ function comecar(continuar) {
   Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], concluido: false }, g || {});
   if (!g) apagar(chaveProgresso());
   if (audio && audio.state === 'suspended') audio.resume();
-  iniciarRonda();
+  ecraMapa();
+}
+
+/* ---------- mapa de missões: escolha livre, pausa e retoma ---------- */
+function iconeRonda(r) {
+  if (r.tipo === 'escolher') return { baloes: '🎈', comboio: '🚂', buracos: '🕳️', aviao: '✈️' }[r.visual] || '🃏';
+  return { verdadeiro_falso: '✅', completar: '🧩', escrever: '✏️', ditado: '🎧', pares: r.visual === 'memoria' ? '🃏' : '🔗', classificar: '🗂️', ordenar: '🔢' }[r.tipo] || '⭐';
+}
+function ecraMapa() {
+  limparTimers(); calar();
+  est.seq = 'principal'; guardarProgresso(); atualizarEstrelas();
+  const principais = listaRondas('principal'), bonus = listaRondas('bonus');
+  const todas = principais.every(ri => est.feitas[ri]);
+  const sugestao = principais.findIndex(ri => !est.feitas[ri]);
+  const cartao = (ri, k, seq, bloqueado) => {
+    const r = AULA.rondas[ri], feita = est.feitas[ri], sugerida = seq === 'principal' && k === sugestao;
+    return h('button', {
+      class: 'missao' + (feita ? ' feita' : '') + (sugerida ? ' sugerida' : ''), disabled: bloqueado || null,
+      onclick: () => { est.seq = seq; est.p = k; iniciarRonda(); }
+    },
+      h('span', { class: 'missao-num' }, seq === 'bonus' ? '★' : k + 1),
+      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, bloqueado ? '🔒' : iconeRonda(r)),
+      h('strong', null, r.titulo || nomeFase(r.fase)),
+      h('small', null, nomeFase(r.fase)),
+      feita ? h('span', { class: 'missao-estado' }, `✔ ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`) : sugerida ? h('span', { class: 'missao-estado' }, t('sugestao')) : null);
+  };
+  $('#app').replaceChildren(h('div', null,
+    h('div', { class: 'mapa-topo' }, mascote(todas ? 'trofeu' : 'aponta'),
+      h('div', null, h('h2', { class: 'titulo-ronda' }, t('escolheMissao')), h('p', { class: 'instrucao' }, AULA.titulo))),
+    h('div', { class: 'mapa' }, principais.map((ri, k) => cartao(ri, k, 'principal', false))),
+    bonus.length ? h('div', { class: 'grupo-titulo' }, todas ? nomeFase('bonus') : t('bonusFechado')) : null,
+    bonus.length ? h('div', { class: 'mapa' }, bonus.map((ri, k) => cartao(ri, k, 'bonus', !todas))) : null,
+    h('div', { class: 'nav' },
+      h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
+      todas ? h('button', { class: 'btn', id: 'btResultado', onclick: () => { est.seq = 'principal'; ecraFim(); } }, t('resultado')) : h('span'))));
 }
 
 /* ---------- moldura de cada ronda ---------- */
 function iniciarRonda() {
   limparTimers(); calar();
   const lista = listaRondas(est.seq);
-  if (est.p >= lista.length) { ecraFim(); return; }
+  if (est.p >= lista.length) {
+    if (est.seq === 'principal' && !lista.every(ri => est.feitas[ri])) { ecraMapa(); return; }
+    ecraFim(); return;
+  }
   const ri = lista[est.p], ronda = AULA.rondas[ri];
   est.pontos[ri] = 0; est.maximos[ri] = 0; delete est.feitas[ri];
   guardarProgresso(); atualizarEstrelas();
@@ -359,7 +407,7 @@ function iniciarRonda() {
       mascote(['escrever', 'ditado'].includes(ronda.tipo) ? 'portatil' : 'aponta', h('div', { class: 'balao', id: 'balao' }, t('animo'))),
       area),
     h('div', { class: 'nav' }, btAnterior,
-      h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
+      h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
   const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
   motor(ri, ronda, area);
@@ -367,7 +415,8 @@ function iniciarRonda() {
 function rondaConcluida(ri) {
   est.feitas[ri] = true; guardarProgresso();
   const lista = listaRondas(est.seq), ultima = est.p === lista.length - 1;
-  poseMascote('trofeu', true); dizerBalao(t('rondaConcluida')); som('fim');
+  const tudoFeito = est.seq === 'bonus' || lista.every(x => est.feitas[x]);
+  poseMascote('trofeu', true); dizerBalao(t('rondaConcluida')); som('fim'); festa(null, 40);
   const bt = $('#btProximo'); bt.disabled = false;
   encher($('#area'), h('div', { style: 'text-align:center;padding:20px 0' },
     h('div', { class: 'estrelas-grandes' }, '⭐'),
@@ -375,7 +424,8 @@ function rondaConcluida(ri) {
     h('p', { class: 'instrucao' }, t('estrelasRonda', { a: est.pontos[ri], b: est.maximos[ri] })),
     h('div', { class: 'linha' },
       h('button', { class: 'btn leve', onclick: iniciarRonda }, t('repetirRonda')),
-      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? t('verResultado') : t('proximaRonda')))));
+      est.seq === 'principal' ? h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')) : null,
+      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? (tudoFeito ? t('verResultado') : t('missoes')) : t('proximaRonda')))));
   $('#btSeguinte').focus({ preventScroll: true });
 }
 
@@ -434,6 +484,7 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
       som('certo'); poseMascote('ideia', true); dizerBalao(p === 3 ? t('primeira') : t('conseguiste'));
       fb.className = 'feedback ok'; fb.textContent = t('certo') + (extra ? ' ' + extra : '');
       if (el) el.classList.add('certo');
+      festa(el || fb);
       if (explica) explica.hidden = false;
       if (dica) dica.hidden = true; if (btDica) btDica.hidden = true;
       btContinuar.hidden = false; btContinuar.focus({ preventScroll: true });
@@ -476,28 +527,95 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
     lacuna = h('span', { class: 'lacuna' }, '?');
     conteudo = h('span', null, a, lacuna, b); fala = String(it.frase);
   } else { conteudo = it.pergunta; fala = it.pergunta; }
+  const visual = completar ? 'cartoes' : (ronda.visual || 'cartoes');
   const botoes = [];
+  let aoResolver = () => { };
   const c = criarItem(ri, it, opcoes.length, () => {
     botoes.forEach(b => { b.disabled = true; if (b.dataset.certa) b.classList.add('revela'); });
     if (lacuna) lacuna.textContent = it.certa;
+    aoResolver(true);
     return t('respostaCerta', { r: it.certa });
   });
-  const cores = ['#e8834a', '#5ba3d0', '#9b6bc9', '#4fa36b', '#d9578a'];
-  const visual = completar ? 'cartoes' : (ronda.visual || 'cartoes');
-  const grelha = h('div', { class: 'opcoes v-' + visual }, visual === 'comboio' ? h('span', { class: 'loco', 'aria-hidden': 'true' }, '🚂') : null);
-  opcoes.forEach((op, k) => {
-    const b = h('button', { class: 'opcao', style: visual === 'baloes' ? `--bc:${cores[k % cores.length]}` : null, 'data-certa': op === it.certa ? '1' : null }, String(op));
-    b.onclick = () => {
-      if (c.resolvido || c.bloqueado) return;
-      calar();
-      if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (lacuna) lacuna.textContent = it.certa; c.acertou(b); }
-      else c.errou(b);
+  const escolher = (b, op) => {
+    if (c.resolvido || c.bloqueado || b.disabled) return;
+    calar();
+    if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (lacuna) lacuna.textContent = it.certa; c.acertou(b); aoResolver(false); }
+    else c.errou(b);
+  };
+  const semMovimento = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+  let jogo, chaveInstr = 'i_' + ronda.tipo;
+  if (visual === 'buracos') {
+    // o Ticl@s salta de buracos com as respostas; toca-se no que tem a resposta certa
+    chaveInstr = 'i_buracos';
+    jogo = h('div', { class: 'opcoes v-buracos' });
+    opcoes.forEach(op => {
+      const b = h('button', { class: 'opcao buraco', 'data-certa': op === it.certa ? '1' : null, 'aria-label': String(op) },
+        h('span', { class: 'bicho' }, h('b', null, String(op)), h('img', { src: MASCOTE.ola, alt: '', draggable: 'false' })));
+      // conta o toque se o esquilo estiver em cima ou tiver acabado de descer (margem para as crianças)
+      b.onclick = () => { if (!b.classList.contains('cima') && Date.now() > (+b.dataset.ate || 0)) return; escolher(b, op); };
+      botoes.push(b); jogo.append(b);
+    });
+    let ultimo = -1;
+    const salta = () => {
+      if (c.resolvido) return;
+      const vivos = botoes.filter(x => !x.disabled);
+      botoes.forEach(x => { if (x.classList.contains('cima')) x.dataset.ate = Date.now() + 600; x.classList.remove('cima'); });
+      if (!vivos.length) return;
+      let k = Math.floor(Math.random() * vivos.length);
+      if (vivos.length > 1 && botoes.indexOf(vivos[k]) === ultimo) k = (k + 1) % vivos.length;
+      ultimo = botoes.indexOf(vivos[k]);
+      vivos[k].classList.add('cima');
+      depois(apoio() ? 2800 : 1900, salta);
     };
-    botoes.push(b); grelha.append(b);
-  });
+    aoResolver = () => botoes.forEach(x => x.classList.add('cima'));
+    if (semMovimento) botoes.forEach(x => x.classList.add('cima')); else depois(500, salta);
+  } else if (visual === 'aviao') {
+    // avião controlado por toque (toca numa nuvem) ou pelos botões ▲ ▼ e «Apanhar!»
+    chaveInstr = 'i_aviao';
+    const n = opcoes.length;
+    let faixa = Math.floor(n / 2);
+    const aviao = h('span', { class: 'aviao', 'aria-hidden': 'true' }, '✈️');
+    const ceu = h('div', { class: 'ceu', tabindex: '0', 'aria-label': t('i_aviao') }, aviao);
+    const mover = k => {
+      faixa = Math.max(0, Math.min(n - 1, k));
+      aviao.style.top = `${(faixa + 0.5) * 100 / n}%`;
+      botoes.forEach((x, i) => x.classList.toggle('alvo', i === faixa));
+    };
+    const apanhar = () => {
+      const b = botoes[faixa];
+      if (c.resolvido || c.bloqueado || b.disabled || aviao.classList.contains('voa')) return;
+      aviao.classList.add('voa');
+      depois(semMovimento ? 0 : 600, () => { aviao.classList.remove('voa'); escolher(b, opcoes[faixa]); });
+    };
+    opcoes.forEach((op, k) => {
+      const b = h('button', { class: 'opcao nuvem', style: `top:${(k + 0.5) * 100 / n}%`, 'data-certa': op === it.certa ? '1' : null }, String(op));
+      b.onclick = () => { if (faixa === k) apanhar(); else { mover(k); depois(semMovimento ? 0 : 420, apanhar); } };
+      botoes.push(b); ceu.append(b);
+    });
+    ceu.onkeydown = e => {
+      if (e.key === 'ArrowUp') { e.preventDefault(); mover(faixa - 1); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); mover(faixa + 1); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apanhar(); }
+    };
+    aoResolver = revelado => { if (!revelado) { aviao.classList.add('vitoria'); } };
+    jogo = h('div', null, ceu, h('div', { class: 'linha controlos-aviao' },
+      h('button', { class: 'btn leve', 'aria-label': t('subir'), onclick: () => mover(faixa - 1) }, '▲'),
+      h('button', { class: 'btn', onclick: apanhar }, t('apanhar')),
+      h('button', { class: 'btn leve', 'aria-label': t('descer'), onclick: () => mover(faixa + 1) }, '▼')));
+    mover(faixa);
+  } else {
+    const cores = ['#e8834a', '#5ba3d0', '#9b6bc9', '#4fa36b', '#d9578a'];
+    jogo = h('div', { class: 'opcoes v-' + visual }, visual === 'comboio' ? h('span', { class: 'loco', 'aria-hidden': 'true' }, '🚂') : null);
+    opcoes.forEach((op, k) => {
+      const b = h('button', { class: 'opcao', style: visual === 'baloes' ? `--bc:${cores[k % cores.length]}` : null, 'data-certa': op === it.certa ? '1' : null }, String(op));
+      b.onclick = () => escolher(b, op);
+      botoes.push(b); jogo.append(b);
+    });
+    if (visual === 'comboio') aoResolver = revelado => { if (!revelado) depois(700, () => jogo.classList.add('parte')); };
+  }
   c.aoContinuar(proximo);
-  encher(area, cabecalhoRonda(ronda, 'i_' + ronda.tipo, contador),
-    blocoPergunta(it, conteudo, fala, () => botoes.map(b => ({ texto: b.textContent, el: b }))), grelha, c.nos);
+  encher(area, cabecalhoRonda(ronda, chaveInstr, contador),
+    blocoPergunta(it, conteudo, fala, () => botoes.map(b => ({ texto: b.getAttribute('aria-label') || b.textContent, el: b }))), jogo, c.nos);
 }
 function itemVF(ri, ronda, it, area, contador, proximo) {
   const botoes = [];
@@ -627,6 +745,7 @@ function ecraLigar(ri, ronda, area, pares, contador, proximo) {
     const ie = esq.findIndex(x => x.k === k), id = dir.findIndex(x => x.k === k), cor = cores[k % cores.length];
     [bE[ie], bD[id]].forEach(b => { b.disabled = true; b.classList.remove('sel'); b.classList.add('fixa'); b.style.borderColor = cor; b.style.boxShadow = `0 4px 0 ${cor}`; if (revelado) b.style.borderStyle = 'dashed'; });
     feitos++;
+    if (!revelado) festa(bD[id], 10);
     if (feitos === pares.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = t('paresLigados'); depois(900, proximo); }
   };
   const tentar = () => {
@@ -664,6 +783,7 @@ function ecraMemoria(ri, ronda, area, pares, contador, proximo) {
     if (cartas[x].k === cartas[y].k) {
       viradas = []; feitos++; est.pontos[ri] += 3; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
       [x, y].forEach(n => { botoes[n].classList.add('par'); botoes[n].disabled = true; });
+      festa(botoes[y], 10);
       som('certo'); fb.className = 'feedback ok'; fb.textContent = t('umPar');
       if (feitos === pares.length) { fb.textContent = t('todosPares'); poseMascote('ideia', true); depois(900, proximo); }
     } else {
@@ -710,6 +830,7 @@ function ecraClassificar(ri, ronda, area, itens, contador, proximo) {
     const p = pecas[k], cx = caixas.find(c => c.nome === p.cx), b = botoes[k];
     b.classList.remove('sel'); b.classList.add('fixa'); b.disabled = true; b.draggable = false; if (revelado) b.style.borderStyle = 'dashed';
     cx.lista.append(b); feitos++;
+    if (!revelado) festa(b, 10);
     if (feitos === pecas.length) { som('certo'); fb.className = 'feedback ok'; fb.textContent = t('arrumado'); poseMascote('ideia', true); depois(900, proximo); }
   }
   function largar(nome, el) {
@@ -750,6 +871,7 @@ function ecraFim() {
     h('div', { class: 'linha', style: 'margin-top:14px' },
       h('button', { class: 'btn', onclick: certificado }, t('certificado')),
       temBonus ? h('button', { class: 'btn azul', id: 'btBonus', onclick: () => { est.seq = 'bonus'; est.p = 0; iniciarRonda(); } }, t('desafiosBonus')) : null,
+      h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')),
       h('button', { class: 'btn leve', onclick: () => comecar(false) }, t('outraVez')),
       h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')))));
 }

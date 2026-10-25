@@ -34,7 +34,8 @@ const T = {
     todosPares: 'Encontraste todos os pares!', naoPar: 'Não é par. Memoriza e tenta outra vez.', arrumado: 'Tudo arrumado!',
     tocaPrimeiro: 'Primeiro toca numa palavra.', vaiPara: '«{a}» vai para a caixa «{b}».', parte: 'parte {a} de {b}',
     escreveAqui: 'Escreve aqui', escreveFrase: 'Escreve aqui a tua frase…', montagemVazia: 'Toca nas peças pela ordem certa',
-    semVoz: 'Este computador não tem voz em português. Pede ajuda ao professor.', letras: '{n} letras'
+    semVoz: 'Este computador não tem voz em português. Pede ajuda ao professor.', letras: '{n} letras',
+    missoes: "🗺️ Missões", escolheMissao: "Escolhe uma missão", sugestao: "Sugestão", feita: "Feita", bonusFechado: "Os desafios bónus abrem quando terminares as missões.", apanhar: "✈️ Apanhar!", i_buracos: "Toca no Ticl@s quando ele mostrar a resposta certa.", i_aviao: "Leva o avião até à resposta certa e carrega em «Apanhar!».", resultado: "🏆 Ver resultado", subir: "Subir", descer: "Descer"
   },
   en: {
     ola: "Hi! I'm Ticl@s.", ondeJogar: 'Where are we playing?', quadro: '🖥️ Interactive board', quadroSub: 'Big buttons, sound and narration',
@@ -63,7 +64,8 @@ const T = {
     todosPares: 'You found all the pairs!', naoPar: 'Not a pair. Remember them and try again.', arrumado: 'All sorted!',
     tocaPrimeiro: 'First tap a word.', vaiPara: '«{a}» goes in the «{b}» box.', parte: 'part {a} of {b}',
     escreveAqui: 'Write here', escreveFrase: 'Write your sentence here…', montagemVazia: 'Tap the pieces in the right order',
-    semVoz: 'This computer has no Portuguese voice. Ask your teacher for help.', letras: '{n} letters'
+    semVoz: 'This computer has no Portuguese voice. Ask your teacher for help.', letras: '{n} letters',
+    missoes: "🗺️ Missions", escolheMissao: "Choose a mission", sugestao: "Suggested", feita: "Done", bonusFechado: "Bonus challenges unlock when you finish the missions.", apanhar: "✈️ Catch!", i_buracos: "Tap Ticl@s when he shows the right answer.", i_aviao: "Fly the plane to the right answer and press «Catch!».", resultado: "🏆 See result", subir: "Up", descer: "Down"
   },
   es: {
     ola: '¡Hola! Soy Ticl@s.', ondeJogar: '¿Dónde vamos a jugar?', quadro: '🖥️ Pizarra interactiva', quadroSub: 'Botones grandes, sonido y narración',
@@ -92,7 +94,8 @@ const T = {
     todosPares: '¡Has encontrado todas las parejas!', naoPar: 'No es pareja. Memoriza e inténtalo otra vez.', arrumado: '¡Todo ordenado!',
     tocaPrimeiro: 'Primero toca una palabra.', vaiPara: '«{a}» va en la caja «{b}».', parte: 'parte {a} de {b}',
     escreveAqui: 'Escribe aquí', escreveFrase: 'Escribe aquí tu frase…', montagemVazia: 'Toca las piezas en el orden correcto',
-    semVoz: 'Este ordenador no tiene voz en portugués. Pide ayuda al profesor.', letras: '{n} letras'
+    semVoz: 'Este ordenador no tiene voz en portugués. Pide ayuda al profesor.', letras: '{n} letras',
+    missoes: "🗺️ Misiones", escolheMissao: "Elige una misión", sugestao: "Sugerencia", feita: "Hecha", bonusFechado: "Los retos extra se desbloquean cuando termines las misiones.", apanhar: "✈️ ¡Atrapar!", i_buracos: "Toca a Ticl@s cuando muestre la respuesta correcta.", i_aviao: "Lleva el avión hasta la respuesta correcta y pulsa «¡Atrapar!».", resultado: "🏆 Ver resultado", subir: "Subir", descer: "Bajar"
   },
   fr: {
     ola: 'Salut ! Je suis Ticl@s.', ondeJogar: 'Où allons-nous jouer ?', quadro: '🖥️ Tableau interactif', quadroSub: 'Grands boutons, son et narration',
@@ -121,7 +124,8 @@ const T = {
     todosPares: 'Tu as trouvé toutes les paires !', naoPar: "Ce n'est pas une paire. Mémorise et réessaie.", arrumado: 'Tout est rangé !',
     tocaPrimeiro: "Touche d'abord un mot.", vaiPara: '«{a}» va dans la boîte «{b}».', parte: 'partie {a} sur {b}',
     escreveAqui: 'Écris ici', escreveFrase: 'Écris ta phrase ici…', montagemVazia: 'Touche les pièces dans le bon ordre',
-    semVoz: "Cet ordinateur n'a pas de voix en portugais. Demande de l'aide au professeur.", letras: '{n} lettres'
+    semVoz: "Cet ordinateur n'a pas de voix en portugais. Demande de l'aide au professeur.", letras: '{n} lettres',
+    missoes: "🗺️ Missions", escolheMissao: "Choisis une mission", sugestao: "Conseillé", feita: "Terminée", bonusFechado: "Les défis bonus se débloquent quand tu as fini les missions.", apanhar: "✈️ Attraper !", i_buracos: "Touche Ticl@s quand il montre la bonne réponse.", i_aviao: "Emmène l’avion jusqu’à la bonne réponse et appuie sur «Attraper !».", resultado: "🏆 Voir le résultat", subir: "Monter", descer: "Descendre"
   },
   de: {
     ola: 'Hallo! Ich bin Ticl@s.', ondeJogar: 'Wo spielen wir?', quadro: '🖥️ Interaktive Tafel', quadroSub: 'Große Tasten, Ton und Vorlesen',
@@ -150,7 +154,8 @@ const T = {
     todosPares: 'Du hast alle Paare gefunden!', naoPar: 'Kein Paar. Merk sie dir und versuch es noch einmal.', arrumado: 'Alles sortiert!',
     tocaPrimeiro: 'Tippe zuerst auf ein Wort.', vaiPara: '«{a}» gehört in die Kiste «{b}».', parte: 'Teil {a} von {b}',
     escreveAqui: 'Hier schreiben', escreveFrase: 'Schreibe hier deinen Satz…', montagemVazia: 'Tippe die Teile in der richtigen Reihenfolge an',
-    semVoz: 'Dieser Computer hat keine portugiesische Stimme. Frag deine Lehrkraft.', letras: '{n} Buchstaben'
+    semVoz: 'Dieser Computer hat keine portugiesische Stimme. Frag deine Lehrkraft.', letras: '{n} Buchstaben',
+    missoes: "🗺️ Missionen", escolheMissao: "Wähle eine Mission", sugestao: "Vorschlag", feita: "Geschafft", bonusFechado: "Die Bonusaufgaben werden frei, wenn du alle Missionen geschafft hast.", apanhar: "✈️ Fangen!", i_buracos: "Tippe auf Ticl@s, wenn er die richtige Antwort zeigt.", i_aviao: "Flieg das Flugzeug zur richtigen Antwort und drücke «Fangen!».", resultado: "🏆 Ergebnis ansehen", subir: "Hoch", descer: "Runter"
   },
   it: {
     ola: 'Ciao! Sono Ticl@s.', ondeJogar: 'Dove giochiamo?', quadro: '🖥️ Lavagna interattiva', quadroSub: 'Pulsanti grandi, suono e narrazione',
@@ -179,7 +184,8 @@ const T = {
     todosPares: 'Hai trovato tutte le coppie!', naoPar: 'Non è una coppia. Ricordale e riprova.', arrumado: 'Tutto in ordine!',
     tocaPrimeiro: 'Prima tocca una parola.', vaiPara: '«{a}» va nella scatola «{b}».', parte: 'parte {a} di {b}',
     escreveAqui: 'Scrivi qui', escreveFrase: 'Scrivi qui la tua frase…', montagemVazia: "Tocca i pezzi nell'ordine giusto",
-    semVoz: "Questo computer non ha una voce in portoghese. Chiedi aiuto all'insegnante.", letras: '{n} lettere'
+    semVoz: "Questo computer non ha una voce in portoghese. Chiedi aiuto all'insegnante.", letras: '{n} lettere',
+    missoes: "🗺️ Missioni", escolheMissao: "Scegli una missione", sugestao: "Consigliata", feita: "Fatta", bonusFechado: "Le sfide bonus si sbloccano quando finisci le missioni.", apanhar: "✈️ Prendi!", i_buracos: "Tocca Ticl@s quando mostra la risposta giusta.", i_aviao: "Porta l’aereo fino alla risposta giusta e premi «Prendi!».", resultado: "🏆 Vedi il risultato", subir: "Su", descer: "Giù"
   },
   uk: {
     ola: 'Привіт! Я — Ticl@s.', ondeJogar: 'Де ми граємо?', quadro: '🖥️ Інтерактивна дошка', quadroSub: 'Великі кнопки, звук і озвучення',
@@ -208,7 +214,8 @@ const T = {
     todosPares: 'Ти знайшов(ла) всі пари!', naoPar: 'Це не пара. Запам’ятай і спробуй ще.', arrumado: 'Усе розкладено!',
     tocaPrimeiro: 'Спочатку торкнися слова.', vaiPara: '«{a}» йде в скриньку «{b}».', parte: 'частина {a} з {b}',
     escreveAqui: 'Пиши тут', escreveFrase: 'Напиши тут своє речення…', montagemVazia: 'Торкайся частин у правильному порядку',
-    semVoz: 'На цьому комп’ютері немає португальського голосу. Попроси вчителя допомогти.', letras: 'Літер: {n}'
+    semVoz: 'На цьому комп’ютері немає португальського голосу. Попроси вчителя допомогти.', letras: 'Літер: {n}',
+    missoes: "🗺️ Місії", escolheMissao: "Обери місію", sugestao: "Порада", feita: "Виконано", bonusFechado: "Бонусні завдання відкриються, коли завершиш місії.", apanhar: "✈️ Спіймати!", i_buracos: "Торкнися Ticl@s, коли він покаже правильну відповідь.", i_aviao: "Веди літак до правильної відповіді й натисни «Спіймати!».", resultado: "🏆 Подивитися результат", subir: "Вгору", descer: "Вниз"
   },
   hi: {
     ola: 'नमस्ते! मैं Ticl@s हूँ।', ondeJogar: 'हम कहाँ खेलेंगे?', quadro: '🖥️ इंटरैक्टिव बोर्ड', quadroSub: 'बड़े बटन, आवाज़ और वाचन',
@@ -237,7 +244,8 @@ const T = {
     todosPares: 'तुमने सभी जोड़ियाँ ढूँढ लीं!', naoPar: 'यह जोड़ी नहीं है। याद रखो और फिर कोशिश करो।', arrumado: 'सब कुछ सही जगह!',
     tocaPrimeiro: 'पहले किसी शब्द को छुओ।', vaiPara: '«{a}» «{b}» वाले डिब्बे में जाता है।', parte: 'भाग {a} / {b}',
     escreveAqui: 'यहाँ लिखो', escreveFrase: 'अपना वाक्य यहाँ लिखो…', montagemVazia: 'टुकड़ों को सही क्रम में छुओ',
-    semVoz: 'इस कंप्यूटर में पुर्तगाली आवाज़ नहीं है। शिक्षक से मदद माँगो।', letras: '{n} अक्षर'
+    semVoz: 'इस कंप्यूटर में पुर्तगाली आवाज़ नहीं है। शिक्षक से मदद माँगो।', letras: '{n} अक्षर',
+    missoes: "🗺️ मिशन", escolheMissao: "एक मिशन चुनो", sugestao: "सुझाव", feita: "पूरा", bonusFechado: "मिशन पूरे करने पर बोनस चुनौतियाँ खुलेंगी।", apanhar: "✈️ पकड़ो!", i_buracos: "जब Ticl@s सही उत्तर दिखाए, तब उसे छुओ।", i_aviao: "विमान को सही उत्तर तक ले जाओ और «पकड़ो!» दबाओ।", resultado: "🏆 परिणाम देखें", subir: "ऊपर", descer: "नीचे"
   },
   ne: {
     ola: 'नमस्ते! म Ticl@s हुँ।', ondeJogar: 'हामी कहाँ खेल्ने?', quadro: '🖥️ अन्तरक्रियात्मक बोर्ड', quadroSub: 'ठूला बटन, आवाज र वाचन',
@@ -266,6 +274,7 @@ const T = {
     todosPares: 'तिमीले सबै जोडी भेट्टायौ!', naoPar: 'यो जोडी होइन। सम्झ र फेरि प्रयास गर।', arrumado: 'सबै मिलाइयो!',
     tocaPrimeiro: 'पहिले एउटा शब्द छोऊ।', vaiPara: '«{a}» «{b}» बाकसमा जान्छ।', parte: 'भाग {a} / {b}',
     escreveAqui: 'यहाँ लेख', escreveFrase: 'आफ्नो वाक्य यहाँ लेख…', montagemVazia: 'टुक्राहरू सही क्रममा छोऊ',
-    semVoz: 'यो कम्प्युटरमा पोर्चुगिज आवाज छैन। शिक्षकलाई सोध।', letras: '{n} अक्षर'
+    semVoz: 'यो कम्प्युटरमा पोर्चुगिज आवाज छैन। शिक्षकलाई सोध।', letras: '{n} अक्षर',
+    missoes: "🗺️ मिसनहरू", escolheMissao: "एउटा मिसन छान", sugestao: "सुझाव", feita: "सकियो", bonusFechado: "मिसनहरू सकेपछि बोनस चुनौतीहरू खुल्छन्।", apanhar: "✈️ समात!", i_buracos: "Ticl@s ले सही उत्तर देखाउँदा उसलाई छोऊ।", i_aviao: "विमानलाई सही उत्तरसम्म लैजाऊ र «समात!» थिच।", resultado: "🏆 नतिजा हेर", subir: "माथि", descer: "तल"
   }
 };
