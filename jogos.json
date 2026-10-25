@@ -154,5 +154,31 @@
     "url": "jogos/2026-10-26/Ticlas_Segredos_R_e_L_2ano_26_30_outubro.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-28-3B-tabuada-fracoes",
+    "turma": "3B",
+    "ano": 3,
+    "titulo": "Missão 6 — Frações e Tabuada",
+    "descricao": "Tabuada do 6, numerador, denominador e frações representadas em pizas e tabletes; ordenação e cópia de frases. Sem som.",
+    "disciplina": "Matemática e Português",
+    "data": "2026-10-28",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/Ticlas_3B_26_30_outubro_2026.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
+  },
+  {
+    "id": "2026-10-30-3A-sequencias-som-s",
+    "turma": "3A",
+    "ano": 3,
+    "titulo": "Missão das Sequências e do Som S",
+    "descricao": "Padrões de repetição, casos ortográficos s, ss, c, ç e z; escrita, ordenação e cópia de frases. Sem som.",
+    "disciplina": "Matemática e Português",
+    "data": "2026-10-30",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/Ticlas_3A_26_30_outubro_2026.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
   }
 ]
