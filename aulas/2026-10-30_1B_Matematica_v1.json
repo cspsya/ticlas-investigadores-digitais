@@ -18,7 +18,7 @@
       "itens": [
         {
           "pergunta": "Qual tem a forma de uma esfera?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
           "alt": "esfera",
           "certa": "⚽",
           "erradas": [
@@ -28,7 +28,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cubo?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMzUsNDcgNTcsMjUgMTA3LDI1IDg1LDQ3IiBmaWxsPSIjZmZkMjdhIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iODUsNDcgMTA3LDI1IDEwNyw3NSA4NSw5NyIgZmlsbD0iI2YwYTAyMCIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIzNSIgeT0iNDciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmYmYzYyIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g></svg>",
           "alt": "cubo",
           "certa": "🎲",
           "erradas": [
@@ -38,7 +38,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cilindro?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
           "alt": "cilindro",
           "certa": "🥫",
           "erradas": [
@@ -48,7 +48,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cone?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJrIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdiNWNkNiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjYjlhNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmE0OWM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTM1LDk0IEw3MCwxMiBMMTA1LDk0IEEzNSwxMSAwIDAsMSAzNSw5NCBaIiBmaWxsPSJ1cmwoI2spIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNSw5NCBBMzUsMTEgMCAwLDEgMTA1LDk0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
           "alt": "cone",
           "certa": "🍦",
           "erradas": [
@@ -58,7 +58,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um paralelepípedo?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMTIsNjAgMzIsNDAgMTI4LDQwIDEwOCw2MCIgZmlsbD0iI2I5ZjBjOSIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjEwOCw2MCAxMjgsNDAgMTI4LDc4IDEwOCw5OCIgZmlsbD0iIzNmYWU2MiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIxMiIgeT0iNjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIzOCIgZmlsbD0iIzZmZDM4ZiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g></svg>",
           "alt": "paralelepípedo",
           "certa": "🧱",
           "erradas": [
@@ -68,7 +68,7 @@
         },
         {
           "pergunta": "Qual tem a forma de uma esfera?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
           "alt": "esfera",
           "certa": "🌍",
           "erradas": [
@@ -78,7 +78,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cilindro?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
           "alt": "cilindro",
           "certa": "🧻",
           "erradas": [
@@ -203,7 +203,7 @@
       "itens": [
         {
           "pergunta": "Qual tem a forma de um cubo?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMzUsNDcgNTcsMjUgMTA3LDI1IDg1LDQ3IiBmaWxsPSIjZmZkMjdhIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iODUsNDcgMTA3LDI1IDEwNyw3NSA4NSw5NyIgZmlsbD0iI2YwYTAyMCIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIzNSIgeT0iNDciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmYmYzYyIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g></svg>",
           "alt": "cubo",
           "certa": "🧊",
           "erradas": [
@@ -213,7 +213,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cilindro?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
           "alt": "cilindro",
           "certa": "🥁",
           "erradas": [
@@ -223,7 +223,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cone?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJrIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdiNWNkNiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjYjlhNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNmE0OWM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTM1LDk0IEw3MCwxMiBMMTA1LDk0IEEzNSwxMSAwIDAsMSAzNSw5NCBaIiBmaWxsPSJ1cmwoI2spIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0zNSw5NCBBMzUsMTEgMCAwLDEgMTA1LDk0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
           "alt": "cone",
           "certa": "🎉",
           "erradas": [
@@ -233,7 +233,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um paralelepípedo?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PC9kZWZzPjxwb2x5Z29uIHBvaW50cz0iMTIsNjAgMzIsNDAgMTI4LDQwIDEwOCw2MCIgZmlsbD0iI2I5ZjBjOSIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjEwOCw2MCAxMjgsNDAgMTI4LDc4IDEwOCw5OCIgZmlsbD0iIzNmYWU2MiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSIxMiIgeT0iNjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIzOCIgZmlsbD0iIzZmZDM4ZiIgc3Ryb2tlPSIjMWMyNTQxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g></svg>",
           "alt": "paralelepípedo",
           "certa": "🧃",
           "erradas": [
@@ -243,7 +243,7 @@
         },
         {
           "pergunta": "Qual tem a forma de uma esfera?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJnIiBjeD0iMzUlIiBjeT0iMzAlIiByPSI3NSUiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjN2NjNGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMmI3ZGU5Ii8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iNzAiIGN5PSI2MCIgcj0iNDgiIGZpbGw9InVybCgjZykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iNjAiIHJ4PSI0OCIgcnk9IjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIG9wYWNpdHk9Ii41NSIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
           "alt": "esfera",
           "certa": "🍊",
           "erradas": [
@@ -253,7 +253,7 @@
         },
         {
           "pergunta": "Qual tem a forma de um cilindro?",
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDAgMTIwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjEyMCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJjIiB4MT0iMCIgeDI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UyNTU3ZiIvPjxzdG9wIG9mZnNldD0iLjQ1IiBzdG9wLWNvbG9yPSIjZmY5ZGJiIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDYzYzZjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTQwLDI2IEw0MCw5NCBBMzAsMTAgMCAwLDAgMTAwLDk0IEwxMDAsMjYiIGZpbGw9InVybCgjYykiIHN0cm9rZT0iIzFjMjU0MSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGVsbGlwc2UgY3g9IjcwIiBjeT0iMjYiIHJ4PSIzMCIgcnk9IjEwIiBmaWxsPSIjZmZjMmQ2IiBzdHJva2U9IiMxYzI1NDEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
           "alt": "cilindro",
           "certa": "🎂",
           "erradas": [
