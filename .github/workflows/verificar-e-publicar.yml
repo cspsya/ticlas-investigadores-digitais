@@ -1,0 +1,67 @@
+# Gera os jogos a partir de aulas/*.json, verifica todos os jogos e o jogos.json
+# e só publica o site se estiver tudo certo. Antes de publicar, embute nos jogos as
+# imagens dos emojis (Noto Emoji), para aparecerem iguais em todos os computadores.
+# Requisito (uma vez): Settings → Pages → Build and deployment → Source: «GitHub Actions».
+name: Verificar e publicar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verificar:
+    name: Gerar e verificar os jogos
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar o leitor de emojis
+        run: pip install emoji
+      - name: Gerar os jogos das aulas (aulas/*.json)
+        run: python3 base/construir.py --aulas
+      - name: Guardar no repositório os jogos gerados
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "Ticl@s (GitHub Actions)"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jogos jogos.json
+          if git diff --cached --quiet; then
+            echo "Não há jogos novos ou alterados."
+          else
+            git commit -m "Jogos gerados a partir de aulas/"
+            git push
+          fi
+      - name: Verificar jogos e catálogo
+        run: python3 base/construir.py --verificar-site
+      - name: Preparar o site (imagens dos emojis embutidas)
+        run: python3 base/construir.py --preparar-site _site
+      - name: Guardar o site preparado
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    name: Publicar no GitHub Pages
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: verificar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - id: publicacao
+        uses: actions/deploy-pages@v4

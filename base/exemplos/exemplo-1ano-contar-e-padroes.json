@@ -1,0 +1,99 @@
+{
+  "id": "exemplo-1ano-contar-e-padroes",
+  "titulo": "Contar até 10 e descobrir padrões",
+  "ano": 1,
+  "turma": "1.º A",
+  "disciplina": "Matemática",
+  "data": "2026-11-03",
+  "descricao": "Contagens até 10, sequências numéricas e padrões com imagens",
+  "objetivo": "Contar objetos até 10, ordenar números e descobrir o que vem a seguir num padrão.",
+  "minutos": 30,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões das contas",
+      "instrucao": "Conta e rebenta o balão certo.",
+      "itens": [
+        { "pergunta": "Quantas maçãs? 🍎🍎🍎", "certa": "3", "erradas": ["2", "4"] },
+        { "pergunta": "Quantas estrelas? ⭐⭐", "certa": "2", "erradas": ["1", "3"] },
+        { "pergunta": "Quantos peixes? 🐟🐟🐟🐟🐟", "certa": "5", "erradas": ["4", "6"] },
+        { "pergunta": "Quantas flores? 🌼", "certa": "1", "erradas": ["2", "3"] },
+        { "pergunta": "Quantas joaninhas? 🐞🐞🐞🐞🐞🐞", "certa": "6", "erradas": ["5", "7"] },
+        { "pergunta": "Quantos carros? 🚗🚗🚗🚗", "certa": "4", "erradas": ["3", "5"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Ticl@s nos buracos",
+      "instrucao": "Conta e toca no Ticl@s com o número certo.",
+      "itens": [
+        { "pergunta": "Quantos balões? 🎈🎈🎈🎈🎈🎈🎈", "certa": "7", "erradas": ["6", "8"] },
+        { "pergunta": "Quantas bolas? ⚽⚽⚽⚽⚽⚽⚽⚽", "certa": "8", "erradas": ["7", "9"] },
+        { "pergunta": "Quantos patinhos? 🐤🐤🐤🐤🐤", "certa": "5", "erradas": ["4", "6"] },
+        { "pergunta": "Quantas maçãs? 🍎🍎🍎🍎🍎🍎🍎🍎🍎", "certa": "9", "erradas": ["8", "10"] },
+        { "pergunta": "Quantas estrelas? ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐", "certa": "10", "erradas": ["9", "8"] },
+        { "pergunta": "Quantos peixes? 🐟🐟🐟", "certa": "3", "erradas": ["2", "4"] }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Comboio dos números",
+      "instrucao": "Põe os números pela ordem certa.",
+      "itens": [
+        { "emoji": "🔢", "pecas": ["1", "2", "3"] },
+        { "emoji": "🔢", "pecas": ["2", "3", "4", "5"] },
+        { "emoji": "🔢", "pecas": ["4", "5", "6", "7"] },
+        { "emoji": "🔢", "pecas": ["6", "7", "8", "9", "10"] }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "O que vem a seguir?",
+      "instrucao": "Descobre o padrão e escolhe a carruagem certa.",
+      "itens": [
+        { "pergunta": "O que vem a seguir? 🔴🔵🔴🔵🔴", "certa": "🔵", "erradas": ["🔴", "🟢"] },
+        { "pergunta": "O que vem a seguir? 🍎🍌🍎🍌🍎", "certa": "🍌", "erradas": ["🍎", "🍓"] },
+        { "pergunta": "O que vem a seguir? ⭐🌙⭐🌙⭐", "certa": "🌙", "erradas": ["⭐", "☀️"] },
+        { "pergunta": "O que vem a seguir? 🐶🐱🐶🐱🐶", "certa": "🐱", "erradas": ["🐶", "🐭"] },
+        { "pergunta": "O que vem a seguir? 🟡🟡🔵🟡🟡🔵🟡🟡", "certa": "🔵", "erradas": ["🟡", "🔴"] },
+        { "pergunta": "O que vem a seguir? 🚗🚗🚲🚗🚗🚲🚗🚗", "certa": "🚲", "erradas": ["🚗", "🚌"] }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas do 2 e do 3",
+      "instrucao": "Conta e põe cada grupo na caixa certa.",
+      "caixas": ["2", "3"],
+      "itens": [
+        ["🍎🍎", "2"], ["⭐⭐⭐", "3"],
+        ["🐟🐟", "2"], ["🎈🎈🎈", "3"],
+        ["🌼🌼", "2"], ["🚗🚗🚗", "3"]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião do mais e do menos",
+      "instrucao": "Leva o avião até à nuvem certa.",
+      "itens": [
+        { "pergunta": "Onde há mais flores?", "certa": "🌼🌼🌼🌼🌼", "erradas": ["🌼🌼", "🌼🌼🌼"] },
+        { "pergunta": "Onde há menos peixes?", "certa": "🐟", "erradas": ["🐟🐟🐟", "🐟🐟🐟🐟"] },
+        { "pergunta": "Onde há mais estrelas?", "certa": "⭐⭐⭐⭐", "erradas": ["⭐⭐", "⭐⭐⭐"] },
+        { "pergunta": "Onde há menos maçãs?", "certa": "🍎🍎", "erradas": ["🍎🍎🍎🍎", "🍎🍎🍎🍎🍎"] },
+        { "pergunta": "Qual é o número maior?", "certa": "9", "erradas": ["4", "6"] },
+        { "pergunta": "Qual é o número menor?", "certa": "2", "erradas": ["5", "8"] }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos números",
+      "itens": [["3", "🍎🍎🍎"], ["5", "⭐⭐⭐⭐⭐"], ["2", "🐟🐟"], ["4", "🎈🎈🎈🎈"]]
+    }
+  ]
+}
