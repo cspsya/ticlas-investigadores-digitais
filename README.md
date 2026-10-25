@@ -6,8 +6,8 @@ Portal HTML estático para GitHub Pages. Os alunos escolhem o ano nas placas do 
 
 1. Criar repositório **público** `ticlas-investigadores-digitais` na conta `cspsya`. **Não tornar público o repositório de trabalho existente.**
 2. Carregar **todo o conteúdo desta pasta** para a raiz do novo repositório (não colocar uma pasta adicional à volta de `index.html`).
-3. Ir a **Settings → Pages → Build and deployment → Deploy from a branch**.
-4. Selecionar `main` e `/ (root)`, guardar.
+3. Ir a **Settings → Pages → Build and deployment → Source: «GitHub Actions»**.
+4. A publicação passa a ser feita pelo fluxo `.github/workflows/verificar-e-publicar.yml`, que só publica se os jogos estiverem corretos.
 5. Quando o Pages terminar a publicação, testar `https://cspsya.github.io/ticlas-investigadores-digitais/`.
 
 Este URL é uma previsão até a publicação estar concluída.
