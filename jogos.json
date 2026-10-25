@@ -141,5 +141,18 @@
     "url": "jogos/2026-10-26/Ticlas_Missao_Letra_P_1ano.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-26-2ano-segredos-r-l",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Os Segredos do R e do L",
+    "descricao": "Grupos consonânticos com r e l, construção, cópia e ordenação de frases; jogo individual sem som",
+    "disciplina": "Português",
+    "data": "2026-10-27",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/Ticlas_Segredos_R_e_L_2ano_26_30_outubro.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
   }
 ]
