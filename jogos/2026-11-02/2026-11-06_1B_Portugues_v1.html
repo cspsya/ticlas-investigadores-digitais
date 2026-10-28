@@ -1315,10 +1315,16 @@ function ecraInicio() {
     class: 'escolha', 'aria-pressed': String(prefs[grupo] === valor),
     onclick: () => { prefs[grupo] = valor; if (grupo === 'modo') delete prefs.som; guardarPrefs(); ecraInicio(); }
   }, titulo, h('small', null, sub));
-  const tags = [AULA.ano + '.º ano', AULA.turma, AULA.disciplina, '≈ ' + (AULA.minutos || minutosEstimados(listaRondas('principal').map(i => AULA.rondas[i]))) + ' min'].filter(Boolean);
+  const tags = [AULA.ano + '.º ano', AULA.turma, AULA.disciplina, '≈ ' + (AULA.minutos || minutosEstimados(listaRondas('principal').map(i => AULA.rondas[i]))) + ' min'].filter((x, k, a) => x && a.indexOf(x) === k); // sem etiquetas repetidas (ex.: turma «3.º ano»)
   const numero = h('input', { id: 'numAluno', inputmode: 'numeric', maxlength: '3', value: est.numero, 'aria-label': t('numero'), placeholder: 'ex.: 7' });
   numero.addEventListener('input', () => { numero.value = numero.value.replace(/\D/g, ''); est.numero = numero.value; });
-  numero.addEventListener('change', () => ecraInicio());
+  // Não redesenhar o ecrã: se o aluno escreve o número e carrega logo em «Começar», o clique perdia-se.
+  // Só se mostra (ou esconde) o botão «Continuar onde parei» para esse número.
+  numero.addEventListener('change', () => {
+    const g = ler(chaveProgresso()), tem = g && !g.concluido && (Object.keys(g.feitas || {}).length || g.p > 0), bt = $('#btContinuar');
+    if (tem && !bt) $('#btComecar').after(h('button', { class: 'btn leve', id: 'btContinuar', onclick: () => comecar(true) }, t('continuarOnde')));
+    else if (!tem && bt) bt.remove();
+  });
   const lingua = h('select', { id: 'lingua', 'aria-label': t('lingua'), onchange: e => { prefs.lingua = e.target.value; guardarPrefs(); ecraInicio(); } },
     Object.entries(LINGUAS).map(([k, nome]) => h('option', { value: k, selected: k === prefs.lingua || null }, nome)));
   $('#app').replaceChildren(h('div', { class: 'inicio' },

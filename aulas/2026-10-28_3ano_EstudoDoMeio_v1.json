@@ -1,0 +1,798 @@
+{
+  "id": "3ano-roda-dos-alimentos",
+  "titulo": "A Roda dos Alimentos com o Ticl@s",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Estudo do Meio",
+  "data": "2026-10-28",
+  "descricao": "Grupos da Roda dos Alimentos e escolhas para uma alimentação completa, variada e equilibrada",
+  "objetivo": "Conhecer os 7 grupos da Roda dos Alimentos e escolher refeições completas, variadas e equilibradas.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "baralhar": true,
+      "titulo": "Em que grupo está?",
+      "instrucao": "Olha para o alimento e escolhe o grupo da Roda a que pertence.",
+      "itens": [
+        {
+          "pergunta": "Em que grupo está o pão?",
+          "emoji": "🍞",
+          "certa": "Cereais e tubérculos",
+          "erradas": [
+            "Leguminosas",
+            "Laticínios"
+          ],
+          "explicacao": "O pão é feito de cereais (trigo, milho, centeio)."
+        },
+        {
+          "pergunta": "Em que grupo está a cenoura?",
+          "emoji": "🥕",
+          "certa": "Hortícolas",
+          "erradas": [
+            "Fruta",
+            "Leguminosas"
+          ]
+        },
+        {
+          "pergunta": "Em que grupo está a maçã?",
+          "emoji": "🍎",
+          "certa": "Fruta",
+          "erradas": [
+            "Hortícolas",
+            "Gorduras e óleos"
+          ]
+        },
+        {
+          "pergunta": "Em que grupo está o leite?",
+          "emoji": "🥛",
+          "certa": "Laticínios",
+          "erradas": [
+            "Gorduras e óleos",
+            "Carne, pescado e ovos"
+          ]
+        },
+        {
+          "pergunta": "Em que grupo está o peixe?",
+          "emoji": "🐟",
+          "certa": "Carne, pescado e ovos",
+          "erradas": [
+            "Laticínios",
+            "Leguminosas"
+          ]
+        },
+        {
+          "pergunta": "Em que grupo está o feijão?",
+          "emoji": "🫘",
+          "certa": "Leguminosas",
+          "erradas": [
+            "Hortícolas",
+            "Cereais e tubérculos"
+          ],
+          "explicacao": "O feijão, o grão-de-bico, as lentilhas, as ervilhas e as favas são leguminosas."
+        },
+        {
+          "pergunta": "Em que grupo está a batata?",
+          "emoji": "🥔",
+          "certa": "Cereais e tubérculos",
+          "erradas": [
+            "Hortícolas",
+            "Leguminosas"
+          ],
+          "dica": "A batata é um tubérculo: cresce debaixo da terra e dá muita energia.",
+          "explicacao": "A batata é um tubérculo. Está no grupo dos cereais e derivados, tubérculos."
+        },
+        {
+          "pergunta": "Em que grupo está o ovo?",
+          "emoji": "🥚",
+          "certa": "Carne, pescado e ovos",
+          "erradas": [
+            "Laticínios",
+            "Cereais e tubérculos"
+          ]
+        },
+        {
+          "pergunta": "Em que grupo está a manteiga?",
+          "emoji": "🧈",
+          "certa": "Gorduras e óleos",
+          "erradas": [
+            "Laticínios",
+            "Cereais e tubérculos"
+          ],
+          "dica": "A manteiga é quase toda gordura.",
+          "explicacao": "A manteiga é feita do leite, mas é quase só gordura: está no grupo das gorduras e óleos."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "titulo": "Detetives da Roda",
+      "instrucao": "Observa a Roda dos Alimentos e responde. Repara no tamanho das fatias!",
+      "itens": [
+        {
+          "pergunta": "Conta as fatias coloridas. Quantos grupos tem a Roda dos Alimentos?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTlBMjNCIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iIzVCQUU0QSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U4NTU0RSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiM1QkEzRDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0MwNTg3RSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiM4QTZCQkUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0YyQzIzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiM3Q0M4RjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PC9zdmc+",
+          "alt": "Roda dos Alimentos com 7 fatias coloridas e água no centro",
+          "certa": "7",
+          "erradas": [
+            "6",
+            "8"
+          ],
+          "dica": "Conta também as fatias muito fininhas.",
+          "explicacao": "A Roda dos Alimentos tem 7 grupos. A água está no centro."
+        },
+        {
+          "pergunta": "O que está no centro da Roda?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTdFMkQ5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiM3Q0M4RjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIyOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUY2RkE4IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1kYXNoYXJyYXk9IjUgNCIvPjwvc3ZnPg==",
+          "alt": "Roda dos Alimentos com o centro destacado e uma gota de água",
+          "certa": "Água",
+          "erradas": [
+            "Leite",
+            "Sumo"
+          ],
+          "explicacao": "A água está no centro porque faz parte de quase todos os alimentos e é essencial à vida."
+        },
+        {
+          "pergunta": "Que grupo está pintado na Roda?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTlBMjNCIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiNEQ0VGRjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PHBhdGggZD0iTTEwMC4wLDc2LjAgTDEwMC4wLDYuMCBBOTQsOTQgMCAwIDEgMTkyLjMsMTE3LjYgTDEyMy42LDEwNC41IEEyNCwyNCAwIDAgMCAxMDAuMCw3Ni4wIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNBMkUyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "Roda dos Alimentos com a maior fatia pintada",
+          "certa": "Cereais e tubérculos",
+          "erradas": [
+            "Hortícolas",
+            "Fruta"
+          ],
+          "dica": "É a fatia maior de todas.",
+          "explicacao": "Cereais e derivados, tubérculos: é o maior grupo (pão, arroz, massa, batata)."
+        },
+        {
+          "pergunta": "Que grupo está pintado na Roda?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTdFMkQ5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0YyQzIzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiNEQ0VGRjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PHBhdGggZD0iTTk3LjAsNzYuMiBMODguMiw2LjcgQTk0LDk0IDAgMCAxIDEwMC4wLDYuMCBMMTAwLjAsNzYuMCBBMjQsMjQgMCAwIDAgOTcuMCw3Ni4yIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNBMkUyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "Roda dos Alimentos com a fatia mais fina pintada",
+          "certa": "Gorduras e óleos",
+          "erradas": [
+            "Leguminosas",
+            "Carne, pescado e ovos"
+          ],
+          "dica": "É a fatia mais fininha de todas.",
+          "explicacao": "Gorduras e óleos: é o grupo mais pequeno. Devemos comer muito pouco."
+        },
+        {
+          "pergunta": "Que grupo está pintado na Roda?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTdFMkQ5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iIzVCQUU0QSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiNEQ0VGRjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjM0EyRTI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "Roda dos Alimentos com a segunda maior fatia pintada",
+          "certa": "Hortícolas",
+          "erradas": [
+            "Fruta",
+            "Laticínios"
+          ],
+          "dica": "É a 2.ª fatia maior: alface, couve, cenoura…",
+          "explicacao": "Hortícolas: é o 2.º maior grupo. Devem estar na sopa, no prato e na salada."
+        },
+        {
+          "pergunta": "Que grupo está pintado na Roda?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTdFMkQ5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U4NTU0RSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiNEQ0VGRjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PHBhdGggZD0iTTk4LjUsMTI0LjAgTDk0LjEsMTkzLjggQTk0LDk0IDAgMCAxIDkuMCwxMjMuNCBMNzYuOCwxMDYuMCBBMjQsMjQgMCAwIDAgOTguNSwxMjQuMCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiMzQTJFMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "Roda dos Alimentos com a terceira maior fatia pintada",
+          "certa": "Fruta",
+          "erradas": [
+            "Laticínios",
+            "Hortícolas"
+          ],
+          "dica": "É a 3.ª fatia maior. Lembra-te da sobremesa!"
+        },
+        {
+          "pergunta": "Devemos comer muitos ou poucos alimentos do grupo pintado?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTdFMkQ5IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0U3RTJEOSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiNFN0UyRDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0YyQzIzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiNEQ0VGRjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PHBhdGggZD0iTTk3LjAsNzYuMiBMODguMiw2LjcgQTk0LDk0IDAgMCAxIDEwMC4wLDYuMCBMMTAwLjAsNzYuMCBBMjQsMjQgMCAwIDAgOTcuMCw3Ni4yIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzNBMkUyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "Roda dos Alimentos com a fatia mais fina pintada",
+          "certa": "Poucos",
+          "erradas": [
+            "Muitos"
+          ],
+          "explicacao": "Quanto mais pequena é a fatia, menos devemos comer desse grupo."
+        },
+        {
+          "pergunta": "Porque é que as fatias da Roda têm tamanhos diferentes?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OCIgZmlsbD0iI2ZmZiIvPjxwYXRoIGQ9Ik0xMDAuMCw3Ni4wIEwxMDAuMCw2LjAgQTk0LDk0IDAgMCAxIDE5Mi4zLDExNy42IEwxMjMuNiwxMDQuNSBBMjQsMjQgMCAwIDAgMTAwLjAsNzYuMCBaIiBmaWxsPSIjRTlBMjNCIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEyMy42LDEwNC41IEwxOTIuMywxMTcuNiBBOTQsOTQgMCAwIDEgOTQuMSwxOTMuOCBMOTguNSwxMjQuMCBBMjQsMjQgMCAwIDAgMTIzLjYsMTA0LjUgWiIgZmlsbD0iIzVCQUU0QSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05OC41LDEyNC4wIEw5NC4xLDE5My44IEE5NCw5NCAwIDAgMSA5LjAsMTIzLjQgTDc2LjgsMTA2LjAgQTI0LDI0IDAgMCAwIDk4LjUsMTI0LjAgWiIgZmlsbD0iI0U4NTU0RSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik03Ni44LDEwNi4wIEw5LjAsMTIzLjQgQTk0LDk0IDAgMCAxIDQwLjEsMjcuNiBMODQuNyw4MS41IEEyNCwyNCAwIDAgMCA3Ni44LDEwNi4wIFoiIGZpbGw9IiM1QkEzRDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNODQuNyw4MS41IEw0MC4xLDI3LjYgQTk0LDk0IDAgMCAxIDY1LjQsMTIuNiBMOTEuMiw3Ny43IEEyNCwyNCAwIDAgMCA4NC43LDgxLjUgWiIgZmlsbD0iI0MwNTg3RSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik05MS4yLDc3LjcgTDY1LjQsMTIuNiBBOTQsOTQgMCAwIDEgODguMiw2LjcgTDk3LjAsNzYuMiBBMjQsMjQgMCAwIDAgOTEuMiw3Ny43IFoiIGZpbGw9IiM4QTZCQkUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNOTcuMCw3Ni4yIEw4OC4yLDYuNyBBOTQsOTQgMCAwIDEgMTAwLjAsNi4wIEwxMDAuMCw3Ni4wIEEyNCwyNCAwIDAgMCA5Ny4wLDc2LjIgWiIgZmlsbD0iI0YyQzIzMCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMjMiIGZpbGw9IiM3Q0M4RjAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cGF0aCBkPSJNMTAwIDg4IEM5NSA5NiA5MiAxMDAgOTIgMTA0IGE4IDggMCAwIDAgMTYgMCBDMTA4IDEwMCAxMDUgOTYgMTAwIDg4IFoiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii45Ii8+PC9zdmc+",
+          "alt": "Roda dos Alimentos com 7 fatias de tamanhos diferentes",
+          "certa": "Mostram quanto devemos comer de cada grupo",
+          "erradas": [
+            "Para a Roda ficar mais bonita",
+            "Mostram os alimentos mais caros"
+          ],
+          "explicacao": "Fatias grandes: comer mais. Fatias pequenas: comer menos."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "baralhar": true,
+      "titulo": "Arruma a horta e o pomar",
+      "instrucao": "Arrasta (ou toca) cada alimento para o grupo certo.",
+      "caixas": [
+        "🍎 Fruta",
+        "🥦 Hortícolas",
+        "🫘 Leguminosas"
+      ],
+      "itens": [
+        [
+          "🍌 banana",
+          "🍎 Fruta"
+        ],
+        [
+          "🍐 pera",
+          "🍎 Fruta"
+        ],
+        [
+          "🍊 laranja",
+          "🍎 Fruta"
+        ],
+        [
+          "🥬 alface",
+          "🥦 Hortícolas"
+        ],
+        [
+          "🧅 cebola",
+          "🥦 Hortícolas"
+        ],
+        [
+          "🥒 pepino",
+          "🥦 Hortícolas"
+        ],
+        [
+          "🫘 feijão",
+          "🫘 Leguminosas"
+        ],
+        [
+          "grão-de-bico",
+          "🫘 Leguminosas"
+        ],
+        [
+          "🫛 ervilhas",
+          "🫘 Leguminosas"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "verdadeiro_falso",
+      "baralhar": true,
+      "titulo": "Verdade ou mito?",
+      "instrucao": "Lê com atenção. A frase é verdadeira ou falsa?",
+      "itens": [
+        {
+          "afirmacao": "🥔 A batata pertence ao grupo dos hortícolas.",
+          "verdade": false,
+          "explicacao": "A batata é um tubérculo: está no grupo dos cereais e derivados, tubérculos."
+        },
+        {
+          "afirmacao": "💧 A água está no centro da Roda porque é essencial à vida.",
+          "verdade": true,
+          "explicacao": "Devemos beber água várias vezes ao dia."
+        },
+        {
+          "afirmacao": "🍽️ Devemos comer mais alimentos dos grupos maiores da Roda.",
+          "verdade": true,
+          "explicacao": "Os grupos maiores são os que devemos comer em maior quantidade."
+        },
+        {
+          "afirmacao": "🍬 Os rebuçados, os bolos e os refrigerantes fazem parte da Roda.",
+          "verdade": false,
+          "explicacao": "Não estão na Roda. Têm muito açúcar e só se comem de vez em quando."
+        },
+        {
+          "afirmacao": "🫘 O feijão e o grão-de-bico são leguminosas.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "🧈 A manteiga pertence ao grupo dos laticínios.",
+          "verdade": false,
+          "explicacao": "A manteiga está no grupo das gorduras e óleos."
+        },
+        {
+          "afirmacao": "🔁 Ter uma alimentação variada é comer sempre os mesmos alimentos.",
+          "verdade": false,
+          "explicacao": "Variar é trocar os alimentos dentro de cada grupo: hoje maçã, amanhã pera."
+        },
+        {
+          "afirmacao": "🍊 Devemos comer fruta e hortícolas todos os dias.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "🧀 O queijo e o iogurte pertencem aos laticínios.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "☀️ Saltar o pequeno-almoço ajuda a ter mais energia na escola.",
+          "verdade": false,
+          "explicacao": "O pequeno-almoço dá energia para começar o dia. Não o devemos saltar."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "baralhar": true,
+      "titulo": "Arruma a despensa",
+      "instrucao": "Arrasta (ou toca) cada alimento para o grupo certo.",
+      "caixas": [
+        "🍚 Cereais e tubérculos",
+        "🧀 Laticínios",
+        "🍗 Carne, pescado e ovos",
+        "🫒 Gorduras e óleos"
+      ],
+      "itens": [
+        [
+          "🍚 arroz",
+          "🍚 Cereais e tubérculos"
+        ],
+        [
+          "🍝 massa",
+          "🍚 Cereais e tubérculos"
+        ],
+        [
+          "🥔 batata",
+          "🍚 Cereais e tubérculos"
+        ],
+        [
+          "🧀 queijo",
+          "🧀 Laticínios"
+        ],
+        [
+          "🥛 leite",
+          "🧀 Laticínios"
+        ],
+        [
+          "iogurte",
+          "🧀 Laticínios"
+        ],
+        [
+          "🍗 frango",
+          "🍗 Carne, pescado e ovos"
+        ],
+        [
+          "🐟 peixe",
+          "🍗 Carne, pescado e ovos"
+        ],
+        [
+          "🥚 ovo",
+          "🍗 Carne, pescado e ovos"
+        ],
+        [
+          "azeite",
+          "🫒 Gorduras e óleos"
+        ],
+        [
+          "🧈 manteiga",
+          "🫒 Gorduras e óleos"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "baralhar": true,
+      "titulo": "Os 3 segredos de comer bem",
+      "instrucao": "Escolhe a palavra que completa a frase.",
+      "itens": [
+        {
+          "frase": "Uma alimentação ___ tem alimentos de todos os grupos da Roda.",
+          "emoji": "🧩",
+          "certa": "completa",
+          "erradas": [
+            "variada",
+            "equilibrada"
+          ],
+          "explicacao": "Completa = comer de todos os grupos todos os dias."
+        },
+        {
+          "frase": "Uma alimentação ___ tem mais alimentos dos grupos grandes e menos dos pequenos.",
+          "emoji": "⚖️",
+          "certa": "equilibrada",
+          "erradas": [
+            "completa",
+            "variada"
+          ],
+          "explicacao": "Equilibrada = respeitar o tamanho de cada fatia."
+        },
+        {
+          "frase": "Uma alimentação ___ troca os alimentos dentro de cada grupo: hoje maçã, amanhã pera.",
+          "emoji": "🔄",
+          "certa": "variada",
+          "erradas": [
+            "equilibrada",
+            "completa"
+          ],
+          "explicacao": "Variada = não comer sempre o mesmo."
+        },
+        {
+          "frase": "A ___ não tem um grupo só seu e está no centro da Roda.",
+          "emoji": "💧",
+          "certa": "água",
+          "erradas": [
+            "fruta",
+            "sopa"
+          ]
+        },
+        {
+          "frase": "O leite, o queijo e o iogurte são ___.",
+          "emoji": "🥛",
+          "certa": "laticínios",
+          "erradas": [
+            "leguminosas",
+            "hortícolas"
+          ]
+        },
+        {
+          "frase": "Os doces e os refrigerantes só se devem comer ___.",
+          "emoji": "🍭",
+          "certa": "de vez em quando",
+          "erradas": [
+            "ao lanche",
+            "todos os dias"
+          ]
+        },
+        {
+          "frase": "Para ter energia de manhã, não devemos saltar o ___.",
+          "emoji": "🥣",
+          "certa": "pequeno-almoço",
+          "erradas": [
+            "jantar",
+            "lanche da tarde"
+          ]
+        },
+        {
+          "frase": "Antes de comer, devemos lavar bem as ___.",
+          "emoji": "🧼",
+          "certa": "mãos",
+          "erradas": [
+            "orelhas",
+            "meias"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Põe por ordem",
+      "instrucao": "Toca nas peças pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "📏",
+          "pergunta": "Do grupo maior para o mais pequeno.",
+          "pecas": [
+            "Cereais e tubérculos",
+            "Hortícolas",
+            "Fruta",
+            "Laticínios"
+          ],
+          "dica": "Começa pela fatia maior da Roda."
+        },
+        {
+          "emoji": "📏",
+          "pergunta": "Do grupo maior para o mais pequeno.",
+          "pecas": [
+            "Laticínios",
+            "Carne, pescado e ovos",
+            "Leguminosas",
+            "Gorduras e óleos"
+          ],
+          "dica": "O grupo mais pequeno de todos é o das gorduras e óleos."
+        },
+        {
+          "emoji": "🕘",
+          "pergunta": "As refeições do dia, da manhã para a noite.",
+          "pecas": [
+            "pequeno-almoço",
+            "meio da manhã",
+            "almoço",
+            "lanche",
+            "jantar"
+          ]
+        },
+        {
+          "emoji": "💧",
+          "pergunta": "Forma a frase.",
+          "pecas": [
+            "Devemos",
+            "beber",
+            "água",
+            "todos os dias."
+          ]
+        },
+        {
+          "emoji": "🍎",
+          "pergunta": "Forma a frase.",
+          "pecas": [
+            "A fruta",
+            "é uma boa",
+            "sobremesa."
+          ]
+        },
+        {
+          "emoji": "🍲",
+          "pergunta": "Forma a frase.",
+          "pecas": [
+            "A sopa",
+            "de legumes",
+            "é muito",
+            "saudável."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "baralhar": true,
+      "titulo": "Comboio das escolhas saudáveis",
+      "instrucao": "Escolhe a carruagem com a opção mais saudável.",
+      "itens": [
+        {
+          "pergunta": "Qual é o melhor lanche para levar para a escola?",
+          "emoji": "🎒",
+          "certa": "🥪 pão com queijo e 🍎 maçã",
+          "erradas": [
+            "🍪 bolachas de chocolate e 🧃 sumo",
+            "🍟 batatas fritas e 🥤 refrigerante"
+          ]
+        },
+        {
+          "pergunta": "O que é melhor beber quando tens sede?",
+          "emoji": "🥵",
+          "certa": "💧 água",
+          "erradas": [
+            "🥤 refrigerante",
+            "🧃 sumo de pacote"
+          ]
+        },
+        {
+          "pergunta": "Qual é o almoço mais equilibrado?",
+          "emoji": "🍽️",
+          "certa": "🐟 peixe, 🍚 arroz e 🥗 salada",
+          "erradas": [
+            "🌭 salsichas, 🍟 batatas fritas e 🥫 ketchup",
+            "🍕 piza, 🍗 asas fritas e 🥤 refrigerante"
+          ]
+        },
+        {
+          "pergunta": "Qual é a sobremesa mais saudável?",
+          "emoji": "🍨",
+          "certa": "🍊 fruta da época",
+          "erradas": [
+            "🍦 gelado",
+            "🍰 bolo de chocolate"
+          ]
+        },
+        {
+          "pergunta": "Qual é o pequeno-almoço mais completo?",
+          "emoji": "🌅",
+          "certa": "🥛 leite, 🍞 pão e 🍌 fruta",
+          "erradas": [
+            "🧃 sumo, 🍪 bolachas e 🍬 rebuçado",
+            "🍩 bolo, 🍫 chocolate e 🥤 refrigerante"
+          ]
+        },
+        {
+          "pergunta": "Qual destes hábitos é saudável à mesa?",
+          "emoji": "🍴",
+          "certa": "comer devagar e mastigar bem",
+          "erradas": [
+            "comer à pressa",
+            "comer a ver o tablet"
+          ]
+        },
+        {
+          "pergunta": "Além de comer bem, o que ajuda a crescer com saúde?",
+          "emoji": "⚽",
+          "certa": "brincar e mexer o corpo",
+          "erradas": [
+            "ficar horas ao computador",
+            "deitar muito tarde"
+          ]
+        },
+        {
+          "pergunta": "Com que frequência devemos comer ao longo do dia?",
+          "emoji": "⏰",
+          "certa": "mais ou menos de 3 em 3 horas",
+          "erradas": [
+            "só ao almoço e ao jantar",
+            "uma vez por dia"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Teclado dos alimentos",
+      "instrucao": "Escreve no teclado o nome do alimento. Atenção aos acentos!",
+      "itens": [
+        {
+          "pergunta": "Escreve o nome deste fruto.",
+          "emoji": "🍌",
+          "resposta": "banana",
+          "dica": "Começa por B e tem 6 letras."
+        },
+        {
+          "pergunta": "Escreve o nome deste hortícola.",
+          "emoji": "🥕",
+          "resposta": "cenoura",
+          "dica": "Começa por C: ce-nou-ra."
+        },
+        {
+          "pergunta": "Escreve o nome deste alimento.",
+          "emoji": "🍞",
+          "resposta": "pão",
+          "dica": "Tem til: ã. Carrega primeiro na tecla ~ e depois no a."
+        },
+        {
+          "pergunta": "Escreve o nome deste laticínio.",
+          "emoji": "🧀",
+          "resposta": "queijo",
+          "dica": "Começa por QU: quei-jo."
+        },
+        {
+          "pergunta": "Escreve o nome deste alimento.",
+          "emoji": "🥚",
+          "resposta": "ovo",
+          "dica": "Tem 3 letras."
+        },
+        {
+          "pergunta": "Escreve o nome deste fruto.",
+          "emoji": "🍐",
+          "resposta": "pera",
+          "dica": "Começa por P e tem 4 letras."
+        },
+        {
+          "pergunta": "Escreve o nome deste hortícola.",
+          "emoji": "🥦",
+          "resposta": [
+            "brócolos",
+            "brócolo"
+          ],
+          "dica": "Tem acento agudo no ó: bró-co-los."
+        },
+        {
+          "pergunta": "Escreve o que bebemos várias vezes por dia.",
+          "emoji": "💧",
+          "resposta": "água",
+          "dica": "Tem acento agudo no á: á-gua."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Frases saudáveis",
+      "instrucao": "Escreve uma frase completa. Começa com letra maiúscula e termina com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase sobre um lanche saudável de que gostes.",
+          "emoji": "🥪",
+          "minPalavras": 5,
+          "dica": "Exemplo: Ao lanche gosto de comer pão com queijo."
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «água».",
+          "emoji": "💧",
+          "palavra": "água",
+          "minPalavras": 5,
+          "dica": "Exemplo: Eu bebo água quando tenho sede."
+        },
+        {
+          "pergunta": "Escreve uma frase a explicar porque devemos comer fruta e hortícolas todos os dias.",
+          "emoji": "🥗",
+          "minPalavras": 6,
+          "dica": "Podes começar assim: Devemos comer fruta porque…"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória da Roda",
+      "instrucao": "Descobre os pares: o alimento e o seu grupo.",
+      "itens": [
+        [
+          "🥛 leite",
+          "Laticínios"
+        ],
+        [
+          "🫘 feijão",
+          "Leguminosas"
+        ],
+        [
+          "🍞 pão",
+          "Cereais e tubérculos"
+        ],
+        [
+          "🥦 brócolos",
+          "Hortícolas"
+        ],
+        [
+          "🍊 laranja",
+          "Fruta"
+        ],
+        [
+          "🧈 manteiga",
+          "Gorduras e óleos"
+        ],
+        [
+          "🐟 peixe",
+          "Carne, pescado e ovos"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "aviao",
+      "baralhar": true,
+      "titulo": "Avião do intruso",
+      "instrucao": "Leva o avião até à nuvem com o alimento que NÃO pertence ao grupo.",
+      "itens": [
+        {
+          "pergunta": "Qual destes NÃO faz parte da Roda dos Alimentos?",
+          "emoji": "🚫",
+          "certa": "🥤 refrigerante",
+          "erradas": [
+            "🥛 leite",
+            "🍊 laranja"
+          ]
+        },
+        {
+          "pergunta": "Qual destes NÃO é um hortícola?",
+          "emoji": "🥦",
+          "certa": "🍌 banana",
+          "erradas": [
+            "🥬 alface",
+            "🥕 cenoura"
+          ]
+        },
+        {
+          "pergunta": "Qual destes NÃO é uma leguminosa?",
+          "emoji": "🫘",
+          "certa": "🥔 batata",
+          "erradas": [
+            "🫘 feijão",
+            "lentilhas"
+          ]
+        },
+        {
+          "pergunta": "Qual destes NÃO é um laticínio?",
+          "emoji": "🧀",
+          "certa": "🧈 manteiga",
+          "erradas": [
+            "🧀 queijo",
+            "🥛 leite"
+          ]
+        },
+        {
+          "pergunta": "Qual destes NÃO é dos cereais e tubérculos?",
+          "emoji": "🍚",
+          "certa": "🥚 ovo",
+          "erradas": [
+            "🍚 arroz",
+            "🍝 massa"
+          ]
+        },
+        {
+          "pergunta": "Qual destes NÃO é uma fruta?",
+          "emoji": "🍎",
+          "certa": "🧅 cebola",
+          "erradas": [
+            "🍐 pera",
+            "🍇 uvas"
+          ]
+        }
+      ]
+    }
+  ]
+}

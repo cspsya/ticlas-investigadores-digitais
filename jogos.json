@@ -180,5 +180,18 @@
     "url": "jogos/2026-10-26/Ticlas_3A_26_30_outubro_2026.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "3ano-roda-dos-alimentos",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "A Roda dos Alimentos com o Ticl@s",
+    "descricao": "Grupos da Roda dos Alimentos e escolhas para uma alimentação completa, variada e equilibrada",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-10-28",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/2026-10-28_3ano_EstudoDoMeio_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
   }
 ]
