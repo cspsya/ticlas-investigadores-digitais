@@ -210,5 +210,22 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-10-28-3ano-detetives-internet",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Detetives da Internet Segura com o Ticl@s",
+    "descricao": "Apresentação interativa estilo vídeo para o quadro: dados pessoais, palavras-passe fortes, mensagens falsas, armadilhas e sites amigáveis. Com sorteio do n.º do aluno, cartaz da turma e certificado.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-10-28",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/Ticlas_Detetives_da_Internet_Segura_3ano.html",
+    "duracao": "60 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
