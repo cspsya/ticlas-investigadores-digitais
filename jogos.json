@@ -193,5 +193,22 @@
     "url": "jogos/2026-10-26/2026-10-28_3ano_EstudoDoMeio_v1.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-10-28-2ano-guardioes-internet",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Guardiões da Internet com o Ticl@s",
+    "descricao": "Apresentação interativa estilo vídeo: principais perigos na Internet e os dados pessoais que não se partilham. Jogo «Toca ou partilha?», regra Para, Pensa, Pede ajuda e certificado.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-10-28",
+    "semana": "26–30 out. 2026",
+    "url": "jogos/2026-10-26/Ticlas_Guardioes_da_Internet_2ano.html",
+    "duracao": "30 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
