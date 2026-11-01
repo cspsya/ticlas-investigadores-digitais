@@ -227,5 +227,22 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-02-3ano-escape-room-internet",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Escape Room: Liberta o Ticl@s!",
+    "descricao": "Teste em escape room sobre a Internet segura: 6 salas (dados pessoais, palavras-passe, mensagens falsas, verdadeiro ou falso, ligações e site armadilha), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-11-02",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/Ticlas_Escape_Room_Internet_Segura_3ano.html",
+    "duracao": "40 min",
+    "estado": "em validação",
+    "tipo": "Escape room",
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
