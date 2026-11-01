@@ -371,9 +371,16 @@ footer .contentor{align-items:center}
 }
 @media (max-width:640px){.ciclo-etiqueta{font-size:11px;margin-bottom:8px;padding:3px 9px}}
 </style>
-</head>
+<style>
+.recurso-abas{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0}
+.recurso-aba{font:inherit;font-size:17px;font-weight:700;border:2px solid #dbe6e0;background:#fff;border-radius:16px;padding:12px 18px;cursor:pointer}
+.recurso-aba[aria-pressed="true"]{background:#237e79;color:#fff;border-color:#237e79}
+.recurso-semana{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:16px 0 24px;font-weight:700}
+.recurso-semana select{font:inherit;border:1px solid #aebeb5;background:#fff;border-radius:12px;padding:10px;max-width:100%}
+@media(max-width:640px){.recurso-abas{display:grid;grid-template-columns:1fr 1fr;gap:8px}.recurso-aba{font-size:14px;padding:12px 7px}}
+</style></head>
 <body>
-<a class="pular" href="#missoes">Saltar para as missões</a>
+<a class="pular" href="#missoes">Saltar para os recursos</a>
 <section class="mundo" aria-labelledby="pergunta">
   <div class="contentor topo">
     <a class="pilula marca" href="./">
@@ -410,7 +417,7 @@ footer .contentor{align-items:center}
     <p class="intro">Todas as missões publicadas, de todas as semanas. Cada missão é um ficheiro HTML que funciona no browser, no painel ou no computador. Para abrir um ano diretamente no painel, use o endereço com o ano no fim, por exemplo <code>#ano-2</code>.</p>
     <div class="filtros">
       <div class="chips" id="chips" role="group" aria-label="Filtrar por disciplina"></div>
-      <label class="so-leitor" for="f-ano">Ano</label>
+      <label class="so-leitor" for="f-tipo">Tipo</label><select id="f-tipo"><option value="todos">Todos os recursos</option><option value="atividade">Atividades</option><option value="apresentacao">Apresentações</option></select><label class="so-leitor" for="f-ano">Ano</label>
       <select id="f-ano"><option value="0">Todos os anos</option><option value="1">1.º ano</option><option value="2">2.º ano</option><option value="3">3.º ano</option><option value="4">4.º ano</option></select>
       <label class="so-leitor" for="f-texto">Procurar</label>
       <input id="f-texto" type="search" placeholder="Procurar por turma, título ou conteúdo" autocomplete="off">
@@ -432,10 +439,11 @@ footer .contentor{align-items:center}
 const ANOS={1:'1.º ano',2:'2.º ano',3:'3.º ano',4:'4.º ano'};
 const $=s=>document.querySelector(s);
 const area=$('#area'),ticlas=$('#ticlas'),fala1=$('#fala-1'),pergunta=$('#pergunta');
-let dados=[],ano=0;
+let dados=[],ano=0,tipoAtual='atividade',semanaEscolhida='';
 
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function norm(s){return String(s||'').toLocaleLowerCase('pt-PT').normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function eApresentacao(d){return /apresenta|aula/i.test(String(d.categoria||d.tipo||''))}
 function turmaBonita(t){const m=String(t).match(/^(\d)\s*\.?º?\s*([A-Z])$/i);return m?m[1]+'.º '+m[2].toUpperCase():t}
 function segunda(d){const x=new Date(d+'T12:00:00');x.setDate(x.getDate()-(x.getDay()+6)%7);return x.toISOString().slice(0,10)}
 function segundaAtual(){const h=new Date();h.setHours(12);const dia=(h.getDay()+6)%7;h.setDate(h.getDate()+(dia>=5?7-dia:-dia));return h.toISOString().slice(0,10)}
@@ -478,32 +486,49 @@ function cartao(d){
   const il=el('div','ilus');il.dataset.tipo=temaDe(d).tipo;il.innerHTML=ilustracao(d);
   const tb=el('span','turma',turmaBonita(d.turma));tb.dataset.ano=d.ano;if(d.turma==='2.º ano')tb.classList.add('turma-ano');il.append(tb);
   const corpo=el('div','corpo');
-  corpo.append(el('span','disciplina',d.disciplina||''),el('h3','',d.titulo),el('p','',d.descricao||''));
+  corpo.append(el('span','disciplina',(eApresentacao(d)?'Aula e apresentação · ':'Atividade semanal · ')+(d.disciplina||'')),el('h3','',d.titulo),el('p','',d.descricao||''));
   const info=el('div','info');
   if(d.duracao){const s=el('span');s.innerHTML=ICONE_TEMPO;s.append(d.duracao);info.append(s)}
   {const s=el('span');s.innerHTML=ICONE_JOGO;s.append(d.tipo||'Jogo interativo');info.append(s)}
   const ac=el('div','acoes');ac.append(el('span','teste',d.estado==='em validação'?'Versão de teste':''));
-  const a=el('a','comecar');a.href=d.url;a.innerHTML='Começar '+ICONE_PLAY;a.setAttribute('aria-label','Começar '+d.titulo+', turma '+turmaBonita(d.turma));ac.append(a);
+  const a=el('a','comecar');a.href=d.url;a.innerHTML=(eApresentacao(d)?'Abrir aula ':'Começar ')+ICONE_PLAY;a.setAttribute('aria-label','Começar '+d.titulo+', turma '+turmaBonita(d.turma));ac.append(a);
   corpo.append(info,ac);c.append(il,corpo);return c}
 
 function semanaRecente(lista){if(!lista.length)return null;const k=lista.map(d=>segunda(d.data)).sort().pop();return{k,itens:lista.filter(d=>segunda(d.data)===k).sort((a,b)=>a.ano-b.ano||a.turma.localeCompare(b.turma))}}
 
 function mostrar(){
-  area.replaceChildren();if(!dados.length)return;
-  const meus=ano?dados.filter(d=>Number(d.ano)===ano):dados;
-  const cab=el('div','cabeca');cab.append(el('h2','',ano?'Missões do '+ANOS[ano]:'Missões da semana'));area.append(cab);
-  if(!meus.length){const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';const t=el('div');
-    t.append(el('b','','Ainda não há missões para o '+ANOS[ano]+'.'),el('span','','O Ticl@s está a prepará-las. Volta na próxima semana!'));v.append(img,t);area.append(v);return}
-  const s=semanaRecente(meus);
-  cab.append(el('span','quando',(s.k===segundaAtual()?'Esta semana, ':'Semana de ')+s.itens[0].semana));
-  const g=el('div','cartoes');s.itens.forEach(d=>g.append(cartao(d)));area.append(g);
+ area.replaceChildren();
+ const meus=ano?dados.filter(d=>Number(d.ano)===ano):dados;
+ const cab=el('div','cabeca');cab.append(el('h2','',ano?'Recursos do '+ANOS[ano]:'Recursos semanais'));area.append(cab);
+ const abas=el('div','recurso-abas');abas.setAttribute('role','group');abas.setAttribute('aria-label','Selecionar tipo de recurso');
+ [['atividade','Atividades semanais'],['apresentacao','Aulas e apresentações']].forEach(([id,nome])=>{
+  const b=el('button','recurso-aba',nome);b.type='button';b.setAttribute('aria-pressed',String(tipoAtual===id));
+  b.onclick=()=>{tipoAtual=id;semanaEscolhida='';mostrar()};abas.append(b)
+ });area.append(abas);
+ const lista=meus.filter(d=>eApresentacao(d)===(tipoAtual==='apresentacao'));
+ if(!lista.length){
+  const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';
+  const t=el('div');t.append(el('b','',tipoAtual==='atividade'?'Ainda não há atividades.':'Ainda não há apresentações.'),
+   el('span','','Os recursos serão apresentados aqui à medida que forem publicados.'));
+  v.append(img,t);area.append(v);return
+ }
+ const semanas=[...new Set(lista.map(d=>segunda(d.data)))].sort().reverse();
+ const hoje=new Date();hoje.setHours(12);const atual=segunda(hoje.toISOString().slice(0,10));
+ if(!semanas.includes(semanaEscolhida))semanaEscolhida=semanas.find(k=>k<=atual)||semanas[0];
+ const f=el('div','recurso-semana'),lab=el('label','','Semana letiva:');
+ const sel=el('select');sel.id='semana-recursos';lab.htmlFor=sel.id;
+ semanas.forEach(k=>{const d=lista.find(x=>segunda(x.data)===k),opt=el('option','',d.semana||'Semana de '+k);
+  opt.value=k;opt.selected=k===semanaEscolhida;sel.append(opt)});
+ sel.onchange=()=>{semanaEscolhida=sel.value;mostrar()};f.append(lab,sel);area.append(f);
+ const itens=lista.filter(d=>segunda(d.data)===semanaEscolhida);
+ const g=el('div','cartoes');itens.forEach(d=>g.append(cartao(d)));area.append(g)
 }
 
 function escolher(n,{rolar=true}={}){
-  ano=n;document.querySelectorAll('.placa button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ano)===n)));
+  ano=n;semanaEscolhida='';document.querySelectorAll('.placa button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ano)===n)));
   const tem=dados.some(d=>Number(d.ano)===n);
-  fala1.textContent=tem?'Boa escolha! Procura a tua turma.':'O '+ANOS[n]+' ainda não tem missões.';
-  pergunta.textContent=tem?'Vamos às missões!':'Volta em breve!';
+  fala1.textContent=tem?'Boa escolha! Escolhe atividades ou apresentações.':'Ainda não há recursos neste ano.';
+  pergunta.textContent=tem?'Vamos aprender!':'Volta em breve!';
   ticlas.classList.remove('salta');void ticlas.offsetWidth;ticlas.classList.add('salta');
   mostrar();
   if(history.replaceState)history.replaceState(null,'','#ano-'+n);
@@ -520,22 +545,32 @@ let disc='';
 function disciplinas(){const s=new Set();dados.forEach(d=>String(d.disciplina||'').split(/\s+e\s+|,\s*/).forEach(x=>x.trim()&&s.add(x.trim())));return [...s].sort((a,b)=>a.localeCompare(b,'pt'))}
 function chips(){const box=$('#chips');box.replaceChildren();['',...disciplinas()].forEach(nome=>{const b=el('button','chip',nome||'Todas');b.type='button';b.setAttribute('aria-pressed',String(nome===disc));b.onclick=()=>{disc=nome;chips();tabela()};box.append(b)})}
 function tabela(){
-  const fa=Number($('#f-ano').value),q=norm($('#f-texto').value.trim()),tb=$('#linhas');tb.replaceChildren();
-  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(!disc||String(d.disciplina).includes(disc))&&(!q||norm([d.titulo,d.descricao,d.disciplina,d.turma,turmaBonita(d.turma),d.semana].join(' ')).includes(q)))
+  const fa=Number($('#f-ano').value),ft=$('#f-tipo').value,q=norm($('#f-texto').value.trim()),tb=$('#linhas');tb.replaceChildren();
+  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(ft==='todos'||eApresentacao(d)===(ft==='apresentacao'))&&(!disc||String(d.disciplina).includes(disc))&&(!q||norm([d.titulo,d.descricao,d.disciplina,d.turma,turmaBonita(d.turma),d.semana].join(' ')).includes(q)))
     .sort((a,b)=>segunda(b.data).localeCompare(segunda(a.data))||a.ano-b.ano||a.turma.localeCompare(b.turma));
   if(!r.length){const tr=el('tr'),td=el('td','nada','Nenhuma missão com estes filtros.');td.colSpan=5;tr.append(td);tb.append(tr);return}
   r.forEach(d=>{const tr=el('tr');const t1=el('td');const p=el('span','ponto',turmaBonita(d.turma).replace(' ',''));p.dataset.ano=d.ano;t1.append(p);
     const t2=el('td');t2.append(el('b','',d.titulo));
     const t5=el('td');const a=el('a','','Abrir');a.href=d.url;a.setAttribute('aria-label','Abrir '+d.titulo);t5.append(a);
     tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',d.semana||''),t5);tb.append(tr)})}
-$('#f-ano').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
+$('#f-tipo').addEventListener('change',tabela);$('#f-ano').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
 
-fetch('jogos.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
-  if(!Array.isArray(d))throw Error('formato');dados=d;
-  $('#estado-catalogo').textContent=d.length===1?'1 missão publicada.':d.length+' missões publicadas.';
-  chips();tabela();
-  const m=location.hash.match(/ano-(\d)/);if(m&&ANOS[m[1]])escolher(Number(m[1]));else mostrar();
-}).catch(()=>{$('#estado-catalogo').textContent='Não foi possível ler a lista de missões (jogos.json). Abra o site a partir do GitHub Pages ou de um servidor local.'});
+Promise.all([
+ fetch('jogos.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),
+ fetch('apresentacoes.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[])
+]).then(([jogos,apresentacoes])=>{
+ if(!Array.isArray(jogos)||!Array.isArray(apresentacoes))throw Error('formato');
+ dados=[...jogos,...apresentacoes].filter(d=>d&&d.url&&d.data&&d.ano);
+ const v=new Set();dados=dados.filter(d=>{const k=d.id||d.url;if(v.has(k))return false;v.add(k);return true});
+ const n=dados.filter(eApresentacao).length;
+ $('#estado-catalogo').textContent=(dados.length-n)+' atividades e '+n+' apresentações publicadas.';
+ chips();tabela();
+ const m=location.hash.match(/ano-(\d)/);
+ if(m&&ANOS[m[1]])escolher(Number(m[1]),{rolar:false});else mostrar();
+}).catch(()=>{
+ $('#estado-catalogo').textContent='Não foi possível carregar o catálogo.';
+ area.append(el('p','','Não foi possível carregar os recursos.'))
+});
 </script>
 </body>
 </html>
