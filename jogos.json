@@ -244,5 +244,22 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-02-2ano-escape-room-internet",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Escape Room: Liberta o Ticl@s!",
+    "descricao": "Teste em escape room sobre os perigos da Internet: 6 salas (toca ou partilha, desconhecidos, prémios falsos, mensagens simpáticas, regra de ouro e ligações), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-11-02",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/Ticlas_Escape_Room_Internet_Segura_2ano.html",
+    "duracao": "40 min",
+    "estado": "em validação",
+    "tipo": "Escape room",
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
