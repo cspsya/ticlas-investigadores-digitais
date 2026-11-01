@@ -1,0 +1,767 @@
+{
+  "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
+  "titulo": "Vogais nasais e sons do x",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-02",
+  "descricao": "Minijogos, escrita de palavras e frases com vogais nasais e com os sons do x",
+  "objetivo": "Ler e escrever palavras com vogais nasais (ã, ão, an, en, in, on, un, m antes de p e b) e descobrir os quatro sons do x.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões do til",
+      "instrucao": "Olha para o desenho e rebenta o balão com a palavra bem escrita.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🍎",
+          "certa": "maçã",
+          "erradas": [
+            "maça",
+            "macã"
+          ],
+          "explicacao": "ma-çã: o ã tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🦁",
+          "certa": "leão",
+          "erradas": [
+            "leao",
+            "lião"
+          ],
+          "explicacao": "le-ão: o ão tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🍋",
+          "certa": "limão",
+          "erradas": [
+            "limao",
+            "limã"
+          ],
+          "explicacao": "li-mão: o ão tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🐸",
+          "certa": "rã",
+          "erradas": [
+            "ra",
+            "rão"
+          ],
+          "explicacao": "rã: uma só sílaba, com til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🍞",
+          "certa": "pão",
+          "erradas": [
+            "pao",
+            "pã"
+          ],
+          "explicacao": "pão: o ão tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "✋",
+          "certa": "mão",
+          "erradas": [
+            "mao",
+            "mã"
+          ],
+          "explicacao": "mão: o ão tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "🎈",
+          "certa": "balão",
+          "erradas": [
+            "balao",
+            "balam"
+          ],
+          "explicacao": "ba-lão: o ão tem til."
+        },
+        {
+          "pergunta": "Qual é a palavra bem escrita?",
+          "emoji": "❤️",
+          "certa": "coração",
+          "erradas": [
+            "coraçao",
+            "coracão"
+          ],
+          "explicacao": "co-ra-ção: leva cedilha e til."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos sons nasais",
+      "instrucao": "Lê cada palavra e põe-na na caixa do seu som nasal.",
+      "caixas": [
+        "an",
+        "en",
+        "in",
+        "on",
+        "un"
+      ],
+      "itens": [
+        [
+          "manta",
+          "an"
+        ],
+        [
+          "canto",
+          "an"
+        ],
+        [
+          "lenço",
+          "en"
+        ],
+        [
+          "vento",
+          "en"
+        ],
+        [
+          "cinto",
+          "in"
+        ],
+        [
+          "pinto",
+          "in"
+        ],
+        [
+          "ponte",
+          "on"
+        ],
+        [
+          "conta",
+          "on"
+        ],
+        [
+          "mundo",
+          "un"
+        ],
+        [
+          "fundo",
+          "un"
+        ]
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "M antes de P e B",
+      "instrucao": "Antes de p e de b escreve-se sempre m. Escolhe a palavra bem escrita.",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "As ovelhas comem erva no ___.",
+          "emoji": "🐑",
+          "certa": "campo",
+          "erradas": [
+            "canpo",
+            "capo"
+          ],
+          "explicacao": "cam-po: antes de p escreve-se m."
+        },
+        {
+          "frase": "O menino toca ___ na banda.",
+          "emoji": "🥁",
+          "certa": "tambor",
+          "erradas": [
+            "tanbor",
+            "tabor"
+          ],
+          "explicacao": "tam-bor: antes de b escreve-se m."
+        },
+        {
+          "frase": "A ___ branca voa no céu.",
+          "emoji": "🕊️",
+          "certa": "pomba",
+          "erradas": [
+            "ponba",
+            "poba"
+          ],
+          "explicacao": "pom-ba: antes de b escreve-se m."
+        },
+        {
+          "frase": "O ___ chegou à estação.",
+          "emoji": "🚂",
+          "certa": "comboio",
+          "erradas": [
+            "conboio",
+            "coboio"
+          ],
+          "explicacao": "com-boi-o: antes de b escreve-se m."
+        },
+        {
+          "frase": "Hoje está bom ___ para ir à praia.",
+          "emoji": "☀️",
+          "certa": "tempo",
+          "erradas": [
+            "tenpo",
+            "tepo"
+          ],
+          "explicacao": "tem-po: antes de p escreve-se m."
+        },
+        {
+          "frase": "Acende a ___ porque está escuro.",
+          "emoji": "💡",
+          "certa": "lâmpada",
+          "erradas": [
+            "lânpada",
+            "lapada"
+          ],
+          "explicacao": "lâm-pa-da: antes de p escreve-se m."
+        },
+        {
+          "frase": "Eu ___ lavo as mãos antes de comer.",
+          "emoji": "🧼",
+          "certa": "sempre",
+          "erradas": [
+            "senpre",
+            "sepre"
+          ],
+          "explicacao": "sem-pre: antes de p escreve-se m."
+        },
+        {
+          "frase": "O avô deu-me um ___ de chocolate.",
+          "emoji": "🍫",
+          "certa": "bombom",
+          "erradas": [
+            "bonbom",
+            "bonbon"
+          ],
+          "explicacao": "bom-bom: antes de b escreve-se m e no fim da palavra também."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Os quatro sons do x",
+      "instrucao": "O x pode soar como ch, z, s ou cs. Lê baixinho e põe cada palavra na caixa certa.",
+      "caixas": [
+        "x soa ch",
+        "x soa z",
+        "x soa s",
+        "x soa cs"
+      ],
+      "itens": [
+        [
+          "lixo",
+          "x soa ch"
+        ],
+        [
+          "xaile",
+          "x soa ch"
+        ],
+        [
+          "roxo",
+          "x soa ch"
+        ],
+        [
+          "exemplo",
+          "x soa z"
+        ],
+        [
+          "exato",
+          "x soa z"
+        ],
+        [
+          "máximo",
+          "x soa s"
+        ],
+        [
+          "trouxe",
+          "x soa s"
+        ],
+        [
+          "fixo",
+          "x soa cs"
+        ],
+        [
+          "tóxico",
+          "x soa cs"
+        ],
+        [
+          "oxigénio",
+          "x soa cs"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião do x",
+      "instrucao": "Lê a palavra e leva o avião até à nuvem com o som do x.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Em «peixe», o x soa como…",
+          "emoji": "🐟",
+          "certa": "ch",
+          "erradas": [
+            "cs",
+            "z"
+          ],
+          "explicacao": "pei-xe: o x soa como ch."
+        },
+        {
+          "pergunta": "Em «táxi», o x soa como…",
+          "emoji": "🚕",
+          "certa": "cs",
+          "erradas": [
+            "ch",
+            "z"
+          ],
+          "explicacao": "tá-xi: o x soa como cs (tácsi)."
+        },
+        {
+          "pergunta": "Em «caixa», o x soa como…",
+          "emoji": "📦",
+          "certa": "ch",
+          "erradas": [
+            "cs",
+            "s"
+          ],
+          "explicacao": "cai-xa: o x soa como ch."
+        },
+        {
+          "pergunta": "Em «saxofone», o x soa como…",
+          "emoji": "🎷",
+          "certa": "cs",
+          "erradas": [
+            "ch",
+            "z"
+          ],
+          "explicacao": "sa-xo-fo-ne: o x soa como cs."
+        },
+        {
+          "pergunta": "Em «exame», o x soa como…",
+          "emoji": "📝",
+          "certa": "z",
+          "erradas": [
+            "ch",
+            "cs"
+          ],
+          "explicacao": "e-xa-me: o x soa como z (ezame)."
+        },
+        {
+          "pergunta": "Em «próximo», o x soa como…",
+          "certa": "s",
+          "erradas": [
+            "cs",
+            "ch"
+          ],
+          "explicacao": "pró-xi-mo: o x soa como s (próssimo)."
+        },
+        {
+          "pergunta": "Em «boxe», o x soa como…",
+          "emoji": "🥊",
+          "certa": "cs",
+          "erradas": [
+            "ch",
+            "s"
+          ],
+          "explicacao": "bo-xe: o x soa como cs (bócse)."
+        },
+        {
+          "pergunta": "Em «xadrez», o x soa como…",
+          "emoji": "♟️",
+          "certa": "ch",
+          "erradas": [
+            "z",
+            "cs"
+          ],
+          "explicacao": "xa-drez: o x soa como ch."
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive das regras",
+      "instrucao": "Lê com atenção. É verdadeiro ou falso?",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "Em «táxi», o x soa como ch.",
+          "verdade": false,
+          "explicacao": "tá-xi: o x soa como cs."
+        },
+        {
+          "afirmacao": "Em «exame», o x soa como z.",
+          "verdade": true,
+          "explicacao": "e-xa-me: soa como ezame."
+        },
+        {
+          "afirmacao": "Em «próximo», o x soa como cs.",
+          "verdade": false,
+          "explicacao": "pró-xi-mo: o x soa como s."
+        },
+        {
+          "afirmacao": "Antes de p e de b escreve-se n.",
+          "verdade": false,
+          "explicacao": "Escreve-se m: campo, pomba, tambor."
+        },
+        {
+          "afirmacao": "A palavra «vento» tem um som nasal.",
+          "verdade": true,
+          "explicacao": "ven-to: o en é um som nasal."
+        },
+        {
+          "afirmacao": "A palavra «pato» tem um som nasal.",
+          "verdade": false,
+          "explicacao": "pa-to não tem som nasal. Já «pinto» tem: pin-to."
+        }
+      ]
+    },
+    {
+      "tipo": "escrever",
+      "titulo": "Teclado mágico: escreve o nome",
+      "instrucao": "Olha para o desenho e escreve o seu nome no teclado.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Escreve o nome deste fruto.",
+          "emoji": "🍉",
+          "resposta": "melancia",
+          "dica": "me-lan-ci-a: tem an."
+        },
+        {
+          "pergunta": "Escreve o nome desta ave.",
+          "emoji": "🐧",
+          "resposta": "pinguim",
+          "dica": "pin-guim: acaba em m."
+        },
+        {
+          "pergunta": "Escreve o nome deste desenho.",
+          "emoji": "🎈",
+          "resposta": "balão",
+          "dica": "Para o ã, carrega na tecla do ~ e depois no a."
+        },
+        {
+          "pergunta": "Escreve o nome deste animal.",
+          "emoji": "🐘",
+          "resposta": "elefante",
+          "dica": "e-le-fan-te: tem an."
+        },
+        {
+          "pergunta": "Escreve o nome deste instrumento.",
+          "emoji": "🎺",
+          "resposta": "trompete",
+          "dica": "trom-pe-te: antes de p escreve-se m."
+        },
+        {
+          "pergunta": "Escreve o nome deste animal.",
+          "emoji": "🐟",
+          "resposta": "peixe",
+          "dica": "pei-xe: o som ch escreve-se com x."
+        },
+        {
+          "pergunta": "Escreve o nome deste carro.",
+          "emoji": "🚕",
+          "resposta": "táxi",
+          "dica": "Para o á, carrega na tecla do ´ e depois no a."
+        },
+        {
+          "pergunta": "Escreve o nome deste instrumento.",
+          "emoji": "🎷",
+          "resposta": "saxofone",
+          "dica": "sa-xo-fo-ne: tem x."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "Frases com buracos",
+      "instrucao": "Escreve no teclado a palavra que falta na frase.",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "O ___ ladra ao carteiro.",
+          "emoji": "🐕",
+          "certa": "cão",
+          "dica": "Tem ão: carrega no ~ e depois no a."
+        },
+        {
+          "frase": "Lavo as ___ antes de comer.",
+          "emoji": "👐",
+          "certa": "mãos",
+          "dica": "mã-os: tem til."
+        },
+        {
+          "frase": "Deito o papel no caixote do ___.",
+          "emoji": "🗑️",
+          "certa": "lixo",
+          "dica": "li-xo: o som ch escreve-se com x."
+        },
+        {
+          "frase": "Gosto de jogar ___ com o meu avô. (começa por x)",
+          "emoji": "♟️",
+          "certa": "xadrez",
+          "dica": "Começa por x: xa-drez."
+        },
+        {
+          "frase": "A ___ voa numa vassoura.",
+          "emoji": "🧹",
+          "certa": "bruxa",
+          "dica": "bru-xa: o som ch escreve-se com x."
+        },
+        {
+          "frase": "Tomei ___ para a tosse. (começa por x)",
+          "emoji": "🤧",
+          "certa": "xarope",
+          "dica": "Começa por x: xa-ro-pe."
+        },
+        {
+          "frase": "Fiz um ___ de Matemática no caderno. (começa por ex)",
+          "emoji": "✏️",
+          "certa": "exercício",
+          "dica": "Começa por ex. Para o í, carrega no ´ e depois no i."
+        },
+        {
+          "frase": "Vamos à praia na ___ semana. (tem x)",
+          "emoji": "📅",
+          "certa": "próxima",
+          "dica": "pró-xi-ma: o x soa como s."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Copiar sem erros",
+      "instrucao": "Copia a frase no teclado. Não te esqueças da letra maiúscula, do til e do ponto final.",
+      "itens": [
+        {
+          "pergunta": "Copia a frase: «O cão do Simão come pão.»",
+          "emoji": "🐕",
+          "resposta": "O cão do Simão come pão.",
+          "dica": "Simão é um nome: começa com letra maiúscula."
+        },
+        {
+          "pergunta": "Copia a frase: «A bruxa trouxe um peixe.»",
+          "emoji": "🧹",
+          "resposta": "A bruxa trouxe um peixe.",
+          "dica": "Começa com letra maiúscula: usa a tecla ⇧ (Shift)."
+        },
+        {
+          "pergunta": "Copia a frase: «O pinguim anda de táxi.»",
+          "emoji": "🐧",
+          "resposta": "O pinguim anda de táxi.",
+          "dica": "Para o á: carrega no ´ e depois no a."
+        },
+        {
+          "pergunta": "Copia a frase: «O elefante comeu uma maçã.»",
+          "emoji": "🐘",
+          "resposta": "O elefante comeu uma maçã.",
+          "dica": "Para o ã: carrega no ~ e depois no a."
+        },
+        {
+          "pergunta": "Copia a frase: «A Joana toca tambor no campo.»",
+          "emoji": "🥁",
+          "resposta": "A Joana toca tambor no campo.",
+          "dica": "Joana é um nome: começa com letra maiúscula."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "instrucao": "Inventa uma frase tua com a palavra pedida.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase com a palavra «limão».",
+          "emoji": "🍋",
+          "palavra": "limão",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «caixa».",
+          "emoji": "📦",
+          "palavra": "caixa",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «táxi».",
+          "emoji": "🚕",
+          "palavra": "táxi",
+          "minPalavras": 4
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Caça ao som nasal",
+      "instrucao": "Apanha o Ticl@s quando aparecer a palavra com som nasal.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "ponte",
+          "erradas": [
+            "pote",
+            "porta"
+          ],
+          "explicacao": "pon-te: tem on."
+        },
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "mundo",
+          "erradas": [
+            "mudo",
+            "muro"
+          ],
+          "explicacao": "mun-do: tem un."
+        },
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "lindo",
+          "erradas": [
+            "lido",
+            "livro"
+          ],
+          "explicacao": "lin-do: tem in."
+        },
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "tanto",
+          "erradas": [
+            "tato",
+            "tarde"
+          ],
+          "explicacao": "tan-to: tem an."
+        },
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "senta",
+          "erradas": [
+            "seta",
+            "sete"
+          ],
+          "explicacao": "sen-ta: tem en."
+        },
+        {
+          "pergunta": "Que palavra tem som nasal?",
+          "certa": "conto",
+          "erradas": [
+            "copo",
+            "corpo"
+          ],
+          "explicacao": "con-to: tem on."
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória do Ticl@s",
+      "itens": [
+        [
+          "🐧",
+          "pinguim"
+        ],
+        [
+          "🎈",
+          "balão"
+        ],
+        [
+          "🚕",
+          "táxi"
+        ],
+        [
+          "📦",
+          "caixa"
+        ],
+        [
+          "🦁",
+          "leão"
+        ],
+        [
+          "🎷",
+          "saxofone"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "ordenar",
+      "titulo": "Constrói palavras e frases",
+      "juntar": "",
+      "itens": [
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🍉",
+          "pecas": [
+            "me",
+            "lan",
+            "ci",
+            "a"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🐘",
+          "pecas": [
+            "e",
+            "le",
+            "fan",
+            "te"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🎷",
+          "pecas": [
+            "sa",
+            "xo",
+            "fo",
+            "ne"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🚚",
+          "pecas": [
+            "ca",
+            "mi",
+            "ão"
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🦁",
+          "pecas": [
+            "O",
+            "leão",
+            "dorme",
+            "na",
+            "ponte."
+          ],
+          "juntar": " "
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🧹",
+          "pecas": [
+            "A",
+            "bruxa",
+            "mexe",
+            "a",
+            "panela."
+          ],
+          "juntar": " "
+        }
+      ]
+    }
+  ]
+}

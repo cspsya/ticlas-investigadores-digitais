@@ -261,5 +261,31 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-02-ticlas-2ano-numeros-ate-200-valor-posicional",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Números até 200 e valor posicional",
+    "descricao": "Minijogos com centenas, dezenas e unidades, comparar e ordenar números até 200 e escrevê-los por extenso",
+    "disciplina": "Matemática",
+    "data": "2026-11-02",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/2026-11-02_2ano_Matematica_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
+  },
+  {
+    "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Vogais nasais e sons do x",
+    "descricao": "Minijogos, escrita de palavras e frases com vogais nasais e com os sons do x",
+    "disciplina": "Português",
+    "data": "2026-11-02",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/2026-11-02_2ano_Portugues_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
   }
 ]
