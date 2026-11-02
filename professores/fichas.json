@@ -1,0 +1,1290 @@
+{
+  "versao": 1,
+  "ano_letivo": "2026/2027",
+  "nota": "Fichas pedagógicas propostas a partir das descrições dos recursos publicados. A data de catálogo não equivale à data de realização.",
+  "fichas": [
+    {
+      "id": "2026-10-19-1A",
+      "ano": 1,
+      "turma": "1A",
+      "modalidade": "curricular",
+      "disciplina": "Matemática",
+      "titulo": "Contar e os amigos do 10",
+      "tema": "Contagens, adições e complementos até 10",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar contagens, adições e complementos até 10.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Ativar conhecimentos",
+          "10 min",
+          "Recordar com exemplos o conteúdo matemático da atividade."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Modelar a resolução de uma tarefa no quadro interativo."
+        ],
+        [
+          "Praticar",
+          "25 min",
+          "Resolver os desafios digitais sobre Contagens, adições e complementos até 10."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Discutir estratégias e corrigir situações de dificuldade."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Verificar a compreensão e a autonomia na resolução."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Contar e os amigos do 10",
+        "url": "../jogos/2026-10-19/Jogos_1A_Contar_e_Amigos_do_10_S07.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-19-1B",
+      "ano": 1,
+      "turma": "1B",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "Ditongos, nomes e sequências",
+      "tema": "Identificar ditongos, escrever nomes e completar sequências",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar identificar ditongos, escrever nomes e completar sequências.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de Identificar ditongos, escrever nomes e completar sequências; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Ditongos, nomes e sequências",
+        "url": "../jogos/2026-10-19/Jogos_1B_Ditongos_Nomes_Sequencias_S07.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-19-2ano",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português e Matemática",
+      "titulo": "S ou Z? Somar e subtrair",
+      "tema": "Ortografia s/z e cálculo até 100",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar ortografia s/z e cálculo até 100.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Introduzir os conteúdos",
+          "10 min",
+          "Relembrar os conceitos de Português e Matemática presentes no recurso."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Explorar exemplos no quadro e explicar a utilização da atividade digital."
+        ],
+        [
+          "Praticar por etapas",
+          "25 min",
+          "Realizar os desafios de Ortografia s/z e cálculo até 100. Ajustar a ajuda e o ritmo à turma."
+        ],
+        [
+          "Partilhar estratégias",
+          "10 min",
+          "Comparar respostas e pedir que os alunos expliquem as suas estratégias."
+        ],
+        [
+          "Verificar aprendizagens",
+          "5 min",
+          "Observar a execução e esclarecer os erros mais frequentes."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "S ou Z? Somar e subtrair",
+        "url": "../jogos/2026-10-19/Jogos_2ano_S_ou_Z_e_Calculo_S07.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-19-3B",
+      "ano": 3,
+      "turma": "3B",
+      "modalidade": "curricular",
+      "disciplina": "Matemática e Estudo do Meio",
+      "titulo": "MAB virtual e ligar 112",
+      "tema": "Valor posicional, números até 2000 e emergência 112",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar valor posicional, números até 2000 e emergência 112.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Introduzir os conteúdos",
+          "10 min",
+          "Relembrar os conceitos de Matemática e Estudo do Meio presentes no recurso."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Explorar exemplos no quadro e explicar a utilização da atividade digital."
+        ],
+        [
+          "Praticar por etapas",
+          "25 min",
+          "Realizar os desafios de Valor posicional, números até 2000 e emergência 112. Ajustar a ajuda e o ritmo à turma."
+        ],
+        [
+          "Partilhar estratégias",
+          "10 min",
+          "Comparar respostas e pedir que os alunos expliquem as suas estratégias."
+        ],
+        [
+          "Verificar aprendizagens",
+          "5 min",
+          "Observar a execução e esclarecer os erros mais frequentes."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "MAB virtual e ligar 112",
+        "url": "../jogos/2026-10-19/Jogos_3B_MAB_e_112_S07.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-19-2ano-casos-s-z",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "Casos de leitura: S e Z",
+      "tema": "14 minijogos de leitura e escrita com as, es, is, os, us, az, ez, iz, oz e uz",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar 14 minijogos de leitura e escrita com as, es, is, os, us, az, ez, iz, oz e uz.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de 14 minijogos de leitura e escrita com as, es, is, os, us, az, ez, iz, oz e uz; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Casos de leitura: S e Z",
+        "url": "../jogos/2026-10-19/Ticlas_Casos_S_e_Z_2ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-19-1A-amigos-10-ticlas",
+      "ano": 1,
+      "turma": "1A",
+      "modalidade": "curricular",
+      "disciplina": "Matemática",
+      "titulo": "Os Amigos do 10 — Ticl@s",
+      "tema": "Minijogos de Matemática com contagens, adições e os amigos do 10",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar minijogos de Matemática com contagens, adições e os amigos do 10.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Ativar conhecimentos",
+          "10 min",
+          "Recordar com exemplos o conteúdo matemático da atividade."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Modelar a resolução de uma tarefa no quadro interativo."
+        ],
+        [
+          "Praticar",
+          "25 min",
+          "Resolver os desafios digitais sobre Minijogos de Matemática com contagens, adições e os amigos do 10."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Discutir estratégias e corrigir situações de dificuldade."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Verificar a compreensão e a autonomia na resolução."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Os Amigos do 10 — Ticl@s",
+        "url": "../jogos/2026-10-19/1A_Ticlas_Jogo_19_23_outubro.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-22-3ano-devagar-se-vai-ao-longe",
+      "ano": 3,
+      "turma": "3.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "Devagar se vai ao longe — s, ss, ç, c",
+      "tema": "Ortografia e leitura: distinguir s, ss, ç e c, com desafios interativos e escrita",
+      "periodo": 1,
+      "semana_catalogo": "19–23 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar ortografia e leitura: distinguir s, ss, ç e c, com desafios interativos e escrita.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de Ortografia e leitura: distinguir s, ss, ç e c, com desafios interativos e escrita; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Devagar se vai ao longe — s, ss, ç, c",
+        "url": "../jogos/2026-10-19/Devagar_se_vai_ao_longe_Ticlas_3ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-30_1B_Matematica_v1",
+      "ano": 1,
+      "turma": "1.º B",
+      "modalidade": "curricular",
+      "disciplina": "Matemática",
+      "titulo": "Detetives dos sólidos",
+      "tema": "Identificar e comparar sólidos geométricos em objetos do dia a dia",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar identificar e comparar sólidos geométricos em objetos do dia a dia.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Ativar conhecimentos",
+          "10 min",
+          "Recordar com exemplos o conteúdo matemático da atividade."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Modelar a resolução de uma tarefa no quadro interativo."
+        ],
+        [
+          "Praticar",
+          "25 min",
+          "Resolver os desafios digitais sobre Identificar e comparar sólidos geométricos em objetos do dia a dia."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Discutir estratégias e corrigir situações de dificuldade."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Verificar a compreensão e a autonomia na resolução."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Detetives dos sólidos",
+        "url": "../jogos/2026-10-26/2026-10-30_1B_Matematica_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-03_1A_Portugues_v1",
+      "ano": 1,
+      "turma": "1.º A",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "As sílabas do P",
+      "tema": "Ouvir, reconhecer e juntar as sílabas pa, pe, pi, po, pu",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar ouvir, reconhecer e juntar as sílabas pa, pe, pi, po, pu.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de Ouvir, reconhecer e juntar as sílabas pa, pe, pi, po, pu; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "As sílabas do P",
+        "url": "../jogos/2026-11-02/2026-11-03_1A_Portugues_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-06_1B_Portugues_v1",
+      "ano": 1,
+      "turma": "1.º B",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "O T e o P",
+      "tema": "Sílabas ta, te, ti, to, tu e palavras com p e t",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar sílabas ta, te, ti, to, tu e palavras com p e t.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de Sílabas ta, te, ti, to, tu e palavras com p e t; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "O T e o P",
+        "url": "../jogos/2026-11-02/2026-11-06_1B_Portugues_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-26-letra-p-1ano",
+      "ano": 1,
+      "turma": "1.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "O Grande Mistério da Letra P",
+      "tema": "8 missões individuais sem som: reconhecer P/p, sílabas, imagens, palavras e traçado",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar 8 missões individuais sem som: reconhecer P/p, sílabas, imagens, palavras e traçado.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de 8 missões individuais sem som: reconhecer P/p, sílabas, imagens, palavras e traçado; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "O Grande Mistério da Letra P",
+        "url": "../jogos/2026-10-26/Ticlas_Missao_Letra_P_1ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-26-2ano-segredos-r-l",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "Os Casos de Leitura com R e L",
+      "tema": "15 casos de leitura br, cr, dr, fr, gr, pr, tr, vr e bl, cl, dl, fl, gl, pl, tl; cópia e ordenação de frases. Sem som.",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar 15 casos de leitura br, cr, dr, fr, gr, pr, tr, vr e bl, cl, dl, fl, gl, pl, tl; cópia e ordenação de frases. Sem som..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de 15 casos de leitura br, cr, dr, fr, gr, pr, tr, vr e bl, cl, dl, fl, gl, pl, tl; cópia e ordenação de frases. Sem som.; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Os Casos de Leitura com R e L",
+        "url": "../jogos/2026-10-26/Ticlas_Segredos_R_e_L_2ano_26_30_outubro.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-28-3B-tabuada-fracoes",
+      "ano": 3,
+      "turma": "3B",
+      "modalidade": "curricular",
+      "disciplina": "Matemática e Português",
+      "titulo": "Missão 6 — Frações e Tabuada",
+      "tema": "Tabuada do 6, numerador, denominador e frações representadas em pizas e tabletes; ordenação e cópia de frases. Sem som.",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar tabuada do 6, numerador, denominador e frações representadas em pizas e tabletes; ordenação e cópia de frases. Sem som..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Introduzir os conteúdos",
+          "10 min",
+          "Relembrar os conceitos de Matemática e Português presentes no recurso."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Explorar exemplos no quadro e explicar a utilização da atividade digital."
+        ],
+        [
+          "Praticar por etapas",
+          "25 min",
+          "Realizar os desafios de Tabuada do 6, numerador, denominador e frações representadas em pizas e tabletes; ordenação e cópia de frases. Sem som.. Ajustar a ajuda e o ritmo à turma."
+        ],
+        [
+          "Partilhar estratégias",
+          "10 min",
+          "Comparar respostas e pedir que os alunos expliquem as suas estratégias."
+        ],
+        [
+          "Verificar aprendizagens",
+          "5 min",
+          "Observar a execução e esclarecer os erros mais frequentes."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Missão 6 — Frações e Tabuada",
+        "url": "../jogos/2026-10-26/Ticlas_3B_26_30_outubro_2026.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-30-3A-sequencias-som-s",
+      "ano": 3,
+      "turma": "3A",
+      "modalidade": "curricular",
+      "disciplina": "Matemática e Português",
+      "titulo": "Missão das Sequências e do Som S",
+      "tema": "Padrões de repetição, casos ortográficos s, ss, c, ç e z; escrita, ordenação e cópia de frases. Sem som.",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar padrões de repetição, casos ortográficos s, ss, c, ç e z; escrita, ordenação e cópia de frases. Sem som..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Introduzir os conteúdos",
+          "10 min",
+          "Relembrar os conceitos de Matemática e Português presentes no recurso."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Explorar exemplos no quadro e explicar a utilização da atividade digital."
+        ],
+        [
+          "Praticar por etapas",
+          "25 min",
+          "Realizar os desafios de Padrões de repetição, casos ortográficos s, ss, c, ç e z; escrita, ordenação e cópia de frases. Sem som.. Ajustar a ajuda e o ritmo à turma."
+        ],
+        [
+          "Partilhar estratégias",
+          "10 min",
+          "Comparar respostas e pedir que os alunos expliquem as suas estratégias."
+        ],
+        [
+          "Verificar aprendizagens",
+          "5 min",
+          "Observar a execução e esclarecer os erros mais frequentes."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Missão das Sequências e do Som S",
+        "url": "../jogos/2026-10-26/Ticlas_3A_26_30_outubro_2026.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "3ano-roda-dos-alimentos",
+      "ano": 3,
+      "turma": "3.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Estudo do Meio",
+      "titulo": "A Roda dos Alimentos com o Ticl@s",
+      "tema": "Grupos da Roda dos Alimentos e escolhas para uma alimentação completa, variada e equilibrada",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar grupos da Roda dos Alimentos e escolhas para uma alimentação completa, variada e equilibrada.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Introduzir",
+          "10 min",
+          "Conversar sobre os conceitos e experiências ligados ao tema."
+        ],
+        [
+          "Explorar",
+          "15 min",
+          "Demonstrar o funcionamento do recurso e discutir os conteúdos apresentados."
+        ],
+        [
+          "Realizar a atividade",
+          "25 min",
+          "Utilizar o recurso digital para explorar: Grupos da Roda dos Alimentos e escolhas para uma alimentação completa, variada e equilibrada."
+        ],
+        [
+          "Consolidar e avaliar",
+          "10 min",
+          "Pedir exemplos ou explicações e registar dificuldades."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "A Roda dos Alimentos com o Ticl@s",
+        "url": "../jogos/2026-10-26/2026-10-28_3ano_EstudoDoMeio_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-28-2ano-guardioes-internet",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "aec",
+      "disciplina": "Cidadania Digital",
+      "titulo": "Guardiões da Internet com o Ticl@s",
+      "tema": "Apresentação interativa estilo vídeo: principais perigos na Internet e os dados pessoais que não se partilham. Jogo «Toca ou partilha?», regra Para, Pensa, Pede ajuda e certificado.",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar apresentação interativa estilo vídeo: principais perigos na Internet e os dados pessoais que não se partilham. Jogo «Toca ou partilha?», regra Para, Pensa, Pede ajuda e certificado..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre as situações digitais apresentadas."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Guardiões da Internet com o Ticl@s",
+        "url": "../jogos/2026-10-26/Ticlas_Guardioes_da_Internet_2ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-10-28-3ano-detetives-internet",
+      "ano": 3,
+      "turma": "3.º ano",
+      "modalidade": "aec",
+      "disciplina": "Cidadania Digital",
+      "titulo": "Detetives da Internet Segura com o Ticl@s",
+      "tema": "Apresentação interativa estilo vídeo para o quadro: dados pessoais, palavras-passe fortes, mensagens falsas, armadilhas e sites amigáveis. Com sorteio do n.º do aluno, cartaz da turma e certificado.",
+      "periodo": 1,
+      "semana_catalogo": "26–30 out. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar apresentação interativa estilo vídeo para o quadro: dados pessoais, palavras-passe fortes, mensagens falsas, armadilhas e sites amigáveis. Com sorteio do n.º do aluno, cartaz da turma e certificado..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre as situações digitais apresentadas."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Detetives da Internet Segura com o Ticl@s",
+        "url": "../jogos/2026-10-26/Ticlas_Detetives_da_Internet_Segura_3ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02-3ano-escape-room-internet",
+      "ano": 3,
+      "turma": "3.º ano",
+      "modalidade": "aec",
+      "disciplina": "Cidadania Digital",
+      "titulo": "Escape Room: Liberta o Ticl@s!",
+      "tema": "Teste em escape room sobre a Internet segura: 6 salas (dados pessoais, palavras-passe, mensagens falsas, verdadeiro ou falso, ligações e site armadilha), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora.",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar teste em escape room sobre a Internet segura: 6 salas (dados pessoais, palavras-passe, mensagens falsas, verdadeiro ou falso, ligações e site armadilha), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre as situações digitais apresentadas."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Escape Room: Liberta o Ticl@s!",
+        "url": "../jogos/2026-11-02/Ticlas_Escape_Room_Internet_Segura_3ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02-2ano-escape-room-internet",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "aec",
+      "disciplina": "Cidadania Digital",
+      "titulo": "Escape Room: Liberta o Ticl@s!",
+      "tema": "Teste em escape room sobre os perigos da Internet: 6 salas (toca ou partilha, desconhecidos, prémios falsos, mensagens simpáticas, regra de ouro e ligações), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora.",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar teste em escape room sobre os perigos da Internet: 6 salas (toca ou partilha, desconhecidos, prémios falsos, mensagens simpáticas, regra de ouro e ligações), cadeado final e desafio bónus de escrita. Resultados por iniciais no painel da professora..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre as situações digitais apresentadas."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Escape Room: Liberta o Ticl@s!",
+        "url": "../jogos/2026-11-02/Ticlas_Escape_Room_Internet_Segura_2ano.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02-ticlas-2ano-numeros-ate-200-valor-posicional",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Matemática",
+      "titulo": "Números até 200 e valor posicional",
+      "tema": "Minijogos com centenas, dezenas e unidades, comparar e ordenar números até 200 e escrevê-los por extenso",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar minijogos com centenas, dezenas e unidades, comparar e ordenar números até 200 e escrevê-los por extenso.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Ativar conhecimentos",
+          "10 min",
+          "Recordar com exemplos o conteúdo matemático da atividade."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Modelar a resolução de uma tarefa no quadro interativo."
+        ],
+        [
+          "Praticar",
+          "25 min",
+          "Resolver os desafios digitais sobre Minijogos com centenas, dezenas e unidades, comparar e ordenar números até 200 e escrevê-los por extenso."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Discutir estratégias e corrigir situações de dificuldade."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Verificar a compreensão e a autonomia na resolução."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Números até 200 e valor posicional",
+        "url": "../jogos/2026-11-02/2026-11-02_2ano_Matematica_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
+      "ano": 2,
+      "turma": "2.º ano",
+      "modalidade": "curricular",
+      "disciplina": "Português",
+      "titulo": "Vogais nasais e sons do x",
+      "tema": "Minijogos, escrita de palavras e frases com vogais nasais e com os sons do x",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar minijogos, escrita de palavras e frases com vogais nasais e com os sons do x.",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Explorar oralmente",
+          "10 min",
+          "Reconhecer as letras, palavras ou estruturas linguísticas trabalhadas."
+        ],
+        [
+          "Demonstrar",
+          "10 min",
+          "Mostrar a atividade e resolver um exemplo em conjunto."
+        ],
+        [
+          "Praticar leitura e escrita",
+          "25 min",
+          "Realizar os desafios de Minijogos, escrita de palavras e frases com vogais nasais e com os sons do x; apoiar os alunos ainda não autónomos na leitura."
+        ],
+        [
+          "Consolidar",
+          "10 min",
+          "Rever respostas e realizar um pequeno desafio oral ou escrito."
+        ],
+        [
+          "Avaliar",
+          "5 min",
+          "Observar reconhecimento, leitura/escrita e autonomia."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Vogais nasais e sons do x",
+        "url": "../jogos/2026-11-02/2026-11-02_2ano_Portugues_v1.html",
+        "tipo": "Jogo / atividade interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02_1ano_Sala_TIC_apresentacao",
+      "ano": 1,
+      "turma": "1.º ano",
+      "modalidade": "aec",
+      "disciplina": "TIC",
+      "titulo": "A Sala TIC com o Ticl@s",
+      "tema": "Apresentação interativa estilo vídeo para o quadro: regras da Sala TIC, o computador e as suas partes, periféricos, ligar, desligar e ambiente de trabalho. Com jogos pelo meio, missões no computador e certificado.",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar apresentação interativa estilo vídeo para o quadro: regras da Sala TIC, o computador e as suas partes, periféricos, ligar, desligar e ambiente de trabalho. Com jogos pelo meio, missões no computador e certificado..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre a utilização dos equipamentos e as regras da sala."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "A Sala TIC com o Ticl@s",
+        "url": "../apresentacoes/2026-11-02/Ticlas_Sala_TIC_1ano.html",
+        "tipo": "Apresentação interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    },
+    {
+      "id": "2026-11-02_1ano_Pequenos_Guardioes_Internet",
+      "ano": 1,
+      "turma": "1.º ano",
+      "modalidade": "aec",
+      "disciplina": "Cidadania Digital",
+      "titulo": "Pequenos Guardiões da Internet com o Ticl@s",
+      "tema": "Apresentação interativa estilo vídeo para o quadro: os perigos da Internet e os tesouros que se guardam na toca. Com minijogos e perguntas pelo meio, jogos de movimento, regra de ouro e certificado.",
+      "periodo": 1,
+      "semana_catalogo": "2–6 nov. 2026",
+      "duracao": "60 minutos (proposta ajustável)",
+      "objetivos": [
+        "Explorar apresentação interativa estilo vídeo para o quadro: os perigos da Internet e os tesouros que se guardam na toca. Com minijogos e perguntas pelo meio, jogos de movimento, regra de ouro e certificado..",
+        "Utilizar o recurso digital para praticar os conteúdos apresentados.",
+        "Realizar as tarefas com autonomia progressiva e utilização responsável do equipamento."
+      ],
+      "passos": [
+        [
+          "Dialogar e antecipar",
+          "10 min",
+          "Recolher ideias dos alunos sobre as situações digitais apresentadas."
+        ],
+        [
+          "Explorar o recurso",
+          "15 min",
+          "Projetar ou abrir o recurso e comentar os exemplos e as regras nele apresentados."
+        ],
+        [
+          "Resolver desafios",
+          "20 min",
+          "Realizar as missões interativas descritas no recurso, com apoio e discussão das escolhas."
+        ],
+        [
+          "Aplicar a situações concretas",
+          "10 min",
+          "Pedir aos alunos que expliquem como agiriam numa situação semelhante."
+        ],
+        [
+          "Avaliar e consolidar",
+          "5 min",
+          "Retomar as mensagens principais e identificar dificuldades observadas."
+        ]
+      ],
+      "avaliacao": [
+        "Compreende os conteúdos essenciais trabalhados na atividade.",
+        "Realiza os desafios adequados ao seu nível, com ou sem apoio.",
+        "Respeita as regras de utilização dos equipamentos e participa nas tarefas."
+      ],
+      "recurso": {
+        "titulo": "Pequenos Guardiões da Internet com o Ticl@s",
+        "url": "../apresentacoes/2026-11-02/Ticlas_Pequenos_Guardioes_da_Internet_1ano.html",
+        "tipo": "Apresentação interativa"
+      },
+      "estado": "Proposta de aula — rever e adaptar à turma",
+      "nota": "A semana corresponde à catalogação do recurso e não comprova a data de realização da aula."
+    }
+  ]
+}
