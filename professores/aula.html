@@ -10,10 +10,22 @@
 <footer><div class="wrap">Ticl@s · Espaço do Professor · Material de apoio à preparação de aulas</div></footer>
 <script>
 'use strict';
-const aulas={
-'sala-tic-1':{ano:1,periodo:1,semana:'2–6 nov. 2026',titulo:'A Sala TIC com o Ticl@s',tema:'Regras da sala TIC, partes do computador e utilização responsável',duracao:'60 minutos',objetivos:['Reconhecer regras essenciais de segurança e organização na sala TIC.','Identificar componentes e periféricos básicos de um computador.','Praticar procedimentos orientados de utilização do equipamento.'],passos:[['Apresentar e conversar','10 min','Dialogar sobre a sala TIC e os cuidados a ter com os equipamentos.'],['Explorar a apresentação','15 min','Projetar os conteúdos e identificar o computador, as suas partes e os periféricos.'],['Praticar com orientação','20 min','Realizar as missões e os desafios interativos incluídos na apresentação, ajustando ao ritmo dos alunos.'],['Consolidar','10 min','Recordar as regras, identificar componentes e discutir procedimentos corretos.'],['Observar e registar','5 min','Verificar as aprendizagens, a participação e a utilização responsável dos equipamentos.']],links:[['Abrir apresentação','../apresentacoes/2026-11-02/Ticlas_Sala_TIC_1ano.html']],avaliacao:['Identifica componentes básicos com autonomia ou apoio.','Cumpre as regras de segurança e utilização da sala TIC.','Participa nas atividades propostas.']},
-'guardioes-1':{ano:1,periodo:1,semana:'2–6 nov. 2026',titulo:'Pequenos Guardiões da Internet com o Ticl@s',tema:'Primeiros cuidados de segurança e cidadania digital',duracao:'60 minutos',objetivos:['Reconhecer situações simples de risco na Internet.','Identificar informações pessoais que não devem ser partilhadas.','Pedir ajuda a um adulto perante situações desconhecidas.'],passos:[['Ativar conhecimentos prévios','10 min','Conversar sobre experiências e regras de utilização da Internet.'],['Explorar a apresentação','20 min','Projetar a história e discutir os exemplos e decisões das personagens.'],['Resolver desafios','20 min','Realizar os minijogos e questões interativas com orientação do professor.'],['Consolidar as regras','5 min','Rever cuidados essenciais e a importância de pedir ajuda.'],['Avaliar oralmente','5 min','Propor situações simples e observar as respostas dos alunos.']],links:[['Abrir apresentação','../apresentacoes/2026-11-02/Ticlas_Pequenos_Guardioes_da_Internet_1ano.html']],avaliacao:['Reconhece situações em que deve pedir ajuda.','Distingue informação pessoal de informação que pode partilhar.','Participa respeitando as regras estabelecidas.']}
-};
-const id=new URLSearchParams(location.search).get('id')||'sala-tic-1';const d=aulas[id],$=x=>document.getElementById(x);function node(tag,txt){const n=document.createElement(tag);n.textContent=txt;return n}
-if(!d){$('titulo').textContent='Ficha não encontrada';$('main').replaceChildren(node('p','Esta ficha ainda não está disponível.'));}else{$('titulo').textContent=d.titulo;$('subtitulo').textContent='Ficha-modelo de aula TIC AEC · Proposta pedagógica a validar';document.title=d.titulo+' | Ticl@s';[d.ano+'.º ano',d.periodo+'.º período',d.semana].forEach(s=>$('meta').append(node('span',s)));[...$('meta').children].forEach(n=>n.className='tag');$('tema').textContent=d.tema;$('duracao').textContent=d.duracao;d.objetivos.forEach(x=>$('objetivos').append(node('li',x)));d.passos.forEach(([titulo,min,desc])=>{const li=node('li','');li.append(node('h3',titulo+' · '+min),node('p',desc));$('passos').append(li)});d.links.forEach(([label,url],i)=>{const a=node('a',label);a.href=url;a.className='action'+(i?' secondary':'');$('links').append(a)});d.avaliacao.forEach(x=>$('avaliacao').append(node('li',x)))}
+const $=x=>document.getElementById(x),query=new URLSearchParams(location.search);
+const aliases={'sala-tic-1':'2026-11-02_1ano_Sala_TIC_apresentacao','guardioes-1':'2026-11-02_1ano_Pequenos_Guardioes_Internet'};
+const id=aliases[query.get('id')]||query.get('id');
+const node=(tag,txt)=>{const n=document.createElement(tag);n.textContent=txt;return n;};
+const status=node('p','A carregar a ficha de aula…');$('main').prepend(status);
+fetch('fichas.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Não foi possível obter as fichas.');return r.json()}).then(db=>{
+const d=db.fichas.find(f=>f.id===id);status.remove();
+if(!d){$('titulo').textContent='Ficha não encontrada';$('main').replaceChildren(node('p','A ficha pedida não existe no catálogo.'));return;}
+$('titulo').textContent=d.titulo;document.title=d.titulo+' | Ticl@s';
+$('subtitulo').textContent=(d.modalidade==='aec'?'TIC AEC':'TIC Curricular')+' · Proposta de aula adaptável';
+[d.ano+'.º ano',d.turma||'',d.modalidade==='aec'?'TIC AEC':'TIC Curricular',d.disciplina].filter(Boolean).forEach(s=>{const b=node('span',s);b.className='tag';$('meta').append(b)});
+$('tema').textContent=d.tema;$('duracao').textContent=d.duracao;
+d.objetivos.forEach(x=>$('objetivos').append(node('li',x)));
+d.passos.forEach(([title,time,desc])=>{const li=node('li','');li.append(node('h3',title+' · '+time),node('p',desc));$('passos').append(li)});
+const a=node('a','Abrir '+d.recurso.tipo.toLowerCase());a.className='action';a.href=d.recurso.url;$('links').append(a);
+const n=node('p',d.nota);n.className='muted';$('links').append(n);
+d.avaliacao.forEach(x=>$('avaliacao').append(node('li',x)));
+}).catch(e=>{status.textContent='Não foi possível carregar a ficha de aula. Confirme a ligação e tente novamente.';});
 </script></body></html>
