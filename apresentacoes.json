@@ -15,7 +15,10 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Correção expressa da professora em 2026-11-02"
   },
   {
     "id": "2026-11-02_1ano_Pequenos_Guardioes_Internet",
@@ -33,6 +36,9 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Correção expressa da professora em 2026-11-02"
   }
 ]
