@@ -122,10 +122,7 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/2026-10-30_1B_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   },
   {
     "id": "2026-11-03_1A_Portugues_v1",
@@ -138,10 +135,7 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-03_1A_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   },
   {
     "id": "2026-11-06_1B_Portugues_v1",
@@ -154,10 +148,7 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-06_1B_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   },
   {
     "id": "2026-10-26-letra-p-1ano",
@@ -234,10 +225,7 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/2026-10-28_3ano_EstudoDoMeio_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   },
   {
     "id": "2026-10-28-2ano-guardioes-internet",
@@ -330,10 +318,7 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   },
   {
     "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
@@ -346,9 +331,6 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação",
-    "modalidade": "curricular",
-    "periodo": 1,
-    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
+    "estado": "em validação"
   }
 ]
