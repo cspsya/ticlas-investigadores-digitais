@@ -15,9 +15,7 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    },
-    "modalidade": "curricular",
-    "periodo": 1
+    }
   },
   {
     "id": "2026-11-02_1ano_Pequenos_Guardioes_Internet",
@@ -35,8 +33,6 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    },
-    "modalidade": "curricular",
-    "periodo": 1
+    }
   }
 ]
