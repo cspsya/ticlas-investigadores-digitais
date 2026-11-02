@@ -1,0 +1,28 @@
+{
+  "ano_letivo": "2026/2027",
+  "nota": "Registos de exemplo associados a fichas existentes. A restante planificação será preenchida após validação das planificações oficiais.",
+  "aulas": [
+    {
+      "id": "sala-tic-1",
+      "modalidade": "curricular",
+      "ano": 1,
+      "periodo": 1,
+      "semana": "2–6 nov. 2026",
+      "tema": "A Sala TIC com o Ticl@s",
+      "objetivos": "Reconhecer regras de utilização e identificar componentes do computador.",
+      "ficha": "aula.html?id=sala-tic-1",
+      "estado": "proposta para revisão"
+    },
+    {
+      "id": "guardioes-1",
+      "modalidade": "curricular",
+      "ano": 1,
+      "periodo": 1,
+      "semana": "2–6 nov. 2026",
+      "tema": "Pequenos Guardiões da Internet",
+      "objetivos": "Reconhecer cuidados básicos de segurança e proteção de dados pessoais.",
+      "ficha": "aula.html?id=guardioes-1",
+      "estado": "proposta para revisão"
+    }
+  ]
+}
