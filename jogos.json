@@ -13,7 +13,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo TIC Curricular 1.º ano 2026/2027 — correspondência temática, não cronológica"
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-19-1B",
@@ -29,7 +29,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo TIC Curricular 1.º ano 2026/2027 — correspondência temática, não cronológica"
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-19-2ano",
@@ -55,7 +55,10 @@
     "semana": "19–23 out. 2026",
     "url": "jogos/2026-10-19/Jogos_3B_MAB_e_112_S07.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-19-2ano-casos-s-z",
@@ -84,7 +87,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo TIC Curricular 1.º ano 2026/2027 — correspondência temática, não cronológica"
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-22-3ano-devagar-se-vai-ao-longe",
@@ -110,7 +113,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/2026-10-30_1B_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-11-03_1A_Portugues_v1",
@@ -123,7 +129,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-03_1A_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-11-06_1B_Portugues_v1",
@@ -136,7 +145,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-06_1B_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-26-letra-p-1ano",
@@ -152,7 +164,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo TIC Curricular 1.º ano 2026/2027 — correspondência temática, não cronológica"
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-26-2ano-segredos-r-l",
@@ -165,7 +177,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/Ticlas_Segredos_R_e_L_2ano_26_30_outubro.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-28-3B-tabuada-fracoes",
@@ -178,7 +193,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/Ticlas_3B_26_30_outubro_2026.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-30-3A-sequencias-som-s",
@@ -191,7 +209,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/Ticlas_3A_26_30_outubro_2026.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "3ano-roda-dos-alimentos",
@@ -221,7 +242,10 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-10-28-3ano-detetives-internet",
@@ -272,7 +296,10 @@
     "tipo": "Escape room",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-11-02-ticlas-2ano-numeros-ate-200-valor-posicional",
@@ -285,7 +312,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   },
   {
     "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
@@ -298,6 +328,9 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
   }
 ]
