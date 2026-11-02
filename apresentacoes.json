@@ -16,5 +16,23 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-02_1ano_Pequenos_Guardioes_Internet",
+    "categoria": "apresentacao",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "Pequenos Guardiões da Internet com o Ticl@s",
+    "descricao": "Apresentação interativa estilo vídeo para o quadro: os perigos da Internet e os tesouros que se guardam na toca. Com minijogos e perguntas pelo meio, jogos de movimento, regra de ouro e certificado.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-11-02",
+    "semana": "2–6 nov. 2026",
+    "url": "apresentacoes/2026-11-02/Ticlas_Pequenos_Guardioes_da_Internet_1ano.html",
+    "duracao": "60 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
