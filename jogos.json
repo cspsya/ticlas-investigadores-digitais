@@ -13,7 +13,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-19-1B",
@@ -29,7 +29,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-19-2ano",
@@ -42,7 +42,10 @@
     "semana": "19–23 out. 2026",
     "url": "jogos/2026-10-19/Jogos_2ano_S_ou_Z_e_Calculo_S07.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-19-3B",
@@ -58,7 +61,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-19-2ano-casos-s-z",
@@ -71,7 +74,10 @@
     "semana": "19–23 out. 2026",
     "url": "jogos/2026-10-19/Ticlas_Casos_S_e_Z_2ano.html",
     "duracao": "por etapas",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-19-1A-amigos-10-ticlas",
@@ -87,7 +93,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-22-3ano-devagar-se-vai-ao-longe",
@@ -100,7 +106,10 @@
     "semana": "19–23 out. 2026",
     "url": "jogos/2026-10-19/Devagar_se_vai_ao_longe_Ticlas_3ano.html",
     "duracao": "por etapas",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-30_1B_Matematica_v1",
@@ -113,7 +122,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/2026-10-30_1B_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-03_1A_Portugues_v1",
@@ -126,7 +138,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-03_1A_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-06_1B_Portugues_v1",
@@ -139,7 +154,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-06_1B_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-26-letra-p-1ano",
@@ -155,7 +173,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-26-2ano-segredos-r-l",
@@ -171,7 +189,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-28-3B-tabuada-fracoes",
@@ -187,7 +205,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-30-3A-sequencias-som-s",
@@ -203,7 +221,7 @@
     "estado": "em validação",
     "modalidade": "curricular",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "3ano-roda-dos-alimentos",
@@ -216,7 +234,10 @@
     "semana": "26–30 out. 2026",
     "url": "jogos/2026-10-26/2026-10-28_3ano_EstudoDoMeio_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-28-2ano-guardioes-internet",
@@ -236,7 +257,7 @@
     },
     "modalidade": "aec",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-10-28-3ano-detetives-internet",
@@ -253,7 +274,10 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-02-3ano-escape-room-internet",
@@ -270,7 +294,10 @@
     "tipo": "Escape room",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "modalidade": "aec",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-02-2ano-escape-room-internet",
@@ -290,7 +317,7 @@
     },
     "modalidade": "aec",
     "periodo": 1,
-    "classificacao_origem": "Registo_TIC_2026-27_AEC_v4 (2).xlsx — associação por tema/turma; data do recurso não usada para determinar a modalidade"
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-02-ticlas-2ano-numeros-ate-200-valor-posicional",
@@ -303,7 +330,10 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Matematica_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   },
   {
     "id": "2026-11-02-ticlas-2ano-vogais-nasais-sons-do-x",
@@ -316,6 +346,9 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-02_2ano_Portugues_v1.html",
     "duracao": "até 60 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "modalidade": "curricular",
+    "periodo": 1,
+    "classificacao_origem": "Regra de catalogação definida pela professora: Português, Matemática e Estudo do Meio = TIC Curricular; restantes = TIC AEC"
   }
 ]
