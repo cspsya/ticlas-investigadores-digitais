@@ -7,14 +7,14 @@
   "data": "2026-11-04",
   "descricao": "Visita de estudo virtual a Machico no Google Earth e orçamento da viagem (Educação Financeira)",
   "objetivo": "Planear uma visita de estudo a Machico com 15 €, distinguindo o que é preciso do que queremos.",
-  "minutos": 15,
+  "minutos": 20,
   "rondas": [
     {
       "fase": "aquecimento",
       "tipo": "escolher",
       "visual": "cartoes",
-      "titulo": "O que descobrimos no Google Earth",
-      "instrucao": "Lembra-te do que viste e mediste no Google Earth.",
+      "titulo": "O que descobrimos no mapa",
+      "instrucao": "Lembra-te do que viste e mediste no Google Earth ou no Google Maps.",
       "itens": [
         {
           "pergunta": "Em que costa da ilha da Madeira fica Machico?",
@@ -37,13 +37,14 @@
           "explicacao": "A régua mede em linha reta: cerca de 15 a 18 km, conforme o ponto onde clicas. Pela estrada é mais."
         },
         {
-          "pergunta": "Que ferramenta do Google Earth usámos para medir a distância?",
+          "pergunta": "Para medir a distância em linha reta, usámos…",
           "emoji": "🛠️",
-          "certa": "a régua",
+          "certa": "a ferramenta Medir distância",
           "erradas": [
-            "a lupa",
+            "a pesquisa (lupa)",
             "o boneco amarelo"
-          ]
+          ],
+          "explicacao": "No Google Earth é a régua; no Google Maps é «Medir distância», com o botão direito."
         },
         {
           "pergunta": "O que usámos para espreitar as ruas de Machico?",
@@ -202,6 +203,12 @@
           "emoji": "🐷",
           "minPalavras": 6,
           "dica": "Exemplo: Eu guardava 4 € no mealheiro porque quero comprar um livro."
+        },
+        {
+          "pergunta": "O táxi chega mais depressa, mas custa o dobro do autocarro. Escolhias o táxi ou o autocarro? Porquê?",
+          "emoji": "🚕",
+          "minPalavras": 6,
+          "dica": "Exemplo: Eu escolhia o autocarro porque poupava 5 € para o passeio de barco."
         }
       ]
     },
@@ -233,9 +240,9 @@
           "explicacao": "O autocarro custa metade do táxi e leva-nos ao mesmo sítio."
         },
         {
-          "afirmacao": "📏 A régua do Google Earth mede o caminho pela estrada.",
+          "afirmacao": "📏 A distância em linha reta é igual ao caminho pela estrada.",
           "verdade": false,
-          "explicacao": "A régua mede em linha reta, de um ponto ao outro. A estrada é mais comprida."
+          "explicacao": "A linha reta vai direta de um ponto ao outro. A estrada dá voltas, por isso é mais comprida."
         }
       ]
     },
