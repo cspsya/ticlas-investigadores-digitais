@@ -1,0 +1,107 @@
+{
+  "id": "exemplo-1ano-conhecer-o-teclado",
+  "titulo": "Conhecer o teclado",
+  "ano": 1,
+  "turma": "1.º A",
+  "disciplina": "TIC",
+  "data": "2026-11-09",
+  "descricao": "Componentes do computador, vogais no teclado, teclas espaço e apagar, cuidados com o equipamento",
+  "resumo": "Descobre as letras e as teclas especiais do teclado.",
+  "focoTic": "Teclado: letras e teclas especiais",
+  "objetivo": "Reconhecer o teclado e encontrar nele as vogais e as teclas de espaço e de apagar.",
+  "minutos": 30,
+  "guia": {
+    "aprendizagens": [
+      "Identificar os principais componentes do computador: ecrã, teclado, rato e auscultadores.",
+      "Localizar no teclado as vogais e as teclas de espaço e de apagar.",
+      "Cumprir regras de utilização e cuidado com o equipamento."
+    ],
+    "materiais": [
+      "Quadro interativo ou projetor",
+      "Um computador por aluno ou por par",
+      "Imagem de um teclado ampliado"
+    ],
+    "sequencia": [
+      { "momento": "Explorar", "minutos": 10, "recurso": "apresentacao", "descricao": "No quadro, mostrar o teclado ampliado: letras, números e as teclas de espaço, apagar e Enter. Perguntar onde já viram um teclado." },
+      { "momento": "Demonstrar", "minutos": 10, "descricao": "Cada aluno encontra no seu teclado as teclas que o professor diz. Escrever a primeira letra do nome e apagá-la." },
+      { "momento": "Praticar", "minutos": 30, "recurso": "jogo", "descricao": "Jogo interativo, ao ritmo de cada aluno. Quem termina mais cedo faz o desafio de bónus." },
+      { "momento": "Fechar", "minutos": 10, "descricao": "Cada aluno diz uma tecla que aprendeu. Fechar o jogo e arrumar o rato e o teclado." }
+    ],
+    "indicadores": [
+      "Distingue o teclado, o rato e o ecrã.",
+      "Encontra as vogais no teclado.",
+      "Usa a barra de espaços e a tecla de apagar.",
+      "Trata o equipamento com cuidado."
+    ]
+  },
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "titulo": "As peças do computador",
+      "instrucao": "Ouve e escolhe a resposta certa.",
+      "itens": [
+        { "pergunta": "Onde escrevemos as letras?", "emoji": "⌨️", "certa": "teclado", "erradas": ["rato", "ecrã"] },
+        { "pergunta": "Com o que movemos a seta?", "emoji": "🖱️", "certa": "rato", "erradas": ["teclado", "ecrã"] },
+        { "pergunta": "Onde vemos as imagens?", "emoji": "🖥️", "certa": "ecrã", "erradas": ["rato", "teclado"] },
+        { "pergunta": "Por onde ouvimos os sons?", "emoji": "🎧", "certa": "auscultadores", "erradas": ["teclado", "rato"] },
+        { "pergunta": "Qual é a tecla mais comprida?", "emoji": "📏", "certa": "espaço", "erradas": ["apagar", "Enter"] },
+        { "pergunta": "Que tecla tira uma letra?", "emoji": "⬅️", "certa": "apagar", "erradas": ["espaço", "Enter"] }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "A tecla e a letra",
+      "instrucao": "No teclado as letras são grandes. Liga cada tecla à letra pequena.",
+      "itens": [["A", "a"], ["E", "e"], ["I", "i"], ["O", "o"], ["U", "u"]]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Cuidar do computador",
+      "itens": [
+        { "afirmacao": "Bebemos sumo ao pé do computador.", "emoji": "🧃", "verdade": false, "explicacao": "Os líquidos estragam o teclado." },
+        { "afirmacao": "Carregamos nas teclas com suavidade.", "emoji": "🤲", "verdade": true, "explicacao": "Assim o teclado dura muito tempo." },
+        { "afirmacao": "Lavamos as mãos antes de usar o computador.", "emoji": "🧼", "verdade": true, "explicacao": "Mãos limpas, teclado limpo." },
+        { "afirmacao": "Batemos no teclado com força.", "emoji": "💥", "verdade": false, "explicacao": "As teclas partem-se. Carregamos devagar." }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Rato ou teclado?",
+      "instrucao": "Com o que fazemos isto?",
+      "caixas": ["rato", "teclado"],
+      "itens": [
+        ["🎨 pintar um desenho", "rato"],
+        ["🔤 escrever o nome", "teclado"],
+        ["👆 abrir um jogo", "rato"],
+        ["🔢 escrever números", "teclado"],
+        ["↔️ arrastar uma imagem", "rato"],
+        ["⬅️ apagar uma letra", "teclado"]
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Encontra a vogal",
+      "instrucao": "Carrega na tecla da primeira letra.",
+      "itens": [
+        { "pergunta": "Abelha começa por…", "emoji": "🐝", "resposta": "a", "dica": "Procura a tecla A." },
+        { "pergunta": "Elefante começa por…", "emoji": "🐘", "resposta": "e", "dica": "Procura a tecla E." },
+        { "pergunta": "Ilha começa por…", "emoji": "🏝️", "resposta": "i", "dica": "Procura a tecla I." },
+        { "pergunta": "Ovo começa por…", "emoji": "🥚", "resposta": "o", "dica": "Procura a tecla O." },
+        { "pergunta": "Uva começa por…", "emoji": "🍇", "resposta": "u", "dica": "Procura a tecla U." }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "ordenar",
+      "titulo": "Desafio: forma a palavra",
+      "instrucao": "Põe as letras pela ordem certa.",
+      "itens": [
+        { "emoji": "🍇", "pecas": ["u", "v", "a"] },
+        { "emoji": "🦆", "pecas": ["p", "a", "t", "o"] },
+        { "emoji": "☀️", "pecas": ["s", "o", "l"] }
+      ]
+    }
+  ]
+}
