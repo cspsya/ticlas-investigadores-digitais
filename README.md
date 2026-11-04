@@ -38,7 +38,9 @@ Os jogos novos partem de `base/modelo-jogo.html`: copia-se o ficheiro e muda-se 
 | `semana` | sim | `"19–23 out. 2026"` | Texto da semana |
 | `url` | sim | `"jogos/2026-10-19/2A_….html"` | Botão «Começar» |
 | `duracao` | não | `"até 60 min"` | Informação no cartão |
-| `estado` | não | `"em validação"` | Mostra «Versão de teste» |
+| `estado` | não | `"em validação"` | Conta como «versão de teste» na nota da zona dos professores |
+| `resumo` | não | `"Abre o cadeado e liberta o Ticl@s!"` | Texto do cartão para os alunos. Sem ele, o cartão mostra a `descricao`, que fica sempre visível na tabela dos professores |
+| `focoTic` | não | `"Segurança digital"` ou `["Rato: arrastar","Teclado"]` | Etiqueta da competência TIC na tabela dos professores e filtro «Competência TIC» |
 | `tipo` | não | `"Quiz"` | Por omissão: «Jogo interativo» |
 | `ilustracao` | não | `{"tipo":"letras","letras":["nh","lh"]}` | Desenho do cartão. Tipos: `letras`, `numeros` (com `"conta":["7","+","3"]`), `mistura` (letras e conta), `natureza`, `digital`. Sem este campo, o desenho é escolhido a partir da disciplina e do título. |
 

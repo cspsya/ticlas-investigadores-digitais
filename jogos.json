@@ -209,7 +209,9 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Descobre os perigos da Internet e os dados pessoais que guardamos só para nós.",
+    "focoTic": "Segurança digital"
   },
   {
     "id": "2026-10-28-3ano-detetives-internet",
@@ -226,7 +228,9 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Investiga palavras-passe fortes, mensagens falsas e armadilhas na Internet.",
+    "focoTic": "Segurança digital"
   },
   {
     "id": "2026-11-02-3ano-escape-room-internet",
@@ -243,7 +247,9 @@
     "tipo": "Escape room",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Resolve os enigmas de 6 salas sobre a Internet segura e abre o cadeado para libertar o Ticl@s!",
+    "focoTic": "Segurança digital"
   },
   {
     "id": "2026-11-02-2ano-escape-room-internet",
@@ -260,7 +266,9 @@
     "tipo": "Escape room",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Passa por 6 salas sobre os perigos da Internet e abre o cadeado para libertar o Ticl@s!",
+    "focoTic": "Segurança digital"
   },
   {
     "id": "2026-11-02-ticlas-2ano-numeros-ate-200-valor-posicional",
@@ -312,7 +320,8 @@
     "semana": "2–6 nov. 2026",
     "url": "jogos/2026-11-02/2026-11-04_3ano_EstudoDoMeio_v1.html",
     "duracao": "até 20 min",
-    "estado": "em validação"
+    "estado": "em validação",
+    "focoTic": "Pesquisa: Google Earth"
   },
   {
     "id": "2026-11-04-4ano-espr-escola-segura",

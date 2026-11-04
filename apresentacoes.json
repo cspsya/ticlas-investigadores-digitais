@@ -15,7 +15,9 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Conhece a Sala TIC, as partes do computador e as regras para o usar bem.",
+    "focoTic": "Conhecer o computador"
   },
   {
     "id": "2026-11-02_1ano_Pequenos_Guardioes_Internet",
@@ -33,6 +35,8 @@
     "tipo": "Apresentação interativa",
     "ilustracao": {
       "tipo": "digital"
-    }
+    },
+    "resumo": "Descobre os perigos da Internet e os tesouros que guardamos na toca.",
+    "focoTic": "Segurança digital"
   }
 ]

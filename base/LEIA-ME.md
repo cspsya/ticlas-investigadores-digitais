@@ -38,7 +38,9 @@ As imagens dos emojis precisam de `pip install emoji` e de Internet na primeira 
   "turma": "2.º A",
   "disciplina": "Português",
   "data": "2026-10-28",
-  "descricao": "Texto curto para o cartão do portal",
+  "descricao": "Texto para os professores (tabela do portal)",
+  "resumo": "Frase curta para os alunos (cartão do portal)",
+  "focoTic": "Rato: arrastar",
   "objetivo": "Frase que aparece no ecrã inicial.",
   "minutos": 30,
   "tema": "saomartinho",
@@ -46,7 +48,7 @@ As imagens dos emojis precisam de `pip install emoji` e de Internet na primeira 
 }
 ```
 
-Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com o script são também precisos `data`, `turma` e `disciplina`. `tema` é opcional: sem ele, o tema muda sozinho com a data.
+Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com o script são também precisos `data`, `turma` e `disciplina`. `tema` é opcional: sem ele, o tema muda sozinho com a data. `resumo` e `focoTic` são opcionais e só aparecem no portal: `resumo` é o texto do cartão para os alunos (sem ele, usa-se `descricao`); `focoTic` é a competência TIC trabalhada (texto ou lista), mostrada como etiqueta e filtro na zona dos professores.
 
 ### Cada ronda
 
@@ -115,7 +117,7 @@ Estimativa usada pelo motor (multiplicada por 1,5 no 1.º ano, 1,2 no 2.º e 0,9
 
 ## Instrução para a tarefa agendada no ChatGPT
 
-> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes (o ditado conta como um), por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Cada emoji tem de corresponder sem ambiguidade à palavra (não usar o mesmo emoji para duas palavras). Nomes próprios nas respostas com maiúscula. Sem temas do Dia do Pai nem do Dia da Mãe. Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
+> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes (o ditado conta como um), por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Cada emoji tem de corresponder sem ambiguidade à palavra (não usar o mesmo emoji para duas palavras). Nomes próprios nas respostas com maiúscula. Sem temas do Dia do Pai nem do Dia da Mãe. Preenche `resumo` (uma frase curta dirigida ao aluno, sem informação para o professor) e `focoTic` (a competência TIC principal, por exemplo «Rato: arrastar», «Teclado: escrever», «Segurança digital» ou «Pesquisa»). Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
 
 ## Publicação automática no GitHub
 
