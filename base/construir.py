@@ -251,6 +251,11 @@ def registar(aula, url, id_padrao):
         "estado": aula.get("estado", "em validação"),
     }
     antigo = next((c for c in catalogo if c.get("id") == registo["id"]), None)
+    # Campos opcionais do portal: vêm da aula; se a aula não os tiver, mantêm-se os que já estavam em jogos.json.
+    for campo in ("resumo", "focoTic", "ilustracao", "tipo", "categoria"):
+        valor = aula.get(campo, (antigo or {}).get(campo))
+        if valor not in (None, "", []):
+            registo[campo] = valor
     if antigo == registo:
         return False
     if antigo:
