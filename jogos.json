@@ -313,5 +313,18 @@
     "url": "jogos/2026-11-02/2026-11-04_3ano_EstudoDoMeio_v1.html",
     "duracao": "até 20 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-11-04-4ano-espr-escola-segura",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Escola Segura com o Ticl@s",
+    "descricao": "Educação para a Segurança e Prevenção de Riscos: alarme e alerta, evacuação, sinalética, sismo, incêndio e 112",
+    "disciplina": "Estudo do Meio e Cidadania",
+    "data": "2026-11-04",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/2026-11-04_4ano_EstudoDoMeio_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação"
   }
 ]

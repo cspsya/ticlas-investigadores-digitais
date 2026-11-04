@@ -1,0 +1,667 @@
+{
+  "id": "2026-11-04-4ano-espr-escola-segura",
+  "titulo": "Escola Segura com o Ticl@s",
+  "ano": 4,
+  "turma": "4.º ano",
+  "disciplina": "Estudo do Meio e Cidadania",
+  "data": "2026-11-04",
+  "descricao": "Educação para a Segurança e Prevenção de Riscos: alarme e alerta, evacuação, sinalética, sismo, incêndio e 112",
+  "objetivo": "Saber como agir em segurança na escola: alarme e alerta, evacuação, sinais, sismo, incêndio e 112.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "completar",
+      "titulo": "Palavras que protegem",
+      "instrucao": "Completa cada frase com a palavra certa.",
+      "itens": [
+        {
+          "frase": "Em caso de sismo: baixar, ___ e aguardar.",
+          "emoji": "🫣",
+          "certa": "proteger",
+          "erradas": [
+            "correr",
+            "gritar"
+          ],
+          "explicacao": "Os três gestos que salvam são: Baixar, Proteger e Aguardar."
+        },
+        {
+          "frase": "O ___ é o sinal sonoro que avisa todas as pessoas da escola para saírem do edifício.",
+          "emoji": "🔔",
+          "certa": "alarme",
+          "erradas": [
+            "alerta",
+            "intervalo"
+          ],
+          "explicacao": "Alarme = sinal sonoro dentro da escola. É diferente de alerta."
+        },
+        {
+          "frase": "Ligar para o 112 a avisar os bombeiros ou o INEM é dar o ___.",
+          "emoji": "📞",
+          "certa": "alerta",
+          "erradas": [
+            "alarme",
+            "recado"
+          ],
+          "explicacao": "Alerta = avisar os meios de socorro, através do 112."
+        },
+        {
+          "frase": "O ___ é o lugar seguro, fora do edifício, onde a escola se junta depois de sair.",
+          "emoji": "🟩",
+          "certa": "ponto de encontro",
+          "erradas": [
+            "corredor",
+            "refeitório"
+          ],
+          "explicacao": "No ponto de encontro, cada turma fica junta para o professor contar os alunos."
+        },
+        {
+          "frase": "O aluno que vai à frente da fila e a guia até à saída é o ___.",
+          "emoji": "🚶",
+          "certa": "chefe de fila",
+          "erradas": [
+            "cerra-fila",
+            "delegado de turma"
+          ]
+        },
+        {
+          "frase": "O aluno que vai no fim da fila e confirma que ninguém fica para trás é o ___.",
+          "emoji": "👀",
+          "certa": "cerra-fila",
+          "erradas": [
+            "chefe de fila",
+            "porteiro"
+          ]
+        },
+        {
+          "frase": "O mapa afixado na parede com as saídas e os caminhos de evacuação é a ___.",
+          "emoji": "🗺️",
+          "certa": "planta de emergência",
+          "erradas": [
+            "ementa da semana",
+            "lista da turma"
+          ]
+        },
+        {
+          "frase": "O número europeu de emergência é o ___.",
+          "emoji": "🆘",
+          "certa": "112",
+          "erradas": [
+            "115",
+            "911"
+          ],
+          "explicacao": "O 112 é gratuito e funciona em toda a Europa. O 911 é usado nos Estados Unidos."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "titulo": "Sinais que falam",
+      "instrucao": "Observa o sinal ou a planta e escolhe o que nos diz.",
+      "itens": [
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjMDA5QTRFIi8+CjxyZWN0IHg9IjYyIiB5PSIxNiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjYyIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSI0NSIgY3k9IjIyIiByPSI3IiBmaWxsPSIjRkZGRkZGIi8+CjxnIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiPgo8cGF0aCBkPSJNNDEgMzIgTDM0IDU0Ii8+PHBhdGggZD0iTTM5IDM1IEwyOCA0MiBMMjAgNDAiLz48cGF0aCBkPSJNNDAgMzUgTDUwIDQxIEw1NyAzNCIvPgo8cGF0aCBkPSJNMzQgNTQgTDIzIDYwIEwxNSA1NyIvPjxwYXRoIGQ9Ik0zNCA1NCBMNDYgNjIgTDQ0IDc2Ii8+PC9nPgo8cGF0aCBkPSJNMTIgODggSDQwIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjxwb2x5Z29uIHBvaW50cz0iMzgsODAgNTIsODggMzgsOTYiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=",
+          "alt": "Sinal verde com uma pessoa a correr para uma porta",
+          "certa": "Saída de emergência",
+          "erradas": [
+            "Proibido correr",
+            "Ginásio"
+          ],
+          "explicacao": "Os sinais verdes mostram o caminho seguro: saídas, caminhos de evacuação e primeiros socorros."
+        },
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjRDcyNjNEIi8+CjxyZWN0IHg9IjM4IiB5PSIzNiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjUwIiByeD0iMTEiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iNDUiIHk9IjI1IiB3aWR0aD0iMTIiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9Ik00MyAyNCBMNjIgMTciIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTU3IDMwIEM3NiAzMCA3OCA0OCA3MiA2NCIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjQiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cmVjdCB4PSI2OCIgeT0iNjIiIHdpZHRoPSI4IiBoZWlnaHQ9IjEyIiByeD0iMiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBkPSJNMjIgNDYgQzE0IDM2IDIyIDMwIDIwIDIwIEMzMCAyOCAzNCAzNiAyOCA0NiBaIiBmaWxsPSIjRkZGRkZGIi8+PC9zdmc+",
+          "alt": "Sinal vermelho com um extintor",
+          "certa": "Aqui há um extintor",
+          "erradas": [
+            "Aqui há uma botija de gás",
+            "Aqui há uma garrafa de água"
+          ],
+          "explicacao": "Os sinais vermelhos e quadrados mostram material para combater incêndios. O extintor é usado por adultos."
+        },
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAgMzApIHJvdGF0ZSg0NSkiIHBvaW50cz0iMCwwIC0xMSwtOSAtMTEsLTMuNSAtMjIsLTMuNSAtMjIsMy41IC0xMSwzLjUgLTExLDkiIGZpbGw9IiNGRkZGRkYiLz48cG9seWdvbiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MCAzMCkgcm90YXRlKDEzNSkiIHBvaW50cz0iMCwwIC0xMSwtOSAtMTEsLTMuNSAtMjIsLTMuNSAtMjIsMy41IC0xMSwzLjUgLTExLDkiIGZpbGw9IiNGRkZGRkYiLz48cG9seWdvbiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MCA3MCkgcm90YXRlKC0xMzUpIiBwb2ludHM9IjAsMCAtMTEsLTkgLTExLC0zLjUgLTIyLC0zLjUgLTIyLDMuNSAtMTEsMy41IC0xMSw5IiBmaWxsPSIjRkZGRkZGIi8+PHBvbHlnb24gdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAgNzApIHJvdGF0ZSgtNDUpIiBwb2ludHM9IjAsMCAtMTEsLTkgLTExLC0zLjUgLTIyLC0zLjUgLTIyLDMuNSAtMTEsMy41IC0xMSw5IiBmaWxsPSIjRkZGRkZGIi8+CjxjaXJjbGUgY3g9IjQxIiBjeT0iNDUiIHI9IjQuNSIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNDEiIHI9IjQuOCIgZmlsbD0iI0ZGRkZGRiIvPjxjaXJjbGUgY3g9IjU5IiBjeT0iNDUiIHI9IjQuNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSIzNi41IiB5PSI1MC41IiB3aWR0aD0iOSIgaGVpZ2h0PSIxNCIgcng9IjQuNSIgZmlsbD0iI0ZGRkZGRiIvPjxyZWN0IHg9IjQ1LjIiIHk9IjQ3IiB3aWR0aD0iOS42IiBoZWlnaHQ9IjE2IiByeD0iNC44IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjU0LjUiIHk9IjUwLjUiIHdpZHRoPSI5IiBoZWlnaHQ9IjE0IiByeD0iNC41IiBmaWxsPSIjRkZGRkZGIi8+PC9zdmc+",
+          "alt": "Sinal verde com setas a apontar para um grupo de pessoas",
+          "certa": "Ponto de encontro",
+          "erradas": [
+            "Parque infantil",
+            "Paragem de autocarro"
+          ],
+          "explicacao": "As setas apontam para o grupo: é ali que nos juntamos depois de sair."
+        },
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHBvbHlnb24gcG9pbnRzPSI1MCw5IDkzLDg2IDcsODYiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxyZWN0IHg9IjQ1LjUiIHk9IjMzIiB3aWR0aD0iOSIgaGVpZ2h0PSIzMCIgcng9IjQuNSIgZmlsbD0iIzExMSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iNzMiIHI9IjUuNSIgZmlsbD0iIzExMSIvPjwvc3ZnPg==",
+          "alt": "Triângulo amarelo com um ponto de exclamação",
+          "certa": "Atenção, perigo!",
+          "erradas": [
+            "Saída",
+            "Primeiros socorros"
+          ],
+          "explicacao": "Os triângulos amarelos avisam que há perigo."
+        },
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDIiIGZpbGw9IiNGRkZGRkYiIHN0cm9rZT0iI0Q3MjYzRCIgc3Ryb2tlLXdpZHRoPSI5Ii8+CjxyZWN0IHg9IjMxIiB5PSIyNyIgd2lkdGg9IjM4IiBoZWlnaHQ9IjUwIiByeD0iMyIgZmlsbD0iI0VFRSIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjQiLz4KPHBhdGggZD0iTTUwIDM2IFY3NyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMxIDM2IEg2OSIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBvbHlnb24gcG9pbnRzPSI0NCwzMyA0NywyOSA1MCwzMyIgZmlsbD0iIzExMSIvPjxwb2x5Z29uIHBvaW50cz0iNTIsMzAgNTUsMzQgNTgsMzAiIGZpbGw9IiMxMTEiLz4KPHBhdGggZD0iTTIyIDIyIEw3OCA3OCIgc3Ryb2tlPSIjRDcyNjNEIiBzdHJva2Utd2lkdGg9IjkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "Círculo vermelho com um elevador riscado",
+          "certa": "Não usar o elevador",
+          "erradas": [
+            "Elevador só para adultos",
+            "Elevador avariado"
+          ],
+          "explicacao": "Os círculos vermelhos com risco proíbem. Numa emergência, o elevador pode parar e prender-nos lá dentro."
+        },
+        {
+          "pergunta": "O que nos diz este sinal?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcng9IjEwIiBmaWxsPSIjMDA5QTRFIi8+CjxyZWN0IHg9IjM5IiB5PSIxOCIgd2lkdGg9IjIyIiBoZWlnaHQ9IjY0IiByeD0iMiIgZmlsbD0iI0ZGRkZGRiIvPjxyZWN0IHg9IjE4IiB5PSIzOSIgd2lkdGg9IjY0IiBoZWlnaHQ9IjIyIiByeD0iMiIgZmlsbD0iI0ZGRkZGRiIvPjwvc3ZnPg==",
+          "alt": "Sinal verde com uma cruz branca",
+          "certa": "Primeiros socorros",
+          "erradas": [
+            "Hospital",
+            "Saída"
+          ],
+          "explicacao": "A cruz branca em fundo verde mostra onde está o material de primeiros socorros."
+        },
+        {
+          "pergunta": "Nesta planta de emergência, o que mostram as setas verdes?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSIjRjRGMUU4Ii8+CjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTA4IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxnIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNNiA1MCBIMjQgTTM4IDUwIEg3NCBNODggNTAgSDEyNCBNMTM4IDUwIEgxNTYiLz4KPHBhdGggZD0iTTYgNzAgSDQwIE01NCA3MCBIMTAwIE0xMTQgNzAgSDE1NiIvPjxwYXRoIGQ9Ik01NiA2IFY1MCBNMTA2IDYgVjUwIE03OCA3MCBWMTE0Ii8+PC9nPgo8cmVjdCB4PSIxNTQiIHk9IjUxIiB3aWR0aD0iNSIgaGVpZ2h0PSIxOCIgZmlsbD0iIzAwOUE0RSIvPgo8cG9seWdvbiBwb2ludHM9IjQwLDU0IDQ3LDYwIDQwLDY2IDQzLDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI1NCw1NCA2MSw2MCA1NCw2NiA1Nyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iNjgsNTQgNzUsNjAgNjgsNjYgNzEsNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjgyLDU0IDg5LDYwIDgyLDY2IDg1LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI5Niw1NCAxMDMsNjAgOTYsNjYgOTksNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjExMCw1NCAxMTcsNjAgMTEwLDY2IDExMyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iMTI0LDU0IDEzMSw2MCAxMjQsNjYgMTI3LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSIxMzgsNTQgMTQ1LDYwIDEzOCw2NiAxNDEsNjAiIGZpbGw9IiMwMDlBNEUiLz4KPHBhdGggZD0iTTMxIDM2IFY1OCBIMzYiIHN0cm9rZT0iIzAwOUE0RSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5PSI0IDMiLz4KPGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iNy41IiBmaWxsPSIjRDcyNjNEIi8+PGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iMi44IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9Ijk2IiB5PSI3MyIgd2lkdGg9IjkiIGhlaWdodD0iOSIgcng9IjEuNSIgZmlsbD0iI0Q3MjYzRCIvPgo8cmVjdCB4PSIxNzEiIHk9IjQzIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHJ4PSIzIiBmaWxsPSIjMDA5QTRFIi8+CjxjaXJjbGUgY3g9IjE3OSIgY3k9IjUyIiByPSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48Y2lyY2xlIGN4PSIxODgiIGN5PSI1MiIgcj0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjE3Ni40IiB5PSI1NS41IiB3aWR0aD0iNS4yIiBoZWlnaHQ9IjgiIHJ4PSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48cmVjdCB4PSIxODUuNCIgeT0iNTUuNSIgd2lkdGg9IjUuMiIgaGVpZ2h0PSI4IiByeD0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9Ik0xNjEgNjAgSDE2OCIgc3Ryb2tlPSIjMDA5QTRFIiBzdHJva2Utd2lkdGg9IjMiLz48cG9seWdvbiBwb2ludHM9IjE2Niw1NiAxNzEsNjAgMTY2LDY0IiBmaWxsPSIjMDA5QTRFIi8+Cjwvc3ZnPg==",
+          "alt": "Planta de um piso com setas verdes no corredor até à saída",
+          "certa": "O caminho até à saída",
+          "erradas": [
+            "O caminho para o refeitório",
+            "Onde estão os extintores"
+          ],
+          "explicacao": "As setas verdes mostram o caminho de evacuação."
+        },
+        {
+          "pergunta": "Na mesma planta, o que mostra o círculo vermelho?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSIjRjRGMUU4Ii8+CjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTA4IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxnIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNNiA1MCBIMjQgTTM4IDUwIEg3NCBNODggNTAgSDEyNCBNMTM4IDUwIEgxNTYiLz4KPHBhdGggZD0iTTYgNzAgSDQwIE01NCA3MCBIMTAwIE0xMTQgNzAgSDE1NiIvPjxwYXRoIGQ9Ik01NiA2IFY1MCBNMTA2IDYgVjUwIE03OCA3MCBWMTE0Ii8+PC9nPgo8cmVjdCB4PSIxNTQiIHk9IjUxIiB3aWR0aD0iNSIgaGVpZ2h0PSIxOCIgZmlsbD0iIzAwOUE0RSIvPgo8cG9seWdvbiBwb2ludHM9IjQwLDU0IDQ3LDYwIDQwLDY2IDQzLDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI1NCw1NCA2MSw2MCA1NCw2NiA1Nyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iNjgsNTQgNzUsNjAgNjgsNjYgNzEsNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjgyLDU0IDg5LDYwIDgyLDY2IDg1LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI5Niw1NCAxMDMsNjAgOTYsNjYgOTksNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjExMCw1NCAxMTcsNjAgMTEwLDY2IDExMyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iMTI0LDU0IDEzMSw2MCAxMjQsNjYgMTI3LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSIxMzgsNTQgMTQ1LDYwIDEzOCw2NiAxNDEsNjAiIGZpbGw9IiMwMDlBNEUiLz4KPHBhdGggZD0iTTMxIDM2IFY1OCBIMzYiIHN0cm9rZT0iIzAwOUE0RSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5PSI0IDMiLz4KPGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iNy41IiBmaWxsPSIjRDcyNjNEIi8+PGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iMi44IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9Ijk2IiB5PSI3MyIgd2lkdGg9IjkiIGhlaWdodD0iOSIgcng9IjEuNSIgZmlsbD0iI0Q3MjYzRCIvPgo8cmVjdCB4PSIxNzEiIHk9IjQzIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHJ4PSIzIiBmaWxsPSIjMDA5QTRFIi8+CjxjaXJjbGUgY3g9IjE3OSIgY3k9IjUyIiByPSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48Y2lyY2xlIGN4PSIxODgiIGN5PSI1MiIgcj0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjE3Ni40IiB5PSI1NS41IiB3aWR0aD0iNS4yIiBoZWlnaHQ9IjgiIHJ4PSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48cmVjdCB4PSIxODUuNCIgeT0iNTUuNSIgd2lkdGg9IjUuMiIgaGVpZ2h0PSI4IiByeD0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9Ik0xNjEgNjAgSDE2OCIgc3Ryb2tlPSIjMDA5QTRFIiBzdHJva2Utd2lkdGg9IjMiLz48cG9seWdvbiBwb2ludHM9IjE2Niw1NiAxNzEsNjAgMTY2LDY0IiBmaWxsPSIjMDA5QTRFIi8+Cjwvc3ZnPg==",
+          "alt": "Planta de um piso com um círculo vermelho numa sala",
+          "certa": "O sítio onde estás",
+          "erradas": [
+            "Onde está o extintor",
+            "Onde é o ponto de encontro"
+          ],
+          "explicacao": "O círculo diz «Está aqui». O extintor é o pequeno quadrado vermelho."
+        },
+        {
+          "pergunta": "E o quadrado verde com pessoas, fora do edifício?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMTIwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSIjRjRGMUU4Ii8+CjxyZWN0IHg9IjYiIHk9IjYiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTA4IiBmaWxsPSIjRkZGRkZGIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMi41Ii8+CjxnIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBkPSJNNiA1MCBIMjQgTTM4IDUwIEg3NCBNODggNTAgSDEyNCBNMTM4IDUwIEgxNTYiLz4KPHBhdGggZD0iTTYgNzAgSDQwIE01NCA3MCBIMTAwIE0xMTQgNzAgSDE1NiIvPjxwYXRoIGQ9Ik01NiA2IFY1MCBNMTA2IDYgVjUwIE03OCA3MCBWMTE0Ii8+PC9nPgo8cmVjdCB4PSIxNTQiIHk9IjUxIiB3aWR0aD0iNSIgaGVpZ2h0PSIxOCIgZmlsbD0iIzAwOUE0RSIvPgo8cG9seWdvbiBwb2ludHM9IjQwLDU0IDQ3LDYwIDQwLDY2IDQzLDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI1NCw1NCA2MSw2MCA1NCw2NiA1Nyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iNjgsNTQgNzUsNjAgNjgsNjYgNzEsNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjgyLDU0IDg5LDYwIDgyLDY2IDg1LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSI5Niw1NCAxMDMsNjAgOTYsNjYgOTksNjAiIGZpbGw9IiMwMDlBNEUiLz48cG9seWdvbiBwb2ludHM9IjExMCw1NCAxMTcsNjAgMTEwLDY2IDExMyw2MCIgZmlsbD0iIzAwOUE0RSIvPjxwb2x5Z29uIHBvaW50cz0iMTI0LDU0IDEzMSw2MCAxMjQsNjYgMTI3LDYwIiBmaWxsPSIjMDA5QTRFIi8+PHBvbHlnb24gcG9pbnRzPSIxMzgsNTQgMTQ1LDYwIDEzOCw2NiAxNDEsNjAiIGZpbGw9IiMwMDlBNEUiLz4KPHBhdGggZD0iTTMxIDM2IFY1OCBIMzYiIHN0cm9rZT0iIzAwOUE0RSIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5PSI0IDMiLz4KPGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iNy41IiBmaWxsPSIjRDcyNjNEIi8+PGNpcmNsZSBjeD0iMzEiIGN5PSIyNyIgcj0iMi44IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9Ijk2IiB5PSI3MyIgd2lkdGg9IjkiIGhlaWdodD0iOSIgcng9IjEuNSIgZmlsbD0iI0Q3MjYzRCIvPgo8cmVjdCB4PSIxNzEiIHk9IjQzIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIHJ4PSIzIiBmaWxsPSIjMDA5QTRFIi8+CjxjaXJjbGUgY3g9IjE3OSIgY3k9IjUyIiByPSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48Y2lyY2xlIGN4PSIxODgiIGN5PSI1MiIgcj0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjE3Ni40IiB5PSI1NS41IiB3aWR0aD0iNS4yIiBoZWlnaHQ9IjgiIHJ4PSIyLjYiIGZpbGw9IiNGRkZGRkYiLz48cmVjdCB4PSIxODUuNCIgeT0iNTUuNSIgd2lkdGg9IjUuMiIgaGVpZ2h0PSI4IiByeD0iMi42IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIGQ9Ik0xNjEgNjAgSDE2OCIgc3Ryb2tlPSIjMDA5QTRFIiBzdHJva2Utd2lkdGg9IjMiLz48cG9seWdvbiBwb2ludHM9IjE2Niw1NiAxNzEsNjAgMTY2LDY0IiBmaWxsPSIjMDA5QTRFIi8+Cjwvc3ZnPg==",
+          "alt": "Planta de um piso com um quadrado verde fora do edifício",
+          "certa": "O ponto de encontro",
+          "erradas": [
+            "O parque de estacionamento",
+            "A sala de professores"
+          ]
+        },
+        {
+          "pergunta": "Os sinais de cor verde mostram…",
+          "emoji": "🟩",
+          "certa": "saídas e o caminho seguro",
+          "erradas": [
+            "material para apagar fogos",
+            "o que é proibido"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "baralhar": true,
+      "titulo": "Evacuação: faço ou não faço?",
+      "instrucao": "Tocou o alarme! Põe cada ação na caixa certa.",
+      "caixas": [
+        "✅ Faço",
+        "❌ Não faço"
+      ],
+      "itens": [
+        [
+          "Paro o que estou a fazer",
+          "✅ Faço"
+        ],
+        [
+          "Deixo a mochila na sala",
+          "✅ Faço"
+        ],
+        [
+          "Ando depressa, mas sem correr",
+          "✅ Faço"
+        ],
+        [
+          "Sigo o chefe de fila",
+          "✅ Faço"
+        ],
+        [
+          "Vou em silêncio para ouvir as instruções",
+          "✅ Faço"
+        ],
+        [
+          "Sigo as setas verdes",
+          "✅ Faço"
+        ],
+        [
+          "Fico com a turma no ponto de encontro",
+          "✅ Faço"
+        ],
+        [
+          "Volto atrás para ir buscar o casaco",
+          "❌ Não faço"
+        ],
+        [
+          "Empurro os colegas para sair primeiro",
+          "❌ Não faço"
+        ],
+        [
+          "Uso o elevador",
+          "❌ Não faço"
+        ],
+        [
+          "Vou à casa de banho antes de sair",
+          "❌ Não faço"
+        ],
+        [
+          "Saio da fila para procurar um amigo",
+          "❌ Não faço"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Algoritmos que salvam",
+      "instrucao": "Um algoritmo é uma sequência de passos pela ordem certa. Ordena os passos.",
+      "itens": [
+        {
+          "emoji": "🚨",
+          "pecas": [
+            "Ouço o sinal de alarme",
+            "Paro e deixo tudo na sala",
+            "Faço fila atrás do chefe de fila",
+            "Saio sem correr pelo caminho de evacuação",
+            "Fico com a turma no ponto de encontro"
+          ]
+        },
+        {
+          "emoji": "🫨",
+          "pecas": [
+            "Baixar",
+            "Proteger",
+            "Aguardar",
+            "Sair com calma quando o professor disser"
+          ]
+        },
+        {
+          "emoji": "📞",
+          "pecas": [
+            "Mantenho a calma e marco 112",
+            "Explico o que aconteceu e onde",
+            "Respondo às perguntas",
+            "Só desligo quando me disserem"
+          ],
+          "dica": "Primeiro é preciso ligar; desligar é sempre o último passo."
+        },
+        {
+          "emoji": "💨",
+          "pecas": [
+            "Vejo fumo e aviso logo um adulto",
+            "Tapo o nariz e a boca com um pano",
+            "Saio baixinho, perto do chão",
+            "Vou para o ponto de encontro"
+          ]
+        },
+        {
+          "emoji": "🔥",
+          "pecas": [
+            "Parar",
+            "Deitar",
+            "Rolar"
+          ],
+          "explicacao": "Se a roupa pegar fogo: parar, deitar e rolar. Correr aviva as chamas."
+        },
+        {
+          "emoji": "🧑‍🏫",
+          "pecas": [
+            "Chego ao ponto de encontro",
+            "Fico junto da minha turma",
+            "O professor conta os alunos",
+            "Espero até dizerem que é seguro voltar"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "A Terra Treme!",
+      "instrucao": "Lê cada situação e escolhe o que é mais seguro.",
+      "itens": [
+        {
+          "pergunta": "Estás na sala e a terra começa a tremer. O que fazes?",
+          "emoji": "🏫",
+          "certa": "Baixo-me debaixo da mesa e seguro uma perna da mesa",
+          "erradas": [
+            "Corro logo para a porta",
+            "Vou à janela ver o que se passa"
+          ]
+        },
+        {
+          "pergunta": "Que três gestos treinamos no exercício «A Terra Treme»?",
+          "emoji": "🫨",
+          "certa": "Baixar, Proteger, Aguardar",
+          "erradas": [
+            "Parar, Deitar, Rolar",
+            "Sair, Correr, Esconder"
+          ],
+          "explicacao": "«Parar, Deitar, Rolar» é o que se faz se a roupa pegar fogo."
+        },
+        {
+          "pergunta": "Quanto tempo dura o exercício «A Terra Treme»?",
+          "emoji": "⏱️",
+          "certa": "1 minuto",
+          "erradas": [
+            "10 minutos",
+            "1 hora"
+          ]
+        },
+        {
+          "pergunta": "Não há nenhuma mesa perto de ti. O que fazes?",
+          "emoji": "🧱",
+          "certa": "Baixo-me junto a uma parede interior e tapo a cabeça",
+          "erradas": [
+            "Fico de pé junto à janela",
+            "Corro para as escadas"
+          ]
+        },
+        {
+          "pergunta": "Porque nos afastamos das janelas e das estantes durante um sismo?",
+          "emoji": "🪟",
+          "certa": "Porque os vidros e os objetos podem cair e magoar-nos",
+          "erradas": [
+            "Porque entra frio",
+            "Porque faz barulho"
+          ]
+        },
+        {
+          "pergunta": "Estás no recreio e a terra treme. O que fazes?",
+          "emoji": "🌳",
+          "certa": "Afasto-me de paredes, árvores e postes e protejo a cabeça",
+          "erradas": [
+            "Entro a correr no edifício",
+            "Subo para um muro"
+          ]
+        },
+        {
+          "pergunta": "A terra parou de tremer. E agora?",
+          "emoji": "🧑‍🏫",
+          "certa": "Espero pelas instruções do professor e saio com calma",
+          "erradas": [
+            "Vou buscar a mochila ao cacifo",
+            "Volto logo a brincar"
+          ],
+          "explicacao": "Depois de um sismo pode haver réplicas. Saímos com calma, quando o professor disser."
+        },
+        {
+          "pergunta": "Estás na praia e sentes um sismo forte. O que fazes?",
+          "emoji": "🌊",
+          "certa": "Afasto-me do mar e subo para um sítio alto",
+          "erradas": [
+            "Vou ver o mar a recuar",
+            "Fico na areia à espera"
+          ],
+          "explicacao": "Um sismo forte perto do mar pode provocar um tsunami. Na Madeira estamos rodeados de mar!"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "verdadeiro_falso",
+      "baralhar": true,
+      "titulo": "Incêndio: verdade ou mito?",
+      "instrucao": "Lê cada frase e decide se é verdadeira ou falsa.",
+      "itens": [
+        {
+          "afirmacao": "Se houver fumo, devo sair baixinho, perto do chão.",
+          "verdade": true,
+          "emoji": "💨",
+          "explicacao": "O fumo sobe. Junto ao chão o ar está mais limpo."
+        },
+        {
+          "afirmacao": "Num incêndio, uso o elevador para sair mais depressa.",
+          "verdade": false,
+          "emoji": "🛗",
+          "explicacao": "O elevador pode parar e ficarmos presos. Usamos sempre as escadas."
+        },
+        {
+          "afirmacao": "Antes de abrir uma porta, toco-lhe com as costas da mão para ver se está quente.",
+          "verdade": true,
+          "emoji": "🚪",
+          "explicacao": "Se a porta estiver quente, pode haver fogo do outro lado: não a abro."
+        },
+        {
+          "afirmacao": "Se tiver medo, escondo-me debaixo da cama ou dentro de um armário.",
+          "verdade": false,
+          "emoji": "🛏️",
+          "explicacao": "Escondidos, os bombeiros têm dificuldade em encontrar-nos. Saímos ou pedimos ajuda."
+        },
+        {
+          "afirmacao": "Se a minha roupa pegar fogo, corro para pedir ajuda.",
+          "verdade": false,
+          "emoji": "🏃",
+          "explicacao": "Correr aviva o fogo. Parar, deitar e rolar."
+        },
+        {
+          "afirmacao": "Os extintores são usados por adultos treinados para apagar fogos pequenos.",
+          "verdade": true,
+          "emoji": "🧯"
+        },
+        {
+          "afirmacao": "Fechar as portas ao sair ajuda a travar o fumo e o fogo.",
+          "verdade": true,
+          "emoji": "🚪",
+          "explicacao": "Uma porta fechada atrasa o fumo e o fogo."
+        },
+        {
+          "afirmacao": "Se me esquecer de alguma coisa na sala, volto atrás para a ir buscar.",
+          "verdade": false,
+          "emoji": "🎒",
+          "explicacao": "Nunca voltamos atrás. As coisas substituem-se; as pessoas não."
+        },
+        {
+          "afirmacao": "O alarme e o alerta são a mesma coisa.",
+          "verdade": false,
+          "emoji": "🔔",
+          "explicacao": "Alarme = sinal sonoro para sair. Alerta = aviso aos meios de socorro pelo 112."
+        },
+        {
+          "afirmacao": "Fazer chamadas falsas para o 112 pode atrasar o socorro a quem precisa.",
+          "verdade": true,
+          "emoji": "📵",
+          "explicacao": "O 112 é só para emergências verdadeiras."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Quem faz o quê?",
+      "instrucao": "Liga cada palavra à sua função.",
+      "itens": [
+        [
+          "chefe de fila",
+          "vai à frente e guia a turma"
+        ],
+        [
+          "cerra-fila",
+          "vai no fim e vê se ninguém ficou para trás"
+        ],
+        [
+          "professor",
+          "conta os alunos no ponto de encontro"
+        ],
+        [
+          "delegado de segurança",
+          "ajuda a organizar a segurança da escola"
+        ],
+        [
+          "bombeiros",
+          "apagam incêndios e socorrem pessoas"
+        ],
+        [
+          "112",
+          "número para dar o alerta"
+        ],
+        [
+          "alarme",
+          "sinal sonoro para sair do edifício"
+        ],
+        [
+          "ponto de encontro",
+          "local seguro onde a turma se junta"
+        ]
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Escrevo para me proteger",
+      "instrucao": "Escreve frases completas, com letra maiúscula no início e ponto final.",
+      "itens": [
+        {
+          "pergunta": "Explica o que fazes quando ouves o sinal de alarme na escola.",
+          "palavra": "alarme",
+          "minPalavras": 8,
+          "dica": "Pensa: paro, deixo tudo, faço fila, saio sem correr e vou para…"
+        },
+        {
+          "pergunta": "Escreve uma frase com os três gestos de «A Terra Treme».",
+          "palavra": "proteger",
+          "minPalavras": 6,
+          "dica": "Baixar, proteger e aguardar."
+        },
+        {
+          "pergunta": "Imagina que ligas para o 112. Escreve o que dizes a quem atende.",
+          "palavra": "112",
+          "minPalavras": 8,
+          "dica": "Diz o que aconteceu, onde é e quantas pessoas precisam de ajuda."
+        },
+        {
+          "pergunta": "Inventa uma regra de segurança para a tua sala de aula.",
+          "minPalavras": 6,
+          "dica": "Por exemplo: o que deve estar sempre livre na sala?"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "classificar",
+      "baralhar": true,
+      "titulo": "O kit de emergência da família",
+      "instrucao": "O que vai para o kit de emergência de casa?",
+      "caixas": [
+        "🎒 Vai no kit",
+        "🏠 Fica em casa"
+      ],
+      "itens": [
+        [
+          "💧 água",
+          "🎒 Vai no kit"
+        ],
+        [
+          "🔦 lanterna",
+          "🎒 Vai no kit"
+        ],
+        [
+          "📻 rádio a pilhas",
+          "🎒 Vai no kit"
+        ],
+        [
+          "🔋 pilhas",
+          "🎒 Vai no kit"
+        ],
+        [
+          "🩹 estojo de primeiros socorros",
+          "🎒 Vai no kit"
+        ],
+        [
+          "🥫 comida enlatada",
+          "🎒 Vai no kit"
+        ],
+        [
+          "🎮 consola de jogos",
+          "🏠 Fica em casa"
+        ],
+        [
+          "🧸 coleção de peluches",
+          "🏠 Fica em casa"
+        ],
+        [
+          "🛼 patins",
+          "🏠 Fica em casa"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Riscos na nossa ilha",
+      "instrucao": "Voa até à nuvem com a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Está a chover muito. Junto a uma ribeira cheia, o que fazes?",
+          "emoji": "🌧️",
+          "certa": "Afasto-me da ribeira",
+          "erradas": [
+            "Atravesso a ribeira",
+            "Vou ver a água de perto"
+          ],
+          "explicacao": "Com chuva forte, as ribeiras podem transbordar de repente (aluvião)."
+        },
+        {
+          "pergunta": "Qual é o aviso meteorológico mais grave?",
+          "emoji": "⚠️",
+          "certa": "vermelho",
+          "erradas": [
+            "amarelo",
+            "laranja"
+          ],
+          "explicacao": "Os avisos vão do verde ao amarelo, laranja e vermelho, o mais grave."
+        },
+        {
+          "pergunta": "Há um incêndio florestal perto e entra fumo em casa. O que fazes?",
+          "emoji": "🌲",
+          "certa": "Fecho as janelas e sigo as indicações dos adultos",
+          "erradas": [
+            "Abro as janelas para sair o fumo",
+            "Vou ver o fogo de perto"
+          ]
+        },
+        {
+          "pergunta": "No plano de emergência familiar, a família combina…",
+          "emoji": "🏠",
+          "certa": "um ponto de encontro fora de casa",
+          "erradas": [
+            "o jantar da semana",
+            "a hora de ver televisão"
+          ]
+        },
+        {
+          "pergunta": "Quem nos dá avisos e conselhos sobre riscos na Madeira?",
+          "emoji": "🦺",
+          "certa": "a Proteção Civil",
+          "erradas": [
+            "a biblioteca",
+            "o supermercado"
+          ]
+        }
+      ]
+    }
+  ]
+}
