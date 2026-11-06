@@ -5,9 +5,12 @@
   "turma": "3.º ano",
   "disciplina": "Matemática",
   "data": "2026-11-06",
-  "descricao": "Minijogos de cálculo mental e das tabuadas do 3 e do 4: dobros e metades, contagens de 3 em 3 e de 4 em 4, fator em falta, divisão como operação inversa, problemas e frases matemáticas",
+  "descricao": "Minijogos de cálculo mental e das tabuadas do 3 e do 4: dobros e metades, contagens de 3 em 3 e de 4 em 4, fator em falta, problemas e frases matemáticas",
   "resumo": "Treina as tabuadas do 3 e do 4 em minijogos com o Ticl@s!",
-  "focoTic": ["Teclado: escrever números", "Rato: arrastar"],
+  "focoTic": [
+    "Teclado: escrever números",
+    "Rato: arrastar"
+  ],
   "objetivo": "Calcular mentalmente e usar as tabuadas do 3 e do 4 para resolver desafios e problemas.",
   "minutos": 60,
   "rondas": [
@@ -19,14 +22,78 @@
       "instrucao": "Faz a conta de cabeça e rebenta o balão certo.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "Quanto é 3 + 3 + 3?", "certa": "9", "erradas": ["6", "12"], "explicacao": "3 + 3 + 3 = 9. É o mesmo que 3 × 3." },
-        { "pergunta": "Qual é o dobro de 6?", "certa": "12", "erradas": ["8", "3"], "explicacao": "O dobro de 6 é 6 + 6 = 12." },
-        { "pergunta": "Quanto é 4 + 4 + 4 + 4?", "certa": "16", "erradas": ["12", "20"], "explicacao": "4 + 4 + 4 + 4 = 16. É o mesmo que 4 × 4." },
-        { "pergunta": "Quanto é 25 + 10?", "certa": "35", "erradas": ["26", "45"], "explicacao": "Mais 10: as dezenas aumentam 1. 25 + 10 = 35." },
-        { "pergunta": "Quanto é 48 − 10?", "certa": "38", "erradas": ["47", "28"], "explicacao": "Menos 10: as dezenas diminuem 1. 48 − 10 = 38." },
-        { "pergunta": "Qual é a metade de 8?", "certa": "4", "erradas": ["16", "6"], "explicacao": "A metade de 8 é 4, porque 4 + 4 = 8." },
-        { "pergunta": "Quanto é 7 + 8?", "certa": "15", "erradas": ["14", "16"], "explicacao": "7 + 7 = 14 e mais 1 dá 15." },
-        { "pergunta": "Quanto é 30 + 40?", "certa": "70", "erradas": ["60", "80"], "explicacao": "3 dezenas + 4 dezenas = 7 dezenas = 70." }
+        {
+          "pergunta": "Quanto é 3 + 3 + 3?",
+          "certa": "9",
+          "erradas": [
+            "6",
+            "12"
+          ],
+          "explicacao": "3 + 3 + 3 = 9. É o mesmo que 3 × 3."
+        },
+        {
+          "pergunta": "Qual é o dobro de 6?",
+          "certa": "12",
+          "erradas": [
+            "8",
+            "3"
+          ],
+          "explicacao": "O dobro de 6 é 6 + 6 = 12."
+        },
+        {
+          "pergunta": "Quanto é 4 + 4 + 4 + 4?",
+          "certa": "16",
+          "erradas": [
+            "12",
+            "20"
+          ],
+          "explicacao": "4 + 4 + 4 + 4 = 16. É o mesmo que 4 × 4."
+        },
+        {
+          "pergunta": "Quanto é 25 + 10?",
+          "certa": "35",
+          "erradas": [
+            "26",
+            "45"
+          ],
+          "explicacao": "Mais 10: as dezenas aumentam 1. 25 + 10 = 35."
+        },
+        {
+          "pergunta": "Quanto é 48 − 10?",
+          "certa": "38",
+          "erradas": [
+            "47",
+            "28"
+          ],
+          "explicacao": "Menos 10: as dezenas diminuem 1. 48 − 10 = 38."
+        },
+        {
+          "pergunta": "Qual é a metade de 8?",
+          "certa": "4",
+          "erradas": [
+            "16",
+            "6"
+          ],
+          "explicacao": "A metade de 8 é 4, porque 4 + 4 = 8."
+        },
+        {
+          "pergunta": "Quanto é 7 + 8?",
+          "certa": "15",
+          "erradas": [
+            "14",
+            "16"
+          ],
+          "explicacao": "7 + 7 = 14 e mais 1 dá 15."
+        },
+        {
+          "pergunta": "Quanto é 30 + 40?",
+          "certa": "70",
+          "erradas": [
+            "60",
+            "80"
+          ],
+          "explicacao": "3 dezenas + 4 dezenas = 7 dezenas = 70."
+        }
       ]
     },
     {
@@ -36,15 +103,87 @@
       "instrucao": "O comboio traz as respostas nas carruagens. Escolhe o resultado certo.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "Quanto é 3 × 2?", "certa": "6", "erradas": ["5", "9"], "explicacao": "3 × 2 = 3 + 3 = 6." },
-        { "pergunta": "Quanto é 3 × 3?", "certa": "9", "erradas": ["6", "12"], "explicacao": "3 × 3 = 3 + 3 + 3 = 9." },
-        { "pergunta": "Quanto é 3 × 4?", "certa": "12", "erradas": ["7", "15"], "explicacao": "3 × 4 é o dobro de 3 × 2 = 6. Logo, 12." },
-        { "pergunta": "Quanto é 3 × 5?", "certa": "15", "erradas": ["8", "18"], "explicacao": "Conta de 3 em 3, cinco vezes: 3, 6, 9, 12, 15." },
-        { "pergunta": "Quanto é 3 × 6?", "certa": "18", "erradas": ["15", "21"], "explicacao": "3 × 5 = 15 e mais 3 dá 18." },
-        { "pergunta": "Quanto é 3 × 7?", "certa": "21", "erradas": ["24", "10"], "explicacao": "3 × 6 = 18 e mais 3 dá 21." },
-        { "pergunta": "Quanto é 3 × 8?", "certa": "24", "erradas": ["21", "27"], "explicacao": "3 × 8 é o dobro de 3 × 4 = 12. Logo, 24." },
-        { "pergunta": "Quanto é 3 × 9?", "certa": "27", "erradas": ["24", "12"], "explicacao": "3 × 10 = 30 e menos 3 dá 27." },
-        { "pergunta": "Quanto é 3 × 10?", "certa": "30", "erradas": ["13", "33"], "explicacao": "Vezes 10: acrescenta-se um 0. 3 × 10 = 30." }
+        {
+          "pergunta": "Quanto é 3 × 2?",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "9"
+          ],
+          "explicacao": "3 × 2 = 3 + 3 = 6."
+        },
+        {
+          "pergunta": "Quanto é 3 × 3?",
+          "certa": "9",
+          "erradas": [
+            "6",
+            "12"
+          ],
+          "explicacao": "3 × 3 = 3 + 3 + 3 = 9."
+        },
+        {
+          "pergunta": "Quanto é 3 × 4?",
+          "certa": "12",
+          "erradas": [
+            "7",
+            "15"
+          ],
+          "explicacao": "3 × 4 é o dobro de 3 × 2 = 6. Logo, 12."
+        },
+        {
+          "pergunta": "Quanto é 3 × 5?",
+          "certa": "15",
+          "erradas": [
+            "8",
+            "18"
+          ],
+          "explicacao": "Conta de 3 em 3, cinco vezes: 3, 6, 9, 12, 15."
+        },
+        {
+          "pergunta": "Quanto é 3 × 6?",
+          "certa": "18",
+          "erradas": [
+            "15",
+            "21"
+          ],
+          "explicacao": "3 × 5 = 15 e mais 3 dá 18."
+        },
+        {
+          "pergunta": "Quanto é 3 × 7?",
+          "certa": "21",
+          "erradas": [
+            "24",
+            "10"
+          ],
+          "explicacao": "3 × 6 = 18 e mais 3 dá 21."
+        },
+        {
+          "pergunta": "Quanto é 3 × 8?",
+          "certa": "24",
+          "erradas": [
+            "21",
+            "27"
+          ],
+          "explicacao": "3 × 8 é o dobro de 3 × 4 = 12. Logo, 24."
+        },
+        {
+          "pergunta": "Quanto é 3 × 9?",
+          "certa": "27",
+          "erradas": [
+            "24",
+            "12"
+          ],
+          "explicacao": "3 × 10 = 30 e menos 3 dá 27."
+        },
+        {
+          "pergunta": "Quanto é 3 × 10?",
+          "certa": "30",
+          "erradas": [
+            "13",
+            "33"
+          ],
+          "explicacao": "Vezes 10: acrescenta-se um 0. 3 × 10 = 30."
+        }
       ]
     },
     {
@@ -52,14 +191,38 @@
       "titulo": "Liga a tabuada do 4",
       "instrucao": "Liga cada conta da tabuada do 4 ao seu resultado.",
       "itens": [
-        ["4 × 2", "8"],
-        ["4 × 3", "12"],
-        ["4 × 5", "20"],
-        ["4 × 6", "24"],
-        ["4 × 7", "28"],
-        ["4 × 8", "32"],
-        ["4 × 9", "36"],
-        ["4 × 10", "40"]
+        [
+          "4 × 2",
+          "8"
+        ],
+        [
+          "4 × 3",
+          "12"
+        ],
+        [
+          "4 × 5",
+          "20"
+        ],
+        [
+          "4 × 6",
+          "24"
+        ],
+        [
+          "4 × 7",
+          "28"
+        ],
+        [
+          "4 × 8",
+          "32"
+        ],
+        [
+          "4 × 9",
+          "36"
+        ],
+        [
+          "4 × 10",
+          "40"
+        ]
       ]
     },
     {
@@ -69,34 +232,138 @@
       "instrucao": "Leva o avião até à nuvem com o resultado certo.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "Quanto é 4 × 3?", "certa": "12", "erradas": ["7", "16"], "explicacao": "4 × 3 = 4 + 4 + 4 = 12." },
-        { "pergunta": "Quanto é 4 × 4?", "certa": "16", "erradas": ["8", "12"], "explicacao": "4 × 4 = 16." },
-        { "pergunta": "Quanto é 4 × 5?", "certa": "20", "erradas": ["9", "24"], "explicacao": "Conta de 4 em 4, cinco vezes: 4, 8, 12, 16, 20." },
-        { "pergunta": "Quanto é 4 × 6?", "certa": "24", "erradas": ["20", "10"], "explicacao": "4 × 5 = 20 e mais 4 dá 24." },
-        { "pergunta": "Quanto é 4 × 7?", "certa": "28", "erradas": ["24", "11"], "explicacao": "4 × 7 é o dobro de 2 × 7 = 14. Logo, 28." },
-        { "pergunta": "Quanto é 4 × 8?", "certa": "32", "erradas": ["28", "36"], "explicacao": "4 × 8 é o dobro de 2 × 8 = 16. Logo, 32." },
-        { "pergunta": "Quanto é 4 × 9?", "certa": "36", "erradas": ["32", "13"], "explicacao": "4 × 10 = 40 e menos 4 dá 36." },
-        { "pergunta": "Quanto é 4 × 10?", "certa": "40", "erradas": ["14", "44"], "explicacao": "Vezes 10: acrescenta-se um 0. 4 × 10 = 40." }
+        {
+          "pergunta": "Quanto é 4 × 3?",
+          "certa": "12",
+          "erradas": [
+            "7",
+            "16"
+          ],
+          "explicacao": "4 × 3 = 4 + 4 + 4 = 12."
+        },
+        {
+          "pergunta": "Quanto é 4 × 4?",
+          "certa": "16",
+          "erradas": [
+            "8",
+            "12"
+          ],
+          "explicacao": "4 × 4 = 16."
+        },
+        {
+          "pergunta": "Quanto é 4 × 5?",
+          "certa": "20",
+          "erradas": [
+            "9",
+            "24"
+          ],
+          "explicacao": "Conta de 4 em 4, cinco vezes: 4, 8, 12, 16, 20."
+        },
+        {
+          "pergunta": "Quanto é 4 × 6?",
+          "certa": "24",
+          "erradas": [
+            "20",
+            "10"
+          ],
+          "explicacao": "4 × 5 = 20 e mais 4 dá 24."
+        },
+        {
+          "pergunta": "Quanto é 4 × 7?",
+          "certa": "28",
+          "erradas": [
+            "24",
+            "11"
+          ],
+          "explicacao": "4 × 7 é o dobro de 2 × 7 = 14. Logo, 28."
+        },
+        {
+          "pergunta": "Quanto é 4 × 8?",
+          "certa": "32",
+          "erradas": [
+            "28",
+            "36"
+          ],
+          "explicacao": "4 × 8 é o dobro de 2 × 8 = 16. Logo, 32."
+        },
+        {
+          "pergunta": "Quanto é 4 × 9?",
+          "certa": "36",
+          "erradas": [
+            "32",
+            "13"
+          ],
+          "explicacao": "4 × 10 = 40 e menos 4 dá 36."
+        },
+        {
+          "pergunta": "Quanto é 4 × 10?",
+          "certa": "40",
+          "erradas": [
+            "14",
+            "44"
+          ],
+          "explicacao": "Vezes 10: acrescenta-se um 0. 4 × 10 = 40."
+        }
       ]
     },
     {
       "tipo": "classificar",
       "titulo": "Caixas das tabuadas",
       "instrucao": "Em que tabuada está cada número? Pensa nas tabuadas do 3 e do 4 até ao × 10.",
-      "caixas": ["tabuada do 3", "tabuada do 4", "nas duas tabuadas"],
+      "caixas": [
+        "tabuada do 3",
+        "tabuada do 4",
+        "nas duas tabuadas"
+      ],
       "itens": [
-        ["9", "tabuada do 3"],
-        ["15", "tabuada do 3"],
-        ["21", "tabuada do 3"],
-        ["27", "tabuada do 3"],
-        ["30", "tabuada do 3"],
-        ["8", "tabuada do 4"],
-        ["16", "tabuada do 4"],
-        ["20", "tabuada do 4"],
-        ["28", "tabuada do 4"],
-        ["32", "tabuada do 4"],
-        ["12", "nas duas tabuadas"],
-        ["24", "nas duas tabuadas"]
+        [
+          "9",
+          "tabuada do 3"
+        ],
+        [
+          "15",
+          "tabuada do 3"
+        ],
+        [
+          "21",
+          "tabuada do 3"
+        ],
+        [
+          "27",
+          "tabuada do 3"
+        ],
+        [
+          "30",
+          "tabuada do 3"
+        ],
+        [
+          "8",
+          "tabuada do 4"
+        ],
+        [
+          "16",
+          "tabuada do 4"
+        ],
+        [
+          "20",
+          "tabuada do 4"
+        ],
+        [
+          "28",
+          "tabuada do 4"
+        ],
+        [
+          "32",
+          "tabuada do 4"
+        ],
+        [
+          "12",
+          "nas duas tabuadas"
+        ],
+        [
+          "24",
+          "nas duas tabuadas"
+        ]
       ]
     },
     {
@@ -105,14 +372,46 @@
       "instrucao": "Lê com atenção. É verdadeiro ou falso?",
       "baralhar": true,
       "itens": [
-        { "afirmacao": "3 × 5 dá o mesmo que 5 × 3.", "verdade": true, "explicacao": "A ordem não muda o resultado: os dois dão 15." },
-        { "afirmacao": "4 × 6 = 26", "verdade": false, "explicacao": "4 × 6 = 24." },
-        { "afirmacao": "Os resultados da tabuada do 4 são todos números pares.", "verdade": true, "explicacao": "4, 8, 12, 16, 20… são todos pares." },
-        { "afirmacao": "Os resultados da tabuada do 3 são todos números ímpares.", "verdade": false, "explicacao": "3 × 2 = 6, e o 6 é par." },
-        { "afirmacao": "4 × 7 é o dobro de 2 × 7.", "verdade": true, "explicacao": "2 × 7 = 14 e o dobro de 14 é 28, que é 4 × 7." },
-        { "afirmacao": "3 × 0 = 3", "verdade": false, "explicacao": "Qualquer número vezes 0 dá 0." },
-        { "afirmacao": "3 × 8 e 4 × 6 dão o mesmo resultado.", "verdade": true, "explicacao": "Os dois dão 24." },
-        { "afirmacao": "3 × 10 = 13", "verdade": false, "explicacao": "3 × 10 = 30: acrescenta-se um 0." }
+        {
+          "afirmacao": "3 × 5 dá o mesmo que 5 × 3.",
+          "verdade": true,
+          "explicacao": "A ordem não muda o resultado: os dois dão 15."
+        },
+        {
+          "afirmacao": "4 × 6 = 26",
+          "verdade": false,
+          "explicacao": "4 × 6 = 24."
+        },
+        {
+          "afirmacao": "Os resultados da tabuada do 4 são todos números pares.",
+          "verdade": true,
+          "explicacao": "4, 8, 12, 16, 20… são todos pares."
+        },
+        {
+          "afirmacao": "Os resultados da tabuada do 3 são todos números ímpares.",
+          "verdade": false,
+          "explicacao": "3 × 2 = 6, e o 6 é par."
+        },
+        {
+          "afirmacao": "4 × 7 é o dobro de 2 × 7.",
+          "verdade": true,
+          "explicacao": "2 × 7 = 14 e o dobro de 14 é 28, que é 4 × 7."
+        },
+        {
+          "afirmacao": "3 × 0 = 3",
+          "verdade": false,
+          "explicacao": "Qualquer número vezes 0 dá 0."
+        },
+        {
+          "afirmacao": "3 × 8 e 4 × 6 dão o mesmo resultado.",
+          "verdade": true,
+          "explicacao": "Os dois dão 24."
+        },
+        {
+          "afirmacao": "3 × 10 = 13",
+          "verdade": false,
+          "explicacao": "3 × 10 = 30: acrescenta-se um 0."
+        }
       ]
     },
     {
@@ -120,12 +419,66 @@
       "titulo": "Saltos do Ticl@s",
       "instrucao": "O Ticl@s salta na reta dos números. Põe os números pela ordem dos saltos.",
       "itens": [
-        { "pergunta": "Conta de 3 em 3.", "pecas": ["3", "6", "9", "12", "15"] },
-        { "pergunta": "Conta de 4 em 4.", "pecas": ["4", "8", "12", "16", "20"] },
-        { "pergunta": "Conta de 3 em 3, a partir do 15.", "pecas": ["15", "18", "21", "24", "27"] },
-        { "pergunta": "Conta de 4 em 4, a partir do 20.", "pecas": ["20", "24", "28", "32", "36"] },
-        { "pergunta": "Conta para trás, de 4 em 4.", "pecas": ["40", "36", "32", "28", "24"] },
-        { "pergunta": "Ordena as contas do menor para o maior resultado.", "pecas": ["3 × 4", "4 × 4", "3 × 9", "4 × 8"], "dica": "Calcula primeiro: 12, 16, 27 e 32." }
+        {
+          "pergunta": "Conta de 3 em 3.",
+          "pecas": [
+            "3",
+            "6",
+            "9",
+            "12",
+            "15"
+          ]
+        },
+        {
+          "pergunta": "Conta de 4 em 4.",
+          "pecas": [
+            "4",
+            "8",
+            "12",
+            "16",
+            "20"
+          ]
+        },
+        {
+          "pergunta": "Conta de 3 em 3, a partir do 15.",
+          "pecas": [
+            "15",
+            "18",
+            "21",
+            "24",
+            "27"
+          ]
+        },
+        {
+          "pergunta": "Conta de 4 em 4, a partir do 20.",
+          "pecas": [
+            "20",
+            "24",
+            "28",
+            "32",
+            "36"
+          ]
+        },
+        {
+          "pergunta": "Conta para trás, de 4 em 4.",
+          "pecas": [
+            "40",
+            "36",
+            "32",
+            "28",
+            "24"
+          ]
+        },
+        {
+          "pergunta": "Ordena as contas do menor para o maior resultado.",
+          "pecas": [
+            "3 × 4",
+            "4 × 4",
+            "3 × 9",
+            "4 × 8"
+          ],
+          "dica": "Calcula primeiro: 12, 16, 27 e 32."
+        }
       ]
     },
     {
@@ -134,16 +487,56 @@
       "instrucao": "Calcula de cabeça e escreve o número com os algarismos do teclado.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "3 × 6 = ?", "resposta": "18", "dica": "3 × 5 = 15. Junta mais 3." },
-        { "pergunta": "4 × 7 = ?", "resposta": "28", "dica": "2 × 7 = 14. Agora faz o dobro." },
-        { "pergunta": "3 × 8 = ?", "resposta": "24", "dica": "3 × 4 = 12. Agora faz o dobro." },
-        { "pergunta": "4 × 9 = ?", "resposta": "36", "dica": "4 × 10 = 40. Tira 4." },
-        { "pergunta": "4 × ___ = 32. Que número falta?", "resposta": "8", "dica": "Conta de 4 em 4 até chegares ao 32." },
-        { "pergunta": "3 × ___ = 27. Que número falta?", "resposta": "9", "dica": "3 × 10 = 30. Quantos 3 faltam para 27?" },
-        { "pergunta": "12 : 3 = ?", "resposta": "4", "dica": "Pensa: 3 × ? = 12" },
-        { "pergunta": "20 : 4 = ?", "resposta": "5", "dica": "Pensa: 4 × ? = 20" },
-        { "pergunta": "Qual é o dobro de 3 × 5?", "resposta": "30", "dica": "3 × 5 = 15. E 15 + 15?" },
-        { "pergunta": "4 × 5 + 4 = ?", "resposta": "24", "dica": "É o mesmo que 4 × 6." }
+        {
+          "pergunta": "3 × 6 = ?",
+          "resposta": "18",
+          "dica": "3 × 5 = 15. Junta mais 3."
+        },
+        {
+          "pergunta": "4 × 7 = ?",
+          "resposta": "28",
+          "dica": "2 × 7 = 14. Agora faz o dobro."
+        },
+        {
+          "pergunta": "3 × 8 = ?",
+          "resposta": "24",
+          "dica": "3 × 4 = 12. Agora faz o dobro."
+        },
+        {
+          "pergunta": "4 × 9 = ?",
+          "resposta": "36",
+          "dica": "4 × 10 = 40. Tira 4."
+        },
+        {
+          "pergunta": "4 × ___ = 32. Que número falta?",
+          "resposta": "8",
+          "dica": "Conta de 4 em 4 até chegares ao 32."
+        },
+        {
+          "pergunta": "3 × ___ = 27. Que número falta?",
+          "resposta": "9",
+          "dica": "3 × 10 = 30. Quantos 3 faltam para 27?"
+        },
+        {
+          "pergunta": "4 × 3 = ?",
+          "resposta": "12",
+          "dica": "4 + 4 + 4"
+        },
+        {
+          "pergunta": "3 × ___ = 21. Que número falta?",
+          "resposta": "7",
+          "dica": "Conta de 3 em 3 até chegares ao 21."
+        },
+        {
+          "pergunta": "Qual é o dobro de 3 × 5?",
+          "resposta": "30",
+          "dica": "3 × 5 = 15. E 15 + 15?"
+        },
+        {
+          "pergunta": "4 × 5 + 4 = ?",
+          "resposta": "24",
+          "dica": "É o mesmo que 4 × 6."
+        }
       ]
     },
     {
@@ -153,14 +546,70 @@
       "instrucao": "O Ticl@s espreita dos buracos. Toca nele quando mostrar o resultado certo.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "Quanto é 3 × 4?", "certa": "12", "erradas": ["7", "16"] },
-        { "pergunta": "Quanto é 4 × 8?", "certa": "32", "erradas": ["12", "28"] },
-        { "pergunta": "Quanto é 3 × 9?", "certa": "27", "erradas": ["12", "24"] },
-        { "pergunta": "Quanto é 4 × 6?", "certa": "24", "erradas": ["10", "20"] },
-        { "pergunta": "Quanto é 3 × 7?", "certa": "21", "erradas": ["10", "18"] },
-        { "pergunta": "Quanto é 4 × 9?", "certa": "36", "erradas": ["13", "32"] },
-        { "pergunta": "Quanto é 3 × 10?", "certa": "30", "erradas": ["13", "33"] },
-        { "pergunta": "Quanto é 4 × 4?", "certa": "16", "erradas": ["8", "12"] }
+        {
+          "pergunta": "Quanto é 3 × 4?",
+          "certa": "12",
+          "erradas": [
+            "7",
+            "16"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 4 × 8?",
+          "certa": "32",
+          "erradas": [
+            "12",
+            "28"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 3 × 9?",
+          "certa": "27",
+          "erradas": [
+            "12",
+            "24"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 4 × 6?",
+          "certa": "24",
+          "erradas": [
+            "10",
+            "20"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 3 × 7?",
+          "certa": "21",
+          "erradas": [
+            "10",
+            "18"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 4 × 9?",
+          "certa": "36",
+          "erradas": [
+            "13",
+            "32"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 3 × 10?",
+          "certa": "30",
+          "erradas": [
+            "13",
+            "33"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 4 × 4?",
+          "certa": "16",
+          "erradas": [
+            "8",
+            "12"
+          ]
+        }
       ]
     },
     {
@@ -169,14 +618,86 @@
       "instrucao": "Lê o problema, olha para o desenho e escolhe a resposta.",
       "baralhar": true,
       "itens": [
-        { "pergunta": "Um carro tem 4 rodas. Quantas rodas têm 5 carros?", "emoji": "🚗🚗🚗🚗🚗", "certa": "20", "erradas": ["9", "16"], "explicacao": "4 × 5 = 20 rodas." },
-        { "pergunta": "Cada trevo tem 3 folhas. Quantas folhas têm 4 trevos?", "emoji": "☘️☘️☘️☘️", "certa": "12", "erradas": ["7", "16"], "explicacao": "3 × 4 = 12 folhas." },
-        { "pergunta": "Um cão tem 4 patas. Quantas patas têm 3 cães?", "emoji": "🐕🐕🐕", "certa": "12", "erradas": ["7", "16"], "explicacao": "4 × 3 = 12 patas." },
-        { "pergunta": "Um triângulo tem 3 lados. Quantos lados têm 6 triângulos?", "emoji": "🔺🔺🔺🔺🔺🔺", "certa": "18", "erradas": ["9", "24"], "explicacao": "3 × 6 = 18 lados." },
-        { "pergunta": "Cada mesa tem 4 cadeiras. Quantas cadeiras há em 6 mesas?", "emoji": "🪑", "certa": "24", "erradas": ["10", "18"], "explicacao": "4 × 6 = 24 cadeiras." },
-        { "pergunta": "A Ana arruma 12 lápis em 3 caixas, com o mesmo número de lápis em cada caixa. Quantos lápis ficam em cada caixa?", "emoji": "✏️", "certa": "4", "erradas": ["9", "15"], "explicacao": "12 : 3 = 4, porque 3 × 4 = 12." },
-        { "pergunta": "Há 28 rodas e cada carrinho de brincar tem 4 rodas. Quantos carrinhos há?", "emoji": "🚙", "certa": "7", "erradas": ["24", "8"], "explicacao": "28 : 4 = 7, porque 4 × 7 = 28." },
-        { "pergunta": "O canguru dá saltos de 3 em 3 na reta. Começa no 0 e dá 7 saltos. Onde chega?", "emoji": "🦘", "certa": "21", "erradas": ["10", "24"], "explicacao": "3 × 7 = 21." }
+        {
+          "pergunta": "Um carro tem 4 rodas. Quantas rodas têm 5 carros?",
+          "emoji": "🚗🚗🚗🚗🚗",
+          "certa": "20",
+          "erradas": [
+            "9",
+            "16"
+          ],
+          "explicacao": "4 × 5 = 20 rodas."
+        },
+        {
+          "pergunta": "Cada trevo tem 3 folhas. Quantas folhas têm 4 trevos?",
+          "emoji": "☘️☘️☘️☘️",
+          "certa": "12",
+          "erradas": [
+            "7",
+            "16"
+          ],
+          "explicacao": "3 × 4 = 12 folhas."
+        },
+        {
+          "pergunta": "Um cão tem 4 patas. Quantas patas têm 3 cães?",
+          "emoji": "🐕🐕🐕",
+          "certa": "12",
+          "erradas": [
+            "7",
+            "16"
+          ],
+          "explicacao": "4 × 3 = 12 patas."
+        },
+        {
+          "pergunta": "Um triângulo tem 3 lados. Quantos lados têm 6 triângulos?",
+          "emoji": "🔺🔺🔺🔺🔺🔺",
+          "certa": "18",
+          "erradas": [
+            "9",
+            "24"
+          ],
+          "explicacao": "3 × 6 = 18 lados."
+        },
+        {
+          "pergunta": "Cada mesa tem 4 cadeiras. Quantas cadeiras há em 6 mesas?",
+          "emoji": "🪑",
+          "certa": "24",
+          "erradas": [
+            "10",
+            "18"
+          ],
+          "explicacao": "4 × 6 = 24 cadeiras."
+        },
+        {
+          "pergunta": "A Ana tem 3 caixas com 5 lápis em cada uma. Quantos lápis tem ao todo?",
+          "emoji": "✏️",
+          "certa": "15",
+          "erradas": [
+            "8",
+            "18"
+          ],
+          "explicacao": "3 × 5 = 15 lápis."
+        },
+        {
+          "pergunta": "Há 7 carrinhos de brincar e cada um tem 4 rodas. Quantas rodas há ao todo?",
+          "emoji": "🚙",
+          "certa": "28",
+          "erradas": [
+            "11",
+            "24"
+          ],
+          "explicacao": "4 × 7 = 28 rodas."
+        },
+        {
+          "pergunta": "O canguru dá saltos de 3 em 3 na reta. Começa no 0 e dá 7 saltos. Onde chega?",
+          "emoji": "🦘",
+          "certa": "21",
+          "erradas": [
+            "10",
+            "24"
+          ],
+          "explicacao": "3 × 7 = 21."
+        }
       ]
     },
     {
@@ -185,9 +706,21 @@
       "titulo": "Investigador matemático",
       "instrucao": "Escreve uma frase tua. Começa com letra maiúscula e termina com ponto final.",
       "itens": [
-        { "pergunta": "Inventa um problema com a tabuada do 3. Usa a palavra «cada». Exemplo: «Cada triciclo tem 3 rodas…»", "palavra": "cada", "minPalavras": 8 },
-        { "pergunta": "Sabes que 2 × 6 = 12. Explica como descobres 4 × 6. Usa a palavra «dobro».", "palavra": "dobro", "minPalavras": 6 },
-        { "pergunta": "Escreve uma frase com a conta 4 × 5 = 20 e a palavra «vezes».", "palavra": "vezes", "minPalavras": 6 }
+        {
+          "pergunta": "Inventa um problema com a tabuada do 3. Usa a palavra «cada». Exemplo: «Cada triciclo tem 3 rodas…»",
+          "palavra": "cada",
+          "minPalavras": 8
+        },
+        {
+          "pergunta": "Sabes que 2 × 6 = 12. Explica como descobres 4 × 6. Usa a palavra «dobro».",
+          "palavra": "dobro",
+          "minPalavras": 6
+        },
+        {
+          "pergunta": "Escreve uma frase com a conta 4 × 5 = 20 e a palavra «vezes».",
+          "palavra": "vezes",
+          "minPalavras": 6
+        }
       ]
     },
     {
@@ -196,12 +729,30 @@
       "visual": "memoria",
       "titulo": "Memória das tabuadas",
       "itens": [
-        ["3 × 3", "9"],
-        ["3 × 6", "18"],
-        ["3 × 9", "27"],
-        ["4 × 4", "16"],
-        ["4 × 5", "20"],
-        ["4 × 8", "32"]
+        [
+          "3 × 3",
+          "9"
+        ],
+        [
+          "3 × 6",
+          "18"
+        ],
+        [
+          "3 × 9",
+          "27"
+        ],
+        [
+          "4 × 4",
+          "16"
+        ],
+        [
+          "4 × 5",
+          "20"
+        ],
+        [
+          "4 × 8",
+          "32"
+        ]
       ]
     },
     {
@@ -211,12 +762,55 @@
       "instrucao": "Descobre o número que falta.",
       "baralhar": true,
       "itens": [
-        { "frase": "3 × ___ = 15", "certa": "5", "erradas": ["4", "12"] },
-        { "frase": "4 × ___ = 24", "certa": "6", "erradas": ["5", "20"] },
-        { "frase": "___ × 4 = 36", "certa": "9", "erradas": ["8", "32"] },
-        { "frase": "3, 6, 9, ___, 15", "certa": "12", "erradas": ["10", "11"] },
-        { "frase": "40, 36, 32, ___, 24", "certa": "28", "erradas": ["30", "26"] },
-        { "frase": "3 × 7 = 4 × 5 + ___", "certa": "1", "erradas": ["2", "3"], "explicacao": "3 × 7 = 21 e 4 × 5 = 20. Falta 1." }
+        {
+          "frase": "3 × ___ = 15",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "12"
+          ]
+        },
+        {
+          "frase": "4 × ___ = 24",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "20"
+          ]
+        },
+        {
+          "frase": "___ × 4 = 36",
+          "certa": "9",
+          "erradas": [
+            "8",
+            "32"
+          ]
+        },
+        {
+          "frase": "3, 6, 9, ___, 15",
+          "certa": "12",
+          "erradas": [
+            "10",
+            "11"
+          ]
+        },
+        {
+          "frase": "40, 36, 32, ___, 24",
+          "certa": "28",
+          "erradas": [
+            "30",
+            "26"
+          ]
+        },
+        {
+          "frase": "3 × 7 = 4 × 5 + ___",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "3"
+          ],
+          "explicacao": "3 × 7 = 21 e 4 × 5 = 20. Falta 1."
+        }
       ]
     }
   ]
