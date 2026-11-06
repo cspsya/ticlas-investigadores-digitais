@@ -353,5 +353,23 @@
       "Rato: arrastar",
       "Teclado: escrever"
     ]
+  },
+  {
+    "id": "2026-11-06-ticlas-3ano-tabuadas-3-e-4",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Tabuadas do 3 e do 4",
+    "descricao": "Minijogos de cálculo mental e das tabuadas do 3 e do 4: dobros e metades, contagens de 3 em 3 e de 4 em 4, fator em falta, divisão como operação inversa, problemas e frases matemáticas",
+    "disciplina": "Matemática",
+    "data": "2026-11-06",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/2026-11-06_3ano_Matematica_Tabuadas_3_4_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Treina as tabuadas do 3 e do 4 em minijogos com o Ticl@s!",
+    "focoTic": [
+      "Teclado: escrever números",
+      "Rato: arrastar"
+    ]
   }
 ]
