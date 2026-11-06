@@ -335,5 +335,23 @@
     "url": "jogos/2026-11-02/2026-11-04_4ano_EstudoDoMeio_v1.html",
     "duracao": "até 60 min",
     "estado": "em validação"
+  },
+  {
+    "id": "2026-11-06-3ano-espr-escola-segura",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Escola Segura com o Ticl@s",
+    "descricao": "Educação para a Segurança e Prevenção de Riscos: exercício «A Terra Treme», evacuação, sinais, incêndio e 112",
+    "disciplina": "Estudo do Meio e Cidadania",
+    "data": "2026-11-06",
+    "semana": "2–6 nov. 2026",
+    "url": "jogos/2026-11-02/2026-11-06_3ano_EstudoDoMeio_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Treina os gestos de «A Terra Treme» e aprende a sair da escola em segurança.",
+    "focoTic": [
+      "Rato: arrastar",
+      "Teclado: escrever"
+    ]
   }
 ]

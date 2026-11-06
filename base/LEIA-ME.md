@@ -74,7 +74,7 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 | `classificar` | `["texto","caixa"]` + `caixas` na ronda | `"caixas":["BR","PR"], "itens":[["broa","BR"],["prego","PR"]]` |
 | `ordenar` | `pecas` já pela ordem certa | `{"emoji":"🚲","pecas":["bi","ci","cle","ta"]}` — sílabas, letras, palavras de uma frase ou passos |
 
-Campos que qualquer item pode ter: `emoji` (desenho grande, útil no 1.º ano), `imagem` (endereço de uma imagem), `dica` (aparece após o 1.º erro ou no botão «Pedir pista» do modo apoio) e `explicacao` (aparece depois de responder).
+Campos que qualquer item pode ter: `emoji` (desenho grande, útil no 1.º ano), `imagem` (endereço de uma imagem; com `"imagemGrande": true` aparece em grande, numa linha própria, para cenas ilustradas), `dica` (aparece após o 1.º erro ou no botão «Pedir pista» do modo apoio) e `explicacao` (aparece depois de responder).
 
 **Maiúsculas:** nas respostas escritas e no ditado, se a resposta certa tiver maiúscula (ex.: `"Madeira"`), a maiúscula é obrigatória e o aluno vê «Quase! Este nome começa com letra maiúscula.». Se não tiver (ex.: `"flor"`), aceita-se «Flor». Para mudar isto num item: `"maiusculas": true` ou `false`. Os acentos contam sempre («Quase! Verifica os acentos.»).
 

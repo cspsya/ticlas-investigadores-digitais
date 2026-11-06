@@ -451,7 +451,7 @@ function cabecalhoRonda(ronda, chaveInstrucao, contador, fala) {
 function blocoPergunta(it, conteudo, textoFala, opcoes) {
   const filhos = [];
   if (it.emoji) filhos.push(h('span', { class: 'emoji', 'aria-hidden': 'true' }, it.emoji));
-  if (it.imagem) filhos.push(h('img', { class: 'ilustra', src: it.imagem, alt: it.alt || '' }));
+  if (it.imagem) filhos.push(h('img', { class: it.imagemGrande ? 'ilustra grande' : 'ilustra', src: it.imagem, alt: it.alt || '' }));
   if (conteudo) filhos.push(h('span', null, conteudo));
   const partes = () => [textoFala, ...(opcoes ? opcoes() : [])];
   if (somLigado() && (textoFala || opcoes)) filhos.push(h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(partes()) }, '🔊'));
@@ -493,7 +493,7 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
       festa(el || fb);
       if (explica) explica.hidden = false;
       if (dica) dica.hidden = true; if (btDica) btDica.hidden = true;
-      btContinuar.hidden = false; btContinuar.focus({ preventScroll: true });
+      btContinuar.hidden = false; btContinuar.focus({ preventScroll: true }); if (it.imagemGrande) depois(350, () => btContinuar.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
     },
     revelar() {
       c.resolvido = true; est.maximos[ri] += 3; guardarProgresso();
@@ -502,7 +502,7 @@ function criarItem(ri, it, nOpcoes, aoRevelar) {
       fb.textContent = aoRevelar ? aoRevelar() : '';
       if (explica) explica.hidden = false;
       if (btDica) btDica.hidden = true;
-      btContinuar.hidden = false; btContinuar.focus({ preventScroll: true });
+      btContinuar.hidden = false; btContinuar.focus({ preventScroll: true }); if (it.imagemGrande) depois(350, () => btContinuar.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
     }
   };
   return c;
