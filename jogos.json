@@ -371,5 +371,23 @@
       "Teclado: escrever números",
       "Rato: arrastar"
     ]
+  },
+  {
+    "id": "2026-11-09-ticlas-2ano-ordem-alfabetica-silabas-frases",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Ordem alfabética, sílabas e frases",
+    "descricao": "Alfabeto, ordem alfabética de letras, palavras e nomes próprios, número de sílabas, maiúscula ou minúscula e escrita de frases (tema: a escola é uma família)",
+    "disciplina": "Português",
+    "data": "2026-11-09",
+    "semana": "9–13 nov. 2026",
+    "url": "jogos/2026-11-09/2026-11-09_2ano_Portugues_OrdemAlfabetica_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Põe as palavras em ordem, conta as sílabas e escreve frases sobre a tua escola!",
+    "focoTic": [
+      "Rato: clicar e escolher",
+      "Teclado: escrever frases"
+    ]
   }
 ]

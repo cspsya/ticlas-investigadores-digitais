@@ -1,0 +1,972 @@
+{
+  "id": "2026-11-09-ticlas-2ano-ordem-alfabetica-silabas-frases",
+  "titulo": "Ordem alfabética, sílabas e frases",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-09",
+  "descricao": "Alfabeto, ordem alfabética de letras, palavras e nomes próprios, número de sílabas, maiúscula ou minúscula e escrita de frases (tema: a escola é uma família)",
+  "resumo": "Põe as palavras em ordem, conta as sílabas e escreve frases sobre a tua escola!",
+  "focoTic": [
+    "Rato: clicar e escolher",
+    "Teclado: escrever frases"
+  ],
+  "objetivo": "Ordenar letras, palavras e nomes por ordem alfabética, contar as sílabas das palavras e escrever frases com letra maiúscula e ponto final.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio do alfabeto",
+      "instrucao": "Lê a pergunta e escolhe a carruagem com a letra certa.",
+      "itens": [
+        {
+          "pergunta": "Qual é a primeira letra do alfabeto?",
+          "certa": "a",
+          "erradas": [
+            "b",
+            "e"
+          ],
+          "explicacao": "O alfabeto começa no a: a, b, c…"
+        },
+        {
+          "pergunta": "Que letra vem depois do «c»?",
+          "certa": "d",
+          "erradas": [
+            "b",
+            "e"
+          ],
+          "explicacao": "a, b, c, d…"
+        },
+        {
+          "pergunta": "Que letra vem antes do «h»?",
+          "certa": "g",
+          "erradas": [
+            "i",
+            "f"
+          ],
+          "explicacao": "f, g, h…"
+        },
+        {
+          "pergunta": "Que letra vem entre o «j» e o «l»?",
+          "certa": "k",
+          "erradas": [
+            "i",
+            "m"
+          ],
+          "explicacao": "j, k, l…"
+        },
+        {
+          "pergunta": "Que letra vem depois do «m»?",
+          "certa": "n",
+          "erradas": [
+            "l",
+            "o"
+          ],
+          "explicacao": "l, m, n, o…"
+        },
+        {
+          "pergunta": "Que letra vem depois do «p»?",
+          "certa": "q",
+          "erradas": [
+            "o",
+            "r"
+          ],
+          "explicacao": "p, q, r…"
+        },
+        {
+          "pergunta": "Que letra vem antes do «s»?",
+          "certa": "r",
+          "erradas": [
+            "t",
+            "q"
+          ],
+          "explicacao": "q, r, s, t…"
+        },
+        {
+          "pergunta": "Qual é a última letra do alfabeto?",
+          "certa": "z",
+          "erradas": [
+            "x",
+            "y"
+          ],
+          "explicacao": "…w, x, y, z. O alfabeto tem 26 letras."
+        }
+      ]
+    },
+    {
+      "fase": "aquecimento",
+      "tipo": "completar",
+      "titulo": "Buracos no alfabeto",
+      "instrucao": "Falta uma letra no alfabeto. Escreve-a no teclado.",
+      "itens": [
+        {
+          "frase": "a  b  c  ___  e",
+          "certa": "d",
+          "dica": "Diz baixinho: a, b, c…"
+        },
+        {
+          "frase": "f  g  ___  i  j",
+          "certa": "h",
+          "dica": "Diz baixinho: f, g…"
+        },
+        {
+          "frase": "h  ___  j  k",
+          "certa": "i",
+          "dica": "Diz baixinho: g, h…"
+        },
+        {
+          "frase": "k  l  m  ___  o",
+          "certa": "n",
+          "dica": "Diz baixinho: k, l, m…"
+        },
+        {
+          "frase": "p  q  ___  s  t",
+          "certa": "r",
+          "dica": "Diz baixinho: p, q…"
+        },
+        {
+          "frase": "u  v  w  ___  y  z",
+          "certa": "x",
+          "dica": "Diz baixinho: u, v, w…"
+        }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Letras em fila",
+      "instrucao": "Toca nas letras pela ordem do alfabeto.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "l",
+            "m",
+            "n",
+            "o"
+          ]
+        },
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "e",
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "u",
+            "v",
+            "x",
+            "y"
+          ]
+        },
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ]
+        },
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "p",
+            "r",
+            "s",
+            "t"
+          ]
+        },
+        {
+          "pergunta": "Põe as letras por ordem alfabética.",
+          "pecas": [
+            "c",
+            "f",
+            "j",
+            "m"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões: quem vem primeiro?",
+      "instrucao": "Olha para a primeira letra de cada palavra. Rebenta o balão com a palavra que vem primeiro no alfabeto.",
+      "itens": [
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "arroz",
+          "erradas": [
+            "melão",
+            "restaurante"
+          ],
+          "explicacao": "a vem antes de m e de r."
+        },
+        {
+          "pergunta": "Que nome vem primeiro por ordem alfabética?",
+          "certa": "Bianca",
+          "erradas": [
+            "Camila",
+            "Matilde"
+          ],
+          "explicacao": "b vem antes de c e de m."
+        },
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "céu",
+          "erradas": [
+            "nuvem",
+            "sol"
+          ],
+          "explicacao": "c vem antes de n e de s."
+        },
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "amiga",
+          "erradas": [
+            "escola",
+            "parque"
+          ],
+          "explicacao": "a vem antes de e e de p."
+        },
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "dia",
+          "erradas": [
+            "lua",
+            "praia"
+          ],
+          "explicacao": "d vem antes de l e de p."
+        },
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "equipa",
+          "erradas": [
+            "família",
+            "unidos"
+          ],
+          "explicacao": "e vem antes de f e de u."
+        },
+        {
+          "pergunta": "Que palavra vem primeiro por ordem alfabética?",
+          "certa": "chuva",
+          "erradas": [
+            "tempo",
+            "sol"
+          ],
+          "explicacao": "c vem antes de s e de t."
+        },
+        {
+          "pergunta": "Que nome vem em último por ordem alfabética?",
+          "certa": "Xavier",
+          "erradas": [
+            "Constança",
+            "Tomás"
+          ],
+          "explicacao": "Atenção: aqui era o último! x vem depois de c e de t."
+        }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Fila do dicionário",
+      "instrucao": "Toca nas palavras pela ordem alfabética. Olha sempre para a primeira letra.",
+      "juntar": ", ",
+      "itens": [
+        {
+          "pergunta": "Ordena os nomes próprios.",
+          "pecas": [
+            "Alberto",
+            "Constança",
+            "Tomás",
+            "Xavier"
+          ]
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "emoji": "☀️",
+          "pecas": [
+            "calor",
+            "luz",
+            "praia",
+            "sol",
+            "verão"
+          ]
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "emoji": "🌙",
+          "pecas": [
+            "arco-íris",
+            "céu",
+            "dia",
+            "lua",
+            "nuvem"
+          ]
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "emoji": "⭐",
+          "pecas": [
+            "azul",
+            "dourado",
+            "estrela",
+            "noite",
+            "sono"
+          ]
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "emoji": "🏫",
+          "pecas": [
+            "escola",
+            "família",
+            "sol",
+            "tempo"
+          ]
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "emoji": "🤝",
+          "pecas": [
+            "amigos",
+            "equipa",
+            "lado",
+            "unidos"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas das sílabas",
+      "instrucao": "Lê cada palavra baixinho e bate as palmas. Põe-na na caixa com o número de sílabas certo.",
+      "caixas": [
+        "1 sílaba",
+        "2 sílabas",
+        "3 sílabas",
+        "4 sílabas"
+      ],
+      "baralhar": true,
+      "itens": [
+        [
+          "sol",
+          "1 sílaba"
+        ],
+        [
+          "nós",
+          "1 sílaba"
+        ],
+        [
+          "luz",
+          "1 sílaba"
+        ],
+        [
+          "tempo",
+          "2 sílabas"
+        ],
+        [
+          "chuva",
+          "2 sílabas"
+        ],
+        [
+          "lado",
+          "2 sílabas"
+        ],
+        [
+          "escola",
+          "3 sílabas"
+        ],
+        [
+          "equipa",
+          "3 sílabas"
+        ],
+        [
+          "unidos",
+          "3 sílabas"
+        ],
+        [
+          "família",
+          "4 sílabas"
+        ],
+        [
+          "acordado",
+          "4 sílabas"
+        ],
+        [
+          "invencível",
+          "4 sílabas"
+        ]
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Constrói a palavra",
+      "instrucao": "Junta as sílabas pela ordem certa e descobre a palavra.",
+      "juntar": "",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "👨‍👩‍👧‍👦",
+          "pecas": [
+            "fa",
+            "mí",
+            "li",
+            "a"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🏫",
+          "pecas": [
+            "es",
+            "co",
+            "la"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🤝",
+          "pecas": [
+            "e",
+            "qui",
+            "pa"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "⏰",
+          "pecas": [
+            "a",
+            "cor",
+            "da",
+            "do"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🌱",
+          "pecas": [
+            "cres",
+            "ci",
+            "dos"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🦸",
+          "pecas": [
+            "in",
+            "ven",
+            "cí",
+            "vel"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião das sílabas",
+      "instrucao": "Conta as sílabas da palavra e leva o avião até à nuvem com o número certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Quantas sílabas tem «lápis»?",
+          "emoji": "✏️",
+          "certa": "2",
+          "erradas": [
+            "1",
+            "3"
+          ],
+          "explicacao": "lá-pis: 2 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «flor»?",
+          "emoji": "🌸",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "3"
+          ],
+          "explicacao": "flor: 1 sílaba."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «mochila»?",
+          "emoji": "🎒",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "4"
+          ],
+          "explicacao": "mo-chi-la: 3 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «professora»?",
+          "emoji": "🧑‍🏫",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "5"
+          ],
+          "explicacao": "pro-fes-so-ra: 4 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «bola»?",
+          "emoji": "⚽",
+          "certa": "2",
+          "erradas": [
+            "1",
+            "3"
+          ],
+          "explicacao": "bo-la: 2 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «computador»?",
+          "emoji": "💻",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "5"
+          ],
+          "explicacao": "com-pu-ta-dor: 4 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «amigos»?",
+          "emoji": "👫",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "4"
+          ],
+          "explicacao": "a-mi-gos: 3 sílabas."
+        },
+        {
+          "pergunta": "Quantas sílabas tem «pão»?",
+          "emoji": "🍞",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "3"
+          ],
+          "explicacao": "pão: 1 sílaba."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "Maiúscula ou minúscula?",
+      "instrucao": "Que letra falta? Lembra-te: o início da frase e os nomes próprios levam letra maiúscula.",
+      "itens": [
+        {
+          "pergunta": "___erto da minha escola há um parque.",
+          "certa": "P — maiúscula",
+          "erradas": [
+            "p — minúscula"
+          ],
+          "explicacao": "Perto: é o início da frase, por isso leva letra maiúscula."
+        },
+        {
+          "pergunta": "No parque brinco com a minha amiga ___atilde.",
+          "certa": "M — maiúscula",
+          "erradas": [
+            "m — minúscula"
+          ],
+          "explicacao": "Matilde: é um nome próprio, por isso leva letra maiúscula."
+        },
+        {
+          "pergunta": "A minha ___scola tem um recreio grande.",
+          "certa": "e — minúscula",
+          "erradas": [
+            "E — maiúscula"
+          ],
+          "explicacao": "escola: está no meio da frase e não é um nome próprio, por isso leva letra minúscula."
+        },
+        {
+          "pergunta": "O ___omás senta-se ao meu lado.",
+          "certa": "T — maiúscula",
+          "erradas": [
+            "t — minúscula"
+          ],
+          "explicacao": "Tomás: é um nome próprio, por isso leva letra maiúscula."
+        },
+        {
+          "pergunta": "Eu vivo na ilha da ___adeira.",
+          "certa": "M — maiúscula",
+          "erradas": [
+            "m — minúscula"
+          ],
+          "explicacao": "Madeira: é o nome da nossa ilha, por isso leva letra maiúscula.",
+          "emoji": "🏝️"
+        },
+        {
+          "pergunta": "___a escola somos todos amigos.",
+          "certa": "N — maiúscula",
+          "erradas": [
+            "n — minúscula"
+          ],
+          "explicacao": "Na: é o início da frase, por isso leva letra maiúscula."
+        },
+        {
+          "pergunta": "Hoje está ___ol no recreio.",
+          "certa": "s — minúscula",
+          "erradas": [
+            "S — maiúscula"
+          ],
+          "explicacao": "sol: está no meio da frase, por isso leva letra minúscula.",
+          "emoji": "🌤️"
+        },
+        {
+          "pergunta": "A ___onstança joga à bola comigo.",
+          "certa": "C — maiúscula",
+          "erradas": [
+            "c — minúscula"
+          ],
+          "explicacao": "Constança: é um nome próprio, por isso leva letra maiúscula."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "ordenar",
+      "titulo": "Frases baralhadas",
+      "instrucao": "Toca nas palavras pela ordem certa para formar a frase. A frase começa com letra maiúscula e acaba com ponto final.",
+      "juntar": " ",
+      "itens": [
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🏫",
+          "pecas": [
+            "A",
+            "Constança",
+            "gosta",
+            "da",
+            "escola."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "📚",
+          "pecas": [
+            "Na",
+            "escola",
+            "aprendemos",
+            "juntos."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "⚽",
+          "pecas": [
+            "O",
+            "Xavier",
+            "joga",
+            "no",
+            "recreio."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🤝",
+          "pecas": [
+            "Somos",
+            "uma",
+            "equipa",
+            "unida."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🌤️",
+          "pecas": [
+            "Hoje",
+            "está",
+            "sol",
+            "no",
+            "parque."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "👫",
+          "pecas": [
+            "Os",
+            "meus",
+            "amigos",
+            "ajudam-me",
+            "sempre."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Copiar sem erros",
+      "instrucao": "Copia a frase no teclado. Não te esqueças da letra maiúscula, dos acentos e do ponto final.",
+      "itens": [
+        {
+          "pergunta": "Copia a frase: «Na escola somos amigos.»",
+          "emoji": "🏫",
+          "resposta": "Na escola somos amigos.",
+          "dica": "Começa com letra maiúscula: usa a tecla ⇧ (Shift)."
+        },
+        {
+          "pergunta": "Copia a frase: «A Matilde brinca no parque.»",
+          "emoji": "🛝",
+          "resposta": "A Matilde brinca no parque.",
+          "dica": "Matilde é um nome: começa com letra maiúscula."
+        },
+        {
+          "pergunta": "Copia a frase: «O Tomás ajuda a Bianca.»",
+          "emoji": "🤝",
+          "resposta": "O Tomás ajuda a Bianca.",
+          "dica": "Há dois nomes próprios: Tomás e Bianca. O á tem acento."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "instrucao": "Inventa uma frase tua com a palavra pedida. Começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase sobre a tua escola com a palavra «escola».",
+          "emoji": "🏫",
+          "palavra": "escola",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase sobre os teus colegas com a palavra «amigos».",
+          "emoji": "👫",
+          "palavra": "amigos",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «equipa».",
+          "emoji": "🤝",
+          "palavra": "equipa",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive das regras",
+      "instrucao": "Lê com atenção. É verdadeiro ou falso?",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "O alfabeto tem 26 letras.",
+          "verdade": true,
+          "explicacao": "Sim! Do a ao z são 26 letras."
+        },
+        {
+          "afirmacao": "«família» tem 4 sílabas.",
+          "verdade": true,
+          "explicacao": "fa-mí-li-a: 4 sílabas."
+        },
+        {
+          "afirmacao": "«sol» tem 2 sílabas.",
+          "verdade": false,
+          "explicacao": "sol: só 1 sílaba."
+        },
+        {
+          "afirmacao": "Por ordem alfabética, «escola» vem antes de «família».",
+          "verdade": true,
+          "explicacao": "e vem antes de f."
+        },
+        {
+          "afirmacao": "Por ordem alfabética, «tempo» vem antes de «chuva».",
+          "verdade": false,
+          "explicacao": "c vem antes de t: primeiro «chuva», depois «tempo»."
+        },
+        {
+          "afirmacao": "Os nomes próprios escrevem-se com letra maiúscula.",
+          "verdade": true,
+          "explicacao": "Sim: Tomás, Matilde, Madeira…"
+        },
+        {
+          "afirmacao": "Uma frase começa com letra minúscula.",
+          "verdade": false,
+          "explicacao": "A frase começa sempre com letra maiúscula."
+        },
+        {
+          "afirmacao": "«equipa» tem 3 sílabas.",
+          "verdade": true,
+          "explicacao": "e-qui-pa: 3 sílabas."
+        }
+      ],
+      "fase": "bonus"
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória das sílabas",
+      "instrucao": "Descobre os pares: cada palavra e a sua divisão em sílabas.",
+      "itens": [
+        [
+          "escola",
+          "es-co-la"
+        ],
+        [
+          "família",
+          "fa-mí-li-a"
+        ],
+        [
+          "equipa",
+          "e-qui-pa"
+        ],
+        [
+          "sempre",
+          "sem-pre"
+        ],
+        [
+          "crescidos",
+          "cres-ci-dos"
+        ],
+        [
+          "invencível",
+          "in-ven-cí-vel"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Apanha o Ticl@s",
+      "instrucao": "Apanha o Ticl@s quando aparecer a palavra pedida.",
+      "itens": [
+        {
+          "pergunta": "Que palavra tem 1 sílaba?",
+          "certa": "nós",
+          "erradas": [
+            "nuvem",
+            "noite"
+          ],
+          "explicacao": "nós: 1 sílaba."
+        },
+        {
+          "pergunta": "Que palavra tem 4 sílabas?",
+          "certa": "acordado",
+          "erradas": [
+            "acordar",
+            "corda"
+          ],
+          "explicacao": "a-cor-da-do: 4 sílabas."
+        },
+        {
+          "pergunta": "Que palavra tem 2 sílabas?",
+          "certa": "chuva",
+          "erradas": [
+            "chuvoso",
+            "chá"
+          ],
+          "explicacao": "chu-va: 2 sílabas."
+        },
+        {
+          "pergunta": "Que palavra tem 3 sílabas?",
+          "certa": "unidos",
+          "erradas": [
+            "uns",
+            "unir"
+          ],
+          "explicacao": "u-ni-dos: 3 sílabas."
+        },
+        {
+          "pergunta": "Que nome vem primeiro por ordem alfabética?",
+          "certa": "Alberto",
+          "erradas": [
+            "Tomás",
+            "Xavier"
+          ],
+          "explicacao": "a vem antes de t e de x."
+        },
+        {
+          "pergunta": "Que palavra vem em último por ordem alfabética?",
+          "certa": "verão",
+          "erradas": [
+            "calor",
+            "praia"
+          ],
+          "explicacao": "v vem depois de c e de p."
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "ordenar",
+      "titulo": "Desafio dos craques",
+      "instrucao": "As palavras começam pela mesma letra! Olha para a 2.ª letra (e, se for igual, para a 3.ª).",
+      "juntar": ", ",
+      "itens": [
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "lado",
+            "lua",
+            "luz"
+          ],
+          "dica": "la… vem antes de lu…; lua e luz: olha para a 3.ª letra."
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "sempre",
+            "sol",
+            "sono"
+          ],
+          "dica": "se… vem antes de so…; sol e sono: olha para a 3.ª letra."
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "noite",
+            "nós",
+            "nuvem"
+          ],
+          "dica": "noite e nós: olha para a 3.ª letra (i e s)."
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "amiga",
+            "arroz",
+            "azul"
+          ],
+          "dica": "Olha para a 2.ª letra: m, r, z."
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "tempo",
+            "todos",
+            "tudo"
+          ],
+          "dica": "Olha para a 2.ª letra: e, o, u."
+        },
+        {
+          "pergunta": "Ordena as palavras.",
+          "pecas": [
+            "calor",
+            "céu",
+            "chuva"
+          ],
+          "dica": "Olha para a 2.ª letra: a, e, h."
+        }
+      ]
+    }
+  ]
+}
