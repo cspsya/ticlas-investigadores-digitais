@@ -33,11 +33,12 @@ SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
 AULAS = RAIZ / "aulas"
 MODELO = BASE / "modelo-jogo.html"
-TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar"]
+TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar", "mab", "cadeia", "reta", "tabela100"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
 MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
 SEGUNDOS = {"escolher": 30, "verdadeiro_falso": 25, "completar": 35, "escrever": 60, "frase": 180,
-            "ditado": 45, "copiar": 60, "pares": 20, "classificar": 20, "ordenar": 45}
+            "ditado": 45, "copiar": 60, "pares": 20, "classificar": 20, "ordenar": 45,
+            "mab": 60, "cadeia": 70, "reta": 35, "tabela100": 110}
 CACHE = BASE / ".cache-emojis"
 NOTO = "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u{}.svg"
 COPIAVEIS = re.compile(r"^[A-Za-zÇçÁÉÍÓÚáéíóúÀàÂÊÔâêôÃÕãõ .,!?-]+$")  # o mesmo que COPIAVEIS em src/motor.js
@@ -51,6 +52,54 @@ def norm(s):
 
 def tem_texto(v):
     return (isinstance(v, str) and v.strip() != "") or (isinstance(v, (int, float)) and not isinstance(v, bool))
+
+
+def inteiro(v):
+    return isinstance(v, int) and not isinstance(v, bool)
+
+
+def validar_matematica(tipo, it, w):
+    """Tipos de Matemática (V3.4): as mesmas regras de validarExtra() em src/motor.js."""
+    e = []
+    if tipo == "mab":
+        if it.get("modo") == "ler":
+            c, d, u = (it.get(k, 0) for k in "cdu")
+            if not all(inteiro(x) and 0 <= x <= 20 for x in (c, d, u)) or not (c + d + u):
+                e.append(f"{w}: no modo «ler» indica c, d e u (números de 0 a 20).")
+        elif not (inteiro(it.get("numero")) and 1 <= it["numero"] <= 299):
+            e.append(f"{w}: «numero» tem de ser um número inteiro de 1 a 299.")
+    elif tipo == "cadeia":
+        passos = it.get("passos")
+        if not inteiro(it.get("inicio")) or not isinstance(passos, list) or not passos or not all(inteiro(x) and x != 0 for x in passos):
+            e.append(f"{w}: precisa de «inicio» e de «passos» (lista de números, ex.: [5, 10, -10]).")
+        else:
+            v = it["inicio"]
+            for x in passos:
+                v += x
+                if not 0 <= v <= 999:
+                    e.append(f"{w}: a sequência sai dos números de 0 a 999.")
+                    break
+    elif tipo == "reta":
+        a0, a1, p = it.get("inicio"), it.get("fim"), it.get("passo")
+        if not all(inteiro(x) for x in (a0, a1, p)) or p <= 0 or a1 <= a0 or (a1 - a0) % p:
+            return [f"{w}: «inicio», «fim» e «passo» têm de formar uma reta certa (ex.: 0, 100, 10)."]
+        if it.get("modo") == "colocar":
+            n = it.get("numero")
+            if not inteiro(n) or not a0 < n < a1 or (n - a0) % p == 0:
+                e.append(f"{w}: «numero» tem de ficar entre duas marcas (não em cima de uma marca).")
+        else:
+            mk = it.get("marca")
+            if not inteiro(mk) or not a0 <= mk <= a1 or (mk - a0) % p:
+                e.append(f"{w}: «marca» tem de ser uma das marcas da reta.")
+            if "erradas" in it and (not isinstance(it["erradas"], list) or mk in it["erradas"]):
+                e.append(f"{w}: «erradas» não pode incluir a resposta certa.")
+    elif tipo == "tabela100":
+        ini, lin, lac = it.get("inicio"), it.get("linhas"), it.get("lacunas")
+        if not (inteiro(ini) and ini % 10 == 1 and inteiro(lin) and lin >= 1 and ini + lin * 10 - 1 <= 100):
+            return [f"{w}: «inicio» tem de ser 1, 11, 21… e as linhas não podem passar do 100."]
+        if not isinstance(lac, list) or not lac or any(not inteiro(x) or not ini <= x <= ini + lin * 10 - 1 for x in lac):
+            e.append(f"{w}: «lacunas» tem de ter números que estejam nessas linhas.")
+    return e
 
 
 def validar(a):
@@ -94,7 +143,7 @@ def validar(a):
                 if len({norm(x) for x in er}) != len(er):
                     e.append(f"{w}: há opções repetidas em «erradas».")
 
-            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar") and not isinstance(it, dict):
+            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar", "mab", "cadeia", "reta", "tabela100") and not isinstance(it, dict):
                 e.append(f"{w}: tem de ser um objeto {{ ... }}.")
                 continue
             if isinstance(it, dict) and "maiusculas" in it and not isinstance(it["maiusculas"], bool):
@@ -150,6 +199,8 @@ def validar(a):
                     e.append(f"{w}: «pecas» tem de ter pelo menos 2 peças, já pela ordem certa.")
                 elif len({norm(x) for x in p}) == 1:
                     e.append(f"{w}: as peças são todas iguais.")
+            elif tipo in ("mab", "cadeia", "reta", "tabela100"):
+                e.extend(validar_matematica(tipo, it, w))
         if tipo == "pares":
             ok = [p for p in itens if isinstance(p, list) and len(p) == 2]
             esq, dirt = [norm(p[0]) for p in ok], [norm(p[1]) for p in ok]

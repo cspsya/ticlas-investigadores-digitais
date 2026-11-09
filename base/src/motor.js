@@ -4,11 +4,11 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.3';
+const VERSAO = 'V3.4';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
-const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar'];
+const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
-const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, copiar: 60, pares: 20, classificar: 20, ordenar: 45 };
+const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, copiar: 60, pares: 20, classificar: 20, ordenar: 45, mab: 60, cadeia: 70, reta: 35, tabela100: 110 };
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
@@ -213,6 +213,7 @@ function validarAula(a) {
       if (r.visual === 'memoria' && new Set([...esq, ...dir]).size !== esq.length + dir.length) e.push(`${onde}: no jogo da memória um texto não pode aparecer dos dois lados.`);
     }
   });
+  e.push(...validarExtra(a));
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -385,7 +386,7 @@ function comecar(continuar) {
 /* ---------- mapa de missões: escolha livre, pausa e retoma ---------- */
 function iconeRonda(r) {
   if (r.tipo === 'escolher' || (r.tipo === 'completar' && r.visual)) return { baloes: '🎈', comboio: '🚂', buracos: '🕳️', aviao: '✈️' }[r.visual] || (r.tipo === 'completar' ? '🧩' : '🃏');
-  return { verdadeiro_falso: '✅', completar: '🧩', escrever: '✏️', ditado: '🎧', copiar: '⌨️', pares: r.visual === 'memoria' ? '🃏' : '🔗', classificar: '🗂️', ordenar: '🔢' }[r.tipo] || '⭐';
+  return { verdadeiro_falso: '✅', completar: '🧩', escrever: '✏️', ditado: '🎧', copiar: '⌨️', pares: r.visual === 'memoria' ? '🃏' : '🔗', classificar: '🗂️', ordenar: '🔢' }[r.tipo] || EXTRA_ICONES[r.tipo] || '⭐';
 }
 function ecraMapa() {
   limparTimers(); calar();
@@ -444,7 +445,7 @@ function iniciarRonda() {
     h('div', { class: 'nav' }, btAnterior,
       h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
-  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
+  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens }[ronda.tipo];
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
@@ -546,7 +547,7 @@ function rondaItens(ri, ronda, area) {
     if (i >= itens.length) { rondaConcluida(ri); return; }
     poseMascote(['escrever', 'ditado', 'copiar'].includes(ronda.tipo) ? 'portatil' : 'aponta'); dizerBalao(t('animo'));
     const it = itens[i], contador = itens.length > 1 ? `${i + 1} / ${itens.length}` : '';
-    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ditado: itemEscrever, copiar: itemCopiar, ordenar: itemOrdenar }[ronda.tipo];
+    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ditado: itemEscrever, copiar: itemCopiar, ordenar: itemOrdenar }[ronda.tipo] || EXTRA_ITENS[ronda.tipo];
     desenhar(ri, ronda, it, area, contador, () => { i++; seguinte(); });
   };
   seguinte();
@@ -720,7 +721,8 @@ function itemEscrever(ri, ronda, it, area, contador, proximo) {
     if (!c.resolvido) campo.select();
   };
   btOk.onclick = verificar;
-  if (!livre) campo.addEventListener('keydown', e => { if (e.key === 'Enter') verificar(); });
+  // preventDefault: sem ele, o mesmo Enter carregava logo em «Continuar» (o foco passa para esse botão) e o aluno não via o resultado
+  if (!livre) campo.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); verificar(); } });
   c.aoContinuar(proximo);
   encher(area, cabecalhoRonda(ronda, chaveInstr, contador), topo, h('div', { class: 'escrita' }, campo, btOk), criterios, c.nos);
   if (prefs.modo === 'computador') depois(50, () => campo.focus({ preventScroll: true }));
@@ -1178,10 +1180,345 @@ function ecraInteiro() {
 }
 
 /* ---------- arranque ---------- */
+/* ==========================================================
+   Matemática (V3.4): mab (construir / ler), cadeia (sequências e setas),
+   reta (ler a marca / colocar um número) e tabela100.
+   ========================================================== */
+const EXTRA_ICONES = { mab: '🧱', cadeia: '➰', reta: '📏', tabela100: '💯' };
+
+
+/* ---------- validação dos tipos novos ---------- */
+const inteiro = v => Number.isInteger(v);
+function validarExtra(a) {
+  const e = [];
+  a.rondas.forEach((r, ri) => {
+    if (!r || !['mab', 'cadeia', 'reta', 'tabela100'].includes(r.tipo) || !Array.isArray(r.itens)) return;
+    const onde = `Ronda ${ri + 1}${r.titulo ? ' («' + r.titulo + '»)' : ''}`;
+    r.itens.forEach((it, ii) => {
+      const w = `${onde}, item ${ii + 1}`;
+      if (!it || typeof it !== 'object' || Array.isArray(it)) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (r.tipo === 'mab') {
+        if (it.modo === 'ler') { if (![it.c ?? 0, it.d ?? 0, it.u ?? 0].every(x => inteiro(x) && x >= 0 && x <= 20) || !((it.c || 0) + (it.d || 0) + (it.u || 0))) e.push(`${w}: no modo «ler» indica c, d e u (números de 0 a 20).`); }
+        else if (!inteiro(it.numero) || it.numero < 1 || it.numero > 299) e.push(`${w}: «numero» tem de ser um número inteiro de 1 a 299.`);
+      }
+      if (r.tipo === 'cadeia') {
+        if (!inteiro(it.inicio) || !Array.isArray(it.passos) || !it.passos.length || !it.passos.every(x => inteiro(x) && x !== 0)) e.push(`${w}: precisa de «inicio» e de «passos» (lista de números, ex.: [5, 10, -10]).`);
+        else { let v = it.inicio; it.passos.forEach(p => { v += p; if (v < 0 || v > 999) e.push(`${w}: a sequência sai dos números de 0 a 999.`); }); }
+      }
+      if (r.tipo === 'reta') {
+        const { inicio: a0, fim: a1, passo: p } = it;
+        if (![a0, a1, p].every(inteiro) || p <= 0 || a1 <= a0 || (a1 - a0) % p) { e.push(`${w}: «inicio», «fim» e «passo» têm de formar uma reta certa (ex.: 0, 100, 10).`); return; }
+        if (it.modo === 'colocar') { if (!inteiro(it.numero) || it.numero <= a0 || it.numero >= a1 || (it.numero - a0) % p === 0) e.push(`${w}: «numero» tem de ficar entre duas marcas (não em cima de uma marca).`); }
+        else {
+          if (!inteiro(it.marca) || it.marca < a0 || it.marca > a1 || (it.marca - a0) % p) e.push(`${w}: «marca» tem de ser uma das marcas da reta.`);
+          if (it.erradas && (!Array.isArray(it.erradas) || it.erradas.includes(it.marca))) e.push(`${w}: «erradas» não pode incluir a resposta certa.`);
+        }
+      }
+      if (r.tipo === 'tabela100') {
+        if (!inteiro(it.inicio) || it.inicio % 10 !== 1 || !inteiro(it.linhas) || it.linhas < 1 || it.inicio + it.linhas * 10 - 1 > 100) { e.push(`${w}: «inicio» tem de ser 1, 11, 21… e as linhas não podem passar do 100.`); return; }
+        if (!Array.isArray(it.lacunas) || !it.lacunas.length || it.lacunas.some(x => !inteiro(x) || x < it.inicio || x > it.inicio + it.linhas * 10 - 1)) e.push(`${w}: «lacunas» tem de ter números que estejam nessas linhas.`);
+      }
+    });
+  });
+  return e;
+}
+
+/* ---------- utilidades ---------- */
+const SVGNS = 'http://www.w3.org/2000/svg';
+function s(tag, attrs, ...filhos) {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const [k, v] of Object.entries(attrs || {})) { if (v == null) continue; if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); }
+  filhos.flat().forEach(f => f != null && e.append(f instanceof Node ? f : document.createTextNode(String(f))));
+  return e;
+}
+function campoNumero(extra) {
+  const c = h('input', Object.assign({ class: 'num', inputmode: 'numeric', maxlength: '3', autocomplete: 'off', spellcheck: 'false', 'aria-label': t('escreveAqui') }, extra || {}));
+  c.addEventListener('input', () => { c.value = c.value.replace(/\D/g, ''); c.classList.remove('mal'); });
+  return c;
+}
+const sinal = p => (p > 0 ? '+ ' : '− ') + Math.abs(p);
+const falaSinal = p => (p > 0 ? 'mais ' : 'menos ') + Math.abs(p);
+
+/* ---------- peças do MAB (desenho em SVG) ---------- */
+const CORES_MAB = {
+  c: { f: '#F2A06B', t: '#F8C49E', s: '#C76A33', l: '#9a4a1c' },
+  d: { f: '#7FBCE0', t: '#B4DAF0', s: '#3F86B5', l: '#245a80' },
+  u: { f: '#8DD07B', t: '#BDE6B0', s: '#4F9A3E', l: '#2f6b23' }
+};
+function svgPeca(tipo) {
+  const [cols, rows] = tipo === 'c' ? [10, 10] : tipo === 'd' ? [1, 10] : [1, 1];
+  const cel = 10, d = 4, cor = CORES_MAB[tipo], W = cols * cel + d, H = rows * cel + d;
+  let lin = '';
+  for (let i = 1; i < cols; i++) lin += `<line x1="${i * cel}" y1="${d}" x2="${i * cel}" y2="${H}"/>`;
+  for (let j = 1; j < rows; j++) lin += `<line x1="0" y1="${d + j * cel}" x2="${cols * cel}" y2="${d + j * cel}"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:${W / 14}rem;height:${H / 14}rem" aria-hidden="true" focusable="false">` +
+    `<polygon points="0,${d} ${d},0 ${W},0 ${cols * cel},${d}" fill="${cor.t}" stroke="${cor.l}" stroke-width=".8"/>` +
+    `<polygon points="${cols * cel},${d} ${W},0 ${W},${H - d} ${cols * cel},${H}" fill="${cor.s}" stroke="${cor.l}" stroke-width=".8"/>` +
+    `<rect x="0" y="${d}" width="${cols * cel}" height="${rows * cel}" fill="${cor.f}" stroke="${cor.l}" stroke-width="1"/>` +
+    `<g stroke="${cor.l}" stroke-width=".6" opacity=".75">${lin}</g></svg>`;
+}
+function peca(tipo, props) { const b = h('button', Object.assign({ class: 'peca-mab p-' + tipo, type: 'button' }, props || {})); b.innerHTML = svgPeca(tipo); return b; }
+
+/* ---------- componente MAB ---------- */
+// op: { c, d, u, editavel, contadores, total, aoMudar }
+function criarMAB(op) {
+  const st = { c: op.c || 0, d: op.d || 0, u: op.u || 0 };
+  const MAX = { c: 2, d: 19, u: 19 }, VAL = { c: 100, d: 10, u: 1 };
+  const cols = {}, nums = {};
+  const valor = () => st.c * 100 + st.d * 10 + st.u;
+  const totalEl = h('span', { class: 'mab-total-n' }, '0');
+  const btJuntarU = h('button', { class: 'btn amarelo', type: 'button', onclick: () => juntar('u') }, t('mab_juntarU'));
+  const btJuntarD = h('button', { class: 'btn amarelo', type: 'button', onclick: () => juntar('d') }, t('mab_juntarD'));
+  function desenhar(novo) {
+    ['c', 'd', 'u'].forEach(k => {
+      const pecas = [];
+      for (let i = 0; i < st[k]; i++) {
+        const p = peca(k, op.editavel ? { title: t('mab_tirar'), 'aria-label': 'Tirar ' + t('mab_' + { c: 'placa', d: 'barra', u: 'cubo' }[k]), onclick: () => { st[k]--; desenhar(); mudou(); } } : { tabindex: '-1', disabled: true });
+        if (novo === k && i === st[k] - 1) p.classList.add('entra');
+        pecas.push(p);
+        if (k === 'u' && i % 10 === 9 && i < st[k] - 1) pecas.push(h('span', { class: 'quebra' }));
+      }
+      encher(cols[k], pecas);
+      nums[k].textContent = st[k];
+      nums[k].classList.toggle('dez', st[k] >= 10);
+    });
+    totalEl.textContent = valor();
+    btJuntarU.hidden = !op.editavel || st.u < 10 || st.d >= MAX.d;
+    btJuntarD.hidden = !op.editavel || st.d < 10 || st.c >= MAX.c;
+  }
+  function mudou() { if (op.aoMudar) op.aoMudar(valor()); }
+  function juntar(k) {
+    const sup = k === 'u' ? 'd' : 'c';
+    const grupo = cols[k].querySelectorAll('.peca-mab');
+    for (let i = 0; i < 10 && i < grupo.length; i++) grupo[i].classList.add('sai');
+    som('certo');
+    depois(380, () => { st[k] -= 10; st[sup]++; desenhar(sup); mudou(); });
+  }
+  const colunas = ['c', 'd', 'u'].map(k => {
+    nums[k] = h('b', { class: 'mab-num' }, '0');
+    cols[k] = h('div', { class: 'mab-pecas pc-' + k });
+    return h('div', { class: 'mab-col col-' + k },
+      h('div', { class: 'mab-cab' }, h('strong', null, k.toUpperCase()), h('small', null, t('mab_' + k))),
+      cols[k],
+      op.contadores !== false ? h('div', { class: 'mab-conta' }, nums[k]) : h('span', { hidden: true }, nums[k]));
+  });
+  const tabuleiro = h('div', { class: 'mab-tab' }, colunas);
+  const tabuleiro2 = op.editavel ? h('div', { class: 'mab-bandeja' },
+    ['c', 'd', 'u'].map(k => {
+      const b = h('button', { class: 'mab-add add-' + k, type: 'button', onclick: () => { if (st[k] >= MAX[k]) { som('errado'); return; } st[k]++; desenhar(k); mudou(); } });
+      b.innerHTML = svgPeca(k);
+      b.append(h('span', null, '＋ ' + t('mab_' + { c: 'placa', d: 'barra', u: 'cubo' }[k]), h('small', null, ' (' + VAL[k] + ')')));
+      return b;
+    })) : null;
+  const acoes = op.editavel ? h('div', { class: 'linha mab-acoes' }, btJuntarU, btJuntarD,
+    h('button', { class: 'btn leve', type: 'button', onclick: () => { st.c = st.d = st.u = 0; desenhar(); mudou(); } }, t('mab_limpar')),
+    op.total ? h('span', { class: 'mab-total' }, t('mab_total') + ' = ', totalEl) : null) : null;
+  const el = h('div', { class: 'mab' + (op.editavel ? ' editavel' : '') }, tabuleiro2, tabuleiro, acoes);
+  desenhar();
+  return {
+    el, valor, st,
+    canonico: () => st.u < 10 && st.d < 10,
+    definir(c, d, u) { st.c = c; st.d = d; st.u = u; desenhar(); },
+    bloquear() { el.classList.add('bloqueado'); el.querySelectorAll('button').forEach(b => { b.disabled = true; }); }
+  };
+}
+function descreverMAB(n) {
+  const c = Math.floor(n / 100), d = Math.floor(n % 100 / 10), u = n % 10, p = [];
+  if (c) p.push(c + (c === 1 ? ' placa' : ' placas'));
+  if (d) p.push(d + (d === 1 ? ' barra' : ' barras'));
+  if (u) p.push(u + (u === 1 ? ' cubo' : ' cubos'));
+  return (p.length > 1 ? p.slice(0, -1).join(', ') + ' e ' + p[p.length - 1] : p[0]) + ' = ' + n;
+}
+
+/* ---------- item MAB ---------- */
+function itemMAB(ri, ronda, it, area, contador, proximo) {
+  const ler = it.modo === 'ler';
+  if (ler) {
+    const n = (it.c || 0) * 100 + (it.d || 0) * 10 + (it.u || 0);
+    const m = criarMAB({ c: it.c, d: it.d, u: it.u, editavel: false, contadores: false });
+    const campo = campoNumero();
+    const btOk = h('button', { class: 'btn' }, t('confirmar'));
+    const c = criarItem(ri, it, 0, () => { campo.value = n; campo.disabled = btOk.disabled = true; return t('respostaCerta', { r: n }); });
+    const verificar = () => {
+      if (c.resolvido || c.bloqueado || !campo.value) { campo.focus(); return; }
+      if (Number(campo.value) === n) { campo.disabled = btOk.disabled = true; campo.classList.add('certo'); c.acertou(null, '= ' + n); }
+      else { c.errou(null); campo.classList.add('mal'); campo.select(); }
+    };
+    btOk.onclick = verificar; campo.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); verificar(); } });
+    c.aoContinuar(proximo);
+    encher(area, cabecalhoRonda(ronda, 'i_mab_ler', contador), blocoPergunta(it, it.pergunta || t('i_mab_ler'), it.pergunta || 'Que número mostra o MAB?'), m.el,
+      h('div', { class: 'escrita' }, h('span', { class: 'igual' }, '='), campo, btOk), c.nos);
+    if (prefs.modo === 'computador') depois(60, () => campo.focus({ preventScroll: true }));
+    return;
+  }
+  const n = it.numero;
+  const m = criarMAB({ editavel: true, contadores: true, total: apoio() });
+  const btOk = h('button', { class: 'btn' }, t('confirmar'));
+  const c = criarItem(ri, it, 0, () => { m.definir(Math.floor(n / 100), Math.floor(n % 100 / 10), n % 10); m.bloquear(); btOk.disabled = true; return t('mab_era', { r: descreverMAB(n) }); });
+  btOk.onclick = () => {
+    if (c.resolvido || c.bloqueado) return;
+    const v = m.valor();
+    if (v === n && m.canonico()) { m.bloquear(); btOk.disabled = true; c.acertou(m.el, descreverMAB(n)); }
+    else if (v === n) { c.aviso(t('mab_troca')); }
+    else c.errou(null, t('mab_mostra', { n: v }) + ' ' + (v < n ? t('mab_mais') : t('mab_menos')));
+  };
+  c.aoContinuar(proximo);
+  const pergunta = h('span', null, it.pergunta ? rico(it.pergunta) : 'Representa o número ', h('span', { class: 'alvo' }, n));
+  encher(area, cabecalhoRonda(ronda, 'i_mab_construir', contador),
+    blocoPergunta(it, pergunta, (it.pergunta || 'Representa o número') + ' ' + n), m.el,
+    h('div', { class: 'linha' }, btOk), c.nos);
+}
+
+/* ---------- item cadeia (sequências e setas) ---------- */
+function itemCadeia(ri, ronda, it, area, contador, proximo) {
+  const valores = [it.inicio]; it.passos.forEach(p => valores.push(valores[valores.length - 1] + p));
+  const campos = valores.slice(1).map(() => campoNumero());
+  if (apoio()) { campos[0].value = valores[1]; campos[0].disabled = true; campos[0].classList.add('certo'); }
+  const btOk = h('button', { class: 'btn' }, t('confirmar'));
+  const c = criarItem(ri, it, 0, () => { campos.forEach((x, k) => { if (!x.classList.contains('certo')) { x.value = valores[k + 1]; x.classList.remove('mal'); x.classList.add('revela'); } x.disabled = true; }); btOk.disabled = true; return t('respostaCerta', { r: valores.join(', ') }); });
+  const fila = h('div', { class: 'cadeia' }, h('span', { class: 'cx inicio' }, it.inicio),
+    it.passos.flatMap((p, k) => [h('span', { class: 'seta' + (p < 0 ? ' menos' : '') }, h('b', null, sinal(p)), h('i', { 'aria-hidden': 'true' })), h('span', { class: 'cx' }, campos[k])]));
+  const verificar = () => {
+    if (c.resolvido || c.bloqueado) return;
+    if (campos.some(x => !x.value)) { c.aviso(t('vazias')); (campos.find(x => !x.value)).focus(); return; }
+    let mal = 0;
+    campos.forEach((x, k) => { if (x.disabled) return; if (Number(x.value) === valores[k + 1]) { x.classList.add('certo'); x.disabled = true; } else { x.classList.add('mal'); mal++; } });
+    if (!mal) { btOk.disabled = true; c.acertou(fila); }
+    else { c.errou(null, mal === 1 && prefs.lingua === 'pt' ? t('faltamCaixa1') : t('faltamCaixas', { n: mal })); const p = campos.find(x => !x.disabled); if (p) p.select(); }
+  };
+  btOk.onclick = verificar;
+  campos.forEach((x, k) => x.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); const nx = campos.slice(k + 1).find(y => !y.disabled); if (nx && !nx.value) nx.focus(); else verificar(); } }));
+  c.aoContinuar(proximo);
+  const fala = (it.pergunta || 'Segue as setas.') + ' Começa no ' + it.inicio + '. ' + it.passos.map(falaSinal).join(', ') + '.';
+  encher(area, cabecalhoRonda(ronda, 'i_cadeia', contador), blocoPergunta(it, it.pergunta || t('i_cadeia'), fala), fila, h('div', { class: 'linha' }, btOk), c.nos);
+  if (prefs.modo === 'computador') depois(60, () => { const p = campos.find(x => !x.disabled); if (p) p.focus({ preventScroll: true }); });
+}
+
+/* ---------- item reta numérica ---------- */
+function itemReta(ri, ronda, it, area, contador, proximo) {
+  const { inicio: a0, fim: a1, passo: p } = it;
+  const W = 1000, X0 = 50, X1 = 950, Y = 92;
+  const x = v => X0 + (v - a0) / (a1 - a0) * (X1 - X0);
+  const rotulos = it.rotulos || [a0, a1];
+  const svg = s('svg', { viewBox: `0 0 ${W} 190`, class: 'reta-svg', role: 'img', 'aria-label': `Reta numérica de ${a0} a ${a1}` });
+  const colocar = it.modo === 'colocar';
+  const segs = [];
+  if (colocar) {
+    for (let v = a0; v < a1; v += p) {
+      const g = s('rect', { x: x(v) + 2, y: Y - 38, width: x(v + p) - x(v) - 4, height: 76, rx: 10, class: 'seg', tabindex: '0', role: 'button', 'aria-label': t('reta_segmento', { a: v, b: v + p }) });
+      g.dataset.a = v; segs.push(g); svg.append(g);
+    }
+  }
+  svg.append(s('line', { x1: X0 - 20, y1: Y, x2: X1 + 24, y2: Y, class: 'eixo' }), s('polygon', { points: `${X1 + 34},${Y} ${X1 + 18},${Y - 9} ${X1 + 18},${Y + 9}`, class: 'eixo-ponta' }));
+  for (let v = a0; v <= a1; v += p) {
+    svg.append(s('line', { x1: x(v), y1: Y - 16, x2: x(v), y2: Y + 16, class: 'tick' }));
+    if (rotulos.includes(v)) svg.append(s('text', { x: x(v), y: Y + 50, class: 'rot' }, v));
+  }
+  let caixaTxt = null, alvo = null;
+  if (!colocar) {
+    alvo = s('g', { class: 'marca-alvo' },
+      s('line', { x1: x(it.marca), y1: Y + 22, x2: x(it.marca), y2: Y + 44, class: 'seta-alvo' }),
+      s('polygon', { points: `${x(it.marca)},${Y + 20} ${x(it.marca) - 9},${Y + 34} ${x(it.marca) + 9},${Y + 34}`, class: 'seta-alvo-p' }),
+      s('rect', { x: x(it.marca) - 40, y: Y + 46, width: 80, height: 48, rx: 10, class: 'caixa-alvo' }),
+      caixaTxt = s('text', { x: x(it.marca), y: Y + 80, class: 'rot alvo-txt' }, '?'));
+    svg.append(alvo);
+  } else {
+    svg.append(s('g', { class: 'bandeira' }, s('rect', { x: W / 2 - 50, y: 2, width: 100, height: 40, rx: 10 }), s('text', { x: W / 2, y: 32, class: 'rot' }, it.numero)));
+  }
+  let c;
+  if (colocar) {
+    c = criarItem(ri, it, segs.length, () => { marcar(); return t('reta_fica', { n: it.numero, a: Math.floor((it.numero - a0) / p) * p + a0, b: Math.floor((it.numero - a0) / p) * p + a0 + p }); });
+    const certoA = Math.floor((it.numero - a0) / p) * p + a0;
+    function marcar() {
+      segs.forEach(g => g.classList.toggle('certo', Number(g.dataset.a) === certoA));
+      svg.querySelector('.bandeira').setAttribute('transform', `translate(${x(it.numero) - W / 2},0)`);
+      svg.append(s('line', { x1: x(it.numero), y1: 42, x2: x(it.numero), y2: Y - 2, class: 'seta-alvo' }));
+      svg.append(s('circle', { cx: x(it.numero), cy: Y, r: 9, class: 'ponto' }));
+      segs.forEach(g => g.classList.add('fim'));
+    }
+    segs.forEach(g => {
+      const tocar = () => {
+        if (c.resolvido || c.bloqueado || g.classList.contains('errado')) return;
+        if (Number(g.dataset.a) === certoA) { marcar(); c.acertou(null, t('reta_fica', { n: it.numero, a: certoA, b: certoA + p })); }
+        else { g.classList.add('errado'); c.errou(null); }
+      };
+      g.addEventListener('click', tocar); g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tocar(); } });
+    });
+    c.aoContinuar(proximo);
+    encher(area, cabecalhoRonda(ronda, 'i_reta_colocar', contador),
+      blocoPergunta(it, h('span', null, it.pergunta || 'Onde fica o número ', h('span', { class: 'alvo' }, it.numero), '?'), (it.pergunta || 'Onde fica o número') + ' ' + it.numero + '?'),
+      h('div', { class: 'reta' }, svg), c.nos);
+    return;
+  }
+  const mostrar = v => { caixaTxt.textContent = v; alvo.classList.add('ok'); };
+  if (Array.isArray(it.erradas)) {
+    const erradas = apoio() ? [sorteio(it.erradas)] : it.erradas;
+    const botoes = baralhar([it.marca, ...erradas]).map(v => h('button', { class: 'opcao', type: 'button', onclick: e => escolher(v, e.currentTarget) }, v));
+    c = criarItem(ri, it, botoes.length, () => { mostrar(it.marca); botoes.forEach(b => { b.disabled = true; if (Number(b.textContent) === it.marca) b.classList.add('revela'); }); return t('respostaCerta', { r: it.marca }); });
+    function escolher(v, b) {
+      if (c.resolvido || c.bloqueado) return;
+      if (v === it.marca) { mostrar(v); botoes.forEach(x => { x.disabled = true; }); c.acertou(b); } else c.errou(b);
+    }
+    c.aoContinuar(proximo);
+    encher(area, cabecalhoRonda(ronda, 'i_reta_ler', contador), blocoPergunta(it, it.pergunta || t('i_reta_ler'), it.pergunta || 'Que número está na marca da seta?', () => botoes.map(b => ({ texto: b.textContent, el: b }))),
+      h('div', { class: 'reta' }, svg), h('div', { class: 'opcoes' }, botoes), c.nos);
+  } else {
+    const campo = campoNumero(), btOk = h('button', { class: 'btn' }, t('confirmar'));
+    c = criarItem(ri, it, 0, () => { mostrar(it.marca); campo.value = it.marca; campo.disabled = btOk.disabled = true; return t('respostaCerta', { r: it.marca }); });
+    const verificar = () => {
+      if (c.resolvido || c.bloqueado || !campo.value) { campo.focus(); return; }
+      if (Number(campo.value) === it.marca) { mostrar(it.marca); campo.disabled = btOk.disabled = true; campo.classList.add('certo'); c.acertou(null); }
+      else { campo.classList.add('mal'); c.errou(null); campo.select(); }
+    };
+    btOk.onclick = verificar; campo.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); verificar(); } });
+    c.aoContinuar(proximo);
+    encher(area, cabecalhoRonda(ronda, 'i_reta_ler', contador), blocoPergunta(it, it.pergunta || t('i_reta_ler'), it.pergunta || 'Que número está na marca da seta?'),
+      h('div', { class: 'reta' }, svg), h('div', { class: 'escrita' }, campo, btOk), c.nos);
+    if (prefs.modo === 'computador') depois(60, () => campo.focus({ preventScroll: true }));
+  }
+}
+
+/* ---------- item tabela do 100 ---------- */
+function itemTabela(ri, ronda, it, area, contador, proximo) {
+  let lacunas = it.lacunas.slice().sort((a, b) => a - b);
+  if (apoio()) lacunas = lacunas.filter((_, k) => k % 2 === 0);
+  const campos = [];
+  const grelha = h('div', { class: 'tabela100' });
+  for (let v = it.inicio; v < it.inicio + it.linhas * 10; v++) {
+    if (lacunas.includes(v)) { const cp = campoNumero({ 'aria-label': 'Número que falta' }); cp.dataset.v = v; campos.push(cp); grelha.append(h('span', { class: 'cel vazia' }, cp)); }
+    else grelha.append(h('span', { class: 'cel' + (v % 10 === 0 ? ' dez' : '') }, v));
+  }
+  const btOk = h('button', { class: 'btn' }, t('confirmar'));
+  const c = criarItem(ri, it, 0, () => { campos.forEach(x => { if (!x.classList.contains('certo')) { x.value = x.dataset.v; x.classList.remove('mal'); x.classList.add('revela'); } x.disabled = true; }); btOk.disabled = true; return t('vamosVer'); });
+  const verificar = () => {
+    if (c.resolvido || c.bloqueado) return;
+    if (campos.some(x => !x.value)) { c.aviso(t('vazias')); campos.find(x => !x.value).focus(); return; }
+    let mal = 0;
+    campos.forEach(x => { if (x.disabled) return; if (x.value === x.dataset.v) { x.classList.add('certo'); x.disabled = true; } else { x.classList.add('mal'); mal++; } });
+    if (!mal) { btOk.disabled = true; c.acertou(grelha); }
+    else { c.errou(null, mal === 1 && prefs.lingua === 'pt' ? t('faltamCaixa1') : t('faltamCaixas', { n: mal })); const p = campos.find(x => !x.disabled); if (p) p.select(); }
+  };
+  btOk.onclick = verificar;
+  campos.forEach((x, k) => x.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); const nx = campos.slice(k + 1).find(y => !y.disabled && !y.value); if (nx) nx.focus(); else verificar(); } }));
+  c.aoContinuar(proximo);
+  encher(area, cabecalhoRonda(ronda, 'i_tabela', contador), blocoPergunta(it, it.pergunta || t('i_tabela'), it.pergunta || 'Completa a tabela do 100.'), grelha, h('div', { class: 'linha' }, btOk), c.nos);
+  if (prefs.modo === 'computador') depois(60, () => campos[0] && campos[0].focus({ preventScroll: true }));
+}
+const EXTRA_ITENS = { mab: itemMAB, cadeia: itemCadeia, reta: itemReta, tabela100: itemTabela };
+
+/* ---------- ferramenta MAB livre (botão no cabeçalho) ---------- */
+function abrirFerramentaMAB() {
+  const m = criarMAB({ editavel: true, contadores: true, total: true });
+  const j = janela(h('h2', { class: 'titulo-ronda' }, t('mab_ferramenta')), h('p', { class: 'instrucao' }, t('mab_livre')), m.el,
+    h('div', { class: 'linha', style: 'margin-top:10px' }, h('button', { class: 'btn azul', onclick: () => j.remove() }, '✔ OK')));
+  j.querySelector('.cartao').classList.add('larga');
+}
+
 (function arrancar() {
   $('#btAcess').onclick = abrirAcessibilidade;
   $('#btProf').onclick = abrirProfessor;
   $('#btEcra').onclick = ecraInteiro;
+  if ($('#btMab')) $('#btMab').onclick = abrirFerramentaMAB;
   $('#btSom').onclick = () => { prefs.som = !somLigado(); guardarPrefs(); atualizarBotaoSom(); if (!prefs.som) calar(); };
   if (!T[prefs.lingua]) prefs.lingua = 'pt';
   try { MASCOTE = JSON.parse($('#mascote').textContent); } catch (e) { MASCOTE = {}; }
@@ -1191,6 +1528,8 @@ function ecraInteiro() {
   catch (e) { erros = ['O bloco AULA não é JSON válido: ' + e.message + '. Verifica vírgulas, aspas e chavetas.']; }
   aplicarAparencia();
   if (erros.length) { ecraErros(erros); return; }
+  // botão MAB no cabeçalho: nas aulas com rondas de MAB ou com "ferramentaMAB": true
+  if ($('#btMab')) $('#btMab').hidden = !(AULA.ferramentaMAB === true || (AULA.ferramentaMAB !== false && AULA.rondas.some(r => r && r.tipo === 'mab')));
   document.title = AULA.titulo + ' · Investigadores Digitais';
   $('#subtitulo').textContent = 'com o Ticl@s · ' + AULA.titulo;
   ecraInicio();

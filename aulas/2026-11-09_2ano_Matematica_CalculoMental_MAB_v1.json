@@ -1,0 +1,782 @@
+{
+  "id": "2026-11-ticlas-2ano-calculo-mental-mab",
+  "titulo": "Cálculo mental e MAB até 100",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-09",
+  "descricao": "Cálculo mental (amigos do 10 e do 100, +10/−10), MAB virtual (construir e ler números, trocas 10 U = 1 D e 10 D = 1 C), sequências com setas, reta numérica, tabela do 100 e noção de centena",
+  "resumo": "Ajuda o Ticl@s a construir números com o MAB e a calcular de cabeça!",
+  "focoTic": [
+    "Rato: clicar",
+    "Teclado: escrever números"
+  ],
+  "ilustracao": {
+    "tipo": "numeros",
+    "conta": [
+      "70",
+      "+",
+      "30"
+    ]
+  },
+  "objetivo": "Calcular mentalmente, representar números no MAB e descobrir que 10 dezenas fazem 1 centena.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Cálculo relâmpago",
+      "instrucao": "Calcula de cabeça e rebenta o balão certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "6 + 4 =",
+          "certa": "10",
+          "erradas": [
+            "9",
+            "11"
+          ],
+          "explicacao": "6 e 4 são amigos do 10."
+        },
+        {
+          "pergunta": "3 + 7 =",
+          "certa": "10",
+          "erradas": [
+            "11",
+            "4"
+          ],
+          "explicacao": "3 e 7 são amigos do 10."
+        },
+        {
+          "pergunta": "40 + 10 =",
+          "certa": "50",
+          "erradas": [
+            "41",
+            "60"
+          ],
+          "explicacao": "4 dezenas mais 1 dezena são 5 dezenas: 50."
+        },
+        {
+          "pergunta": "70 − 10 =",
+          "certa": "60",
+          "erradas": [
+            "69",
+            "80"
+          ],
+          "explicacao": "7 dezenas menos 1 dezena são 6 dezenas: 60."
+        },
+        {
+          "pergunta": "5 + 5 + 7 =",
+          "certa": "17",
+          "erradas": [
+            "15",
+            "18"
+          ],
+          "explicacao": "Primeiro 5 + 5 = 10; depois 10 + 7 = 17."
+        },
+        {
+          "pergunta": "8 + 2 + 6 =",
+          "certa": "16",
+          "erradas": [
+            "14",
+            "26"
+          ],
+          "explicacao": "Primeiro 8 + 2 = 10; depois 10 + 6 = 16."
+        },
+        {
+          "pergunta": "25 + 5 =",
+          "certa": "30",
+          "erradas": [
+            "20",
+            "35"
+          ],
+          "explicacao": "25 + 5 = 30: chegaste à dezena seguinte."
+        },
+        {
+          "pergunta": "90 + 10 =",
+          "certa": "100",
+          "erradas": [
+            "91",
+            "110"
+          ],
+          "explicacao": "9 dezenas mais 1 dezena são 10 dezenas: 100."
+        }
+      ]
+    },
+    {
+      "tipo": "mab",
+      "titulo": "Constrói no MAB",
+      "instrucao": "Toca nas peças (placa, barra, cubo) para as pôr no tabuleiro. Toca numa peça do tabuleiro para a tirar. Depois carrega em «Confirmar».",
+      "itens": [
+        {
+          "modo": "construir",
+          "numero": 23,
+          "dica": "23 = 2 dezenas e 3 unidades: 2 barras e 3 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 45,
+          "dica": "45 = 4 dezenas e 5 unidades."
+        },
+        {
+          "modo": "construir",
+          "numero": 70,
+          "dica": "70 = 7 dezenas e 0 unidades: só barras!"
+        },
+        {
+          "modo": "construir",
+          "numero": 98,
+          "dica": "98 = 9 dezenas e 8 unidades."
+        },
+        {
+          "modo": "construir",
+          "numero": 100,
+          "pergunta": "Põe 10 barras no tabuleiro e troca-as por uma placa. Representa o número",
+          "dica": "10 barras = 1 placa = 100. Usa o botão amarelo para trocar.",
+          "explicacao": "10 dezenas = 1 centena = 100 unidades."
+        },
+        {
+          "modo": "construir",
+          "numero": 102,
+          "pergunta": "Uma senhora fez 102 anos: é centenária! Representa a idade dela:",
+          "dica": "102 = 1 centena, 0 dezenas e 2 unidades: 1 placa e 2 cubos."
+        }
+      ]
+    },
+    {
+      "tipo": "mab",
+      "titulo": "Lê o MAB",
+      "instrucao": "Conta as peças: cada placa vale 100, cada barra vale 10 e cada cubo vale 1. Escreve o número.",
+      "baralhar": true,
+      "itens": [
+        {
+          "modo": "ler",
+          "d": 3,
+          "u": 6,
+          "dica": "Conta as barras de 10 em 10 (10, 20, 30) e depois junta os cubos."
+        },
+        {
+          "modo": "ler",
+          "d": 5,
+          "u": 0,
+          "dica": "Só há barras: conta de 10 em 10."
+        },
+        {
+          "modo": "ler",
+          "d": 7,
+          "u": 4,
+          "dica": "7 barras = 70. Junta os cubos."
+        },
+        {
+          "modo": "ler",
+          "d": 1,
+          "u": 12,
+          "dica": "Atenção: há mais de 10 cubos! 10 cubos valem 1 barra.",
+          "explicacao": "1 barra = 10 e 12 cubos = 12. 10 + 12 = 22."
+        },
+        {
+          "modo": "ler",
+          "d": 9,
+          "u": 9,
+          "dica": "9 barras = 90."
+        },
+        {
+          "modo": "ler",
+          "d": 10,
+          "u": 0,
+          "dica": "Conta as barras de 10 em 10 até ao fim.",
+          "explicacao": "10 barras = 10 dezenas = 1 centena = 100."
+        },
+        {
+          "modo": "ler",
+          "c": 1,
+          "d": 1,
+          "u": 6,
+          "dica": "A placa vale 100. Depois conta a barra e os cubos.",
+          "explicacao": "1 centena, 1 dezena e 6 unidades: 116."
+        }
+      ]
+    },
+    {
+      "tipo": "cadeia",
+      "titulo": "Sequências e setas",
+      "instrucao": "Segue cada seta, calcula de cabeça e escreve o número na caixa. Carrega em «Confirmar» no fim.",
+      "itens": [
+        {
+          "pergunta": "De 5 em 5, começando no 0.",
+          "inicio": 0,
+          "passos": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "dica": "Os números terminam sempre em 0 ou em 5."
+        },
+        {
+          "pergunta": "De 2 em 2, começando no 10.",
+          "inicio": 10,
+          "passos": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "dica": "São todos números pares."
+        },
+        {
+          "pergunta": "De 3 em 3, começando no 10.",
+          "inicio": 10,
+          "passos": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "dica": "10 + 3 = 13. Continua a somar 3."
+        },
+        {
+          "pergunta": "Segue as setas.",
+          "inicio": 25,
+          "passos": [
+            5,
+            10,
+            -10,
+            20
+          ],
+          "dica": "Quando somas ou tiras 10, só muda o algarismo das dezenas."
+        },
+        {
+          "pergunta": "Segue as setas.",
+          "inicio": 32,
+          "passos": [
+            10,
+            10,
+            -5,
+            20
+          ],
+          "dica": "32 + 10 = 42."
+        },
+        {
+          "pergunta": "Para trás, de 10 em 10.",
+          "inicio": 96,
+          "passos": [
+            -10,
+            -10,
+            -10,
+            -10
+          ],
+          "dica": "As unidades ficam sempre 6."
+        }
+      ]
+    },
+    {
+      "tipo": "reta",
+      "titulo": "Na reta numérica",
+      "instrucao": "Observa bem as marcas da reta: de uma marca à seguinte avança-se 10.",
+      "itens": [
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 100,
+          "passo": 10,
+          "marca": 30,
+          "erradas": [
+            3,
+            40
+          ],
+          "dica": "Conta as marcas a partir do 0: 10, 20, …"
+        },
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 100,
+          "passo": 10,
+          "marca": 70,
+          "erradas": [
+            60,
+            7
+          ],
+          "dica": "Também podes contar para trás a partir do 100."
+        },
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 100,
+          "passo": 10,
+          "marca": 90,
+          "erradas": [
+            80,
+            99
+          ],
+          "dica": "É a marca mesmo antes do 100."
+        },
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 100,
+          "passo": 10,
+          "marca": 50,
+          "dica": "É a marca do meio, entre 0 e 100."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 20,
+          "fim": 100,
+          "passo": 10,
+          "rotulos": [
+            20,
+            40,
+            60,
+            80,
+            100
+          ],
+          "numero": 22,
+          "dica": "22 tem 2 dezenas: fica logo a seguir ao 20."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 20,
+          "fim": 100,
+          "passo": 10,
+          "rotulos": [
+            20,
+            40,
+            60,
+            80,
+            100
+          ],
+          "numero": 68,
+          "dica": "68 fica entre 60 e 70."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 20,
+          "fim": 100,
+          "passo": 10,
+          "rotulos": [
+            20,
+            40,
+            60,
+            80,
+            100
+          ],
+          "numero": 84,
+          "dica": "84 tem 8 dezenas."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 20,
+          "fim": 100,
+          "passo": 10,
+          "rotulos": [
+            20,
+            40,
+            60,
+            80,
+            100
+          ],
+          "numero": 57,
+          "dica": "57 tem 5 dezenas: fica entre 50 e 60."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "Amigos do 100",
+      "instrucao": "Escreve o número que falta para fazer uma centena. Se precisares, abre o MAB no botão lá em cima.",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "50 + ___ = 100",
+          "certa": "50",
+          "dica": "Metade de 100."
+        },
+        {
+          "frase": "70 + ___ = 100",
+          "certa": "30",
+          "dica": "Conta de 10 em 10: 80, 90, 100."
+        },
+        {
+          "frase": "___ + 90 = 100",
+          "certa": "10",
+          "dica": "Falta só uma dezena."
+        },
+        {
+          "frase": "40 + ___ = 100",
+          "certa": "60",
+          "dica": "4 dezenas + ? dezenas = 10 dezenas."
+        },
+        {
+          "frase": "___ + 20 = 100",
+          "certa": "80",
+          "dica": "2 dezenas + ? dezenas = 10 dezenas."
+        },
+        {
+          "frase": "25 + ___ = 100",
+          "certa": "75",
+          "dica": "25 + 5 = 30; depois de 30 até 100 faltam 70."
+        },
+        {
+          "frase": "___ + 80 = 100",
+          "certa": "20",
+          "dica": "8 e 2 são amigos do 10; 80 e 20 são amigos do 100."
+        },
+        {
+          "frase": "___ + 10 = 100",
+          "certa": "90",
+          "dica": "10 dezenas − 1 dezena."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Detetive dos números",
+      "instrucao": "Lê a pista e toca no Ticl@s quando aparecer o número certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "O meu número tem 6 dezenas e 0 unidades.",
+          "certa": "60",
+          "erradas": [
+            "16",
+            "6"
+          ],
+          "explicacao": "6 dezenas = 60."
+        },
+        {
+          "pergunta": "Ao meu número faltam 8 para ter 90.",
+          "certa": "82",
+          "erradas": [
+            "98",
+            "88"
+          ],
+          "explicacao": "82 + 8 = 90."
+        },
+        {
+          "pergunta": "O meu número é menor do que 2 dezenas.",
+          "certa": "12",
+          "erradas": [
+            "21",
+            "82"
+          ],
+          "explicacao": "2 dezenas = 20 e 12 é menor do que 20."
+        },
+        {
+          "pergunta": "É maior do que 57 e menor do que 63.",
+          "certa": "59",
+          "erradas": [
+            "57",
+            "65"
+          ],
+          "explicacao": "57 < 59 < 63."
+        },
+        {
+          "pergunta": "É maior do que 39 e menor do que 45.",
+          "certa": "44",
+          "erradas": [
+            "37",
+            "49"
+          ],
+          "explicacao": "39 < 44 < 45."
+        },
+        {
+          "pergunta": "É maior do que 71 e menor do que 84.",
+          "certa": "80",
+          "erradas": [
+            "89",
+            "71"
+          ],
+          "explicacao": "71 < 80 < 84."
+        },
+        {
+          "pergunta": "Tem 3 dezenas e 7 unidades.",
+          "certa": "37",
+          "erradas": [
+            "73",
+            "30"
+          ],
+          "explicacao": "3 dezenas = 30; 30 + 7 = 37."
+        },
+        {
+          "pergunta": "É menor do que uma centena.",
+          "certa": "99",
+          "erradas": [
+            "102",
+            "116"
+          ],
+          "explicacao": "Uma centena = 100 e 99 é menor do que 100."
+        }
+      ]
+    },
+    {
+      "tipo": "tabela100",
+      "titulo": "Tabela do 100",
+      "instrucao": "Escreve os números que faltam. Pista: para baixo, na mesma coluna, os números aumentam 10.",
+      "itens": [
+        {
+          "inicio": 21,
+          "linhas": 3,
+          "lacunas": [
+            23,
+            26,
+            29,
+            34,
+            35,
+            38,
+            42,
+            47
+          ],
+          "dica": "Olha para o número de cima e soma 10."
+        },
+        {
+          "inicio": 51,
+          "linhas": 3,
+          "lacunas": [
+            52,
+            56,
+            60,
+            61,
+            64,
+            67,
+            73,
+            79
+          ],
+          "dica": "Na mesma linha, cada número é mais 1."
+        },
+        {
+          "inicio": 71,
+          "linhas": 3,
+          "lacunas": [
+            73,
+            77,
+            80,
+            84,
+            89,
+            91,
+            95,
+            100
+          ],
+          "dica": "A última casa da tabela é o 100: uma centena!"
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Números e palavras",
+      "instrucao": "Escreve com atenção. Nas frases, começa com letra maiúscula e termina com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve por extenso o número 100.",
+          "resposta": "cem",
+          "dica": "São só três letras."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 50.",
+          "resposta": "cinquenta",
+          "dica": "Começa por «cin»."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 90.",
+          "resposta": "noventa",
+          "dica": "Começa por «no»."
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «centena».",
+          "palavra": "centena",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «dezenas».",
+          "palavra": "dezenas",
+          "minPalavras": 4
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio do cálculo",
+      "instrucao": "Calcula de cabeça e escolhe a carruagem certa.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "34 + 10 =",
+          "certa": "44",
+          "erradas": [
+            "35",
+            "54"
+          ]
+        },
+        {
+          "pergunta": "56 − 10 =",
+          "certa": "46",
+          "erradas": [
+            "55",
+            "36"
+          ]
+        },
+        {
+          "pergunta": "47 + 20 =",
+          "certa": "67",
+          "erradas": [
+            "49",
+            "77"
+          ]
+        },
+        {
+          "pergunta": "83 − 20 =",
+          "certa": "63",
+          "erradas": [
+            "81",
+            "73"
+          ]
+        },
+        {
+          "pergunta": "15 + 5 =",
+          "certa": "20",
+          "erradas": [
+            "19",
+            "25"
+          ]
+        },
+        {
+          "pergunta": "28 + 2 =",
+          "certa": "30",
+          "erradas": [
+            "20",
+            "29"
+          ]
+        },
+        {
+          "pergunta": "60 + 40 =",
+          "certa": "100",
+          "erradas": [
+            "90",
+            "110"
+          ]
+        },
+        {
+          "pergunta": "100 − 10 =",
+          "certa": "90",
+          "erradas": [
+            "99",
+            "80"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória das dezenas",
+      "instrucao": "Encontra os pares: a decomposição e o número.",
+      "itens": [
+        [
+          "5 dezenas",
+          "50"
+        ],
+        [
+          "3 dezenas e 4 unidades",
+          "34"
+        ],
+        [
+          "4 dezenas e 3 unidades",
+          "43"
+        ],
+        [
+          "1 centena",
+          "100"
+        ],
+        [
+          "9 dezenas e 9 unidades",
+          "99"
+        ],
+        [
+          "6 dezenas e 8 unidades",
+          "68"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Matemática à tua volta",
+      "instrucao": "Pensa bem antes de escolher.",
+      "itens": [
+        {
+          "pergunta": "Cada amigo mostra as duas mãos: 10 dedos. Quantos amigos são precisos para contar 100 dedos?",
+          "emoji": "🖐️🖐️",
+          "certa": "10",
+          "erradas": [
+            "100",
+            "5"
+          ],
+          "explicacao": "10 + 10 + 10 + 10 + 10 + 10 + 10 + 10 + 10 + 10 = 100."
+        },
+        {
+          "pergunta": "Quantas barras de 10 são precisas para formar uma placa de 100?",
+          "certa": "10",
+          "erradas": [
+            "100",
+            "1"
+          ],
+          "explicacao": "10 dezenas = 1 centena."
+        },
+        {
+          "pergunta": "Quantos cubos tem uma placa do MAB?",
+          "certa": "100",
+          "erradas": [
+            "10",
+            "20"
+          ],
+          "explicacao": "A placa tem 10 filas de 10 cubos: 100."
+        },
+        {
+          "pergunta": "Como se chama uma pessoa que tem 100 anos ou mais?",
+          "emoji": "🎂",
+          "certa": "centenária",
+          "erradas": [
+            "adolescente",
+            "dezena"
+          ]
+        },
+        {
+          "pergunta": "Qual é a regra? 20, 24, 28, 32, 36",
+          "certa": "+ 4",
+          "erradas": [
+            "+ 2",
+            "− 4"
+          ],
+          "explicacao": "Cada número é o anterior mais 4."
+        },
+        {
+          "pergunta": "Qual é a regra? 70, 60, 50, 40, 30",
+          "certa": "− 10",
+          "erradas": [
+            "+ 10",
+            "− 1"
+          ],
+          "explicacao": "Cada número é o anterior menos 10."
+        },
+        {
+          "pergunta": "Qual é a regra? 60, 70, 80, 90, 100",
+          "certa": "+ 10",
+          "erradas": [
+            "+ 1",
+            "− 10"
+          ],
+          "explicacao": "Cada número é o anterior mais 10."
+        }
+      ]
+    }
+  ]
+}

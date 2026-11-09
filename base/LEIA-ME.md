@@ -60,7 +60,9 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 - `instrucao` é opcional (há uma instrução por omissão para cada tipo).
 - `baralhar: true` baralha a ordem dos itens. As **opções de resposta são sempre baralhadas**.
 
-### Os 9 tipos de atividade
+### Os 13 tipos de atividade
+
+Os 9 tipos gerais estão na tabela abaixo; os 4 tipos de Matemática (`mab`, `cadeia`, `reta`, `tabela100`) estão na secção seguinte.
 
 | Tipo | Itens | Exemplo |
 |---|---|---|
@@ -88,6 +90,19 @@ Opções de aspeto em `escolher` (`"visual"`):
 | `comboio` | O comboio chega com as respostas nas carruagens e parte quando se acerta. |
 | `buracos` | O Ticl@s salta de buracos com uma resposta; toca-se quando aparece a certa. Sem pressa: ele volta sempre a aparecer. |
 | `aviao` | Toca-se numa nuvem (ou usa-se ▲ ▼ e «Apanhar!», ou as setas do teclado) e o avião voa até ela. |
+
+### Tipos de Matemática (V3.4)
+
+| Tipo | Itens | Exemplo |
+|---|---|---|
+| `mab` construir | `modo: "construir"`, `numero` (1 a 299), `pergunta` (opcional) | `{"modo":"construir","numero":45,"dica":"4 barras e 5 cubos."}` — o aluno toca na placa, na barra e no cubo para os pôr no quadro C/D/U e toca numa peça para a tirar. Com 10 cubos (ou 10 barras) aparece o botão amarelo de troca (10 U → 1 D, 10 D → 1 C). Só conta como certo com a representação final (menos de 10 peças em cada coluna); se o total estiver certo mas faltar a troca, o Ticl@s avisa sem tirar estrelas. |
+| `mab` ler | `modo: "ler"`, `c`, `d`, `u` (0 a 20) | `{"modo":"ler","d":1,"u":12}` — o MAB aparece montado e o aluno escreve o número (aqui 22). Pode ter mais de 10 peças numa coluna, para treinar as trocas. |
+| `cadeia` | `inicio`, `passos` (lista), `pergunta` (opcional) | `{"pergunta":"De 5 em 5, começando no 0.","inicio":0,"passos":[5,5,5,5]}` ou setas mistas `[5, 10, -10, 20]`. O aluno escreve todos os números e confirma; as caixas certas ficam verdes. No modo apoio a 1.ª caixa já vem preenchida. |
+| `reta` ler | `modo: "ler"`, `inicio`, `fim`, `passo`, `marca`, `erradas` (opcional) | `{"modo":"ler","inicio":0,"fim":100,"passo":10,"marca":30,"erradas":[3,40]}` — sem `erradas`, o aluno escreve o número. |
+| `reta` colocar | `modo: "colocar"`, `inicio`, `fim`, `passo`, `numero`, `rotulos` (opcional) | `{"modo":"colocar","inicio":20,"fim":100,"passo":10,"rotulos":[20,40,60,80,100],"numero":68}` — o aluno toca no espaço entre duas marcas onde fica o número (posição aproximada). O número não pode coincidir com uma marca. |
+| `tabela100` | `inicio` (1, 11, 21…), `linhas`, `lacunas` | `{"inicio":21,"linhas":3,"lacunas":[23,26,34,47]}` — no modo apoio só aparece metade das lacunas. |
+
+Nas aulas com rondas `mab` aparece no cabeçalho o botão **🧱 MAB**, um MAB livre que o aluno pode abrir em qualquer missão (por exemplo, nos «amigos do 100»). Para o mostrar numa aula sem rondas de MAB: `"ferramentaMAB": true`; para o esconder: `false`. Exemplo completo: `aulas/2026-11-09_2ano_Matematica_CalculoMental_MAB_v1.json`.
 
 **Letra manuscrita:** qualquer texto entre `[[` e `]]` aparece em letra manuscrita (Playwrite PT, o modelo escolar português), por exemplo `["🦆", "[[pato]]"]` nos pares ou `"certa": "p [[p]]"`. Com `"letra": "manuscrita"` na ronda, as opções, peças, cartas e caixas dessa ronda ficam todas em manuscrita (e, no `completar`, também a palavra a completar, como `"frase": "___to"`). As perguntas só ficam em manuscrita com `[[ ]]`. No `completar` pode usar-se `"visual"` (`baloes`, `comboio`…) como no `escolher`.
 

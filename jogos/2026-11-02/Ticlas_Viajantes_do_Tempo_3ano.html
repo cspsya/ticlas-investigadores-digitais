@@ -2101,7 +2101,7 @@ function itemEscrever(ri, ronda, it, area, contador, proximo) {
     if (!c.resolvido) campo.select();
   };
   btOk.onclick = verificar;
-  if (!livre) campo.addEventListener('keydown', e => { if (e.key === 'Enter') verificar(); });
+  if (!livre) campo.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); verificar(); } });
   c.aoContinuar(proximo);
   encher(area, cabecalhoRonda(ronda, chaveInstr, contador), topo, h('div', { class: 'escrita' }, campo, btOk), criterios, c.nos);
   if (prefs.modo === 'computador') depois(50, () => campo.focus({ preventScroll: true }));
