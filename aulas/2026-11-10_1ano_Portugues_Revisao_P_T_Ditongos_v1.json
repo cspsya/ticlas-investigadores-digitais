@@ -1,0 +1,659 @@
+{
+  "id": "2026-11-10-1ano-revisao-p-t-ditongos",
+  "titulo": "Revisão: P, T e ditongos",
+  "ano": 1,
+  "turma": "1.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-10",
+  "minutos": 60,
+  "descricao": "Revisão das letras p e t e dos ditongos (ai, au, ei, oi, ou, ão): sílabas, ditongos, contagem de sílabas, ligação imagem–palavra em letra manuscrita e escrita no teclado a partir da letra manuscrita, com a tecla certa a brilhar.",
+  "resumo": "Lê a letra manuscrita e escreve no teclado com o Ticl@s!",
+  "focoTic": [
+    "Teclado: escrever",
+    "Rato: tocar e arrastar"
+  ],
+  "objetivo": "Vamos rever o p, o t e os ditongos e aprender a escrever no teclado as palavras escritas à mão.",
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Toca no som do início",
+      "instrucao": "Diz o nome do desenho. Toca no Ticl@s que tem a primeira letra.",
+      "itens": [
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🍿",
+          "certa": "p [[p]]",
+          "erradas": [
+            "t [[t]]",
+            "b [[b]]"
+          ]
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🐯",
+          "certa": "t [[t]]",
+          "erradas": [
+            "p [[p]]",
+            "d [[d]]"
+          ]
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🎹",
+          "certa": "p [[p]]",
+          "erradas": [
+            "t [[t]]",
+            "q [[q]]"
+          ]
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🦈",
+          "certa": "t [[t]]",
+          "erradas": [
+            "p [[p]]",
+            "d [[d]]"
+          ]
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🍐",
+          "certa": "p [[p]]",
+          "erradas": [
+            "t [[t]]",
+            "b [[b]]"
+          ]
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "✂️",
+          "certa": "t [[t]]",
+          "erradas": [
+            "p [[p]]",
+            "f [[f]]"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "visual": "baloes",
+      "letra": "manuscrita",
+      "titulo": "Balões das sílabas",
+      "instrucao": "Que sílaba falta? Rebenta o balão certo.",
+      "itens": [
+        {
+          "frase": "___to",
+          "emoji": "🦆",
+          "certa": "pa",
+          "erradas": [
+            "pe",
+            "po"
+          ],
+          "explicacao": "pa · to — pato"
+        },
+        {
+          "frase": "pi___",
+          "emoji": "🪁",
+          "certa": "pa",
+          "erradas": [
+            "po",
+            "pu"
+          ],
+          "explicacao": "pi · pa — pipa"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "alt": "pote",
+          "frase": "___te",
+          "certa": "po",
+          "erradas": [
+            "pa",
+            "pu"
+          ],
+          "explicacao": "po · te — pote"
+        },
+        {
+          "frase": "___dim",
+          "emoji": "🍮",
+          "certa": "pu",
+          "erradas": [
+            "po",
+            "pi"
+          ],
+          "explicacao": "pu · dim — pudim"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTA0IiByeD0iNTQiIHJ5PSI3IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgtOCA2NCA2NCkiPgo8cGF0aCBkPSJNMjAgMzRoODh2NjJIMjB6IiBmaWxsPSIjZTg4MzRhIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yOCA0Mmg3MnY0NkgyOHoiIGZpbGw9IiNmNmIyN2QiIHN0cm9rZT0iI2M5NjAyYyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik02NCA0N2wyMiAxNy0yMiAxNy0yMi0xN3oiIGZpbGw9IiM0YTkwZDkiIHN0cm9rZT0iIzJjNWY4YSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTY0IDU2bDEwIDgtMTAgOC0xMC04eiIgZmlsbD0iI2JmZTBmZiIvPgo8cGF0aCBkPSJNMjggNDJsOSA5TTEwMCA0MmwtOSA5TTI4IDg4bDktOU0xMDAgODhsLTktOSIgc3Ryb2tlPSIjYzk2MDJjIiBzdHJva2Utd2lkdGg9IjIuNSIvPgo8ZyBzdHJva2U9IiNjOTYwMmMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNMTQgMzhoNk0xNCA0Nmg2TTE0IDU0aDZNMTQgNjJoNk0xNCA3MGg2TTE0IDc4aDZNMTQgODZoNk0xNCA5NGg2Ii8+CjxwYXRoIGQ9Ik0xMDggMzhoNk0xMDggNDZoNk0xMDggNTRoNk0xMDggNjJoNk0xMDggNzBoNk0xMDggNzhoNk0xMDggODZoNk0xMDggOTRoNiIvPgo8L2c+PC9nPjwvc3ZnPg==",
+          "alt": "tapete",
+          "frase": "ta___te",
+          "certa": "pe",
+          "erradas": [
+            "pa",
+            "po"
+          ],
+          "explicacao": "ta · pe · te — tapete"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjYyIiBjeT0iMTEwIiByeD0iNDgiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTk4IDkyYzEwIDIgMTggMCAyNC02IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODhhNmEiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMCA5NGgtNHYxMmgxMGwyLThNNTAgOTZ2MTBoMTBsMS05TTc0IDk2djEwaDEwbDEtOU04OCA5MmwyIDE0aDlsLTEtMTQiIGZpbGw9IiNjOWE3N2YiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIyIDg2YzAtMjYgMTgtNDYgNDQtNDZzMzggMjIgMzggNDZjMCA2LTQgMTAtMTAgMTBIMzJjLTYgMC0xMC00LTEwLTEweiIgZmlsbD0iI2Q5YmI5MiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNhNzgyNWEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTQ4IDQ0Yy00IDE0LTUgMzItMyA1MCIvPjxwYXRoIGQ9Ik02MCA0MWMtMyAxNi0zIDM0LTEgNTQiLz48cGF0aCBkPSJNNzIgNDFjLTEgMTYgMCAzNiAyIDU0Ii8+PHBhdGggZD0iTTg0IDQ1YzIgMTQgNCAzMiA0IDUwIi8+CjwvZz4KPHBhdGggZD0iTTI4IDcwYy0xMC0yLTE4IDItMjIgMTAtMiA1IDAgMTAgNiAxMGgxOCIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMzAgNjJsLTQtMTAgOSA2eiIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9Ijc2IiByPSIyLjYiIGZpbGw9IiMzYTJhMWMiLz4KPGNpcmNsZSBjeD0iNyIgY3k9Ijg1IiByPSIyIiBmaWxsPSIjNWEzYjI1Ii8+Cjwvc3ZnPg==",
+          "alt": "tatu",
+          "frase": "ta___",
+          "certa": "tu",
+          "erradas": [
+            "to",
+            "te"
+          ],
+          "explicacao": "ta · tu — tatu"
+        },
+        {
+          "frase": "___mate",
+          "emoji": "🍅",
+          "certa": "to",
+          "erradas": [
+            "ta",
+            "tu"
+          ],
+          "explicacao": "to · ma · te — tomate"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTEyIiByeD0iNDAiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjM4IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM1IDQ2bDExIDkiIHN0cm9rZT0iIzlhYTViMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjU2IiBjeT0iODAiIHI9IjIyIi8+PHBhdGggZD0iTTQ0IDUyaDU4YTggOCAwIDAgMSA4IDh2MTRINjB6Ii8+PC9nPgo8ZyBmaWxsPSIjZTUzOTM1Ij48Y2lyY2xlIGN4PSI1NiIgY3k9IjgwIiByPSIyMiIvPjxwYXRoIGQ9Ik00NCA1Mmg1OGE4IDggMCAwIDEgOCA4djE0SDYweiIvPjwvZz4KPHJlY3QgeD0iNzYiIHk9IjU3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjN2ExNTEyIi8+CjxwYXRoIGQ9Ik00MiA3MGMtNSA3LTYgMTUtMyAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTIgNTZoNDYiIHN0cm9rZT0iI2ZmOGE4MCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTYiIGN5PSI4MCIgcj0iOCIgZmlsbD0iI2M2MjgyOCIvPgo8L3N2Zz4=",
+          "alt": "apito",
+          "frase": "a___to",
+          "certa": "pi",
+          "erradas": [
+            "pe",
+            "ti"
+          ],
+          "explicacao": "a · pi · to — apito"
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Da mão para o teclado",
+      "itens": [
+        {
+          "palavra": "pato",
+          "emoji": "🦆"
+        },
+        {
+          "palavra": "pipa",
+          "emoji": "🪁"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "alt": "pote",
+          "palavra": "pote"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjYyIiBjeT0iMTEwIiByeD0iNDgiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTk4IDkyYzEwIDIgMTggMCAyNC02IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODhhNmEiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMCA5NGgtNHYxMmgxMGwyLThNNTAgOTZ2MTBoMTBsMS05TTc0IDk2djEwaDEwbDEtOU04OCA5MmwyIDE0aDlsLTEtMTQiIGZpbGw9IiNjOWE3N2YiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIyIDg2YzAtMjYgMTgtNDYgNDQtNDZzMzggMjIgMzggNDZjMCA2LTQgMTAtMTAgMTBIMzJjLTYgMC0xMC00LTEwLTEweiIgZmlsbD0iI2Q5YmI5MiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNhNzgyNWEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTQ4IDQ0Yy00IDE0LTUgMzItMyA1MCIvPjxwYXRoIGQ9Ik02MCA0MWMtMyAxNi0zIDM0LTEgNTQiLz48cGF0aCBkPSJNNzIgNDFjLTEgMTYgMCAzNiAyIDU0Ii8+PHBhdGggZD0iTTg0IDQ1YzIgMTQgNCAzMiA0IDUwIi8+CjwvZz4KPHBhdGggZD0iTTI4IDcwYy0xMC0yLTE4IDItMjIgMTAtMiA1IDAgMTAgNiAxMGgxOCIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMzAgNjJsLTQtMTAgOSA2eiIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9Ijc2IiByPSIyLjYiIGZpbGw9IiMzYTJhMWMiLz4KPGNpcmNsZSBjeD0iNyIgY3k9Ijg1IiByPSIyIiBmaWxsPSIjNWEzYjI1Ii8+Cjwvc3ZnPg==",
+          "alt": "tatu",
+          "palavra": "tatu"
+        },
+        {
+          "palavra": "teia",
+          "emoji": "🕸️"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTEyIiByeD0iNDAiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjM4IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM1IDQ2bDExIDkiIHN0cm9rZT0iIzlhYTViMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjU2IiBjeT0iODAiIHI9IjIyIi8+PHBhdGggZD0iTTQ0IDUyaDU4YTggOCAwIDAgMSA4IDh2MTRINjB6Ii8+PC9nPgo8ZyBmaWxsPSIjZTUzOTM1Ij48Y2lyY2xlIGN4PSI1NiIgY3k9IjgwIiByPSIyMiIvPjxwYXRoIGQ9Ik00NCA1Mmg1OGE4IDggMCAwIDEgOCA4djE0SDYweiIvPjwvZz4KPHJlY3QgeD0iNzYiIHk9IjU3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjN2ExNTEyIi8+CjxwYXRoIGQ9Ik00MiA3MGMtNSA3LTYgMTUtMyAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTIgNTZoNDYiIHN0cm9rZT0iI2ZmOGE4MCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTYiIGN5PSI4MCIgcj0iOCIgZmlsbD0iI2M2MjgyOCIvPgo8L3N2Zz4=",
+          "alt": "apito",
+          "palavra": "apito"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Liga o desenho à palavra",
+      "instrucao": "Toca no desenho e depois na palavra escrita à mão.",
+      "itens": [
+        [
+          "🦆",
+          "[[pato]]"
+        ],
+        [
+          "🍞",
+          "[[pão]]"
+        ],
+        [
+          "🦶",
+          "[[pé]]"
+        ],
+        [
+          "🕸️",
+          "[[teia]]"
+        ],
+        [
+          "🍅",
+          "[[tomate]]"
+        ],
+        [
+          "🦚",
+          "[[pavão]]"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "visual": "comboio",
+      "letra": "manuscrita",
+      "titulo": "Comboio dos ditongos",
+      "instrucao": "Que ditongo falta? Toca na carruagem certa.",
+      "itens": [
+        {
+          "frase": "p___",
+          "emoji": "🍞",
+          "certa": "ão",
+          "erradas": [
+            "ai",
+            "au"
+          ],
+          "explicacao": "pão"
+        },
+        {
+          "frase": "p___",
+          "emoji": "🪵",
+          "certa": "au",
+          "erradas": [
+            "ão",
+            "ai"
+          ],
+          "explicacao": "pau"
+        },
+        {
+          "frase": "p___xe",
+          "emoji": "🐟",
+          "certa": "ei",
+          "erradas": [
+            "ai",
+            "ou"
+          ],
+          "explicacao": "peixe"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPHBhdGggZD0iTTY0IDEyNGMtMS0yMiAwLTQ0IDItNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRmOGEyYiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTY0IDEwNGMtMTQtMi0yNC0xMC0yOC0yMiAxNCAwIDI0IDggMjggMjJ6IiBmaWxsPSIjNmJiZjU5IiBzdHJva2U9IiMzZDZlMjIiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik02NiA5NmMxMC02IDIyLTYgMzAgMC0xMCA2LTIyIDYtMzAgMHoiIGZpbGw9IiM2YmJmNTkiIHN0cm9rZT0iIzNkNmUyMiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGcgc3Ryb2tlPSIjOGYxYzE1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgo8Y2lyY2xlIGN4PSI2NCIgY3k9IjI2IiByPSIyMCIgZmlsbD0iI2M2MjgyOCIvPgo8Y2lyY2xlIGN4PSI0MCIgY3k9IjQ0IiByPSIyMiIgZmlsbD0iI2U1MzkzNSIvPgo8Y2lyY2xlIGN4PSI4OCIgY3k9IjQ0IiByPSIyMiIgZmlsbD0iI2U1MzkzNSIvPgo8Y2lyY2xlIGN4PSI2NCIgY3k9IjU2IiByPSIyMiIgZmlsbD0iI2VmNTM1MCIvPgo8L2c+CjxwYXRoIGQ9Ik00OCA1NGM0IDggMTAgMTIgMTYgMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4zNSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNjQiIGN5PSI0NCIgcj0iMTAiIGZpbGw9IiMyYjJiMmIiLz4KPGcgZmlsbD0iIzJiMmIyYiI+PGNpcmNsZSBjeD0iNTEiIGN5PSIzNiIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iNzciIGN5PSIzNiIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MSIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iNzgiIGN5PSI1MSIgcj0iMi4yIi8+PGNpcmNsZSBjeD0iNjQiIGN5PSIyOSIgcj0iMi4yIi8+PC9nPgo8Y2lyY2xlIGN4PSI2NCIgY3k9IjQ0IiByPSI0IiBmaWxsPSIjNWI1YjViIi8+Cjwvc3ZnPg==",
+          "alt": "papoila",
+          "frase": "pap___la",
+          "certa": "oi",
+          "erradas": [
+            "ou",
+            "ei"
+          ],
+          "explicacao": "papoila"
+        },
+        {
+          "frase": "pav___",
+          "emoji": "🦚",
+          "certa": "ão",
+          "erradas": [
+            "au",
+            "ei"
+          ],
+          "explicacao": "pavão"
+        },
+        {
+          "frase": "tes___ra",
+          "emoji": "✂️",
+          "certa": "ou",
+          "erradas": [
+            "oi",
+            "au"
+          ],
+          "explicacao": "tesoura"
+        },
+        {
+          "frase": "papag___o",
+          "emoji": "🦜",
+          "certa": "ai",
+          "erradas": [
+            "ei",
+            "au"
+          ],
+          "explicacao": "papagaio"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTIwIiByeD0iMjQiIHJ5PSI0IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTQiLz4KPHBhdGggZD0iTTU4IDhoMTJ2MTRINTh6IiBmaWxsPSIjYTg3NDNkIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNjQgMjBjLTI4IDAtNDIgMTQtNDIgMzIgMCAyMiAyMiAzOCAzNiA1NGgxMmMxNC0xNiAzNi0zMiAzNi01NCAwLTE4LTE0LTMyLTQyLTMyeiIgZmlsbD0iI2U5YjI2ZiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI0IDQ2YzI2IDggNTQgOCA4MCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlNTM5MzUiIHN0cm9rZS13aWR0aD0iNyIvPgo8cGF0aCBkPSJNMjQgNThjMjYgOCA1NCA4IDgwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJlODZkZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxwYXRoIGQ9Ik0zMCA3MmMyMiA3IDQ2IDcgNjggMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmJiZjU5IiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM2IDM0Yy02IDYtOCAxNC02IDIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTU4IDEwNGgxMmwtNiAxNnoiIGZpbGw9IiM5YWE1YjEiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMDQgMzBjMTAgNiAxNCAxNiAxMiAyNk0yNCAzMGMtMTAgNi0xNCAxNi0xMiAyNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWRhc2hhcnJheT0iMiA3Ii8+Cjwvc3ZnPg==",
+          "alt": "piao",
+          "frase": "pi___",
+          "certa": "ão",
+          "erradas": [
+            "au",
+            "ai"
+          ],
+          "explicacao": "pião"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Bate palmas!",
+      "instrucao": "Diz a palavra e bate palmas. Quantas sílabas tem? Leva o avião até à nuvem certa.",
+      "itens": [
+        {
+          "pergunta": "pé",
+          "emoji": "🦶",
+          "certa": "👏",
+          "erradas": [
+            "👏👏",
+            "👏👏👏"
+          ],
+          "explicacao": "pé — 1 sílaba"
+        },
+        {
+          "pergunta": "pato",
+          "emoji": "🦆",
+          "certa": "👏👏",
+          "erradas": [
+            "👏",
+            "👏👏👏"
+          ],
+          "explicacao": "pa · to — 2 sílabas"
+        },
+        {
+          "pergunta": "tomate",
+          "emoji": "🍅",
+          "certa": "👏👏👏",
+          "erradas": [
+            "👏👏",
+            "👏"
+          ],
+          "explicacao": "to · ma · te — 3 sílabas"
+        },
+        {
+          "pergunta": "pão",
+          "emoji": "🍞",
+          "certa": "👏",
+          "erradas": [
+            "👏👏",
+            "👏👏👏"
+          ],
+          "explicacao": "pão — 1 sílaba"
+        },
+        {
+          "pergunta": "pipocas",
+          "emoji": "🍿",
+          "certa": "👏👏👏",
+          "erradas": [
+            "👏👏",
+            "👏"
+          ],
+          "explicacao": "pi · po · cas — 3 sílabas"
+        },
+        {
+          "pergunta": "teia",
+          "emoji": "🕸️",
+          "certa": "👏👏",
+          "erradas": [
+            "👏",
+            "👏👏👏"
+          ],
+          "explicacao": "tei · a — 2 sílabas"
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Ditongos e letras grandes",
+      "instrucao": "Escreve no teclado. Para o til (~) e para as letras grandes, segue as teclas amarelas!",
+      "itens": [
+        {
+          "palavra": "pão",
+          "emoji": "🍞"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTIwIiByeD0iMjQiIHJ5PSI0IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTQiLz4KPHBhdGggZD0iTTU4IDhoMTJ2MTRINTh6IiBmaWxsPSIjYTg3NDNkIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNjQgMjBjLTI4IDAtNDIgMTQtNDIgMzIgMCAyMiAyMiAzOCAzNiA1NGgxMmMxNC0xNiAzNi0zMiAzNi01NCAwLTE4LTE0LTMyLTQyLTMyeiIgZmlsbD0iI2U5YjI2ZiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTI0IDQ2YzI2IDggNTQgOCA4MCAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlNTM5MzUiIHN0cm9rZS13aWR0aD0iNyIvPgo8cGF0aCBkPSJNMjQgNThjMjYgOCA1NCA4IDgwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJlODZkZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxwYXRoIGQ9Ik0zMCA3MmMyMiA3IDQ2IDcgNjggMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmJiZjU5IiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM2IDM0Yy02IDYtOCAxNC02IDIyIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1vcGFjaXR5PSIuNiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTU4IDEwNGgxMmwtNiAxNnoiIGZpbGw9IiM5YWE1YjEiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMDQgMzBjMTAgNiAxNCAxNiAxMiAyNk0yNCAzMGMtMTAgNi0xNCAxNi0xMiAyNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWRhc2hhcnJheT0iMiA3Ii8+Cjwvc3ZnPg==",
+          "alt": "piao",
+          "palavra": "pião"
+        },
+        {
+          "palavra": "pé",
+          "emoji": "🦶"
+        },
+        {
+          "palavra": "peixe",
+          "emoji": "🐟"
+        },
+        {
+          "palavra": "Pepe",
+          "emoji": "👦"
+        },
+        {
+          "palavra": "Tita",
+          "emoji": "👧"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Arruma: P ou T?",
+      "instrucao": "Toca num desenho e depois na caixa da letra com que começa.",
+      "caixas": [
+        "p [[p]]",
+        "t [[t]]"
+      ],
+      "itens": [
+        [
+          "🐼 panda",
+          "p [[p]]"
+        ],
+        [
+          "🐢 tartaruga",
+          "t [[t]]"
+        ],
+        [
+          "🍐 pera",
+          "p [[p]]"
+        ],
+        [
+          "🥁 tambor",
+          "t [[t]]"
+        ],
+        [
+          "🐷 porco",
+          "p [[p]]"
+        ],
+        [
+          "☎️ telefone",
+          "t [[t]]"
+        ],
+        [
+          "🐧 pinguim",
+          "p [[p]]"
+        ],
+        [
+          "⛺ tenda",
+          "t [[t]]"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "letra": "manuscrita",
+      "juntar": "",
+      "titulo": "Constrói a palavra",
+      "instrucao": "Toca nas sílabas pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "🍅",
+          "pecas": [
+            "to",
+            "ma",
+            "te"
+          ]
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTA0IiByeD0iNTQiIHJ5PSI3IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgtOCA2NCA2NCkiPgo8cGF0aCBkPSJNMjAgMzRoODh2NjJIMjB6IiBmaWxsPSIjZTg4MzRhIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yOCA0Mmg3MnY0NkgyOHoiIGZpbGw9IiNmNmIyN2QiIHN0cm9rZT0iI2M5NjAyYyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik02NCA0N2wyMiAxNy0yMiAxNy0yMi0xN3oiIGZpbGw9IiM0YTkwZDkiIHN0cm9rZT0iIzJjNWY4YSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTY0IDU2bDEwIDgtMTAgOC0xMC04eiIgZmlsbD0iI2JmZTBmZiIvPgo8cGF0aCBkPSJNMjggNDJsOSA5TTEwMCA0MmwtOSA5TTI4IDg4bDktOU0xMDAgODhsLTktOSIgc3Ryb2tlPSIjYzk2MDJjIiBzdHJva2Utd2lkdGg9IjIuNSIvPgo8ZyBzdHJva2U9IiNjOTYwMmMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNMTQgMzhoNk0xNCA0Nmg2TTE0IDU0aDZNMTQgNjJoNk0xNCA3MGg2TTE0IDc4aDZNMTQgODZoNk0xNCA5NGg2Ii8+CjxwYXRoIGQ9Ik0xMDggMzhoNk0xMDggNDZoNk0xMDggNTRoNk0xMDggNjJoNk0xMDggNzBoNk0xMDggNzhoNk0xMDggODZoNk0xMDggOTRoNiIvPgo8L2c+PC9nPjwvc3ZnPg==",
+          "alt": "tapete",
+          "pecas": [
+            "ta",
+            "pe",
+            "te"
+          ]
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTEyIiByeD0iNDAiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjM4IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM1IDQ2bDExIDkiIHN0cm9rZT0iIzlhYTViMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjU2IiBjeT0iODAiIHI9IjIyIi8+PHBhdGggZD0iTTQ0IDUyaDU4YTggOCAwIDAgMSA4IDh2MTRINjB6Ii8+PC9nPgo8ZyBmaWxsPSIjZTUzOTM1Ij48Y2lyY2xlIGN4PSI1NiIgY3k9IjgwIiByPSIyMiIvPjxwYXRoIGQ9Ik00NCA1Mmg1OGE4IDggMCAwIDEgOCA4djE0SDYweiIvPjwvZz4KPHJlY3QgeD0iNzYiIHk9IjU3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjN2ExNTEyIi8+CjxwYXRoIGQ9Ik00MiA3MGMtNSA3LTYgMTUtMyAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTIgNTZoNDYiIHN0cm9rZT0iI2ZmOGE4MCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTYiIGN5PSI4MCIgcj0iOCIgZmlsbD0iI2M2MjgyOCIvPgo8L3N2Zz4=",
+          "alt": "apito",
+          "pecas": [
+            "a",
+            "pi",
+            "to"
+          ]
+        },
+        {
+          "emoji": "🍿",
+          "pecas": [
+            "pi",
+            "po",
+            "cas"
+          ]
+        },
+        {
+          "emoji": "🦈",
+          "pecas": [
+            "tu",
+            "ba",
+            "rão"
+          ]
+        },
+        {
+          "emoji": "🦜",
+          "pecas": [
+            "pa",
+            "pa",
+            "gai",
+            "o"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Copia a frase",
+      "instrucao": "Copia a frase no teclado. Não te esqueças da letra grande, do espaço e do ponto final!",
+      "itens": [
+        {
+          "palavra": "O pato papa.",
+          "emoji": "🦆"
+        },
+        {
+          "palavra": "A pipa é tua.",
+          "emoji": "🪁"
+        },
+        {
+          "palavra": "O Tito ata o totó.",
+          "emoji": "👦"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória: à mão e no teclado",
+      "instrucao": "Vira duas cartas e encontra a mesma palavra escrita à mão e no teclado.",
+      "itens": [
+        [
+          "pato",
+          "[[pato]]"
+        ],
+        [
+          "pote",
+          "[[pote]]"
+        ],
+        [
+          "teia",
+          "[[teia]]"
+        ],
+        [
+          "tapete",
+          "[[tapete]]"
+        ],
+        [
+          "apito",
+          "[[apito]]"
+        ],
+        [
+          "pião",
+          "[[pião]]"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Lê e escolhe",
+      "instrucao": "Lê as frases. Qual é a frase do desenho?",
+      "itens": [
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "alt": "pote",
+          "pergunta": "Qual é a frase certa?",
+          "certa": "É o pote.",
+          "erradas": [
+            "É a pata.",
+            "É o tatu."
+          ]
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTA0IiByeD0iNTQiIHJ5PSI3IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8ZyB0cmFuc2Zvcm09InJvdGF0ZSgtOCA2NCA2NCkiPgo8cGF0aCBkPSJNMjAgMzRoODh2NjJIMjB6IiBmaWxsPSIjZTg4MzRhIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yOCA0Mmg3MnY0NkgyOHoiIGZpbGw9IiNmNmIyN2QiIHN0cm9rZT0iI2M5NjAyYyIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik02NCA0N2wyMiAxNy0yMiAxNy0yMi0xN3oiIGZpbGw9IiM0YTkwZDkiIHN0cm9rZT0iIzJjNWY4YSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTY0IDU2bDEwIDgtMTAgOC0xMC04eiIgZmlsbD0iI2JmZTBmZiIvPgo8cGF0aCBkPSJNMjggNDJsOSA5TTEwMCA0MmwtOSA5TTI4IDg4bDktOU0xMDAgODhsLTktOSIgc3Ryb2tlPSIjYzk2MDJjIiBzdHJva2Utd2lkdGg9IjIuNSIvPgo8ZyBzdHJva2U9IiNjOTYwMmMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgo8cGF0aCBkPSJNMTQgMzhoNk0xNCA0Nmg2TTE0IDU0aDZNMTQgNjJoNk0xNCA3MGg2TTE0IDc4aDZNMTQgODZoNk0xNCA5NGg2Ii8+CjxwYXRoIGQ9Ik0xMDggMzhoNk0xMDggNDZoNk0xMDggNTRoNk0xMDggNjJoNk0xMDggNzBoNk0xMDggNzhoNk0xMDggODZoNk0xMDggOTRoNiIvPgo8L2c+PC9nPjwvc3ZnPg==",
+          "alt": "tapete",
+          "pergunta": "Qual é a frase certa?",
+          "certa": "É o tapete.",
+          "erradas": [
+            "É a teia.",
+            "É o pato."
+          ]
+        },
+        {
+          "pergunta": "Qual é a frase certa?",
+          "emoji": "🕸️",
+          "certa": "É a teia.",
+          "erradas": [
+            "É o tio.",
+            "É a pipa."
+          ]
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGcgdHJhbnNmb3JtPSJyb3RhdGUoMzAgNjQgNjQpIj4KPHJlY3QgeD0iNTgiIHk9IjYiIHdpZHRoPSIxMiIgaGVpZ2h0PSI2MiIgcng9IjUiIGZpbGw9IiNjNThiNGYiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTUwIDhoMjgiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTUwIDhoMjgiIHN0cm9rZT0iI2UwYTg2OCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTU4IDY0aDEydjhINTh6IiBmaWxsPSIjOGE5NmEzIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCA3Mmg0OHYyMmMwIDE0LTEwIDI2LTI0IDMwLTE0LTQtMjQtMTYtMjQtMzB6IiBmaWxsPSIjYWViOGM0IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00OCA4MHYxMmMwIDggNCAxNiAxMCAyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjYiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjwvZz48L3N2Zz4=",
+          "alt": "pa",
+          "pergunta": "Qual é a frase certa?",
+          "certa": "É a pá.",
+          "erradas": [
+            "É o pé.",
+            "É o pão."
+          ]
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPHBhdGggZD0iTTYgMTE4YzgtMjQgMzAtMzYgNTgtMzZzNTAgMTIgNTggMzZ6IiBmaWxsPSIjYjU4MzVhIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxnIGZpbGw9IiM4ZjY0NDAiPjxjaXJjbGUgY3g9IjI0IiBjeT0iMTA4IiByPSI0Ii8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA0IiByPSI1Ii8+PGNpcmNsZSBjeD0iODQiIGN5PSIxMTQiIHI9IjMiLz48Y2lyY2xlIGN4PSI0MCIgY3k9IjExNiIgcj0iMyIvPjwvZz4KPHBhdGggZD0iTTMwIDk2YzAtMzYgMTQtNjIgMzQtNjJzMzQgMjYgMzQgNjJ6IiBmaWxsPSIjNmY2YTdhIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00NiA5NmMwLTIyIDgtMzggMTgtMzhzMTggMTYgMTggMzh6IiBmaWxsPSIjOWI5NWE2Ii8+CjxlbGxpcHNlIGN4PSI2NCIgY3k9IjY2IiByeD0iMTAiIHJ5PSI3IiBmaWxsPSIjZjRhNmI3IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxlbGxpcHNlIGN4PSI2MiIgY3k9IjY0IiByeD0iMyIgcnk9IjIiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii43Ii8+CjxjaXJjbGUgY3g9IjUyIiBjeT0iNTIiIHI9IjEwIiBmaWxsPSIjZmZmIiBzdHJva2U9IiMzYTNhNDYiIHN0cm9rZS13aWR0aD0iMyIvPgo8Y2lyY2xlIGN4PSI3NiIgY3k9IjUyIiByPSIxMCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjM2EzYTQ2IiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTYyIDUyaDQiIHN0cm9rZT0iIzNhM2E0NiIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxjaXJjbGUgY3g9IjUzIiBjeT0iNTMiIHI9IjMiIGZpbGw9IiMyYjJiMmIiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjUzIiByPSIzIiBmaWxsPSIjMmIyYjJiIi8+CjxwYXRoIGQ9Ik0yOCA5OGMtNi00LTgtMTAtNC0xNCA0IDIgOCA4IDggMTR6TTEwMCA5OGM2LTQgOC0xMCA0LTE0LTQgMi04IDgtOCAxNHoiIGZpbGw9IiNmNGE2YjciIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIyLjUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTUwIDcwbC0xNC0yTTUwIDc0bC0xMyA0TTc4IDcwbDE0LTJNNzggNzRsMTMgNCIgc3Ryb2tlPSIjM2EzYTQ2IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4=",
+          "alt": "toupeira",
+          "pergunta": "Este animal tem as vogais todas: a, e, i, o, u. Quem é?",
+          "certa": "[[toupeira]]",
+          "erradas": [
+            "[[tatu]]",
+            "[[tigre]]"
+          ],
+          "explicacao": "t-ou-p-ei-r-a: tem a, e, i, o, u!"
+        }
+      ]
+    }
+  ],
+  "ilustracao": {
+    "tipo": "letras",
+    "letras": [
+      "p",
+      "t",
+      "ão"
+    ]
+  }
+}
