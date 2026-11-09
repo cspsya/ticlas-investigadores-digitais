@@ -33,13 +33,14 @@ SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
 AULAS = RAIZ / "aulas"
 MODELO = BASE / "modelo-jogo.html"
-TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "pares", "classificar", "ordenar"]
+TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
 MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
 SEGUNDOS = {"escolher": 30, "verdadeiro_falso": 25, "completar": 35, "escrever": 60, "frase": 180,
-            "ditado": 45, "pares": 20, "classificar": 20, "ordenar": 45}
+            "ditado": 45, "copiar": 60, "pares": 20, "classificar": 20, "ordenar": 45}
 CACHE = BASE / ".cache-emojis"
 NOTO = "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u{}.svg"
+COPIAVEIS = re.compile(r"^[A-Za-zÇçÁÉÍÓÚáéíóúÀàÂÊÔâêôÃÕãõ .,!?-]+$")  # o mesmo que COPIAVEIS em src/motor.js
 BLOCO_EMOJIS = re.compile(r"\n?<!-- EMOJIS:INICIO -->.*?<!-- EMOJIS:FIM -->\n?", re.S)
 BLOCO = re.compile(r'(<!-- AULA:INICIO -->\s*<script type="application/json" id="aula">)(.*?)(</script>\s*<!-- AULA:FIM -->)', re.S)
 
@@ -93,7 +94,7 @@ def validar(a):
                 if len({norm(x) for x in er}) != len(er):
                     e.append(f"{w}: há opções repetidas em «erradas».")
 
-            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "ordenar") and not isinstance(it, dict):
+            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar") and not isinstance(it, dict):
                 e.append(f"{w}: tem de ser um objeto {{ ... }}.")
                 continue
             if isinstance(it, dict) and "maiusculas" in it and not isinstance(it["maiusculas"], bool):
@@ -130,6 +131,11 @@ def validar(a):
             elif tipo == "ditado":
                 if not tem_texto(it.get("palavra")):
                     e.append(f"{w}: falta a «palavra» a ditar.")
+            elif tipo == "copiar":
+                if not tem_texto(it.get("palavra")):
+                    e.append(f"{w}: falta a «palavra» a copiar.")
+                elif not COPIAVEIS.match(unicodedata.normalize("NFC", str(it["palavra"]))):
+                    e.append(f"{w}: «{it['palavra']}» tem caracteres que o tipo copiar não ensina (usa letras, acentos, espaço e . , ! ? -).")
             elif tipo == "pares":
                 if not (isinstance(it, list) and len(it) == 2 and all(tem_texto(x) for x in it)):
                     e.append(f"{w}: cada par tem de ser [\"esquerda\", \"direita\"].")
@@ -177,6 +183,7 @@ def json_seguro(aula):
 def montar_modelo():
     molde = (SRC / "molde.html").read_text(encoding="utf-8")
     return (molde.replace("/*ESTILO*/", (SRC / "estilo.css").read_text(encoding="utf-8").strip())
+                 .replace("/*MANUSCRITA*/", (SRC / "manuscrita.css").read_text(encoding="utf-8").strip())
                  .replace("__MASCOTE__", (SRC / "mascote.json").read_text(encoding="utf-8").strip())
                  .replace("/*LINGUAS*/", (SRC / "linguas.js").read_text(encoding="utf-8").strip())
                  .replace("/*MOTOR*/", (SRC / "motor.js").read_text(encoding="utf-8").strip()))

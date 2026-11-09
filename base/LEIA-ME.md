@@ -60,7 +60,7 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 - `instrucao` é opcional (há uma instrução por omissão para cada tipo).
 - `baralhar: true` baralha a ordem dos itens. As **opções de resposta são sempre baralhadas**.
 
-### Os 8 tipos de atividade
+### Os 9 tipos de atividade
 
 | Tipo | Itens | Exemplo |
 |---|---|---|
@@ -69,6 +69,7 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 | `completar` | `frase` com `___`, `certa`, `erradas` (sem `erradas`, o aluno escreve) | `{"frase":"O ___ salta na relva.","certa":"grilo","erradas":["prato","cravo"]}` |
 | `escrever` (resposta exata) | `pergunta`, `resposta` (texto ou lista de respostas aceites) | `{"pergunta":"Escreve o nome do desenho.","emoji":"🌸","resposta":"flor","dica":"Começa por FL."}` |
 | `ditado` | `palavra`, `frase` (opcional, para dar contexto) | `{"palavra":"prato","frase":"Comi a sopa no prato.","emoji":"🍽️"}` — o Ticl@s dita; há botões «Ouvir» e «Mais devagar» |
+| `copiar` | `palavra` (palavra ou frase curta) | `{"palavra":"pão","emoji":"🍞"}` — a palavra aparece em **letra manuscrita** e, por baixo de cada letra, a tecla do teclado que a escreve (com ~, ´ e ⇧ quando é preciso). O aluno escreve letra a letra e a tecla seguinte brilha no teclado do ecrã (também se pode tocar nele, útil no quadro). `"teclado": false` na ronda esconde o teclado do ecrã. Um engano ainda vale 3 estrelas. |
 | `escrever` (frase livre) | `pergunta`, `palavra` (opcional), `minPalavras` (opcional) | `{"pergunta":"Escreve uma frase com «flor».","palavra":"flor","minPalavras":4}` |
 | `pares` | `["esquerda","direita"]` | `["BR","brinquedo"]` — com `"visual":"memoria"` na ronda passa a jogo da memória |
 | `classificar` | `["texto","caixa"]` + `caixas` na ronda | `"caixas":["BR","PR"], "itens":[["broa","BR"],["prego","PR"]]` |
@@ -87,6 +88,8 @@ Opções de aspeto em `escolher` (`"visual"`):
 | `comboio` | O comboio chega com as respostas nas carruagens e parte quando se acerta. |
 | `buracos` | O Ticl@s salta de buracos com uma resposta; toca-se quando aparece a certa. Sem pressa: ele volta sempre a aparecer. |
 | `aviao` | Toca-se numa nuvem (ou usa-se ▲ ▼ e «Apanhar!», ou as setas do teclado) e o avião voa até ela. |
+
+**Letra manuscrita:** qualquer texto entre `[[` e `]]` aparece em letra manuscrita (Playwrite PT, o modelo escolar português), por exemplo `["🦆", "[[pato]]"]` nos pares ou `"certa": "p [[p]]"`. Com `"letra": "manuscrita"` na ronda, as opções, peças, cartas e caixas dessa ronda ficam todas em manuscrita (e, no `completar`, também a palavra a completar, como `"frase": "___to"`). As perguntas só ficam em manuscrita com `[[ ]]`. No `completar` pode usar-se `"visual"` (`baloes`, `comboio`…) como no `escolher`.
 
 As respostas podem ser só emojis (ex.: `"certa": "🔵"`) ou grupos de emojis para contar (ex.: `"🌼🌼🌼"`), o que é ideal para o 1.º ano. Em `ordenar`, `"juntar": ""` junta as peças sem espaço (sílabas e letras); por omissão junta com espaço (frases).
 

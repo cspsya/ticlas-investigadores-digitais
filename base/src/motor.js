@@ -4,11 +4,11 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.2';
+const VERSAO = 'V3.3';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
-const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'pares', 'classificar', 'ordenar'];
+const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
-const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, pares: 20, classificar: 20, ordenar: 45 };
+const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, copiar: 60, pares: 20, classificar: 20, ordenar: 45 };
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
@@ -85,11 +85,35 @@ function baralharDiferente(lista, igual = (x, y) => x === y) {
   do { b = baralhar(lista); n++; } while (n < 30 && b.every((x, i) => igual(x, lista[i])));
   return b;
 }
+const soEmoji = s => { const x = semMarca(s); return /\p{Extended_Pictographic}/u.test(x) && !/[\p{L}\p{N}]/u.test(x); }; // só desenhos, sem texto
 const sorteio = lista => lista[Math.floor(Math.random() * lista.length)];
 const norm = s => String(s ?? '').trim().replace(/\s+/g, ' ').toLocaleLowerCase('pt-PT').normalize('NFC');
 const semAcentos = s => norm(s).normalize('NFD').replace(/[̀-ͯ]/g, '');
 const semFim = s => String(s ?? '').trim().replace(/\s+/g, ' ').normalize('NFC').replace(/[.!?…]+$/, '');
 const palavras = s => String(s || '').normalize('NFC').split(/[^\p{L}\p{N}-]+/u).filter(Boolean);
+/* ---------- letra manuscrita ----------
+   [[texto]] em qualquer texto da aula aparece em letra manuscrita (Playwrite PT, modelo escolar português).
+   "letra": "manuscrita" numa ronda escreve em manuscrita as opções, peças, cartas e caixas dessa ronda
+   (e a palavra a completar, no tipo completar). As perguntas só ficam em manuscrita com [[ ]]. */
+let RONDA = null;
+const MARCA = /\[\[(.+?)\]\]/g;
+const semMarca = s => String(s ?? '').replace(MARCA, '$1');
+function rico(texto, cursivo) {
+  const s = String(texto ?? '');
+  const todo = cursivo ?? !!(RONDA && RONDA.letra === 'manuscrita');
+  if (!s.includes('[[')) return todo ? h('span', { class: 'manuscrita' }, s) : s;
+  const frag = document.createDocumentFragment();
+  let i = 0, m; MARCA.lastIndex = 0;
+  while ((m = MARCA.exec(s))) {
+    if (m.index > i) frag.append(todo ? h('span', { class: 'manuscrita' }, s.slice(i, m.index)) : s.slice(i, m.index));
+    frag.append(h('span', { class: 'manuscrita' }, m[1]));
+    i = m.index + m[0].length;
+  }
+  if (i < s.length) frag.append(todo ? h('span', { class: 'manuscrita' }, s.slice(i)) : s.slice(i));
+  return frag;
+}
+// Caracteres que o tipo «copiar» sabe ensinar no teclado português
+const COPIAVEIS = /^[A-Za-zÇçÁÉÍÓÚáéíóúÀàÂÊÔâêôÃÕãõ .,!?-]+$/u;
 const temTexto = v => (typeof v === 'string' && v.trim() !== '') || typeof v === 'number';
 const timers = new Set();
 function depois(ms, fn) { const t = setTimeout(() => { timers.delete(t); fn(); }, ms); timers.add(t); return t; }
@@ -142,7 +166,7 @@ function validarAula(a) {
         if (it.erradas.some(x => norm(x) === norm(it.certa))) e.push(`${w}: a resposta certa também aparece em «erradas».`);
         if (new Set(it.erradas.map(norm)).size !== it.erradas.length) e.push(`${w}: há opções repetidas em «erradas».`);
       };
-      if (['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'ordenar'].includes(r.tipo) && (!it || typeof it !== 'object' || Array.isArray(it))) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'ordenar'].includes(r.tipo) && (!it || typeof it !== 'object' || Array.isArray(it))) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
       if (it && typeof it === 'object' && !Array.isArray(it) && it.maiusculas !== undefined && typeof it.maiusculas !== 'boolean') e.push(`${w}: «maiusculas» tem de ser true ou false (sem aspas).`);
       switch (r.tipo) {
         case 'escolher':
@@ -164,6 +188,10 @@ function validarAula(a) {
           break;
         case 'ditado':
           if (!temTexto(it.palavra)) e.push(`${w}: falta a «palavra» a ditar.`);
+          break;
+        case 'copiar':
+          if (!temTexto(it.palavra)) e.push(`${w}: falta a «palavra» a copiar.`);
+          else if (!COPIAVEIS.test(String(it.palavra).normalize('NFC'))) e.push(`${w}: «${it.palavra}» tem caracteres que o tipo copiar não ensina (usa letras, acentos, espaço e . , ! ? -).`);
           break;
         case 'pares':
           if (!Array.isArray(it) || it.length !== 2 || !it.every(temTexto)) e.push(`${w}: cada par tem de ser ["esquerda", "direita"].`);
@@ -234,7 +262,7 @@ function vozPT() {
   const v = speechSynthesis.getVoices();
   return v.find(x => /pt[-_]PT/i.test(x.lang)) || v.find(x => /^pt/i.test(x.lang)) || null;
 }
-const limparFala = s => String(s ?? '').replace(/\p{Extended_Pictographic}️?(?:‍\p{Extended_Pictographic}️?)*/gu, ' ').replace(/_{3,}/g, ' … ').replace(/\s+/g, ' ').trim();
+const limparFala = s => semMarca(s).replace(/\p{Extended_Pictographic}️?(?:‍\p{Extended_Pictographic}️?)*/gu, ' ').replace(/_{3,}/g, ' … ').replace(/\s+/g, ' ').trim();
 // Lê em voz alta uma sequência de partes; cada parte pode destacar um elemento enquanto é lida.
 function lerSequencia(partes, lento) {
   if (!temFala()) return;
@@ -356,8 +384,8 @@ function comecar(continuar) {
 
 /* ---------- mapa de missões: escolha livre, pausa e retoma ---------- */
 function iconeRonda(r) {
-  if (r.tipo === 'escolher') return { baloes: '🎈', comboio: '🚂', buracos: '🕳️', aviao: '✈️' }[r.visual] || '🃏';
-  return { verdadeiro_falso: '✅', completar: '🧩', escrever: '✏️', ditado: '🎧', pares: r.visual === 'memoria' ? '🃏' : '🔗', classificar: '🗂️', ordenar: '🔢' }[r.tipo] || '⭐';
+  if (r.tipo === 'escolher' || (r.tipo === 'completar' && r.visual)) return { baloes: '🎈', comboio: '🚂', buracos: '🕳️', aviao: '✈️' }[r.visual] || (r.tipo === 'completar' ? '🧩' : '🃏');
+  return { verdadeiro_falso: '✅', completar: '🧩', escrever: '✏️', ditado: '🎧', copiar: '⌨️', pares: r.visual === 'memoria' ? '🃏' : '🔗', classificar: '🗂️', ordenar: '🔢' }[r.tipo] || '⭐';
 }
 function ecraMapa() {
   limparTimers(); calar();
@@ -397,6 +425,7 @@ function iniciarRonda() {
     ecraFim(); return;
   }
   const ri = lista[est.p], ronda = AULA.rondas[ri];
+  RONDA = ronda;
   est.pontos[ri] = 0; est.maximos[ri] = 0; delete est.feitas[ri];
   guardarProgresso(); atualizarEstrelas();
   const progresso = h('div', { class: 'progresso', 'aria-hidden': 'true' },
@@ -410,12 +439,12 @@ function iniciarRonda() {
       h('span', null, t(est.seq === 'bonus' ? 'rondaBonus' : 'ronda', { a: est.p + 1, b: lista.length })),
       h('span', { class: 'fase' }, nomeFase(ronda.fase))),
     h('div', { class: 'palco' },
-      mascote(['escrever', 'ditado'].includes(ronda.tipo) ? 'portatil' : 'aponta', h('div', { class: 'balao', id: 'balao' }, t('animo'))),
+      mascote(['escrever', 'ditado', 'copiar'].includes(ronda.tipo) ? 'portatil' : 'aponta', h('div', { class: 'balao', id: 'balao' }, t('animo'))),
       area),
     h('div', { class: 'nav' }, btAnterior,
       h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
-  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
+  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar }[ronda.tipo];
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
@@ -452,7 +481,7 @@ function blocoPergunta(it, conteudo, textoFala, opcoes) {
   const filhos = [];
   if (it.emoji) filhos.push(h('span', { class: 'emoji', 'aria-hidden': 'true' }, it.emoji));
   if (it.imagem) filhos.push(h('img', { class: it.imagemGrande ? 'ilustra grande' : 'ilustra', src: it.imagem, alt: it.alt || '' }));
-  if (conteudo) filhos.push(h('span', null, conteudo));
+  if (conteudo) filhos.push(h('span', null, typeof conteudo === 'string' ? rico(conteudo, false) : conteudo));
   const partes = () => [textoFala, ...(opcoes ? opcoes() : [])];
   if (somLigado() && (textoFala || opcoes)) filhos.push(h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(partes()) }, '🔊'));
   if (somLigado() && (textoFala || opcoes) && (AULA.ano <= 2 || AULA.lerAutomatico)) depois(400, () => lerSequencia(partes()));
@@ -515,9 +544,9 @@ function rondaItens(ri, ronda, area) {
   const seguinte = () => {
     limparTimers(); calar();
     if (i >= itens.length) { rondaConcluida(ri); return; }
-    poseMascote(['escrever', 'ditado'].includes(ronda.tipo) ? 'portatil' : 'aponta'); dizerBalao(t('animo'));
+    poseMascote(['escrever', 'ditado', 'copiar'].includes(ronda.tipo) ? 'portatil' : 'aponta'); dizerBalao(t('animo'));
     const it = itens[i], contador = itens.length > 1 ? `${i + 1} / ${itens.length}` : '';
-    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ditado: itemEscrever, ordenar: itemOrdenar }[ronda.tipo];
+    const desenhar = { escolher: itemEscolha, completar: itemEscolha, verdadeiro_falso: itemVF, escrever: itemEscrever, ditado: itemEscrever, copiar: itemCopiar, ordenar: itemOrdenar }[ronda.tipo];
     desenhar(ri, ronda, it, area, contador, () => { i++; seguinte(); });
   };
   seguinte();
@@ -529,23 +558,23 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
   const opcoes = baralhar([it.certa, ...erradas]);
   let lacuna = null, conteudo, fala;
   if (completar) {
-    const [a, b] = String(it.frase).split('___');
+    const [a, b] = String(it.frase).split('___'), manus = RONDA && RONDA.letra === 'manuscrita';
     lacuna = h('span', { class: 'lacuna' }, '?');
-    conteudo = h('span', null, a, lacuna, b); fala = String(it.frase);
+    conteudo = h('span', { class: manus ? 'manuscrita palavra-manus' : null }, rico(a, false), lacuna, rico(b, false)); fala = semMarca(it.frase).replace(/_{3,}/g, ' … ');
   } else { conteudo = it.pergunta; fala = it.pergunta; }
-  const visual = completar ? 'cartoes' : (ronda.visual || 'cartoes');
+  const visual = ronda.visual || 'cartoes';
   const botoes = [];
   let aoResolver = () => { };
   const c = criarItem(ri, it, opcoes.length, () => {
     botoes.forEach(b => { b.disabled = true; if (b.dataset.certa) b.classList.add('revela'); });
-    if (lacuna) lacuna.textContent = it.certa;
+    if (lacuna) lacuna.textContent = semMarca(it.certa);
     aoResolver(true);
-    return t('respostaCerta', { r: it.certa });
+    return t('respostaCerta', { r: semMarca(it.certa) });
   });
   const escolher = (b, op) => {
     if (c.resolvido || c.bloqueado || b.disabled) return;
     calar();
-    if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (lacuna) lacuna.textContent = it.certa; c.acertou(b); aoResolver(false); }
+    if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (lacuna) lacuna.textContent = semMarca(it.certa); c.acertou(b); aoResolver(false); }
     else c.errou(b);
   };
   const semMovimento = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
@@ -555,8 +584,8 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
     chaveInstr = 'i_buracos';
     jogo = h('div', { class: 'opcoes v-buracos' });
     opcoes.forEach(op => {
-      const b = h('button', { class: 'opcao buraco', 'data-certa': op === it.certa ? '1' : null, 'aria-label': String(op) },
-        h('span', { class: 'bicho' }, h('b', null, String(op)), h('img', { src: MASCOTE.ola, alt: '', draggable: 'false' })));
+      const b = h('button', { class: 'opcao buraco', 'data-certa': op === it.certa ? '1' : null, 'aria-label': semMarca(op) },
+        h('span', { class: 'bicho' }, h('b', null, rico(op)), h('img', { src: MASCOTE.ola, alt: '', draggable: 'false' })));
       // conta o toque se o esquilo estiver em cima ou tiver acabado de descer (margem para as crianças)
       b.onclick = () => { if (!b.classList.contains('cima') && Date.now() > (+b.dataset.ate || 0)) return; escolher(b, op); };
       botoes.push(b); jogo.append(b);
@@ -594,7 +623,7 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
       depois(semMovimento ? 0 : 600, () => { aviao.classList.remove('voa'); escolher(b, opcoes[faixa]); });
     };
     opcoes.forEach((op, k) => {
-      const b = h('button', { class: 'opcao nuvem', style: `top:${(k + 0.5) * 100 / n}%`, 'data-certa': op === it.certa ? '1' : null }, String(op));
+      const b = h('button', { class: 'opcao nuvem', style: `top:${(k + 0.5) * 100 / n}%`, 'data-certa': op === it.certa ? '1' : null }, rico(op));
       b.onclick = () => { if (faixa === k) apanhar(); else { mover(k); depois(semMovimento ? 0 : 420, apanhar); } };
       botoes.push(b); ceu.append(b);
     });
@@ -613,7 +642,7 @@ function itemEscolha(ri, ronda, it, area, contador, proximo) {
     const cores = ['#e8834a', '#5ba3d0', '#9b6bc9', '#4fa36b', '#d9578a'];
     jogo = h('div', { class: 'opcoes v-' + visual }, visual === 'comboio' ? h('span', { class: 'loco', 'aria-hidden': 'true' }, '🚂') : null);
     opcoes.forEach((op, k) => {
-      const b = h('button', { class: 'opcao', style: visual === 'baloes' ? `--bc:${cores[k % cores.length]}` : null, 'data-certa': op === it.certa ? '1' : null }, String(op));
+      const b = h('button', { class: 'opcao', style: visual === 'baloes' ? `--bc:${cores[k % cores.length]}` : null, 'data-certa': op === it.certa ? '1' : null }, rico(op));
       b.onclick = () => escolher(b, op);
       botoes.push(b); jogo.append(b);
     });
@@ -696,6 +725,153 @@ function itemEscrever(ri, ronda, it, area, contador, proximo) {
   encher(area, cabecalhoRonda(ronda, chaveInstr, contador), topo, h('div', { class: 'escrita' }, campo, btOk), criterios, c.nos);
   if (prefs.modo === 'computador') depois(50, () => campo.focus({ preventScroll: true }));
 }
+/* ---------- copiar: da letra manuscrita para o teclado ----------
+   Mostra a palavra em manuscrita e, por baixo de cada letra, a tecla (ou teclas) do teclado português
+   que a escrevem. O aluno escreve letra a letra; a tecla seguinte brilha no teclado do ecrã.
+   Campos do item: palavra (obrigatório), emoji ou imagem. Na ronda: "teclado": false esconde o teclado do ecrã. */
+const TECLADO_PT = [
+  [['\\', '\\'], ['1'], ['2'], ['3'], ['4'], ['5'], ['6'], ['7'], ['8'], ['9'], ['0'], ["'"], ['«'], ['⌫', 'apagar', 'larga']],
+  [['Tab', 'tab', 'media'], ['Q'], ['W'], ['E'], ['R'], ['T'], ['Y'], ['U'], ['I'], ['O'], ['P'], ['+'], ['´', 'agudo']],
+  [['Caps', 'caps', 'larga'], ['A'], ['S'], ['D'], ['F'], ['G'], ['H'], ['J'], ['K'], ['L'], ['Ç'], ['º'], ['~', 'til'], ['↵', 'enter', 'media']],
+  [['⇧', 'shift', 'larga'], ['<'], ['Z'], ['X'], ['C'], ['V'], ['B'], ['N'], ['M'], [','], ['.'], ['-'], ['⇧', 'shift', 'larga']],
+  [['espaço', 'espaco', 'espaco']]
+];
+// Teclas que escrevem cada carácter: [teclas a carregar antes (morta ou shift), tecla final]
+function teclasDe(ch) {
+  const base = ch.normalize('NFD'), letra = base[0], marca = base.slice(1);
+  const MORTAS = { '\u0303': ['~'], '\u0301': ['´'], '\u0300': ['⇧', '´'], '\u0302': ['⇧', '~'] };
+  if (ch === ' ') return { antes: [], tecla: 'espaço' };
+  if (ch === 'ç' || ch === 'Ç') return { antes: ch === 'Ç' ? ['⇧'] : [], tecla: 'Ç' };
+  if (ch === '!') return { antes: ['⇧'], tecla: '1' };
+  if (ch === '?') return { antes: ['⇧'], tecla: "'" };
+  if ('.,-'.includes(ch)) return { antes: [], tecla: ch };
+  const maiuscula = letra !== letra.toLowerCase();
+  const antes = [...(marca ? (MORTAS[marca] || []) : [])];
+  if (maiuscula) antes.push('⇧'); // acento primeiro (tecla morta), depois ⇧ + letra
+  return { antes, tecla: letra.toUpperCase(), morta: marca ? (MORTAS[marca] || []).slice(-1)[0] : null, maiuscula };
+}
+function itemCopiar(ri, ronda, it, area, contador, proximo) {
+  const alvo = [...String(it.palavra).normalize('NFC')];
+  let pos = 0, erradas = 0, morta = null, mortaShift = false, shiftEcra = false;
+  const c = criarItem(ri, it, 0, null);
+  // ponte: letra manuscrita → tecla(s) → letra escrita
+  const casas = alvo.map(ch => {
+    const tk = teclasDe(ch);
+    const cap = x => h('kbd', { class: 'tecla' + (x === '⇧' || x === '~' || x === '´' ? ' especial' : '') + (x === 'espaço' ? ' espaco' : '') }, x);
+    const teclas = h('span', { class: 'teclas' }, [...tk.antes.flatMap(x => [cap(x), h('i', null, '+')]), cap(tk.tecla)]);
+    const escrita = h('span', { class: 'escrita-letra' }, '');
+    return h('div', { class: 'casa' + (ch === ' ' ? ' espaco' : '') }, h('span', { class: 'manuscrita letra-manus' }, ch === ' ' ? '␣' : ch), h('span', { class: 'seta', 'aria-hidden': 'true' }, '↓'), teclas, escrita);
+  });
+  // as casas ficam agrupadas por palavra, para a frase só mudar de linha entre palavras
+  const grupos = []; let grupo = [];
+  casas.forEach((cs, k) => { if (alvo[k] === ' ') { grupos.push(h('span', { class: 'grupo-casas' }, grupo), cs); grupo = []; } else grupo.push(cs); });
+  if (grupo.length) grupos.push(h('span', { class: 'grupo-casas' }, grupo));
+  const ponte = h('div', { class: 'ponte' + (alvo.length > 9 ? ' compacta' : ''), 'aria-hidden': 'true' }, grupos);
+  const modelo = h('div', { class: 'caderno' }, h('span', { class: 'manuscrita' }, it.palavra));
+  const campo = h('input', { id: 'resposta', class: 'campo-copiar', 'aria-label': t('escreveAqui'), spellcheck: 'false', autocomplete: 'off', autocapitalize: 'off', placeholder: t('copiarAqui') });
+  // teclado do ecrã (também se pode tocar nas teclas, útil no quadro interativo)
+  const mapaTeclas = {};
+  const teclado = ronda.teclado === false ? null : h('div', { class: 'teclado-pt', 'aria-hidden': 'true' }, TECLADO_PT.map(linha => h('div', { class: 'linha-teclas' }, linha.map(([rot, nome, larg]) => {
+    const k = h('button', { class: 'tk' + (larg ? ' ' + larg : ''), tabindex: '-1', type: 'button', onmousedown: e => e.preventDefault() }, rot);
+    (mapaTeclas[rot] = mapaTeclas[rot] || []).push(k);
+    k.onclick = () => tocarEcra(rot);
+    return k;
+  }))));
+  function brilhar() {
+    if (!teclado) return;
+    teclado.querySelectorAll('.tk').forEach(k => k.classList.remove('brilha', 'antes'));
+    casas.forEach((cs, k) => { cs.classList.toggle('feita', k < pos); cs.classList.toggle('atual', k === pos); });
+    if (pos >= alvo.length) return;
+    const tk = teclasDe(alvo[pos]);
+    let antes = tk.antes.slice();
+    if (morta) antes = antes.filter(x => x !== morta && x !== '⇧');
+    if (shiftEcra) antes = antes.filter(x => x !== '⇧');
+    antes.forEach(x => (mapaTeclas[x] || []).forEach(k => k.classList.add('antes')));
+    (mapaTeclas[tk.tecla] || []).forEach(k => k.classList.add('brilha'));
+  }
+  function atualizarCasas() {
+    casas.forEach((cs, k) => { cs.lastChild.textContent = k < pos ? alvo[k] : ''; cs.classList.toggle('feita', k < pos); cs.classList.toggle('atual', k === pos && !c.resolvido); });
+    campo.value = alvo.slice(0, pos).join('');
+    brilhar();
+  }
+  function pista(esperado) {
+    const tk = teclasDe(esperado);
+    if (esperado === ' ') return t('copiarEspaco');
+    if (tk.morta) return t('copiarMorta', { s: tk.morta, l: tk.tecla });
+    if (tk.maiuscula || (tk.antes[0] === '⇧')) return t('copiarShift', { l: tk.tecla });
+    return t('copiarProcura', { l: tk.tecla });
+  }
+  function errar(esperado, tecla) {
+    erradas++; c.erros = 0; som('errado'); poseMascote('duvida', true); dizerBalao(t('pensaOutra'));
+    c.fb.className = 'feedback bad'; c.fb.textContent = pista(esperado);
+    const cs = casas[pos]; if (cs) { cs.classList.remove('abana'); void cs.offsetWidth; cs.classList.add('abana'); }
+    if (tecla && mapaTeclas[tecla]) mapaTeclas[tecla].forEach(k => { k.classList.add('errada'); depois(500, () => k.classList.remove('errada')); });
+  }
+  // devolve true se aceitou o carácter
+  function tentar(ch) {
+    if (c.resolvido || pos >= alvo.length) return false;
+    const esperado = alvo[pos];
+    const ok = ch === esperado || (esperado === esperado.toLowerCase() && ch.toLowerCase() === esperado);
+    if (!ok) { errar(esperado, ch.length === 1 ? ch.normalize('NFD')[0].toUpperCase() : null); return false; }
+    pos++; morta = null; shiftEcra = false;
+    c.fb.className = 'feedback'; c.fb.textContent = '';
+    if (pos >= alvo.length) terminar();
+    return true;
+  }
+  function terminar() {
+    campo.disabled = true;
+    c.erros = erradas <= 1 ? 0 : erradas <= 3 ? 1 : 2; // um engano na tecla ainda vale 3 estrelas
+    atualizarCasas();
+    modelo.classList.add('certo');
+    c.acertou(null, '«' + it.palavra + '»');
+  }
+  function processar() {
+    if (c.resolvido) return;
+    const escrito = [...campo.value.normalize('NFC')], feito = alvo.slice(0, pos);
+    if (escrito.length < pos) { // apagou letras
+      let k = 0; while (k < escrito.length && (escrito[k] === feito[k] || escrito[k].toLowerCase() === feito[k])) k++;
+      pos = k; atualizarCasas(); return;
+    }
+    const iguais = feito.every((x, k) => escrito[k] === x || (escrito[k] || '').toLowerCase() === x);
+    if (iguais) for (const ch of escrito.slice(pos)) { if (!tentar(ch)) break; }
+    if (!c.resolvido) atualizarCasas();
+  }
+  function tocarEcra(rot) {
+    if (c.resolvido) return;
+    if (rot === '⌫') { if (pos > 0) { pos--; atualizarCasas(); } return; }
+    if (rot === '⇧') { shiftEcra = !shiftEcra; teclado.querySelectorAll('.tk').forEach(k => k.textContent === '⇧' && k.classList.toggle('presa', shiftEcra)); brilhar(); return; }
+    if (rot === '~' || rot === '´') { morta = rot; mortaShift = shiftEcra; shiftEcra = false; brilhar(); return; }
+    if (['Tab', 'Caps', '↵'].includes(rot)) return;
+    let ch = rot === 'espaço' ? ' ' : rot;
+    if (/^\p{L}$/u.test(ch)) {
+      ch = shiftEcra ? ch.toUpperCase() : ch.toLowerCase();
+      const acento = morta === '~' ? (mortaShift ? '\u0302' : '\u0303') : morta === '´' ? (mortaShift ? '\u0300' : '\u0301') : null;
+      if (acento) ch = (ch + acento).normalize('NFC');
+    } else if (shiftEcra && rot === '1') ch = '!';
+    else if (shiftEcra && rot === "'") ch = '?';
+    teclado.querySelectorAll('.tk.presa').forEach(k => k.classList.remove('presa'));
+    const aceitou = tentar(ch);
+    if (!aceitou) { morta = null; shiftEcra = false; }
+    if (!c.resolvido) atualizarCasas();
+    if (prefs.modo === 'computador') campo.focus({ preventScroll: true });
+  }
+  campo.addEventListener('input', e => { if (!e.isComposing) processar(); });
+  campo.addEventListener('compositionend', () => depois(0, processar));
+  campo.addEventListener('keydown', e => {
+    if (e.key === 'Dead') { morta = e.code === 'Backslash' ? '~' : '´'; mortaShift = e.shiftKey; brilhar(); } // teclado PT: ~^ ao lado do Enter, ´` ao lado do P
+    else if (e.key === 'Enter' && c.resolvido) e.preventDefault();
+  });
+  const fala = () => [it.palavra];
+  c.aoContinuar(proximo);
+  encher(area, cabecalhoRonda(ronda, 'i_copiar', contador),
+    h('div', { class: 'copiar' },
+      h('div', { class: 'copiar-topo' }, blocoPergunta(Object.assign({}, it, { dica: null }), null, it.palavra), modelo),
+      h('div', { class: 'copiar-legenda' }, h('span', null, '✍️ ' + t('copiarModelo')), h('span', null, '⌨️ ' + t('copiarTeclas'))),
+      ponte, h('div', { class: 'escrita' }, campo), teclado),
+    c.nos);
+  atualizarCasas();
+  if (prefs.modo === 'computador') depois(50, () => campo.focus({ preventScroll: true }));
+}
 function itemOrdenar(ri, ronda, it, area, contador, proximo) {
   const juntar = it.juntar ?? ronda.juntar ?? ' ';
   const certas = it.pecas.map(String);
@@ -704,20 +880,20 @@ function itemOrdenar(ri, ronda, it, area, contador, proximo) {
   let montadas = pecas.slice(0, fixas);
   let soltas = baralharDiferente(pecas.slice(fixas), (x, y) => x.k === y.k);
   const montagem = h('div', { class: 'montagem', 'aria-live': 'polite', 'data-vazio': t('montagemVazia') }), bandeja = h('div', { class: 'pecas' });
-  const c = criarItem(ri, it, 0, () => { montadas = pecas.slice(); soltas = []; desenhar(true); return t('ordemCerta', { r: certas.join(juntar) }); });
+  const c = criarItem(ri, it, 0, () => { montadas = pecas.slice(); soltas = []; desenhar(true); return t('ordemCerta', { r: semMarca(certas.join(juntar)) }); });
   function desenhar(fim) {
     montagem.replaceChildren(...montadas.map((p, k) => h('button', {
       class: 'peca' + (fim || k < fixas || p.ok ? ' fixa' : ''), disabled: fim || k < fixas || p.ok || null,
       onclick: () => { if (c.resolvido || c.bloqueado) return; montadas.splice(k, 1); soltas.push(p); desenhar(); }
-    }, p.t)));
+    }, rico(p.t))));
     bandeja.replaceChildren(...soltas.map((p, k) => h('button', {
       class: 'peca', disabled: fim || null,
       onclick: () => { if (c.resolvido || c.bloqueado) return; soltas.splice(k, 1); montadas.push(p); desenhar(); if (!soltas.length) verificar(); }
-    }, p.t)));
+    }, rico(p.t))));
   }
   function verificar() {
     const certo = montadas.every((p, k) => norm(p.t) === norm(certas[k]));
-    if (certo) { montadas.forEach(p => p.ok = true); desenhar(true); c.acertou(null, '«' + certas.join(juntar) + '»'); return; }
+    if (certo) { montadas.forEach(p => p.ok = true); desenhar(true); c.acertou(null, '«' + semMarca(certas.join(juntar)) + '»'); return; }
     // as peças bem colocadas no início ficam; as outras voltam para a bandeja
     const ficam = [], voltam = [];
     montadas.forEach((p, k) => { if (k < fixas || (norm(p.t) === norm(certas[k]) && ficam.length === k)) { p.ok = true; ficam.push(p); } else voltam.push(p); });
@@ -746,7 +922,7 @@ function ecraLigar(ri, ronda, area, pares, contador, proximo) {
   const cores = ['#5BA3D0', '#E8834A', '#6BBF59', '#9b6bc9', '#d9578a', '#c9a227'];
   let selE = null, selD = null, feitos = 0, bloqueado = false;
   const fb = h('div', { class: 'feedback', role: 'status' });
-  const bE = esq.map(x => h('button', { class: 'peca' }, x.t)), bD = dir.map(x => h('button', { class: 'peca' }, x.t));
+  const bE = esq.map(x => h('button', { class: 'peca' + (soEmoji(x.t) ? ' so-emoji' : '') }, rico(x.t))), bD = dir.map(x => h('button', { class: 'peca' + (soEmoji(x.t) ? ' so-emoji' : '') }, rico(x.t)));
   const fixar = (k, revelado) => {
     const ie = esq.findIndex(x => x.k === k), id = dir.findIndex(x => x.k === k), cor = cores[k % cores.length];
     [bE[ie], bD[id]].forEach(b => { b.disabled = true; b.classList.remove('sel'); b.classList.add('fixa'); b.style.borderColor = cor; b.style.boxShadow = `0 4px 0 ${cor}`; if (revelado) b.style.borderStyle = 'dashed'; });
@@ -765,7 +941,7 @@ function ecraLigar(ri, ronda, area, pares, contador, proximo) {
       a.erros++; som('errado'); poseMascote('duvida', true); fb.className = 'feedback bad';
       be.classList.add('errado'); bd.classList.add('errado'); bloqueado = true;
       depois(600, () => { be.classList.remove('errado'); bd.classList.remove('errado'); bloqueado = false; });
-      if (a.erros >= limite) { fb.textContent = t('ligaCom', { a: a.t, b: pares[a.k][1] }); est.maximos[ri] += 3; guardarProgresso(); depois(600, () => fixar(a.k, true)); }
+      if (a.erros >= limite) { fb.textContent = t('ligaCom', { a: semMarca(a.t), b: semMarca(pares[a.k][1]) }); est.maximos[ri] += 3; guardarProgresso(); depois(600, () => fixar(a.k, true)); }
       else fb.textContent = t('errado');
     }
   };
@@ -782,7 +958,7 @@ function ecraMemoria(ri, ronda, area, pares, contador, proximo) {
   const botoes = cartas.map((c, i) => h('button', { class: 'carta', 'aria-label': 'Carta ' + (i + 1) }, '?'));
   botoes.forEach((b, i) => b.onclick = () => {
     if (ocupado || viradas.includes(i) || b.classList.contains('par')) return;
-    b.textContent = cartas[i].t; b.classList.add('virada'); viradas.push(i);
+    b.replaceChildren(rico(cartas[i].t)); b.classList.add('virada'); b.classList.toggle('so-emoji', soEmoji(cartas[i].t)); viradas.push(i);
     if (somLigado()) falar(cartas[i].t);
     if (viradas.length < 2) return;
     const [x, y] = viradas;
@@ -794,7 +970,7 @@ function ecraMemoria(ri, ronda, area, pares, contador, proximo) {
       if (feitos === pares.length) { fb.textContent = t('todosPares'); poseMascote('ideia', true); depois(900, proximo); }
     } else {
       ocupado = true; fb.className = 'feedback'; fb.textContent = t('naoPar');
-      depois(1000, () => { [x, y].forEach(n => { botoes[n].textContent = '?'; botoes[n].classList.remove('virada'); }); viradas = []; ocupado = false; });
+      depois(1000, () => { [x, y].forEach(n => { botoes[n].textContent = '?'; botoes[n].classList.remove('virada', 'so-emoji'); }); viradas = []; ocupado = false; });
     }
   });
   encher(area, cabecalhoRonda(ronda, 'i_memoria', contador), h('div', { class: 'memoria' }, botoes), fb);
@@ -812,14 +988,14 @@ function ecraClassificar(ri, ronda, area, itens, contador, proximo) {
   const fb = h('div', { class: 'feedback', role: 'status' });
   const bandeja = h('div', { class: 'pecas' });
   const botoes = pecas.map((p, k) => {
-    const b = h('button', { class: 'peca', draggable: 'true' }, p.t);
+    const b = h('button', { class: 'peca', draggable: 'true' }, rico(p.t));
     b.onclick = () => escolher(k);
     b.ondragstart = ev => { ev.dataTransfer.setData('text/plain', String(k)); escolher(k); };
     return b;
   });
   const caixas = ronda.caixas.map(nome => {
     const lista = h('div', { class: 'lista-caixa' });
-    const el = h('div', { class: 'caixa', role: 'button', tabindex: '0', 'aria-label': String(nome) }, h('h4', null, String(nome)), lista);
+    const el = h('div', { class: 'caixa', role: 'button', tabindex: '0', 'aria-label': semMarca(nome) }, h('h4', null, rico(nome)), lista);
     el.onclick = () => largar(nome, el);
     el.onkeydown = ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); largar(nome, el); } };
     el.ondragover = ev => { ev.preventDefault(); el.classList.add('alvo'); };
@@ -850,7 +1026,7 @@ function ecraClassificar(ri, ronda, area, itens, contador, proximo) {
       p.erros++; som('errado'); poseMascote('duvida', true); fb.className = 'feedback bad';
       botoes[k].classList.remove('sel'); botoes[k].classList.add('errado'); el.classList.add('alvo'); bloqueado = true;
       depois(650, () => { botoes[k].classList.remove('errado'); el.classList.remove('alvo'); bloqueado = false; });
-      if (p.erros >= limite) { fb.textContent = t('vaiPara', { a: p.t, b: p.cx }); est.maximos[ri] += 3; guardarProgresso(); depois(650, () => colocar(k, true)); }
+      if (p.erros >= limite) { fb.textContent = t('vaiPara', { a: semMarca(p.t), b: semMarca(p.cx) }); est.maximos[ri] += 3; guardarProgresso(); depois(650, () => colocar(k, true)); }
       else fb.textContent = t('errado');
     }
   }
