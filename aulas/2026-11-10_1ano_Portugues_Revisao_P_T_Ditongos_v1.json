@@ -16,10 +16,45 @@
   "rondas": [
     {
       "fase": "aquecimento",
+      "tipo": "copiar",
+      "titulo": "Da mão para o teclado",
+      "itens": [
+        {
+          "palavra": "pato",
+          "emoji": "🦆"
+        },
+        {
+          "palavra": "pipa",
+          "emoji": "🪁"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "alt": "pote",
+          "palavra": "pote"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjYyIiBjeT0iMTEwIiByeD0iNDgiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTk4IDkyYzEwIDIgMTggMCAyNC02IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODhhNmEiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMCA5NGgtNHYxMmgxMGwyLThNNTAgOTZ2MTBoMTBsMS05TTc0IDk2djEwaDEwbDEtOU04OCA5MmwyIDE0aDlsLTEtMTQiIGZpbGw9IiNjOWE3N2YiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIyIDg2YzAtMjYgMTgtNDYgNDQtNDZzMzggMjIgMzggNDZjMCA2LTQgMTAtMTAgMTBIMzJjLTYgMC0xMC00LTEwLTEweiIgZmlsbD0iI2Q5YmI5MiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNhNzgyNWEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTQ4IDQ0Yy00IDE0LTUgMzItMyA1MCIvPjxwYXRoIGQ9Ik02MCA0MWMtMyAxNi0zIDM0LTEgNTQiLz48cGF0aCBkPSJNNzIgNDFjLTEgMTYgMCAzNiAyIDU0Ii8+PHBhdGggZD0iTTg0IDQ1YzIgMTQgNCAzMiA0IDUwIi8+CjwvZz4KPHBhdGggZD0iTTI4IDcwYy0xMC0yLTE4IDItMjIgMTAtMiA1IDAgMTAgNiAxMGgxOCIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMzAgNjJsLTQtMTAgOSA2eiIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9Ijc2IiByPSIyLjYiIGZpbGw9IiMzYTJhMWMiLz4KPGNpcmNsZSBjeD0iNyIgY3k9Ijg1IiByPSIyIiBmaWxsPSIjNWEzYjI1Ii8+Cjwvc3ZnPg==",
+          "alt": "tatu",
+          "palavra": "tatu"
+        },
+        {
+          "palavra": "teia",
+          "emoji": "🕸️"
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTEyIiByeD0iNDAiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjM4IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM1IDQ2bDExIDkiIHN0cm9rZT0iIzlhYTViMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjU2IiBjeT0iODAiIHI9IjIyIi8+PHBhdGggZD0iTTQ0IDUyaDU4YTggOCAwIDAgMSA4IDh2MTRINjB6Ii8+PC9nPgo8ZyBmaWxsPSIjZTUzOTM1Ij48Y2lyY2xlIGN4PSI1NiIgY3k9IjgwIiByPSIyMiIvPjxwYXRoIGQ9Ik00NCA1Mmg1OGE4IDggMCAwIDEgOCA4djE0SDYweiIvPjwvZz4KPHJlY3QgeD0iNzYiIHk9IjU3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjN2ExNTEyIi8+CjxwYXRoIGQ9Ik00MiA3MGMtNSA3LTYgMTUtMyAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTIgNTZoNDYiIHN0cm9rZT0iI2ZmOGE4MCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTYiIGN5PSI4MCIgcj0iOCIgZmlsbD0iI2M2MjgyOCIvPgo8L3N2Zz4=",
+          "alt": "apito",
+          "palavra": "apito"
+        }
+      ],
+      "instrucao": "Olha para a palavra escrita à mão e escreve-a no teclado. A tecla que brilha é a próxima!"
+    },
+    {
+      "fase": "desafios",
       "tipo": "escolher",
       "visual": "buracos",
       "titulo": "Toca no som do início",
-      "instrucao": "Diz o nome do desenho. Toca no Ticl@s que tem a primeira letra.",
+      "instrucao": "Olha para o desenho. Toca no Ticl@s que tem a primeira letra.",
       "itens": [
         {
           "pergunta": "Com que letra começa?",
@@ -172,40 +207,6 @@
       ]
     },
     {
-      "fase": "escrita",
-      "tipo": "copiar",
-      "titulo": "Da mão para o teclado",
-      "itens": [
-        {
-          "palavra": "pato",
-          "emoji": "🦆"
-        },
-        {
-          "palavra": "pipa",
-          "emoji": "🪁"
-        },
-        {
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
-          "alt": "pote",
-          "palavra": "pote"
-        },
-        {
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjYyIiBjeT0iMTEwIiByeD0iNDgiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTk4IDkyYzEwIDIgMTggMCAyNC02IiBmaWxsPSJub25lIiBzdHJva2U9IiNhODhhNmEiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zMCA5NGgtNHYxMmgxMGwyLThNNTAgOTZ2MTBoMTBsMS05TTc0IDk2djEwaDEwbDEtOU04OCA5MmwyIDE0aDlsLTEtMTQiIGZpbGw9IiNjOWE3N2YiIHN0cm9rZT0iIzVhM2IyNSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPHBhdGggZD0iTTIyIDg2YzAtMjYgMTgtNDYgNDQtNDZzMzggMjIgMzggNDZjMCA2LTQgMTAtMTAgMTBIMzJjLTYgMC0xMC00LTEwLTEweiIgZmlsbD0iI2Q5YmI5MiIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNhNzgyNWEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KPHBhdGggZD0iTTQ4IDQ0Yy00IDE0LTUgMzItMyA1MCIvPjxwYXRoIGQ9Ik02MCA0MWMtMyAxNi0zIDM0LTEgNTQiLz48cGF0aCBkPSJNNzIgNDFjLTEgMTYgMCAzNiAyIDU0Ii8+PHBhdGggZD0iTTg0IDQ1YzIgMTQgNCAzMiA0IDUwIi8+CjwvZz4KPHBhdGggZD0iTTI4IDcwYy0xMC0yLTE4IDItMjIgMTAtMiA1IDAgMTAgNiAxMGgxOCIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMzAgNjJsLTQtMTAgOSA2eiIgZmlsbD0iI2UzYzlhNSIgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8Y2lyY2xlIGN4PSIyMCIgY3k9Ijc2IiByPSIyLjYiIGZpbGw9IiMzYTJhMWMiLz4KPGNpcmNsZSBjeD0iNyIgY3k9Ijg1IiByPSIyIiBmaWxsPSIjNWEzYjI1Ii8+Cjwvc3ZnPg==",
-          "alt": "tatu",
-          "palavra": "tatu"
-        },
-        {
-          "palavra": "teia",
-          "emoji": "🕸️"
-        },
-        {
-          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY2IiBjeT0iMTEyIiByeD0iNDAiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMSIvPgo8Y2lyY2xlIGN4PSIyNiIgY3k9IjM4IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWFhNWIxIiBzdHJva2Utd2lkdGg9IjUiLz4KPHBhdGggZD0iTTM1IDQ2bDExIDkiIHN0cm9rZT0iIzlhYTViMSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGcgc3Ryb2tlPSIjNWEzYjI1IiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjU2IiBjeT0iODAiIHI9IjIyIi8+PHBhdGggZD0iTTQ0IDUyaDU4YTggOCAwIDAgMSA4IDh2MTRINjB6Ii8+PC9nPgo8ZyBmaWxsPSIjZTUzOTM1Ij48Y2lyY2xlIGN4PSI1NiIgY3k9IjgwIiByPSIyMiIvPjxwYXRoIGQ9Ik00NCA1Mmg1OGE4IDggMCAwIDEgOCA4djE0SDYweiIvPjwvZz4KPHJlY3QgeD0iNzYiIHk9IjU3IiB3aWR0aD0iMTQiIGhlaWdodD0iMTAiIHJ4PSIyIiBmaWxsPSIjN2ExNTEyIi8+CjxwYXRoIGQ9Ik00MiA3MGMtNSA3LTYgMTUtMyAyMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjU1IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNNTIgNTZoNDYiIHN0cm9rZT0iI2ZmOGE4MCIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGNpcmNsZSBjeD0iNTYiIGN5PSI4MCIgcj0iOCIgZmlsbD0iI2M2MjgyOCIvPgo8L3N2Zz4=",
-          "alt": "apito",
-          "palavra": "apito"
-        }
-      ]
-    },
-    {
       "fase": "desafios",
       "tipo": "pares",
       "titulo": "Liga o desenho à palavra",
@@ -334,7 +335,7 @@
       "tipo": "escolher",
       "visual": "aviao",
       "titulo": "Bate palmas!",
-      "instrucao": "Diz a palavra e bate palmas. Quantas sílabas tem? Leva o avião até à nuvem certa.",
+      "instrucao": "Lê a palavra baixinho e bate palmas. Quantas sílabas tem? Leva o avião até à nuvem certa.",
       "itens": [
         {
           "pergunta": "pé",
@@ -540,19 +541,24 @@
       "fase": "escrita",
       "tipo": "copiar",
       "titulo": "Copia a frase",
-      "instrucao": "Copia a frase no teclado. Não te esqueças da letra grande, do espaço e do ponto final!",
+      "instrucao": "Copia a frase no teclado. Segue as teclas que brilham: letra grande, espaço e ponto final!",
       "itens": [
         {
-          "palavra": "O pato pia.",
+          "palavra": "É o pato.",
           "emoji": "🦆"
         },
         {
-          "palavra": "A pipa é tua.",
-          "emoji": "🪁"
+          "palavra": "É a lupa.",
+          "emoji": "🔍"
         },
         {
-          "palavra": "O Tito ata o totó.",
-          "emoji": "👦"
+          "palavra": "É a teia.",
+          "emoji": "🕸️"
+        },
+        {
+          "palavra": "É o pote.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjggMTI4Ij4KPGVsbGlwc2UgY3g9IjY0IiBjeT0iMTE4IiByeD0iMzYiIHJ5PSI1IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIuMTIiLz4KPHBhdGggZD0iTTQ0IDIwaDQwdjhjMCA0LTMgNi0zIDkgMCA0IDIxIDEyIDIxIDQwIDAgMjYtMTcgMzktMzggMzlTMjYgMTAzIDI2IDc3YzAtMjggMjEtMzYgMjEtNDAgMC0zLTMtNS0zLTl6IiBmaWxsPSIjZTA3YTQ1IiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik00MCAxOGg0OGE0IDQgMCAwIDEgMCA4SDQwYTQgNCAwIDAgMSAwLTh6IiBmaWxsPSIjZWY5NDYxIiBzdHJva2U9IiM1YTNiMjUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0zNiA2NGMxOCA3IDM4IDcgNTYgMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYjg1NTJhIiBzdHJva2Utd2lkdGg9IjMiLz4KPHBhdGggZD0iTTMzIDgwYzIwIDggNDIgOCA2MiAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNiODU1MmEiIHN0cm9rZS13aWR0aD0iMyIvPgo8cGF0aCBkPSJNNDIgNTJjLTUgOC03IDIwLTQgMzIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii40NSIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+",
+          "alt": "pote"
         }
       ]
     },

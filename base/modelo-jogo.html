@@ -1896,7 +1896,7 @@ function itemCopiar(ri, ronda, it, area, contador, proximo) {
     if (pos >= alvo.length) return;
     const tk = teclasDe(alvo[pos]);
     let antes = tk.antes.slice();
-    if (morta) antes = antes.filter(x => x !== morta && x !== '⇧');
+    if (morta && antes.includes(morta)) antes = antes.slice(antes.indexOf(morta) + 1); // depois da tecla morta, falta o que vem a seguir (ex.: É = ´ e depois ⇧ + E)
     if (shiftEcra) antes = antes.filter(x => x !== '⇧');
     antes.forEach(x => (mapaTeclas[x] || []).forEach(k => k.classList.add('antes')));
     (mapaTeclas[tk.tecla] || []).forEach(k => k.classList.add('brilha'));
