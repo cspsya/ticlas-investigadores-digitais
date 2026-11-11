@@ -7,7 +7,7 @@ Um único motor de jogo para todas as aulas de TIC curricular. **Para criar um j
 | Ficheiro | Para que serve |
 |---|---|
 | `modelo-jogo.html` | Jogo completo pronto a usar, com uma aula de exemplo. É este ficheiro que se copia. |
-| `exemplos/` | Aulas de exemplo: 2.º ano (Português, com escrita e ditado) e 1.º ano sem leitura (Matemática: contagens, padrões, buracos e avião), cada uma com o jogo já gerado. |
+| `exemplos/` | Aulas de exemplo: 2.º ano (Português, com escrita e ditado), 1.º ano sem leitura (Matemática: contagens, padrões, buracos e avião) e 1.º ano de TIC com guia da aula (Conhecer o teclado), cada uma com o jogo já gerado. |
 | `construir.py` | Valida o conteúdo e gera o jogo (opcional: publica em `jogos/` e regista em `jogos.json`). |
 | `src/` | Código do motor (estilo, motor, línguas, imagens dos emojis, molde, imagens do Ticl@s). Só se mexe aqui para melhorar o motor de todos os jogos. |
 
@@ -133,9 +133,41 @@ Ver `exemplos/exemplo-1ano-contar-e-padroes.json`. Regras: `emoji` ou imagens em
 
 Estimativa usada pelo motor (multiplicada por 1,5 no 1.º ano, 1,2 no 2.º e 0,9 no 4.º): escolher 30 s, ditado 45 s, verdadeiro/falso 25 s, completar 35 s, escrever 60 s, frase livre 3 min, cada par ou peça 20 s, ordenar 45 s, mais 30 s por ronda. Para **60 minutos** contar, como referência, com 6 rondas de cerca de 10 minutos: no 1.º ano 6 a 8 itens por ronda; do 2.º ao 4.º ano 8 a 10 itens por ronda e 2 a 3 frases livres; mais 1 ou 2 rondas de bónus. O painel do professor mostra a estimativa de cada jogo. São estimativas: só a observação das aulas diz a duração real.
 
+## Guia da aula (opcional)
+
+O mesmo ficheiro da aula pode trazer a **planificação da aula**: momentos com tempos, indicadores de observação e materiais. O jogo ignora este bloco; serve para gerar a **ficha da aula** e a **versão genérica** (para o Gaveta, sem dados da escola). Escreve-se uma vez e serve as duas.
+
+```json
+"guia": {
+  "aprendizagens": ["Localizar no teclado as vogais e as teclas de espaço e de apagar."],
+  "materiais": ["Quadro interativo", "Um computador por aluno ou por par"],
+  "sequencia": [
+    { "momento": "Explorar",   "minutos": 10, "recurso": "apresentacao", "descricao": "Mostrar o teclado ampliado no quadro." },
+    { "momento": "Demonstrar", "minutos": 10, "descricao": "Cada aluno encontra no seu teclado as teclas que o professor diz." },
+    { "momento": "Praticar",   "minutos": 30, "recurso": "jogo", "descricao": "Jogo interativo; quem termina mais cedo faz o bónus." },
+    { "momento": "Fechar",     "minutos": 10, "descricao": "Cada aluno diz uma tecla que aprendeu. Arrumar o material." }
+  ],
+  "indicadores": ["Encontra as vogais no teclado.", "Usa a barra de espaços e a tecla de apagar."],
+  "apresentacao": "apresentacoes/AAAA-MM-DD/ficheiro.html"
+}
+```
+
+Obrigatórios dentro de `guia`: `sequencia` (cada momento com `momento`, `minutos` sem aspas e `descricao`) e `indicadores`. `recurso` pode ser `jogo` ou `apresentacao`. Opcionais: `aprendizagens`, `materiais`, `apresentacao`.
+
+**Tempos:** a verificação avisa se a sequência passar dos 60 min ou se o momento com `"recurso": "jogo"` não bater certo com a duração estimada do jogo (por exemplo, 10 min de prática para um jogo de 25 min). 3 a 5 indicadores chegam para observar numa aula.
+
+**Comandos:**
+
+```bash
+python3 base/construir.py --ficha aulas/minha-aula.json        # ficha da aula para imprimir (minha-aula_ficha.html)
+python3 base/construir.py --exportar-generico exportar-generico # todas as aulas com guia: JSON genérico + ficha
+```
+
+A versão genérica leva só o conteúdo (título, ano, disciplina, foco TIC, resumo, objetivo, guia e rondas): **sem turma, data nem tema**. Se o texto ainda mencionar uma turma, a escola ou o Ticl@s, a exportação avisa para rever. A pasta `exportar-generico/` não é publicada no site. Exemplo completo: [`exemplos/exemplo-1ano-conhecer-o-teclado.json`](exemplos/exemplo-1ano-conhecer-o-teclado.json).
+
 ## Instrução para a tarefa agendada no ChatGPT
 
-> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes (o ditado conta como um), por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Cada emoji tem de corresponder sem ambiguidade à palavra (não usar o mesmo emoji para duas palavras). Nomes próprios nas respostas com maiúscula. Sem temas do Dia do Pai nem do Dia da Mãe. Preenche `resumo` (uma frase curta dirigida ao aluno, sem informação para o professor) e `focoTic` (a competência TIC principal, por exemplo «Rato: arrastar», «Teclado: escrever», «Segurança digital» ou «Pesquisa»). Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
+> Cria o conteúdo do jogo da aula de TIC curricular de [turma], [data], sobre [tema da planificação]. Usa o jogo-base V3: copia `base/modelo-jogo.html` do repositório cspsya/ticlas-investigadores-digitais e substitui **apenas** o JSON entre `<!-- AULA:INICIO -->` e `<!-- AULA:FIM -->`, seguindo o formato de `base/LEIA-ME.md`. Não alteres o CSS, o JavaScript nem as imagens. Regras: português de Portugal (AO90) e conteúdos das Aprendizagens Essenciais do [ano].º ano. Usa pelo menos 4 tipos de atividade diferentes (o ditado conta como um), por esta ordem: aquecimento → desafios → escrita → bónus. As opções erradas têm de ser plausíveis (erros típicos dos alunos), nunca absurdas. Inclui `explicacao` nos itens de verdadeiro/falso e `dica` nos itens de escrever. Para o 1.º ano usa `emoji` em todos os itens e frases muito curtas. Cada emoji tem de corresponder sem ambiguidade à palavra (não usar o mesmo emoji para duas palavras). Nomes próprios nas respostas com maiúscula. Sem temas do Dia do Pai nem do Dia da Mãe. Preenche `resumo` (uma frase curta dirigida ao aluno, sem informação para o professor) e `focoTic` (a competência TIC principal, por exemplo «Rato: arrastar», «Teclado: escrever», «Segurança digital» ou «Pesquisa»). Se for pedido o guia da aula, inclui `guia` (ver «Guia da aula»): sequência explorar → demonstrar → praticar (com `"recurso": "jogo"`) → fechar, com tempos que somem no máximo 60 min e com o tempo de prática ajustado ao jogo, e 3 a 5 indicadores observáveis; no guia e nas rondas não menciones turmas, a escola nem o Ticl@s. Duração: [30/60] minutos. Antes de entregar, confirma que o JSON é válido e que nenhuma resposta certa aparece em `erradas`.
 
 ## Publicação automática no GitHub
 

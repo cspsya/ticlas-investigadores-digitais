@@ -11,6 +11,8 @@ Uso (a partir da raiz do repositório):
   python3 base/construir.py --aulas                  gera os jogos de todas as aulas em aulas/ (usado no GitHub)
   python3 base/construir.py --verificar-site         verifica todos os jogos e o jogos.json (usado no GitHub)
   python3 base/construir.py --preparar-site _site    copia o site e embute as imagens (usado no GitHub)
+  python3 base/construir.py --ficha aula.json        gera a ficha da aula (HTML para imprimir) a partir do «guia»
+  python3 base/construir.py --exportar-generico PASTA aulas com «guia» em versão genérica, sem dados da escola
 
 As imagens dos emojis (Noto Emoji, Apache 2.0) precisam de: pip install emoji
 e de acesso à Internet (descarregadas uma vez e guardadas em base/.cache-emojis/).
@@ -210,7 +212,74 @@ def validar(a):
                 e.append(f"{onde}: no jogo da memória um texto não pode aparecer dos dois lados.")
     if not any(isinstance(r, dict) and r.get("fase") != "bonus" for r in rondas):
         e.append("Tem de existir pelo menos uma ronda que não seja de bónus.")
+    if "guia" in a:
+        e.extend(validar_guia(a["guia"]))
     return e
+
+
+RECURSOS = ["jogo", "apresentacao"]
+
+
+def lista_textos(v):
+    return isinstance(v, list) and bool(v) and all(tem_texto(x) for x in v)
+
+
+def validar_guia(g):
+    """Guia da aula (opcional): sequência, indicadores e materiais. O jogo ignora-o; só serve a ficha da aula."""
+    if not isinstance(g, dict):
+        return ["«guia» tem de ser um objeto { ... }."]
+    e = []
+    seq = g.get("sequencia")
+    if not isinstance(seq, list) or not seq:
+        e.append("Guia: falta a lista «sequencia» (os momentos da aula).")
+    else:
+        for i, m in enumerate(seq, 1):
+            w = f"Guia, momento {i}"
+            if not isinstance(m, dict):
+                e.append(f"{w}: tem de ser um objeto {{ ... }}.")
+                continue
+            if not tem_texto(m.get("momento")):
+                e.append(f"{w}: falta o nome do «momento» (ex.: Explorar).")
+            if not (isinstance(m.get("minutos"), int) and not isinstance(m.get("minutos"), bool) and m["minutos"] > 0):
+                e.append(f"{w}: «minutos» tem de ser um número inteiro (sem aspas).")
+            if not tem_texto(m.get("descricao")):
+                e.append(f"{w}: falta a «descricao» do que se faz.")
+            if "recurso" in m and m["recurso"] not in RECURSOS:
+                e.append(f"{w}: «recurso» tem de ser {' ou '.join(RECURSOS)}.")
+    if not lista_textos(g.get("indicadores")):
+        e.append("Guia: falta a lista «indicadores» (o que se observa nos alunos).")
+    for campo in ("materiais", "aprendizagens"):
+        if campo in g and not lista_textos(g[campo]):
+            e.append(f"Guia: «{campo}» tem de ser uma lista de textos.")
+    if "apresentacao" in g and not tem_texto(g["apresentacao"]):
+        e.append("Guia: «apresentacao» tem de ser o endereço da apresentação.")
+    return e
+
+
+def avisos_guia(aula):
+    """Avisos (não impedem a publicação): tempos da sequência que não batem certo com o jogo."""
+    g = aula.get("guia")
+    if not isinstance(g, dict) or not isinstance(g.get("sequencia"), list):
+        return []
+    av = []
+    seq = [m for m in g["sequencia"] if isinstance(m, dict) and isinstance(m.get("minutos"), int)]
+    total = sum(m["minutos"] for m in seq)
+    if total > 60:
+        av.append(f"a sequência soma {total} min, mais do que uma aula de 60 min.")
+    pratica = sum(m["minutos"] for m in seq if m.get("recurso") == "jogo")
+    princ = [r for r in aula["rondas"] if r.get("fase") != "bonus"]
+    estimado = minutos(princ, aula["ano"])
+    if not pratica:
+        av.append("nenhum momento da sequência tem \"recurso\": \"jogo\".")
+    elif estimado > pratica * 1.25:
+        av.append(f"o jogo precisa de ≈ {estimado} min, mas o momento com o jogo tem {pratica} min. "
+                  "Retira rondas (ou passa-as a bónus) ou dá mais tempo à prática.")
+    elif estimado < pratica * 0.6:
+        av.append(f"o momento com o jogo tem {pratica} min, mas o jogo só dá para ≈ {estimado} min. Acrescenta itens ou rondas.")
+    n = len(g.get("indicadores") or [])
+    if n > 5:
+        av.append(f"há {n} indicadores; 3 a 5 são mais fáceis de observar numa aula.")
+    return av
 
 
 FATOR_ANO = {1: 1.5, 2: 1.2, 3: 1.0, 4: 0.9}  # os mais novos demoram mais em cada item
@@ -271,8 +340,10 @@ def relatorio(aula, erros):
           f"≈ {minutos(princ, aula['ano'])} min (+ {minutos(bonus, aula['ano'])} min de bónus)" if bonus else
           f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas · ≈ {minutos(princ, aula['ano'])} min")
     alvo = aula.get("minutos")
-    if isinstance(alvo, (int, float)) and minutos(princ, aula["ano"]) < 0.6 * alvo:
+    if isinstance(alvo, (int, float)) and minutos(princ, aula["ano"]) < 0.6 * alvo and "guia" not in aula:
         print(f"  ! Aviso: a duração estimada é bem inferior aos {alvo} min indicados. Acrescenta itens ou rondas.")
+    for x in avisos_guia(aula):
+        print("  ! Aviso (guia):", x)
     return True
 
 
@@ -554,7 +625,7 @@ def preparar_site(destino):
     destino = Path(destino).resolve()
     if destino.exists():
         shutil.rmtree(destino)
-    shutil.copytree(RAIZ, destino, ignore=shutil.ignore_patterns(".git", ".github", ".cache-emojis", "__pycache__", destino.name))
+    shutil.copytree(RAIZ, destino, ignore=shutil.ignore_patterns(".git", ".github", ".cache-emojis", "__pycache__", "exportar-generico", destino.name))
     total = 0
     for f in sorted(destino.rglob("*.html")):
         texto = f.read_text(encoding="utf-8")
@@ -567,6 +638,130 @@ def preparar_site(destino):
     print(f"✓ Site preparado em {destino.name}/ ({total} páginas com imagens embutidas).")
 
 
+# ---------- aula genérica (para o Gaveta) ----------
+# O mesmo JSON serve a escola (missão da turma, no Ticl@s) e o Gaveta (aula genérica, sem dados da escola).
+CAMPOS_GENERICOS = ("titulo", "ano", "disciplina", "focoTic", "resumo", "descricao", "objetivo", "minutos", "guia", "rondas")
+NOMES_TIPOS = {"escolher": "escolher a resposta", "verdadeiro_falso": "verdadeiro ou falso", "completar": "completar frases",
+               "escrever": "escrever", "ditado": "ditado", "pares": "ligar pares", "classificar": "classificar", "ordenar": "ordenar"}
+TURMA_NO_TEXTO = re.compile(r"\b[1-4]\s*\.?\s*º\s*[A-H]\b|S[ãa]o Martinho|EB1/PE|Ticl@s", re.I)
+
+
+def esc(s):
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+def aula_generica(aula):
+    gen = {k: aula[k] for k in CAMPOS_GENERICOS if k in aula}
+    texto = json.dumps({k: v for k, v in gen.items() if k != "titulo"}, ensure_ascii=False)
+    avisos = sorted({m.group(0) for m in TURMA_NO_TEXTO.finditer(texto)})
+    return gen, avisos
+
+
+def ficha_html(aula):
+    g = aula.get("guia", {})
+    focos = aula.get("focoTic") or []
+    focos = focos if isinstance(focos, list) else [focos]
+    seq = g.get("sequencia", [])
+    total = sum(m.get("minutos", 0) for m in seq)
+    lista = lambda xs: "".join(f"<li>{esc(x)}</li>" for x in xs)
+    rec = {"jogo": "Jogo interativo", "apresentacao": "Apresentação"}
+    linhas = "".join(
+        f"<tr><td><b>{esc(m['momento'])}</b><span>{m['minutos']} min</span></td><td>{esc(m['descricao'])}"
+        f"{'<em>' + rec[m['recurso']] + '</em>' if m.get('recurso') in rec else ''}</td></tr>" for m in seq)
+    indic = "".join(f"<tr><td>{esc(x)}</td><td></td><td></td><td></td></tr>" for x in g.get("indicadores", []))
+    princ = [r for r in aula["rondas"] if r.get("fase") != "bonus"]
+    bonus = [r for r in aula["rondas"] if r.get("fase") == "bonus"]
+    rondas = "".join(f"<li>{esc(r.get('titulo') or NOMES_TIPOS[r['tipo']])} <small>· {NOMES_TIPOS[r['tipo']]}"
+                     f"{' · bónus' if r.get('fase') == 'bonus' else ''}</small></li>" for r in princ + bonus)
+    meta = [f"{aula['ano']}.º ano", aula.get("disciplina", ""), f"{total} min" if total else ""] + [f"Foco TIC: {x}" for x in focos]
+    blocos = []
+    if aula.get("objetivo"):
+        blocos.append(f"<p class='obj'>{esc(aula['objetivo'])}</p>")
+    lado = ""
+    if g.get("aprendizagens"):
+        lado += f"<div><h2>Aprendizagens</h2><ul>{lista(g['aprendizagens'])}</ul></div>"
+    if g.get("materiais"):
+        lado += f"<div><h2>Materiais</h2><ul>{lista(g['materiais'])}</ul></div>"
+    if lado:
+        blocos.append(f"<section class='duas'>{lado}</section>")
+    blocos.append(f"<h2>Sequência da aula</h2><table class='seq'>{linhas}</table>")
+    blocos.append(f"<h2>Jogo interativo</h2><p class='nota'>{len(princ)} rondas, ≈ {minutos(princ, aula['ano'])} min"
+                  f"{f' + {len(bonus)} de bónus para quem termina mais cedo' if bonus else ''}.</p><ol class='rondas'>{rondas}</ol>")
+    if g.get("apresentacao"):
+        blocos.append(f"<p class='nota'>Apresentação: <a href='{esc(g['apresentacao'])}'>{esc(g['apresentacao'])}</a></p>")
+    blocos.append("<h2>Observação</h2><table class='obs'><thead><tr><th>Indicador</th><th>Sim</th><th>Em progresso</th>"
+                  f"<th>Ainda não</th></tr></thead><tbody>{indic}</tbody></table>"
+                  "<p class='nota'>Registo da turma: marcar o número aproximado de alunos em cada coluna.</p>")
+    return f"""<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(aula['titulo'])} · {aula['ano']}.º ano</title>
+<style>
+@page{{size:A4;margin:14mm}}
+*{{box-sizing:border-box}}
+body{{margin:0;font:15px/1.5 "Segoe UI",Arial,sans-serif;color:#1f2937;background:#f3f4f6}}
+main{{max-width:800px;margin:24px auto;background:#fff;padding:36px 40px;border-radius:12px}}
+h1{{font-size:26px;line-height:1.2;margin:0 0 8px}}
+h2{{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#4b5563;margin:26px 0 8px}}
+.meta{{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}}
+.meta li{{background:#eef2f7;border-radius:999px;padding:2px 10px;font-size:13px;font-weight:600}}
+.obj{{font-size:16px;margin:0}}
+.duas{{display:grid;grid-template-columns:1fr 1fr;gap:24px}}
+ul,ol{{margin:0;padding-left:20px}}
+table{{width:100%;border-collapse:collapse}}
+.seq td{{border-top:1px solid #e5e7eb;padding:10px 8px;vertical-align:top}}
+.seq td:first-child{{width:150px}}
+.seq td span{{display:block;color:#6b7280;font-size:13px}}
+.seq em{{display:inline-block;margin-left:8px;font-style:normal;font-size:12px;background:#fef3c7;border-radius:6px;padding:1px 7px}}
+.rondas small{{color:#6b7280}}
+.obs th,.obs td{{border:1px solid #d1d5db;padding:8px;text-align:left}}
+.obs th:not(:first-child),.obs td:not(:first-child){{width:90px}}
+.obs thead{{background:#f9fafb;font-size:13px}}
+.nota{{color:#4b5563;font-size:13.5px;margin:6px 0}}
+footer{{margin-top:28px;font-size:12px;color:#9ca3af}}
+@media print{{table,.duas{{break-inside:avoid}}h2{{break-after:avoid}}body{{background:#fff}}main{{margin:0;padding:0;max-width:none}}a{{color:inherit}}}}
+@media (max-width:620px){{main{{padding:24px 18px;margin:0;border-radius:0}}.duas{{grid-template-columns:1fr}}}}
+</style></head><body><main>
+<h1>{esc(aula['titulo'])}</h1>
+<ul class="meta">{''.join(f'<li>{esc(x)}</li>' for x in meta if x)}</ul>
+{''.join(blocos)}
+<footer>Ficha de aula · TIC no 1.º ciclo · C. Sofia</footer>
+</main></body></html>
+"""
+
+
+def exportar_generico(destino):
+    """Cria, para cada aula com «guia», a versão genérica (JSON) e a ficha da aula (HTML), sem dados da escola."""
+    destino = Path(destino)
+    destino.mkdir(parents=True, exist_ok=True)
+    feitas, ok = 0, True
+    for f in sorted(AULAS.rglob("*.json")):
+        try:
+            aula = json.loads(f.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(aula, dict) or "guia" not in aula:
+            continue
+        erros = validar(aula)
+        if erros:
+            ok = False
+            print(f"✗ {f.name}: não exportada (conteúdo com problemas):")
+            for x in erros:
+                print("  -", x)
+            continue
+        gen, avisos = aula_generica(aula)
+        nome = re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", f"{aula['ano']}ano {aula['titulo']}").encode("ascii", "ignore").decode().lower()).strip("-")
+        (destino / f"{nome}.json").write_text(json.dumps(gen, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        (destino / f"{nome}.html").write_text(ficha_html(aula), encoding="utf-8")
+        feitas += 1
+        print(f"✓ {f.name} → {nome}.json + {nome}.html")
+        for x in avisos_guia(aula):
+            print("  ! Aviso (guia):", x)
+        if avisos:
+            print(f"  ! Rever: o texto menciona {', '.join(avisos)} (dados da escola numa aula genérica).")
+    print(f"✓ Aulas genéricas: {feitas} exportadas para {destino}/" if feitas else "Nenhuma aula com «guia» em aulas/.")
+    return ok
+
+
 def main():
     ap = argparse.ArgumentParser(description="Construir e validar jogos Investigadores Digitais (V3).")
     ap.add_argument("aula", nargs="?", help="ficheiro JSON com a AULA")
@@ -577,7 +772,23 @@ def main():
     ap.add_argument("--verificar-site", action="store_true", help="verificar todos os jogos e o jogos.json")
     ap.add_argument("--aulas", action="store_true", help="gerar os jogos de todas as aulas em aulas/")
     ap.add_argument("--preparar-site", metavar="PASTA", help="copiar o site para PASTA e embutir as imagens")
+    ap.add_argument("--ficha", metavar="AULA_JSON", help="gerar a ficha da aula (HTML para imprimir) a partir do «guia»")
+    ap.add_argument("--exportar-generico", metavar="PASTA", help="exportar as aulas com «guia» em versão genérica (JSON + ficha)")
     a = ap.parse_args()
+
+    if a.ficha:
+        aula = ler_aula(a.ficha)
+        if "guia" not in aula:
+            print("✗ Esta aula não tem «guia» (sequência e indicadores).")
+            sys.exit(1)
+        if not relatorio(aula, validar(aula)):
+            sys.exit(1)
+        saida = Path(a.saida) if a.saida else Path(a.ficha).with_name(Path(a.ficha).stem + "_ficha.html")
+        saida.write_text(ficha_html(aula), encoding="utf-8")
+        print(f"✓ Ficha da aula: {saida}")
+        return
+    if a.exportar_generico:
+        sys.exit(0 if exportar_generico(a.exportar_generico) else 1)
 
     if a.imagens:
         imagens(a.imagens)
