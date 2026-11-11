@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-11_4ano_Agentes_Internet_Segura",
+    "categoria": "apresentacao",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Agentes da Internet Segura com o Ticl@s",
+    "descricao": "Apresentação interativa estilo vídeo para o quadro: principais perigos da Internet (desconhecidos e perfis falsos, phishing, spam, pop-ups, downloads perigosos, mensagens que magoam) e os dados que não se partilham. Com exercícios pelo meio: «Cofre ou partilha?», nickname seguro, detetive de conversas e de mensagens, caça às armadilhas, fábrica de palavras-passe, vocabulário do DoTIC, cartaz das regras da turma e certificado.",
+    "disciplina": "Cidadania Digital",
+    "data": "2026-11-11",
+    "semana": "9–13 nov. 2026",
+    "url": "apresentacoes/2026-11-11/Ticlas_Agentes_da_Internet_Segura_4ano.html",
+    "duracao": "60 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "ilustracao": {
+      "tipo": "digital"
+    },
+    "resumo": "Descobre os principais perigos da Internet e os dados que ficam guardados no cofre.",
+    "focoTic": "Segurança digital"
+  },
+  {
     "id": "2026-11-02_1ano_Sala_TIC_apresentacao",
     "categoria": "apresentacao",
     "turma": "1.º ano",
