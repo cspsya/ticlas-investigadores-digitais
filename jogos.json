@@ -467,5 +467,23 @@
         "1000"
       ]
     }
+  },
+  {
+    "id": "2026-11-ticlas-3ano-primeiros-socorros",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Missão Primeiros Socorros",
+    "descricao": "Minijogos sobre primeiros socorros (Estudo do Meio, 3.º ano): o que são primeiros socorros e o 112; procedimentos adequados em queimaduras, hemorragias, distensões, fraturas, mordeduras de animais e hematomas; estojo de primeiros socorros; treino do teclado e escrita de frases.",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-11-12",
+    "semana": "9–13 nov. 2026",
+    "url": "jogos/2026-11-09/2026-11-12_3ano_EstudoDoMeio_PrimeirosSocorros_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Ajuda o Ticl@s a saber o que fazer quando alguém se magoa!",
+    "focoTic": [
+      "Rato: clicar e arrastar",
+      "Teclado: escrever palavras e frases"
+    ]
   }
 ]

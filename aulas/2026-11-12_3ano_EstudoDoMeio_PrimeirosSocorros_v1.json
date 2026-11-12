@@ -1,0 +1,482 @@
+{
+  "id": "2026-11-ticlas-3ano-primeiros-socorros",
+  "titulo": "Missão Primeiros Socorros",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Estudo do Meio",
+  "data": "2026-11-12",
+  "descricao": "Minijogos sobre primeiros socorros (Estudo do Meio, 3.º ano): o que são primeiros socorros e o 112; procedimentos adequados em queimaduras, hemorragias, distensões, fraturas, mordeduras de animais e hematomas; estojo de primeiros socorros; treino do teclado e escrita de frases.",
+  "resumo": "Ajuda o Ticl@s a saber o que fazer quando alguém se magoa!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: escrever palavras e frases"
+  ],
+  "objetivo": "Conhecer os procedimentos adequados em queimaduras, hemorragias, distensões, fraturas, mordeduras de animais e hematomas.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões: o que são primeiros socorros?",
+      "instrucao": "Lê a pergunta e rebenta o balão com a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "O que são os primeiros socorros?",
+          "emoji": "⛑️",
+          "certa": "A primeira ajuda a quem se magoou",
+          "erradas": ["O tratamento feito só no hospital", "Os remédios que tomo quando estou doente"],
+          "explicacao": "Os primeiros socorros são a primeira ajuda que se dá a quem se magoou ou se sente mal, até chegar ajuda especializada."
+        },
+        {
+          "pergunta": "Um colega magoou-se no recreio. O que fazes primeiro?",
+          "emoji": "🧑‍🏫",
+          "certa": "Mantenho a calma e chamo um adulto",
+          "erradas": ["Tento tratá-lo sozinho sem avisar ninguém", "Dou-lhe um remédio"],
+          "explicacao": "Manter a calma e avisar logo um adulto é sempre o primeiro passo."
+        },
+        {
+          "pergunta": "Qual é o número europeu de emergência?",
+          "emoji": "📞",
+          "certa": "112",
+          "erradas": ["911", "121"],
+          "explicacao": "Em Portugal e em toda a Europa, o número de emergência é o 112."
+        },
+        {
+          "pergunta": "Quando ligas para o 112, o que deves dizer?",
+          "emoji": "🗣️",
+          "certa": "O que aconteceu e onde",
+          "erradas": ["Só o meu nome", "Que estou bem e desligo"],
+          "explicacao": "Quem atende precisa de saber o que aconteceu e onde, para enviar ajuda."
+        },
+        {
+          "pergunta": "Onde se guardam os materiais para tratar pequenos ferimentos?",
+          "emoji": "🩹",
+          "certa": "No estojo de primeiros socorros",
+          "erradas": ["No estojo dos lápis", "Na mochila do lanche"]
+        },
+        {
+          "pergunta": "Antes e depois de tratar um pequeno ferimento, devemos…",
+          "emoji": "🧼",
+          "certa": "lavar as mãos",
+          "erradas": ["pôr creme nas mãos", "soprar para as mãos"],
+          "explicacao": "Lavar as mãos evita que os micróbios entrem na ferida."
+        }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Liga a palavra ao significado",
+      "instrucao": "Liga cada palavra ao que ela quer dizer.",
+      "baralhar": true,
+      "itens": [
+        ["🔥 queimadura", "ferida causada pelo calor ou pelo fogo"],
+        ["🩸 hemorragia", "perda de sangue"],
+        ["🦶 distensão", "torcer o pé e esticar os ligamentos"],
+        ["🦴 fratura", "osso partido"],
+        ["🐕 mordedura", "ferida feita pelos dentes de um animal"],
+        ["🟣 hematoma", "nódoa negra"]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio das situações",
+      "instrucao": "Lê o que aconteceu e escolhe a carruagem com o nome certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "O Tomás tocou num tacho quente e o dedo ficou vermelho e a arder.",
+          "emoji": "🍲",
+          "certa": "queimadura",
+          "erradas": ["hematoma", "fratura"]
+        },
+        {
+          "pergunta": "O Rui caiu da bicicleta e partiu o osso do braço.",
+          "emoji": "🚲",
+          "certa": "fratura",
+          "erradas": ["distensão", "hematoma"],
+          "explicacao": "Quando o osso se parte, chama-se fratura."
+        },
+        {
+          "pergunta": "A Ana torceu o pé a correr e o tornozelo ficou inchado.",
+          "emoji": "🏃‍♀️",
+          "certa": "distensão",
+          "erradas": ["fratura", "queimadura"],
+          "explicacao": "Ao torcer o pé, os ligamentos esticam: é uma distensão."
+        },
+        {
+          "pergunta": "Um cão assustado mordeu a mão do Luís.",
+          "emoji": "🐕",
+          "certa": "mordedura",
+          "erradas": ["hemorragia", "distensão"]
+        },
+        {
+          "pergunta": "Está a sair sangue do nariz da Maria.",
+          "emoji": "👃",
+          "certa": "hemorragia",
+          "erradas": ["hematoma", "mordedura"],
+          "explicacao": "Sangue a sair do nariz é uma hemorragia nasal."
+        },
+        {
+          "pergunta": "O Pedro bateu com a perna na mesa e apareceu uma mancha roxa.",
+          "emoji": "🦵",
+          "certa": "hematoma",
+          "erradas": ["hemorragia", "queimadura"],
+          "explicacao": "A mancha roxa é uma nódoa negra: um hematoma."
+        },
+        {
+          "pergunta": "A Inês cortou o dedo com uma folha de papel e está a sangrar.",
+          "emoji": "📄",
+          "certa": "hemorragia",
+          "erradas": ["hematoma", "fratura"]
+        },
+        {
+          "pergunta": "O João esteve muito tempo ao sol, sem protetor, e a pele ficou vermelha e a arder.",
+          "emoji": "☀️",
+          "certa": "queimadura",
+          "erradas": ["hematoma", "mordedura"],
+          "explicacao": "O sol também queima a pele. Usa protetor solar e chapéu!"
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Ajuda ou não se faz?",
+      "instrucao": "Arrasta cada ação para a caixa certa.",
+      "baralhar": true,
+      "caixas": ["✅ Ajuda", "❌ Não se faz"],
+      "itens": [
+        ["Pôr a queimadura debaixo de água fresca", "✅ Ajuda"],
+        ["Pressionar o corte com uma compressa limpa", "✅ Ajuda"],
+        ["Pôr gelo embrulhado num pano na nódoa negra", "✅ Ajuda"],
+        ["Lavar a mordedura com água e sabão", "✅ Ajuda"],
+        ["Inclinar a cabeça para a frente quando sangra do nariz", "✅ Ajuda"],
+        ["Não mexer o braço que pode estar partido", "✅ Ajuda"],
+        ["Rebentar as bolhas da queimadura", "❌ Não se faz"],
+        ["Pôr pasta de dentes na queimadura", "❌ Não se faz"],
+        ["Inclinar a cabeça para trás quando sangra do nariz", "❌ Não se faz"],
+        ["Pôr gelo diretamente na pele", "❌ Não se faz"],
+        ["Tentar endireitar um osso partido", "❌ Não se faz"],
+        ["Continuar a correr com o pé torcido", "❌ Não se faz"]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "O Ticl@s pergunta: o que faço?",
+      "instrucao": "Toca no Ticl@s quando ele mostrar a resposta certa.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Queimaste o dedo no forno. O que fazes logo?",
+          "emoji": "🔥",
+          "certa": "Ponho o dedo em água fresca a correr",
+          "erradas": ["Ponho manteiga no dedo", "Rebento a bolha"],
+          "explicacao": "A água fresca a correr arrefece a pele durante vários minutos."
+        },
+        {
+          "pergunta": "Está a sair sangue do teu nariz. Como pões a cabeça?",
+          "emoji": "👃",
+          "certa": "Inclinada para a frente",
+          "erradas": ["Inclinada para trás", "Deitada de costas"],
+          "explicacao": "Cabeça para a frente e apertar a parte mole do nariz com os dedos."
+        },
+        {
+          "pergunta": "Fizeste um corte pequeno no joelho. Depois de lavar, o que fazes?",
+          "emoji": "🩹",
+          "certa": "Pressiono com uma compressa limpa",
+          "erradas": ["Sopro para secar", "Tapo com a mão suja"]
+        },
+        {
+          "pergunta": "Torceste o tornozelo e está inchado. O que fazes?",
+          "emoji": "🦶",
+          "certa": "Descanso e ponho frio embrulhado num pano",
+          "erradas": ["Continuo a jogar à bola", "Salto ao pé-coxinho para ver se dói"]
+        },
+        {
+          "pergunta": "Um colega caiu e parece ter o braço partido. O que fazes?",
+          "emoji": "🦴",
+          "certa": "Não lhe mexo no braço e chamo um adulto",
+          "erradas": ["Puxo o braço para o endireitar", "Peço-lhe para mexer o braço com força"]
+        },
+        {
+          "pergunta": "Um gato mordeu-te a mão. O que fazes?",
+          "emoji": "🐈",
+          "certa": "Lavo com água e sabão e aviso um adulto",
+          "erradas": ["Ponho um penso sem lavar", "Não digo nada a ninguém"],
+          "explicacao": "Uma mordedura deve ser vista por um médico ou enfermeiro."
+        },
+        {
+          "pergunta": "Bateste com a perna e está a ficar roxa. O que fazes?",
+          "emoji": "🟣",
+          "certa": "Ponho gelo embrulhado num pano",
+          "erradas": ["Ponho água bem quente", "Carrego com força na mancha"]
+        },
+        {
+          "pergunta": "Alguém se magoou muito e não há nenhum adulto por perto. O que fazes?",
+          "emoji": "🚑",
+          "certa": "Ligo para o 112",
+          "erradas": ["Espero que passe sozinho", "Vou brincar para outro sítio"]
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Verdade ou mito?",
+      "instrucao": "Lê com atenção. É verdade ou é mito?",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "Pôr manteiga ou pasta de dentes numa queimadura ajuda a curar.",
+          "verdade": false,
+          "explicacao": "É mito! Só se usa água fresca a correr. Manteiga e pasta de dentes podem piorar a queimadura."
+        },
+        {
+          "afirmacao": "Quando sangra do nariz, devemos inclinar a cabeça para trás.",
+          "verdade": false,
+          "explicacao": "É mito! A cabeça vai para a frente e aperta-se a parte mole do nariz."
+        },
+        {
+          "afirmacao": "Uma nódoa negra também se chama hematoma.",
+          "verdade": true,
+          "explicacao": "Verdade! Forma-se quando há sangue debaixo da pele, depois de uma pancada."
+        },
+        {
+          "afirmacao": "O gelo deve ser posto diretamente em cima da pele.",
+          "verdade": false,
+          "explicacao": "É mito! O gelo vai sempre embrulhado num pano, para não magoar a pele."
+        },
+        {
+          "afirmacao": "Numa fratura, o osso parte-se.",
+          "verdade": true,
+          "explicacao": "Verdade! Por isso não se mexe na parte magoada e chama-se logo um adulto."
+        },
+        {
+          "afirmacao": "A mordedura de um animal deve ser lavada com água e sabão.",
+          "verdade": true,
+          "explicacao": "Verdade! Depois, um adulto leva-nos ao médico ou ao centro de saúde."
+        },
+        {
+          "afirmacao": "Quem ajuda alguém que sangra deve usar luvas.",
+          "verdade": true,
+          "explicacao": "Verdade! As luvas protegem quem ajuda e quem está ferido. Por isso chamamos um adulto."
+        },
+        {
+          "afirmacao": "Uma nódoa negra muda de cor ao longo dos dias.",
+          "verdade": true,
+          "explicacao": "Verdade! Começa roxa e depois fica esverdeada e amarelada, até desaparecer."
+        }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Passos pela ordem certa",
+      "instrucao": "Toca nos passos pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "🔥",
+          "pecas": ["Afasto-me do que está quente", "Ponho a pele em água fresca a correr", "Tapo com uma compressa limpa"],
+          "explicacao": "Queimadura: afastar do calor, arrefecer com água e tapar."
+        },
+        {
+          "emoji": "👃",
+          "pecas": ["Inclino a cabeça para a frente", "Aperto a parte mole do nariz", "Espero uns minutos sem largar"]
+        },
+        {
+          "emoji": "🩹",
+          "pecas": ["Lavo o corte com água", "Seco com uma compressa limpa", "Ponho um penso rápido"]
+        },
+        {
+          "emoji": "🐕",
+          "pecas": ["Afasto-me do animal", "Lavo com água e sabão", "Tapo com uma compressa", "Vou ao médico com um adulto"]
+        },
+        {
+          "emoji": "🦶",
+          "pecas": ["Paro de correr", "Ponho gelo embrulhado num pano", "Descanso uns dias"]
+        },
+        {
+          "emoji": "📞",
+          "pecas": ["Marco 112", "Explico o que aconteceu e onde", "Respondo às perguntas", "Só desligo quando me disserem"]
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "visual": "aviao",
+      "titulo": "Avião das regras",
+      "instrucao": "Voa até à nuvem com a palavra que completa a frase.",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "Numa queimadura, ponho a pele em água ___ a correr.",
+          "emoji": "💧",
+          "certa": "fresca",
+          "erradas": ["quente", "com sal"]
+        },
+        {
+          "frase": "Uma nódoa negra também se chama ___.",
+          "emoji": "🟣",
+          "certa": "hematoma",
+          "erradas": ["hemorragia", "fratura"]
+        },
+        {
+          "frase": "A perda de sangue chama-se ___.",
+          "emoji": "🩸",
+          "certa": "hemorragia",
+          "erradas": ["hematoma", "distensão"]
+        },
+        {
+          "frase": "Numa ___, o osso parte-se.",
+          "emoji": "🦴",
+          "certa": "fratura",
+          "erradas": ["distensão", "queimadura"]
+        },
+        {
+          "frase": "O gelo vai sempre ___ num pano.",
+          "emoji": "🧊",
+          "certa": "embrulhado",
+          "erradas": ["aquecido", "molhado"]
+        },
+        {
+          "frase": "A mordedura de um animal lava-se com água e ___.",
+          "emoji": "🧼",
+          "certa": "sabão",
+          "erradas": ["sal", "açúcar"]
+        },
+        {
+          "frase": "Quando alguém se magoa, a primeira coisa é manter a ___.",
+          "emoji": "😌",
+          "certa": "calma",
+          "erradas": ["pressa", "dúvida"]
+        },
+        {
+          "frase": "O número europeu de emergência é o ___.",
+          "emoji": "📞",
+          "certa": "112",
+          "erradas": ["911", "115"]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Teclado dos primeiros socorros",
+      "instrucao": "Escreve a palavra letra a letra. A tecla seguinte brilha no teclado.",
+      "itens": [
+        { "palavra": "queimadura", "emoji": "🔥" },
+        { "palavra": "hemorragia", "emoji": "🩸" },
+        { "palavra": "distensão", "emoji": "🦶" },
+        { "palavra": "fratura", "emoji": "🦴" },
+        { "palavra": "mordedura", "emoji": "🐕" },
+        { "palavra": "hematoma", "emoji": "🟣" },
+        { "palavra": "compressa", "emoji": "🩹" },
+        { "palavra": "Chamo um adulto.", "emoji": "🧑‍🏫" }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Adivinhas do Ticl@s",
+      "instrucao": "Lê a adivinha, escreve a resposta e carrega em Enter.",
+      "itens": [
+        {
+          "pergunta": "Sou uma mancha roxa que aparece depois de uma pancada. Quem sou?",
+          "emoji": "🟣",
+          "resposta": ["hematoma", "nódoa negra"],
+          "dica": "Começa por H."
+        },
+        {
+          "pergunta": "Apareço quando o osso se parte. Quem sou?",
+          "emoji": "🦴",
+          "resposta": "fratura",
+          "dica": "Começa por F."
+        },
+        {
+          "pergunta": "Sou a perda de sangue. Quem sou?",
+          "emoji": "🩸",
+          "resposta": "hemorragia",
+          "dica": "Começa por H e acaba em A."
+        },
+        {
+          "pergunta": "Apareço quando tocas em algo muito quente. Quem sou?",
+          "emoji": "🔥",
+          "resposta": "queimadura",
+          "dica": "Começa por Q."
+        },
+        {
+          "pergunta": "Apareço quando torces o pé. Quem sou?",
+          "emoji": "🦶",
+          "resposta": "distensão",
+          "dica": "Começa por D. Não te esqueças do til: ã."
+        },
+        {
+          "pergunta": "Sou feita pelos dentes de um animal. Quem sou?",
+          "emoji": "🐕",
+          "resposta": "mordedura",
+          "dica": "Começa por M."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Escrevo o que sei fazer",
+      "instrucao": "Escreve frases completas, com letra maiúscula no início e ponto final.",
+      "itens": [
+        {
+          "pergunta": "O que fazes se te queimares?",
+          "palavra": "água",
+          "minPalavras": 5,
+          "dica": "Começa assim: Se me queimar, ponho…"
+        },
+        {
+          "pergunta": "O que fazes se te sair sangue do nariz?",
+          "palavra": "cabeça",
+          "minPalavras": 5,
+          "dica": "Pensa: para onde vai a cabeça? O que fazes ao nariz?"
+        },
+        {
+          "pergunta": "Porque é importante chamar um adulto quando alguém se magoa?",
+          "minPalavras": 5,
+          "dica": "Começa assim: É importante chamar um adulto porque…"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "classificar",
+      "titulo": "O estojo de primeiros socorros",
+      "instrucao": "O que vai para o estojo de primeiros socorros?",
+      "baralhar": true,
+      "caixas": ["🩹 Vai no estojo", "🚫 Não vai"],
+      "itens": [
+        ["compressas", "🩹 Vai no estojo"],
+        ["pensos rápidos", "🩹 Vai no estojo"],
+        ["ligaduras", "🩹 Vai no estojo"],
+        ["soro fisiológico", "🩹 Vai no estojo"],
+        ["luvas descartáveis", "🩹 Vai no estojo"],
+        ["tesoura de pontas redondas", "🩹 Vai no estojo"],
+        ["pasta de dentes", "🚫 Não vai"],
+        ["manteiga", "🚫 Não vai"],
+        ["rebuçados", "🚫 Não vai"],
+        ["plasticina", "🚫 Não vai"]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos primeiros socorros",
+      "instrucao": "Vira duas cartas e encontra o par: o que aconteceu e o que se faz.",
+      "itens": [
+        ["🔥 queimadura", "💧 água fresca"],
+        ["🟣 hematoma", "🧊 gelo num pano"],
+        ["🐕 mordedura", "🧼 água e sabão"],
+        ["👃 sangue do nariz", "⬇️ cabeça para a frente"],
+        ["🦴 fratura", "✋ não mexer"],
+        ["🦶 distensão", "🛋️ repouso"]
+      ]
+    }
+  ]
+}
