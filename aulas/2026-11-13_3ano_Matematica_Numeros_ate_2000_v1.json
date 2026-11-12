@@ -1,0 +1,1024 @@
+{
+  "id": "2026-11-ticlas-3ano-numeros-ate-2000",
+  "titulo": "Números até 2000",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-13",
+  "descricao": "Minijogos sobre números naturais até 2000: leitura e escrita (por extenso e com algarismos), decomposição (milhares, centenas, dezenas e unidades), valor posicional, MAB, reta numérica, comparação e ordenação, e cálculo mental (+10, +100, amigos do 1000)",
+  "resumo": "Ajuda o Ticl@s a ler, decompor e comparar números até 2000!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: escrever números e palavras"
+  ],
+  "ilustracao": {
+    "tipo": "numeros",
+    "conta": [
+      "1000",
+      "+",
+      "1000"
+    ]
+  },
+  "objetivo": "Ler, escrever, decompor, comparar e ordenar números até 2000 e calcular mentalmente.",
+  "minutos": 60,
+  "ferramentaMAB": true,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões do cálculo relâmpago",
+      "instrucao": "Faz a conta de cabeça e rebenta o balão certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "300 + 200 =",
+          "certa": "500",
+          "erradas": [
+            "50",
+            "600"
+          ],
+          "explicacao": "3 centenas + 2 centenas = 5 centenas = 500."
+        },
+        {
+          "pergunta": "1000 + 100 =",
+          "certa": "1100",
+          "erradas": [
+            "1001",
+            "2000"
+          ],
+          "explicacao": "Mais 100: as centenas aumentam 1. 1000 + 100 = 1100."
+        },
+        {
+          "pergunta": "800 + 200 =",
+          "certa": "1000",
+          "erradas": [
+            "900",
+            "1200"
+          ],
+          "explicacao": "8 centenas + 2 centenas = 10 centenas = 1 milhar = 1000."
+        },
+        {
+          "pergunta": "1500 − 100 =",
+          "certa": "1400",
+          "erradas": [
+            "1490",
+            "1499"
+          ],
+          "explicacao": "Menos 100: as centenas diminuem 1. 1500 − 100 = 1400."
+        },
+        {
+          "pergunta": "600 + 600 =",
+          "certa": "1200",
+          "erradas": [
+            "1100",
+            "660"
+          ],
+          "explicacao": "6 centenas + 6 centenas = 12 centenas = 1200."
+        },
+        {
+          "pergunta": "950 + 50 =",
+          "certa": "1000",
+          "erradas": [
+            "900",
+            "1050"
+          ],
+          "explicacao": "950 e 50 são amigos do 1000."
+        },
+        {
+          "pergunta": "1999 + 1 =",
+          "certa": "2000",
+          "erradas": [
+            "1990",
+            "1900"
+          ],
+          "explicacao": "Logo a seguir a 1999 vem 2000."
+        },
+        {
+          "pergunta": "1250 + 10 =",
+          "certa": "1260",
+          "erradas": [
+            "1350",
+            "1251"
+          ],
+          "explicacao": "Mais 10: as dezenas aumentam 1. 1250 + 10 = 1260."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio da leitura",
+      "instrucao": "Lê o número escrito por extenso e escolhe a carruagem com os algarismos certos.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "mil e duzentos",
+          "certa": "1200",
+          "erradas": [
+            "1020",
+            "1002"
+          ],
+          "explicacao": "mil (1000) e duzentos (200): 1200."
+        },
+        {
+          "pergunta": "mil e quinze",
+          "certa": "1015",
+          "erradas": [
+            "1150",
+            "115"
+          ],
+          "explicacao": "mil (1000) e quinze (15): 1015. Não há centenas, por isso fica um 0."
+        },
+        {
+          "pergunta": "novecentos e oito",
+          "certa": "908",
+          "erradas": [
+            "980",
+            "9008"
+          ],
+          "explicacao": "novecentos (900) e oito (8): 908. Não há dezenas."
+        },
+        {
+          "pergunta": "mil trezentos e quarenta",
+          "certa": "1340",
+          "erradas": [
+            "1304",
+            "1430"
+          ],
+          "explicacao": "1000 + 300 + 40 = 1340."
+        },
+        {
+          "pergunta": "dois mil",
+          "certa": "2000",
+          "erradas": [
+            "200",
+            "1002"
+          ],
+          "explicacao": "dois mil = 2 milhares = 2000."
+        },
+        {
+          "pergunta": "mil e noventa e nove",
+          "certa": "1099",
+          "erradas": [
+            "1909",
+            "1990"
+          ],
+          "explicacao": "1000 + 99 = 1099."
+        },
+        {
+          "pergunta": "seiscentos e sessenta",
+          "certa": "660",
+          "erradas": [
+            "606",
+            "6060"
+          ],
+          "explicacao": "600 + 60 = 660."
+        },
+        {
+          "pergunta": "mil setecentos e cinco",
+          "certa": "1705",
+          "erradas": [
+            "1750",
+            "1075"
+          ],
+          "explicacao": "1000 + 700 + 5 = 1705."
+        },
+        {
+          "pergunta": "mil oitocentos e trinta e dois",
+          "certa": "1832",
+          "erradas": [
+            "1823",
+            "1382"
+          ],
+          "explicacao": "1000 + 800 + 30 + 2 = 1832."
+        }
+      ]
+    },
+    {
+      "tipo": "mab",
+      "titulo": "Lê o MAB",
+      "instrucao": "Conta as peças: cada placa vale 100, cada barra vale 10 e cada cubo vale 1. Lembra-te: 10 placas = 1 milhar = 1000. Escreve o número.",
+      "itens": [
+        {
+          "modo": "ler",
+          "c": 3,
+          "d": 4,
+          "u": 5,
+          "dica": "3 placas = 300. Junta as barras e os cubos."
+        },
+        {
+          "modo": "ler",
+          "c": 10,
+          "d": 0,
+          "u": 0,
+          "dica": "Conta as placas de 100 em 100: 100, 200, 300…",
+          "explicacao": "10 placas = 10 centenas = 1 milhar = 1000."
+        },
+        {
+          "modo": "ler",
+          "c": 12,
+          "d": 3,
+          "u": 0,
+          "dica": "10 placas são 1000. Quanto valem as outras placas?",
+          "explicacao": "12 placas = 1200. Mais 3 barras = 30. Total: 1230."
+        },
+        {
+          "modo": "ler",
+          "c": 15,
+          "d": 0,
+          "u": 4,
+          "dica": "15 centenas = 1500.",
+          "explicacao": "15 placas = 1500 e 4 cubos = 4. Total: 1504."
+        },
+        {
+          "modo": "ler",
+          "c": 9,
+          "d": 12,
+          "u": 0,
+          "dica": "Atenção: há mais de 10 barras! 10 barras valem 1 placa.",
+          "explicacao": "9 placas = 900 e 12 barras = 120. 900 + 120 = 1020."
+        },
+        {
+          "modo": "ler",
+          "c": 11,
+          "d": 1,
+          "u": 11,
+          "dica": "Há mais de 10 cubos: 10 cubos valem 1 barra.",
+          "explicacao": "11 placas = 1100, 1 barra = 10 e 11 cubos = 11. 1100 + 10 + 11 = 1121."
+        }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Liga a decomposição",
+      "instrucao": "Liga cada decomposição ao número certo.",
+      "itens": [
+        [
+          "1000 + 500 + 60 + 2",
+          "1562"
+        ],
+        [
+          "1 milhar e 9 dezenas",
+          "1090"
+        ],
+        [
+          "14 centenas",
+          "1400"
+        ],
+        [
+          "1000 + 200 + 5",
+          "1205"
+        ],
+        [
+          "1 M 2 C 5 D",
+          "1250"
+        ],
+        [
+          "2 milhares",
+          "2000"
+        ],
+        [
+          "800 + 70 + 3",
+          "873"
+        ],
+        [
+          "1 milhar, 5 dezenas e 6 unidades",
+          "1056"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião dos algarismos",
+      "instrucao": "Lê a pergunta com atenção e leva o avião até à nuvem certa.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Em 1475, qual é o algarismo das centenas?",
+          "certa": "4",
+          "erradas": [
+            "7",
+            "1"
+          ],
+          "explicacao": "1475: 1 milhar, 4 centenas, 7 dezenas e 5 unidades."
+        },
+        {
+          "pergunta": "Em 1352, quanto vale o algarismo 3?",
+          "certa": "300",
+          "erradas": [
+            "3",
+            "30"
+          ],
+          "explicacao": "O 3 está na casa das centenas: vale 300."
+        },
+        {
+          "pergunta": "Em 1908, qual é o algarismo das dezenas?",
+          "certa": "0",
+          "erradas": [
+            "9",
+            "8"
+          ],
+          "explicacao": "1908: 1 milhar, 9 centenas, 0 dezenas e 8 unidades."
+        },
+        {
+          "pergunta": "Em 1640, quanto vale o algarismo 6?",
+          "certa": "600",
+          "erradas": [
+            "60",
+            "6"
+          ],
+          "explicacao": "O 6 está na casa das centenas: vale 600."
+        },
+        {
+          "pergunta": "Em 1287, quanto vale o algarismo 8?",
+          "certa": "80",
+          "erradas": [
+            "8",
+            "800"
+          ],
+          "explicacao": "O 8 está na casa das dezenas: vale 80."
+        },
+        {
+          "pergunta": "Em 1003, qual é o algarismo das unidades?",
+          "certa": "3",
+          "erradas": [
+            "1",
+            "0"
+          ],
+          "explicacao": "O algarismo das unidades é o último: 3."
+        },
+        {
+          "pergunta": "Quantas dezenas há ao todo em 150?",
+          "certa": "15",
+          "erradas": [
+            "5",
+            "1"
+          ],
+          "explicacao": "150 = 15 dezenas, porque 15 × 10 = 150."
+        },
+        {
+          "pergunta": "Quantas centenas há ao todo em 2000?",
+          "certa": "20",
+          "erradas": [
+            "2",
+            "200"
+          ],
+          "explicacao": "1000 = 10 centenas, por isso 2000 = 20 centenas."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "Cartões dos sinais",
+      "instrucao": "Compara os dois números e escolhe o sinal certo: < (menor do que), > (maior do que) ou = (igual a).",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "1099 ___ 1100",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "1099 é menor do que 1100."
+        },
+        {
+          "frase": "1510 ___ 1501",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "Mesmos milhares e centenas: 1 dezena é mais do que 0 dezenas."
+        },
+        {
+          "frase": "999 ___ 1000",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "999 tem 3 algarismos e 1000 tem 4: 999 é menor."
+        },
+        {
+          "frase": "1000 + 300 ___ 1300",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "1000 + 300 = 1300."
+        },
+        {
+          "frase": "1870 ___ 1780",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "8 centenas é mais do que 7 centenas."
+        },
+        {
+          "frase": "1206 ___ 1260",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "0 dezenas é menos do que 6 dezenas."
+        },
+        {
+          "frase": "20 centenas ___ 2000",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "20 centenas = 2000."
+        },
+        {
+          "frase": "1009 ___ 990",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "1009 tem 4 algarismos e 990 só tem 3."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos números",
+      "instrucao": "Arrasta cada número para a caixa certa.",
+      "caixas": [
+        "Menor do que 1000",
+        "Entre 1000 e 1500",
+        "Maior do que 1500"
+      ],
+      "itens": [
+        [
+          "999",
+          "Menor do que 1000"
+        ],
+        [
+          "909",
+          "Menor do que 1000"
+        ],
+        [
+          "1009",
+          "Entre 1000 e 1500"
+        ],
+        [
+          "1099",
+          "Entre 1000 e 1500"
+        ],
+        [
+          "1499",
+          "Entre 1000 e 1500"
+        ],
+        [
+          "1510",
+          "Maior do que 1500"
+        ],
+        [
+          "1950",
+          "Maior do que 1500"
+        ],
+        [
+          "1999",
+          "Maior do que 1500"
+        ],
+        [
+          "2000",
+          "Maior do que 1500"
+        ]
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Do menor para o maior",
+      "instrucao": "Ordena os números do menor para o maior.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pecas": [
+            "899",
+            "989",
+            "1089",
+            "1098"
+          ],
+          "dica": "Primeiro os números com 3 algarismos."
+        },
+        {
+          "pecas": [
+            "1099",
+            "1190",
+            "1909",
+            "1990"
+          ],
+          "dica": "Compara primeiro as centenas."
+        },
+        {
+          "pecas": [
+            "1205",
+            "1250",
+            "1502",
+            "1520"
+          ],
+          "dica": "Todos têm 1 milhar. Olha para as centenas e depois para as dezenas."
+        },
+        {
+          "pecas": [
+            "780",
+            "1078",
+            "1708",
+            "1780"
+          ]
+        },
+        {
+          "pecas": [
+            "1345",
+            "1354",
+            "1435",
+            "1453"
+          ],
+          "dica": "Olha para o algarismo das centenas e depois para o das dezenas."
+        },
+        {
+          "pecas": [
+            "1999",
+            "2000"
+          ],
+          "dica": "Qual vem primeiro quando contas?"
+        }
+      ]
+    },
+    {
+      "tipo": "reta",
+      "titulo": "Na reta numérica",
+      "instrucao": "Observa bem os números da reta e de quanto em quanto avançam as marcas.",
+      "itens": [
+        {
+          "modo": "ler",
+          "inicio": 1000,
+          "fim": 2000,
+          "passo": 100,
+          "marca": 1300,
+          "erradas": [
+            1030,
+            1400
+          ],
+          "dica": "De uma marca à seguinte avança-se 100."
+        },
+        {
+          "modo": "ler",
+          "inicio": 1000,
+          "fim": 1100,
+          "passo": 10,
+          "marca": 1060,
+          "erradas": [
+            1600,
+            1006
+          ],
+          "dica": "Aqui, de uma marca à seguinte avança-se só 10."
+        },
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 2000,
+          "passo": 200,
+          "marca": 1400,
+          "erradas": [
+            700,
+            1200
+          ],
+          "dica": "Cada marca vale mais 200: 200, 400, 600…"
+        },
+        {
+          "modo": "colocar",
+          "inicio": 1000,
+          "fim": 2000,
+          "passo": 100,
+          "rotulos": [
+            1000,
+            1500,
+            2000
+          ],
+          "numero": 1250,
+          "dica": "1250 fica entre 1200 e 1300."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 0,
+          "fim": 2000,
+          "passo": 200,
+          "rotulos": [
+            0,
+            1000,
+            2000
+          ],
+          "numero": 1550,
+          "dica": "1550 fica entre 1400 e 1600."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 1200,
+          "fim": 1300,
+          "passo": 10,
+          "rotulos": [
+            1200,
+            1250,
+            1300
+          ],
+          "numero": 1275,
+          "dica": "1275 fica entre 1270 e 1280."
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive dos números",
+      "instrucao": "Lê cada frase e decide: é verdadeira ou falsa?",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "1099 é maior do que 1100.",
+          "verdade": false,
+          "explicacao": "1099 vem antes de 1100, por isso é menor."
+        },
+        {
+          "afirmacao": "1 milhar é igual a 10 centenas.",
+          "verdade": true,
+          "explicacao": "10 placas de 100 fazem 1000."
+        },
+        {
+          "afirmacao": "Ao todo, 1450 tem 14 centenas.",
+          "verdade": true,
+          "explicacao": "1450 = 14 centenas e 5 dezenas."
+        },
+        {
+          "afirmacao": "«mil e cinquenta» escreve-se 1500.",
+          "verdade": false,
+          "explicacao": "«mil e cinquenta» é 1050. 1500 é «mil e quinhentos»."
+        },
+        {
+          "afirmacao": "O número que vem logo a seguir a 1999 é 2000.",
+          "verdade": true,
+          "explicacao": "1999 + 1 = 2000."
+        },
+        {
+          "afirmacao": "1000 + 300 + 4 = 1340",
+          "verdade": false,
+          "explicacao": "1000 + 300 + 4 = 1304. Não há dezenas."
+        },
+        {
+          "afirmacao": "Em 1825, o algarismo 2 vale 200.",
+          "verdade": false,
+          "explicacao": "O 2 está na casa das dezenas: vale 20."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Caça ao número mistério",
+      "instrucao": "Lê a pista e toca no Ticl@s quando aparecer o número certo.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "Tenho 1 milhar, 0 centenas, 5 dezenas e 7 unidades.",
+          "certa": "1057",
+          "erradas": [
+            "1507",
+            "157"
+          ],
+          "explicacao": "1000 + 50 + 7 = 1057."
+        },
+        {
+          "pergunta": "Estou entre 1490 e 1500 e termino em 5.",
+          "certa": "1495",
+          "erradas": [
+            "1505",
+            "1485"
+          ],
+          "explicacao": "1495 está entre 1490 e 1500."
+        },
+        {
+          "pergunta": "Sou 100 mais do que 1850.",
+          "certa": "1950",
+          "erradas": [
+            "1860",
+            "2850"
+          ],
+          "explicacao": "1850 + 100 = 1950."
+        },
+        {
+          "pergunta": "Sou 10 menos do que 1300.",
+          "certa": "1290",
+          "erradas": [
+            "1200",
+            "1310"
+          ],
+          "explicacao": "1300 − 10 = 1290."
+        },
+        {
+          "pergunta": "Sou o maior número com 3 algarismos.",
+          "certa": "999",
+          "erradas": [
+            "900",
+            "1000"
+          ],
+          "explicacao": "Depois de 999 vem 1000, que já tem 4 algarismos."
+        },
+        {
+          "pergunta": "Sou o menor número com 4 algarismos.",
+          "certa": "1000",
+          "erradas": [
+            "1111",
+            "999"
+          ],
+          "explicacao": "1000 é o primeiro número com 4 algarismos."
+        },
+        {
+          "pergunta": "Sou o dobro de 700.",
+          "certa": "1400",
+          "erradas": [
+            "770",
+            "1700"
+          ],
+          "explicacao": "700 + 700 = 1400."
+        },
+        {
+          "pergunta": "Sou formado por 16 centenas.",
+          "certa": "1600",
+          "erradas": [
+            "160",
+            "1006"
+          ],
+          "explicacao": "16 centenas = 1600."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "Amigos do 1000 e do 2000",
+      "instrucao": "Escreve o número que falta. Se precisares, abre o MAB no botão lá em cima.",
+      "baralhar": true,
+      "itens": [
+        {
+          "frase": "700 + ___ = 1000",
+          "certa": "300",
+          "dica": "7 centenas + ? centenas = 10 centenas."
+        },
+        {
+          "frase": "___ + 900 = 1000",
+          "certa": "100",
+          "dica": "Falta só uma centena."
+        },
+        {
+          "frase": "450 + ___ = 1000",
+          "certa": "550",
+          "dica": "450 + 50 = 500. Quanto falta de 500 a 1000?"
+        },
+        {
+          "frase": "1000 − ___ = 600",
+          "certa": "400",
+          "dica": "Quanto falta de 600 a 1000?"
+        },
+        {
+          "frase": "990 + ___ = 1000",
+          "certa": "10",
+          "dica": "Falta só uma dezena."
+        },
+        {
+          "frase": "1500 + ___ = 2000",
+          "certa": "500",
+          "dica": "Metade de 1000."
+        },
+        {
+          "frase": "1800 + ___ = 2000",
+          "certa": "200",
+          "dica": "Conta de 100 em 100: 1900, 2000."
+        },
+        {
+          "frase": "2000 − ___ = 1250",
+          "certa": "750",
+          "dica": "1250 + 50 = 1300. E de 1300 a 2000?"
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Números e palavras",
+      "instrucao": "Escreve com atenção. Nas frases, começa com letra maiúscula e termina com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve por extenso o número 1000.",
+          "resposta": "mil",
+          "dica": "São só três letras."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 1200.",
+          "resposta": "mil e duzentos",
+          "dica": "Começa por «mil e…»."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 1500.",
+          "resposta": "mil e quinhentos",
+          "dica": "500 escreve-se «quinhentos»."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 2000.",
+          "resposta": "dois mil",
+          "dica": "São duas palavras."
+        },
+        {
+          "pergunta": "Escreve com algarismos: «mil quatrocentos e oito».",
+          "resposta": "1408",
+          "dica": "1000 + 400 + 8. Não há dezenas."
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «milhar».",
+          "palavra": "milhar",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase a comparar os números 1250 e 1520. Usa «maior» ou «menor».",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "tipo": "cadeia",
+      "titulo": "Setas do cálculo mental",
+      "instrucao": "Segue cada seta, calcula de cabeça e escreve o número na caixa. Carrega em «Confirmar» no fim.",
+      "itens": [
+        {
+          "pergunta": "De 100 em 100, começando no 350.",
+          "inicio": 350,
+          "passos": [
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "dica": "Só muda o algarismo das centenas."
+        },
+        {
+          "pergunta": "De 10 em 10, começando no 480.",
+          "inicio": 480,
+          "passos": [
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "dica": "480 + 10 = 490. E depois de 490?"
+        },
+        {
+          "pergunta": "De 50 em 50, começando no 600.",
+          "inicio": 600,
+          "passos": [
+            50,
+            50,
+            50,
+            50,
+            50
+          ],
+          "dica": "50 + 50 = 100."
+        },
+        {
+          "pergunta": "Para trás, de 100 em 100.",
+          "inicio": 905,
+          "passos": [
+            -100,
+            -100,
+            -100,
+            -100,
+            -100
+          ],
+          "dica": "As centenas diminuem 1 de cada vez."
+        },
+        {
+          "pergunta": "Segue as setas.",
+          "inicio": 250,
+          "passos": [
+            100,
+            10,
+            -100,
+            50,
+            200
+          ],
+          "dica": "Lê bem cada seta: + ou −."
+        }
+      ],
+      "fase": "bonus"
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos números",
+      "instrucao": "Encontra os pares: o número por extenso e o número com algarismos.",
+      "itens": [
+        [
+          "mil e oito",
+          "1008"
+        ],
+        [
+          "mil e oitenta",
+          "1080"
+        ],
+        [
+          "mil e oitocentos",
+          "1800"
+        ],
+        [
+          "dois mil",
+          "2000"
+        ],
+        [
+          "novecentos e noventa",
+          "990"
+        ],
+        [
+          "mil cento e um",
+          "1101"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Problemas com números grandes",
+      "instrucao": "Lê o problema e pensa bem antes de escolher.",
+      "baralhar": true,
+      "itens": [
+        {
+          "pergunta": "O Pico Ruivo tem 1862 metros e o Pico do Areeiro tem 1818 metros. Qual é o mais alto?",
+          "emoji": "⛰️",
+          "certa": "Pico Ruivo",
+          "erradas": [
+            "Pico do Areeiro"
+          ],
+          "explicacao": "1862 > 1818, porque 6 dezenas é mais do que 1 dezena."
+        },
+        {
+          "pergunta": "O Ticl@s guardou 1000 castanhas e depois mais 500. Quantas castanhas tem?",
+          "emoji": "🌰",
+          "certa": "1500",
+          "erradas": [
+            "1005",
+            "1050"
+          ],
+          "explicacao": "1000 + 500 = 1500."
+        },
+        {
+          "pergunta": "Uma caixa leva 100 lápis. Quantos lápis há em 12 caixas?",
+          "emoji": "✏️",
+          "certa": "1200",
+          "erradas": [
+            "112",
+            "1020"
+          ],
+          "explicacao": "12 centenas = 1200."
+        },
+        {
+          "pergunta": "A Rita tem 1450 pontos num jogo e o Tomás tem 1540. Quem tem mais pontos?",
+          "emoji": "🎮",
+          "certa": "Tomás",
+          "erradas": [
+            "Rita"
+          ],
+          "explicacao": "1540 > 1450, porque 5 centenas é mais do que 4 centenas."
+        },
+        {
+          "pergunta": "Um percurso tem 2000 metros. Já andaste 1600 metros. Quantos metros faltam?",
+          "emoji": "🚶",
+          "certa": "400",
+          "erradas": [
+            "600",
+            "1400"
+          ],
+          "explicacao": "1600 + 400 = 2000."
+        },
+        {
+          "pergunta": "A escola recolheu 980 tampinhas. Quantas faltam para chegar a 1000?",
+          "emoji": "♻️",
+          "certa": "20",
+          "erradas": [
+            "80",
+            "120"
+          ],
+          "explicacao": "980 + 20 = 1000."
+        }
+      ]
+    }
+  ]
+}

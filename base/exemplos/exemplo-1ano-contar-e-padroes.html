@@ -2352,7 +2352,7 @@ function s(tag, attrs, ...filhos) {
   return e;
 }
 function campoNumero(extra) {
-  const c = h('input', Object.assign({ class: 'num', inputmode: 'numeric', maxlength: '3', autocomplete: 'off', spellcheck: 'false', 'aria-label': t('escreveAqui') }, extra || {}));
+  const c = h('input', Object.assign({ class: 'num', inputmode: 'numeric', maxlength: '4', autocomplete: 'off', spellcheck: 'false', 'aria-label': t('escreveAqui') }, extra || {}));
   c.addEventListener('input', () => { c.value = c.value.replace(/\D/g, ''); c.classList.remove('mal'); });
   return c;
 }
