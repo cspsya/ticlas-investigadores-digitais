@@ -1,0 +1,808 @@
+{
+  "id": "2026-11-17-ticlas-2ano-g-ou-j-nomes-proprios-comuns",
+  "titulo": "G ou J? Nomes próprios e comuns",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-17",
+  "descricao": "Ortografia g/j (ga, go, gu / ge, gi / ja, je, ji, jo, ju) e classificação de nomes próprios e comuns, com escrita de palavras e frases",
+  "resumo": "Descobre quando se escreve G ou J e caça os nomes próprios e comuns!",
+  "focoTic": [
+    "Rato: clicar e escolher",
+    "Teclado: maiúsculas (⇧) e escrita de frases"
+  ],
+  "objetivo": "Escrever corretamente palavras com g e j e distinguir nomes próprios de nomes comuns, usando a letra maiúscula nos nomes próprios.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "completar",
+      "visual": "baloes",
+      "titulo": "Balões do G e do J",
+      "instrucao": "Olha para o desenho. Que letra falta? Rebenta o balão certo.",
+      "itens": [
+        {
+          "frase": "___ato",
+          "emoji": "🐱",
+          "certa": "g",
+          "erradas": [
+            "j"
+          ],
+          "explicacao": "gato: ga soa como g."
+        },
+        {
+          "frase": "___anela",
+          "emoji": "🪟",
+          "certa": "j",
+          "erradas": [
+            "g"
+          ],
+          "explicacao": "janela: antes do a, este som escreve-se com j."
+        },
+        {
+          "frase": "___elado",
+          "emoji": "🍦",
+          "certa": "g",
+          "erradas": [
+            "j"
+          ],
+          "explicacao": "gelado escreve-se com g."
+        },
+        {
+          "frase": "___oaninha",
+          "emoji": "🐞",
+          "certa": "j",
+          "erradas": [
+            "g"
+          ],
+          "explicacao": "joaninha: antes do o, este som escreve-se com j."
+        },
+        {
+          "frase": "___irafa",
+          "emoji": "🦒",
+          "certa": "g",
+          "erradas": [
+            "j"
+          ],
+          "explicacao": "girafa escreve-se com g."
+        },
+        {
+          "frase": "___ornal",
+          "emoji": "📰",
+          "certa": "j",
+          "erradas": [
+            "g"
+          ],
+          "explicacao": "jornal: antes do o, este som escreve-se com j."
+        },
+        {
+          "frase": "___olfinho",
+          "emoji": "🐬",
+          "certa": "g",
+          "erradas": [
+            "j"
+          ],
+          "explicacao": "golfinho: go soa como g de gato."
+        },
+        {
+          "frase": "quei___o",
+          "emoji": "🧀",
+          "certa": "j",
+          "erradas": [
+            "g"
+          ],
+          "explicacao": "queijo: antes do o, este som escreve-se com j."
+        },
+        {
+          "frase": "___elo",
+          "emoji": "🧊",
+          "certa": "g",
+          "erradas": [
+            "j"
+          ],
+          "explicacao": "gelo escreve-se com g."
+        },
+        {
+          "frase": "lara___a",
+          "emoji": "🍊",
+          "certa": "j",
+          "erradas": [
+            "g"
+          ],
+          "explicacao": "laranja: antes do a, este som escreve-se com j."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Os dois sons do G",
+      "instrucao": "Lê cada palavra baixinho. O g soa como em «gato» ou como em «gelado»? Põe a palavra na caixa certa.",
+      "caixas": [
+        "g de gato 🐱",
+        "g de gelado 🍦"
+      ],
+      "baralhar": true,
+      "itens": [
+        [
+          "gota",
+          "g de gato 🐱"
+        ],
+        [
+          "agulha",
+          "g de gato 🐱"
+        ],
+        [
+          "golfinho",
+          "g de gato 🐱"
+        ],
+        [
+          "lago",
+          "g de gato 🐱"
+        ],
+        [
+          "gaivota",
+          "g de gato 🐱"
+        ],
+        [
+          "fogo",
+          "g de gato 🐱"
+        ],
+        [
+          "girafa",
+          "g de gelado 🍦"
+        ],
+        [
+          "gelo",
+          "g de gelado 🍦"
+        ],
+        [
+          "tigela",
+          "g de gelado 🍦"
+        ],
+        [
+          "relógio",
+          "g de gelado 🍦"
+        ],
+        [
+          "ginástica",
+          "g de gelado 🍦"
+        ],
+        [
+          "girassol",
+          "g de gelado 🍦"
+        ]
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Investigador das regras",
+      "instrucao": "Lê com atenção. É verdadeiro ou falso?",
+      "itens": [
+        {
+          "afirmacao": "Em «gato», «gota» e «agulha», o g soa como em «gato».",
+          "verdade": true,
+          "explicacao": "ga, go, gu: o g soa como em gato."
+        },
+        {
+          "afirmacao": "Em «gelo» e «girafa», o g soa como em «gato».",
+          "verdade": false,
+          "explicacao": "ge e gi soam como em gelado."
+        },
+        {
+          "afirmacao": "«janela» e «laranja» escrevem-se com j.",
+          "verdade": true,
+          "explicacao": "Antes do a, o som de «janela» escreve-se sempre com j."
+        },
+        {
+          "afirmacao": "Podemos escrever «laranga» com g.",
+          "verdade": false,
+          "explicacao": "Com g, leríamos «laran-ga», como em gato. Escreve-se laranja."
+        },
+        {
+          "afirmacao": "Antes de a, o e u, o som de «jogo» escreve-se sempre com j.",
+          "verdade": true,
+          "explicacao": "janela, jogo, juntos: sempre com j."
+        },
+        {
+          "afirmacao": "Antes de e e i, o som pode escrever-se com g ou com j.",
+          "verdade": true,
+          "explicacao": "gelado e jeito, girafa e jipe: soam igual. É preciso memorizar a escrita."
+        },
+        {
+          "afirmacao": "«tigela» escreve-se com j: «tijela».",
+          "verdade": false,
+          "explicacao": "Escreve-se tigela, com g."
+        },
+        {
+          "afirmacao": "«hoje» escreve-se com j.",
+          "verdade": true,
+          "explicacao": "hoje: ho-je, com j."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio da escrita certa",
+      "instrucao": "Lê as duas palavras. Escolhe a carruagem com a palavra bem escrita.",
+      "itens": [
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🍒",
+          "certa": "cereja",
+          "erradas": [
+            "cerega"
+          ],
+          "explicacao": "cereja: antes do a, sempre j."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "⛪",
+          "certa": "igreja",
+          "erradas": [
+            "igrega"
+          ],
+          "explicacao": "igreja: antes do a, sempre j."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🥣",
+          "certa": "tigela",
+          "erradas": [
+            "tijela"
+          ],
+          "explicacao": "tigela escreve-se com g."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "⌚",
+          "certa": "relógio",
+          "erradas": [
+            "relójio"
+          ],
+          "explicacao": "relógio escreve-se com g."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "📅",
+          "certa": "hoje",
+          "erradas": [
+            "hoge"
+          ],
+          "explicacao": "hoje escreve-se com j."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🌻",
+          "certa": "girassol",
+          "erradas": [
+            "jirassol"
+          ],
+          "explicacao": "girassol escreve-se com g."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🚗",
+          "certa": "garagem",
+          "erradas": [
+            "garajem"
+          ],
+          "explicacao": "garagem: as palavras terminadas em -agem escrevem-se com g."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🍊",
+          "certa": "laranjeira",
+          "erradas": [
+            "larangeira"
+          ],
+          "explicacao": "laranjeira vem de laranja, por isso mantém o j."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "🤸",
+          "certa": "ginástica",
+          "erradas": [
+            "jinástica"
+          ],
+          "explicacao": "ginástica escreve-se com g."
+        },
+        {
+          "pergunta": "Qual está bem escrita?",
+          "emoji": "💎",
+          "certa": "joia",
+          "erradas": [
+            "goia"
+          ],
+          "explicacao": "joia: antes do o, sempre j."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos nomes",
+      "instrucao": "O nome próprio dá nome a uma pessoa, a um animal ou a um lugar só. O nome comum dá nome a qualquer coisa do mesmo tipo. Põe cada nome na caixa certa.",
+      "caixas": [
+        "Nome próprio",
+        "Nome comum"
+      ],
+      "baralhar": true,
+      "itens": [
+        [
+          "Jorge",
+          "Nome próprio"
+        ],
+        [
+          "Joana",
+          "Nome próprio"
+        ],
+        [
+          "Gonçalo",
+          "Nome próprio"
+        ],
+        [
+          "Gabriela",
+          "Nome próprio"
+        ],
+        [
+          "Madeira",
+          "Nome próprio"
+        ],
+        [
+          "Funchal",
+          "Nome próprio"
+        ],
+        [
+          "Garajau",
+          "Nome próprio"
+        ],
+        [
+          "Portugal",
+          "Nome próprio"
+        ],
+        [
+          "gato",
+          "Nome comum"
+        ],
+        [
+          "girafa",
+          "Nome comum"
+        ],
+        [
+          "janela",
+          "Nome comum"
+        ],
+        [
+          "ilha",
+          "Nome comum"
+        ],
+        [
+          "cidade",
+          "Nome comum"
+        ],
+        [
+          "jardim",
+          "Nome comum"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião caça-nomes",
+      "instrucao": "Lê a frase e a pergunta. Leva o avião até à nuvem certa.",
+      "itens": [
+        {
+          "pergunta": "«O Jorge come um gelado.» Qual é o nome próprio?",
+          "emoji": "🍦",
+          "certa": "Jorge",
+          "erradas": [
+            "gelado",
+            "come"
+          ],
+          "explicacao": "Jorge é o nome de uma pessoa: nome próprio."
+        },
+        {
+          "pergunta": "«A Joana abriu a janela.» Qual é o nome comum?",
+          "emoji": "🪟",
+          "certa": "janela",
+          "erradas": [
+            "Joana",
+            "abriu"
+          ],
+          "explicacao": "janela: há muitas janelas, é um nome comum."
+        },
+        {
+          "pergunta": "«A Gabriela vive no Funchal.» Quantos nomes próprios tem a frase?",
+          "certa": "2",
+          "erradas": [
+            "1",
+            "3"
+          ],
+          "explicacao": "Gabriela (pessoa) e Funchal (cidade): 2 nomes próprios."
+        },
+        {
+          "pergunta": "«O gato do Gonçalo chama-se Pantufa.» Como se chama o gato?",
+          "emoji": "🐱",
+          "certa": "Pantufa",
+          "erradas": [
+            "gato",
+            "Gonçalo"
+          ],
+          "explicacao": "Pantufa é o nome daquele gato: os animais também têm nomes próprios."
+        },
+        {
+          "pergunta": "«O Garajau fica na ilha da Madeira.» Qual é o nome comum?",
+          "emoji": "🏝️",
+          "certa": "ilha",
+          "erradas": [
+            "Garajau",
+            "Madeira"
+          ],
+          "explicacao": "ilha: há muitas ilhas, é um nome comum."
+        },
+        {
+          "pergunta": "«A girafa do jardim zoológico chama-se Gina.» Qual é o nome próprio?",
+          "emoji": "🦒",
+          "certa": "Gina",
+          "erradas": [
+            "girafa",
+            "jardim"
+          ],
+          "explicacao": "Gina é o nome daquela girafa: nome próprio."
+        },
+        {
+          "pergunta": "«Hoje o João vai ao jardim.» Quantos nomes comuns tem a frase?",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "3"
+          ],
+          "explicacao": "Só jardim é nome comum. João é nome próprio."
+        },
+        {
+          "pergunta": "Qual destes nomes deve começar com letra maiúscula?",
+          "certa": "Portugal",
+          "erradas": [
+            "país",
+            "cidade"
+          ],
+          "explicacao": "Portugal é o nome de um país só: nome próprio, com letra maiúscula."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "titulo": "Teclado mágico: G, J, g ou j?",
+      "instrucao": "Escreve no teclado a letra que falta. Se for um nome próprio, usa a letra maiúscula (tecla ⇧ Shift).",
+      "itens": [
+        {
+          "frase": "O ___ato dorme no sofá.",
+          "emoji": "🐱",
+          "certa": "g",
+          "dica": "gato é um nome comum: letra minúscula."
+        },
+        {
+          "frase": "A ___oana come uma cereja.",
+          "emoji": "🍒",
+          "certa": "J",
+          "dica": "Joana é um nome próprio: segura na tecla ⇧ e carrega no J."
+        },
+        {
+          "frase": "Abre a ___anela, por favor.",
+          "emoji": "🪟",
+          "certa": "j",
+          "dica": "Antes do a, este som escreve-se com j."
+        },
+        {
+          "frase": "O ___orge mora em São Martinho.",
+          "emoji": "🏡",
+          "certa": "J",
+          "dica": "Jorge é um nome próprio: letra maiúscula."
+        },
+        {
+          "frase": "Ao lanche comi pão com quei___o.",
+          "emoji": "🧀",
+          "certa": "j",
+          "dica": "Antes do o, este som escreve-se com j."
+        },
+        {
+          "frase": "A ___abriela faz ginástica.",
+          "emoji": "🤸",
+          "certa": "G",
+          "dica": "Gabriela é um nome próprio e começa como «gato»."
+        },
+        {
+          "frase": "A sopa está na ti___ela.",
+          "emoji": "🥣",
+          "certa": "g",
+          "dica": "tigela escreve-se com g."
+        },
+        {
+          "frase": "O sino da igre___a toca.",
+          "emoji": "⛪",
+          "certa": "j",
+          "dica": "Antes do a, este som escreve-se com j."
+        },
+        {
+          "frase": "O ___onçalo viu um golfinho.",
+          "emoji": "🐬",
+          "certa": "G",
+          "dica": "Gonçalo é um nome próprio e começa como «golfinho»."
+        },
+        {
+          "frase": "A ___irafa tem o pescoço comprido.",
+          "emoji": "🦒",
+          "certa": "g",
+          "dica": "girafa é um nome comum e escreve-se com g."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "ordenar",
+      "titulo": "Frases baralhadas",
+      "instrucao": "Toca nas palavras pela ordem certa. A frase começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🍦",
+          "pecas": [
+            "A",
+            "Joana",
+            "come",
+            "um",
+            "gelado."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🏙️",
+          "pecas": [
+            "O",
+            "Jorge",
+            "vive",
+            "no",
+            "Funchal."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🦒",
+          "pecas": [
+            "A",
+            "girafa",
+            "tem",
+            "o",
+            "pescoço",
+            "comprido."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🪟",
+          "pecas": [
+            "O",
+            "Gonçalo",
+            "abriu",
+            "a",
+            "janela."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🌳",
+          "pecas": [
+            "Hoje",
+            "a",
+            "Gabriela",
+            "foi",
+            "ao",
+            "jardim."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🐞",
+          "pecas": [
+            "A",
+            "joaninha",
+            "pousou",
+            "no",
+            "girassol."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Escreve o nome do desenho",
+      "instrucao": "Olha para o desenho e escreve o nome no teclado. Atenção ao g e ao j!",
+      "itens": [
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🦒",
+          "resposta": "girafa",
+          "dica": "Começa por gi, como em gelado."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🍒",
+          "resposta": "cereja",
+          "dica": "Acaba em ja."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🍦",
+          "resposta": "gelado",
+          "dica": "Começa por ge."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🧀",
+          "resposta": "queijo",
+          "dica": "que-i-jo: acaba em jo."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🪟",
+          "resposta": "janela",
+          "dica": "Começa por ja."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "⛪",
+          "resposta": "igreja",
+          "dica": "i-gre-ja."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🌻",
+          "resposta": "girassol",
+          "dica": "gira + sol, com ss no meio."
+        },
+        {
+          "pergunta": "Escreve o nome do desenho.",
+          "emoji": "🐞",
+          "resposta": "joaninha",
+          "dica": "jo-a-ni-nha."
+        },
+        {
+          "pergunta": "Escreve o nome da nossa ilha.",
+          "emoji": "🏝️",
+          "resposta": "Madeira",
+          "dica": "É um nome próprio: começa com letra maiúscula."
+        },
+        {
+          "pergunta": "Escreve o nome do país onde fica a Madeira.",
+          "emoji": "🇵🇹",
+          "resposta": "Portugal",
+          "dica": "É um nome próprio: começa com letra maiúscula."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "instrucao": "Inventa uma frase tua com a palavra pedida. Começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase com a palavra «gelado» e o nome de uma pessoa.",
+          "emoji": "🍦",
+          "palavra": "gelado",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com a palavra «janela».",
+          "emoji": "🪟",
+          "palavra": "janela",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase sobre a Madeira com a palavra «jardim».",
+          "emoji": "🌺",
+          "palavra": "jardim",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória do G e do J",
+      "instrucao": "Descobre os pares: cada desenho e a palavra bem escrita.",
+      "itens": [
+        [
+          "🦒",
+          "girafa"
+        ],
+        [
+          "🍒",
+          "cereja"
+        ],
+        [
+          "🧊",
+          "gelo"
+        ],
+        [
+          "📰",
+          "jornal"
+        ],
+        [
+          "🥣",
+          "tigela"
+        ],
+        [
+          "💎",
+          "joia"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Apanha o Ticl@s",
+      "instrucao": "Apanha o Ticl@s quando aparecer a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Que palavra está bem escrita?",
+          "certa": "coragem",
+          "erradas": [
+            "corajem",
+            "coraje"
+          ],
+          "explicacao": "coragem: as palavras terminadas em -agem escrevem-se com g."
+        },
+        {
+          "pergunta": "Que palavra está bem escrita?",
+          "certa": "jeito",
+          "erradas": [
+            "geito",
+            "gueito"
+          ],
+          "explicacao": "jeito escreve-se com j."
+        },
+        {
+          "pergunta": "Qual é um nome próprio?",
+          "certa": "Gaula",
+          "erradas": [
+            "gaivota",
+            "gota"
+          ],
+          "explicacao": "Gaula é o nome de uma freguesia da Madeira."
+        },
+        {
+          "pergunta": "Qual é um nome comum?",
+          "certa": "jipe",
+          "erradas": [
+            "Júlia",
+            "Jardim do Mar"
+          ],
+          "explicacao": "jipe: há muitos jipes, é um nome comum."
+        },
+        {
+          "pergunta": "Que palavra está bem escrita?",
+          "certa": "gigante",
+          "erradas": [
+            "jigante",
+            "gijante"
+          ],
+          "explicacao": "gigante: gi-gan-te, com g."
+        },
+        {
+          "pergunta": "Que palavra está bem escrita?",
+          "certa": "página",
+          "erradas": [
+            "pájina",
+            "páguina"
+          ],
+          "explicacao": "página escreve-se com g."
+        }
+      ]
+    }
+  ]
+}

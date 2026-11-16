@@ -1,0 +1,817 @@
+{
+  "id": "2026-11-17-ticlas-2ano-igualdades-numeros-ate-400",
+  "titulo": "Igualdades e números até 400",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-17",
+  "descricao": "Igualdades aritméticas (o sinal = como equilíbrio: 13 + 7 = 10 + …), leitura e representação de números até 400 no MAB e na reta, sequências, comparação (< e >) e escrita por extenso",
+  "resumo": "Equilibra as igualdades e explora os números até 400 com o MAB!",
+  "focoTic": [
+    "Rato: clicar e escolher",
+    "Teclado: escrever números"
+  ],
+  "objetivo": "Completar igualdades aritméticas, percebendo que o sinal = quer dizer «vale o mesmo que», e ler, representar, ordenar e comparar números até 400.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Cálculo relâmpago",
+      "instrucao": "Calcula de cabeça e rebenta o balão certo.",
+      "itens": [
+        {
+          "pergunta": "13 + 7 =",
+          "certa": "20",
+          "erradas": [
+            "19",
+            "21"
+          ],
+          "explicacao": "3 e 7 são amigos do 10: 13 + 7 = 20."
+        },
+        {
+          "pergunta": "10 + 10 =",
+          "certa": "20",
+          "erradas": [
+            "11",
+            "30"
+          ],
+          "explicacao": "1 dezena + 1 dezena = 2 dezenas = 20."
+        },
+        {
+          "pergunta": "9 + 6 =",
+          "certa": "15",
+          "erradas": [
+            "14",
+            "16"
+          ],
+          "explicacao": "9 + 1 = 10 e mais 5 dá 15."
+        },
+        {
+          "pergunta": "10 + 5 =",
+          "certa": "15",
+          "erradas": [
+            "105",
+            "6"
+          ],
+          "explicacao": "1 dezena e 5 unidades: 15."
+        },
+        {
+          "pergunta": "8 + 5 =",
+          "certa": "13",
+          "erradas": [
+            "12",
+            "14"
+          ],
+          "explicacao": "8 + 2 = 10 e mais 3 dá 13."
+        },
+        {
+          "pergunta": "18 + 2 =",
+          "certa": "20",
+          "erradas": [
+            "10",
+            "21"
+          ],
+          "explicacao": "8 e 2 são amigos do 10: 18 + 2 = 20."
+        },
+        {
+          "pergunta": "200 + 100 =",
+          "certa": "300",
+          "erradas": [
+            "201",
+            "210"
+          ],
+          "explicacao": "2 centenas + 1 centena = 3 centenas."
+        },
+        {
+          "pergunta": "350 + 50 =",
+          "certa": "400",
+          "erradas": [
+            "355",
+            "300"
+          ],
+          "explicacao": "50 + 50 = 100, por isso 350 + 50 = 400."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "A balança do sinal =",
+      "instrucao": "O sinal = quer dizer «vale o mesmo que». Os dois lados da balança têm de ficar iguais. Que número falta?",
+      "itens": [
+        {
+          "pergunta": "13 + 7 = 10 + ___",
+          "certa": "10",
+          "erradas": [
+            "20",
+            "30"
+          ],
+          "explicacao": "13 + 7 = 20 e 10 + 10 = 20. A balança fica equilibrada.",
+          "emoji": "⚖️"
+        },
+        {
+          "pergunta": "9 + 6 = 10 + ___",
+          "certa": "5",
+          "erradas": [
+            "15",
+            "25"
+          ],
+          "explicacao": "9 + 6 = 15 e 10 + 5 = 15.",
+          "emoji": "⚖️"
+        },
+        {
+          "pergunta": "8 + 7 = 10 + ___",
+          "certa": "5",
+          "erradas": [
+            "15",
+            "7"
+          ],
+          "explicacao": "8 + 7 = 15 e 10 + 5 = 15.",
+          "emoji": "⚖️"
+        },
+        {
+          "pergunta": "12 + 8 = ___ + 10",
+          "certa": "10",
+          "erradas": [
+            "20",
+            "8"
+          ],
+          "explicacao": "12 + 8 = 20 e 10 + 10 = 20.",
+          "emoji": "⚖️"
+        },
+        {
+          "pergunta": "7 + 5 = 10 + ___",
+          "certa": "2",
+          "erradas": [
+            "12",
+            "5"
+          ],
+          "explicacao": "7 + 5 = 12 e 10 + 2 = 12.",
+          "emoji": "⚖️"
+        },
+        {
+          "pergunta": "6 + 9 = 5 + ___",
+          "certa": "10",
+          "erradas": [
+            "15",
+            "9"
+          ],
+          "explicacao": "6 + 9 = 15 e 5 + 10 = 15.",
+          "emoji": "⚖️"
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive das igualdades",
+      "instrucao": "Calcula os dois lados. Se valem o mesmo, é verdadeiro.",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "13 + 7 = 10 + 10",
+          "verdade": true,
+          "explicacao": "Os dois lados valem 20."
+        },
+        {
+          "afirmacao": "9 + 6 = 10 + 6",
+          "verdade": false,
+          "explicacao": "9 + 6 = 15, mas 10 + 6 = 16."
+        },
+        {
+          "afirmacao": "8 + 4 = 10 + 2",
+          "verdade": true,
+          "explicacao": "Os dois lados valem 12."
+        },
+        {
+          "afirmacao": "15 + 5 = 20 + 5",
+          "verdade": false,
+          "explicacao": "15 + 5 = 20, mas 20 + 5 = 25."
+        },
+        {
+          "afirmacao": "20 = 13 + 7",
+          "verdade": true,
+          "explicacao": "O resultado também pode estar à esquerda: 13 + 7 = 20."
+        },
+        {
+          "afirmacao": "Em 8 + 4 = ___ + 5, o número que falta é 12.",
+          "verdade": false,
+          "explicacao": "8 + 4 = 12. Do outro lado, ___ + 5 tem de dar 12, por isso falta o 7."
+        },
+        {
+          "afirmacao": "100 + 200 = 150 + 150",
+          "verdade": true,
+          "explicacao": "Os dois lados valem 300."
+        },
+        {
+          "afirmacao": "7 + 6 = 6 + 7",
+          "verdade": true,
+          "explicacao": "Trocar a ordem das parcelas não muda a soma: os dois lados valem 13."
+        }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Pares que valem o mesmo",
+      "instrucao": "Liga cada conta à conta que vale o mesmo.",
+      "itens": [
+        [
+          "13 + 7",
+          "10 + 10"
+        ],
+        [
+          "9 + 6",
+          "10 + 5"
+        ],
+        [
+          "8 + 5",
+          "10 + 3"
+        ],
+        [
+          "7 + 9",
+          "10 + 6"
+        ],
+        [
+          "18 + 4",
+          "20 + 2"
+        ],
+        [
+          "15 + 6",
+          "20 + 1"
+        ]
+      ]
+    },
+    {
+      "tipo": "mab",
+      "titulo": "Lê o MAB",
+      "instrucao": "Conta as placas (centenas), as barras (dezenas) e os cubos (unidades). Escreve o número.",
+      "itens": [
+        {
+          "modo": "ler",
+          "c": 1,
+          "d": 4,
+          "u": 5,
+          "dica": "1 placa = 100. Depois conta as barras de 10 em 10."
+        },
+        {
+          "modo": "ler",
+          "c": 2,
+          "d": 3,
+          "u": 6,
+          "dica": "2 placas = 200."
+        },
+        {
+          "modo": "ler",
+          "c": 2,
+          "d": 0,
+          "u": 7,
+          "dica": "Não há barras: o algarismo das dezenas é 0."
+        },
+        {
+          "modo": "ler",
+          "c": 3,
+          "d": 5,
+          "u": 0,
+          "dica": "3 placas = 300. Não há cubos: o algarismo das unidades é 0."
+        },
+        {
+          "modo": "ler",
+          "c": 3,
+          "d": 1,
+          "u": 8,
+          "dica": "3 placas = 300, 1 barra = 10."
+        },
+        {
+          "modo": "ler",
+          "c": 4,
+          "d": 0,
+          "u": 0,
+          "dica": "4 placas de 100."
+        },
+        {
+          "modo": "ler",
+          "c": 1,
+          "d": 12,
+          "u": 3,
+          "dica": "Atenção: 12 barras! 10 barras fazem mais 1 placa."
+        }
+      ]
+    },
+    {
+      "tipo": "mab",
+      "titulo": "Constrói no MAB",
+      "instrucao": "Toca na placa, na barra e no cubo para construir o número.",
+      "itens": [
+        {
+          "modo": "construir",
+          "numero": 132,
+          "dica": "1 placa, 3 barras e 2 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 215,
+          "dica": "2 placas, 1 barra e 5 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 240,
+          "dica": "2 placas e 4 barras. Sem cubos!"
+        },
+        {
+          "modo": "construir",
+          "numero": 208,
+          "dica": "2 placas e 8 cubos. Sem barras!"
+        },
+        {
+          "modo": "construir",
+          "numero": 199,
+          "dica": "1 placa, 9 barras e 9 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 276,
+          "dica": "2 placas, 7 barras e 6 cubos."
+        }
+      ]
+    },
+    {
+      "tipo": "reta",
+      "titulo": "Na reta numérica",
+      "instrucao": "Observa as marcas da reta e conta de quanto em quanto ela avança.",
+      "itens": [
+        {
+          "modo": "ler",
+          "inicio": 0,
+          "fim": 400,
+          "passo": 50,
+          "marca": 250,
+          "erradas": [
+            200,
+            300
+          ],
+          "dica": "A reta avança de 50 em 50: 0, 50, 100…"
+        },
+        {
+          "modo": "ler",
+          "inicio": 300,
+          "fim": 400,
+          "passo": 10,
+          "marca": 370,
+          "erradas": [
+            307,
+            360
+          ],
+          "dica": "Conta de 10 em 10 a partir do 300."
+        },
+        {
+          "modo": "ler",
+          "inicio": 200,
+          "fim": 300,
+          "passo": 10,
+          "marca": 240,
+          "dica": "Conta de 10 em 10 a partir do 200 e escreve o número."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 300,
+          "fim": 400,
+          "passo": 10,
+          "rotulos": [
+            300,
+            350,
+            400
+          ],
+          "numero": 345,
+          "dica": "345 fica entre 340 e 350."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 200,
+          "fim": 300,
+          "passo": 10,
+          "rotulos": [
+            200,
+            250,
+            300
+          ],
+          "numero": 278,
+          "dica": "278 fica entre 270 e 280."
+        },
+        {
+          "modo": "colocar",
+          "inicio": 100,
+          "fim": 200,
+          "passo": 10,
+          "rotulos": [
+            100,
+            150,
+            200
+          ],
+          "numero": 115,
+          "dica": "115 fica entre 110 e 120."
+        }
+      ]
+    },
+    {
+      "tipo": "cadeia",
+      "titulo": "Sequências e setas",
+      "instrucao": "Segue as setas e escreve os números que faltam.",
+      "itens": [
+        {
+          "pergunta": "De 100 em 100, começando no 0.",
+          "inicio": 0,
+          "passos": [
+            100,
+            100,
+            100,
+            100
+          ],
+          "dica": "0, 100, 200…"
+        },
+        {
+          "pergunta": "De 10 em 10, começando no 250.",
+          "inicio": 250,
+          "passos": [
+            10,
+            10,
+            10,
+            10,
+            10
+          ],
+          "dica": "Muda o algarismo das dezenas: 250, 260…"
+        },
+        {
+          "pergunta": "De 5 em 5, começando no 370.",
+          "inicio": 370,
+          "passos": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "dica": "Os números terminam em 0 ou em 5."
+        },
+        {
+          "pergunta": "Para trás, de 10 em 10, começando no 400.",
+          "inicio": 400,
+          "passos": [
+            -10,
+            -10,
+            -10,
+            -10
+          ],
+          "dica": "400 − 10 = 390."
+        },
+        {
+          "pergunta": "Segue as setas, começando no 299.",
+          "inicio": 299,
+          "passos": [
+            1,
+            10,
+            100
+          ],
+          "dica": "299 + 1 = 300."
+        },
+        {
+          "pergunta": "Para trás, de 1 em 1, começando no 302.",
+          "inicio": 302,
+          "passos": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "dica": "Depois do 300 vem o 299."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "visual": "comboio",
+      "titulo": "Comboio do maior e do menor",
+      "instrucao": "Compara os números. Escolhe o sinal certo: < (é menor do que), > (é maior do que) ou =.",
+      "itens": [
+        {
+          "frase": "345 ___ 354",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "As centenas são iguais. 4 dezenas é menos do que 5 dezenas: 345 < 354."
+        },
+        {
+          "frase": "290 ___ 209",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "9 dezenas é mais do que 0 dezenas: 290 > 209."
+        },
+        {
+          "frase": "400 ___ 399",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "400 vem logo a seguir a 399."
+        },
+        {
+          "frase": "198 ___ 201",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "1 centena é menos do que 2 centenas."
+        },
+        {
+          "frase": "300 + 20 ___ 320",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "300 + 20 = 320: valem o mesmo."
+        },
+        {
+          "frase": "256 ___ 265",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "5 dezenas é menos do que 6 dezenas."
+        },
+        {
+          "frase": "13 + 7 ___ 10 + 10",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "Os dois lados valem 20."
+        },
+        {
+          "frase": "380 ___ 308",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "8 dezenas é mais do que 0 dezenas."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas do 250",
+      "instrucao": "O número é menor ou maior do que 250? Põe-no na caixa certa.",
+      "caixas": [
+        "menor do que 250",
+        "maior do que 250"
+      ],
+      "baralhar": true,
+      "itens": [
+        [
+          "205",
+          "menor do que 250"
+        ],
+        [
+          "249",
+          "menor do que 250"
+        ],
+        [
+          "152",
+          "menor do que 250"
+        ],
+        [
+          "199",
+          "menor do que 250"
+        ],
+        [
+          "225",
+          "menor do que 250"
+        ],
+        [
+          "240",
+          "menor do que 250"
+        ],
+        [
+          "252",
+          "maior do que 250"
+        ],
+        [
+          "301",
+          "maior do que 250"
+        ],
+        [
+          "260",
+          "maior do que 250"
+        ],
+        [
+          "349",
+          "maior do que 250"
+        ],
+        [
+          "400",
+          "maior do que 250"
+        ],
+        [
+          "350",
+          "maior do que 250"
+        ]
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "completar",
+      "titulo": "Teclado mágico: equilibra a igualdade",
+      "instrucao": "Escreve no teclado o número que falta para os dois lados valerem o mesmo.",
+      "itens": [
+        {
+          "frase": "14 + 6 = 10 + ___",
+          "certa": "10",
+          "dica": "Quanto é 14 + 6? E 10 + quanto dá o mesmo?"
+        },
+        {
+          "frase": "8 + 9 = 10 + ___",
+          "certa": "7",
+          "dica": "8 + 9 = 17."
+        },
+        {
+          "frase": "11 + 9 = ___ + 15",
+          "certa": "5",
+          "dica": "11 + 9 = 20."
+        },
+        {
+          "frase": "20 + 5 = 15 + ___",
+          "certa": "10",
+          "dica": "20 + 5 = 25."
+        },
+        {
+          "frase": "8 + 4 = ___ + 5",
+          "certa": "7",
+          "dica": "8 + 4 = 12. Que número mais 5 dá 12?"
+        },
+        {
+          "frase": "100 + 50 = 120 + ___",
+          "certa": "30",
+          "dica": "100 + 50 = 150."
+        },
+        {
+          "frase": "200 + 200 = 300 + ___",
+          "certa": "100",
+          "dica": "200 + 200 = 400."
+        },
+        {
+          "frase": "30 + 40 = 50 + ___",
+          "certa": "20",
+          "dica": "30 + 40 = 70."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Números e palavras",
+      "instrucao": "Escreve no teclado. Atenção aos acentos e aos espaços!",
+      "itens": [
+        {
+          "pergunta": "Escreve o número que tem 3 centenas, 1 dezena e 7 unidades.",
+          "resposta": "317",
+          "dica": "Primeiro as centenas, depois as dezenas, depois as unidades."
+        },
+        {
+          "pergunta": "Escreve o número que tem 2 centenas, 0 dezenas e 9 unidades.",
+          "resposta": "209",
+          "dica": "Não te esqueças do 0 no meio."
+        },
+        {
+          "pergunta": "Escreve o número que vem logo a seguir a 299.",
+          "resposta": "300",
+          "dica": "299 + 1."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 200.",
+          "resposta": "duzentos",
+          "dica": "Começa por du…"
+        },
+        {
+          "pergunta": "Escreve por extenso o número 300.",
+          "resposta": "trezentos",
+          "dica": "Começa por tre…"
+        },
+        {
+          "pergunta": "Escreve por extenso o número 400.",
+          "resposta": "quatrocentos",
+          "dica": "quatro + centos."
+        },
+        {
+          "pergunta": "Escreve por extenso o número 150.",
+          "resposta": "cento e cinquenta",
+          "dica": "cento e…"
+        },
+        {
+          "pergunta": "Escreve por extenso o número 315.",
+          "resposta": "trezentos e quinze",
+          "dica": "trezentos e…"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória das centenas",
+      "instrucao": "Descobre os pares: cada número e a forma de o decompor.",
+      "itens": [
+        [
+          "3 centenas",
+          "300"
+        ],
+        [
+          "4 centenas",
+          "400"
+        ],
+        [
+          "25 dezenas",
+          "250"
+        ],
+        [
+          "2C 3D 4U",
+          "234"
+        ],
+        [
+          "1C 0D 6U",
+          "106"
+        ],
+        [
+          "3C 4D 0U",
+          "340"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Problemas do Ticl@s",
+      "instrucao": "Lê o problema com atenção e escolhe a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "O Ticl@s tem 13 bolotas e apanha mais 7. A amiga tem 10 bolotas. Quantas bolotas tem a amiga de apanhar para ficar com tantas como o Ticl@s?",
+          "emoji": "🌰",
+          "certa": "10",
+          "erradas": [
+            "20",
+            "7"
+          ],
+          "explicacao": "O Ticl@s fica com 20. 10 + 10 = 20."
+        },
+        {
+          "pergunta": "Numa caixa há 3 sacos de 100 berlindes e mais 25 berlindes soltos. Quantos berlindes há?",
+          "emoji": "📦",
+          "certa": "325",
+          "erradas": [
+            "128",
+            "352"
+          ],
+          "explicacao": "300 + 25 = 325."
+        },
+        {
+          "pergunta": "A biblioteca tem 380 livros. Quantos faltam para ter 400?",
+          "emoji": "📚",
+          "certa": "20",
+          "erradas": [
+            "30",
+            "120"
+          ],
+          "explicacao": "380 + 20 = 400."
+        },
+        {
+          "pergunta": "O Jorge conta de 100 em 100: 100, 200, 300… Que número diz a seguir?",
+          "emoji": "🗣️",
+          "certa": "400",
+          "erradas": [
+            "310",
+            "301"
+          ],
+          "explicacao": "300 + 100 = 400."
+        },
+        {
+          "pergunta": "Qual é o maior número que se escreve com os algarismos 2, 3 e 1?",
+          "certa": "321",
+          "erradas": [
+            "123",
+            "312"
+          ],
+          "explicacao": "As centenas primeiro: o maior algarismo (3) fica nas centenas."
+        }
+      ]
+    }
+  ]
+}
