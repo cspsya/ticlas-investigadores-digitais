@@ -507,5 +507,27 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-16-1ano-missao-casita",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "Missão Casita: o encanto do código",
+    "descricao": "Versão para o 1.º ano do jogo inspirado no filme Encanto, sem leitura e sem som: 6 missões simples de pensamento computacional e robótica — sequências de 3 imagens, padrões AB, programar um robô com setas, repetir (seta × número), SE… ENTÃO com imagens e encontrar a seta errada. Barra com a frase para o professor ler, pistas visuais a piscar, guia do professor e certificado.",
+    "disciplina": "Pensamento Computacional",
+    "data": "2026-11-16",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-16_1ano_PensamentoComputacional_MissaoCasita_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Programa o robô com setas e devolve as borboletas à vela mágica!",
+    "focoTic": [
+      "Pensamento computacional",
+      "Programação de robôs",
+      "Rato: clicar"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]

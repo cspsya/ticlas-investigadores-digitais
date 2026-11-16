@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missão Casita — Pensamento Computacional e Robótica (1.º ano)</title>
+<style>
+:root{
+  --creme:#FFF8EC; --papel:#FFFFFF; --tinta:#2B1B3D; --suave:#6B5B7B;
+  --magenta:#B8336A; --amarelo:#F4B400; --verde:#2F8F5B; --terracota:#D2643A;
+  --azul:#2E6FB7; --roxo:#5B3A8C; --linha:#E9DFCF; --raio:20px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:"Trebuchet MS","Segoe UI",Verdana,sans-serif;background:var(--creme);color:var(--tinta);font-size:20px;line-height:1.4;min-height:100vh}
+button{font-family:inherit;font-size:inherit;cursor:pointer;border:none}
+button:disabled{opacity:.45;cursor:not-allowed}
+
+/* ---------- Cabeçalho ---------- */
+header{background:linear-gradient(90deg,var(--magenta),var(--roxo));color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+header h1{font-size:22px;margin:0;flex:1;white-space:nowrap}
+.borboletas{display:flex;gap:4px;font-size:26px}
+.borboletas>span{filter:grayscale(1);opacity:.35;transition:.4s}
+.borboletas>span.on{filter:none;opacity:1;transform:scale(1.15)}
+.btn-top{background:rgba(255,255,255,.18);color:#fff;padding:8px 14px;border-radius:12px;font-size:18px}
+.btn-top:hover{background:rgba(255,255,255,.3)}
+main{max-width:1100px;margin:0 auto;padding:20px 18px 40px}
+
+/* ---------- Botões ---------- */
+.btn{padding:14px 24px;border-radius:16px;font-weight:bold;color:#fff;background:var(--verde);box-shadow:0 5px 0 rgba(0,0,0,.18);transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.btn.sec{background:#fff;color:var(--tinta);border:2px solid var(--linha);box-shadow:0 4px 0 var(--linha)}
+.btn.grande{font-size:30px;padding:18px 40px}
+.play{background:var(--verde);color:#fff;border-radius:50%;width:96px;height:96px;font-size:44px;box-shadow:0 6px 0 rgba(0,0,0,.2)}
+.ouvir{background:var(--amarelo);color:var(--tinta);border-radius:50%;width:72px;height:72px;font-size:34px;box-shadow:0 5px 0 rgba(0,0,0,.18);flex:none}
+.ouvir.falando{animation:pulsar 1s infinite}
+@keyframes pulsar{50%{transform:scale(1.1)}}
+
+/* ---------- Início ---------- */
+.inicio{text-align:center;padding-top:10px}
+.inicio .vela-grande{font-size:110px;filter:drop-shadow(0 0 22px rgba(244,180,0,.8))}
+.inicio h2{font-size:46px;margin:0;color:var(--magenta)}
+.inicio .figuras{font-size:56px;margin:10px 0 20px;letter-spacing:8px}
+
+/* ---------- Mapa ---------- */
+.topo-mapa{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px}
+.vela{font-size:72px;transition:filter .6s}
+.portas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:760px){.portas{grid-template-columns:repeat(2,1fr)}}
+.porta{position:relative;background:var(--cor);color:#fff;border-radius:140px 140px 18px 18px;padding:30px 14px 18px;text-align:center;box-shadow:0 6px 0 rgba(0,0,0,.2);transition:transform .15s}
+.porta:hover{transform:translateY(-4px)}
+.porta .num{display:inline-block;background:#fff;color:var(--cor);border-radius:50%;width:48px;height:48px;line-height:48px;font-size:30px;font-weight:bold}
+.porta .ico{font-size:70px;display:block;margin:6px 0 0}
+.porta .nome{font-size:17px;opacity:.9}
+.porta.feita{outline:6px solid var(--amarelo);outline-offset:3px}
+.porta.feita::after{content:"🦋";position:absolute;top:-16px;right:-6px;font-size:40px}
+
+/* ---------- Missão ---------- */
+.cab{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.cab .selo{font-size:50px;background:var(--cor);border-radius:50%;width:84px;height:84px;display:flex;align-items:center;justify-content:center;flex:none}
+.cab .passo{flex:1;display:flex;gap:8px;align-items:center;font-size:26px}
+.cab .passo span{width:22px;height:22px;border-radius:50%;background:var(--linha)}
+.cab .passo span.on{background:var(--cor)}
+.cartao{background:var(--papel);border-radius:var(--raio);padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);margin-bottom:16px}
+.centro{text-align:center}
+.estrela{font-size:64px;text-align:center;min-height:76px}
+.abanar{animation:abanar .4s}
+@keyframes abanar{0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+.saltar{animation:saltar .5s}
+@keyframes saltar{50%{transform:scale(1.3)}}
+
+/* Sequência */
+.cartas{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin:10px 0 24px;min-height:130px}
+.carta{background:#fff;border:4px solid var(--linha);border-radius:20px;width:130px;height:130px;font-size:72px;display:flex;align-items:center;justify-content:center}
+.carta:hover{border-color:var(--terracota)}
+.slots{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.slot{width:130px;height:150px;border:4px dashed var(--linha);border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#FFFDF8;font-size:72px}
+.slot .n{font-size:22px;color:var(--terracota);font-weight:bold;letter-spacing:2px}
+.slot.cheio{border-style:solid;cursor:pointer}
+.slot.certo{border-color:var(--verde);background:#E7F6EC}
+.slot.errado{border-color:#C0392B;background:#FDECEA}
+
+/* Padrões e escolhas */
+.seq{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:14px 0 26px}
+.peca{width:96px;height:96px;border-radius:18px;background:#fff;border:4px solid var(--linha);display:flex;align-items:center;justify-content:center;font-size:58px}
+.peca.pergunta{border:4px dashed var(--magenta);color:var(--magenta);font-weight:bold}
+.opcoes{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+.opcao{background:#fff;border:5px solid var(--linha);border-radius:22px;width:150px;height:150px;font-size:84px;display:flex;align-items:center;justify-content:center}
+.opcao:hover{border-color:var(--magenta)}
+.opcao.certa{border-color:var(--verde);background:#E7F6EC}
+
+/* Regras (condições) */
+.regras{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.regra{background:#FFF6E0;border-radius:18px;padding:10px 20px;font-size:54px;display:flex;align-items:center;gap:12px}
+.regra .seta{font-size:36px;color:var(--suave)}
+.figura-grande{font-size:120px;text-align:center;line-height:1.1}
+
+/* Grelha do robô */
+.zona-robo{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;justify-content:center}
+.grelha{display:grid;gap:6px;width:min(400px,92vw);background:#D9CBB3;padding:7px;border-radius:16px;flex:none}
+.cel{aspect-ratio:1;background:#FFF6E4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:clamp(28px,7vw,48px);position:relative}
+.cel.rasto::before{content:"";width:22%;height:22%;border-radius:50%;background:rgba(46,111,183,.35);position:absolute}
+.cel.obst{background:#8C6E54}
+.cel.alvo{background:#FFE7A3}
+.cel.choque{background:#F5B7B1;animation:abanar .4s}
+.bot{width:86%;height:86%;border-radius:50%;background:var(--azul);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(0,0,0,.25);z-index:2;font-size:clamp(24px,5vw,40px)}
+.painel{flex:1;min-width:300px;max-width:520px}
+.setas{display:grid;grid-template-columns:repeat(3,84px);grid-template-rows:repeat(2,84px);gap:10px;justify-content:center;margin-bottom:14px}
+.seta-btn{border-radius:18px;color:#fff;font-size:46px;font-weight:bold;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.seta-btn.U{grid-column:2;grid-row:1}.seta-btn.L{grid-column:1;grid-row:2}.seta-btn.D{grid-column:2;grid-row:2}.seta-btn.R{grid-column:3;grid-row:2}
+.seta-btn.escolhida{outline:6px solid var(--amarelo);outline-offset:2px}
+.U{background:var(--verde)}.R{background:var(--terracota)}.D{background:var(--azul)}.L{background:var(--roxo)}
+.programa{display:flex;flex-wrap:wrap;gap:8px;min-height:84px;border:4px dashed var(--linha);border-radius:18px;padding:10px;background:#FFFDF8;align-items:center;justify-content:center}
+.mini{width:60px;height:60px;border-radius:14px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:bold}
+.mini.ativo{outline:5px solid var(--amarelo);transform:scale(1.12)}
+.mini.clicavel{cursor:pointer}
+.mini.vazio{background:transparent;border:3px dashed var(--linha)}
+.acoes{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:16px}
+.acao{width:84px;height:84px;border-radius:50%;font-size:40px;box-shadow:0 5px 0 rgba(0,0,0,.2)}
+.acao.ir{background:var(--verde);color:#fff;width:100px;height:100px;font-size:50px}
+.acao.apagar{background:#fff;border:3px solid var(--linha)}
+.ciclo{border:5px solid var(--verde);border-radius:20px;padding:12px;background:#EFF8F2;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:40px}
+.numeros{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.numero{width:74px;height:74px;border-radius:16px;background:#fff;border:4px solid var(--linha);font-size:34px;font-weight:bold;color:var(--tinta);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.numero small{font-size:12px;letter-spacing:1px;color:var(--suave)}
+.numero.escolhido{border-color:var(--verde);background:#E7F6EC}
+
+/* Sem som: frase para o professor ler e pistas visuais */
+.ler{background:#FFF1C9;border-left:6px solid var(--amarelo);border-radius:12px;padding:8px 14px;font-size:17px;margin-bottom:14px;text-align:left}
+.ler b{color:var(--suave)}
+body.sem-som .ouvir{display:none}
+.dica{animation:dica 1.2s ease-in-out infinite}
+@keyframes dica{0%,100%{box-shadow:0 0 0 0 rgba(244,180,0,.95)}50%{box-shadow:0 0 0 14px rgba(244,180,0,0)}}
+
+/* Celebração e modais */
+.veu{position:fixed;inset:0;background:rgba(43,27,61,.55);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal{background:#fff;border-radius:24px;padding:26px 28px;max-width:560px;width:100%;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.3);max-height:90vh;overflow:auto}
+.modal .grande{font-size:110px;line-height:1.1}
+.voa{position:fixed;font-size:34px;z-index:60;pointer-events:none;animation:voar 2.6s ease-out forwards}
+@keyframes voar{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(-90vh) rotate(40deg);opacity:0}}
+
+/* Guia */
+.guia{text-align:left;max-width:820px;font-size:17px}
+.guia h3{text-align:center;font-size:26px;margin:4px 0}
+.guia h4{margin:16px 0 6px;color:var(--roxo);font-size:19px}
+.guia table{width:100%;border-collapse:collapse;font-size:15px}
+.guia td,.guia th{border:1px solid var(--linha);padding:6px 8px;vertical-align:top;text-align:left}
+.guia th{background:#F6EFE2}
+.guia ul{margin:4px 0;padding-left:22px}
+.guia p{margin:4px 0}
+
+/* Certificado */
+.certificado{background:#fff;border:10px double var(--amarelo);border-radius:22px;padding:30px;text-align:center;max-width:760px;margin:0 auto}
+.certificado h2{font-size:40px;color:var(--magenta);margin:6px 0}
+.certificado .linha-nome{font-size:24px;margin:22px 0 10px}
+.certificado .linha-nome span{display:inline-block;border-bottom:3px solid var(--linha);width:60%;height:30px;vertical-align:bottom}
+footer{text-align:center;font-size:13px;color:var(--suave);padding:10px 16px 20px}
+@media print{header,footer,.nao-imprimir{display:none!important} body{background:#fff} main{padding:0}}
+</style>
+</head>
+<body>
+<header>
+  <h1>🕯️ Missão Casita · 1.º ano</h1>
+  <div class="borboletas" id="borboletas"></div>
+  <button class="btn-top" id="btnCasita" title="Casita">🏠</button>
+  <button class="btn-top" id="btnGuia">📘 Guia do professor</button>
+  <button class="btn-top" id="btnSom" title="Ligar ou desligar a voz e os sons (só em computadores com som)">🔇</button>
+</header>
+<main id="app"></main>
+<footer>Atividade educativa sem fins comerciais, inspirada no filme <i>Encanto</i>. Criado por C. Sofia · Pensamento computacional e robótica · 1.º ano</footer>
+
+<script>
+/* =========================================================
+   MOTOR DO ROBÔ (setas absolutas: o robô não roda)
+   U = cima · R = direita · D = baixo · L = esquerda
+   Mapa: "." livre · "X" parede · "G" destino · "A" para apanhar · "S" início
+   ========================================================= */
+const MOV={U:[-1,0],R:[0,1],D:[1,0],L:[0,-1]};
+const SETA={U:'⬆︎',R:'➡︎',D:'⬇︎',L:'⬅︎'};
+
+function lerMapa(mapa){
+  const g=mapa.map(l=>l.split(''));
+  let s={r:0,c:0};
+  g.forEach((l,r)=>l.forEach((ch,c)=>{ if(ch==='S'){ s={r,c}; g[r][c]='.'; } }));
+  return {g,s,linhas:g.length,cols:g[0].length};
+}
+
+function simular(nivel,cmds){
+  const {g,s,linhas,cols}=lerMapa(nivel.mapa);
+  let r=s.r,c=s.c;
+  const ap=new Set(), total=g.flat().filter(x=>x==='A').length;
+  const passos=[{r,c,ap:new Set(),i:-1}];
+  for(let i=0;i<cmds.length;i++){
+    const [dr,dc]=MOV[cmds[i]], nr=r+dr, nc=c+dc;
+    if(nr<0||nc<0||nr>=linhas||nc>=cols){ passos.push({r,c,ap:new Set(ap),i,evento:'fora'}); return {passos,res:'fora'}; }
+    if(g[nr][nc]==='X'){ passos.push({r,c,ap:new Set(ap),i,evento:'bateu',alvo:{r:nr,c:nc}}); return {passos,res:'bateu'}; }
+    r=nr; c=nc;
+    if(g[r][c]==='A') ap.add(r+','+c);
+    passos.push({r,c,ap:new Set(ap),i});
+  }
+  const ok=ap.size===total && g[r][c]==='G';
+  return {passos,res:ok?'ok':'longe'};
+}
+
+/* =========================================================
+   DADOS DAS MISSÕES
+   ========================================================= */
+const MISSOES=[
+ {porta:'Julieta',icone:'🍲',conceito:'Sequências (algoritmos)',cor:'#D2643A',tipo:'sequencia'},
+ {porta:'Isabela',icone:'🌸',conceito:'Padrões',cor:'#B8336A',tipo:'padroes'},
+ {porta:'Luisa',icone:'💪',conceito:'Programar o robô',cor:'#2E6FB7',tipo:'robo'},
+ {porta:'Antonio',icone:'🦜',conceito:'Repetir (ciclos)',cor:'#2F8F5B',tipo:'ciclos'},
+ {porta:'Pepa',icone:'🌦️',conceito:'SE… ENTÃO (condições)',cor:'#C98A00',tipo:'condicoes'},
+ {porta:'Bruno',icone:'🔮',conceito:'Encontrar o erro (depuração)',cor:'#5B3A8C',tipo:'depuracao'}
+];
+
+const SEQUENCIAS=[
+ {fala:'A Julieta vai cozinhar. O que se faz primeiro? Toca nos desenhos pela ordem certa: primeiro, depois e no fim.',
+  passos:['🧼','🥣','🍳']},
+ {fala:'Agora, uma flor da Isabela vai crescer. O que vem primeiro? Toca nos desenhos pela ordem certa.',
+  passos:['🌰','🌱','🌷']}
+];
+
+const PADROES=[
+ {seq:['🌸','🌼','🌸','🌼','🌸'],ops:['🌼','🌸'],c:'🌼'},
+ {seq:['🌺','🌵','🌺','🌵','🌺'],ops:['🌺','🌵'],c:'🌵'},
+ {seq:['🦋','🌸','🦋','🌸'],ops:['🌸','🦋'],c:'🦋'}
+];
+
+const NIVEIS_LUISA=[
+ {fala:'Leva o robô até ao cavalo. Toca nas setas para fazer o programa. Depois toca no botão verde e o robô anda.',
+  obj:'🐴',mapa:['....','....','....','S.G.']},
+ {fala:'Agora leva o robô até à igreja. Faz o programa com as setas e toca no botão verde.',
+  obj:'⛪',mapa:['....','..G.','....','S...']},
+ {fala:'Cuidado com as paredes! Leva o robô até à casa sem bater.',
+  obj:'🏠',mapa:['...G','XX..','....','S...']}
+];
+
+const NIVEIS_ANTONIO=[
+ {fala:'O robô vai repetir a mesma seta. Escolhe a seta e quantas vezes. Conta os quadrados até ao papagaio!',
+  obj:'🦜',mapa:['.....','.....','.....','.....','S..G.']},
+ {fala:'Agora o macaco está lá em cima. Escolhe a seta e conta os quadrados.',
+  obj:'🐒',mapa:['G....','.....','.....','.....','S....']},
+ {fala:'Apanha todos os sapos e chega à onça! Escolhe a seta e quantas vezes.',
+  obj:'🐆',col:'🐸',mapa:['.....','.....','.....','.....','SAAAG']}
+];
+
+const PERGUNTAS_PEPA=[
+ {regras:[['😊','☀️'],['😢','🌧️']],fala:'Quando a Pepa está contente, faz sol. Quando a Pepa está triste, chove. Olha para a cara da Pepa. Que tempo vai fazer?',fig:'😢',ops:['☀️','🌧️'],c:'🌧️'},
+ {regras:[['😊','☀️'],['😢','🌧️']],fala:'Olha outra vez para a cara da Pepa. Que tempo vai fazer?',fig:'😊',ops:['🌧️','☀️'],c:'☀️'},
+ {regras:[['🌧️','☂️'],['☀️','🕶️']],fala:'Regra do robô: se chover, leva o guarda-chuva. Se fizer sol, leva os óculos de sol. Olha o tempo. O que leva o robô?',fig:'🌧️',ops:['🕶️','☂️'],c:'☂️'},
+ {regras:[['🌧️','☂️'],['☀️','🕶️']],fala:'E agora? Olha o tempo. O que leva o robô?',fig:'☀️',ops:['☂️','🕶️'],c:'🕶️'}
+];
+
+const NIVEIS_BRUNO=[
+ {fala:'O Bruno viu o futuro: o robô devia chegar à bola de cristal, mas o programa tem um erro. Toca no botão verde para ver o que acontece. Depois toca na seta errada para a mudar.',
+  mapa:['....','....','....','S..G'],prog:['R','R','U']},
+ {fala:'Outro programa com um erro! Toca no botão verde, descobre a seta errada e muda-a.',
+  mapa:['....','.G..','....','S...'],prog:['U','U','L']}
+];
+
+/* =========================================================
+   ESTADO, SOM E VOZ
+   ========================================================= */
+const estado={feitas:[false,false,false,false,false,false],som:false}; /* voz e sons desligados por omissão (computadores sem som) */
+let app;
+const esperar=ms=>new Promise(r=>setTimeout(r,ms));
+const baralhar=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const nFeitas=()=>estado.feitas.filter(Boolean).length;
+
+let audio;
+function som(tipo){
+  if(!estado.som) return;
+  try{
+    audio=audio||new (window.AudioContext||window.webkitAudioContext)();
+    const notas={ok:[523,659,784],erro:[260,200],passo:[660],vitoria:[523,659,784,1047]}[tipo]||[440];
+    const dur=tipo==='passo'?0.08:0.22;
+    notas.forEach((f,i)=>{
+      const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+i*0.13;
+      o.type='triangle';o.frequency.value=f;
+      g.gain.setValueAtTime(tipo==='passo'?0.05:0.14,t);
+      g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+      o.connect(g).connect(audio.destination);o.start(t);o.stop(t+dur+0.02);
+    });
+  }catch(e){}
+}
+
+/* Voz: lê as instruções em voz alta (os alunos ainda não sabem ler). */
+const temVoz=typeof window!=='undefined'&&'speechSynthesis' in window;
+let voz=null, instrucao='';
+function escolherVoz(){
+  const v=speechSynthesis.getVoices();
+  voz=v.find(x=>/^pt[-_]PT/i.test(x.lang))||v.find(x=>/^pt/i.test(x.lang))||null;
+}
+if(temVoz){ escolherVoz(); speechSynthesis.onvoiceschanged=escolherVoz; }
+function falar(texto,ehInstrucao=true){
+  if(ehInstrucao){ instrucao=texto; const t=document.getElementById('txtLer'); if(t) t.textContent=texto; }
+  if(!estado.som||!temVoz) return;
+  speechSynthesis.cancel();
+  setTimeout(()=>{
+    const u=new SpeechSynthesisUtterance(texto);
+    u.lang=voz?voz.lang:'pt-PT'; if(voz) u.voice=voz; u.rate=0.9;
+    const b=document.getElementById('btnOuvir');
+    u.onstart=()=>b&&b.classList.add('falando');
+    u.onend=u.onerror=()=>{ const b2=document.getElementById('btnOuvir'); b2&&b2.classList.remove('falando'); };
+    speechSynthesis.speak(u);
+  },60);
+}
+const barraLer=()=>`<div class="ler"><b>📢 Para ler em voz alta:</b> <span id="txtLer">${instrucao}</span></div>`;
+/* Sinal visual de resultado: ⭐ certo · ❌ tentar outra vez */
+function sinal(tipo){
+  const e=document.getElementById('estrela'); if(!e) return;
+  e.innerHTML=tipo==='ok'?'<span class="saltar" style="display:inline-block">⭐</span>':'<span class="abanar" style="display:inline-block">❌</span>';
+}
+const botaoOuvir=()=>`<button class="ouvir" id="btnOuvir" title="Ouvir outra vez" onclick="falar(instrucao)">🔊</button>`;
+
+const ELOGIOS=['Muito bem!','Boa!','Fantástico!','Excelente!','Isso mesmo!'];
+const elogio=()=>ELOGIOS[Math.floor(Math.random()*ELOGIOS.length)];
+
+function atualizarBorboletas(){
+  document.getElementById('borboletas').innerHTML=estado.feitas.map(f=>`<span class="${f?'on':''}">🦋</span>`).join('');
+}
+
+/* Cabeçalho de cada missão: ícone da porta, bolinhas de progresso e botão de ouvir. */
+function cabecalho(m,atual,total){
+  const bolas=Array.from({length:total},(_,k)=>`<span class="${k<=atual?'on':''}"></span>`).join('');
+  return `<div class="cab" style="--cor:${m.cor}">
+    <div class="selo">${m.icone}</div>
+    <div class="passo">${bolas}</div>
+    ${botaoOuvir()}
+  </div>${barraLer()}`;
+}
+
+/* =========================================================
+   ECRÃS PRINCIPAIS
+   ========================================================= */
+function mostrarInicio(){
+  app.innerHTML=`
+  <div class="inicio">
+    <div class="vela-grande">🕯️</div>
+    <h2>Missão Casita</h2>
+    <div class="figuras">🏠 🤖 🦋</div>
+    <div style="max-width:720px;margin:0 auto">${barraLer()}</div>
+    <div class="acoes">
+      ${botaoOuvir()}
+      <button class="play dica" id="btnComecar" title="Começar">▶</button>
+    </div>
+  </div>`;
+  document.getElementById('btnComecar').onclick=()=>mostrarMapa();
+  falar('Olá! A Casita da família Madrigal precisa de ajuda. A vela mágica está a perder a luz. Vamos abrir as portas e resolver os desafios? Toca no botão verde para começar.');
+}
+
+function mostrarMapa(){
+  const n=nFeitas();
+  const brilho=n===0?'grayscale(.8) brightness(.8)':`drop-shadow(0 0 ${6+n*5}px rgba(244,180,0,${0.3+n*0.11}))`;
+  app.innerHTML=`
+  <div class="topo-mapa">
+    <div class="vela" style="filter:${brilho}">🕯️</div>
+    ${botaoOuvir()}
+  </div>
+  ${barraLer()}
+  <div class="portas">
+    ${MISSOES.map((m,i)=>`
+      <button class="porta ${estado.feitas[i]?'feita':''} ${i===estado.feitas.indexOf(false)?'dica':''}" style="--cor:${m.cor}" onclick="abrirMissao(${i})" title="${m.porta}">
+        <span class="num">${i+1}</span>
+        <span class="ico">${m.icone}</span>
+        <span class="nome">${m.porta}</span>
+      </button>`).join('')}
+  </div>
+  ${n===6?'<p style="text-align:center;margin-top:24px"><button class="btn grande dica" onclick="mostrarFinal()">🏠✨🦋</button></p>':''}`;
+  if(n===0) falar('Escolhe uma porta. Começa pela porta número um.');
+  else if(n<6){ const prox=estado.feitas.indexOf(false)+1; falar(`Já tens ${n===1?'uma borboleta':n+' borboletas'}. Agora escolhe a porta número ${prox}.`); }
+  else falar('Conseguiste! Já tens as seis borboletas. Toca no botão verde.');
+}
+
+function abrirMissao(i){
+  ({sequencia:missaoSequencia,padroes:missaoPadroes,robo:missaoRobo,ciclos:missaoCiclos,condicoes:missaoCondicoes,depuracao:missaoDepuracao})[MISSOES[i].tipo](i);
+  window.scrollTo(0,0);
+}
+
+function concluir(i){
+  estado.feitas[i]=true;
+  atualizarBorboletas();
+  som('vitoria');
+  for(let k=0;k<12;k++){
+    const b=document.createElement('div');
+    b.className='voa';b.textContent='🦋';
+    b.style.left=(5+Math.random()*90)+'vw';b.style.top=(70+Math.random()*25)+'vh';
+    b.style.animationDelay=(Math.random()*0.8)+'s';
+    document.body.appendChild(b);setTimeout(()=>b.remove(),3600);
+  }
+  const veu=document.createElement('div');
+  veu.className='veu';
+  veu.innerHTML=`<div class="modal">
+    <div class="grande">🦋</div>
+    <p style="font-size:44px;margin:6px 0">${'🦋'.repeat(nFeitas())}</p>
+    <button class="play dica" id="btnSeguir" title="Continuar">🏠</button>
+  </div>`;
+  document.body.appendChild(veu);
+  falar('Boa! Ganhaste uma borboleta para a vela. Toca na casa para voltar.',false);
+  document.getElementById('btnSeguir').onclick=()=>{ veu.remove(); nFeitas()===6?mostrarFinal():mostrarMapa(); window.scrollTo(0,0); };
+}
+
+function mostrarFinal(){
+  const hoje=new Date().toLocaleDateString('pt-PT',{day:'numeric',month:'long',year:'numeric'});
+  app.innerHTML=`
+  <div style="max-width:760px;margin:0 auto" class="nao-imprimir">${barraLer()}</div>
+  <div class="certificado">
+    <div style="font-size:70px">🕯️🏠🦋</div>
+    <h2>Guardiões da Casita</h2>
+    <p style="font-size:40px;margin:6px 0">🦋🦋🦋🦋🦋🦋</p>
+    <p>Resolveu as 6 missões de pensamento computacional e salvou a Casita!</p>
+    <div class="linha-nome">Nome: <span></span></div>
+    <p style="color:var(--suave)">${hoje}</p>
+  </div>
+  <div class="acoes nao-imprimir">
+    ${botaoOuvir()}
+    <button class="btn" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="btn sec" onclick="mostrarMapa()">🏠</button>
+  </div>`;
+  som('vitoria');
+  falar('Parabéns! A vela voltou a brilhar e a Casita está salva. Tu és um guardião da Casita!');
+}
+
+/* =========================================================
+   MISSÃO 1 — SEQUÊNCIAS (3 imagens por ordem)
+   ========================================================= */
+function missaoSequencia(idx){
+  const m=MISSOES[idx];
+  let r=0;
+  function ronda(){
+    const R=SEQUENCIAS[r];
+    const cartas=baralhar(R.passos.map((e,i)=>({e,i})));
+    let escolhidos=[];
+    function ecra(estadoVer){
+      const livres=cartas.filter(c=>!escolhidos.includes(c));
+      app.innerHTML=cabecalho(m,r,SEQUENCIAS.length)+`
+      <div class="cartao">
+        <div class="cartas">${livres.map(c=>`<button class="carta dica" data-i="${c.i}">${c.e}</button>`).join('')}</div>
+        <div class="slots">${R.passos.map((_,k)=>{
+          const c=escolhidos[k], pontos='●'.repeat(k+1);
+          if(!c) return `<div class="slot"><span class="n">${pontos}</span></div>`;
+          const cls=estadoVer?(c.i===k?'certo':'errado'):'';
+          return `<div class="slot cheio ${cls}" data-k="${k}"><span class="n">${pontos}</span>${c.e}</div>`;
+        }).join('')}</div>
+        <div class="estrela" id="estrela"></div>
+      </div>`;
+      app.querySelectorAll('.carta').forEach(b=>b.onclick=()=>{
+        escolhidos.push(cartas.find(c=>c.i==b.dataset.i)); som('passo');
+        if(escolhidos.length===R.passos.length) verificar(); else ecra();
+      });
+      app.querySelectorAll('.slot.cheio').forEach(s=>s.onclick=()=>{ escolhidos.splice(+s.dataset.k,1); ecra(); });
+    }
+    function verificar(){
+      const certo=escolhidos.every((c,k)=>c.i===k);
+      ecra(true);
+      if(certo){
+        som('ok'); sinal('ok'); falar(elogio(),false);
+        setTimeout(()=>{ r++; r<SEQUENCIAS.length?ronda():concluir(idx); },1500);
+      }else{
+        som('erro'); sinal('erro'); falar('Ups! Tenta outra vez.',false);
+        setTimeout(()=>{ escolhidos=[]; ecra(); },1800);
+      }
+    }
+    ecra(); falar(R.fala);
+  }
+  ronda();
+}
+
+/* =========================================================
+   MISSÃO 2 — PADRÕES (AB AB…)
+   ========================================================= */
+function missaoPadroes(idx){
+  const m=MISSOES[idx];
+  let r=0;
+  function ecra(resolvido){
+    const R=PADROES[r];
+    app.innerHTML=cabecalho(m,r,PADROES.length)+`
+    <div class="cartao">
+      <div class="seq">${R.seq.map(v=>`<div class="peca">${v}</div>`).join('')}
+        ${resolvido?`<div class="peca saltar">${R.c}</div>`:'<div class="peca pergunta">?</div>'}</div>
+      <div class="opcoes">${R.ops.map(o=>`<button class="opcao ${resolvido?'':'dica'}" data-o="${o}">${o}</button>`).join('')}</div>
+      <div class="estrela" id="estrela">${resolvido?'<span class="saltar" style="display:inline-block">⭐</span>':''}</div>
+    </div>`;
+    if(resolvido) return;
+    app.querySelectorAll('.opcao').forEach(b=>b.onclick=()=>{
+      if(b.dataset.o===R.c){
+        som('ok'); falar(elogio(),false); ecra(true);
+        setTimeout(()=>{ r++; r<PADROES.length?(ecra(),falar('Olha para o padrão. O que vem a seguir?')):concluir(idx); },1400);
+      }else{
+        som('erro'); sinal('erro'); b.classList.add('abanar'); setTimeout(()=>b.classList.remove('abanar'),400);
+        falar('Ups! Diz o padrão em voz alta e tenta outra vez.',false);
+      }
+    });
+  }
+  ecra();
+  falar('A Isabela faz nascer flores. Olha para o padrão. O que vem a seguir? Toca na resposta.');
+}
+
+/* =========================================================
+   GRELHA DO ROBÔ (missões 3, 4 e 6)
+   ========================================================= */
+function desenharGrelha(el,nivel,passo,tema,rasto){
+  const {g,linhas,cols}=lerMapa(nivel.mapa);
+  el.style.gridTemplateColumns=`repeat(${cols},1fr)`;
+  let html='';
+  for(let r=0;r<linhas;r++) for(let c=0;c<cols;c++){
+    const v=g[r][c]; let cls='cel', cont='';
+    if(v==='X'){cls+=' obst';cont='🧱';}
+    if(v==='G'){cls+=' alvo';cont=tema.obj;}
+    if(v==='A') cont=passo.ap.has(r+','+c)?'':tema.col;
+    if(rasto&&rasto.has(r+','+c)) cls+=' rasto';
+    if(passo.evento==='bateu'&&passo.alvo.r===r&&passo.alvo.c===c) cls+=' choque';
+    if(passo.r===r&&passo.c===c) cont=`<div class="bot${passo.evento==='fora'?' abanar':''}">🤖</div>`;
+    html+=`<div class="${cls}">${cont}</div>`;
+  }
+  el.innerHTML=html;
+}
+
+async function animar(el,nivel,cmds,tema,aoPasso){
+  const sim=simular(nivel,cmds), rasto=new Set();
+  for(let k=0;k<sim.passos.length;k++){
+    const p=sim.passos[k];
+    rasto.add(p.r+','+p.c);
+    desenharGrelha(el,nivel,p,tema,rasto);
+    if(aoPasso) aoPasso(p.i);
+    if(k>0) som(p.evento?'erro':'passo');
+    await esperar(k===0?250:650);
+  }
+  return sim;
+}
+
+function falarResultado(res){
+  if(res==='bateu') falar('Ups! O robô bateu na parede. Tenta outra vez.',false);
+  else if(res==='fora') falar('Ups! O robô ia sair do tabuleiro. Tenta outra vez.',false);
+  else falar('Ups! O robô não chegou ao sítio certo. Tenta outra vez.',false);
+}
+
+const setasHTML=(escolhida)=>`<div class="setas">${['U','L','D','R'].map(k=>`<button class="seta-btn ${k} ${k===escolhida?'escolhida':''}" data-k="${k}">${SETA[k]}</button>`).join('')}</div>`;
+const miniHTML=(k,i,extra='')=>`<div class="mini ${k} ${extra}" data-i="${i}">${SETA[k]}</div>`;
+
+/* =========================================================
+   MISSÃO 3 — PROGRAMAR O ROBÔ (setas)
+   ========================================================= */
+function missaoRobo(idx){
+  const m=MISSOES[idx];
+  let n=0, prog=[], ocupado=false;
+  const MAX=8;
+  function ecra(){
+    const nivel=NIVEIS_LUISA[n], tema={obj:nivel.obj};
+    app.innerHTML=cabecalho(m,n,NIVEIS_LUISA.length)+`
+    <div class="cartao">
+      <div class="zona-robo">
+        <div class="grelha" id="grelha"></div>
+        <div class="painel">
+          ${setasHTML()}
+          <div class="programa" id="prog"></div>
+          <div class="acoes">
+            <button class="acao apagar" id="btnApagar" title="Apagar">⌫</button>
+            <button class="acao ir" id="btnExec" title="Executar">▶</button>
+          </div>
+          <div class="estrela" id="estrela"></div>
+        </div>
+      </div>
+    </div>`;
+    const el=document.getElementById('grelha'), ini=simular(nivel,[]).passos[0];
+    desenharGrelha(el,nivel,ini,tema);
+    desenharProg(-1);
+    app.querySelectorAll('.seta-btn').forEach(b=>b.onclick=()=>{ if(ocupado||prog.length>=MAX) return; prog.push(b.dataset.k); som('passo'); desenharProg(-1); });
+    document.getElementById('btnApagar').onclick=()=>{ if(ocupado) return; prog.pop(); desenharProg(-1); desenharGrelha(el,nivel,ini,tema); };
+    document.getElementById('btnExec').onclick=async()=>{
+      if(ocupado||!prog.length) return;
+      ocupado=true; app.querySelectorAll('.painel button').forEach(b=>b.disabled=true);
+      const sim=await animar(el,nivel,prog,tema,i=>desenharProg(i));
+      ocupado=false; app.querySelectorAll('.painel button').forEach(b=>b.disabled=false); desenharProg(-1);
+      if(sim.res==='ok'){
+        som('ok'); falar(elogio(),false); sinal('ok');
+        setTimeout(()=>{ n++; if(n<NIVEIS_LUISA.length){ prog=[]; ecra(); } else concluir(idx); },1600);
+      }else{
+        falarResultado(sim.res); sinal('erro');
+        document.getElementById('btnApagar').classList.add('dica'); document.getElementById('btnExec').classList.remove('dica');
+      }
+    };
+    falar(nivel.fala);
+  }
+  function desenharProg(ativo){
+    const p=document.getElementById('prog');
+    let html=prog.map((k,i)=>miniHTML(k,i,i===ativo?'ativo':'')).join('');
+    if(prog.length<MAX) html+='<div class="mini vazio"></div>';
+    p.innerHTML=html;
+    if(ativo===-1){ /* pistas: setas quando o programa está vazio, ▶ quando já tem setas */
+      app.querySelectorAll('.seta-btn').forEach(b=>b.classList.toggle('dica',prog.length===0));
+      const ex=document.getElementById('btnExec'); if(ex) ex.classList.toggle('dica',prog.length>0);
+      const ap=document.getElementById('btnApagar'); if(ap) ap.classList.remove('dica');
+      const es=document.getElementById('estrela'); if(es&&!ocupado) es.innerHTML='';
+    }
+  }
+  ecra();
+}
+
+/* =========================================================
+   MISSÃO 4 — REPETIR (uma seta × um número)
+   ========================================================= */
+function missaoCiclos(idx){
+  const m=MISSOES[idx];
+  let n=0, seta=null, vezes=null, ocupado=false;
+  function ecra(comFala){
+    const nivel=NIVEIS_ANTONIO[n], tema={obj:nivel.obj,col:nivel.col};
+    app.innerHTML=cabecalho(m,n,NIVEIS_ANTONIO.length)+`
+    <div class="cartao">
+      <div class="zona-robo">
+        <div class="grelha" id="grelha"></div>
+        <div class="painel">
+          ${setasHTML(seta).replace(/class="seta-btn /g, seta?'class="seta-btn ':'class="seta-btn dica ')}
+          <div class="ciclo">🔁 <span id="cSeta">${seta?`<span class="mini ${seta}" style="display:inline-flex">${SETA[seta]}</span>`:'<span class="mini vazio" style="display:inline-flex"></span>'}</span> × <b id="cVezes">${vezes||'?'}</b></div>
+          <div class="numeros">${[1,2,3,4,5].map(v=>`<button class="numero ${v===vezes?'escolhido':''} ${seta&&!vezes?'dica':''}" data-v="${v}">${v}<small>${'●'.repeat(v)}</small></button>`).join('')}</div>
+          <div class="acoes">
+            <button class="acao ir ${seta&&vezes?'dica':''}" id="btnExec" title="Executar">▶</button>
+          </div>
+          <div class="estrela" id="estrela"></div>
+        </div>
+      </div>
+    </div>`;
+    const el=document.getElementById('grelha'), ini=simular(nivel,[]).passos[0];
+    desenharGrelha(el,nivel,ini,tema);
+    app.querySelectorAll('.seta-btn').forEach(b=>b.onclick=()=>{ if(ocupado) return; seta=b.dataset.k; som('passo'); ecra(false); });
+    app.querySelectorAll('.numero').forEach(b=>b.onclick=()=>{ if(ocupado) return; vezes=+b.dataset.v; som('passo'); ecra(false); });
+    document.getElementById('btnExec').onclick=async()=>{
+      if(ocupado) return;
+      if(!seta||!vezes){ som('erro'); sinal('erro'); falar('Escolhe uma seta e um número.',false); return; }
+      ocupado=true; app.querySelectorAll('.painel button').forEach(b=>b.disabled=true);
+      const sim=await animar(el,nivel,Array(vezes).fill(seta),tema);
+      ocupado=false; app.querySelectorAll('.painel button').forEach(b=>b.disabled=false);
+      if(sim.res==='ok'){
+        som('ok'); falar(elogio(),false); sinal('ok');
+        setTimeout(()=>{ n++; seta=null; vezes=null; n<NIVEIS_ANTONIO.length?ecra(true):concluir(idx); },1600);
+      }else{
+        falarResultado(sim.res); sinal('erro');
+        app.querySelectorAll('.numero').forEach(b=>b.classList.add('dica'));
+        setTimeout(()=>desenharGrelha(el,nivel,ini,tema),1800);
+      }
+    };
+    if(comFala) falar(nivel.fala); else instrucao=nivel.fala;
+  }
+  ecra(true);
+}
+
+/* =========================================================
+   MISSÃO 5 — SE… ENTÃO (regras com imagens)
+   ========================================================= */
+function missaoCondicoes(idx){
+  const m=MISSOES[idx];
+  let q=0;
+  function ecra(){
+    const P=PERGUNTAS_PEPA[q];
+    app.innerHTML=cabecalho(m,q,PERGUNTAS_PEPA.length)+`
+    <div class="cartao">
+      <div class="regras">${P.regras.map(([se,entao])=>`<div class="regra">${se}<span class="seta">➜</span>${entao}</div>`).join('')}</div>
+    </div>
+    <div class="cartao">
+      <div class="figura-grande">${P.fig}</div>
+      <div class="opcoes" style="margin-top:16px">${P.ops.map(o=>`<button class="opcao dica" data-o="${o}">${o}</button>`).join('')}</div>
+      <div class="estrela" id="estrela"></div>
+    </div>`;
+    app.querySelectorAll('.opcao').forEach(b=>b.onclick=()=>{
+      if(b.dataset.o===P.c){
+        som('ok'); falar(elogio(),false); sinal('ok');
+        app.querySelectorAll('.opcao').forEach(x=>{x.disabled=true;x.classList.remove('dica');}); b.classList.add('certa','saltar');
+        setTimeout(()=>{ q++; q<PERGUNTAS_PEPA.length?ecra():concluir(idx); },1400);
+      }else{
+        som('erro'); sinal('erro'); b.classList.add('abanar'); setTimeout(()=>b.classList.remove('abanar'),400);
+        falar('Ups! Olha para a regra e tenta outra vez.',false);
+      }
+    });
+    falar(P.fala);
+  }
+  ecra();
+}
+
+/* =========================================================
+   MISSÃO 6 — ENCONTRAR O ERRO (depuração)
+   ========================================================= */
+function missaoDepuracao(idx){
+  const m=MISSOES[idx];
+  let n=0, prog=[], ocupado=false, falhou=false;
+  const tema={obj:'🔮'}, PROXIMA={U:'R',R:'D',D:'L',L:'U'};
+  function ecra(){
+    const nivel=NIVEIS_BRUNO[n];
+    prog=nivel.prog.slice(); falhou=false;
+    app.innerHTML=cabecalho(m,n,NIVEIS_BRUNO.length)+`
+    <div class="cartao">
+      <div class="zona-robo">
+        <div class="grelha" id="grelha"></div>
+        <div class="painel">
+          <div class="programa" id="prog" style="margin-top:20px"></div>
+          <div class="acoes"><button class="acao ir dica" id="btnExec" title="Ver o que acontece">▶</button></div>
+          <div class="estrela" id="estrela"></div>
+        </div>
+      </div>
+    </div>`;
+    const el=document.getElementById('grelha'), ini=simular(nivel,[]).passos[0];
+    desenharGrelha(el,nivel,ini,tema);
+    desenharProg(-1);
+    document.getElementById('btnExec').onclick=async()=>{
+      if(ocupado) return;
+      ocupado=true; app.querySelectorAll('.painel button').forEach(b=>b.disabled=true);
+      const sim=await animar(el,nivel,prog,tema,i=>desenharProg(i));
+      ocupado=false; app.querySelectorAll('.painel button').forEach(b=>b.disabled=false); desenharProg(-1);
+      if(sim.res==='ok'){
+        som('ok'); falar(elogio()+' Encontraste o erro!',false); sinal('ok');
+        setTimeout(()=>{ n++; n<NIVEIS_BRUNO.length?ecra():concluir(idx); },1700);
+      }else{
+        som('erro'); falhou=true; sinal('erro');
+        document.getElementById('btnExec').classList.remove('dica');
+        app.querySelectorAll('#prog .mini').forEach(b=>b.classList.add('dica'));
+        falar('Ups! O robô não chegou à bola de cristal. Toca na seta errada para a mudar.',false);
+        setTimeout(()=>{ if(!ocupado) desenharGrelha(el,nivel,ini,tema); },1800);
+      }
+    };
+    function desenharProg(ativo){
+      const p=document.getElementById('prog');
+      p.innerHTML=prog.map((k,i)=>miniHTML(k,i,`clicavel ${i===ativo?'ativo':''}`)).join('');
+      p.querySelectorAll('.mini').forEach(b=>b.onclick=()=>{
+        if(ocupado) return;
+        const i=+b.dataset.i; prog[i]=PROXIMA[prog[i]]; som('passo'); desenharProg(-1);
+        document.getElementById('btnExec').classList.add('dica');
+        const es=document.getElementById('estrela'); if(es) es.innerHTML='';
+      });
+    }
+    falar(nivel.fala);
+  }
+  ecra();
+}
+
+/* =========================================================
+   GUIA DO PROFESSOR
+   ========================================================= */
+function mostrarGuia(){
+  const veu=document.createElement('div');
+  veu.className='veu';
+  veu.innerHTML=`<div class="modal guia">
+    <h3>📘 Guia do professor · 1.º ano</h3>
+    <p><b>Duração:</b> 60 minutos · <b>Organização:</b> turma inteira no quadro interativo ou pares num computador, com colunas ou auscultadores.</p>
+    <p><b>Sem leitura e sem som:</b> em cada ecrã há uma barra amarela 📢 com a frase para o professor ler à turma. O botão ou a imagem onde os alunos devem tocar <b>pisca</b>; ⭐ quer dizer “certo” e ❌ quer dizer “tenta outra vez”. As respostas são imagens, setas e números com bolinhas.</p>
+    <p><b>Sugestão:</b> demonstrar cada missão no quadro interativo (lendo a barra amarela) antes de os alunos jogarem a pares. Em computadores com som, o botão 🔇 no topo liga a voz, que lê as instruções sozinha.</p>
+    <h4>Objetivos</h4>
+    <ul>
+      <li>Ordenar 3 imagens numa sequência (primeiro, depois, no fim).</li>
+      <li>Continuar padrões simples do tipo AB AB.</li>
+      <li>Programar um robô com setas (cima, baixo, esquerda, direita).</li>
+      <li>Perceber que repetir é fazer a mesma coisa várias vezes (contar os quadrados).</li>
+      <li>Seguir regras simples do tipo SE… ENTÃO, com imagens.</li>
+      <li>Encontrar e corrigir uma seta errada (depuração).</li>
+    </ul>
+    <h4>Diferenças em relação à versão do 3.º ano</h4>
+    <p>Sem quiz do filme nem texto para ler; menos rondas por missão; setas de direção fixa (o robô não roda); grelhas mais pequenas; programas com no máximo 8 setas.</p>
+    <h4>Plano da aula</h4>
+    <table>
+      <tr><th>Tempo</th><th>Momento</th><th>Sugestões</th></tr>
+      <tr><td>0–8 min</td><td>Introdução e “ser o robô”</td><td>Contar a história da vela mágica. Um aluno faz de robô no chão e a turma dá ordens com setas em cartões.</td></tr>
+      <tr><td>8–14 min</td><td>1. Julieta — Sequências</td><td>Perguntar: “O que fazemos primeiro? E depois? E no fim?”</td></tr>
+      <tr><td>14–19 min</td><td>2. Isabela — Padrões</td><td>Dizer o padrão em voz alta ou com palmas.</td></tr>
+      <tr><td>19–31 min</td><td>3. Luisa — Programar o robô</td><td>Fazer o nível 1 em grande grupo. Contar os quadrados com o dedo antes de pôr as setas.</td></tr>
+      <tr><td>31–39 min</td><td>4. Antonio — Repetir</td><td>“Em vez de pôr três setas iguais, dizemos: repete 3 vezes.”</td></tr>
+      <tr><td>39–45 min</td><td>5. Pepa — SE… ENTÃO</td><td>Ligar ao dia a dia: “Se chover, levo o guarda-chuva.”</td></tr>
+      <tr><td>45–53 min</td><td>6. Bruno — Encontrar o erro</td><td>Errar faz parte: o robô ajuda-nos a descobrir o erro.</td></tr>
+      <tr><td>53–60 min</td><td>Reflexão e certificado</td><td>Mostrar com o polegar qual foi a missão mais fácil e a mais difícil. Imprimir o certificado (com espaço para o nome).</td></tr>
+    </table>
+    <h4>Extensão com robôs de chão (opcional)</h4>
+    <p>Se a escola tiver robôs programáveis (por exemplo, do tipo Bee-Bot) e um tapete quadriculado, recriar um nível da Luisa no tapete com cartões de setas.</p>
+    <p style="font-size:14px;color:var(--suave)">A voz está desligada por omissão. Quando ligada, usa o sintetizador do navegador: se não houver voz em português de Portugal, é usada outra voz em português. O progresso não fica guardado ao fechar o ficheiro.</p>
+    <div class="acoes">
+      <button class="btn" id="fecharGuia">Fechar</button>
+      <button class="btn sec" id="reiniciar">🔄 Recomeçar o jogo</button>
+    </div>
+  </div>`;
+  document.body.appendChild(veu);
+  veu.onclick=e=>{ if(e.target===veu) veu.remove(); };
+  document.getElementById('fecharGuia').onclick=()=>veu.remove();
+  document.getElementById('reiniciar').onclick=()=>{
+    if(!confirm('Recomeçar o jogo? As borboletas ganhas serão apagadas.')) return;
+    estado.feitas=[false,false,false,false,false,false]; atualizarBorboletas(); veu.remove(); mostrarInicio();
+  };
+}
+
+/* =========================================================
+   ARRANQUE
+   ========================================================= */
+function iniciar(){
+  app=document.getElementById('app');
+  atualizarBorboletas();
+  document.getElementById('btnCasita').onclick=()=>mostrarMapa();
+  document.getElementById('btnGuia').onclick=mostrarGuia;
+  document.body.classList.toggle('sem-som',!estado.som);
+  const bs=document.getElementById('btnSom'); bs.textContent=estado.som?'🔊':'🔇';
+  bs.onclick=e=>{
+    estado.som=!estado.som; e.currentTarget.textContent=estado.som?'🔊':'🔇';
+    document.body.classList.toggle('sem-som',!estado.som);
+    if(!estado.som&&temVoz) speechSynthesis.cancel(); else falar(instrucao);
+  };
+  mostrarInicio();
+}
+if(typeof document!=='undefined') iniciar();
+if(typeof module!=='undefined') module.exports={simular,NIVEIS_LUISA,NIVEIS_ANTONIO,NIVEIS_BRUNO};
+</script>
+</body>
+</html>
