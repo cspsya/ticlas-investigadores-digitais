@@ -254,6 +254,22 @@ body.hc .bubble::after{border-top-color:#000}
  .cert{-webkit-print-color-adjust:exact;print-color-adjust:exact;margin:30px}
 }
 </style>
+<style id="ticlas-estilo-portal">
+#ticlas-voltar-portal {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center;
+  gap:7px; flex:0 0 auto; min-height:44px; padding:8px 14px;
+  border:2px solid #285775; border-radius:12px; background:#fff; color:#285775;
+  font:800 16px/1.2 'Nunito','Segoe UI',sans-serif; white-space:nowrap;
+  text-decoration:none; cursor:pointer; touch-action:manipulation; position:relative;
+}
+#ticlas-voltar-portal:hover {background:#285775;color:#fff}
+#ticlas-voltar-portal:focus-visible {outline:3px solid #E8834A;outline-offset:3px}
+#ticlas-voltar-portal span {font-size:21px;line-height:1}
+#ticlas-nav-portal {box-sizing:border-box;flex:0 0 auto;width:100%;max-width:1180px;
+  margin:0 auto;padding:6px 14px;display:flex;justify-content:flex-start;align-items:center}
+body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
+@media print {#ticlas-voltar-portal,#ticlas-nav-portal {display:none!important}}
+</style>
 </head>
 <body>
 <div id="fx" aria-hidden="true"></div>
@@ -269,7 +285,9 @@ body.hc .bubble::after{border-top-color:#000}
    <button class="tb" id="bFull" title="Ecrã inteiro">⛶</button>
    <button class="tb" id="bProf" title="Painel da professora">⚙</button>
   </div>
- </header>
+ 
+    <a id="ticlas-voltar-portal" href="https://cspsya.github.io/ticlas-investigadores-digitais/" aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s"><span aria-hidden="true">←</span> Voltar ao Ticl@s</a>
+  </header>
  <main>
   <aside class="mascot">
    <div class="bubble"><div id="say"></div><button class="ouvir" id="bOuvir" title="Ouvir">🔊</button></div>

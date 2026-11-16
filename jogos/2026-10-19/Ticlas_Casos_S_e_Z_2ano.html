@@ -251,6 +251,22 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #F2B2
   #app > footer.site-footer {flex-direction:column;gap:6px;padding:22px 10px;text-align:center;font-size:15px}
 }
 </style>
+<style id="ticlas-estilo-portal">
+#ticlas-voltar-portal {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center;
+  gap:7px; flex:0 0 auto; min-height:44px; padding:8px 14px;
+  border:2px solid #285775; border-radius:12px; background:#fff; color:#285775;
+  font:800 16px/1.2 'Nunito','Segoe UI',sans-serif; white-space:nowrap;
+  text-decoration:none; cursor:pointer; touch-action:manipulation; position:relative;
+}
+#ticlas-voltar-portal:hover {background:#285775;color:#fff}
+#ticlas-voltar-portal:focus-visible {outline:3px solid #E8834A;outline-offset:3px}
+#ticlas-voltar-portal span {font-size:21px;line-height:1}
+#ticlas-nav-portal {box-sizing:border-box;flex:0 0 auto;width:100%;max-width:1180px;
+  margin:0 auto;padding:6px 14px;display:flex;justify-content:flex-start;align-items:center}
+body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
+@media print {#ticlas-voltar-portal,#ticlas-nav-portal {display:none!important}}
+</style>
 </head>
 <body>
 <canvas id="confetti"></canvas>
@@ -259,7 +275,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #F2B2
     <div class="brand"><span class="tag-ano">2.º ano</span> Casos de leitura: S e Z<small>Investigadores Digitais com o Ticl@s</small></div>
     <span class="pill" id="profPill" style="display:none"></span>
     <span class="pill" id="scorePill" style="display:none">⭐ 0</span>
-    <a class="portal-link" href="../../index.html#ano-2" aria-label="Voltar ao portal dos Investigadores Digitais">↩ Portal</a>
+    <a id="ticlas-voltar-portal" href="https://cspsya.github.io/ticlas-investigadores-digitais/" aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s"><span aria-hidden="true">←</span> Voltar ao Ticl@s</a>
     <button class="gear" id="gearBtn" title="Painel do professor" aria-label="Painel do professor">⚙️</button>
   </div>
   <div class="prog" id="prog"><i></i></div>
