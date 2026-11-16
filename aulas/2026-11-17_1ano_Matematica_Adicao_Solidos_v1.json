@@ -1,0 +1,577 @@
+{
+  "id": "2026-11-17_1ano_Matematica_Adicao_Solidos_v1",
+  "titulo": "Somas e sólidos com o Ticl@s",
+  "ano": 1,
+  "turma": "1.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-17",
+  "descricao": "Adição até 10 (juntar quantidades, escrever o resultado no teclado) e identificação de sólidos geométricos (esfera, cubo, paralelepípedo, cilindro e cone) em objetos do dia a dia, com rola/não rola e o intruso.",
+  "resumo": "Junta, conta e descobre as formas escondidas nos objetos!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: números"
+  ],
+  "objetivo": "Somar até 10 e descobrir a esfera, o cubo, o paralelepípedo, o cilindro e o cone nos objetos.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões das somas",
+      "instrucao": "Conta os dois grupos. Rebenta o balão com o total.",
+      "itens": [
+        {
+          "pergunta": "Quanto é 2 + 1?",
+          "emoji": "🍎🍎 ➕ 🍎",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "4"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 3 + 2?",
+          "emoji": "🐞🐞🐞 ➕ 🐞🐞",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 1 + 4?",
+          "emoji": "⭐ ➕ ⭐⭐⭐⭐",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 2 + 2?",
+          "emoji": "🍓🍓 ➕ 🍓🍓",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "2"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 3 + 3?",
+          "emoji": "🎈🎈🎈 ➕ 🎈🎈🎈",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "7"
+          ]
+        },
+        {
+          "pergunta": "Quanto é 4 + 2?",
+          "emoji": "🐟🐟🐟🐟 ➕ 🐟🐟",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "7"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Detetive das formas",
+      "instrucao": "Olha para o desenho do sólido. Toca no objeto com a mesma forma.",
+      "itens": [
+        {
+          "pergunta": "Qual tem a forma de uma esfera?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
+          "alt": "esfera",
+          "certa": "🏐",
+          "erradas": [
+            "🧃",
+            "🥕"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cubo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g></svg>",
+          "alt": "cubo",
+          "certa": "🧊",
+          "erradas": [
+            "📕",
+            "🔋"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
+          "alt": "cilindro",
+          "certa": "🔋",
+          "erradas": [
+            "🎱",
+            "🧈"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um paralelepípedo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g></svg>",
+          "alt": "paralelepípedo",
+          "certa": "📕",
+          "erradas": [
+            "🎲",
+            "🥁"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cone?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
+          "alt": "cone",
+          "certa": "🥕",
+          "erradas": [
+            "🕯️",
+            "🍊"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de uma esfera?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></svg>",
+          "alt": "esfera",
+          "certa": "🍊",
+          "erradas": [
+            "🥁",
+            "🧽"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um cilindro?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></svg>",
+          "alt": "cilindro",
+          "certa": "🥁",
+          "erradas": [
+            "🧊",
+            "🎉"
+          ]
+        },
+        {
+          "pergunta": "Qual tem a forma de um paralelepípedo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 120'><g stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g></svg>",
+          "alt": "paralelepípedo",
+          "certa": "🧽",
+          "erradas": [
+            "🏀",
+            "🧻"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio das somas",
+      "instrucao": "Conta as fichas vermelhas e as azuis. Escolhe a carruagem com o total.",
+      "itens": [
+        {
+          "pergunta": "Quanto é 5 + 2?",
+          "certa": "7",
+          "erradas": [
+            "6",
+            "8"
+          ],
+          "dica": "Começa no 5 e conta mais 2: 6, 7.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 5 fichas vermelhas e 2 azuis"
+        },
+        {
+          "pergunta": "Quanto é 4 + 4?",
+          "certa": "8",
+          "erradas": [
+            "7",
+            "4"
+          ],
+          "dica": "Conta todas as fichas, uma a uma.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 4 fichas vermelhas e 4 azuis"
+        },
+        {
+          "pergunta": "Quanto é 6 + 3?",
+          "certa": "9",
+          "erradas": [
+            "8",
+            "10"
+          ],
+          "dica": "Começa no 6 e conta mais 3: 7, 8, 9.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='627.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='619.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 6 fichas vermelhas e 3 azuis"
+        },
+        {
+          "pergunta": "Quanto é 3 + 4?",
+          "certa": "7",
+          "erradas": [
+            "6",
+            "8"
+          ],
+          "dica": "Começa no 4 e conta mais 3: 5, 6, 7.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 3 fichas vermelhas e 4 azuis"
+        },
+        {
+          "pergunta": "Quanto é 5 + 5?",
+          "certa": "10",
+          "erradas": [
+            "9",
+            "5"
+          ],
+          "dica": "Uma mão e mais outra mão: são os dedos todos!",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='627.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='619.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='697.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='689.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 5 fichas vermelhas e 5 azuis"
+        },
+        {
+          "pergunta": "Quanto é 7 + 1?",
+          "certa": "8",
+          "erradas": [
+            "7",
+            "9"
+          ],
+          "dica": "Mais 1 é o número que vem a seguir.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 7 fichas vermelhas e 1 azuis"
+        },
+        {
+          "pergunta": "Quanto é 2 + 6?",
+          "certa": "8",
+          "erradas": [
+            "7",
+            "9"
+          ],
+          "dica": "Começa no 6 e conta mais 2: 7, 8.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 2 fichas vermelhas e 6 azuis"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Rola ou não rola?",
+      "instrucao": "Pensa: se empurrares o objeto, ele rola? Põe-no na caixa certa.",
+      "caixas": [
+        "🌀 Rola",
+        "🛑 Não rola"
+      ],
+      "itens": [
+        [
+          "⚽",
+          "🌀 Rola"
+        ],
+        [
+          "🎲",
+          "🛑 Não rola"
+        ],
+        [
+          "🥫",
+          "🌀 Rola"
+        ],
+        [
+          "📦",
+          "🛑 Não rola"
+        ],
+        [
+          "🏀",
+          "🌀 Rola"
+        ],
+        [
+          "🧈",
+          "🛑 Não rola"
+        ],
+        [
+          "🧻",
+          "🌀 Rola"
+        ],
+        [
+          "🧊",
+          "🛑 Não rola"
+        ],
+        [
+          "🌍",
+          "🌀 Rola"
+        ],
+        [
+          "📕",
+          "🛑 Não rola"
+        ],
+        [
+          "🔋",
+          "🌀 Rola"
+        ],
+        [
+          "🧽",
+          "🛑 Não rola"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Somar sólidos",
+      "instrucao": "Conta os sólidos das duas caixas e leva o avião ao total.",
+      "itens": [
+        {
+          "pergunta": "Quantas esferas ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(199.0,0)'><rect x='2' y='2' width='218' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(145,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(230,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='280' y='2' width='86' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(291,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><circle cx='70' cy='60' r='48' fill='rgb(90,170,240)'/><ellipse cx='52' cy='40' rx='15' ry='9' fill='white' stroke='none' opacity='.6'/><ellipse cx='70' cy='60' rx='48' ry='14' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "3 mais 1: esferas",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "5"
+          ]
+        },
+        {
+          "pergunta": "Quantos cubos ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(166.0,0)'><rect x='2' y='2' width='152' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(164,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='214' y='2' width='218' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(225,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(291,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(357,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "2 mais 3: cubos",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ]
+        },
+        {
+          "pergunta": "Quantos cilindros ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(100.0,0)'><rect x='2' y='2' width='284' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(145,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(211,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(296,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='346' y='2' width='218' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(357,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(423,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g><g transform='translate(489,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M40,26V94A30,10 0 0,0 100,94V26' fill='rgb(245,120,160)'/><ellipse cx='70' cy='26' rx='30' ry='10' fill='rgb(255,195,215)'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "4 mais 3: cilindros",
+          "certa": "7",
+          "erradas": [
+            "6",
+            "8"
+          ]
+        },
+        {
+          "pergunta": "Quantos cones ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(133.0,0)'><rect x='2' y='2' width='350' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(145,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(211,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(277,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g><g transform='translate(362,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='412' y='2' width='86' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(423,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,94 70,12 105,94A35,11 0 0,1 35,94Z' fill='rgb(160,135,240)'/><path d='M35,94A35,11 0 0,1 105,94' fill='none' stroke-width='1.5' stroke-dasharray='5 4' opacity='.5'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "5 mais 1: cones",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "7"
+          ]
+        },
+        {
+          "pergunta": "Quantos paralelepípedos ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(34.0,0)'><rect x='2' y='2' width='284' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(145,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(211,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(296,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='346' y='2' width='350' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(357,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(423,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(489,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(555,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g><g transform='translate(621,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M12,60 32,40H128L108,60Z' fill='rgb(185,240,200)'/><path d='M108,60 128,40V78L108,98Z' fill='rgb(60,170,95)'/><path d='M12,60H108V98H12Z' fill='rgb(110,210,145)'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "4 mais 5: paralelepípedos",
+          "certa": "9",
+          "erradas": [
+            "8",
+            "10"
+          ]
+        },
+        {
+          "pergunta": "Quantos cubos ao todo?",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 766 90'><g transform='translate(1.0,0)'><rect x='2' y='2' width='416' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(13,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(79,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(145,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(211,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(277,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(343,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(428,26.0)'><rect x='13' y='0' width='12' height='38' rx='4' fill='rgb(90,90,100)'/><rect x='0' y='13' width='38' height='12' rx='4' fill='rgb(90,90,100)'/></g><rect x='478' y='2' width='284' height='86' rx='16' fill='rgb(255,248,240)' stroke='rgb(176,110,60)' stroke-width='3' stroke-dasharray='8 6'/><g transform='translate(489,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(555,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(621,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g><g transform='translate(687,18) scale(0.457)' stroke='rgb(28,37,65)' stroke-width='3' stroke-linejoin='round'><path d='M35,47 57,25H107L85,47Z' fill='rgb(255,215,130)'/><path d='M85,47 107,25V75L85,97Z' fill='rgb(235,155,30)'/><path d='M35,47H85V97H35Z' fill='rgb(255,190,60)'/></g></g></svg>",
+          "imagemGrande": true,
+          "alt": "6 mais 4: cubos",
+          "certa": "10",
+          "erradas": [
+            "9",
+            "8"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Quem é o intruso?",
+      "instrucao": "Há um objeto com uma forma diferente. Toca no Ticl@s quando ele o mostrar.",
+      "itens": [
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "⚽ 🍊 🎲",
+          "certa": "🎲",
+          "erradas": [
+            "⚽",
+            "🍊"
+          ],
+          "explicacao": "A bola e a laranja são esferas. O dado é um cubo."
+        },
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "🥫 🔋 🏀",
+          "certa": "🏀",
+          "erradas": [
+            "🥫",
+            "🔋"
+          ],
+          "explicacao": "A lata e a pilha são cilindros. A bola é uma esfera."
+        },
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "📕 🧃 🍦",
+          "certa": "🍦",
+          "erradas": [
+            "📕",
+            "🧃"
+          ],
+          "explicacao": "O livro e o pacote de sumo são paralelepípedos. O gelado tem um cone."
+        },
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "🎲 🧊 🧻",
+          "certa": "🧻",
+          "erradas": [
+            "🎲",
+            "🧊"
+          ],
+          "explicacao": "O dado e o cubo de gelo são cubos. O rolo de papel é um cilindro."
+        },
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "🥕 🎉 🌍",
+          "certa": "🌍",
+          "erradas": [
+            "🥕",
+            "🎉"
+          ],
+          "explicacao": "A cenoura e o cone da festa parecem cones. O globo é uma esfera."
+        },
+        {
+          "pergunta": "Qual tem uma forma diferente?",
+          "emoji": "🥁 🕯️ 🧱",
+          "certa": "🧱",
+          "erradas": [
+            "🥁",
+            "🕯️"
+          ],
+          "explicacao": "O tambor e a vela são cilindros. O tijolo é um paralelepípedo."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Escreve o total",
+      "instrucao": "Conta tudo e escreve o número no teclado. Depois carrega em Enter.",
+      "itens": [
+        {
+          "pergunta": "2 + 5 = ?",
+          "emoji": "🍎🍎 ➕ 🍎🍎🍎🍎🍎",
+          "resposta": "7",
+          "dica": "Começa no 5 e conta mais 2."
+        },
+        {
+          "pergunta": "3 + 1 = ?",
+          "emoji": "⚽⚽⚽ ➕ ⚽",
+          "resposta": "4",
+          "dica": "Mais 1 é o número que vem a seguir."
+        },
+        {
+          "pergunta": "4 + 5 = ?",
+          "resposta": "9",
+          "dica": "Começa no 5 e conta mais 4.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='627.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='619.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 4 fichas vermelhas e 5 azuis"
+        },
+        {
+          "pergunta": "6 + 2 = ?",
+          "resposta": "8",
+          "dica": "Começa no 6 e conta mais 2.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 6 fichas vermelhas e 2 azuis"
+        },
+        {
+          "pergunta": "3 + 3 = ?",
+          "emoji": "🐞🐞🐞 ➕ 🐞🐞🐞",
+          "resposta": "6",
+          "dica": "Conta todas as joaninhas, uma a uma."
+        },
+        {
+          "pergunta": "7 + 3 = ?",
+          "resposta": "10",
+          "dica": "O 10 escreve-se com duas teclas: 1 e 0.",
+          "imagem": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 746 94'><rect x='9' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='377' y='7' width='360' height='80' rx='14' fill='rgb(176,110,60)'/><rect x='16' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='49.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='41.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='86' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='119.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='111.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='156' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='189.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='181.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='226' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='259.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='251.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='296' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='329.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='321.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='384' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='417.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='409.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='454' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='487.0' cy='47.0' r='25' fill='rgb(232,90,79)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='479.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='524' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='557.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='549.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='594' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='627.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='619.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/><rect x='664' y='14' width='66' height='66' rx='8' fill='white'/><circle cx='697.0' cy='47.0' r='25' fill='rgb(70,140,210)' stroke='rgb(28,37,65)' stroke-width='3'/><ellipse cx='689.0' cy='38.0' rx='8' ry='5' fill='white' opacity='.55'/></svg>",
+          "imagemGrande": true,
+          "alt": "quadro de 10 com 7 fichas vermelhas e 3 azuis"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória das formas",
+      "instrucao": "Vira duas cartas e encontra dois objetos com a mesma forma.",
+      "itens": [
+        [
+          "🏐",
+          "🌍"
+        ],
+        [
+          "🔋",
+          "🥫"
+        ],
+        [
+          "🥕",
+          "🍦"
+        ],
+        [
+          "📕",
+          "🧈"
+        ],
+        [
+          "🧊",
+          "🎲"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "titulo": "Liga a conta ao total",
+      "instrucao": "Liga cada conta ao seu total.",
+      "itens": [
+        [
+          "1 + 2",
+          "3"
+        ],
+        [
+          "2 + 3",
+          "5"
+        ],
+        [
+          "4 + 3",
+          "7"
+        ],
+        [
+          "5 + 4",
+          "9"
+        ],
+        [
+          "6 + 4",
+          "10"
+        ],
+        [
+          "4 + 4",
+          "8"
+        ]
+      ]
+    }
+  ]
+}
