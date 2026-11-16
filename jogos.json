@@ -485,5 +485,27 @@
       "Rato: clicar e arrastar",
       "Teclado: escrever palavras e frases"
     ]
+  },
+  {
+    "id": "2026-11-16-3ano-missao-casita",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Missão Casita: o encanto do código",
+    "descricao": "Jogo inspirado no filme Encanto: começa com um quiz sobre o filme ao estilo Kahoot (tempo e pontos) e segue com 6 missões de pensamento computacional e robótica — algoritmos, padrões, programar um robô numa grelha (avançar e virar), ciclos (repetir), condições (SE… ENTÃO… SENÃO e sensores) e depuração. Inclui guia do professor e certificado da equipa.",
+    "disciplina": "Pensamento Computacional",
+    "data": "2026-11-16",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-16_3ano_PensamentoComputacional_MissaoCasita_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Responde ao quiz do filme, programa o robô e devolve as 6 borboletas à vela mágica da Casita!",
+    "focoTic": [
+      "Pensamento computacional",
+      "Programação de robôs",
+      "Rato: clicar"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
