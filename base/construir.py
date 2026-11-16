@@ -240,10 +240,79 @@ def montar_modelo():
                  .replace("/*MOTOR*/", (SRC / "motor.js").read_text(encoding="utf-8").strip()))
 
 
+
+# ---------- navegação comum dos jogos ----------
+PORTAL_TICLAS = "https://cspsya.github.io/ticlas-investigadores-digitais/"
+BOTAO_PORTAL = (
+    '<a id="ticlas-voltar-portal" href="' + PORTAL_TICLAS + '" '
+    'aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s">'
+    '<span aria-hidden="true">←</span> Voltar ao Ticl@s</a>'
+)
+ESTILO_PORTAL = """<style id="ticlas-estilo-portal">
+#ticlas-voltar-portal {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center;
+  gap:7px; flex:0 0 auto; min-height:44px; padding:8px 14px;
+  border:2px solid #285775; border-radius:12px; background:#fff; color:#285775;
+  font:800 16px/1.2 'Nunito','Segoe UI',sans-serif; white-space:nowrap;
+  text-decoration:none; cursor:pointer; touch-action:manipulation; position:relative;
+}
+#ticlas-voltar-portal:hover {background:#285775;color:#fff}
+#ticlas-voltar-portal:focus-visible {outline:3px solid #E8834A;outline-offset:3px}
+#ticlas-voltar-portal span {font-size:21px;line-height:1}
+#ticlas-nav-portal {box-sizing:border-box;flex:0 0 auto;width:100%;max-width:1180px;
+  margin:0 auto;padding:6px 14px;display:flex;justify-content:flex-start;align-items:center}
+body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
+@media print {#ticlas-voltar-portal,#ticlas-nav-portal {display:none!important}}
+</style>"""
+
+
+def com_botao_portal(html):
+    """Acrescenta uma ligação real ao portal sem modificar a lógica do jogo."""
+    if 'id="ticlas-voltar-portal"' in html:
+        return html
+    corpo = re.search(r"<body\b[^>]*>", html, re.I)
+    cabeca = re.search(r"</head\s*>", html, re.I)
+    if not corpo or not cabeca:
+        raise ValueError("HTML sem head/body para acrescentar o botão do portal.")
+    # Limita a pesquisa ao HTML inicial, evitando modelos de ecrãs em JavaScript.
+    inicio = corpo.end()
+    script = re.search(r"<script\b", html[inicio:], re.I)
+    fim = inicio + script.start() if script else len(html)
+    trecho = html[inicio:fim]
+    antigo = re.search(r'<a\b[^>]*class="(?:portal-link|back)"[^>]*href="[^"]*index\.html[^"]*"[^>]*>.*?</a>', trecho, re.I | re.S)
+    header = re.search(r"</header\s*>", trecho, re.I)
+    jogador = re.search(r'<div\s+id="app">\s*(?=<div\s+id="ecra-wrap">)', trecho, re.I)
+    if antigo:
+        # Substitui o botão antigo para não duplicar a navegação.
+        trecho = trecho[:antigo.start()] + BOTAO_PORTAL + trecho[antigo.end():]
+    elif header:
+        trecho = trecho[:header.start()] + "\n    " + BOTAO_PORTAL + "\n  " + trecho[header.start():]
+    else:
+        nav = '\n<div id="ticlas-nav-portal">' + BOTAO_PORTAL + '</div>\n'
+        # Os jogos com palco fixo ocupam 100vh: a barra fica dentro do flex,
+        # permitindo que o palco se adapte à área restante sem cortar controlos.
+        pos = jogador.end() if jogador else 0
+        trecho = trecho[:pos] + nav + trecho[pos:]
+    html = html[:inicio] + trecho + html[fim:]
+    return html[:cabeca.start()] + ESTILO_PORTAL + "\n" + html[cabeca.start():]
+
+
+def atualizar_botoes_portal():
+    """Aplica a navegação também aos jogos antigos e aos HTML autónomos."""
+    total = 0
+    for f in sorted((RAIZ / "jogos").rglob("*.html")):
+        original = f.read_text(encoding="utf-8")
+        atualizado = com_botao_portal(original)
+        if atualizado != original:
+            f.write_text(atualizado, encoding="utf-8")
+            total += 1
+    print(f"✓ Botão do portal: {total} jogos atualizados.")
+
+
 def com_aula(html, aula):
     if not BLOCO.search(html):
         sys.exit("Erro: o modelo não tem o bloco AULA:INICIO / AULA:FIM.")
-    return BLOCO.sub(lambda m: m.group(1) + "\n" + json_seguro(aula) + "\n" + m.group(3), html, count=1)
+    return com_botao_portal(BLOCO.sub(lambda m: m.group(1) + "\n" + json_seguro(aula) + "\n" + m.group(3), html, count=1))
 
 
 def ler_aula(caminho):
@@ -353,6 +422,7 @@ def gerar_aulas():
     ficheiros = sorted(AULAS.rglob("*.json")) if AULAS.exists() else []
     if not ficheiros:
         print("Não há aulas em aulas/.")
+        atualizar_botoes_portal()
         return True
     modelo, ok, gerados = montar_modelo(), True, 0
     for f in ficheiros:
@@ -379,6 +449,7 @@ def gerar_aulas():
             gerados += 1
         mudou = registar(aula, destino.relative_to(RAIZ).as_posix(), f.stem)
         print(f"✓ {rel} → {destino.relative_to(RAIZ).as_posix()} (semana {texto_semana}){' · jogos.json atualizado' if mudou else ''}")
+    atualizar_botoes_portal()
     print(f"{'✓' if ok else '✗'} Aulas: {len(ficheiros)} ficheiros, {gerados} jogos gerados ou atualizados.")
     return ok
 
@@ -529,6 +600,8 @@ def verificar_site():
     for f in sorted((RAIZ / "jogos").rglob("*.html")):
         rel = f.relative_to(RAIZ).as_posix()
         texto = f.read_text(encoding="utf-8")
+        if texto.count('id="ticlas-voltar-portal"') != 1 or BOTAO_PORTAL not in texto:
+            erros.append(f"{rel}: falta o botão de regresso à página inicial do Ticl@s ou está duplicado.")
         m = BLOCO.search(texto)
         if m:
             try:
@@ -558,9 +631,12 @@ def preparar_site(destino):
     total = 0
     for f in sorted(destino.rglob("*.html")):
         texto = f.read_text(encoding="utf-8")
+        if f.is_relative_to(destino / "jogos"):
+            texto = com_botao_portal(texto)
         html, n, falta = embutir_emojis(texto)
-        if n:
+        if n or f.is_relative_to(destino / "jogos"):
             f.write_text(html, encoding="utf-8")
+        if n:
             total += 1
         if falta:
             print(f"  ! {f.relative_to(destino)}: sem imagem Noto para {' '.join(falta)}")
