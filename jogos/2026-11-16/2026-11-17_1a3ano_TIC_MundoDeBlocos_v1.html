@@ -67,6 +67,10 @@ footer{text-align:center;font-size:12.5px;padding:5px;background:#FFF1E0;border-
 #fx{pointer-events:none}
 .rot{position:absolute;left:10px;bottom:10px;display:flex;gap:8px;align-items:center}
 .rbtn{width:50px;height:50px;border-radius:50%;border:3px solid #fff;background:rgba(91,163,208,.92);color:#fff;font-size:26px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2);line-height:1}
+#mini{position:absolute;right:10px;top:10px;background:rgba(255,255,255,.92);border:3px solid var(--borda);border-radius:14px;padding:6px;text-align:center;display:none}
+#miniCv{width:150px;height:150px;display:block;border-radius:8px;cursor:crosshair;image-rendering:pixelated}
+#miniTx{font-family:Fredoka,sans-serif;font-size:13px;color:#8A4517;margin:3px 0}
+#mini .abtn{font-size:13px;padding:5px 8px;width:100%}
 .cam{position:absolute;right:10px;bottom:10px;display:flex;gap:8px;align-items:center}
 .rlbl{font-family:Fredoka,sans-serif;font-size:13px;background:rgba(255,255,255,.85);border-radius:10px;padding:2px 8px;color:#3E7FA8}
 .panel{width:262px;background:#FFFBF5;border-left:2px solid var(--borda);padding:10px;display:flex;flex-direction:column;gap:9px;overflow:auto}
@@ -204,6 +208,7 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             <button class="rbtn" id="rotR" title="Rodar o mundo">⟳</button>
             <span class="rlbl">Rodar o mundo</span>
           </div>
+          <div id="mini"><canvas id="miniCv" title="Clica no mapa para ires para esse sítio"></canvas><div id="miniTx"></div><button class="abtn" id="gHome">⌂ Voltar à aldeia</button></div>
           <div class="cam" id="camBox">
             <span class="rlbl">Arrasta o mundo para o mover</span>
             <button class="rbtn" id="zOut" title="Afastar">−</button>
@@ -269,10 +274,10 @@ function rng(seed){let s=(seed*2654435761)|0||7;return()=>{s^=s<<13;s^=s>>>17;s^
 function tex(seed,fn){const c=document.createElement('canvas');c.width=c.height=8;const g=c.getContext('2d');const r=rng(seed);for(let y=0;y<8;y++)for(let x=0;x<8;x++){const col=fn(x,y,r);if(col){g.fillStyle=col;g.fillRect(x,y,1,1)}}return c}
 
 const MATS={
-  relva:{nome:'Relva'},tabuas:{nome:'Tábuas'},tronco:{nome:'Tronco'},telhado:{nome:'Telhado'},pedra:{nome:'Pedra'},tijolo:{nome:'Tijolo'},folhas:{nome:'Folhas'},
+  relva:{nome:'Relva'},terra:{nome:'Terra'},tabuas:{nome:'Tábuas'},tronco:{nome:'Tronco'},telhado:{nome:'Telhado'},pedra:{nome:'Pedra'},tijolo:{nome:'Tijolo'},folhas:{nome:'Folhas'},
   areia:{nome:'Areia'},neve:{nome:'Neve'},vidro:{nome:'Vidro',transp:true},agua:{nome:'Água',transp:true}
 };
-const MORDER=['relva','tabuas','tronco','pedra','tijolo','telhado','folhas','areia','neve','vidro','agua'];
+const MORDER=['relva','terra','tabuas','tronco','pedra','tijolo','telhado','folhas','areia','neve','vidro','agua'];
 const TEX=(function(){
   const T={};
   const planks=(x,y,r)=>{const b='#C69A5B';if(y%4===3)return sh(b,.68);if(x===(y<4?5:1))return sh(b,.78);return sh(b,.9+r()*.16)};
@@ -295,6 +300,8 @@ const TEX=(function(){
   T.agua={top:tex(91,water),side:tex(92,water)};
   const gr=(x,y,r)=>{const g='#6BBF59',v=r();return v<.16?sh(g,.82):sh(g,.93+r()*.14)};
   T.relva={top:tex(111,gr),side:tex(112,(x,y,r)=>{if(y<2&&!(y===1&&r()<.45))return sh('#6BBF59',.9+r()*.1);return r()<.15?sh('#8A5A36',.75):sh('#8A5A36',.92+r()*.14)})};
+  const dirt=(x,y,r)=>{const v=r();return v<.15?sh('#8A5A36',.75):v>.92?sh('#8A5A36',1.15):sh('#8A5A36',.92+r()*.14)};
+  T.terra={top:tex(131,dirt),side:tex(132,dirt)};
   const roof=(x,y,r)=>{const b='#B5532E';if(y%3===2)return sh(b,.68);if((x+(Math.floor(y/3)%2)*2)%4===0)return sh(b,.82);return sh(b,.92+r()*.16)};
   T.telhado={top:tex(121,roof),side:tex(122,roof)};
   return T;
@@ -411,6 +418,81 @@ const WORLDS=[
     w.box(13,14,0,20,19,0,'agua');[[10,16],[12,21],[21,10],[22,15],[2,21],[16,21],[11,11]].forEach(([x,y])=>w.pinheiro(x,y));
     w.box(4,16,0,6,18,1,'neve',true).put(5,17,2,'neve').del(5,18,0);w.put(8,20,0,'neve').put(8,20,1,'neve').put(8,20,2,'neve');return w.m}}
 ];
+
+/* ================= mundo gigante 1000 × 1000 ================= */
+const GN=1000,SEA=5,GZ=26,GC0=500;
+function hash2(x,y,s){let h=(Math.imul(x,374761393)+Math.imul(y,668265263)+Math.imul(s,1442695041))|0;h=Math.imul(h^(h>>>13),1274126177);return((h^(h>>>16))>>>0)/4294967296}
+function vnoise(x,y,s){const xi=Math.floor(x),yi=Math.floor(y),xf=x-xi,yf=y-yi,u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf);
+  const a=hash2(xi,yi,s),b=hash2(xi+1,yi,s),c=hash2(xi,yi+1,s),d=hash2(xi+1,yi+1,s);return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v}
+function hCalc(x,y){let n=.55*vnoise(x/70,y/70,1)+.3*vnoise(x/26,y/26,2)+.15*vnoise(x/9,y/9,3);const m=vnoise(x/140,y/140,4);if(m>.55)n+=(m-.55)*1.3;
+  const A=[.3,.45,.5,.75,.85,.92,.97,1.1],Bv=[1,4.5,6,9,11,13,15,19];let H=1;if(n>=A[A.length-1])H=19;else if(n>A[0]){let i=0;while(n>A[i+1])i++;H=Bv[i]+(Bv[i+1]-Bv[i])*(n-A[i])/(A[i+1]-A[i])}
+  H=Math.max(1,Math.min(20,Math.round(H)));const d=Math.hypot(x-GC0,y-GC0);
+  if(d<24){const t=d<17?1:(24-d)/7;H=Math.round(H+(7-H)*t)}return H}
+function gTopM(H){return H<=SEA?'areia':H>=14?'neve':H>=11?'pedra':'relva'}
+function treeCalc(x,y,H){if((x&1)||(y&1)||H<=SEA||H>=11||Math.hypot(x-GC0,y-GC0)<26)return 0;const f=vnoise(x/45,y/45,5);return hash2(x,y,7)<(f>.5?(f-.5)*1.1:.015)?1:0}
+const GCH=new Map();
+function gChunk(cx,cy){const k=cx*64+cy;let c=GCH.get(k);if(c)return c;c={H:new Int8Array(1024),T:new Uint8Array(1024)};
+  for(let j=0;j<32;j++)for(let i=0;i<32;i++){const x=cx*32+i,y=cy*32+j,H=hCalc(x,y);c.H[j*32+i]=H;c.T[j*32+i]=treeCalc(x,y,H)}GCH.set(k,c);return c}
+function gH(x,y){if(x<0||y<0||x>=GN||y>=GN)return 0;return gChunk(x>>5,y>>5).H[(y&31)*32+(x&31)]}
+function gTree(x,y){if(x<0||y<0||x>=GN||y>=GN)return 0;return gChunk(x>>5,y>>5).T[(y&31)*32+(x&31)]}
+const GSTR=new Map(),GSTRCOL=new Map();
+(function(){const w=W();w.casa(2,2,'tabuas',3).casa(9,2,'pedra',10).casa(16,2,'tijolo',17).casa(2,15,'tabuas',3).casa(16,15,'pedra',17);
+  w.box(10,10,0,12,12,0,'pedra',true).put(11,11,0,'agua').put(10,10,1,'tronco').put(12,10,1,'tronco').box(10,10,2,12,10,2,'tabuas');
+  w.arvore(7,12).arvore(15,10).arvore(10,18);
+  for(const [k,b] of w.m){const [x,y,z]=k.split(',').map(Number);const X=x+GC0-12,Y=y+GC0-12,Z=z+7;GSTR.set(X+','+Y+','+Z,b.m);const c=X*GN+Y;GSTRCOL.set(c,Math.max(GSTRCOL.get(c)||0,Z))}})();
+const GDCOL=new Map();
+function gMarkCol(x,y,z){for(const [a,b] of [[0,0],[1,0],[-1,0],[0,1],[0,-1]]){const c=(x+a)*GN+(y+b);GDCOL.set(c,Math.max(GDCOL.has(c)?GDCOL.get(c):0,z))}}
+function gGet(x,y,z){if(x<0||y<0||x>=GN||y>=GN||z<0)return null;const col=x*GN+y;
+  if(GDCOL.has(col)){const d=S.blocks.get(x+','+y+','+z);if(d)return d.m}
+  if(GSTRCOL.has(col)){const sm=GSTR.get(x+','+y+','+z);if(sm)return sm}
+  const H=gH(x,y);
+  if(z<H){if(z===0)return 'pedra';const t=gTopM(H);if(z===H-1)return t;if(t==='relva')return z>=H-3?'terra':'pedra';if(t==='areia')return z>=H-3?'areia':'pedra';return 'pedra'}
+  if(z<SEA)return 'agua';
+  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(gTree(x+dx,y+dy)){const Ht=gH(x+dx,y+dy);
+    if(!dx&&!dy&&z<Ht+3)return 'tronco';if(z===Ht+3)return 'folhas';if(!dx&&!dy&&z===Ht+4)return 'folhas'}
+  return null}
+function gColTop(x,y,H){let t=Math.max(H-1,SEA-1);const c=x*GN+y;
+  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++)if(gTree(x+dx,y+dy))t=Math.max(t,gH(x+dx,y+dy)+4);
+  if(GSTRCOL.has(c))t=Math.max(t,GSTRCOL.get(c));if(GDCOL.has(c))t=Math.max(t,GDCOL.get(c));return t}
+const hidesG=(n,m)=>!!n&&(!MATS[n].transp||n===m);
+function gView(w,h){const r=S.rot,hw=28*S.cam.z,hh=hw/2,bh=hw*1.2;const [rcx,rcy]=rotC(S.g.x,S.g.y,r,GN);
+  const ox=w/2-(rcx-rcy)*hw,oy=h/2-(rcx+rcy+1)*hh+7*bh;
+  return {N:GN,rot:r,hw,hh,bh,ox,oy,w,h,giant:true,P:(X,Y,Z)=>[ox+(X-Y)*hw,oy+(X+Y)*hh-Z*bh]}}
+function drawGiant(ctx,w,h){const v=gView(w,h),r=v.rot,inv=(4-r)%4,faces=[];ctx.imageSmoothingEnabled=false;
+  let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;
+  for(const [sx,sy] of [[0,0],[w,0],[0,h],[w,h]])for(const Z of [0,GZ]){const a=(sx-v.ox)/v.hw,b=(sy-v.oy+Z*v.bh)/v.hh,X=(a+b)/2,Y=(b-a)/2;x0=Math.min(x0,X);x1=Math.max(x1,X);y0=Math.min(y0,Y);y1=Math.max(y1,Y)}
+  x0=Math.max(0,Math.floor(x0)-1);y0=Math.max(0,Math.floor(y0)-1);x1=Math.min(GN-1,Math.ceil(x1)+1);y1=Math.min(GN-1,Math.ceil(y1)+1);
+  const Rv=rotV(1,0,inv),Lv=rotV(0,1,inv);
+  for(let s=x0+y0;s<=x1+y1;s++){const a0=Math.max(x0,s-y1),a1=Math.min(x1,s-y0);
+    for(let rx=a0;rx<=a1;rx++){const ry=s-rx,cx=v.ox+(rx-ry)*v.hw;if(cx<-2*v.hw||cx>w+2*v.hw)continue;
+      const wc=rotC(rx,ry,inv,GN),wx=wc[0],wy=wc[1],H=gH(wx,wy);
+      let z0=Math.max(0,Math.min(H,gH(wx+Rv[0],wy+Rv[1]),gH(wx+Lv[0],wy+Lv[1]))-1);if(GDCOL.has(wx*GN+wy))z0=0;
+      const top=gColTop(wx,wy,H);
+      if(v.oy+(rx+ry+2)*v.hh-z0*v.bh<-v.hw||v.oy+(rx+ry)*v.hh-(top+1)*v.bh>h+v.hw)continue;
+      for(let z=z0;z<=top;z++){const m=gGet(wx,wy,z);if(!m)continue;
+        const vis={top:!hidesG(gGet(wx,wy,z+1),m),right:!hidesG(gGet(wx+Rv[0],wy+Rv[1],z),m),left:!hidesG(gGet(wx+Lv[0],wy+Lv[1],z),m)};
+        if(!vis.top&&!vis.right&&!vis.left)continue;const key=wx+','+wy+','+z;
+        drawBlock(ctx,v,rx,ry,z,m,vis,faces,{kind:'block',key,wx,wy,z,locked:z===0},false,S.eraseKey===key)}}}
+  if(S.hover){const hc=rotC(S.hover.x,S.hover.y,r,GN);drawGhost(ctx,v,hc[0],hc[1],S.hover.z,null,null,true)}
+  return {faces,v}}
+let GMAP=null;
+function gMapImg(){if(GMAP)return GMAP;const n=150,c=document.createElement('canvas');c.width=c.height=n;const g=c.getContext('2d'),im=g.createImageData(n,n);
+  for(let j=0;j<n;j++)for(let i=0;i<n;i++){const x=Math.floor((i+.5)*GN/n),y=Math.floor((j+.5)*GN/n),H=hCalc(x,y),t=gTopM(H);let col;
+    if(H<SEA)col=[58-H*4,124-H*6,214-H*8];else if(t==='areia')col=[226,205,138];else if(t==='neve')col=[240,245,250];else if(t==='pedra')col=[140,140,140];
+    else{const f=vnoise(x/45,y/45,5);col=f>.6?[52,120,48]:[107-H*3,191-H*5,89-H*2]}
+    const o=(j*n+i)*4;im.data[o]=col[0];im.data[o+1]=col[1];im.data[o+2]=col[2];im.data[o+3]=255}
+  g.putImageData(im,0,0);g.fillStyle='#B24E37';g.fillRect(n/2-3,n/2-3,6,6);GMAP=c;return c}
+function drawMap(){if(S.mode!=='giant')return;const c=$('#miniCv'),d=DPR(),n=150;if(c.width!==n*d){c.width=c.height=n*d}const g=c.getContext('2d');g.setTransform(d,0,0,d,0,0);
+  g.drawImage(gMapImg(),0,0);const px=S.g.x*n/GN,py=S.g.y*n/GN;g.strokeStyle='#fff';g.lineWidth=3;g.beginPath();g.arc(px,py,5,0,7);g.stroke();g.fillStyle='#E8834A';g.beginPath();g.arc(px,py,4,0,7);g.fill();
+  $('#miniTx').textContent='📍 x '+Math.floor(S.g.x)+' · y '+Math.floor(S.g.y)}
+function gMove(dxs,dys){const v=PICK&&PICK.v&&PICK.v.giant?PICK.v:gView(cv.clientWidth,cv.clientHeight);const a=dxs/v.hw,b=dys/v.hh;const d=rotV(-(a+b)/2,-(b-a)/2,(4-S.rot)%4);
+  S.g.x=Math.max(0,Math.min(GN-1,S.g.x+d[0]));S.g.y=Math.max(0,Math.min(GN-1,S.g.y+d[1]))}
+function gLoad(){const m=new Map();GDCOL.clear();for(const a of (SAVE['giant_'+S.year]||[])){const k=K(a[0],a[1],a[2]);m.set(k,{m:a[3]||null});gMarkCol(a[0],a[1],a[2])}return m}
+let gSaveT=0;function gSave(){clearTimeout(gSaveT);gSaveT=setTimeout(()=>{const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m||0])}
+  SAVE['giant_'+S.year]=a;SAVE['giantCam_'+S.year]=[Math.round(S.g.x),Math.round(S.g.y)];persist()},400)}
+function gSet(k,m){const [x,y,z]=k.split(',').map(Number);const prev=S.blocks.get(k);S.blocks.delete(k);
+  const base=gGet(x,y,z);if(base!==m)S.blocks.set(k,{m});gMarkCol(x,y,z);return prev}
+function startGiant(){S.mode='giant';S.world=null;S.ch=null;S.N=GN;S.rot=0;S.hz=GZ;S.cam={z:1,x:0,y:0};const c=SAVE['giantCam_'+S.year];S.g={x:c?c[0]:GC0,y:c?c[1]:GC0+4};setupGame();resetWorld()}
 
 /* ================= geometria ================= */
 const K=(x,y,z)=>x+','+y+','+z;
@@ -550,12 +632,14 @@ function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cw=$('#cardsW');cw.innerHTML='';
   const fc=el('div','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
   fc.onclick=startFree;cw.append(fc);
+  const gc=el('div','card world giant','<canvas></canvas><div class="cn">1000 × 1000</div><div class="ct">Mundo gigante</div><div class="stars">🗺️</div>');gc.onclick=startGiant;cw.append(gc);
   WORLDS.forEach((wd,i)=>{const c=el('div','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
   list.forEach((ch,i)=>{const c=el('div','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
   requestAnimationFrame(()=>{
+    {const gcv=gc.querySelector('canvas'),d=DPR();gcv.width=gcv.clientWidth*d;gcv.height=gcv.clientHeight*d;const g=gcv.getContext('2d');g.imageSmoothingEnabled=false;const m=gMapImg(),sz=Math.min(gcv.width,gcv.height);g.drawImage(m,(gcv.width-sz)/2,0,sz,sz)}
     const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?10:7,fb.size?6:4);
-    $$('#cardsW .card.world').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w2_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},WN,Math.max(3,maxZB(b)+1.5))});
+    $$('#cardsW .card.world:not(.giant)').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w2_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},WN,Math.max(3,maxZB(b)+1.5))});
     $$('#cards .card:not(.free)').forEach((c,i)=>{const ch=list[i];const all=[...(ch.fixed||[]),...(ch.obst||[]),...(ch.t==='build'?ch.targets:[])];
       const sp=[];if(ch.t==='code'){if(ch.flag)sp.push({kind:'flag',x:ch.flag.x,y:ch.flag.y});(ch.acorns||[]).forEach(a=>sp.push({kind:'acorn',x:a[0],y:a[1]}));sp.push({kind:'agent',x:ch.start.x,y:ch.start.y,d:ch.start.d})}
       renderMini(c.querySelector('canvas'),{blocks:mapOf(all),ghosts:ch.t==='code'?ch.targets:null,sprites:sp},ch.N,Math.max(2,maxZ(all)+1.5))})})}
@@ -571,21 +655,21 @@ function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=20;S.hz=8;S.rot=0;
 function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=WN;S.rot=0;S.hz=Math.max(8,maxZB(S.world.gen())+3);S.cam={z:S.world.zoom||1.4,x:0,y:0};setupGame();resetWorld()}
 function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
   S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
-function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const free=isFree(),code=S.mode==='code',wd=S.mode==='world'?S.world:null;
-  $('#gTt').textContent=wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
-  $('#gTx').textContent=wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
+function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',free=isFree()||gi,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
+  $('#gTt').textContent=gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
+  $('#gTx').textContent=gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
   $('#gPrev').style.visibility=$('#gNext').style.visibility=free?'hidden':'visible';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
-  $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#codePanel').style.display=code?'flex':'none';
+  $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#zAll').style.display=gi?'none':'';$('#mini').style.display=gi?'block':'none';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
-  $('#btnReset').innerHTML=wd?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
+  $('#btnReset').innerHTML=(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
   setTool('place');
   if(code){buildCmds();$('#pGoal').textContent='Meta: '+S.ch.best+' peças';$('#codeTip').textContent=S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.'}
 }
 function resetWorld(){
-  const ch=S.ch;S.blocks=isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
+  const ch=S.ch;S.blocks=S.mode==='giant'?gLoad():isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
   S.undo=[];S.help=false;S.done=false;S.warned=false;S.marks=new Set();S.hover=null;S.eraseKey=null;S.lockWarn=false;
   $('#btnHelp').disabled=false;
   if(S.mode==='code')resetCodeWorld(true);
@@ -602,28 +686,33 @@ function curScene(){const ch=S.ch;const sc={N:S.N,blocks:S.blocks,marks:S.marks,
 function render(){if(!$('#game').classList.contains('on'))return;const cv=$('#cv'),d=DPR(),w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
   if(cv.width!==Math.round(w*d)||cv.height!==Math.round(h*d)){cv.width=Math.round(w*d);cv.height=Math.round(h*d)}
   const ctx=cv.getContext('2d');ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);
-  PICK=drawScene(ctx,makeView(w,h,S.N,S.rot,S.hz,S.cam),curScene())}
+  PICK=S.mode==='giant'?drawGiant(ctx,w,h):drawScene(ctx,makeView(w,h,S.N,S.rot,S.hz,S.cam),curScene());drawMap()}
+let rq=false;function requestRender(){if(rq)return;rq=true;requestAnimationFrame(()=>{rq=false;render()})}
 function renderModel(){if(S.mode!=='build'||!$('#game').classList.contains('on'))return;const ch=S.ch;const all=[...(ch.fixed||[]),...ch.targets];
   renderMini($('#modelCv'),{blocks:mapOf(all),sprites:[]},ch.N,maxZ(all)+1.5,S.rot)}
 
 /* ---------- construir ---------- */
 function hit(e){const r=$('#cv').getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;if(!PICK)return null;
   for(let i=PICK.faces.length-1;i>=0;i--){const f=PICK.faces[i];if(f.meta&&inPoly(mx,my,f.q))return Object.assign({n:f.n},f.meta)}
-  const v=PICK.v,a=(mx-v.ox)/v.hw,b=(my-v.oy)/v.hh,rx=Math.floor((a+b)/2),ry=Math.floor((b-a)/2);
+  if(PICK.v.giant)return null;const v=PICK.v,a=(mx-v.ox)/v.hw,b=(my-v.oy)/v.hh,rx=Math.floor((a+b)/2),ry=Math.floor((b-a)/2);
   if(rx<0||ry<0||rx>=v.N||ry>=v.N)return null;const g=rotC(rx,ry,(4-v.rot)%4,v.N);return {kind:'ground',wx:g[0],wy:g[1]}}
 function placeTarget(h){if(!h)return null;let p;
+  if(S.mode==='giant'){if(h.kind!=='block')return null;const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]};
+    if(p.x<0||p.y<0||p.x>=GN||p.y>=GN||p.z<1||p.z>=GZ)return null;const m=gGet(p.x,p.y,p.z);return (m===null||m==='agua')?p:null}
   if(h.kind==='ghost')p={x:h.wx,y:h.wy,z:h.z};else if(h.kind==='ground')p={x:h.wx,y:h.wy,z:0};
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
   if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (isFree()?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
 function setTool(t){S.tool=t;$$('.tbtn').forEach(b=>b.classList.toggle('on',b.dataset.tool===t));S.hover=null;S.eraseKey=null}
-function doPlace(p){S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
+function doPlace(p){if(S.mode==='giant'){const k=K(p.x,p.y,p.z);S.undo.push({op:'g',k,prev:gSet(k,S.mat)});return afterChange()}
+  S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
   if(S.mode==='build'&&S.year===1){const t=S.ch.targets.find(t=>t.x===p.x&&t.y===p.y&&t.z===p.z);
     if(!t)toast('Esse bloco não está no modelo. Usa os contornos brancos.');else if(t.m!==S.mat)toast('Olha para o modelo: esse bloco é de outro material.')}
   afterChange()}
-function doErase(h){if(!h||h.kind!=='block')return;if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
+function doErase(h){if(!h||h.kind!=='block')return;
+  if(S.mode==='giant'){if(h.locked){if(!S.lockWarn){toast('A rocha do fundo do mundo não se pode apagar.');S.lockWarn=true}return}S.undo.push({op:'g',k:h.key,prev:gSet(h.key,null)});S.eraseKey=null;return afterChange()}if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
   const b=S.blocks.get(h.key);S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
-function undo(){const u=S.undo.pop();if(!u)return;if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
-function afterChange(){if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
+function undo(){const u=S.undo.pop();if(!u)return;if(u.op==='g'){if(u.prev)S.blocks.set(u.k,u.prev);else S.blocks.delete(u.k);return afterChange()}if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
+function afterChange(){if(S.mode==='giant')gSave();if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
 function buildStatus(ch){const tset=new Map(ch.targets.map(t=>[K(t.x,t.y,t.z),t.m]));let ok=0,filled=0;const wrong=new Set(),extra=new Set();
   for(const [k,m] of tset){const b=S.blocks.get(k);if(b){filled++;if(b.m===m)ok++;else wrong.add(k)}}
   for(const [k,b] of S.blocks){if(!b.locked&&!tset.has(k))extra.add(k)}return{ok,filled,total:tset.size,wrong,extra}}
@@ -702,31 +791,34 @@ function fail(msg){modal(`${tic('duvida')}<h3>Quase!</h3><p>${msg}</p>`,[{t:'↺
 
 /* ---------- eventos ---------- */
 const cv=$('#cv');
-let drag=null;const podeMover=()=>isFree();
+let drag=null;const podeMover=()=>isFree()||S.mode==='giant';
 function limitarCam(){const lx=cv.clientWidth*S.cam.z/2,ly=cv.clientHeight*S.cam.z/2;S.cam.x=Math.max(-lx,Math.min(lx,S.cam.x));S.cam.y=Math.max(-ly,Math.min(ly,S.cam.y))}
-function zoomAt(k,mx,my){const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;render()}
-cv.addEventListener('pointerdown',e=>{if(S.mode==='code')return;drag={x:e.clientX,y:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y};try{cv.setPointerCapture(e.pointerId)}catch(_){}});
-cv.addEventListener('pointerup',e=>{const d=drag;drag=null;if(!d||S.mode==='code')return;if(d.moved){cv.style.cursor='grab';return}
+function zoomAt(k,mx,my){if(S.mode==='giant'){S.cam.z=Math.min(2,Math.max(.75,S.cam.z*k));S.hover=null;return requestRender()}
+  const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;render()}
+cv.addEventListener('pointerdown',e=>{if(S.mode==='code')return;drag={x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y};try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+cv.addEventListener('pointerup',e=>{const d=drag;drag=null;if(!d||S.mode==='code')return;if(d.moved){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
   const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
   const h2=hit(e);if(S.tool==='place')S.hover=placeTarget(h2);render()});
 cv.addEventListener('pointercancel',()=>{drag=null});
 cv.addEventListener('wheel',e=>{if(!podeMover())return;e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2)},{passive:false});
 cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
   if(drag){if(!podeMover())return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.hypot(dx,dy)>7)drag.moved=true;
-    if(drag.moved){S.cam.x=drag.cx+dx;S.cam.y=drag.cy+dy;limitarCam();S.hover=null;S.eraseKey=null;cv.style.cursor='grabbing';render()}return}
+    if(drag.moved){if(S.mode==='giant'){gMove(e.clientX-drag.lx,e.clientY-drag.ly);drag.lx=e.clientX;drag.ly=e.clientY}else{S.cam.x=drag.cx+dx;S.cam.y=drag.cy+dy;limitarCam()}S.hover=null;S.eraseKey=null;cv.style.cursor='grabbing';requestRender()}return}
   const h=hit(e);
   if(S.tool==='place'){S.hover=placeTarget(h);S.eraseKey=null}else{S.hover=null;S.eraseKey=h&&h.kind==='block'&&!h.locked?h.key:null}
-  cv.style.cursor=(S.hover||S.eraseKey)?'pointer':podeMover()?'grab':'default';render()});
+  cv.style.cursor=(S.hover||S.eraseKey)?'pointer':podeMover()?'grab':'default';requestRender()});
 cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
 const pal=$('#palette');MORDER.forEach(m=>{const b=el('button','mbtn'+(m===S.mat?' on':''));b.title=MATS[m].nome;b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));
   b.onclick=()=>{S.mat=m;$$('.mbtn').forEach(x=>x.classList.toggle('on',x===b));setTool('place')};pal.append(b)});
 $('#btnUndo').onclick=undo;
-$('#btnReset').onclick=()=>{const wd=S.mode==='world';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
+$('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='giant'){delete SAVE['giant_'+S.year];persist()}else if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
 $('#rotL').onclick=()=>{S.rot=(S.rot+3)%4;S.hover=null;render();renderModel()};
 $('#zIn').onclick=()=>zoomAt(1.3,0,0);$('#zOut').onclick=()=>zoomAt(1/1.3,0,0);$('#zAll').onclick=()=>{S.cam={z:1,x:0,y:0};S.hover=null;render()};
+$('#miniCv').addEventListener('pointerdown',e=>{const r=e.currentTarget.getBoundingClientRect();S.g.x=Math.max(0,Math.min(GN-1,(e.clientX-r.left)/r.width*GN));S.g.y=Math.max(0,Math.min(GN-1,(e.clientY-r.top)/r.height*GN));S.hover=null;gSave();render()});
+$('#gHome').onclick=()=>{S.g={x:GC0,y:GC0+4};S.hover=null;gSave();render()};
 $('#rotR').onclick=()=>{S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
 $('#btnRun').onclick=run;
 $('#btnCodeReset').onclick=()=>{S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld()};
@@ -740,7 +832,7 @@ $('#btnFull').onclick=()=>{const d=document;if(d.fullscreenElement)d.exitFullscr
 document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on'))return;
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'&&S.mode!=='code'){e.preventDefault();undo()}
   else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){S.rot=(S.rot+1)%4;render();renderModel()}
-  else if(podeMover()&&e.key.startsWith('Arrow')){e.preventDefault();const st=60;if(e.key==='ArrowLeft')S.cam.x+=st;if(e.key==='ArrowRight')S.cam.x-=st;if(e.key==='ArrowUp')S.cam.y+=st;if(e.key==='ArrowDown')S.cam.y-=st;limitarCam();render()}
+  else if(podeMover()&&e.key.startsWith('Arrow')){e.preventDefault();const st=60;if(S.mode==='giant'){gMove(e.key==='ArrowLeft'?st:e.key==='ArrowRight'?-st:0,e.key==='ArrowUp'?st:e.key==='ArrowDown'?-st:0);gSave();return requestRender()}if(e.key==='ArrowLeft')S.cam.x+=st;if(e.key==='ArrowRight')S.cam.x-=st;if(e.key==='ArrowUp')S.cam.y+=st;if(e.key==='ArrowDown')S.cam.y-=st;limitarCam();render()}
   else if(podeMover()&&(e.key==='+'||e.key==='-')){zoomAt(e.key==='+'?1.3:1/1.3,0,0)}});
 new ResizeObserver(()=>{render();renderModel()}).observe($('#stage'));
 
