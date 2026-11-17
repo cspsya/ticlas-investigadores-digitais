@@ -583,5 +583,27 @@
       "Rato: clicar e arrastar",
       "Teclado: números"
     ]
+  },
+  {
+    "id": "2026-11-17-ticlas-1ano-computador-guardioes-tic",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "O computador e os Guardiões TIC",
+    "descricao": "Para depois dos vídeos «Byte e o computador desmontado» e «Guardiões da Sala TIC». Sem leitura e sem som: 8 missões estilo Wordwall com demonstração animada — sombras das peças, montar o computador, para que serve cada peça, memória, hardware/software, periféricos de entrada/saída, regras da Sala TIC (sim/não) e ordenar histórias — e um bónus «Apanha as peças». Perfis turma/apoio, guia do professor e certificado «Guardião TIC».",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_1ano_TIC_Computador_Guardioes_v1.html",
+    "duracao": "cerca de 45 min",
+    "estado": "em validação",
+    "resumo": "Descobre as peças do computador e torna-te um Guardião TIC!",
+    "focoTic": [
+      "Partes do computador",
+      "Regras da Sala TIC",
+      "Rato: clicar e arrastar"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
