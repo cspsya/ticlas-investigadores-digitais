@@ -628,5 +628,74 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-17-ticlas-1ano-mundo-de-blocos",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "Mundo de Blocos com o Ticl@s",
+    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education, sem leitura e sem som: 5 desafios de construção a partir de um modelo a cores (torre, muro, árvore, escada e piscina), com contornos brancos que mostram onde vai cada bloco, e construção livre. Estrelas guardadas no computador.",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
+    "duracao": "10 min (prémio) ou mais",
+    "estado": "em validação",
+    "tipo": "Jogo de construção",
+    "ilustracao": {
+      "tipo": "digital"
+    },
+    "resumo": "Constrói a torre, a árvore e a piscina iguais ao modelo!",
+    "focoTic": [
+      "Rato: clicar",
+      "Orientação no espaço",
+      "Construção 3D"
+    ]
+  },
+  {
+    "id": "2026-11-17-ticlas-2ano-mundo-de-blocos",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Mundo de Blocos com o Ticl@s",
+    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education: 4 desafios de construção (padrão alternado, torres e escada com números no chão, piscina) e 2 desafios de programação do Ticl@s com Avançar e Virar, mais construção livre. Sem som.",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
+    "duracao": "10 min (prémio) ou mais",
+    "estado": "em validação",
+    "tipo": "Jogo de construção",
+    "ilustracao": {
+      "tipo": "digital"
+    },
+    "resumo": "Completa padrões, constrói com números e programa o Ticl@s até à bandeira!",
+    "focoTic": [
+      "Rato: clicar",
+      "Pensamento computacional",
+      "Construção 3D"
+    ]
+  },
+  {
+    "id": "2026-11-17-ticlas-3ano-mundo-de-blocos",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Mundo de Blocos com o Ticl@s",
+    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education: 2 desafios de construção só com o modelo (casa e ponte) e 4 desafios de programação com o bloco Repetir (bolotas, ziguezague, construir um muro, volta ao quadrado), com meta de peças para 3 estrelas, mais construção livre. Sem som.",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
+    "duracao": "10 min (prémio) ou mais",
+    "estado": "em validação",
+    "tipo": "Jogo de construção",
+    "ilustracao": {
+      "tipo": "digital"
+    },
+    "resumo": "Constrói a casa e a ponte e programa o Ticl@s com o bloco Repetir!",
+    "focoTic": [
+      "Programação: sequências e repetição",
+      "Pensamento computacional",
+      "Construção 3D"
+    ]
   }
 ]
