@@ -67,6 +67,7 @@ footer{text-align:center;font-size:12.5px;padding:5px;background:#FFF1E0;border-
 #fx{pointer-events:none}
 .rot{position:absolute;left:10px;bottom:10px;display:flex;gap:8px;align-items:center}
 .rbtn{width:50px;height:50px;border-radius:50%;border:3px solid #fff;background:rgba(91,163,208,.92);color:#fff;font-size:26px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2);line-height:1}
+.cam{position:absolute;right:10px;bottom:10px;display:flex;gap:8px;align-items:center}
 .rlbl{font-family:Fredoka,sans-serif;font-size:13px;background:rgba(255,255,255,.85);border-radius:10px;padding:2px 8px;color:#3E7FA8}
 .panel{width:262px;background:#FFFBF5;border-left:2px solid var(--borda);padding:10px;display:flex;flex-direction:column;gap:9px;overflow:auto}
 .plbl{font-family:Fredoka,sans-serif;font-size:15px;color:#8A4517}
@@ -202,6 +203,12 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             <button class="rbtn" id="rotL" title="Rodar o mundo">⟲</button>
             <button class="rbtn" id="rotR" title="Rodar o mundo">⟳</button>
             <span class="rlbl">Rodar o mundo</span>
+          </div>
+          <div class="cam" id="camBox">
+            <span class="rlbl">Arrasta o mundo para o mover</span>
+            <button class="rbtn" id="zOut" title="Afastar">−</button>
+            <button class="rbtn" id="zIn" title="Aproximar">+</button>
+            <button class="rbtn" id="zAll" title="Ver o mundo todo">⤢</button>
           </div>
         </div>
         <aside class="panel" id="buildPanel">
@@ -352,41 +359,57 @@ const CH={
 ]};
 
 /* ================= mundos prontos ================= */
+const WN=24;
 function W(){const m=new Map();const o={m,
-  put(x,y,z,t){if(x>=0&&y>=0&&x<12&&y<12&&z>=0)m.set(x+','+y+','+z,{m:t});return o},
+  put(x,y,z,t){if(x>=0&&y>=0&&x<WN&&y<WN&&z>=0)m.set(x+','+y+','+z,{m:t});return o},
   del(x,y,z){m.delete(x+','+y+','+z);return o},
   box(x0,y0,z0,x1,y1,z1,t,oco){for(let z=z0;z<=z1;z++)for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){if(oco&&x>x0&&x<x1&&y>y0&&y<y1)continue;o.put(x,y,z,t)}return o},
   arvore(x,y,h){h=h||3;for(let z=0;z<h;z++)o.put(x,y,z,'tronco');o.box(x-1,y-1,h,x+1,y+1,h,'folhas');return o.put(x,y,h+1,'folhas')},
   pinheiro(x,y){o.put(x,y,0,'tronco').put(x,y,1,'tronco').box(x-1,y-1,2,x+1,y+1,2,'folhas');[[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([a,b])=>o.put(x+a,y+b,3,'folhas'));return o.put(x,y,4,'neve')},
+  palmeira(x,y,z){for(let i=0;i<3;i++)o.put(x,y,z+i,'tronco');[[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([a,b])=>o.put(x+a,y+b,z+3,'folhas'));[[2,0],[-2,0],[0,2],[0,-2]].forEach(([a,b])=>o.put(x+a,y+b,z+2,'folhas'));return o},
   casa(x0,y0,parede,porta){o.box(x0,y0,0,x0+3,y0+3,2,parede,true);for(const [a,b] of [[0,0],[3,0],[0,3],[3,3]])for(let z=0;z<3;z++)o.put(x0+a,y0+b,z,'tronco');
     o.del(porta,y0+3,0).del(porta,y0+3,1).put(x0+3,y0+1,1,'vidro').put(x0+3,y0+2,1,'vidro');
     return o.box(x0,y0,3,x0+3,y0+3,3,'telhado').box(x0+1,y0+1,4,x0+2,y0+2,4,'telhado')}};return o}
 const WORLDS=[
-  {id:'aldeia',nome:'A aldeia',txt:'Explora a aldeia. Constrói uma casa nova para um vizinho e um jardim com árvores.',gen(){const w=W();
-    w.casa(1,1,'tabuas',2).casa(7,1,'pedra',8);for(let x=0;x<12;x++)w.put(x,9,0,'agua');
-    w.put(5,8,0,'tabuas').put(5,9,1,'tabuas').put(5,10,0,'tabuas');
-    w.box(7,6,0,9,8,0,'pedra',true).put(8,7,0,'agua').put(7,6,1,'tronco').put(9,6,1,'tronco').box(7,6,2,9,6,2,'tabuas');
-    w.arvore(2,7).arvore(11,5);return w.m}},
-  {id:'ilha',nome:'A ilha',txt:'Estás numa ilha no meio do mar! Constrói um farol e uma ponte até à jangada.',gen(){const w=W();
-    for(let y=0;y<12;y++)for(let x=0;x<12;x++){const d=Math.hypot(x-5,y-5);if(d>3.6)w.put(x,y,0,'agua');else if(d>2.5)w.put(x,y,0,'areia');else{w.put(x,y,0,'relva');if(d<1.5)w.put(x,y,1,'relva')}}
-    for(let z=2;z<5;z++)w.put(6,4,z,'tronco');[[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([a,b])=>w.put(6+a,4+b,5,'folhas'));
-    w.box(3,6,1,4,7,2,'tabuas').del(4,7,1).box(3,6,3,4,7,3,'telhado');
-    w.box(9,9,1,10,10,1,'tabuas').put(9,9,2,'tronco').put(9,9,3,'tronco').put(10,9,2,'neve').put(10,9,3,'neve');return w.m}},
-  {id:'castelo',nome:'O castelo',txt:'Visita o castelo. Constrói mais uma torre e decora o pátio.',gen(){const w=W();
-    for(let i=0;i<12;i++)w.put(i,0,0,'agua').put(i,11,0,'agua').put(0,i,0,'agua').put(11,i,0,'agua');
-    w.box(1,1,0,10,10,2,'pedra',true);for(let y=1;y<=10;y++)for(let x=1;x<=10;x++)if((x===1||x===10||y===1||y===10)&&(x+y)%2===0)w.put(x,y,3,'pedra');
-    for(const [a,b] of [[1,1],[9,1],[1,9],[9,9]]){w.box(a,b,0,a+1,b+1,4,'pedra').put(a,b,5,'pedra').put(a+1,b+1,5,'pedra')}
-    w.del(5,10,0).del(6,10,0).del(5,10,1).del(6,10,1).put(5,11,0,'tabuas').put(6,11,0,'tabuas');
-    w.box(4,4,0,7,7,3,'tijolo',true).del(5,7,0).del(5,7,1).put(7,5,2,'vidro').put(7,6,2,'vidro').box(4,4,4,7,7,4,'telhado').box(5,5,5,6,6,5,'telhado');return w.m}},
-  {id:'quinta',nome:'A quinta',txt:'Ajuda na quinta: aumenta a horta, faz uma cerca nova e um caminho até ao lago.',gen(){const w=W();
-    w.box(0,6,0,5,11,0,'tronco',true).del(3,6,0);for(let x=1;x<=4;x++)w.put(x,7,0,'folhas').put(x,9,0,'folhas');
-    w.box(1,1,0,2,1,0,'areia').put(1,2,0,'areia').put(1,1,1,'areia');
-    w.box(7,1,0,10,4,2,'tijolo',true).del(8,4,0).del(9,4,0).del(8,4,1).del(9,4,1).put(10,2,1,'vidro').put(10,3,1,'vidro').box(7,1,3,10,4,3,'telhado').box(7,2,4,10,3,4,'telhado');
-    w.box(7,7,0,11,11,0,'areia',true).box(8,8,0,10,10,0,'agua');w.arvore(4,3);return w.m}},
-  {id:'montanha',nome:'A montanha de neve',txt:'Constrói um abrigo na neve e uma escada até ao topo da montanha.',gen(){const w=W();
-    for(let y=0;y<7;y++)for(let x=0;x<7;x++){const h=5-Math.max(Math.abs(x-2),Math.abs(y-2));if(h<=0)continue;for(let z=0;z<h-1;z++)w.put(x,y,z,'pedra');w.put(x,y,h-1,h>=4?'neve':h>=2?'pedra':'relva')}
-    w.box(7,8,0,10,10,0,'agua');w.pinheiro(9,3).pinheiro(10,6);w.put(7,5,0,'neve').put(7,5,1,'neve').put(7,5,2,'neve');
-    w.box(3,8,0,5,10,1,'neve',true).put(4,9,2,'neve').del(4,10,0);return w.m}}
+  {id:'aldeia',nome:'A aldeia',txt:'Explora a aldeia. Constrói uma casa nova para um vizinho, uma rua e um jardim com árvores.',gen(){const w=W();
+    w.casa(2,2,'tabuas',3).casa(8,2,'pedra',9).casa(14,2,'tabuas',15).casa(2,8,'tijolo',3);
+    w.box(19,2,0,21,4,5,'pedra',true).del(20,4,0).del(20,4,1).put(21,3,3,'vidro').box(19,2,6,21,4,6,'telhado').put(20,3,7,'telhado');
+    w.box(10,9,0,12,11,0,'pedra',true).put(11,10,0,'agua').put(10,9,1,'tronco').put(12,9,1,'tronco').box(10,9,2,12,9,2,'tabuas');
+    for(let x=0;x<WN;x++)w.put(x,15,0,'agua').put(x,16,0,'agua');
+    for(const x of [6,18])w.put(x,14,0,'tabuas').put(x,15,1,'tabuas').put(x,16,1,'tabuas').put(x,17,0,'tabuas');
+    w.box(2,19,0,10,22,0,'tronco',true).del(6,19,0);for(let x=3;x<=9;x++)w.put(x,20,0,'folhas').put(x,21,0,'areia');
+    w.arvore(8,11).arvore(16,9).arvore(22,10).arvore(14,20).arvore(21,21);return w.m}},
+  {id:'ilha',nome:'A ilha',txt:'Estás numa ilha no meio do mar! Constrói um farol, uma ponte até à ilha pequena e um barco.',gen(){const w=W();
+    for(let y=0;y<WN;y++)for(let x=0;x<WN;x++){const d=Math.hypot(x-9,y-10),d2=Math.hypot(x-19,y-18);
+      if(d<=6.5){if(d>5.4)w.put(x,y,0,'areia');else{w.put(x,y,0,'relva');if(d<3.4)w.put(x,y,1,'relva');if(d<1.8)w.put(x,y,2,'relva')}}
+      else if(d2<=2.6)w.put(x,y,0,'areia');else w.put(x,y,0,'agua')}
+    w.palmeira(9,10,3).palmeira(5,13,1).palmeira(19,18,1);
+    w.box(11,13,1,13,14,2,'tabuas').del(12,14,1).box(11,13,3,13,14,3,'telhado');
+    w.box(15,10,1,17,10,1,'tabuas');
+    w.box(15,4,1,16,6,1,'tabuas').put(15,5,2,'tronco').put(15,5,3,'tronco').put(16,5,2,'neve').put(16,5,3,'neve');
+    w.box(3,20,0,4,21,0,'pedra').put(3,21,1,'pedra').box(21,3,0,22,3,0,'pedra').put(21,3,1,'pedra');return w.m}},
+  {id:'castelo',nome:'O castelo',zoom:1.15,txt:'Visita o castelo. Constrói mais uma torre, casas fora das muralhas e decora o pátio.',gen(){const w=W();
+    for(let y=1;y<=22;y++)for(let x=1;x<=22;x++)if(x<3||x>20||y<3||y>20)w.put(x,y,0,'agua');
+    w.box(4,4,0,19,19,3,'pedra',true);for(let y=4;y<=19;y++)for(let x=4;x<=19;x++)if((x===4||x===19||y===4||y===19)&&(x+y)%2===0)w.put(x,y,4,'pedra');
+    for(const [a,b] of [[3,3],[18,3],[3,18],[18,18]]){w.box(a,b,0,a+2,b+2,6,'pedra',true);for(const [c,d] of [[0,0],[2,0],[0,2],[2,2]])w.put(a+c,b+d,7,'pedra')}
+    for(const x of [11,12]){for(let z=0;z<3;z++)w.del(x,19,z);w.put(x,21,0,'tabuas').put(x,22,0,'tabuas')}
+    w.box(9,9,0,14,14,4,'tijolo',true);for(const x of [11,12])w.del(x,14,0).del(x,14,1).put(x,14,3,'vidro');w.put(14,11,2,'vidro').put(14,12,2,'vidro');
+    w.box(9,9,5,14,14,5,'telhado').box(10,10,6,13,13,6,'telhado').box(11,11,7,12,12,7,'telhado');
+    w.arvore(6,15).arvore(16,7);return w.m}},
+  {id:'quinta',nome:'A quinta',txt:'Ajuda na quinta: aumenta a horta, faz uma cerca para mais animais e um caminho até ao lago.',gen(){const w=W();
+    w.casa(2,2,'tabuas',3).arvore(8,3);
+    w.box(13,2,0,18,6,3,'tijolo',true);for(const x of [15,16])for(let z=0;z<3;z++)w.del(x,6,z);w.put(18,4,2,'vidro');
+    w.box(13,2,4,18,6,4,'telhado').box(13,3,5,18,5,5,'telhado').box(13,4,6,18,4,6,'telhado');
+    w.box(20,2,0,21,3,6,'pedra').box(20,2,7,21,3,7,'telhado');
+    w.box(13,9,0,20,13,0,'tronco',true).del(16,9,0).box(14,12,0,15,12,0,'areia').put(14,12,1,'areia');
+    w.box(2,15,0,10,22,0,'tronco',true).del(6,15,0);for(let y=16;y<=21;y++)for(let x=3;x<=9;x++)w.put(x,y,0,y%2?'areia':'folhas');
+    w.box(14,16,0,20,21,0,'areia',true).box(15,17,0,19,20,0,'agua');
+    w.box(8,8,0,9,8,0,'areia').put(8,9,0,'areia').put(8,8,1,'areia');w.arvore(11,12).arvore(22,9);return w.m}},
+  {id:'montanha',nome:'A montanha de neve',zoom:1.25,txt:'Constrói um abrigo na neve, uma escada até ao topo da montanha e uma ponte sobre o lago.',gen(){const w=W();
+    for(let y=0;y<WN;y++)for(let x=0;x<WN;x++){const h=Math.max(Math.round(8-Math.hypot(x-6,y-6)*1.15),Math.round(5-Math.hypot(x-18,y-5)*1.1));if(h<=0)continue;
+      for(let z=0;z<h-1;z++)w.put(x,y,z,'pedra');w.put(x,y,h-1,h>=6?'neve':h>=3?'pedra':'relva')}
+    w.box(13,14,0,20,19,0,'agua');[[10,16],[12,21],[21,10],[22,15],[2,21],[16,21],[11,11]].forEach(([x,y])=>w.pinheiro(x,y));
+    w.box(4,16,0,6,18,1,'neve',true).put(5,17,2,'neve').del(5,18,0);w.put(8,20,0,'neve').put(8,20,1,'neve').put(8,20,2,'neve');return w.m}}
 ];
 
 /* ================= geometria ================= */
@@ -394,8 +417,9 @@ const K=(x,y,z)=>x+','+y+','+z;
 const D=[[1,0],[0,1],[-1,0],[0,-1]];
 function rotC(x,y,r,N){for(let i=0;i<r;i++){const t=x;x=N-1-y;y=t}return [x,y]}
 function rotV(dx,dy,r){for(let i=0;i<r;i++){const t=dx;dx=-dy;dy=t}return [dx,dy]}
-function makeView(w,h,N,rot,hz){const hw=Math.max(6,Math.min((w-20)/(2*N),(h-16)/(N+1.2*hz+.6)));const hh=hw/2,bh=hw*1.2;const tot=hz*bh+N*hw+.5*bh;const ox=w/2,oy=(h-tot)/2+hz*bh;
-  return {N,rot,hw,hh,bh,P:(X,Y,Z)=>[ox+(X-Y)*hw,oy+(X+Y)*hh-Z*bh]}}
+function makeView(w,h,N,rot,hz,cam){const z=cam?cam.z:1;const hw=Math.max(1.5,Math.min((w-20)/(2*N),(h-16)/(N+1.2*hz+.6)))*z;const hh=hw/2,bh=hw*1.2;
+  const ox=w/2+(cam?cam.x:0),oy=h/2+(cam?cam.y:0)+hw*(.6*hz-N/2-.3);
+  return {N,rot,hw,hh,bh,ox,oy,w:cam?w:0,h:cam?h:0,P:(X,Y,Z)=>[ox+(X-Y)*hw,oy+(X+Y)*hh-Z*bh]}}
 function poly(ctx,q){ctx.beginPath();ctx.moveTo(q[0][0],q[0][1]);for(let i=1;i<q.length;i++)ctx.lineTo(q[i][0],q[i][1]);ctx.closePath()}
 function inPoly(x,y,q){let c=false;for(let i=0,j=q.length-1;i<q.length;j=i++){const xi=q[i][0],yi=q[i][1],xj=q[j][0],yj=q[j][1];if(((yi>y)!==(yj>y))&&(x<(xj-xi)*(y-yi)/(yj-yi)+xi))c=!c}return c}
 function face(ctx,t,q,shade){ctx.save();ctx.transform(q[1][0]-q[0][0],q[1][1]-q[0][1],q[3][0]-q[0][0],q[3][1]-q[0][1],q[0][0],q[0][1]);
@@ -461,17 +485,17 @@ function drawScene(ctx,v,sc){
   for(let i=0;i<N;i++){
     face(ctx,G.side,[v.P(N,i,0),v.P(N,i+1,0),v.P(N,i+1,-.5),v.P(N,i,-.5)],.14);
     face(ctx,G.side,[v.P(i,N,0),v.P(i+1,N,0),v.P(i+1,N,-.5),v.P(i,N,-.5)],.28)}
-  ctx.strokeStyle='rgba(0,0,0,.07)';ctx.lineWidth=1;
-  for(let ry=0;ry<N;ry++)for(let rx=0;rx<N;rx++){const q=[v.P(rx,ry,0),v.P(rx+1,ry,0),v.P(rx+1,ry+1,0),v.P(rx,ry+1,0)];
-    face(ctx,G.tops[(rx*7+ry*13+rx*ry)%3],q,0);poly(ctx,q);ctx.strokeStyle='rgba(0,0,0,.07)';ctx.lineWidth=1;ctx.stroke();
-    const w=rotC(rx,ry,(4-r)%4,N);ground.push({q,kind:'ground',wx:w[0],wy:w[1]})}
+  const fora=(X,Y,Z,m)=>{if(!v.w)return false;const c=v.P(X,Y,Z);return c[0]<-m||c[0]>v.w+m||c[1]<-m||c[1]>v.h+m};
+  const grelha=v.hw>=12;
+  for(let ry=0;ry<N;ry++)for(let rx=0;rx<N;rx++){if(fora(rx+.5,ry+.5,0,v.hw*1.2))continue;const q=[v.P(rx,ry,0),v.P(rx+1,ry,0),v.P(rx+1,ry+1,0),v.P(rx,ry+1,0)];
+    face(ctx,G.tops[(rx*7+ry*13+rx*ry)%3],q,0);if(grelha){poly(ctx,q);ctx.strokeStyle='rgba(0,0,0,.07)';ctx.lineWidth=1;ctx.stroke()}}
   if(sc.foot)for(const f of sc.foot){const [rx,ry]=rotC(f.x,f.y,r,N);const c=v.P(rx+.5,ry+.5,0);
     const q=[v.P(rx+.12,ry+.12,0),v.P(rx+.88,ry+.12,0),v.P(rx+.88,ry+.88,0),v.P(rx+.12,ry+.88,0)];
     poly(ctx,q);ctx.fillStyle='rgba(255,200,87,.65)';ctx.fill();ctx.setLineDash([4,3]);ctx.strokeStyle='#C86A2E';ctx.lineWidth=2;ctx.stroke();ctx.setLineDash([]);
     if(f.l){ctx.font=`700 ${Math.round(v.hw*.62)}px Fredoka, Nunito, sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#6A3A12';ctx.fillText(f.l,c[0],c[1]+1)}}
   const rmap=new Map(),items=[];
   for(const [k,b] of sc.blocks){const p=k.split(',').map(Number);const [rx,ry]=rotC(p[0],p[1],r,N);rmap.set(rx+','+ry+','+p[2],b)}
-  for(const [k,b] of sc.blocks){const p=k.split(',').map(Number),z=p[2];const [rx,ry]=rotC(p[0],p[1],r,N);
+  for(const [k,b] of sc.blocks){const p=k.split(',').map(Number),z=p[2];const [rx,ry]=rotC(p[0],p[1],r,N);if(fora(rx+.5,ry+.5,z+.5,v.hw*1.6))continue;
     items.push({s:rx+ry,z,o:0,f:()=>{const vis={top:!hides(rmap.get(rx+','+ry+','+(z+1)),b.m),right:!hides(rmap.get((rx+1)+','+ry+','+z),b.m),left:!hides(rmap.get(rx+','+(ry+1)+','+z),b.m)};
       drawBlock(ctx,v,rx,ry,z,b.m,vis,faces,{kind:'block',key:k,wx:p[0],wy:p[1],z,locked:!!b.locked},sc.marks&&sc.marks.has(k),sc.eraseKey===k)}})}
   for(const g of (sc.ghosts||[])){if(sc.blocks.has(K(g.x,g.y,g.z)))continue;const [rx,ry]=rotC(g.x,g.y,r,N);
@@ -482,7 +506,7 @@ function drawScene(ctx,v,sc){
   items.sort((a,b)=>a.s-b.s||a.z-b.z||a.o-b.o);
   for(const it of items)it.f();
   for(const sp of (sc.sprites||[]))if(sp.kind==='agent'){const [rx,ry]=rotC(sp.x,sp.y,r,N);ctx.save();ctx.globalAlpha=.38;drawSprite(ctx,v,sp,rx,ry);ctx.restore()}
-  return {faces,ground}
+  return {faces,v}
 }
 function mapOf(list,locked){const m=new Map();for(const b of list)m.set(K(b.x,b.y,b.z),{m:b.m,locked});return m}
 function maxZ(list){return list.reduce((a,b)=>Math.max(a,b.z),0)}
@@ -493,7 +517,7 @@ function cubeIcon(m,size){const c=document.createElement('canvas'),d=DPR();c.wid
   drawBlock(ctx,v,0,0,0,m,{top:true,left:true,right:true},null,null,false,false);return c}
 
 /* ================= estado ================= */
-const S={year:1,mode:null,idx:0,ch:null,N:10,hz:6,tool:'place',mat:'tabuas',rot:0,blocks:new Map(),undo:[],help:false,done:false,warned:false,marks:new Set(),
+const S={cam:{z:1,x:0,y:0},year:1,mode:null,idx:0,ch:null,N:10,hz:6,tool:'place',mat:'tabuas',rot:0,blocks:new Map(),undo:[],help:false,done:false,warned:false,marks:new Set(),
   hover:null,eraseKey:null,agent:null,acorns:[],placed:[],prog:[],running:false,runId:0,lockWarn:false};
 let PICK=null;
 
@@ -526,33 +550,33 @@ function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cw=$('#cardsW');cw.innerHTML='';
   const fc=el('div','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
   fc.onclick=startFree;cw.append(fc);
-  WORLDS.forEach((wd,i)=>{const c=el('div','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
+  WORLDS.forEach((wd,i)=>{const c=el('div','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
   list.forEach((ch,i)=>{const c=el('div','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
   requestAnimationFrame(()=>{
     const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?10:7,fb.size?6:4);
-    $$('#cardsW .card.world').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},12,Math.max(3,maxZB(b)+1.5))});
+    $$('#cardsW .card.world').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w2_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},WN,Math.max(3,maxZB(b)+1.5))});
     $$('#cards .card:not(.free)').forEach((c,i)=>{const ch=list[i];const all=[...(ch.fixed||[]),...(ch.obst||[]),...(ch.t==='build'?ch.targets:[])];
       const sp=[];if(ch.t==='code'){if(ch.flag)sp.push({kind:'flag',x:ch.flag.x,y:ch.flag.y});(ch.acorns||[]).forEach(a=>sp.push({kind:'acorn',x:a[0],y:a[1]}));sp.push({kind:'agent',x:ch.start.x,y:ch.start.y,d:ch.start.d})}
       renderMini(c.querySelector('canvas'),{blocks:mapOf(all),ghosts:ch.t==='code'?ch.targets:null,sprites:sp},ch.N,Math.max(2,maxZ(all)+1.5))})})}
 
 /* ---------- arranque dos modos ---------- */
 const isFree=()=>S.mode==='free'||S.mode==='world';
-const freeKey=()=>S.mode==='world'?'w_'+S.world.id+'_'+S.year:'free'+S.year;
+const freeKey=()=>S.mode==='world'?'w2_'+S.world.id+'_'+S.year:'free'+S.year;
 function loadSaved(key,gen){const sv=SAVE[key];if(!sv)return gen?gen():new Map();const m=new Map();for(const a of sv)if(MATS[a[3]])m.set(K(a[0],a[1],a[2]),{m:a[3]});return m}
 function loadFree(){return loadSaved(freeKey(),S.mode==='world'?S.world.gen:null)}
 function saveFree(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m])}SAVE[freeKey()]=a;persist()}
 function maxZB(m){let z=0;for(const k of m.keys())z=Math.max(z,+k.split(',')[2]);return z}
-function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=10;S.hz=6;S.rot=0;setupGame();resetWorld()}
-function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=12;S.rot=0;S.hz=Math.max(6,maxZB(S.world.gen())+2);setupGame();resetWorld()}
-function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.prog=[];S.runId++;S.running=false;
+function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=20;S.hz=8;S.rot=0;S.cam={z:1.4,x:0,y:0};setupGame();resetWorld()}
+function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=WN;S.rot=0;S.hz=Math.max(8,maxZB(S.world.gen())+3);S.cam={z:S.world.zoom||1.4,x:0,y:0};setupGame();resetWorld()}
+function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
   S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
 function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const free=isFree(),code=S.mode==='code',wd=S.mode==='world'?S.world:null;
   $('#gTt').textContent=wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
   $('#gTx').textContent=wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
   $('#gPrev').style.visibility=$('#gNext').style.visibility=free?'hidden':'visible';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
-  $('#buildPanel').style.display=code?'none':'flex';$('#codePanel').style.display=code?'flex':'none';
+  $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
@@ -578,14 +602,15 @@ function curScene(){const ch=S.ch;const sc={N:S.N,blocks:S.blocks,marks:S.marks,
 function render(){if(!$('#game').classList.contains('on'))return;const cv=$('#cv'),d=DPR(),w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
   if(cv.width!==Math.round(w*d)||cv.height!==Math.round(h*d)){cv.width=Math.round(w*d);cv.height=Math.round(h*d)}
   const ctx=cv.getContext('2d');ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);
-  PICK=drawScene(ctx,makeView(w,h,S.N,S.rot,S.hz),curScene())}
+  PICK=drawScene(ctx,makeView(w,h,S.N,S.rot,S.hz,S.cam),curScene())}
 function renderModel(){if(S.mode!=='build'||!$('#game').classList.contains('on'))return;const ch=S.ch;const all=[...(ch.fixed||[]),...ch.targets];
   renderMini($('#modelCv'),{blocks:mapOf(all),sprites:[]},ch.N,maxZ(all)+1.5,S.rot)}
 
 /* ---------- construir ---------- */
 function hit(e){const r=$('#cv').getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top;if(!PICK)return null;
   for(let i=PICK.faces.length-1;i>=0;i--){const f=PICK.faces[i];if(f.meta&&inPoly(mx,my,f.q))return Object.assign({n:f.n},f.meta)}
-  for(const g of PICK.ground)if(inPoly(mx,my,g.q))return g;return null}
+  const v=PICK.v,a=(mx-v.ox)/v.hw,b=(my-v.oy)/v.hh,rx=Math.floor((a+b)/2),ry=Math.floor((b-a)/2);
+  if(rx<0||ry<0||rx>=v.N||ry>=v.N)return null;const g=rotC(rx,ry,(4-v.rot)%4,v.N);return {kind:'ground',wx:g[0],wy:g[1]}}
 function placeTarget(h){if(!h)return null;let p;
   if(h.kind==='ghost')p={x:h.wx,y:h.wy,z:h.z};else if(h.kind==='ground')p={x:h.wx,y:h.wy,z:0};
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
@@ -677,13 +702,22 @@ function fail(msg){modal(`${tic('duvida')}<h3>Quase!</h3><p>${msg}</p>`,[{t:'↺
 
 /* ---------- eventos ---------- */
 const cv=$('#cv');
-cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;const h=hit(e);
-  if(S.tool==='place'){S.hover=placeTarget(h);S.eraseKey=null}else{S.hover=null;S.eraseKey=h&&h.kind==='block'&&!h.locked?h.key:null}
-  cv.style.cursor=(S.hover||S.eraseKey)?'pointer':'default';render()});
-cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
-cv.addEventListener('pointerdown',e=>{if(S.mode==='code')return;const h=hit(e);if(!h)return;
-  if(S.tool==='erase'||e.button===2)doErase(h);else if(e.button===0){const p=placeTarget(h);if(p)doPlace(p)}
+let drag=null;const podeMover=()=>isFree();
+function limitarCam(){const lx=cv.clientWidth*S.cam.z/2,ly=cv.clientHeight*S.cam.z/2;S.cam.x=Math.max(-lx,Math.min(lx,S.cam.x));S.cam.y=Math.max(-ly,Math.min(ly,S.cam.y))}
+function zoomAt(k,mx,my){const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;render()}
+cv.addEventListener('pointerdown',e=>{if(S.mode==='code')return;drag={x:e.clientX,y:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y};try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+cv.addEventListener('pointerup',e=>{const d=drag;drag=null;if(!d||S.mode==='code')return;if(d.moved){cv.style.cursor='grab';return}
+  const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
   const h2=hit(e);if(S.tool==='place')S.hover=placeTarget(h2);render()});
+cv.addEventListener('pointercancel',()=>{drag=null});
+cv.addEventListener('wheel',e=>{if(!podeMover())return;e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2)},{passive:false});
+cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
+  if(drag){if(!podeMover())return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.hypot(dx,dy)>7)drag.moved=true;
+    if(drag.moved){S.cam.x=drag.cx+dx;S.cam.y=drag.cy+dy;limitarCam();S.hover=null;S.eraseKey=null;cv.style.cursor='grabbing';render()}return}
+  const h=hit(e);
+  if(S.tool==='place'){S.hover=placeTarget(h);S.eraseKey=null}else{S.hover=null;S.eraseKey=h&&h.kind==='block'&&!h.locked?h.key:null}
+  cv.style.cursor=(S.hover||S.eraseKey)?'pointer':podeMover()?'grab':'default';render()});
+cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
 const pal=$('#palette');MORDER.forEach(m=>{const b=el('button','mbtn'+(m===S.mat?' on':''));b.title=MATS[m].nome;b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));
@@ -692,6 +726,7 @@ $('#btnUndo').onclick=undo;
 $('#btnReset').onclick=()=>{const wd=S.mode==='world';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
 $('#rotL').onclick=()=>{S.rot=(S.rot+3)%4;S.hover=null;render();renderModel()};
+$('#zIn').onclick=()=>zoomAt(1.3,0,0);$('#zOut').onclick=()=>zoomAt(1/1.3,0,0);$('#zAll').onclick=()=>{S.cam={z:1,x:0,y:0};S.hover=null;render()};
 $('#rotR').onclick=()=>{S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
 $('#btnRun').onclick=run;
 $('#btnCodeReset').onclick=()=>{S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld()};
@@ -704,7 +739,9 @@ $('#gNext').onclick=()=>{if(S.idx<CH[S.year].length-1)startCh(S.idx+1)};
 $('#btnFull').onclick=()=>{const d=document;if(d.fullscreenElement)d.exitFullscreen();else if(d.documentElement.requestFullscreen)d.documentElement.requestFullscreen().catch(()=>{})};
 document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on'))return;
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'&&S.mode!=='code'){e.preventDefault();undo()}
-  else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){S.rot=(S.rot+1)%4;render();renderModel()}});
+  else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){S.rot=(S.rot+1)%4;render();renderModel()}
+  else if(podeMover()&&e.key.startsWith('Arrow')){e.preventDefault();const st=60;if(e.key==='ArrowLeft')S.cam.x+=st;if(e.key==='ArrowRight')S.cam.x-=st;if(e.key==='ArrowUp')S.cam.y+=st;if(e.key==='ArrowDown')S.cam.y-=st;limitarCam();render()}
+  else if(podeMover()&&(e.key==='+'||e.key==='-')){zoomAt(e.key==='+'?1.3:1/1.3,0,0)}});
 new ResizeObserver(()=>{render();renderModel()}).observe($('#stage'));
 
 /* ---------- tema ---------- */
