@@ -48,6 +48,8 @@ footer{text-align:center;font-size:12.5px;padding:5px;background:#FFF1E0;border-
 .card .ct{font-size:18px;text-align:center;color:#5a3b10}
 .card .cn{font-size:13px;color:#B0703A}
 .stars{color:#E3D9CC;font-size:22px;letter-spacing:2px;line-height:1}.stars b{color:#FFB300;font-weight:400}
+.sec{font-family:Fredoka,sans-serif;color:#8A4517;margin:6px 0 -4px;font-size:20px}
+.card.world{border-color:#9CC7E3;box-shadow:0 4px 0 #9CC7E3}
 .card.free{background:linear-gradient(135deg,#E9F7E4,#fff);border-color:#9FD58F;box-shadow:0 4px 0 #9FD58F}
 .card.code .cn{color:#7A64B8}
 /* jogo */
@@ -178,6 +180,9 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
         <h2 id="mTitle">1.º ano</h2>
         <span class="badge" id="mStars"></span>
       </div>
+      <h3 class="sec">Construir à vontade</h3>
+      <div class="cards" id="cardsW"></div>
+      <h3 class="sec">Desafios</h3>
       <div class="cards" id="cards"></div>
     </section>
 
@@ -257,10 +262,10 @@ function rng(seed){let s=(seed*2654435761)|0||7;return()=>{s^=s<<13;s^=s>>>17;s^
 function tex(seed,fn){const c=document.createElement('canvas');c.width=c.height=8;const g=c.getContext('2d');const r=rng(seed);for(let y=0;y<8;y++)for(let x=0;x<8;x++){const col=fn(x,y,r);if(col){g.fillStyle=col;g.fillRect(x,y,1,1)}}return c}
 
 const MATS={
-  tabuas:{nome:'Tábuas'},tronco:{nome:'Tronco'},pedra:{nome:'Pedra'},tijolo:{nome:'Tijolo'},folhas:{nome:'Folhas'},
+  relva:{nome:'Relva'},tabuas:{nome:'Tábuas'},tronco:{nome:'Tronco'},telhado:{nome:'Telhado'},pedra:{nome:'Pedra'},tijolo:{nome:'Tijolo'},folhas:{nome:'Folhas'},
   areia:{nome:'Areia'},neve:{nome:'Neve'},vidro:{nome:'Vidro',transp:true},agua:{nome:'Água',transp:true}
 };
-const MORDER=['tabuas','tronco','pedra','tijolo','folhas','areia','neve','vidro','agua'];
+const MORDER=['relva','tabuas','tronco','pedra','tijolo','telhado','folhas','areia','neve','vidro','agua'];
 const TEX=(function(){
   const T={};
   const planks=(x,y,r)=>{const b='#C69A5B';if(y%4===3)return sh(b,.68);if(x===(y<4?5:1))return sh(b,.78);return sh(b,.9+r()*.16)};
@@ -281,6 +286,10 @@ const TEX=(function(){
   T.vidro={top:tex(81,glass),side:tex(82,glass)};
   const water=(x,y,r)=>{const v=r();return v<.16?'rgba(130,185,245,.88)':`rgba(58,124,214,${(.74+r()*.1).toFixed(2)})`};
   T.agua={top:tex(91,water),side:tex(92,water)};
+  const gr=(x,y,r)=>{const g='#6BBF59',v=r();return v<.16?sh(g,.82):sh(g,.93+r()*.14)};
+  T.relva={top:tex(111,gr),side:tex(112,(x,y,r)=>{if(y<2&&!(y===1&&r()<.45))return sh('#6BBF59',.9+r()*.1);return r()<.15?sh('#8A5A36',.75):sh('#8A5A36',.92+r()*.14)})};
+  const roof=(x,y,r)=>{const b='#B5532E';if(y%3===2)return sh(b,.68);if((x+(Math.floor(y/3)%2)*2)%4===0)return sh(b,.82);return sh(b,.92+r()*.16)};
+  T.telhado={top:tex(121,roof),side:tex(122,roof)};
   return T;
 })();
 
@@ -341,6 +350,44 @@ const CH={
   {t:'code',titulo:'O construtor',txt:'Programa o Ticl@s para construir o muro de 4 tijolos (contornos brancos).',N:7,start:{x:1,y:1,d:0},targets:[1,2,3,4].map(y=>B(2,y,0,'tijolo')),place:'tijolo',cmds:['fwd','left','right','place','rep'],best:5,meta:'O bloco aparece à frente do Ticl@s. Consegues com 5 peças?'},
   {t:'code',titulo:'A volta ao quadrado',txt:'Apanha as 3 bolotas e volta à bandeira de partida.',N:6,start:{x:1,y:1,d:0},acorns:[[4,1],[4,4],[1,4]],flag:{x:1,y:1},cmds:['fwd','left','right','rep'],best:5,meta:'Usa o Repetir: consegues com 5 peças?'}
 ]};
+
+/* ================= mundos prontos ================= */
+function W(){const m=new Map();const o={m,
+  put(x,y,z,t){if(x>=0&&y>=0&&x<12&&y<12&&z>=0)m.set(x+','+y+','+z,{m:t});return o},
+  del(x,y,z){m.delete(x+','+y+','+z);return o},
+  box(x0,y0,z0,x1,y1,z1,t,oco){for(let z=z0;z<=z1;z++)for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){if(oco&&x>x0&&x<x1&&y>y0&&y<y1)continue;o.put(x,y,z,t)}return o},
+  arvore(x,y,h){h=h||3;for(let z=0;z<h;z++)o.put(x,y,z,'tronco');o.box(x-1,y-1,h,x+1,y+1,h,'folhas');return o.put(x,y,h+1,'folhas')},
+  pinheiro(x,y){o.put(x,y,0,'tronco').put(x,y,1,'tronco').box(x-1,y-1,2,x+1,y+1,2,'folhas');[[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([a,b])=>o.put(x+a,y+b,3,'folhas'));return o.put(x,y,4,'neve')},
+  casa(x0,y0,parede,porta){o.box(x0,y0,0,x0+3,y0+3,2,parede,true);for(const [a,b] of [[0,0],[3,0],[0,3],[3,3]])for(let z=0;z<3;z++)o.put(x0+a,y0+b,z,'tronco');
+    o.del(porta,y0+3,0).del(porta,y0+3,1).put(x0+3,y0+1,1,'vidro').put(x0+3,y0+2,1,'vidro');
+    return o.box(x0,y0,3,x0+3,y0+3,3,'telhado').box(x0+1,y0+1,4,x0+2,y0+2,4,'telhado')}};return o}
+const WORLDS=[
+  {id:'aldeia',nome:'A aldeia',txt:'Explora a aldeia. Constrói uma casa nova para um vizinho e um jardim com árvores.',gen(){const w=W();
+    w.casa(1,1,'tabuas',2).casa(7,1,'pedra',8);for(let x=0;x<12;x++)w.put(x,9,0,'agua');
+    w.put(5,8,0,'tabuas').put(5,9,1,'tabuas').put(5,10,0,'tabuas');
+    w.box(7,6,0,9,8,0,'pedra',true).put(8,7,0,'agua').put(7,6,1,'tronco').put(9,6,1,'tronco').box(7,6,2,9,6,2,'tabuas');
+    w.arvore(2,7).arvore(11,5);return w.m}},
+  {id:'ilha',nome:'A ilha',txt:'Estás numa ilha no meio do mar! Constrói um farol e uma ponte até à jangada.',gen(){const w=W();
+    for(let y=0;y<12;y++)for(let x=0;x<12;x++){const d=Math.hypot(x-5,y-5);if(d>3.6)w.put(x,y,0,'agua');else if(d>2.5)w.put(x,y,0,'areia');else{w.put(x,y,0,'relva');if(d<1.5)w.put(x,y,1,'relva')}}
+    for(let z=2;z<5;z++)w.put(6,4,z,'tronco');[[0,0],[1,0],[-1,0],[0,1],[0,-1]].forEach(([a,b])=>w.put(6+a,4+b,5,'folhas'));
+    w.box(3,6,1,4,7,2,'tabuas').del(4,7,1).box(3,6,3,4,7,3,'telhado');
+    w.box(9,9,1,10,10,1,'tabuas').put(9,9,2,'tronco').put(9,9,3,'tronco').put(10,9,2,'neve').put(10,9,3,'neve');return w.m}},
+  {id:'castelo',nome:'O castelo',txt:'Visita o castelo. Constrói mais uma torre e decora o pátio.',gen(){const w=W();
+    for(let i=0;i<12;i++)w.put(i,0,0,'agua').put(i,11,0,'agua').put(0,i,0,'agua').put(11,i,0,'agua');
+    w.box(1,1,0,10,10,2,'pedra',true);for(let y=1;y<=10;y++)for(let x=1;x<=10;x++)if((x===1||x===10||y===1||y===10)&&(x+y)%2===0)w.put(x,y,3,'pedra');
+    for(const [a,b] of [[1,1],[9,1],[1,9],[9,9]]){w.box(a,b,0,a+1,b+1,4,'pedra').put(a,b,5,'pedra').put(a+1,b+1,5,'pedra')}
+    w.del(5,10,0).del(6,10,0).del(5,10,1).del(6,10,1).put(5,11,0,'tabuas').put(6,11,0,'tabuas');
+    w.box(4,4,0,7,7,3,'tijolo',true).del(5,7,0).del(5,7,1).put(7,5,2,'vidro').put(7,6,2,'vidro').box(4,4,4,7,7,4,'telhado').box(5,5,5,6,6,5,'telhado');return w.m}},
+  {id:'quinta',nome:'A quinta',txt:'Ajuda na quinta: aumenta a horta, faz uma cerca nova e um caminho até ao lago.',gen(){const w=W();
+    w.box(0,6,0,5,11,0,'tronco',true).del(3,6,0);for(let x=1;x<=4;x++)w.put(x,7,0,'folhas').put(x,9,0,'folhas');
+    w.box(1,1,0,2,1,0,'areia').put(1,2,0,'areia').put(1,1,1,'areia');
+    w.box(7,1,0,10,4,2,'tijolo',true).del(8,4,0).del(9,4,0).del(8,4,1).del(9,4,1).put(10,2,1,'vidro').put(10,3,1,'vidro').box(7,1,3,10,4,3,'telhado').box(7,2,4,10,3,4,'telhado');
+    w.box(7,7,0,11,11,0,'areia',true).box(8,8,0,10,10,0,'agua');w.arvore(4,3);return w.m}},
+  {id:'montanha',nome:'A montanha de neve',txt:'Constrói um abrigo na neve e uma escada até ao topo da montanha.',gen(){const w=W();
+    for(let y=0;y<7;y++)for(let x=0;x<7;x++){const h=5-Math.max(Math.abs(x-2),Math.abs(y-2));if(h<=0)continue;for(let z=0;z<h-1;z++)w.put(x,y,z,'pedra');w.put(x,y,h-1,h>=4?'neve':h>=2?'pedra':'relva')}
+    w.box(7,8,0,10,10,0,'agua');w.pinheiro(9,3).pinheiro(10,6);w.put(7,5,0,'neve').put(7,5,1,'neve').put(7,5,2,'neve');
+    w.box(3,8,0,5,10,1,'neve',true).put(4,9,2,'neve').del(4,10,0);return w.m}}
+];
 
 /* ================= geometria ================= */
 const K=(x,y,z)=>x+','+y+','+z;
@@ -476,37 +523,45 @@ function celebrate(n,extra){confetti();const t=['Muito bem!','Excelente!','Fant�
 function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cards=$('#cards');cards.innerHTML='';const list=CH[y];const sv=SAVE['y'+y]||{};
   let tot=0;list.forEach((c,i)=>tot+=sv[i]||0);$('#mStars').textContent='★ '+tot+' / '+list.length*3;
-  const fc=el('div','card free','<canvas></canvas><div class="cn">Sem regras</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
-  fc.onclick=startFree;cards.append(fc);
+  const cw=$('#cardsW');cw.innerHTML='';
+  const fc=el('div','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
+  fc.onclick=startFree;cw.append(fc);
+  WORLDS.forEach((wd,i)=>{const c=el('div','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
   list.forEach((ch,i)=>{const c=el('div','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
   requestAnimationFrame(()=>{
-    const fb=loadFree();renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?10:7,fb.size?6:4);
+    const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?10:7,fb.size?6:4);
+    $$('#cardsW .card.world').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},12,Math.max(3,maxZB(b)+1.5))});
     $$('#cards .card:not(.free)').forEach((c,i)=>{const ch=list[i];const all=[...(ch.fixed||[]),...(ch.obst||[]),...(ch.t==='build'?ch.targets:[])];
       const sp=[];if(ch.t==='code'){if(ch.flag)sp.push({kind:'flag',x:ch.flag.x,y:ch.flag.y});(ch.acorns||[]).forEach(a=>sp.push({kind:'acorn',x:a[0],y:a[1]}));sp.push({kind:'agent',x:ch.start.x,y:ch.start.y,d:ch.start.d})}
       renderMini(c.querySelector('canvas'),{blocks:mapOf(all),ghosts:ch.t==='code'?ch.targets:null,sprites:sp},ch.N,Math.max(2,maxZ(all)+1.5))})})}
 
 /* ---------- arranque dos modos ---------- */
-function loadFree(){const m=new Map();for(const a of (SAVE['free'+S.year]||[]))m.set(K(a[0],a[1],a[2]),{m:a[3]});return m}
-function saveFree(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m])}SAVE['free'+S.year]=a;persist()}
-function startFree(){S.mode='free';S.ch=null;S.N=10;S.hz=6;S.rot=0;setupGame();resetWorld()}
+const isFree=()=>S.mode==='free'||S.mode==='world';
+const freeKey=()=>S.mode==='world'?'w_'+S.world.id+'_'+S.year:'free'+S.year;
+function loadSaved(key,gen){const sv=SAVE[key];if(!sv)return gen?gen():new Map();const m=new Map();for(const a of sv)if(MATS[a[3]])m.set(K(a[0],a[1],a[2]),{m:a[3]});return m}
+function loadFree(){return loadSaved(freeKey(),S.mode==='world'?S.world.gen:null)}
+function saveFree(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m])}SAVE[freeKey()]=a;persist()}
+function maxZB(m){let z=0;for(const k of m.keys())z=Math.max(z,+k.split(',')[2]);return z}
+function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=10;S.hz=6;S.rot=0;setupGame();resetWorld()}
+function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=12;S.rot=0;S.hz=Math.max(6,maxZB(S.world.gen())+2);setupGame();resetWorld()}
 function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.prog=[];S.runId++;S.running=false;
   S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
-function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const free=S.mode==='free',code=S.mode==='code';
-  $('#gTt').textContent=free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
-  $('#gTx').textContent=free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
+function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const free=isFree(),code=S.mode==='code',wd=S.mode==='world'?S.world:null;
+  $('#gTt').textContent=wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
+  $('#gTx').textContent=wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
   $('#gPrev').style.visibility=$('#gNext').style.visibility=free?'hidden':'visible';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
   $('#buildPanel').style.display=code?'none':'flex';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
-  $('#btnReset').innerHTML=free?'🗑 Limpar tudo':'🗑 Recomeçar';
+  $('#btnReset').innerHTML=wd?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
   setTool('place');
   if(code){buildCmds();$('#pGoal').textContent='Meta: '+S.ch.best+' peças';$('#codeTip').textContent=S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.'}
 }
 function resetWorld(){
-  const ch=S.ch;S.blocks=S.mode==='free'?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
+  const ch=S.ch;S.blocks=isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
   S.undo=[];S.help=false;S.done=false;S.warned=false;S.marks=new Set();S.hover=null;S.eraseKey=null;S.lockWarn=false;
   $('#btnHelp').disabled=false;
   if(S.mode==='code')resetCodeWorld(true);
@@ -534,7 +589,7 @@ function hit(e){const r=$('#cv').getBoundingClientRect(),mx=e.clientX-r.left,my=
 function placeTarget(h){if(!h)return null;let p;
   if(h.kind==='ghost')p={x:h.wx,y:h.wy,z:h.z};else if(h.kind==='ground')p={x:h.wx,y:h.wy,z:0};
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
-  if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (S.mode==='free'?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
+  if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (isFree()?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
 function setTool(t){S.tool=t;$$('.tbtn').forEach(b=>b.classList.toggle('on',b.dataset.tool===t));S.hover=null;S.eraseKey=null}
 function doPlace(p){S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
   if(S.mode==='build'&&S.year===1){const t=S.ch.targets.find(t=>t.x===p.x&&t.y===p.y&&t.z===p.z);
@@ -543,7 +598,7 @@ function doPlace(p){S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add'
 function doErase(h){if(!h||h.kind!=='block')return;if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
   const b=S.blocks.get(h.key);S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
 function undo(){const u=S.undo.pop();if(!u)return;if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
-function afterChange(){if(S.mode==='free')saveFree();if(S.mode==='build')checkBuild();render()}
+function afterChange(){if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
 function buildStatus(ch){const tset=new Map(ch.targets.map(t=>[K(t.x,t.y,t.z),t.m]));let ok=0,filled=0;const wrong=new Set(),extra=new Set();
   for(const [k,m] of tset){const b=S.blocks.get(k);if(b){filled++;if(b.m===m)ok++;else wrong.add(k)}}
   for(const [k,b] of S.blocks){if(!b.locked&&!tset.has(k))extra.add(k)}return{ok,filled,total:tset.size,wrong,extra}}
@@ -634,7 +689,7 @@ $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
 const pal=$('#palette');MORDER.forEach(m=>{const b=el('button','mbtn'+(m===S.mat?' on':''));b.title=MATS[m].nome;b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));
   b.onclick=()=>{S.mat=m;$$('.mbtn').forEach(x=>x.classList.toggle('on',x===b));setTool('place')};pal.append(b)});
 $('#btnUndo').onclick=undo;
-$('#btnReset').onclick=()=>modal(`${tic('apontar')}<h3>${S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>Os blocos que colocaste vão desaparecer.</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}]);
+$('#btnReset').onclick=()=>{const wd=S.mode==='world';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
 $('#rotL').onclick=()=>{S.rot=(S.rot+3)%4;S.hover=null;render();renderModel()};
 $('#rotR').onclick=()=>{S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
