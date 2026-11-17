@@ -605,5 +605,28 @@
     "ilustracao": {
       "tipo": "digital"
     }
+  },
+  {
+    "id": "2026-11-17-ticlas-2ano-computador-guardioes-tic",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "O computador e os Guardiões TIC",
+    "descricao": "Para depois dos vídeos «Byte e o computador desmontado» e «Guardiões da Sala TIC». Sem som, com palavras e frases curtas para ler: 8 missões estilo Wordwall — sombra com nome, legendar o computador, para que serve cada peça, memória imagem/nome, hardware/software, periféricos de entrada/saída, regras da Sala TIC com frases e escrever o nome das peças no teclado — e 2 bónus («Primeiro, depois…» e «Apanha as peças»). Perfis turma/apoio, guia do professor e certificado «Guardião TIC».",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_2ano_TIC_Computador_Guardioes_v1.html",
+    "duracao": "cerca de 45 min",
+    "estado": "em validação",
+    "resumo": "Lê, legenda e escreve os nomes das peças e torna-te um Guardião TIC!",
+    "focoTic": [
+      "Componentes do computador",
+      "Regras da Sala TIC",
+      "Teclado: escrever palavras",
+      "Rato: arrastar"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
