@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pesquisa: o Funchal · Estudo do Meio 3.º ano</title>
+<style>
+  :root{
+    --tinta:#1f2937; --suave:#6b7280; --fundo:#f6f4ef; --papel:#ffffff; --linha:#e5e1d8;
+    --p1:#2563eb; --p1c:#e8efff;
+    --p2:#d97706; --p2c:#fff3e0;
+    --p3:#059669; --p3c:#e3f6ee;
+    --tr:#7c3aed; --trc:#f1eafe;
+    --bi:#b91c1c; --bic:#fdecec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--tinta);background:var(--fundo);font-size:20px;line-height:1.5}
+  header{background:var(--papel);border-bottom:1px solid var(--linha);padding:14px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  header h1{margin:0;font-size:1.5rem}
+  header .sub{color:var(--suave);font-size:.9rem}
+  nav{display:flex;gap:8px;flex-wrap:wrap;padding:12px 24px;background:var(--papel);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:5}
+  nav button{font:inherit;font-size:.95rem;border:2px solid var(--linha);background:var(--papel);border-radius:999px;padding:6px 16px;cursor:pointer;color:var(--tinta)}
+  nav button[aria-selected="true"]{color:#fff;border-color:transparent}
+  nav button[data-tab="inicio"][aria-selected="true"]{background:var(--tinta)}
+  nav button[data-tab="par1"]{border-color:var(--p1)} nav button[data-tab="par1"][aria-selected="true"]{background:var(--p1)}
+  nav button[data-tab="par2"]{border-color:var(--p2)} nav button[data-tab="par2"][aria-selected="true"]{background:var(--p2)}
+  nav button[data-tab="par3"]{border-color:var(--p3)} nav button[data-tab="par3"][aria-selected="true"]{background:var(--p3)}
+  nav button[data-tab="trio"]{border-color:var(--tr)} nav button[data-tab="trio"][aria-selected="true"]{background:var(--tr)}
+  nav button[data-tab="bi"]{border-color:var(--bi)} nav button[data-tab="bi"][aria-selected="true"]{background:var(--bi)}
+  nav .prof{margin-left:auto;font-size:.8rem;color:var(--suave)}
+  nav button[data-tab="prof"][aria-selected="true"]{background:var(--suave)}
+  main{max-width:1000px;margin:0 auto;padding:24px}
+  section{display:none}
+  section.ativo{display:block}
+  .cartao{background:var(--papel);border:1px solid var(--linha);border-radius:16px;padding:22px 26px;margin-bottom:20px}
+  h2{margin:0 0 6px;font-size:1.6rem}
+  h3{margin:0 0 10px;font-size:1.15rem}
+  .etiqueta{display:inline-block;font-size:.8rem;font-weight:600;padding:2px 12px;border-radius:999px;margin-bottom:8px}
+  ol.passos{padding-left:1.2em;margin:8px 0} ol.passos li{margin:6px 0}
+  .grelha-grupos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
+  .grelha-grupos button{font:inherit;text-align:left;border:none;border-radius:14px;padding:16px;cursor:pointer;color:var(--tinta)}
+  .grelha-grupos button b{display:block;font-size:1.1rem}
+  .grelha-grupos small{color:var(--suave)}
+
+  /* Grupos */
+  .g-p1{--cor:var(--p1);--corc:var(--p1c)} .g-p2{--cor:var(--p2);--corc:var(--p2c)}
+  .g-p3{--cor:var(--p3);--corc:var(--p3c)} .g-tr{--cor:var(--tr);--corc:var(--trc)}
+  .g-bi{--cor:var(--bi);--corc:var(--bic)}
+  .grupo .etiqueta, .grelha-grupos .g-p1, .grelha-grupos .g-p2, .grelha-grupos .g-p3, .grelha-grupos .g-tr{background:var(--corc)}
+  .grupo .etiqueta{color:var(--cor)}
+  .missao{border:3px solid var(--cor);background:var(--corc)}
+  .pergunta{margin:14px 0}
+  .pergunta label{display:block;font-weight:600;margin-bottom:6px}
+  .pergunta label span.n{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;background:var(--cor);color:#fff;font-size:.85rem;margin-right:8px}
+  textarea, input[type=text]{font:inherit;width:100%;border:2px solid var(--linha);border-radius:10px;padding:8px 12px;background:#fff;color:var(--tinta);resize:vertical}
+  textarea:focus, input[type=text]:focus{outline:none;border-color:var(--cor,var(--tinta))}
+  .fonte{font-size:1.15rem;line-height:1.75}
+  .fonte p{margin:0 0 .8em}
+  .fonte .titulo-fonte{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .fonte .titulo-fonte h3{margin:0}
+  .dica{font-size:.9rem;color:var(--suave);margin-top:6px}
+
+  /* BI */
+  .bi{border:3px solid var(--bi);border-radius:18px;background:#fff;padding:0;overflow:hidden}
+  .bi-topo{background:var(--bi);color:#fff;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .bi-topo h2{margin:0;font-size:1.5rem}
+  .bi-topo .turma{display:flex;gap:8px;align-items:center;font-size:.9rem}
+  .bi-topo input{width:110px;padding:4px 8px;border:none;border-radius:6px}
+  .bi-corpo{display:grid;grid-template-columns:1fr 1fr;gap:0}
+  .campo{padding:12px 20px;border-bottom:1px solid var(--linha)}
+  .campo:nth-child(odd){border-right:1px solid var(--linha)}
+  .campo.largo{grid-column:1/-1;border-right:none}
+  .campo label{display:block;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .campo textarea{border:none;border-bottom:2px dashed var(--linha);border-radius:0;padding:4px 0;min-height:2.2em;font-size:1.1rem}
+  .campo .origem{font-size:.75rem;font-weight:600;padding:1px 8px;border-radius:999px;margin-left:6px;text-transform:none;letter-spacing:0}
+  .o-p1{background:var(--p1c);color:var(--p1)} .o-p2{background:var(--p2c);color:var(--p2)}
+  .o-p3{background:var(--p3c);color:var(--p3)} .o-tr{background:var(--trc);color:var(--tr)}
+  .campo.fecho{background:#fffbe8}
+
+  .barra{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+  .botao{font:inherit;font-size:.95rem;border:none;border-radius:10px;padding:8px 18px;cursor:pointer;background:var(--tinta);color:#fff}
+  .botao.sec{background:#fff;color:var(--tinta);border:2px solid var(--linha)}
+
+  /* Professor */
+  table{border-collapse:collapse;width:100%;font-size:.95rem}
+  th,td{border:1px solid var(--linha);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--fundo)}
+  .prof-txt{font-size:.95rem}
+  .resp td:first-child{white-space:nowrap;font-weight:600}
+  .fontes-aluno{font-size:.85rem;color:var(--suave);border-top:1px dashed var(--linha);padding-top:10px;margin-top:6px}
+  .fontes-aluno a{color:var(--cor);font-weight:600}
+  .fontes-aluno a:hover{text-decoration:underline}
+  .lista-fontes{font-size:.9rem;margin:6px 0 14px;padding-left:1.2em}
+  .lista-fontes li{margin:3px 0}
+  .lista-fontes a{color:var(--p1)}
+  .lista-fontes span{color:var(--suave)}
+  footer{text-align:center;color:var(--suave);font-size:.8rem;padding:10px 24px 30px}
+
+  @media (max-width:700px){ .bi-corpo{grid-template-columns:1fr} .campo:nth-child(odd){border-right:none} }
+
+  @media print{
+    @page{size:A4;margin:12mm}
+    body{background:#fff;font-size:13pt}
+    header, nav, .barra, .no-print, footer{display:none !important}
+    main{padding:0;max-width:none}
+    section{display:none !important}
+    body[data-print="bi"] #bi{display:block !important}
+    body[data-print="cartoes"] section.grupo{display:block !important;page-break-after:always}
+    .cartao{border-radius:8px;padding:12px 16px;margin-bottom:10px}
+    .fonte{font-size:12.5pt;line-height:1.55}
+    textarea{border:1px solid #999;min-height:3.2em}
+    .bi textarea{border:none;border-bottom:1px dashed #999}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+<style id="ticlas-estilo-portal">
+#ticlas-voltar-portal {
+  box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center;
+  gap:7px; flex:0 0 auto; min-height:44px; padding:8px 14px;
+  border:2px solid #285775; border-radius:12px; background:#fff; color:#285775;
+  font:800 16px/1.2 'Nunito','Segoe UI',sans-serif; white-space:nowrap;
+  text-decoration:none; cursor:pointer; touch-action:manipulation; position:relative;
+}
+#ticlas-voltar-portal:hover {background:#285775;color:#fff}
+#ticlas-voltar-portal:focus-visible {outline:3px solid #E8834A;outline-offset:3px}
+#ticlas-voltar-portal span {font-size:21px;line-height:1}
+#ticlas-nav-portal {box-sizing:border-box;flex:0 0 auto;width:100%;max-width:1180px;
+  margin:0 auto;padding:6px 14px;display:flex;justify-content:flex-start;align-items:center}
+body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
+@media print {#ticlas-voltar-portal,#ticlas-nav-portal {display:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div style="font-size:2rem">🔎</div>
+  <div>
+    <h1>Pesquisa: o Funchal</h1>
+    <div class="sub">Estudo do Meio · 3.º ano · TIC</div>
+  </div>
+
+    <a id="ticlas-voltar-portal" href="https://cspsya.github.io/ticlas-investigadores-digitais/" aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s"><span aria-hidden="true">←</span> Voltar ao Ticl@s</a>
+  </header>
+
+<nav role="tablist">
+  <button data-tab="inicio" aria-selected="true">Início</button>
+  <button data-tab="par1">Par 1 · Origem</button>
+  <button data-tab="par2">Par 2 · A cidade</button>
+  <button data-tab="par3">Par 3 · Território</button>
+  <button data-tab="trio">Trio · Cultura</button>
+  <button data-tab="bi">🪪 BI do Funchal</button>
+  <button data-tab="prof" class="prof">Professor</button>
+</nav>
+
+<main>
+
+<!-- INÍCIO -->
+<section id="inicio" class="ativo">
+  <div class="cartao">
+    <h2>Somos investigadores do Funchal!</h2>
+    <p>Hoje vamos descobrir a cidade onde fica a nossa escola. Cada grupo tem uma missão.</p>
+    <ol class="passos">
+      <li><b>Escolham</b> o vosso grupo.</li>
+      <li><b>Leiam</b> as perguntas da missão.</li>
+      <li><b>Procurem</b> as respostas no texto da ficha-fonte.</li>
+      <li><b>Escrevam</b> as respostas com as vossas palavras.</li>
+      <li><b>Preparem-se</b> para apresentar à turma!</li>
+    </ol>
+    <div class="grelha-grupos">
+      <button class="g-p1" data-ir="par1"><b>📜 Par 1 · Origem</b><small>Como nasceu o Funchal?</small></button>
+      <button class="g-p2" data-ir="par2"><b>🏙️ Par 2 · A cidade</b><small>Quando passou a cidade?</small></button>
+      <button class="g-p3" data-ir="par3"><b>🗺️ Par 3 · Território</b><small>Freguesias e brasão</small></button>
+      <button class="g-tr" data-ir="trio"><b>🎉 Trio · Cultura</b><small>Locais, festas e curiosidades</small></button>
+    </div>
+  </div>
+</section>
+
+<!-- PAR 1 -->
+<section id="par1" class="grupo g-p1">
+  <div class="cartao missao">
+    <span class="etiqueta">📜 Par 1 · Origem</span>
+    <h2>A nossa missão</h2>
+    <div class="pergunta">
+      <label><span class="n">1</span>Porque se chama Funchal?</label>
+      <textarea rows="2" data-key="p1q1"></textarea>
+    </div>
+    <div class="pergunta">
+      <label><span class="n">2</span>Quem chegou primeiro ao Funchal? Em que século?</label>
+      <textarea rows="2" data-key="p1q2"></textarea>
+    </div>
+  </div>
+  <div class="cartao fonte">
+    <div class="titulo-fonte"><span style="font-size:1.6rem">📖</span><h3>Ficha-fonte: Como nasceu o Funchal</h3></div>
+    <p>Há cerca de 600 anos, no <b>século XV</b>, navegadores portugueses chegaram à ilha da Madeira. Um deles chamava-se <b>João Gonçalves Zarco</b>.</p>
+    <p>Por volta de 1424, Zarco e a sua família foram viver para um vale junto ao mar, no sul da ilha. Esse vale estava cheio de <b>funcho</b>, uma planta selvagem com um cheiro adocicado.</p>
+    <p>Por isso, deram ao lugar o nome de <b>Funchal</b>, que quer dizer «sítio onde há muito funcho».</p>
+    <p>Zarco foi o primeiro capitão do Funchal. Hoje há uma estátua dele no centro da cidade.</p>
+    <p class="fontes-aluno">📚 Fontes (clica para confirmar): <a href="https://visitmadeira.com/pt/onde-ir/madeira/costa-sul/funchal/" target="_blank" rel="noopener">Visit Madeira – Funchal</a> · <a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/avenida-arriaga/" target="_blank" rel="noopener">Visit Madeira – Avenida Arriaga (estátua de Zarco)</a> · <a href="https://cmfdoc.funchal.pt/images/municipio/edicoes_municipais/Funchal_Mapas_Numeros.pdf" target="_blank" rel="noopener">Câmara do Funchal – Funchal em Mapas e Números</a></p>
+  </div>
+</section>
+
+<!-- PAR 2 -->
+<section id="par2" class="grupo g-p2">
+  <div class="cartao missao">
+    <span class="etiqueta">🏙️ Par 2 · A cidade</span>
+    <h2>A nossa missão</h2>
+    <div class="pergunta">
+      <label><span class="n">1</span>Quando passou o Funchal a ser cidade? Qual é o Dia da Cidade?</label>
+      <textarea rows="2" data-key="p2q1"></textarea>
+    </div>
+    <div class="pergunta">
+      <label><span class="n">2</span>Quantas pessoas vivem no Funchal?</label>
+      <textarea rows="2" data-key="p2q2"></textarea>
+    </div>
+  </div>
+  <div class="cartao fonte">
+    <div class="titulo-fonte"><span style="font-size:1.6rem">📖</span><h3>Ficha-fonte: O Funchal, cidade e capital</h3></div>
+    <p>No início, o Funchal era uma pequena povoação. Foi crescendo e passou a ser vila.</p>
+    <p>No dia <b>21 de agosto de 1508</b>, o rei D. Manuel I deu ao Funchal o título de <b>cidade</b>. Por isso, todos os anos, a 21 de agosto, festeja-se o <b>Dia da Cidade do Funchal</b>.</p>
+    <p>Hoje, o Funchal é a <b>capital</b> da Região Autónoma da Madeira e a maior cidade do arquipélago.</p>
+    <p>Nos Censos de 2021 (a grande contagem da população), viviam no concelho do Funchal <b>105 782 pessoas</b>, ou seja, mais de 100 mil! Cerca de 4 em cada 10 habitantes da Madeira vivem no Funchal.</p>
+    <p class="fontes-aluno">📚 Fontes (clica para confirmar): <a href="https://www.visitmadeira.com/pt-pt/explorar/detalhe/quinta-do-bom-sucesso" target="_blank" rel="noopener">Visit Madeira – o Funchal</a> · <a href="https://www.funchal.pt/wp-content/uploads/2023/03/01_Boletim_Economico_do_Funchal_03.2023.pdf" target="_blank" rel="noopener">Câmara do Funchal – Boletim Económico (Censos 2021)</a></p>
+  </div>
+</section>
+
+<!-- PAR 3 -->
+<section id="par3" class="grupo g-p3">
+  <div class="cartao missao">
+    <span class="etiqueta">🗺️ Par 3 · Território</span>
+    <h2>A nossa missão</h2>
+    <div class="pergunta">
+      <label><span class="n">1</span>Quantas freguesias tem o Funchal? Em qual fica a nossa escola?</label>
+      <textarea rows="2" data-key="p3q1"></textarea>
+    </div>
+    <div class="pergunta">
+      <label><span class="n">2</span>O que tem o brasão do Funchal? O que significa?</label>
+      <textarea rows="2" data-key="p3q2"></textarea>
+    </div>
+  </div>
+  <div class="cartao fonte">
+    <div class="titulo-fonte"><span style="font-size:1.6rem">📖</span><h3>Ficha-fonte: O território e o brasão</h3></div>
+    <p>O Funchal fica na <b>costa sul</b> da ilha da Madeira, numa baía virada para o oceano Atlântico. As casas sobem pela encosta, como as bancadas de um anfiteatro.</p>
+    <p>O concelho do Funchal tem <b>10 freguesias</b>: Imaculado Coração de Maria, Monte, Santa Luzia, Santa Maria Maior, Santo António, São Gonçalo, <b>São Martinho</b>, São Pedro, São Roque e Sé. A nossa escola fica na freguesia de São Martinho!</p>
+    <p>O <b>brasão</b> do Funchal tem um escudo verde com <b>cinco pães de açúcar</b> dourados (blocos de açúcar em forma de cone) e <b>quatro cachos de uvas</b> dourados. Os pães de açúcar lembram a importância do açúcar na história da Madeira. As uvas lembram o vinho.</p>
+    <p>Em cima do escudo há uma coroa com <b>cinco torres</b>, que mostra que o Funchal é uma cidade.</p>
+    <p class="fontes-aluno">📚 Fontes (clica para confirmar): <a href="https://cmfdoc.funchal.pt/images/municipio/edicoes_municipais/Funchal_Mapas_Numeros.pdf" target="_blank" rel="noopener">Câmara do Funchal – Funchal em Mapas e Números (freguesias)</a> · <a href="https://funchal.pt/?p=27800" target="_blank" rel="noopener">Câmara do Funchal – Brasão da Cidade</a></p>
+  </div>
+</section>
+
+<!-- TRIO -->
+<section id="trio" class="grupo g-tr">
+  <div class="cartao missao">
+    <span class="etiqueta">🎉 Trio · Cultura</span>
+    <h2>A nossa missão</h2>
+    <div class="pergunta">
+      <label><span class="n">1</span>Que locais importantes tem o Funchal? (indica 2)</label>
+      <textarea rows="2" data-key="trq1"></textarea>
+    </div>
+    <div class="pergunta">
+      <label><span class="n">2</span>Que festas se celebram no Funchal? (indica 2)</label>
+      <textarea rows="2" data-key="trq2"></textarea>
+    </div>
+    <div class="pergunta">
+      <label><span class="n">3</span>Curiosidade: o que são os carros de cesto?</label>
+      <textarea rows="2" data-key="trq3"></textarea>
+    </div>
+  </div>
+  <div class="cartao fonte">
+    <div class="titulo-fonte"><span style="font-size:1.6rem">📖</span><h3>Ficha-fonte: Locais, festas e curiosidades</h3></div>
+    <p>O Funchal tem muitos <b>locais</b> para descobrir. A <b>Sé do Funchal</b> é uma catedral com mais de 500 anos. No <b>Mercado dos Lavradores</b> vendem-se frutas, flores e peixe. Na <b>Zona Velha</b>, as portas das casas estão pintadas com arte. A <b>Fortaleza de São Tiago</b> é amarela e fica junto ao mar.</p>
+    <p>Ao longo do ano há muitas <b>festas</b>: a <b>Festa da Flor</b>, na primavera, com o Muro da Esperança e o cortejo de flores; o <b>Carnaval</b>, com desfiles alegres; e o <b>Fim do Ano</b>, com um enorme fogo de artifício sobre a baía.</p>
+    <p>Uma <b>curiosidade</b>: no Monte há os <b>carros de cesto</b>, feitos de vime e madeira. Desde o século XIX que descem as ruas inclinadas, guiados por dois <b>carreiros</b> vestidos de branco, com chapéu de palha. Os carreiros travam com as botas de sola de borracha! Para subir ao Monte pode usar-se o <b>teleférico</b>.</p>
+    <p class="fontes-aluno">📚 Fontes (clica para confirmar): <a href="https://visitmadeira.com/pt/o-que-fazer/apaixonados-por-cultura/patrimonio/monumentos-e-arquitetura/se-do-funchal/" target="_blank" rel="noopener">Sé do Funchal</a> · <a href="https://www.visitportugal.com/pt-pt/content/mercado-dos-lavradores" target="_blank" rel="noopener">Mercado dos Lavradores</a> · <a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/zona-velha/" target="_blank" rel="noopener">Zona Velha</a> · <a href="https://www.visitmadeira.com/en/what-to-do/culture-passionates/heritage/monuments-and-architecture/fortress-of-sao-tiago/" target="_blank" rel="noopener">Fortaleza de São Tiago</a> · <a href="https://visitmadeira.com/pt/blog/visit-madeira/a-festa-da-flor/" target="_blank" rel="noopener">Festa da Flor</a> · <a href="https://visitmadeira.com/pt/a-acontecer/eventos-de-cartaz/" target="_blank" rel="noopener">Carnaval e Fim do Ano</a> · <a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/passear-na-cidade/carrinhos-de-cesto/" target="_blank" rel="noopener">Carrinhos de Cesto</a> · <a href="https://www.visitportugal.com/pt-pt/node/73842" target="_blank" rel="noopener">Monte e teleférico</a></p>
+  </div>
+</section>
+
+<!-- BI -->
+<section id="bi" class="g-bi">
+  <div class="barra">
+    <button class="botao" data-print="bi">🖨️ Imprimir BI</button>
+  </div>
+  <div class="bi">
+    <div class="bi-topo">
+      <h2>🪪 Bilhete de Identidade do Funchal</h2>
+      <div class="turma">Turma <input type="text" data-key="bi_turma" placeholder="3.º __"> Data <input type="text" data-key="bi_data" placeholder="__/__/____"></div>
+    </div>
+    <div class="bi-corpo">
+      <div class="campo"><label>Origem do nome <span class="origem o-p1">Par 1</span></label><textarea rows="1" data-key="bi_nome"></textarea></div>
+      <div class="campo"><label>Primeiro capitão <span class="origem o-p1">Par 1</span></label><textarea rows="1" data-key="bi_zarco"></textarea></div>
+      <div class="campo"><label>Passou a cidade em · Dia da Cidade <span class="origem o-p2">Par 2</span></label><textarea rows="1" data-key="bi_cidade"></textarea></div>
+      <div class="campo"><label>Habitantes <span class="origem o-p2">Par 2</span></label><textarea rows="1" data-key="bi_hab"></textarea></div>
+      <div class="campo"><label>Freguesias · A nossa freguesia <span class="origem o-p3">Par 3</span></label><textarea rows="1" data-key="bi_freg"></textarea></div>
+      <div class="campo"><label>Brasão <span class="origem o-p3">Par 3</span></label><textarea rows="1" data-key="bi_brasao"></textarea></div>
+      <div class="campo"><label>Locais a visitar <span class="origem o-tr">Trio</span></label><textarea rows="1" data-key="bi_locais"></textarea></div>
+      <div class="campo"><label>Festas <span class="origem o-tr">Trio</span></label><textarea rows="1" data-key="bi_festas"></textarea></div>
+      <div class="campo largo"><label>Curiosidade <span class="origem o-tr">Trio</span></label><textarea rows="1" data-key="bi_curio"></textarea></div>
+      <div class="campo largo fecho"><label>✨ Uma coisa que aprendemos hoje</label><textarea rows="2" data-key="bi_aprendi"></textarea></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSOR -->
+<section id="prof">
+  <div class="cartao prof-txt">
+    <h2>Guião do professor</h2>
+    <p><b>Duração:</b> 30 min · <b>Grupo:</b> meia turma (9 alunos), em 3 pares e 1 trio · <b>Material:</b> 4 computadores e painel interativo</p>
+    <table>
+      <tr><th>Tempo</th><th>Momento</th><th>Descrição</th></tr>
+      <tr><td>0–5 min</td><td>Ativação</td><td>Mapa da Madeira no painel. «Onde fica o Funchal? E a nossa escola?» Registo rápido de «O que já sabemos?».</td></tr>
+      <tr><td>5–20 min</td><td>Pesquisa</td><td>Cada grupo abre o seu separador, lê a ficha-fonte e responde às perguntas.</td></tr>
+      <tr><td>20–27 min</td><td>Partilha</td><td>Cada grupo apresenta (cerca de 1,5 min). O professor preenche o BI no painel.</td></tr>
+      <tr><td>27–30 min</td><td>Fecho</td><td>«Uma coisa que aprendemos hoje». Imprimir ou guardar o BI como evidência.</td></tr>
+    </table>
+    <p class="dica">Dica: pode abrir diretamente o separador de cada grupo, acrescentando ao endereço <code>#par1</code>, <code>#par2</code>, <code>#par3</code> ou <code>#trio</code>.</p>
+
+    <h3 style="margin-top:20px">Respostas esperadas</h3>
+    <table class="resp">
+      <tr><td>Par 1</td><td>Por causa do funcho, uma planta que existia em abundância no vale · João Gonçalves Zarco, no século XV (por volta de 1424)</td></tr>
+      <tr><td>Par 2</td><td>21 de agosto de 1508, pelo rei D. Manuel I; o Dia da Cidade é a 21 de agosto · 105 782 habitantes (Censos 2021), «mais de 100 mil»</td></tr>
+      <tr><td>Par 3</td><td>10 freguesias; a escola fica em São Martinho · Escudo verde com 5 pães de açúcar (açúcar) e 4 cachos de uvas (vinho); coroa de 5 torres (cidade)</td></tr>
+      <tr><td>Trio</td><td>Sé, Mercado dos Lavradores, Zona Velha, Fortaleza de São Tiago · Festa da Flor, Carnaval, Fim do Ano · Carros de vime e madeira que descem do Monte, guiados por carreiros (desde o século XIX)</td></tr>
+    </table>
+
+    <div class="barra">
+      <button class="botao sec" data-print="cartoes">🖨️ Imprimir cartões-missão (versão papel)</button>
+      <button class="botao sec" id="limpar">🧹 Limpar respostas neste computador</button>
+    </div>
+    <p class="dica">As respostas ficam guardadas apenas no navegador de cada computador. Use «Limpar» entre a primeira e a segunda metade da turma.</p>
+
+    <h3 style="margin-top:20px">Fontes dos textos (consultadas a 17/11/2026)</h3>
+    <p class="dica" style="margin-top:0">Os textos-fonte foram escritos e adaptados ao 3.º ano a partir destas fontes.</p>
+
+    <b>Par 1 · Origem</b>
+    <ul class="lista-fontes">
+      <li><a href="https://visitmadeira.com/pt/onde-ir/madeira/costa-sul/funchal/" target="_blank" rel="noopener">Visit Madeira – Funchal</a> <span>· origem do nome (funcho)</span></li>
+      <li><a href="https://cmfdoc.funchal.pt/images/municipio/edicoes_municipais/Funchal_Mapas_Numeros.pdf" target="_blank" rel="noopener">Câmara Municipal do Funchal – Funchal em Mapas e Números (PDF)</a> <span>· povoamento e capitania de Zarco</span></li>
+      <li><a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/avenida-arriaga/" target="_blank" rel="noopener">Visit Madeira – Avenida Arriaga</a> <span>· estátua de João Gonçalves Zarco</span></li>
+    </ul>
+
+    <b>Par 2 · A cidade</b>
+    <ul class="lista-fontes">
+      <li><a href="https://www.visitmadeira.com/pt-pt/explorar/detalhe/quinta-do-bom-sucesso" target="_blank" rel="noopener">Visit Madeira – apresentação do Funchal</a> <span>· cidade a 21 de agosto de 1508, por D. Manuel I</span></li>
+      <li><a href="https://www.funchal.pt/wp-content/uploads/2023/03/01_Boletim_Economico_do_Funchal_03.2023.pdf" target="_blank" rel="noopener">Câmara Municipal do Funchal – Boletim Económico, março 2023 (PDF)</a> <span>· 105 782 habitantes, 42,2% da Região (Censos 2021, DREM)</span></li>
+    </ul>
+
+    <b>Par 3 · Território</b>
+    <ul class="lista-fontes">
+      <li><a href="https://cmfdoc.funchal.pt/images/municipio/edicoes_municipais/Funchal_Mapas_Numeros.pdf" target="_blank" rel="noopener">Câmara Municipal do Funchal – Funchal em Mapas e Números (PDF)</a> <span>· as 10 freguesias</span></li>
+      <li><a href="https://funchal.pt/?p=27800" target="_blank" rel="noopener">Câmara Municipal do Funchal – Brasão da Cidade</a> <span>· significado dos pães de açúcar, das uvas e das cinco torres</span></li>
+      <li><a href="https://www.heraldry-wiki.com/wiki/Funchal" target="_blank" rel="noopener">Heraldry of the World – Funchal</a> <span>· descrição oficial do brasão</span></li>
+    </ul>
+
+    <b>Trio · Cultura</b>
+    <ul class="lista-fontes">
+      <li><a href="https://visitmadeira.com/pt/o-que-fazer/apaixonados-por-cultura/patrimonio/monumentos-e-arquitetura/se-do-funchal/" target="_blank" rel="noopener">Visit Madeira – Sé do Funchal</a> <span>· construção iniciada em 1493</span></li>
+      <li><a href="https://www.visitportugal.com/pt-pt/content/mercado-dos-lavradores" target="_blank" rel="noopener">Visit Portugal – Mercado dos Lavradores</a> <span>· frutas, flores, peixe</span></li>
+      <li><a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/zona-velha/" target="_blank" rel="noopener">Visit Madeira – Zona Velha</a> <span>· projeto «Portas Pintadas»</span></li>
+      <li><a href="https://www.visitmadeira.com/en/what-to-do/culture-passionates/heritage/monuments-and-architecture/fortress-of-sao-tiago/" target="_blank" rel="noopener">Visit Madeira – Fortaleza de São Tiago</a> <span>· fortaleza junto ao mar, de 1614</span></li>
+      <li><a href="https://www.fodors.com/world/europe/portugal/madeira/things-to-do/sights/reviews/fortaleza-de-sao-tiago-592834" target="_blank" rel="noopener">Fodor's – Fortaleza de São Tiago</a> <span>· cor amarela</span></li>
+      <li><a href="https://visitmadeira.com/pt/blog/visit-madeira/a-festa-da-flor/" target="_blank" rel="noopener">Visit Madeira – A Festa da Flor</a> <span>· Muro da Esperança e cortejo</span></li>
+      <li><a href="https://visitmadeira.com/pt/a-acontecer/eventos-de-cartaz/" target="_blank" rel="noopener">Visit Madeira – Eventos de cartaz</a> <span>· Carnaval e fogo de artifício do Fim do Ano</span></li>
+      <li><a href="https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/passear-na-cidade/carrinhos-de-cesto/" target="_blank" rel="noopener">Visit Madeira – Carrinhos de Cesto</a> <span>· vime e madeira, século XIX</span></li>
+      <li><a href="https://portugalgetaways.com/pt-pt/destination/madeira/general-articles/toboggan-ride" target="_blank" rel="noopener">Portugal Getaways – Carros de Cesto do Monte</a> <span>· traje dos carreiros e botas de borracha</span></li>
+      <li><a href="https://www.visitportugal.com/pt-pt/node/73842" target="_blank" rel="noopener">Visit Portugal – Monte</a> <span>· teleférico</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>Recurso: C. Sofia · EB1/PE de São Martinho</footer>
+
+<script>
+(function(){
+  var PREFIXO = 'pesquisaFunchal3:';
+  var abas = document.querySelectorAll('nav button[data-tab]');
+  var seccoes = document.querySelectorAll('main > section');
+
+  function mostrar(id){
+    if(!document.getElementById(id)) id = 'inicio';
+    seccoes.forEach(function(s){ s.classList.toggle('ativo', s.id === id); });
+    abas.forEach(function(b){ b.setAttribute('aria-selected', b.dataset.tab === id ? 'true' : 'false'); });
+    try{ if(location.hash !== '#' + id) history.replaceState(null, '', '#' + id); }catch(e){}
+    window.scrollTo(0, 0);
+    ajustarTodos();
+  }
+  abas.forEach(function(b){ b.addEventListener('click', function(){ mostrar(b.dataset.tab); }); });
+  document.querySelectorAll('[data-ir]').forEach(function(b){
+    b.addEventListener('click', function(){ mostrar(b.dataset.ir); });
+  });
+
+  // Guardar respostas (localStorage, com proteção)
+  function ler(k){ try{ return localStorage.getItem(PREFIXO + k); }catch(e){ return null; } }
+  function gravar(k, v){ try{ localStorage.setItem(PREFIXO + k, v); }catch(e){} }
+
+  function ajustar(t){
+    if(t.tagName !== 'TEXTAREA') return;
+    t.style.height = 'auto';
+    t.style.height = (t.scrollHeight + 4) + 'px';
+  }
+  function ajustarTodos(){
+    document.querySelectorAll('section.ativo textarea').forEach(ajustar);
+  }
+
+  var campos = document.querySelectorAll('[data-key]');
+  campos.forEach(function(c){
+    var v = ler(c.dataset.key);
+    if(v !== null) c.value = v;
+    c.addEventListener('input', function(){ gravar(c.dataset.key, c.value); ajustar(c); });
+  });
+
+  document.getElementById('limpar').addEventListener('click', function(){
+    if(!confirm('Apagar todas as respostas e o BI guardados neste computador?')) return;
+    campos.forEach(function(c){
+      c.value = '';
+      try{ localStorage.removeItem(PREFIXO + c.dataset.key); }catch(e){}
+    });
+  });
+
+  // Impressão
+  document.querySelectorAll('[data-print]').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.body.dataset.print = b.dataset.print;
+      window.print();
+    });
+  });
+  window.addEventListener('afterprint', function(){ delete document.body.dataset.print; });
+
+  var inicial = 'inicio';
+  try{ inicial = (location.hash || '#inicio').slice(1) || 'inicio'; }catch(e){}
+  mostrar(inicial);
+})();
+</script>
+</body>
+</html>

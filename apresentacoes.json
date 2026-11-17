@@ -1,5 +1,25 @@
 [
   {
+    "id": "2026-11-17_3ano_O_Funchal",
+    "categoria": "apresentacao",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "O Funchal — vídeo-apresentação",
+    "descricao": "Apresentação estilo vídeo para o painel (12 cenas, cerca de 2,5 min) com fotografias reais do Wikimedia Commons: origem do nome, Zarco, 1508 e a Sé, habitantes, as 10 freguesias, o brasão, locais, festas, carros de cesto e teleférico. Cada cena tem ligações para a fonte da informação e para a página de cada imagem. Narração opcional; precisa de internet para as fotografias.",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "apresentacoes/2026-11-16/Ticlas_O_Funchal_3ano.html",
+    "duracao": "3 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "ilustracao": {
+      "tipo": "natureza"
+    },
+    "resumo": "Descobre a cidade onde fica a nossa escola, com fotografias reais.",
+    "focoTic": "Pesquisa de informação"
+  },
+  {
     "id": "2026-11-11_4ano_Agentes_Internet_Segura",
     "categoria": "apresentacao",
     "turma": "4.º ano",

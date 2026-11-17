@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Funchal · Vídeo-apresentação · 3.º ano</title>
+<style>
+  :root{
+    --fundo:#f4f1ea; --tinta:#1f2937; --suave:#6b7280; --linha:#e3ded3;
+    --verde:#0f4c45; --ouro:#f2c14e; --roxo:#6d3b8c;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;background:var(--fundo);color:var(--tinta)}
+  .wrap{max-width:1180px;margin:0 auto;padding:18px 18px 40px}
+  h1.top{font-size:1.3rem;margin:4px 0 12px;display:flex;gap:10px;align-items:center}
+  h1.top small{font-weight:400;color:var(--suave);font-size:.9rem}
+
+  /* Leitor */
+  .player{background:#0b1d1e;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+  .player:fullscreen{border-radius:0;display:flex;flex-direction:column;justify-content:center;background:#000}
+  .stage{position:relative;aspect-ratio:16/9;width:100%;container-type:inline-size;overflow:hidden;background:#0b1d1e;color:#fff}
+  .player:fullscreen .stage{max-height:calc(100vh - 64px);width:auto;max-width:100%;margin:0 auto;aspect-ratio:16/9;height:calc(100vh - 64px)}
+
+  .scene{position:absolute;inset:0;opacity:0;transition:opacity .8s ease}
+  .scene.on{opacity:1}
+
+  /* Imagens */
+  .ph{position:absolute;overflow:hidden;background:#123}
+  .ph img.main{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ph.contain img.main{object-fit:contain}
+  .ph img.blur{position:absolute;inset:-6%;width:112%;height:112%;object-fit:cover;filter:blur(28px) brightness(.55);transform:scale(1.1)}
+  .ph .falha{position:absolute;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:4cqw;
+             background:linear-gradient(135deg,#14524a,#3c2a55);font-size:1.6cqw;line-height:1.5}
+  .ph .falha a{color:var(--ouro)}
+  .ph.erro .falha{display:flex}
+  .ph.erro img{display:none}
+  .cap{position:absolute;left:0;right:0;bottom:0;padding:.6cqw 1cqw;font-size:1.35cqw;font-weight:600;
+       background:linear-gradient(transparent,rgba(0,0,0,.75));text-shadow:0 1px 2px rgba(0,0,0,.6)}
+
+  /* Ken Burns */
+  @keyframes kbIn{from{transform:scale(1)}to{transform:scale(1.12)}}
+  @keyframes kbOut{from{transform:scale(1.14)}to{transform:scale(1)}}
+  @keyframes kbPan{from{object-position:0% 50%}to{object-position:100% 50%}}
+  @keyframes kbUp{from{transform:scale(1.1) translateY(2%)}to{transform:scale(1.1) translateY(-2%)}}
+  .kb-in img.main{animation:kbIn var(--dur) linear both}
+  .kb-out img.main{animation:kbOut var(--dur) linear both}
+  .kb-pan img.main{animation:kbPan var(--dur) ease-in-out both}
+  .kb-up img.main{animation:kbUp var(--dur) ease-in-out both}
+
+  /* Texto */
+  .full .ph .falha{justify-content:flex-end;padding-right:5cqw}
+  .full .ph .falha > div{max-width:36%}
+  .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,20,22,.88) 0%,rgba(5,20,22,.55) 45%,rgba(5,20,22,0) 75%)}
+  .shade.baixo{background:linear-gradient(0deg,rgba(5,20,22,.92) 0%,rgba(5,20,22,.5) 40%,rgba(5,20,22,0) 70%)}
+  .txt{position:absolute;left:5cqw;top:0;bottom:7cqw;width:52%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+  .kicker{display:inline-block;align-self:flex-start;background:var(--ouro);color:#2a2100;font-weight:700;font-size:1.45cqw;
+          letter-spacing:.06em;text-transform:uppercase;padding:.35cqw 1.1cqw;border-radius:99px}
+  .titulo{font-size:4.3cqw;line-height:1.08;font-weight:800;margin:0;text-shadow:0 2px 6px rgba(0,0,0,.35)}
+  .corpo{font-size:2.25cqw;line-height:1.45;margin:0;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+  .corpo b{color:var(--ouro)}
+  .big{font-size:7.5cqw;font-weight:800;color:var(--ouro);line-height:1;letter-spacing:-.02em}
+
+  .rv{opacity:0;animation:rv .7s ease both;animation-delay:var(--d,0s)}
+  @keyframes rv{from{opacity:0;transform:translateY(1.4cqw)}to{opacity:1;transform:none}}
+
+  /* Layout split: imagem à esquerda, painel à direita */
+  .split .ph{left:0;top:0;bottom:0;width:50%}
+  .split .painel{position:absolute;right:0;top:0;bottom:0;width:50%;background:linear-gradient(160deg,#0f4c45,#0b2f2c);
+                 padding:4cqw 4.5cqw 7cqw;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+  .split .titulo{font-size:3.8cqw}
+
+  /* Grelhas */
+  .grid{position:absolute;left:0;right:0;top:0;height:64%;display:grid;gap:.5cqw}
+  .grid .ph{position:relative}
+  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  .rodape{position:absolute;left:0;right:0;top:64%;bottom:3.4cqw;padding:1.5cqw 4cqw;display:flex;flex-direction:column;justify-content:center;gap:.7cqw;
+          background:linear-gradient(160deg,#0f4c45,#0b2f2c)}
+  .rodape .titulo{font-size:3.3cqw}
+  .rodape .corpo{font-size:1.95cqw}
+
+  /* Lista de freguesias */
+  .freg{columns:2;column-gap:2cqw;font-size:1.75cqw;line-height:1.55;margin:0;padding:0;list-style:none}
+  .freg li{break-inside:avoid}
+  .freg li.nossa{color:var(--ouro);font-weight:800}
+
+  /* Brasão: legenda */
+  .leg{display:grid;grid-template-columns:auto 1fr;gap:.8cqw 1.2cqw;align-items:center;font-size:2cqw;margin:0}
+  .leg span.ic{font-size:2.6cqw}
+
+  /* Barra de fontes */
+  .src{position:absolute;left:0;right:0;bottom:0;padding:.75cqw 1.6cqw;font-size:1.18cqw;line-height:1.4;
+       background:rgba(0,0,0,.62);color:#e7e7e7;display:flex;flex-wrap:wrap;gap:.2cqw 1.4cqw;z-index:3}
+  .src a{color:#ffd978;text-decoration:underline}
+  .src .lbl{color:#bcbcbc}
+
+  /* Capa / iniciar */
+  .start{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);cursor:pointer}
+  .start button{font:inherit;font-size:2.4cqw;font-weight:700;border:none;border-radius:99px;padding:1.4cqw 3.2cqw;background:var(--ouro);color:#2a2100;cursor:pointer;
+                box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  .stage.paused .scene *, .stage.paused .scene{animation-play-state:paused !important}
+
+  /* Controlos */
+  .ctrl{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#0b1d1e;color:#e8e8e8;flex-wrap:wrap}
+  .ctrl button{font:inherit;font-size:.95rem;background:#1c3a3a;color:#fff;border:none;border-radius:8px;padding:7px 12px;cursor:pointer}
+  .ctrl button:hover{background:#275150}
+  .ctrl button.on{background:var(--ouro);color:#2a2100}
+  .barra{flex:1;min-width:200px;display:flex;gap:3px;height:12px;cursor:pointer}
+  .seg{position:relative;background:#2c4746;border-radius:3px;overflow:hidden}
+  .seg i{position:absolute;inset:0;width:0;background:var(--ouro)}
+  .seg:hover{background:#3d5f5e}
+  .tempo{font-variant-numeric:tabular-nums;font-size:.9rem;color:#cfd8d8;min-width:92px;text-align:right}
+
+  /* Lista de fontes */
+  .fontes{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px 22px;margin-top:18px;font-size:.92rem}
+  .fontes h2{font-size:1.15rem;margin:0 0 4px}
+  .fontes p.n{color:var(--suave);margin:0 0 12px}
+  .fontes table{border-collapse:collapse;width:100%}
+  .fontes th,.fontes td{border-bottom:1px solid var(--linha);padding:7px 8px;text-align:left;vertical-align:top}
+  .fontes th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--suave)}
+  .fontes a{color:#1d5fbf}
+  .fontes td:first-child{white-space:nowrap;font-weight:600}
+  footer{text-align:center;color:var(--suave);font-size:.8rem;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="top">🎬 O Funchal <small>Vídeo-apresentação · Estudo do Meio · 3.º ano</small></h1>
+
+  <div class="player" id="player">
+    <div class="stage paused" id="stage">
+      <div class="start" id="start"><button>▶ Começar</button></div>
+    </div>
+    <div class="ctrl">
+      <button id="bPrev" title="Cena anterior (←)">⏮</button>
+      <button id="bPlay" title="Reproduzir / pausa (espaço)">▶</button>
+      <button id="bNext" title="Cena seguinte (→)">⏭</button>
+      <div class="barra" id="barra"></div>
+      <span class="tempo" id="tempo">0:00 / 0:00</span>
+      <button id="bVoz" title="Ler o texto em voz alta">🔈 Narração</button>
+      <button id="bFull" title="Ecrã inteiro (F)">⛶</button>
+    </div>
+  </div>
+
+  <section class="fontes" id="fontes">
+    <h2>📚 Fontes da informação e das imagens</h2>
+    <p class="n">Todas as fotografias vêm do Wikimedia Commons, que só aceita imagens de licença livre. Clique numa imagem para ver o autor e a licença. As fotografias precisam de internet para aparecer.</p>
+    <table id="tabFontes">
+      <thead><tr><th>Cena</th><th>Informação</th><th>Imagens (autor)</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>Recurso: C. Sofia · EB1/PE de São Martinho · Fontes consultadas a 17/11/2026</footer>
+</div>
+
+<script>
+(function(){
+  // ---------- Dados ----------
+  var F = {
+    vmFunchal:  {t:'Visit Madeira – Funchal', u:'https://visitmadeira.com/pt/onde-ir/madeira/costa-sul/funchal/'},
+    cmMapas:    {t:'Câmara do Funchal – Funchal em Mapas e Números', u:'https://cmfdoc.funchal.pt/images/municipio/edicoes_municipais/Funchal_Mapas_Numeros.pdf'},
+    vmArriaga:  {t:'Visit Madeira – Avenida Arriaga', u:'https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/avenida-arriaga/'},
+    vmCidade:   {t:'Visit Madeira – o Funchal (1508)', u:'https://www.visitmadeira.com/pt-pt/explorar/detalhe/quinta-do-bom-sucesso'},
+    vmSe:       {t:'Visit Madeira – Sé do Funchal', u:'https://visitmadeira.com/pt/o-que-fazer/apaixonados-por-cultura/patrimonio/monumentos-e-arquitetura/se-do-funchal/'},
+    cmBoletim:  {t:'Câmara do Funchal – Boletim Económico (Censos 2021)', u:'https://www.funchal.pt/wp-content/uploads/2023/03/01_Boletim_Economico_do_Funchal_03.2023.pdf'},
+    cmBrasao:   {t:'Câmara do Funchal – Brasão da Cidade', u:'https://funchal.pt/?p=27800'},
+    vpMercado:  {t:'Visit Portugal – Mercado dos Lavradores', u:'https://www.visitportugal.com/pt-pt/content/mercado-dos-lavradores'},
+    vmZona:     {t:'Visit Madeira – Zona Velha', u:'https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/explorar-a-cidade/passeios-publicos/zona-velha/'},
+    vmForte:    {t:'Visit Madeira – Fortaleza de São Tiago', u:'https://www.visitmadeira.com/en/what-to-do/culture-passionates/heritage/monuments-and-architecture/fortress-of-sao-tiago/'},
+    vmFlor:     {t:'Visit Madeira – A Festa da Flor', u:'https://visitmadeira.com/pt/blog/visit-madeira/a-festa-da-flor/'},
+    vmEventos:  {t:'Visit Madeira – Eventos de cartaz', u:'https://visitmadeira.com/pt/a-acontecer/eventos-de-cartaz/'},
+    vmCesto:    {t:'Visit Madeira – Carrinhos de Cesto', u:'https://visitmadeira.com/pt/o-que-fazer/viver-a-cidade-do-funchal/passear-na-cidade/carrinhos-de-cesto/'},
+    pgCesto:    {t:'Portugal Getaways – Carros de Cesto do Monte', u:'https://portugalgetaways.com/pt-pt/destination/madeira/general-articles/toboggan-ride'},
+    vpMonte:    {t:'Visit Portugal – Monte', u:'https://www.visitportugal.com/pt-pt/node/73842'}
+  };
+
+  var I = {
+    por:     {f:'Funchal at Sunset.jpg', a:'Julian Ilcheff Borissoff'},
+    funcho:  {f:'Foeniculum vulgare 003.JPG', a:'H. Zell'},
+    zarco:   {f:'Madeira - Estatua a Joao Gonçalves Zargo - 01.jpg', a:'Xosema'},
+    se:      {f:'Funchal Cathedral, Madeira.jpg', a:'Gerda Arendt'},
+    noite:   {f:'2012 Funchal.jpg', a:'Ladislaus Hoffner'},
+    mapa:    {f:'Funchal freguesias.svg', a:'Wikimedia Commons (dados: DGT/CAOP)'},
+    brasao:  {f:'Coat of arms of Funchal.svg', a:'Wikimedia Commons (insígnia oficial)'},
+    mercado: {f:'Mercado dos Lavradores (Funchal) (26320674409).jpg', a:'VillageHero'},
+    portas:  {f:'Painted doors on Rua de Santa Maria, Funchal, Madeira - Jan 2012.jpg', a:'Stephen Colebourne'},
+    forte:   {f:'Forte de São Tiago - Funchal 06.jpg', a:'H. Zell'},
+    flor:    {f:'Flower decorations during the Flower Festival, Funchal, Maderia, Portugal.jpg', a:'ver página no Commons'},
+    fogo:    {f:'Funchal Fireworks.jpg', a:'Mark Woodbury'},
+    gravura: {f:'Carro de cesto do Monte, gravura (1893).jpg', a:'The Graphic (1893)'},
+    cesto:   {f:'Basket sleds - Carro-de-Cesto, Madeira (16397327440).jpg', a:'Glyn Lowe'},
+    telef:   {f:'Funchal cableway.jpg', a:'Barry Caruth'}
+  };
+
+  function nomeURL(f){ return encodeURIComponent(f.replace(/ /g,'_')); }
+  function imgURL(f, w){ return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + nomeURL(f) + '?width=' + (w||1600); }
+  function pagURL(f){ return 'https://commons.wikimedia.org/wiki/File:' + nomeURL(f); }
+
+  var CENAS = [
+    { nome:'Abertura', dur:9, layout:'full', kb:'pan', shade:'',
+      imgs:[I.por],
+      html:'<span class="kicker rv">Estudo do Meio · 3.º ano</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">O Funchal</h2>' +
+           '<p class="corpo rv" style="--d:.8s">A cidade onde fica a <b>nossa escola</b>.<br>Vamos descobri-la?</p>',
+      fala:'O Funchal. A cidade onde fica a nossa escola. Vamos descobri-la?',
+      fontes:[] },
+
+    { nome:'O nome', dur:12, layout:'full', kb:'in',
+      imgs:[I.funcho],
+      html:'<span class="kicker rv">Origem</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">Porque se chama Funchal?</h2>' +
+           '<p class="corpo rv" style="--d:1s">Quando os navegadores chegaram, o vale estava cheio de <b>funcho</b>, uma planta selvagem com cheiro adocicado.</p>' +
+           '<p class="corpo rv" style="--d:2.4s">Funchal quer dizer <b>«sítio onde há muito funcho»</b>.</p>',
+      fala:'Porque se chama Funchal? Quando os navegadores chegaram, o vale estava cheio de funcho, uma planta selvagem com cheiro adocicado. Funchal quer dizer: sítio onde há muito funcho.',
+      fontes:[F.vmFunchal] },
+
+    { nome:'Zarco', dur:12, layout:'split', fit:'contain', kb:'up',
+      imgs:[I.zarco],
+      html:'<span class="kicker rv">Origem</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">Quem chegou primeiro?</h2>' +
+           '<p class="corpo rv" style="--d:1s"><b>João Gonçalves Zarco</b>, no <b>século XV</b>, por volta de 1424.</p>' +
+           '<p class="corpo rv" style="--d:2.2s">Foi o primeiro capitão do Funchal. A sua estátua está na Avenida Arriaga.</p>',
+      fala:'Quem chegou primeiro? João Gonçalves Zarco, no século quinze, por volta de 1424. Foi o primeiro capitão do Funchal. A sua estátua está na Avenida Arriaga.',
+      fontes:[F.cmMapas, F.vmArriaga] },
+
+    { nome:'1508', dur:13, layout:'full', kb:'out',
+      imgs:[I.se],
+      html:'<span class="kicker rv">A cidade</span>' +
+           '<div class="big rv" style="--d:.3s">1508</div>' +
+           '<p class="corpo rv" style="--d:1s">A <b>21 de agosto de 1508</b>, o rei D. Manuel I deu ao Funchal o título de <b>cidade</b>.</p>' +
+           '<p class="corpo rv" style="--d:2.4s">Por isso, 21 de agosto é o <b>Dia da Cidade</b>. Nessa época construía-se a <b>Sé</b>, que ainda hoje podemos visitar.</p>',
+      fala:'Em 1508, a 21 de agosto, o rei Dom Manuel primeiro deu ao Funchal o título de cidade. Por isso, 21 de agosto é o Dia da Cidade. Nessa época construía-se a Sé, que ainda hoje podemos visitar.',
+      fontes:[F.vmCidade, F.vmSe] },
+
+    { nome:'Habitantes', dur:11, layout:'full', kb:'in',
+      imgs:[I.noite],
+      html:'<span class="kicker rv">A capital da Madeira</span>' +
+           '<div class="big rv" style="--d:.3s"><span data-count="105782">0</span></div>' +
+           '<p class="corpo rv" style="--d:.8s">pessoas viviam no Funchal nos <b>Censos 2021</b>.</p>' +
+           '<p class="corpo rv" style="--d:2.4s">Cerca de <b>4 em cada 10</b> madeirenses vivem no Funchal!</p>',
+      fala:'O Funchal é a capital da Madeira. Nos Censos de 2021, viviam no Funchal cento e cinco mil, setecentas e oitenta e duas pessoas. Cerca de quatro em cada dez madeirenses vivem no Funchal!',
+      fontes:[F.cmBoletim] },
+
+    { nome:'Freguesias', dur:13, layout:'split', fit:'contain', kb:'in', bgWhite:true,
+      imgs:[I.mapa],
+      html:'<span class="kicker rv">Território</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">10 freguesias</h2>' +
+           '<ul class="freg rv" style="--d:1s"><li>Imaculado Coração de Maria</li><li>Monte</li><li>Santa Luzia</li><li>Santa Maria Maior</li><li>Santo António</li>' +
+           '<li>São Gonçalo</li><li class="nossa">⭐ São Martinho</li><li>São Pedro</li><li>São Roque</li><li>Sé</li></ul>' +
+           '<p class="corpo rv" style="--d:2.4s">A nossa escola fica em <b>São Martinho</b>!</p>',
+      fala:'O concelho do Funchal tem dez freguesias. A nossa escola fica na freguesia de São Martinho!',
+      fontes:[F.cmMapas] },
+
+    { nome:'Brasão', dur:13, layout:'split', fit:'contain', kb:'in',
+      imgs:[I.brasao],
+      html:'<span class="kicker rv">Território</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">O brasão do Funchal</h2>' +
+           '<div class="leg">' +
+             '<span class="ic rv" style="--d:1s">🍬</span><span class="rv" style="--d:1s"><b style="color:var(--ouro)">5 pães de açúcar</b> → o açúcar</span>' +
+             '<span class="ic rv" style="--d:2.2s">🍇</span><span class="rv" style="--d:2.2s"><b style="color:var(--ouro)">4 cachos de uvas</b> → o vinho</span>' +
+             '<span class="ic rv" style="--d:3.4s">🏰</span><span class="rv" style="--d:3.4s"><b style="color:var(--ouro)">coroa com 5 torres</b> → é uma cidade</span>' +
+           '</div>',
+      fala:'O brasão do Funchal tem cinco pães de açúcar, que lembram o açúcar. Tem quatro cachos de uvas, que lembram o vinho. E tem uma coroa com cinco torres, que mostra que o Funchal é uma cidade.',
+      fontes:[F.cmBrasao] },
+
+    { nome:'Locais', dur:13, layout:'trio',
+      imgs:[{img:I.mercado, cap:'Mercado dos Lavradores'},{img:I.portas, cap:'Portas pintadas da Zona Velha'},{img:I.forte, cap:'Fortaleza de São Tiago'}],
+      html:'<h2 class="titulo rv">Locais para descobrir</h2>' +
+           '<p class="corpo rv" style="--d:.8s">No <b>Mercado</b> há frutas, flores e peixe. Na <b>Zona Velha</b>, as portas são obras de arte. A <b>Fortaleza</b> amarela defendia a cidade dos corsários.</p>',
+      fala:'Locais para descobrir. No Mercado dos Lavradores há frutas, flores e peixe. Na Zona Velha, as portas das casas são obras de arte. A Fortaleza de São Tiago, amarela, defendia a cidade dos corsários.',
+      fontes:[F.vpMercado, F.vmZona, F.vmForte] },
+
+    { nome:'Festas', dur:13, layout:'duo',
+      imgs:[{img:I.flor, cap:'Festa da Flor'},{img:I.fogo, cap:'Fogo de artifício do Fim do Ano'}],
+      html:'<h2 class="titulo rv">Festas do Funchal</h2>' +
+           '<p class="corpo rv" style="--d:.8s"><b>Festa da Flor</b> na primavera, com o Muro da Esperança · <b>Carnaval</b> com desfiles · <b>Fim do Ano</b> com fogo de artifício sobre a baía.</p>',
+      fala:'Festas do Funchal. A Festa da Flor, na primavera, com o Muro da Esperança feito pelas crianças. O Carnaval, com desfiles alegres. E o Fim do Ano, com um enorme fogo de artifício sobre a baía.',
+      fontes:[F.vmFlor, F.vmEventos] },
+
+    { nome:'Carros de cesto', dur:14, layout:'duo',
+      imgs:[{img:I.gravura, cap:'Gravura de 1893', fit:'contain'},{img:I.cesto, cap:'Hoje'}],
+      html:'<h2 class="titulo rv">Curiosidade: os carros de cesto</h2>' +
+           '<p class="corpo rv" style="--d:.8s">Desde o <b>século XIX</b> que descem do Monte. São de <b>vime e madeira</b>, guiados por dois <b>carreiros</b> vestidos de branco, que travam com as botas de borracha!</p>',
+      fala:'Uma curiosidade: os carros de cesto. Desde o século dezanove que descem do Monte. São feitos de vime e madeira e guiados por dois carreiros vestidos de branco, que travam com as botas de borracha!',
+      fontes:[F.vmCesto, F.pgCesto] },
+
+    { nome:'Teleférico', dur:10, layout:'full', kb:'in',
+      imgs:[I.telef],
+      html:'<span class="kicker rv">Curiosidade</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">O teleférico</h2>' +
+           '<p class="corpo rv" style="--d:1s">Para subir ao Monte, pode apanhar-se o <b>teleférico</b>, que sai da zona histórica e tem uma vista linda sobre a baía.</p>',
+      fala:'Para subir ao Monte, pode apanhar-se o teleférico, que sai da zona histórica do Funchal e tem uma vista linda sobre a baía.',
+      fontes:[F.vpMonte] },
+
+    { nome:'Fim', dur:10, layout:'full', kb:'pan', shade:'',
+      imgs:[I.por],
+      html:'<span class="kicker rv">E agora?</span>' +
+           '<h2 class="titulo rv" style="--d:.3s">Que coisa nova aprendeste sobre o Funchal?</h2>' +
+           '<p class="corpo rv" style="--d:1.2s">Conta a um colega! 🗣️</p>',
+      fala:'E agora? Que coisa nova aprendeste sobre o Funchal? Conta a um colega!',
+      fontes:[] }
+  ];
+
+  // ---------- Construção das cenas ----------
+  var stage = document.getElementById('stage');
+  var startEl = document.getElementById('start');
+
+  function phHTML(img, opts){
+    opts = opts || {};
+    var fit = opts.fit || 'cover';
+    var url = imgURL(img.f, opts.w);
+    var blur = fit === 'contain' && !opts.bgWhite ? '<img class="blur" alt="" src="' + url + '">' : '';
+    var style = opts.bgWhite ? ' style="background:#f3f1ea"' : '';
+    return '<div class="ph ' + (fit==='contain'?'contain ':'') + (opts.kb ? 'kb-' + opts.kb : '') + '"' + style + '>' + blur +
+           '<img class="main" alt="' + img.f.replace(/"/g,'') + '" src="' + url + '">' +
+           '<div class="falha"><div>🖼️ A imagem não carregou (há ligação à internet?)<br><a href="' + pagURL(img.f) + '" target="_blank" rel="noopener">Abrir a imagem no Wikimedia Commons</a></div></div>' +
+           (opts.cap ? '<div class="cap">' + opts.cap + '</div>' : '') + '</div>';
+  }
+
+  function srcHTML(c){
+    var partes = [];
+    if(c.fontes.length){
+      partes.push('<span><span class="lbl">Informação:</span> ' + c.fontes.map(function(f){
+        return '<a href="' + f.u + '" target="_blank" rel="noopener">' + f.t + '</a>'; }).join(' · ') + '</span>');
+    }
+    var imgs = c.imgs.map(function(x){ return x.img || x; });
+    partes.push('<span><span class="lbl">Imagem:</span> ' + imgs.map(function(im){
+      return '<a href="' + pagURL(im.f) + '" target="_blank" rel="noopener">' + im.a + ' / Wikimedia Commons</a>'; }).join(' · ') + '</span>');
+    return '<div class="src">' + partes.join('') + '</div>';
+  }
+
+  function cenaHTML(c){
+    var h = '';
+    if(c.layout === 'full'){
+      h += phHTML(c.imgs[0], {kb:c.kb, w:2000}).replace('class="ph ', 'style="inset:0" class="ph ');
+      h += '<div class="shade' + (c.shade === '' ? '' : '') + '"></div>';
+      h += '<div class="txt">' + c.html + '</div>';
+    } else if(c.layout === 'split'){
+      h += phHTML(c.imgs[0], {fit:c.fit, kb:c.kb, bgWhite:c.bgWhite, w:1200});
+      h += '<div class="painel">' + c.html + '</div>';
+    } else {
+      var cls = c.layout === 'trio' ? 'g3' : 'g2';
+      h += '<div class="grid ' + cls + '">' + c.imgs.map(function(x){
+        return phHTML(x.img, {cap:x.cap, kb:'in', fit:x.fit, w:1100}); }).join('') + '</div>';
+      h += '<div class="rodape">' + c.html + '</div>';
+    }
+    h += srcHTML(c);
+    return h;
+  }
+
+  function ligarErros(el){
+    el.querySelectorAll('img.main').forEach(function(img){
+      img.addEventListener('error', function(){ img.closest('.ph').classList.add('erro'); });
+    });
+  }
+
+  // Pré-carregar imagens
+  Object.keys(I).forEach(function(k){ var im = new Image(); im.src = imgURL(I[k].f, 1600); });
+
+  // ---------- Motor de reprodução ----------
+  var total = CENAS.reduce(function(s,c){ return s + c.dur; }, 0);
+  var inicio = []; (function(){ var acc = 0; CENAS.forEach(function(c){ inicio.push(acc); acc += c.dur; }); })();
+
+  var cur = -1, t = 0, playing = false, last = null, layerAtual = null;
+  var narr = false, aFalar = false, falaFeita = {};
+
+  var barra = document.getElementById('barra');
+  CENAS.forEach(function(c, i){
+    var s = document.createElement('div');
+    s.className = 'seg'; s.style.flex = c.dur; s.title = (i+1) + '. ' + c.nome;
+    s.innerHTML = '<i></i>';
+    s.addEventListener('click', function(){ ir(i); });
+    barra.appendChild(s);
+  });
+  var segs = barra.querySelectorAll('.seg i');
+
+  function ir(i){
+    if(i < 0) i = 0;
+    if(i >= CENAS.length){ // fim
+      pausar(); cur = CENAS.length - 1; t = CENAS[cur].dur; atualizarBarra(); return;
+    }
+    pararFala();
+    cur = i; t = 0;
+    var c = CENAS[i];
+    var layer = document.createElement('div');
+    layer.className = 'scene ' + c.layout;
+    layer.style.setProperty('--dur', c.dur + 's');
+    layer.innerHTML = cenaHTML(c);
+    ligarErros(layer);
+    layer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ pausar(); }); });
+    stage.appendChild(layer);
+    var antigo = layerAtual; layerAtual = layer;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ layer.classList.add('on'); }); });
+    if(antigo){ antigo.classList.remove('on'); setTimeout(function(){ antigo.remove(); }, 900); }
+    if(playing && narr) falar();
+    atualizarBarra();
+  }
+
+  function tocar(){
+    if(cur === CENAS.length - 1 && t >= CENAS[cur].dur){ ir(0); }
+    playing = true; last = null;
+    stage.classList.remove('paused');
+    startEl.style.display = 'none';
+    document.getElementById('bPlay').textContent = '⏸';
+    if(narr && !falaFeita[cur]) falar();
+  }
+  function pausar(){
+    playing = false;
+    stage.classList.add('paused');
+    document.getElementById('bPlay').textContent = '▶';
+    pararFala();
+  }
+
+  // Narração (voz do navegador)
+  var vozPT = null;
+  function escolherVoz(){
+    if(!('speechSynthesis' in window)) return;
+    var vs = speechSynthesis.getVoices();
+    vozPT = vs.filter(function(v){ return /^pt[-_]PT/i.test(v.lang); })[0] ||
+            vs.filter(function(v){ return /^pt/i.test(v.lang); })[0] || null;
+  }
+  if('speechSynthesis' in window){ escolherVoz(); speechSynthesis.onvoiceschanged = escolherVoz; }
+
+  function falar(){
+    if(!('speechSynthesis' in window)) return;
+    speechSynthesis.cancel();
+    var idx = cur;
+    var u = new SpeechSynthesisUtterance(CENAS[idx].fala);
+    u.lang = vozPT ? vozPT.lang : 'pt-PT';
+    if(vozPT) u.voice = vozPT;
+    u.rate = 0.95;
+    aFalar = true;
+    u.onend = function(){ if(cur === idx){ aFalar = false; falaFeita[idx] = true; } };
+    u.onerror = function(){ if(cur === idx){ aFalar = false; } };
+    speechSynthesis.speak(u);
+  }
+  function pararFala(){
+    aFalar = false;
+    if('speechSynthesis' in window) speechSynthesis.cancel();
+  }
+
+  function fmt(s){ s = Math.max(0, Math.floor(s)); return Math.floor(s/60) + ':' + ('0' + (s%60)).slice(-2); }
+  function atualizarBarra(){
+    segs.forEach(function(el, i){
+      var p = i < cur ? 1 : i > cur ? 0 : Math.min(1, t / CENAS[i].dur);
+      el.style.width = (p*100) + '%';
+    });
+    var agora = cur < 0 ? 0 : inicio[cur] + Math.min(t, CENAS[cur].dur);
+    document.getElementById('tempo').textContent = fmt(agora) + ' / ' + fmt(total);
+  }
+
+  function contagens(){
+    if(!layerAtual) return;
+    layerAtual.querySelectorAll('[data-count]').forEach(function(el){
+      var alvo = +el.dataset.count;
+      var p = Math.min(1, Math.max(0, (t - 0.3) / 2.2));
+      p = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(alvo * p).toLocaleString('pt-PT');
+    });
+  }
+
+  function tick(ts){
+    if(playing){
+      if(last !== null) t += (ts - last) / 1000;
+      last = ts;
+      if(t >= CENAS[cur].dur && !(narr && aFalar)){
+        ir(cur + 1);
+      }
+    } else { last = null; }
+    contagens();
+    atualizarBarra();
+    requestAnimationFrame(tick);
+  }
+
+  // ---------- Controlos ----------
+  document.getElementById('bPlay').addEventListener('click', function(){ playing ? pausar() : tocar(); });
+  document.getElementById('bPrev').addEventListener('click', function(){ ir(cur - 1); });
+  document.getElementById('bNext').addEventListener('click', function(){ ir(cur + 1); });
+  startEl.addEventListener('click', tocar);
+  stage.addEventListener('click', function(e){
+    if(e.target.closest('a') || e.target.closest('.start')) return;
+    playing ? pausar() : tocar();
+  });
+  var bVoz = document.getElementById('bVoz');
+  if(!('speechSynthesis' in window)){ bVoz.disabled = true; bVoz.title = 'Este navegador não tem leitura em voz alta'; }
+  bVoz.addEventListener('click', function(){
+    narr = !narr;
+    bVoz.classList.toggle('on', narr);
+    bVoz.textContent = narr ? '🔊 Narração' : '🔈 Narração';
+    if(narr && playing){ falaFeita = {}; falar(); } else { pararFala(); }
+  });
+  document.getElementById('bFull').addEventListener('click', function(){
+    var p = document.getElementById('player');
+    try{
+      if(document.fullscreenElement) document.exitFullscreen();
+      else if(p.requestFullscreen) p.requestFullscreen();
+    }catch(e){}
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if(e.code === 'Space'){ e.preventDefault(); playing ? pausar() : tocar(); }
+    else if(e.key === 'ArrowRight') ir(cur + 1);
+    else if(e.key === 'ArrowLeft') ir(cur - 1);
+    else if(e.key === 'f' || e.key === 'F') document.getElementById('bFull').click();
+  });
+
+  // ---------- Tabela de fontes ----------
+  var tb = document.querySelector('#tabFontes tbody');
+  CENAS.forEach(function(c, i){
+    var imgs = c.imgs.map(function(x){ return x.img || x; });
+    var visto = {};
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + (i+1) + '. ' + c.nome + '</td>' +
+      '<td>' + (c.fontes.length ? c.fontes.map(function(f){ return '<a href="' + f.u + '" target="_blank" rel="noopener">' + f.t + '</a>'; }).join('<br>') : '—') + '</td>' +
+      '<td>' + imgs.filter(function(im){ if(visto[im.f]) return false; visto[im.f] = 1; return true; }).map(function(im){
+        return '<a href="' + pagURL(im.f) + '" target="_blank" rel="noopener">' + im.f + '</a> (' + im.a + ')'; }).join('<br>') + '</td>';
+    tb.appendChild(tr);
+  });
+
+  ir(0);
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

@@ -697,5 +697,24 @@
       "Pensamento computacional",
       "Construção 3D"
     ]
+  },
+  {
+    "id": "2026-11-17-3ano-pesquisa-funchal",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Pesquisa: o Funchal",
+    "descricao": "Pesquisa orientada em grupos (3 pares e 1 trio): cada grupo lê a sua ficha-fonte (origem, a cidade, território, cultura), responde às perguntas e, no fim, a turma completa no painel o Bilhete de Identidade do Funchal. Fontes com ligações clicáveis e guião do professor com respostas esperadas.",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-11-17",
+    "semana": "16–20 nov. 2026",
+    "url": "jogos/2026-11-16/2026-11-17_3ano_EstudoDoMeio_PesquisaFunchal_v1.html",
+    "duracao": "30 min",
+    "estado": "em validação",
+    "tipo": "Pesquisa orientada",
+    "ilustracao": {
+      "tipo": "natureza"
+    },
+    "resumo": "Investiga o Funchal com o teu grupo e ajuda a completar o BI da cidade!",
+    "focoTic": "Pesquisa de informação"
   }
 ]
