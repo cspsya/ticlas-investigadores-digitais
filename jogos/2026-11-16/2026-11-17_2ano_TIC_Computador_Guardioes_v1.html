@@ -31,7 +31,7 @@ svg{display:block}
 #decor span{position:absolute;width:calc(var(--u)*4.6);opacity:.32;animation:flutua 9s ease-in-out infinite}
 @keyframes flutua{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-14px) rotate(8deg)}}
 
-.moldura{position:relative;z-index:1;max-width:1500px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:calc(var(--u)*.8) calc(var(--u)*1.2) 0}
+.moldura{position:relative;z-index:1;max-width:calc(var(--u)*112);margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding:calc(var(--u)*.8) calc(var(--u)*1.2) 0}
 header.barra{display:flex;align-items:center;gap:calc(var(--u)*.8);flex-wrap:wrap}
 .marca{display:flex;align-items:center;gap:calc(var(--u)*.7);flex:1;min-width:200px}
 .marca .selo{width:calc(var(--u)*4.4);height:calc(var(--u)*4.4);border-radius:50%;background:#fff;border:3px solid var(--t-1l);overflow:hidden;flex:none}
@@ -241,10 +241,10 @@ body.com-sel .alvo:not(.cheio){outline:4px dashed var(--t-2);outline-offset:3px}
 .ranhura .numero{font-family:var(--ft);font-weight:900;font-size:calc(var(--u)*3.4);color:#fff;background:var(--t-2);width:calc(var(--u)*5.2);height:calc(var(--u)*5.2);min-width:40px;min-height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 0 var(--t-2d)}
 .ranhura .pontos{display:flex;gap:4px}
 .ranhura .pontos i{width:calc(var(--u)*1.2);height:calc(var(--u)*1.2);border-radius:50%;background:var(--t-2)}
-.ranhura .alvo{width:calc(var(--u)*16.5);aspect-ratio:3/2;border:4px dashed #b9c6d8;border-radius:20px;background:#fff;overflow:hidden;display:flex}
+.ranhura .alvo{width:calc(var(--u)*16);aspect-ratio:3/2;border:4px dashed #b9c6d8;border-radius:20px;background:#fff;overflow:hidden;display:flex}
 .ranhura .alvo svg{width:100%;height:100%}
 .ranhura .alvo.cheio{border:4px solid var(--ok)}
-.ordenar .bandeja .cartao{width:calc(var(--u)*16.5);height:auto;aspect-ratio:3/2;padding:0;overflow:hidden}
+.ordenar .bandeja .cartao{width:calc(var(--u)*16);height:auto;aspect-ratio:3/2;padding:0;overflow:hidden}
 .seta-seq{align-self:center;color:var(--t-1);width:calc(var(--u)*3)}
 
 /* apanhar (bónus) */
@@ -268,7 +268,7 @@ body.com-sel .alvo:not(.cheio){outline:4px dashed var(--t-2);outline-offset:3px}
 /* fim de missão / janelas */
 .veu{position:fixed;inset:0;background:rgba(45,49,66,.45);display:flex;align-items:center;justify-content:center;z-index:500;padding:16px;animation:aparece .2s}
 @keyframes aparece{from{opacity:0}to{opacity:1}}
-.janela{background:#fff;border-radius:30px;padding:calc(var(--u)*2);max-width:min(96vw,1000px);max-height:94vh;overflow:auto;box-shadow:0 30px 60px rgba(0,0,0,.3);border:4px solid var(--t-1l)}
+.janela{background:#fff;border-radius:30px;padding:calc(var(--u)*2);max-width:min(96vw,calc(var(--u)*90));overflow-x:hidden;max-height:94vh;overflow:auto;box-shadow:0 30px 60px rgba(0,0,0,.3);border:4px solid var(--t-1l)}
 .fim-m{display:flex;align-items:center;gap:calc(var(--u)*2.4)}
 .fim-m .mascote{width:calc(var(--u)*24)}
 .grandes-estrelas{display:flex;gap:calc(var(--u)*1);margin-bottom:calc(var(--u)*2)}
@@ -293,7 +293,8 @@ body.com-sel .alvo:not(.cheio){outline:4px dashed var(--t-2);outline-offset:3px}
 .demo-caixa .d-el.sombraD svg{filter:brightness(0) opacity(.8)}
 .demo-caixa .d-el.redondo{border-radius:50%;color:#fff;border:0}
 .demo-caixa .d-el.redondo svg{width:60%;height:60%}
-.guia-prof{margin-top:calc(var(--u)*1.2);color:var(--muted);font-weight:700;font-size:calc(var(--u)*1.35);max-width:70ch}
+.demo>div{width:calc(var(--u)*46);min-width:320px;max-width:100%}
+.guia-prof{margin-top:calc(var(--u)*1.2);color:var(--muted);font-weight:700;font-size:calc(var(--u)*1.35);max-width:100%}
 .guia-prof b{color:var(--t-1d)}
 
 /* painel do professor */
@@ -445,6 +446,7 @@ PECA.monitor = (o = {}) => {
   let ecra;
   if (o.desligado) ecra = `<rect x="15" y="19" width="90" height="56" rx="4" fill="#26324a"/><path d="M19 22 L46 22 L24 60 L19 60Z" fill="#fff" opacity=".08"/>`;
   else if (o.avaria) ecra = `<rect x="15" y="19" width="90" height="56" rx="4" fill="#fff3f0"/><path d="M22 60 L38 36 L50 52 L64 28 L76 50 L92 30" fill="none" stroke="#e5484d" stroke-width="5" stroke-linejoin="round"/><path d="M84 30h8v8" fill="none" stroke="#e5484d" stroke-width="5"/>`;
+  else if (o.ambiente) ecra = `<rect x="15" y="19" width="90" height="56" rx="4" fill="#4f9be0"/><path d="M15 50 Q50 34 105 46 V75 H15Z" fill="#6fb3ec"/><g stroke="${O}" stroke-width="1"><path d="M21 25 h6 l2 2 h7 v9 h-15z" fill="#ffd34e"/><path d="M21 40 h6 l2 2 h7 v9 h-15z" fill="#ffd34e"/><rect x="21" y="55" width="13" height="10" rx="2" fill="#ef6c8a"/><rect x="40" y="25" width="13" height="11" rx="2" fill="#43a047"/></g><rect x="15" y="68" width="90" height="7" fill="#1f2a44"/><rect x="18" y="69.5" width="5" height="4" rx="1" fill="#4fc3f7"/><rect x="27" y="69.5" width="5" height="4" rx="1" fill="#ffd34e"/><rect x="36" y="69.5" width="5" height="4" rx="1" fill="#ef6c8a"/>`;
   else if (o.desenho) ecra = `<rect x="15" y="19" width="90" height="56" rx="4" fill="#fff"/><path d="M40 62 V46 L52 36 L64 46 V62Z" fill="#ffb74d" stroke="${O}" stroke-width="2"/><path d="M37 47 L52 33 L67 47" fill="none" stroke="#e5484d" stroke-width="4" stroke-linecap="round"/><rect x="48" y="51" width="8" height="11" fill="#8d6e63"/><circle cx="84" cy="32" r="6" fill="#ffd34e"/><path d="M15 66 H105 V75 H15Z" fill="#7cc576"/>`;
   else ecra = `<rect x="15" y="19" width="90" height="56" rx="4" fill="#9edcff"/><circle cx="86" cy="33" r="7" fill="#ffd34e"/><path d="M15 64 Q40 46 62 60 T105 56 V75 H15Z" fill="#7cc576"/><path d="M15 70 Q50 60 105 68 V75 H15Z" fill="#5daf5a"/><path d="M30 37 q3-7 10-3 q5-6 11 0 q6 0 5 6 h-25 q-4-1-1-3z" fill="#fff"/><path d="M19 22 L46 22 L24 60 L19 60Z" fill="#fff" opacity=".2"/>`;
   return `${sombra(60, 106, 34)}<path d="M50 80h20l5 18H45z" fill="#7d8fae" ${K}/><rect x="32" y="96" width="56" height="9" rx="4.5" fill="#5b6d8f" ${K}/><rect x="8" y="12" width="104" height="72" rx="9" fill="#46597d" ${K}/>${ecra}<circle cx="103" cy="79" r="2.2" fill="${o.desligado ? '#7d8fae' : '#7cf29a'}"/>`;
@@ -694,7 +696,30 @@ CENA.ir_beber = () => fundo({ janela: 186 }) + prateleira(14, 96, 50) + mesa(96,
 CENA.ligar = () => fundo({ quadro: 16 }) + aoComputador(Object.assign({ humor: 'feliz', mE: [-16, -4], mD: [34, -27], dobraD: 4 }, C4), { kidX: 92, torreX: 102, ecra: { desligado: true } }) + `<g transform="translate(128 77)">${tracos(0, 0, -30, '#3a8de0')}</g>`;
 CENA.ligado = () => fundo({ quadro: 16 }) + aoComputador(Object.assign({ humor: 'alegre', mE: [26, -14], mD: [38, -14] }, C4)) + brilhos([[150, 30, 5], [214, 42, 5]]);
 CENA.prof_sinal = () => fundo({ quadro: 16 }) + aoComputador(Object.assign({ humor: 'feliz', mE: [-4, -6], mD: [4, -6], dobraE: -10, dobraD: 10 }, C4), { ecra: { desligado: true } }) + crianca(Object.assign({ x: 50, y: 128, humor: 'alegre', mD: [26, -96], mE: [-18, -36], dobraD: 4 }, PROF)) + `<g transform="translate(78 26)">${tracos(0, 0, 20, '#43a047')}</g>`;
-const cena = n => svg('0 0 240 160', CENA[n](), 'cena');
+
+/* ---------- HISTÓRIAS PARA ORDENAR (cenas aproximadas, a mesma personagem em cada história) ---------- */
+const portaAberta = x => `<rect x="${x + 8}" y="18" width="34" height="13" rx="3" fill="#3a8de0" stroke="${O}" stroke-width="1.6"/>${colocar(PECA.monitor(), x + 18, 18, .12)}<rect x="${x}" y="34" width="50" height="92" rx="3" fill="#a86d36" stroke="${O}" stroke-width="2"/><rect x="${x + 5}" y="39" width="40" height="86" fill="#fbecd3"/><path d="M${x + 45} 39 L${x + 62} 31 V132 L${x + 45} 125Z" fill="#d39556" stroke="${O}" stroke-width="2"/><circle cx="${x + 57}" cy="84" r="2.6" fill="#ffc107" stroke="${O}" stroke-width="1.2"/>`;
+const ampulheta = `<path d="M-6 -9 H6 M-6 9 H6" stroke="${O}" stroke-width="2.4" stroke-linecap="round"/><path d="M-5 -9 Q-5 -2 0 0 Q5 -2 5 -9Z M-5 9 Q-5 2 0 0 Q5 2 5 9Z" fill="#fff3c4" stroke="${O}" stroke-width="1.6"/><path d="M-3 7 Q0 3 3 7Z" fill="#e0a83a"/>`;
+const copo = `<path d="M-7 -9 H7 L5 9 H-5Z" fill="#e6f6ff" stroke="${O}" stroke-width="1.8" stroke-linejoin="round"/><path d="M-6 -2 H6 L5 9 H-5Z" fill="#4fb3f6"/>`;
+const setaChao = (x1, x2, y, cor = '#43a047') => `<path d="M${x1} ${y} H${x2 - 6}" stroke="${cor}" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 6"/><path d="M${x2 - 8} ${y - 7} L${x2} ${y} L${x2 - 8} ${y + 7}Z" fill="${cor}"/>`;
+const setaDupla = (x1, x2, y, cor = '#3a8de0') => `<path d="M${x1 + 6} ${y} H${x2 - 6}" stroke="${cor}" stroke-width="3.4" stroke-dasharray="6 5" stroke-linecap="round"/><path d="M${x1 + 8} ${y - 6} L${x1} ${y} L${x1 + 8} ${y + 6}Z M${x2 - 8} ${y - 6} L${x2} ${y} L${x2 - 8} ${y + 6}Z" fill="${cor}"/>`;
+const balaoFala = (x, y, conteudo) => `<g transform="translate(${x} ${y})"><path d="M-17 -15 H17 Q22 -15 22 -10 V8 Q22 13 17 13 H-2 L-10 21 L-8 13 H-17 Q-22 13 -22 8 V-10 Q-22 -15 -17 -15Z" fill="#fff" stroke="${O}" stroke-width="2"/>${conteudo}</g>`;
+const VISTO = `<circle r="9" fill="#2f9e5b"/><path d="M-4.5 0 L-1.5 3.5 L5 -3.5" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>`;
+const sentado = (k, o = {}) => aoComputador(Object.assign({ humor: 'feliz', mE: [-4, -6], mD: [4, -6], dobraE: -10, dobraD: 10 }, k, o.kid || {}), o.posto || { ecra: { desligado: true } });
+const aTrabalhar = (k, ecra = { desenho: true }) => aoComputador(Object.assign({ humor: 'alegre', mE: [24, -14], mD: [36, -14] }, k), { ecra });
+CENA.h_entrar = () => fundo({ quadro: 150 }) + portaAberta(12) + crianca(Object.assign({ x: 112, y: 128, pernas: 'anda', humor: 'feliz', mE: [-17, -30], mD: [17, -30] }, C3)) + `<g fill="#c99c6b" opacity=".6"><ellipse cx="84" cy="136" rx="5" ry="2.4"/><ellipse cx="70" cy="142" rx="5" ry="2.4"/></g>` + setaChao(130, 176, 142);
+CENA.h_sentar = () => fundo({ quadro: 16 }) + sentado(C3) + balaoPensa(82, 30, ampulheta, 15);
+CENA.h_trabalhar = () => fundo({ quadro: 16 }) + aTrabalhar(C3) + coracao(198, 30, 1.2) + brilhos([[214, 48, 5]]);
+CENA.h_arrumar = () => fundo({ janela: 186 }) + mesa(96, 132) + posto(96, { ecra: { desligado: true } }) + cadeira(184, 104) + crianca(Object.assign({ x: 130, y: 128, humor: 'alegre', mE: [32, -52], mD: [40, -48], dobraE: -4, dobraD: 4 }, C3)) + setaChao(150, 206, 142) + brilhos([[118, 52, 5]]);
+CENA.h_sede = () => fundo({ janela: 186 }) + aTrabalhar(Object.assign({}, C2, { humor: 'preocupado' })) + balaoPensa(84, 28, copo, 16);
+CENA.h_beber = () => fundo({ janela: 18 }) + mesa(150, 84) + colocar(PECA.monitor({ desenho: true }), 168, 50, .42) + colocar(PECA.teclado(), 168, 72, .3) + crianca(Object.assign({ x: 78, y: 128, humor: 'fechados', mE: [-16, -32], mD: [14, -50], dobraD: 8, extra: garrafa(16, -50, -72, .7) }, C2)) + setaDupla(100, 152, 116);
+CENA.h_voltar = () => fundo({ janela: 186 }) + aTrabalhar(C2) + brilhos([[200, 30, 5], [214, 50, 4]]);
+CENA.h_sentar2 = () => fundo({ quadro: 16 }) + sentado(C4) + balaoPensa(82, 30, ampulheta, 15);
+CENA.h_sinal = () => fundo({ quadro: 150 }) + sentado(C4, { kid: { humor: 'alegre' } }) + crianca(Object.assign({ x: 44, y: 128, humor: 'alegre', mD: [24, -98], mE: [-18, -36], dobraD: 4 }, PROF)) + balaoFala(86, 26, VISTO);
+CENA.h_ligar = () => fundo({ quadro: 160 }) + `<rect x="0" y="118" width="240" height="10" fill="#d39556" stroke="${O}" stroke-width="2"/>` + colocar(PECA.monitor({ desligado: true }), 0, 38, .72) + colocar(PECA.torre(), 94, 6, 1) + `<circle cx="154" cy="64" r="15" fill="none" stroke="#3a8de0" stroke-width="3" opacity=".7"/><circle cx="154" cy="64" r="22" fill="none" stroke="#3a8de0" stroke-width="2.4" opacity=".4"/>` + `<g transform="translate(${154 - 22 * .62} ${64 - 2 * .62}) scale(.62)">${MAO.replace(/<svg[^>]*>|<\/svg>/g, '')}</g>`;
+CENA.h_ligado = () => fundo({ quadro: 16 }) + aTrabalhar(C4, { ambiente: true }) + brilhos([[150, 30, 5], [214, 42, 5]]);
+const CENA_VB = { h_entrar: '0 10 210 140', h_sentar: '50 22 180 120', h_trabalhar: '54 22 180 120', h_arrumar: '58 22 180 120', h_sede: '50 16 180 120', h_beber: '0 6 225 150', h_voltar: '54 22 180 120', h_sentar2: '50 22 180 120', h_sinal: '0 8 225 150', h_ligar: '0 2 210 140', h_ligado: '54 22 180 120' };
+const cena = n => svg(CENA_VB[n] || '0 0 240 160', CENA[n](), 'cena');
 const peca = (n, o) => svg('0 0 120 120', (PECA[n] || PROG[n] || FUNC[n] || INTRUSO[n])(o), 'peca');
 
 /* =====================================================================
@@ -712,7 +737,7 @@ const MASCOTE = JSON.parse(document.getElementById('mascote').textContent);
 const TEMAS = {
   neutro: { nome: 'Neutro (Investigadores)', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e6f3f5'], d: ['lupa', 'estrela'], a: '' },
   regresso: { nome: 'Regresso às aulas', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e9f2fb'], d: ['lapis', 'estrela'], a: 'lapis' },
-  outono: { nome: 'Outono', c: ['#b0632a', '#6e3a14', '#f8e6d6', '#5f8a2a', '#43631b', '#fff8ef', '#f6e3cf'], d: ['folha', 'castanha'], a: 'folha' },
+  outono: { nome: 'Outono', c: ['#b0632a', '#6e3a14', '#f8e6d6', '#5f8a2a', '#43631b', '#fff8ef', '#f6e3cf'], d: ['folha'], a: 'folha' },
   paopordeus: { nome: 'Pão-por-Deus', c: ['#a8612e', '#663814', '#f6e5d6', '#c9862b', '#8f5b14', '#fff8ef', '#f5e4d0'], d: ['folha', 'castanha'], a: 'castanha' },
   saomartinho: { nome: 'São Martinho', c: ['#8b4a2b', '#4f2814', '#f3e1d4', '#d27424', '#9a5212', '#fff7ef', '#f3dfcc'], d: ['castanha', 'folha'], a: 'castanha' },
   natal: { nome: 'Natal', c: ['#2e7d4f', '#1b4d30', '#e2f3e8', '#c8323c', '#8f1f27', '#fffaf3', '#e7f2ea'], d: ['arvore', 'estrela', 'floco', 'presente'], a: 'presente' },
@@ -901,7 +926,10 @@ const FRASE = {
   ajuda: 'Ponho o dedo no ar para pedir ajuda.', comer: 'Como bolachas ao computador.',
   respeitar: 'Cada um trabalha no seu computador.', colega: 'Mexo no computador do colega.',
   sentar: 'Sento-me e espero.', trabalhar: 'Trabalho com cuidado.', sede: 'Tenho sede.',
-  ir_beber: 'Bebo água longe do computador.', prof_sinal: 'A professora dá o sinal.', ligar: 'Ligo o computador.', ligado: 'Começo a trabalhar.'
+  ir_beber: 'Bebo água longe do computador.', prof_sinal: 'A professora dá o sinal.', ligar: 'Ligo o computador.', ligado: 'Começo a trabalhar.',
+  h_entrar: 'Entro na sala com calma.', h_sentar: 'Sento-me e espero.', h_trabalhar: 'Trabalho com cuidado.', h_arrumar: 'No fim, arrumo a cadeira.',
+  h_sede: 'Tenho sede.', h_beber: 'Bebo água longe do computador.', h_voltar: 'Volto a trabalhar.',
+  h_sentar2: 'Sento-me e espero.', h_sinal: 'A professora dá o sinal.', h_ligar: 'Carrego uma vez no botão.', h_ligado: 'Começo a trabalhar.'
 };
 const ESCREVER = ['rato', 'teclado', 'monitor', 'colunas', 'microfone', 'impressora'];
 // cartão com imagem e legenda
@@ -927,9 +955,9 @@ const REGRAS = [
   { c: 'respeitar', ok: true }, { c: 'colega', ok: false, par: 'respeitar' }
 ];
 const SEQUENCIAS = [
-  ['entrar_calma', 'sentar', 'trabalhar', 'arrumar'],
-  ['sede', 'ir_beber', 'trabalhar'],
-  ['sentar', 'prof_sinal', 'ligar', 'ligado']
+  ['h_entrar', 'h_sentar', 'h_trabalhar', 'h_arrumar'],
+  ['h_sede', 'h_beber', 'h_voltar'],
+  ['h_sentar2', 'h_sinal', 'h_ligar', 'h_ligado']
 ];
 
 /* artes compostas para os cestos */
@@ -1196,14 +1224,14 @@ const DEMOS = {
   ordem(c, mao, espera) {
     const nums = [0, 1, 2].map(i => { const n = el(c, 10 + i * 29, 3, 22, 12, `<b style="font-family:var(--ft);font-size:22px;color:#E8834A">${i + 1}</b>`); n.style.border = '0'; n.style.background = 'none'; return n; });
     const zs = [0, 1, 2].map(i => el(c, 6 + i * 31, 16, 26, 30, '', 'vazio'));
-    const cs = [el(c, 6, 62, 26, 30, cena('trabalhar')), el(c, 37, 62, 26, 30, cena('entrar_calma')), el(c, 68, 62, 26, 30, cena('arrumar'))];
+    const cs = [el(c, 6, 62, 26, 30, cena('h_trabalhar')), el(c, 37, 62, 26, 30, cena('h_entrar')), el(c, 68, 62, 26, 30, cena('h_arrumar'))];
     cs.forEach(x => { x.style.padding = '0'; x.style.overflow = 'hidden'; });
     return () => {
       zs.forEach(z => { z.innerHTML = ''; z.classList.remove('ok'); }); cs.forEach(x => { x.style.transition = 'none'; x.style.transform = ''; x.classList.remove('esconde'); });
       const it = cs[1], [x1, y1] = centro(c, it), [x2, y2] = centro(c, zs[0]);
       moverMao(mao, [[c.clientWidth * .9, c.clientHeight, 0], [x1, y1, .25], [x1, y1, .35], [x2, y2, .8], [x2, y2, 1]], 2800);
       espera(980, () => { it.style.transition = 'transform 1.25s ease-in-out'; it.style.transform = `translate(${x2 - x1}px,${y2 - y1}px)`; });
-      espera(2300, () => { it.classList.add('esconde'); zs[0].innerHTML = cena('entrar_calma'); zs[0].style.padding = '0'; zs[0].style.overflow = 'hidden'; zs[0].classList.add('ok'); });
+      espera(2300, () => { it.classList.add('esconde'); zs[0].innerHTML = cena('h_entrar'); zs[0].style.padding = '0'; zs[0].style.overflow = 'hidden'; zs[0].classList.add('ok'); });
     };
   },
   apanhar(c, mao, espera) {
@@ -1439,7 +1467,7 @@ JOGOS.escrever = area => {
 
 // Bónus · Primeiro, depois… (ordenar imagens com frases)
 JOGOS.ordem = area => {
-  const seqs = apoio() ? [SEQUENCIAS[0].filter(x => x !== 'sentar'), SEQUENCIAS[1]] : SEQUENCIAS;
+  const seqs = apoio() ? [SEQUENCIAS[0].filter(x => x !== 'h_sentar'), SEQUENCIAS[1]] : SEQUENCIAS;
   const total = seqs.reduce((s, q) => s + q.length - (apoio() ? 1 : 0), 0); let feitos = 0, s = 0; progresso(total);
   const cartaCena = c => h('div', { class: 'cena-leg' }, h('div', { class: 'arte', html: cena(c) }), h('span', null, FRASE[c]));
   const mostrar = () => {
