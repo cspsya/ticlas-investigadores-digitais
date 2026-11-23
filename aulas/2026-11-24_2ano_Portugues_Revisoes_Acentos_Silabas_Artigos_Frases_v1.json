@@ -1,0 +1,895 @@
+{
+  "id": "ticlas-2ano-revisoes-portugues-acentos-silabas-artigos-frases",
+  "titulo": "Revisões de Português: acentos, sílabas, artigos e frases",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-24",
+  "descricao": "Revisões: acentos gráficos (agudo, grave, circunflexo) e til, antónimos e sinónimos, classificação das palavras quanto ao número de sílabas, determinantes artigos (definidos e indefinidos) e construção de frases",
+  "resumo": "Missão revisões: acentos, sílabas, artigos, contrários e sinónimos. Ajuda o Ticl@s!",
+  "focoTic": [
+    "Teclado: acentos e til",
+    "Rato: clicar e arrastar",
+    "Teclado: escrita de frases"
+  ],
+  "objetivo": "Rever os acentos e o til, os antónimos e os sinónimos, as sílabas, os artigos e a construção de frases.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "completar",
+      "visual": "baloes",
+      "titulo": "Balões dos acentos",
+      "instrucao": "Rebenta o balão com a palavra bem escrita.",
+      "itens": [
+        {
+          "frase": "Comi ___ ao lanche.",
+          "emoji": "🍞",
+          "certa": "pão",
+          "erradas": [
+            "pao",
+            "pâo"
+          ],
+          "explicacao": "pão leva til (~)."
+        },
+        {
+          "frase": "O ___ está cheio de nuvens.",
+          "emoji": "☁️",
+          "certa": "céu",
+          "erradas": [
+            "ceu",
+            "cêu"
+          ],
+          "explicacao": "céu leva acento agudo (´)."
+        },
+        {
+          "frase": "A ___ fez um bolo de laranja.",
+          "emoji": "👵",
+          "certa": "avó",
+          "erradas": [
+            "avô",
+            "avo"
+          ],
+          "explicacao": "A avó (senhora) leva acento agudo (´). O avô (senhor) leva acento circunflexo (^)."
+        },
+        {
+          "frase": "O meu ___ lê o jornal.",
+          "emoji": "👴",
+          "certa": "avô",
+          "erradas": [
+            "avó",
+            "avo"
+          ],
+          "explicacao": "O avô (senhor) leva acento circunflexo (^)."
+        },
+        {
+          "frase": "A ___ vermelha é doce.",
+          "emoji": "🍎",
+          "certa": "maçã",
+          "erradas": [
+            "maça",
+            "maca"
+          ],
+          "explicacao": "maçã: tem ç e leva til (~) no último a."
+        },
+        {
+          "frase": "O ___ canta no ramo.",
+          "emoji": "🐦",
+          "certa": "pássaro",
+          "erradas": [
+            "passaro",
+            "pâssaro"
+          ],
+          "explicacao": "pássaro leva acento agudo (´)."
+        },
+        {
+          "frase": "Amanhã vou ___ escola.",
+          "emoji": "🏫",
+          "certa": "à",
+          "erradas": [
+            "á",
+            "a"
+          ],
+          "explicacao": "à = a + a. Leva acento grave (`)."
+        },
+        {
+          "frase": "O ___ voa por cima das nuvens.",
+          "emoji": "✈️",
+          "certa": "avião",
+          "erradas": [
+            "aviao",
+            "aviâo"
+          ],
+          "explicacao": "avião leva til (~)."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos acentos",
+      "instrucao": "Arrasta cada palavra para a caixa do sinal que tem.",
+      "caixas": [
+        "Acento agudo ´",
+        "Acento circunflexo ^",
+        "Til ~"
+      ],
+      "itens": [
+        [
+          "café",
+          "Acento agudo ´"
+        ],
+        [
+          "sofá",
+          "Acento agudo ´"
+        ],
+        [
+          "árvore",
+          "Acento agudo ´"
+        ],
+        [
+          "avô",
+          "Acento circunflexo ^"
+        ],
+        [
+          "pêssego",
+          "Acento circunflexo ^"
+        ],
+        [
+          "lâmpada",
+          "Acento circunflexo ^"
+        ],
+        [
+          "mão",
+          "Til ~"
+        ],
+        [
+          "limão",
+          "Til ~"
+        ],
+        [
+          "irmã",
+          "Til ~"
+        ]
+      ]
+    },
+    {
+      "tipo": "copiar",
+      "titulo": "Teclado dos acentos",
+      "instrucao": "Escreve a palavra. Olha para as teclas: primeiro o acento, depois a letra.",
+      "itens": [
+        {
+          "palavra": "pão",
+          "emoji": "🍞"
+        },
+        {
+          "palavra": "café"
+        },
+        {
+          "palavra": "avô",
+          "emoji": "👴"
+        },
+        {
+          "palavra": "maçã",
+          "emoji": "🍎"
+        },
+        {
+          "palavra": "lâmpada",
+          "emoji": "💡"
+        }
+      ]
+    },
+    {
+      "tipo": "escrever",
+      "titulo": "Põe o acento",
+      "instrucao": "Falta o acento ou o til. Escreve a palavra bem escrita.",
+      "itens": [
+        {
+          "pergunta": "Escreve bem: «sofa»",
+          "emoji": "🛋️",
+          "resposta": "sofá",
+          "dica": "Leva acento agudo (´) no último a."
+        },
+        {
+          "pergunta": "Escreve bem: «cao»",
+          "emoji": "🐶",
+          "resposta": "cão",
+          "dica": "Leva til (~) no a."
+        },
+        {
+          "pergunta": "Escreve bem: «pessego»",
+          "emoji": "🍑",
+          "resposta": "pêssego",
+          "dica": "Leva acento circunflexo (^) no primeiro e."
+        },
+        {
+          "pergunta": "Escreve bem: «lapis»",
+          "emoji": "✏️",
+          "resposta": "lápis",
+          "dica": "Leva acento agudo (´) no a."
+        },
+        {
+          "pergunta": "Escreve bem: «limao»",
+          "emoji": "🍋",
+          "resposta": "limão",
+          "dica": "Leva til (~) no a."
+        },
+        {
+          "pergunta": "Escreve bem: «bebe» (o menino pequenino)",
+          "emoji": "👶",
+          "resposta": "bebé",
+          "dica": "Leva acento agudo (´) no último e."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas das sílabas",
+      "instrucao": "Conta as sílabas e arrasta cada palavra para a caixa certa.",
+      "caixas": [
+        "Monossílaba (1)",
+        "Dissílaba (2)",
+        "Trissílaba (3)",
+        "Polissílaba (4 ou mais)"
+      ],
+      "itens": [
+        [
+          "sol",
+          "Monossílaba (1)"
+        ],
+        [
+          "pão",
+          "Monossílaba (1)"
+        ],
+        [
+          "mar",
+          "Monossílaba (1)"
+        ],
+        [
+          "casa",
+          "Dissílaba (2)"
+        ],
+        [
+          "livro",
+          "Dissílaba (2)"
+        ],
+        [
+          "lápis",
+          "Dissílaba (2)"
+        ],
+        [
+          "sapato",
+          "Trissílaba (3)"
+        ],
+        [
+          "janela",
+          "Trissílaba (3)"
+        ],
+        [
+          "macaco",
+          "Trissílaba (3)"
+        ],
+        [
+          "borboleta",
+          "Polissílaba (4 ou mais)"
+        ],
+        [
+          "bicicleta",
+          "Polissílaba (4 ou mais)"
+        ],
+        [
+          "televisão",
+          "Polissílaba (4 ou mais)"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião das sílabas",
+      "instrucao": "Conta as sílabas e leva o avião até à nuvem certa.",
+      "itens": [
+        {
+          "pergunta": "Como se classifica «flor»?",
+          "emoji": "🌸",
+          "certa": "monossílaba",
+          "erradas": [
+            "dissílaba",
+            "trissílaba"
+          ],
+          "explicacao": "flor: 1 sílaba → monossílaba."
+        },
+        {
+          "pergunta": "Como se classifica «mesa»?",
+          "emoji": "🪑",
+          "certa": "dissílaba",
+          "erradas": [
+            "monossílaba",
+            "trissílaba"
+          ],
+          "explicacao": "me-sa: 2 sílabas → dissílaba."
+        },
+        {
+          "pergunta": "Como se classifica «árvore»?",
+          "emoji": "🌳",
+          "certa": "trissílaba",
+          "erradas": [
+            "dissílaba",
+            "polissílaba"
+          ],
+          "explicacao": "ár-vo-re: 3 sílabas → trissílaba."
+        },
+        {
+          "pergunta": "Como se classifica «chocolate»?",
+          "emoji": "🍫",
+          "certa": "polissílaba",
+          "erradas": [
+            "trissílaba",
+            "dissílaba"
+          ],
+          "explicacao": "cho-co-la-te: 4 sílabas → polissílaba."
+        },
+        {
+          "pergunta": "Como se classifica «mão»?",
+          "emoji": "✋",
+          "certa": "monossílaba",
+          "erradas": [
+            "dissílaba",
+            "trissílaba"
+          ],
+          "explicacao": "mão: 1 sílaba → monossílaba."
+        },
+        {
+          "pergunta": "Como se classifica «escola»?",
+          "emoji": "🏫",
+          "certa": "trissílaba",
+          "erradas": [
+            "dissílaba",
+            "polissílaba"
+          ],
+          "explicacao": "es-co-la: 3 sílabas → trissílaba."
+        },
+        {
+          "pergunta": "Como se classifica «hipopótamo»?",
+          "emoji": "🦛",
+          "certa": "polissílaba",
+          "erradas": [
+            "trissílaba",
+            "dissílaba"
+          ],
+          "explicacao": "hi-po-pó-ta-mo: 5 sílabas → polissílaba."
+        },
+        {
+          "pergunta": "Como se classifica «leite»?",
+          "emoji": "🥛",
+          "certa": "dissílaba",
+          "erradas": [
+            "monossílaba",
+            "trissílaba"
+          ],
+          "explicacao": "lei-te: 2 sílabas → dissílaba."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "visual": "comboio",
+      "titulo": "Comboio dos artigos",
+      "instrucao": "Escolhe o artigo certo para completar a frase.",
+      "itens": [
+        {
+          "frase": "___ cão do vizinho ladra muito.",
+          "emoji": "🐶",
+          "certa": "O",
+          "erradas": [
+            "A",
+            "Os"
+          ],
+          "explicacao": "O cão: masculino e singular."
+        },
+        {
+          "frase": "___ meninas foram ao parque.",
+          "emoji": "👧",
+          "certa": "As",
+          "erradas": [
+            "Os",
+            "A"
+          ],
+          "explicacao": "As meninas: feminino e plural."
+        },
+        {
+          "frase": "Comprei ___ sapatos novos.",
+          "emoji": "👞",
+          "certa": "uns",
+          "erradas": [
+            "umas",
+            "um"
+          ],
+          "explicacao": "uns sapatos: masculino e plural."
+        },
+        {
+          "frase": "Encontrei ___ concha na praia.",
+          "emoji": "🐚",
+          "certa": "uma",
+          "erradas": [
+            "um",
+            "umas"
+          ],
+          "explicacao": "uma concha: feminino e singular."
+        },
+        {
+          "frase": "___ livros estão na estante.",
+          "emoji": "📚",
+          "certa": "Os",
+          "erradas": [
+            "As",
+            "O"
+          ],
+          "explicacao": "Os livros: masculino e plural."
+        },
+        {
+          "frase": "Ganhei ___ bicicleta azul.",
+          "emoji": "🚲",
+          "certa": "uma",
+          "erradas": [
+            "um",
+            "uns"
+          ],
+          "explicacao": "uma bicicleta: feminino e singular."
+        },
+        {
+          "frase": "___ girafa tem o pescoço comprido.",
+          "emoji": "🦒",
+          "certa": "A",
+          "erradas": [
+            "O",
+            "As"
+          ],
+          "explicacao": "A girafa: feminino e singular."
+        },
+        {
+          "frase": "Vi ___ pássaros no ramo.",
+          "emoji": "🐦",
+          "certa": "uns",
+          "erradas": [
+            "umas",
+            "um"
+          ],
+          "explicacao": "uns pássaros: masculino e plural."
+        }
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Liga os contrários",
+      "instrucao": "Liga cada palavra ao seu antónimo (contrário).",
+      "itens": [
+        [
+          "subir",
+          "descer"
+        ],
+        [
+          "novo",
+          "velho"
+        ],
+        [
+          "limpo",
+          "sujo"
+        ],
+        [
+          "forte",
+          "fraco"
+        ],
+        [
+          "cedo",
+          "tarde"
+        ],
+        [
+          "rir",
+          "chorar"
+        ],
+        [
+          "claro",
+          "escuro"
+        ],
+        [
+          "pesado",
+          "leve"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "Cartões dos sinónimos",
+      "instrucao": "Escolhe a palavra que quer dizer o mesmo (sinónimo).",
+      "itens": [
+        {
+          "pergunta": "Qual é o sinónimo de «cara»?",
+          "emoji": "🙂",
+          "certa": "rosto",
+          "erradas": [
+            "cabeça",
+            "olho"
+          ],
+          "explicacao": "cara = rosto"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «carro»?",
+          "emoji": "🚗",
+          "certa": "automóvel",
+          "erradas": [
+            "bicicleta",
+            "comboio"
+          ],
+          "explicacao": "carro = automóvel"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «acabar»?",
+          "emoji": "🏁",
+          "certa": "terminar",
+          "erradas": [
+            "começar",
+            "continuar"
+          ],
+          "explicacao": "acabar = terminar. Começar é o contrário!"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «prenda»?",
+          "emoji": "🎁",
+          "certa": "presente",
+          "erradas": [
+            "festa",
+            "caixa"
+          ],
+          "explicacao": "prenda = presente"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «andar»?",
+          "emoji": "🚶",
+          "certa": "caminhar",
+          "erradas": [
+            "parar",
+            "saltar"
+          ],
+          "explicacao": "andar = caminhar"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «esperto»?",
+          "emoji": "🤔",
+          "certa": "inteligente",
+          "erradas": [
+            "distraído",
+            "preguiçoso"
+          ],
+          "explicacao": "esperto = inteligente"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «delicioso»?",
+          "emoji": "🍰",
+          "certa": "saboroso",
+          "erradas": [
+            "amargo",
+            "salgado"
+          ],
+          "explicacao": "delicioso = saboroso"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «aluno»?",
+          "emoji": "🎒",
+          "certa": "estudante",
+          "erradas": [
+            "professor",
+            "diretor"
+          ],
+          "explicacao": "aluno = estudante"
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive das revisões",
+      "instrucao": "Lê com atenção. É verdadeiro ou falso?",
+      "baralhar": true,
+      "itens": [
+        {
+          "afirmacao": "A palavra «sofá» tem acento agudo.",
+          "verdade": true,
+          "explicacao": "so-fá: o ´ é o acento agudo."
+        },
+        {
+          "afirmacao": "A palavra «lâmpada» tem til.",
+          "verdade": false,
+          "explicacao": "lâmpada tem acento circunflexo (^), não tem til (~)."
+        },
+        {
+          "afirmacao": "«cara» e «rosto» são sinónimos.",
+          "verdade": true,
+          "explicacao": "Querem dizer o mesmo: são sinónimos."
+        },
+        {
+          "afirmacao": "«subir» e «descer» são sinónimos.",
+          "verdade": false,
+          "explicacao": "São contrários: são antónimos."
+        },
+        {
+          "afirmacao": "A palavra «gato» é trissílaba.",
+          "verdade": false,
+          "explicacao": "ga-to: 2 sílabas → dissílaba."
+        },
+        {
+          "afirmacao": "A palavra «borboleta» é polissílaba.",
+          "verdade": true,
+          "explicacao": "bor-bo-le-ta: 4 sílabas → polissílaba."
+        },
+        {
+          "afirmacao": "«os» é um artigo definido.",
+          "verdade": true,
+          "explicacao": "Artigos definidos: o, a, os, as."
+        },
+        {
+          "afirmacao": "«uma» é um artigo definido.",
+          "verdade": false,
+          "explicacao": "«uma» é um artigo indefinido (um, uma, uns, umas)."
+        },
+        {
+          "afirmacao": "A frase «o cão ladra» está bem escrita.",
+          "verdade": false,
+          "explicacao": "A frase começa com letra maiúscula e acaba com ponto final: «O cão ladra.»"
+        },
+        {
+          "afirmacao": "«à» tem acento grave.",
+          "verdade": true,
+          "explicacao": "à = a + a. O ` é o acento grave."
+        }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Constrói a frase",
+      "instrucao": "Põe as palavras pela ordem certa. A frase começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🍎",
+          "pecas": [
+            "A",
+            "avó",
+            "comeu",
+            "uma",
+            "maçã."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🐶",
+          "pecas": [
+            "O",
+            "cão",
+            "dorme",
+            "no",
+            "sofá."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🐦",
+          "pecas": [
+            "Uns",
+            "pássaros",
+            "voam",
+            "no",
+            "céu."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🪟",
+          "pecas": [
+            "A",
+            "Rita",
+            "abriu",
+            "a",
+            "janela",
+            "da",
+            "sala."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🦛",
+          "pecas": [
+            "O",
+            "hipopótamo",
+            "é",
+            "pesado",
+            "e",
+            "a",
+            "pena",
+            "é",
+            "leve."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🎹",
+          "pecas": [
+            "O",
+            "meu",
+            "irmão",
+            "toca",
+            "piano",
+            "à",
+            "tarde."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "instrucao": "Escreve uma frase completa: começa com maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase com uma palavra que tenha til (~). Por exemplo: pão, mão, limão, avião.",
+          "emoji": "🍞",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase que tenha o artigo «uns».",
+          "emoji": "🐾",
+          "palavra": "uns",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com os antónimos «quente» e «frio».",
+          "emoji": "🧊",
+          "palavra": "frio",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos sinónimos",
+      "itens": [
+        [
+          "contente",
+          "feliz"
+        ],
+        [
+          "carro",
+          "automóvel"
+        ],
+        [
+          "cara",
+          "rosto"
+        ],
+        [
+          "prenda",
+          "presente"
+        ],
+        [
+          "acabar",
+          "terminar"
+        ],
+        [
+          "falar",
+          "conversar"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "ordenar",
+      "titulo": "Junta as sílabas",
+      "juntar": "",
+      "itens": [
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🦋",
+          "pecas": [
+            "bor",
+            "bo",
+            "le",
+            "ta"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "📺",
+          "pecas": [
+            "te",
+            "le",
+            "vi",
+            "são"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🍫",
+          "pecas": [
+            "cho",
+            "co",
+            "la",
+            "te"
+          ]
+        },
+        {
+          "pergunta": "Junta as sílabas.",
+          "emoji": "🦛",
+          "pecas": [
+            "hi",
+            "po",
+            "pó",
+            "ta",
+            "mo"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Apanha o Ticl@s",
+      "itens": [
+        {
+          "pergunta": "Que palavra tem til (~)?",
+          "certa": "coração",
+          "erradas": [
+            "café",
+            "pêssego"
+          ],
+          "explicacao": "coração: o til está no a."
+        },
+        {
+          "pergunta": "Qual é o antónimo de «forte»?",
+          "certa": "fraco",
+          "erradas": [
+            "valente",
+            "grande"
+          ],
+          "explicacao": "forte ≠ fraco"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «terminar»?",
+          "certa": "acabar",
+          "erradas": [
+            "começar",
+            "correr"
+          ],
+          "explicacao": "terminar = acabar"
+        },
+        {
+          "pergunta": "Que palavra é monossílaba?",
+          "certa": "pé",
+          "erradas": [
+            "sapo",
+            "pato"
+          ],
+          "explicacao": "pé: 1 sílaba."
+        },
+        {
+          "pergunta": "Qual é um artigo indefinido?",
+          "certa": "umas",
+          "erradas": [
+            "as",
+            "os"
+          ],
+          "explicacao": "um, uma, uns, umas são indefinidos."
+        },
+        {
+          "pergunta": "Que palavra tem acento circunflexo (^)?",
+          "certa": "avô",
+          "erradas": [
+            "avó",
+            "mão"
+          ],
+          "explicacao": "avô: o ^ está no o."
+        }
+      ]
+    }
+  ]
+}
