@@ -752,5 +752,24 @@
       "Rato: clicar e escolher",
       "Teclado: acentos e escrita de frases"
     ]
+  },
+  {
+    "id": "ticlas-2ano-revisoes-portugues-acentos-silabas-artigos-frases",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Revisões de Português: acentos, sílabas, artigos e frases",
+    "descricao": "Revisões: acentos gráficos (agudo, grave, circunflexo) e til, antónimos e sinónimos, classificação das palavras quanto ao número de sílabas, determinantes artigos (definidos e indefinidos) e construção de frases",
+    "disciplina": "Português",
+    "data": "2026-11-24",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-24_2ano_Portugues_Revisoes_Acentos_Silabas_Artigos_Frases_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Missão revisões: acentos, sílabas, artigos, contrários e sinónimos. Ajuda o Ticl@s!",
+    "focoTic": [
+      "Teclado: acentos e til",
+      "Rato: clicar e arrastar",
+      "Teclado: escrita de frases"
+    ]
   }
 ]
