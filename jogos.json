@@ -734,5 +734,23 @@
       "Rato: clicar e arrastar",
       "Teclado: escrita de frases e parágrafos"
     ]
+  },
+  {
+    "id": "2026-11-24-ticlas-2ano-sequencias-poligonos",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Sequências de repetição e polígonos",
+    "descricao": "Sequências de repetição (continuar, completar e identificar a unidade que se repete) e polígonos (triângulo, quadrilátero, pentágono e hexágono): lados, vértices, polígono ou não polígono, com escrita de nomes e frases",
+    "disciplina": "Matemática",
+    "data": "2026-11-24",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-24_2ano_Matematica_Sequencias_Poligonos_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Descobre o que se repete nas sequências e conta os lados e os vértices dos polígonos!",
+    "focoTic": [
+      "Rato: clicar e escolher",
+      "Teclado: acentos e escrita de frases"
+    ]
   }
 ]
