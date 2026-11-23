@@ -1,0 +1,844 @@
+{
+  "id": "2026-11-24-ticlas-2ano-sequencias-poligonos",
+  "titulo": "Sequências de repetição e polígonos",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-24",
+  "descricao": "Sequências de repetição (continuar, completar e identificar a unidade que se repete) e polígonos (triângulo, quadrilátero, pentágono e hexágono): lados, vértices, polígono ou não polígono, com escrita de nomes e frases",
+  "resumo": "Descobre o que se repete nas sequências e conta os lados e os vértices dos polígonos!",
+  "focoTic": [
+    "Rato: clicar e escolher",
+    "Teclado: acentos e escrita de frases"
+  ],
+  "objetivo": "Continuar e completar sequências de repetição, descobrir a parte que se repete e identificar polígonos pelo número de lados e de vértices.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Balões: o que vem a seguir?",
+      "instrucao": "Observa a sequência. Rebenta o balão com o que vem a seguir.",
+      "itens": [
+        {
+          "pergunta": "O que vem a seguir? 🔴 🔵 🔴 🔵 🔴 ❓",
+          "certa": "🔵",
+          "erradas": [
+            "🔴",
+            "🟢"
+          ],
+          "explicacao": "Repete-se 🔴 🔵."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🍎 🍎 🍌 🍎 🍎 🍌 🍎 🍎 ❓",
+          "certa": "🍌",
+          "erradas": [
+            "🍎",
+            "🍓"
+          ],
+          "explicacao": "Repete-se 🍎 🍎 🍌."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🐶 🐱 🐭 🐶 🐱 🐭 🐶 ❓",
+          "certa": "🐱",
+          "erradas": [
+            "🐶",
+            "🐭"
+          ],
+          "explicacao": "Repete-se 🐶 🐱 🐭."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🟡 🟡 🟣 🟣 🟡 🟡 🟣 ❓",
+          "certa": "🟣",
+          "erradas": [
+            "🟡",
+            "🟢"
+          ],
+          "explicacao": "Repete-se 🟡 🟡 🟣 🟣."
+        },
+        {
+          "pergunta": "O que vem a seguir? ⭐ 🌙 ⭐ 🌙 ⭐ ❓",
+          "certa": "🌙",
+          "erradas": [
+            "⭐",
+            "☀️"
+          ],
+          "explicacao": "Repete-se ⭐ 🌙."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🔺 🟦 🟦 🔺 🟦 🟦 🔺 ❓",
+          "certa": "🟦",
+          "erradas": [
+            "🔺",
+            "🟩"
+          ],
+          "explicacao": "Repete-se 🔺 🟦 🟦."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🌸 🌻 🌻 🌸 🌻 🌻 🌸 🌻 ❓",
+          "certa": "🌻",
+          "erradas": [
+            "🌸",
+            "🌷"
+          ],
+          "explicacao": "Repete-se 🌸 🌻 🌻."
+        },
+        {
+          "pergunta": "O que vem a seguir? 🚗 🚗 🚌 🚗 🚗 🚌 🚗 ❓",
+          "certa": "🚗",
+          "erradas": [
+            "🚌",
+            "🚲"
+          ],
+          "explicacao": "Repete-se 🚗 🚗 🚌."
+        }
+      ]
+    },
+    {
+      "tipo": "completar",
+      "visual": "comboio",
+      "titulo": "Comboio das sequências",
+      "instrucao": "Falta uma peça na sequência. Escolhe a carruagem certa.",
+      "itens": [
+        {
+          "frase": "🔵 🟡 ___ 🟡 🔵 🟡",
+          "certa": "🔵",
+          "erradas": [
+            "🟡",
+            "🔴"
+          ],
+          "explicacao": "Repete-se 🔵 🟡."
+        },
+        {
+          "frase": "🍓 🍌 🍌 🍓 ___ 🍌",
+          "certa": "🍌",
+          "erradas": [
+            "🍓",
+            "🍎"
+          ],
+          "explicacao": "Repete-se 🍓 🍌 🍌."
+        },
+        {
+          "frase": "🐸 🐟 🐢 🐸 ___ 🐢",
+          "certa": "🐟",
+          "erradas": [
+            "🐸",
+            "🐢"
+          ],
+          "explicacao": "Repete-se 🐸 🐟 🐢."
+        },
+        {
+          "frase": "🟢 🟢 🟠 ___ 🟢 🟠",
+          "certa": "🟢",
+          "erradas": [
+            "🟠",
+            "🟡"
+          ],
+          "explicacao": "Repete-se 🟢 🟢 🟠."
+        },
+        {
+          "frase": "❤️ ⭐ ⭐ ❤️ ⭐ ___",
+          "certa": "⭐",
+          "erradas": [
+            "❤️",
+            "🌙"
+          ],
+          "explicacao": "Repete-se ❤️ ⭐ ⭐."
+        },
+        {
+          "frase": "🔺 🔺 🟦 🔺 🔺 ___",
+          "certa": "🟦",
+          "erradas": [
+            "🔺",
+            "🔴"
+          ],
+          "explicacao": "Repete-se 🔺 🔺 🟦."
+        },
+        {
+          "frase": "___ 🌳 🍂 🌳 🍂 🌳",
+          "certa": "🍂",
+          "erradas": [
+            "🌳",
+            "🍁"
+          ],
+          "explicacao": "Repete-se 🍂 🌳."
+        },
+        {
+          "frase": "🎈 🎁 🎂 🎈 ___ 🎂",
+          "certa": "🎁",
+          "erradas": [
+            "🎂",
+            "🎈"
+          ],
+          "explicacao": "Repete-se 🎈 🎁 🎂."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "A parte que se repete",
+      "instrucao": "Numa sequência de repetição há uma parte que se repete sempre igual, desde o início. Descobre qual é.",
+      "itens": [
+        {
+          "pergunta": "Qual é a parte que se repete? 🔴 🔵 🔴 🔵 🔴 🔵",
+          "certa": "🔴 🔵",
+          "erradas": [
+            "🔴",
+            "🔴 🔵 🔴"
+          ],
+          "explicacao": "🔴 🔵 | 🔴 🔵 | 🔴 🔵"
+        },
+        {
+          "pergunta": "Qual é a parte que se repete? 🍎 🍎 🍌 🍎 🍎 🍌 🍎 🍎 🍌",
+          "certa": "🍎 🍎 🍌",
+          "erradas": [
+            "🍎 🍌",
+            "🍎 🍎"
+          ],
+          "explicacao": "🍎 🍎 🍌 | 🍎 🍎 🍌 | 🍎 🍎 🍌"
+        },
+        {
+          "pergunta": "Qual é a parte que se repete? 🐶 🐱 🐭 🐶 🐱 🐭",
+          "certa": "🐶 🐱 🐭",
+          "erradas": [
+            "🐶 🐱",
+            "🐱 🐭"
+          ],
+          "explicacao": "🐶 🐱 🐭 | 🐶 🐱 🐭"
+        },
+        {
+          "pergunta": "Qual é a parte que se repete? 🟡 🟣 🟣 🟡 🟣 🟣 🟡 🟣 🟣",
+          "certa": "🟡 🟣 🟣",
+          "erradas": [
+            "🟡 🟣",
+            "🟣 🟣"
+          ],
+          "explicacao": "🟡 🟣 🟣 | 🟡 🟣 🟣 | 🟡 🟣 🟣"
+        },
+        {
+          "pergunta": "Qual é a parte que se repete? ⭐ ⭐ 🌙 🌙 ⭐ ⭐ 🌙 🌙",
+          "certa": "⭐ ⭐ 🌙 🌙",
+          "erradas": [
+            "⭐ 🌙",
+            "⭐ ⭐ 🌙"
+          ],
+          "explicacao": "⭐ ⭐ 🌙 🌙 | ⭐ ⭐ 🌙 🌙"
+        },
+        {
+          "pergunta": "Qual é a parte que se repete? 🔺 🟦 🔴 🔺 🟦 🔴",
+          "certa": "🔺 🟦 🔴",
+          "erradas": [
+            "🔺 🟦",
+            "🟦 🔴"
+          ],
+          "explicacao": "🔺 🟦 🔴 | 🔺 🟦 🔴"
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Detetive das sequências",
+      "instrucao": "Lê com atenção e observa a sequência. É verdadeiro ou falso?",
+      "itens": [
+        {
+          "afirmacao": "Em 🔴 🔴 🔵 🔴 🔴 🔵, a parte que se repete é 🔴 🔴 🔵.",
+          "verdade": true,
+          "explicacao": "🔴 🔴 🔵 | 🔴 🔴 🔵"
+        },
+        {
+          "afirmacao": "Em 🍎 🍌 🍎 🍌, a seguir vem 🍎.",
+          "verdade": true,
+          "explicacao": "Repete-se 🍎 🍌: depois de 🍌 vem 🍎."
+        },
+        {
+          "afirmacao": "Em ⭐ 🌙 🌙 ⭐ 🌙 🌙, a parte que se repete tem 2 desenhos.",
+          "verdade": false,
+          "explicacao": "A parte que se repete é ⭐ 🌙 🌙: tem 3 desenhos."
+        },
+        {
+          "afirmacao": "🐶 🐱 🐶 🐱 🐱 🐶 é uma sequência de repetição.",
+          "verdade": false,
+          "explicacao": "Não há uma parte que se repita sempre igual."
+        },
+        {
+          "afirmacao": "Em 🔺 🟦 🔺 🟦 🔺, a seguir vem 🔺.",
+          "verdade": false,
+          "explicacao": "Depois de 🔺 vem 🟦."
+        },
+        {
+          "afirmacao": "Em 🟢 🟡 🔴 🟢 🟡 🔴, a parte que se repete tem 3 desenhos.",
+          "verdade": true,
+          "explicacao": "🟢 🟡 🔴 | 🟢 🟡 🔴"
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "Sequências de polígonos",
+      "instrucao": "Observa a sequência de polígonos. Que polígono vem a seguir?",
+      "itens": [
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSI2MC4wLDI2LjQgOTYuNiw4OS44IDIzLjQsODkuOCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMTQ4LjgsMjguOCAyMTEuMiwyOC44IDIxMS4yLDkxLjIgMTQ4LjgsOTEuMiIgZmlsbD0iIzgyYjFmZiIgc3Ryb2tlPSIjMmY2ZmQwIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMzAwLjAsMjYuNCAzMzYuNiw4OS44IDI2My40LDg5LjgiIGZpbGw9IiNmZjhhODAiIHN0cm9rZT0iI2Q4NDM0MyIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjM4OC44LDI4LjggNDUxLjIsMjguOCA0NTEuMiw5MS4yIDM4OC44LDkxLjIiIGZpbGw9IiM4MmIxZmYiIHN0cm9rZT0iIzJmNmZkMCIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjU0MC4wLDI2LjQgNTc2LjYsODkuOCA1MDMuNCw4OS44IiBmaWxsPSIjZmY4YTgwIiBzdHJva2U9IiNkODQzNDMiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHJlY3QgeD0iNjE0IiB5PSIxNCIgd2lkdGg9IjkyIiBoZWlnaHQ9IjkyIiByeD0iMTQiIGZpbGw9IiNmZmY4ZTEiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtZGFzaGFycmF5PSIxMCA3Ii8+PHRleHQgeD0iNjYwIiB5PSI3OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2U4ODM0YSI+PzwvdGV4dD48L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "triângulo, quadrado, triângulo, quadrado, triângulo, ?",
+          "certa": "quadrado",
+          "erradas": [
+            "triângulo",
+            "hexágono"
+          ],
+          "explicacao": "Repete-se triângulo, quadrado."
+        },
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSIxMDIuMiw2MS45IDgxLjEsOTguNSAzOC45LDk4LjUgMTcuOCw2MS45IDM4LjksMjUuMyA4MS4xLDI1LjMiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjE4MC4wLDI2LjQgMjE2LjYsODkuOCAxNDMuNCw4OS44IiBmaWxsPSIjZmY4YTgwIiBzdHJva2U9IiNkODQzNDMiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSIzMDAuMCwyNi40IDMzNi42LDg5LjggMjYzLjQsODkuOCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iNDYyLjIsNjEuOSA0NDEuMSw5OC41IDM5OC45LDk4LjUgMzc3LjgsNjEuOSAzOTguOSwyNS4zIDQ0MS4xLDI1LjMiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjU0MC4wLDI2LjQgNTc2LjYsODkuOCA1MDMuNCw4OS44IiBmaWxsPSIjZmY4YTgwIiBzdHJva2U9IiNkODQzNDMiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHJlY3QgeD0iNjE0IiB5PSIxNCIgd2lkdGg9IjkyIiBoZWlnaHQ9IjkyIiByeD0iMTQiIGZpbGw9IiNmZmY4ZTEiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtZGFzaGFycmF5PSIxMCA3Ii8+PHRleHQgeD0iNjYwIiB5PSI3OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2U4ODM0YSI+PzwvdGV4dD48L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "hexágono, triângulo, triângulo, hexágono, triângulo, ?",
+          "certa": "triângulo",
+          "erradas": [
+            "hexágono",
+            "pentágono"
+          ],
+          "explicacao": "Repete-se hexágono, triângulo, triângulo."
+        },
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSI2MC4wLDE5LjcgMTAwLjIsNDguOSA4NC44LDk2LjEgMzUuMiw5Ni4xIDE5LjgsNDguOSIgZmlsbD0iI2NlOTNkOCIgc3Ryb2tlPSIjOGU0NGFkIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMTQ4LjgsMjguOCAyMTEuMiwyOC44IDIxMS4yLDkxLjIgMTQ4LjgsOTEuMiIgZmlsbD0iIzgyYjFmZiIgc3Ryb2tlPSIjMmY2ZmQwIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMzQyLjIsNjEuOSAzMjEuMSw5OC41IDI3OC45LDk4LjUgMjU3LjgsNjEuOSAyNzguOSwyNS4zIDMyMS4xLDI1LjMiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjQyMC4wLDE5LjcgNDYwLjIsNDguOSA0NDQuOCw5Ni4xIDM5NS4yLDk2LjEgMzc5LjgsNDguOSIgZmlsbD0iI2NlOTNkOCIgc3Ryb2tlPSIjOGU0NGFkIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iNTA4LjgsMjguOCA1NzEuMiwyOC44IDU3MS4yLDkxLjIgNTA4LjgsOTEuMiIgZmlsbD0iIzgyYjFmZiIgc3Ryb2tlPSIjMmY2ZmQwIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxyZWN0IHg9IjYxNCIgeT0iMTQiIHdpZHRoPSI5MiIgaGVpZ2h0PSI5MiIgcng9IjE0IiBmaWxsPSIjZmZmOGUxIiBzdHJva2U9IiNlODgzNGEiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNyIvPjx0ZXh0IHg9IjY2MCIgeT0iNzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNlODgzNGEiPj88L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "pentágono, quadrado, hexágono, pentágono, quadrado, ?",
+          "certa": "hexágono",
+          "erradas": [
+            "pentágono",
+            "quadrado"
+          ],
+          "explicacao": "Repete-se pentágono, quadrado, hexágono."
+        },
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSIxNi44LDQwLjggMTAzLjIsNDAuOCAxMDMuMiw4MS42IDE2LjgsODEuNiIgZmlsbD0iI2E1ZDZhNyIgc3Ryb2tlPSIjM2M5YTQ2IiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMTM2LjgsNDAuOCAyMjMuMiw0MC44IDIyMy4yLDgxLjYgMTM2LjgsODEuNiIgZmlsbD0iI2E1ZDZhNyIgc3Ryb2tlPSIjM2M5YTQ2IiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMzAwLjAsMjYuNCAzMzYuNiw4OS44IDI2My40LDg5LjgiIGZpbGw9IiNmZjhhODAiIHN0cm9rZT0iI2Q4NDM0MyIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjM3Ni44LDQwLjggNDYzLjIsNDAuOCA0NjMuMiw4MS42IDM3Ni44LDgxLjYiIGZpbGw9IiNhNWQ2YTciIHN0cm9rZT0iIzNjOWE0NiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjQ5Ni44LDQwLjggNTgzLjIsNDAuOCA1ODMuMiw4MS42IDQ5Ni44LDgxLjYiIGZpbGw9IiNhNWQ2YTciIHN0cm9rZT0iIzNjOWE0NiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cmVjdCB4PSI2MTQiIHk9IjE0IiB3aWR0aD0iOTIiIGhlaWdodD0iOTIiIHJ4PSIxNCIgZmlsbD0iI2ZmZjhlMSIgc3Ryb2tlPSIjZTg4MzRhIiBzdHJva2Utd2lkdGg9IjQiIHN0cm9rZS1kYXNoYXJyYXk9IjEwIDciLz48dGV4dCB4PSI2NjAiIHk9Ijc4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iU2Vnb2UgVUksIEFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjU2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjZTg4MzRhIj4/PC90ZXh0Pjwvc3ZnPg==",
+          "imagemGrande": true,
+          "alt": "retângulo, retângulo, triângulo, retângulo, retângulo, ?",
+          "certa": "triângulo",
+          "erradas": [
+            "retângulo",
+            "quadrado"
+          ],
+          "explicacao": "Repete-se retângulo, retângulo, triângulo."
+        },
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSI2MC4wLDI2LjQgOTYuNiw4OS44IDIzLjQsODkuOCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMTQ4LjgsMjguOCAyMTEuMiwyOC44IDIxMS4yLDkxLjIgMTQ4LjgsOTEuMiIgZmlsbD0iIzgyYjFmZiIgc3Ryb2tlPSIjMmY2ZmQwIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iMzAwLjAsMTkuNyAzNDAuMiw0OC45IDMyNC44LDk2LjEgMjc1LjIsOTYuMSAyNTkuOCw0OC45IiBmaWxsPSIjY2U5M2Q4IiBzdHJva2U9IiM4ZTQ0YWQiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSI0MjAuMCwyNi40IDQ1Ni42LDg5LjggMzgzLjQsODkuOCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5Z29uIHBvaW50cz0iNTA4LjgsMjguOCA1NzEuMiwyOC44IDU3MS4yLDkxLjIgNTA4LjgsOTEuMiIgZmlsbD0iIzgyYjFmZiIgc3Ryb2tlPSIjMmY2ZmQwIiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxyZWN0IHg9IjYxNCIgeT0iMTQiIHdpZHRoPSI5MiIgaGVpZ2h0PSI5MiIgcng9IjE0IiBmaWxsPSIjZmZmOGUxIiBzdHJva2U9IiNlODgzNGEiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNyIvPjx0ZXh0IHg9IjY2MCIgeT0iNzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNlODgzNGEiPj88L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "triângulo, quadrado, pentágono, triângulo, quadrado, ?",
+          "certa": "pentágono",
+          "erradas": [
+            "hexágono",
+            "triângulo"
+          ],
+          "explicacao": "Repete-se triângulo, quadrado, pentágono."
+        },
+        {
+          "pergunta": "Que polígono vem a seguir?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3MjQgMTIwIiB3aWR0aD0iNzI0IiBoZWlnaHQ9IjEyMCI+PHBvbHlnb24gcG9pbnRzPSIxMDIuMiw2MS45IDgxLjEsOTguNSAzOC45LDk4LjUgMTcuOCw2MS45IDM4LjksMjUuMyA4MS4xLDI1LjMiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjIyMi4yLDYxLjkgMjAxLjEsOTguNSAxNTguOSw5OC41IDEzNy44LDYxLjkgMTU4LjksMjUuMyAyMDEuMSwyNS4zIiBmaWxsPSIjZmZjYzgwIiBzdHJva2U9IiNlMDdiMTYiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSIzMDAuMCwxOS43IDM0MC4yLDQ4LjkgMzI0LjgsOTYuMSAyNzUuMiw5Ni4xIDI1OS44LDQ4LjkiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSIzLjQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cG9seWdvbiBwb2ludHM9IjQ2Mi4yLDYxLjkgNDQxLjEsOTguNSAzOTguOSw5OC41IDM3Ny44LDYxLjkgMzk4LjksMjUuMyA0NDEuMSwyNS4zIiBmaWxsPSIjZmZjYzgwIiBzdHJva2U9IiNlMDdiMTYiIHN0cm9rZS13aWR0aD0iMy40IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlnb24gcG9pbnRzPSI1ODIuMiw2MS45IDU2MS4xLDk4LjUgNTE4LjksOTguNSA0OTcuOCw2MS45IDUxOC45LDI1LjMgNTYxLjEsMjUuMyIgZmlsbD0iI2ZmY2M4MCIgc3Ryb2tlPSIjZTA3YjE2IiBzdHJva2Utd2lkdGg9IjMuNCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxyZWN0IHg9IjYxNCIgeT0iMTQiIHdpZHRoPSI5MiIgaGVpZ2h0PSI5MiIgcng9IjE0IiBmaWxsPSIjZmZmOGUxIiBzdHJva2U9IiNlODgzNGEiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWRhc2hhcnJheT0iMTAgNyIvPjx0ZXh0IHg9IjY2MCIgeT0iNzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNlODgzNGEiPj88L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "hexágono, hexágono, pentágono, hexágono, hexágono, ?",
+          "certa": "pentágono",
+          "erradas": [
+            "hexágono",
+            "quadrado"
+          ],
+          "explicacao": "Repete-se hexágono, hexágono, pentágono."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio dos lados",
+      "instrucao": "Os lados são as linhas retas que fecham o polígono. Conta os lados e escolhe a carruagem certa.",
+      "itens": [
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwzMC4wIDE3Ni4yLDE2Mi4wIDIzLjgsMTYyLjAiIGZpbGw9IiNmZjhhODAiIHN0cm9rZT0iI2Q4NDM0MyIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "triângulo",
+          "certa": "3",
+          "erradas": [
+            "4",
+            "5"
+          ],
+          "explicacao": "É um triângulo: tem 3 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzNS4wLDM1LjAgMTY1LjAsMzUuMCAxNjUuMCwxNjUuMCAzNS4wLDE2NS4wIiBmaWxsPSIjODJiMWZmIiBzdHJva2U9IiMyZjZmZDAiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "quadrado",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "5"
+          ],
+          "explicacao": "É um quadrado: tem 4 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxNi4wIDE4My43LDc2LjggMTUxLjcsMTc1LjIgNDguMywxNzUuMiAxNi4zLDc2LjgiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "pentágono",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ],
+          "explicacao": "É um pentágono: tem 5 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMC4wLDYwLjAgMTkwLjAsNjAuMCAxOTAuMCwxNDUuMCAxMC4wLDE0NS4wIiBmaWxsPSIjYTVkNmE3IiBzdHJva2U9IiMzYzlhNDYiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "retângulo",
+          "certa": "4",
+          "erradas": [
+            "2",
+            "6"
+          ],
+          "explicacao": "É um retângulo: tem 4 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxODguMCwxMDQuMCAxNDQuMCwxODAuMiA1Ni4wLDE4MC4yIDEyLjAsMTA0LjAgNTYuMCwyNy44IDE0NC4wLDI3LjgiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "hexágono",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "8"
+          ],
+          "explicacao": "É um hexágono: tem 6 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIyMC4wLDE3MC4wIDE4Mi4wLDE3MC4wIDYwLjAsNDAuMCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjcuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "triângulo",
+          "certa": "3",
+          "erradas": [
+            "4",
+            "2"
+          ],
+          "explicacao": "Também é um triângulo: tem 3 lados."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxOC4wIDE3NS4wLDgwLjAgMTc1LjAsMTgwLjAgMjUuMCwxODAuMCAyNS4wLDgwLjAiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "pentágono em forma de casa",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ],
+          "explicacao": "Tem a forma de uma casa e 5 lados: é um pentágono."
+        },
+        {
+          "pergunta": "Quantos lados tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzMC4wLDIwLjAgOTAuMCwyMC4wIDkwLjAsMTIwLjAgMTc1LjAsMTIwLjAgMTc1LjAsMTgwLjAgMzAuMCwxODAuMCIgZmlsbD0iI2ZmY2M4MCIgc3Ryb2tlPSIjZTA3YjE2IiBzdHJva2Utd2lkdGg9IjcuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "hexágono em forma de L",
+          "certa": "6",
+          "erradas": [
+            "4",
+            "5"
+          ],
+          "dica": "Conta todos os lados, também os pequenos.",
+          "explicacao": "Tem a forma de um L e 6 lados: é um hexágono."
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "aviao",
+      "titulo": "Avião dos vértices",
+      "instrucao": "Os vértices são os pontos onde dois lados se encontram. Conta os vértices e leva o avião até à nuvem certa.",
+      "itens": [
+        {
+          "pergunta": "Quantos vértices tem? (os vértices estão marcados)",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSI2MC4wLDQ1LjAgMTQwLjAsNDUuMCAxODUuMCwxNjAuMCAxNS4wLDE2MC4wIiBmaWxsPSIjODBkZWVhIiBzdHJva2U9IiMxZjhmYTAiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PGNpcmNsZSBjeD0iNjAuMCIgY3k9IjQ1LjAiIHI9IjExLjAiIGZpbGw9IiMyNjMyMzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iMTQwLjAiIGN5PSI0NS4wIiByPSIxMS4wIiBmaWxsPSIjMjYzMjM4IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjxjaXJjbGUgY3g9IjE4NS4wIiBjeT0iMTYwLjAiIHI9IjExLjAiIGZpbGw9IiMyNjMyMzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iMTUuMCIgY3k9IjE2MC4wIiByPSIxMS4wIiBmaWxsPSIjMjYzMjM4IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjwvc3ZnPg==",
+          "alt": "quadrilátero com vértices marcados",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "5"
+          ],
+          "explicacao": "Tem 4 vértices e 4 lados."
+        },
+        {
+          "pergunta": "Quantos vértices tem? (os vértices estão marcados)",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxODguMCwxMDQuMCAxNDQuMCwxODAuMiA1Ni4wLDE4MC4yIDEyLjAsMTA0LjAgNTYuMCwyNy44IDE0NC4wLDI3LjgiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSIxODguMCIgY3k9IjEwNC4wIiByPSIxMS4wIiBmaWxsPSIjMjYzMjM4IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjxjaXJjbGUgY3g9IjE0NC4wIiBjeT0iMTgwLjIiIHI9IjExLjAiIGZpbGw9IiMyNjMyMzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PGNpcmNsZSBjeD0iNTYuMCIgY3k9IjE4MC4yIiByPSIxMS4wIiBmaWxsPSIjMjYzMjM4IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIvPjxjaXJjbGUgY3g9IjEyLjAiIGN5PSIxMDQuMCIgcj0iMTEuMCIgZmlsbD0iIzI2MzIzOCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSI1Ni4wIiBjeT0iMjcuOCIgcj0iMTEuMCIgZmlsbD0iIzI2MzIzOCIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiLz48Y2lyY2xlIGN4PSIxNDQuMCIgY3k9IjI3LjgiIHI9IjExLjAiIGZpbGw9IiMyNjMyMzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PC9zdmc+",
+          "alt": "hexágono com vértices marcados",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "4"
+          ],
+          "explicacao": "O hexágono tem 6 vértices."
+        },
+        {
+          "pergunta": "Quantos vértices tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzNS4wLDMwLjAgMzUuMCwxNzAuMCAxNzUuMCwxNzAuMCIgZmlsbD0iI2ZmOGE4MCIgc3Ryb2tlPSIjZDg0MzQzIiBzdHJva2Utd2lkdGg9IjcuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "triângulo",
+          "certa": "3",
+          "erradas": [
+            "4",
+            "2"
+          ],
+          "explicacao": "O triângulo tem 3 vértices."
+        },
+        {
+          "pergunta": "Quantos vértices tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxNS4wIDE3MC4wLDEwMC4wIDEwMC4wLDE4NS4wIDMwLjAsMTAwLjAiIGZpbGw9IiM4MGRlZWEiIHN0cm9rZT0iIzFmOGZhMCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "losango",
+          "certa": "4",
+          "erradas": [
+            "3",
+            "6"
+          ],
+          "explicacao": "Tem 4 lados e 4 vértices: é um quadrilátero."
+        },
+        {
+          "pergunta": "Quantos vértices tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxNi4wIDE4My43LDc2LjggMTUxLjcsMTc1LjIgNDguMywxNzUuMiAxNi4zLDc2LjgiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "pentágono",
+          "certa": "5",
+          "erradas": [
+            "4",
+            "6"
+          ],
+          "explicacao": "O pentágono tem 5 vértices."
+        },
+        {
+          "pergunta": "Quantos vértices tem este polígono?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzMC4wLDIwLjAgOTAuMCwyMC4wIDkwLjAsMTIwLjAgMTc1LjAsMTIwLjAgMTc1LjAsMTgwLjAgMzAuMCwxODAuMCIgZmlsbD0iI2ZmY2M4MCIgc3Ryb2tlPSIjZTA3YjE2IiBzdHJva2Utd2lkdGg9IjcuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "hexágono em forma de L",
+          "certa": "6",
+          "erradas": [
+            "4",
+            "5"
+          ],
+          "dica": "Conta todos os «cantos», também o de dentro.",
+          "explicacao": "Tem 6 vértices: é um hexágono."
+        }
+      ]
+    },
+    {
+      "tipo": "verdadeiro_falso",
+      "titulo": "Polígono ou não?",
+      "instrucao": "Um polígono é uma figura plana fechada, só com lados retos. Observa a figura: é um polígono?",
+      "itens": [
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4MCIgZmlsbD0iI2ZmZjU5ZCIgc3Ryb2tlPSIjYzlhNDAwIiBzdHJva2Utd2lkdGg9IjciLz48L3N2Zz4=",
+          "alt": "círculo",
+          "verdade": false,
+          "explicacao": "O círculo não tem lados retos: não é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwzMC4wIDE3Ni4yLDE2Mi4wIDIzLjgsMTYyLjAiIGZpbGw9IiNmZjhhODAiIHN0cm9rZT0iI2Q4NDM0MyIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "triângulo",
+          "verdade": true,
+          "explicacao": "É fechada e tem 3 lados retos: é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlsaW5lIHBvaW50cz0iNDAsMTcwIDQwLDQwIDE2MCw0MCAxNjAsMTcwIDkwLDE3MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzlhNDAwIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "linha aberta",
+          "verdade": false,
+          "explicacao": "A figura não está fechada: não é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzMC4wLDIwLjAgOTAuMCwyMC4wIDkwLjAsMTIwLjAgMTc1LjAsMTIwLjAgMTc1LjAsMTgwLjAgMzAuMCwxODAuMCIgZmlsbD0iI2ZmY2M4MCIgc3Ryb2tlPSIjZTA3YjE2IiBzdHJva2Utd2lkdGg9IjcuMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "hexágono em forma de L",
+          "verdade": true,
+          "explicacao": "É fechada e só tem lados retos: é um polígono (hexágono)."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTIwLDE0MCBBODAsODAgMCAwIDEgMTgwLDE0MCBaIiBmaWxsPSIjZmZmNTlkIiBzdHJva2U9IiNjOWE0MDAiIHN0cm9rZS13aWR0aD0iNyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==",
+          "alt": "semicírculo",
+          "verdade": false,
+          "explicacao": "Tem um lado curvo: não é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMC4wLDYwLjAgMTkwLjAsNjAuMCAxOTAuMCwxNDUuMCAxMC4wLDE0NS4wIiBmaWxsPSIjYTVkNmE3IiBzdHJva2U9IiMzYzlhNDYiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "retângulo",
+          "verdade": true,
+          "explicacao": "É fechada e tem 4 lados retos: é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBhdGggZD0iTTEwMCwyMCBMMTYwLDEyMCBBNjIsNjIgMCAxIDEgNDAsMTIwIFoiIGZpbGw9IiNmZmY1OWQiIHN0cm9rZT0iI2M5YTQwMCIgc3Ryb2tlLXdpZHRoPSI3IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "figura com lados retos e um lado curvo",
+          "verdade": false,
+          "explicacao": "Tem um lado curvo: não é um polígono."
+        },
+        {
+          "afirmacao": "Esta figura é um polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxOC4wIDE3NS4wLDgwLjAgMTc1LjAsMTgwLjAgMjUuMCwxODAuMCAyNS4wLDgwLjAiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "pentágono em forma de casa",
+          "verdade": true,
+          "explicacao": "É fechada e tem 5 lados retos: é um polígono (pentágono)."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos polígonos",
+      "instrucao": "Põe cada cartão na caixa do polígono certo.",
+      "caixas": [
+        "Triângulo",
+        "Quadrilátero",
+        "Pentágono",
+        "Hexágono"
+      ],
+      "itens": [
+        [
+          "3 lados",
+          "Triângulo"
+        ],
+        [
+          "3 vértices",
+          "Triângulo"
+        ],
+        [
+          "🔺",
+          "Triângulo"
+        ],
+        [
+          "4 lados",
+          "Quadrilátero"
+        ],
+        [
+          "quadrado",
+          "Quadrilátero"
+        ],
+        [
+          "retângulo",
+          "Quadrilátero"
+        ],
+        [
+          "5 lados",
+          "Pentágono"
+        ],
+        [
+          "5 vértices",
+          "Pentágono"
+        ],
+        [
+          "6 lados",
+          "Hexágono"
+        ],
+        [
+          "6 vértices",
+          "Hexágono"
+        ]
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Escreve o nome do polígono",
+      "instrucao": "Observa o polígono e escreve o nome no teclado. Atenção aos acentos!",
+      "itens": [
+        {
+          "pergunta": "Escreve o nome deste polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwzMC4wIDE3Ni4yLDE2Mi4wIDIzLjgsMTYyLjAiIGZpbGw9IiNmZjhhODAiIHN0cm9rZT0iI2Q4NDM0MyIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "triângulo",
+          "resposta": "triângulo",
+          "dica": "tri-ân-gu-lo. Para o â: carrega em ⇧ + ^ e depois em a."
+        },
+        {
+          "pergunta": "Escreve o nome deste polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIzNS4wLDM1LjAgMTY1LjAsMzUuMCAxNjUuMCwxNjUuMCAzNS4wLDE2NS4wIiBmaWxsPSIjODJiMWZmIiBzdHJva2U9IiMyZjZmZDAiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "quadrado",
+          "resposta": [
+            "quadrado",
+            "quadrilátero"
+          ],
+          "dica": "Tem 4 lados iguais: qua-dra-do."
+        },
+        {
+          "pergunta": "Escreve o nome deste polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAuMCwxNi4wIDE4My43LDc2LjggMTUxLjcsMTc1LjIgNDguMywxNzUuMiAxNi4zLDc2LjgiIGZpbGw9IiNjZTkzZDgiIHN0cm9rZT0iIzhlNDRhZCIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "pentágono",
+          "resposta": "pentágono",
+          "dica": "pen-tá-go-no. Para o á: carrega em ´ e depois em a."
+        },
+        {
+          "pergunta": "Escreve o nome deste polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxMC4wLDYwLjAgMTkwLjAsNjAuMCAxOTAuMCwxNDUuMCAxMC4wLDE0NS4wIiBmaWxsPSIjYTVkNmE3IiBzdHJva2U9IiMzYzlhNDYiIHN0cm9rZS13aWR0aD0iNy4wIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+",
+          "alt": "retângulo",
+          "resposta": [
+            "retângulo",
+            "quadrilátero"
+          ],
+          "dica": "re-tân-gu-lo. Para o â: carrega em ⇧ + ^ e depois em a."
+        },
+        {
+          "pergunta": "Escreve o nome deste polígono.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+PHBvbHlnb24gcG9pbnRzPSIxODguMCwxMDQuMCAxNDQuMCwxODAuMiA1Ni4wLDE4MC4yIDEyLjAsMTA0LjAgNTYuMCwyNy44IDE0NC4wLDI3LjgiIGZpbGw9IiNmZmNjODAiIHN0cm9rZT0iI2UwN2IxNiIgc3Ryb2tlLXdpZHRoPSI3LjAiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=",
+          "alt": "hexágono",
+          "resposta": "hexágono",
+          "dica": "he-xá-go-no. Tem 6 lados."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador matemático",
+      "instrucao": "Escreve uma frase tua no teclado. Começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase a dizer quantos lados e quantos vértices tem o triângulo.",
+          "emoji": "🔺",
+          "palavra": "vértices",
+          "minPalavras": 6
+        },
+        {
+          "pergunta": "Inventa uma sequência de repetição com cores. Exemplo: «Azul, azul, vermelho, azul, azul, vermelho.»",
+          "emoji": "🎨",
+          "minPalavras": 6
+        },
+        {
+          "pergunta": "Escreve qual é a parte que se repete na tua sequência. Exemplo: «A parte que se repete é azul, azul, vermelho.»",
+          "emoji": "🔁",
+          "palavra": "repete",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "completar",
+      "visual": "baloes",
+      "titulo": "Sequências difíceis",
+      "instrucao": "Descobre a peça que falta. Atenção: a parte que se repete é maior!",
+      "itens": [
+        {
+          "frase": "🔴 🔵 🔵 🟢 🔴 🔵 ___ 🟢",
+          "certa": "🔵",
+          "erradas": [
+            "🟢",
+            "🔴"
+          ],
+          "explicacao": "Repete-se 🔴 🔵 🔵 🟢."
+        },
+        {
+          "frase": "🐸 🐸 🐢 🐢 🐸 ___ 🐢 🐢",
+          "certa": "🐸",
+          "erradas": [
+            "🐢",
+            "🐟"
+          ],
+          "explicacao": "Repete-se 🐸 🐸 🐢 🐢."
+        },
+        {
+          "frase": "🍎 🍌 🍓 🍓 🍎 🍌 🍓 ___",
+          "certa": "🍓",
+          "erradas": [
+            "🍎",
+            "🍌"
+          ],
+          "explicacao": "Repete-se 🍎 🍌 🍓 🍓."
+        },
+        {
+          "frase": "⭐ ⭐ ⭐ 🌙 ⭐ ___ ⭐ 🌙",
+          "certa": "⭐",
+          "erradas": [
+            "🌙",
+            "☀️"
+          ],
+          "explicacao": "Repete-se ⭐ ⭐ ⭐ 🌙."
+        },
+        {
+          "frase": "🟦 🔺 🟦 🔴 🟦 🔺 🟦 ___",
+          "certa": "🔴",
+          "erradas": [
+            "🔺",
+            "🟦"
+          ],
+          "explicacao": "Repete-se 🟦 🔺 🟦 🔴."
+        },
+        {
+          "frase": "🌸 🌻 🌷 🌸 🌻 ___ 🌸 🌻",
+          "certa": "🌷",
+          "erradas": [
+            "🌸",
+            "🌻"
+          ],
+          "explicacao": "Repete-se 🌸 🌻 🌷."
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Apanha o Ticl@s",
+      "instrucao": "Apanha o Ticl@s quando aparecer a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Que polígono tem 5 lados?",
+          "certa": "pentágono",
+          "erradas": [
+            "hexágono",
+            "quadrado"
+          ],
+          "explicacao": "pentágono: 5 lados e 5 vértices."
+        },
+        {
+          "pergunta": "Quantos vértices tem um hexágono?",
+          "certa": "6",
+          "erradas": [
+            "5",
+            "4"
+          ],
+          "explicacao": "hexágono: 6 lados e 6 vértices."
+        },
+        {
+          "pergunta": "Que figura NÃO é um polígono?",
+          "certa": "círculo",
+          "erradas": [
+            "triângulo",
+            "quadrado"
+          ],
+          "explicacao": "O círculo não tem lados retos."
+        },
+        {
+          "pergunta": "O quadrado e o retângulo são...",
+          "certa": "quadriláteros",
+          "erradas": [
+            "triângulos",
+            "pentágonos"
+          ],
+          "explicacao": "Têm 4 lados: são quadriláteros."
+        },
+        {
+          "pergunta": "Quantos lados tem um triângulo?",
+          "certa": "3",
+          "erradas": [
+            "4",
+            "6"
+          ],
+          "explicacao": "triângulo: 3 lados e 3 vértices."
+        },
+        {
+          "pergunta": "Que polígono tem 6 vértices?",
+          "certa": "hexágono",
+          "erradas": [
+            "pentágono",
+            "triângulo"
+          ],
+          "explicacao": "hexágono: 6 lados e 6 vértices."
+        }
+      ]
+    }
+  ]
+}
