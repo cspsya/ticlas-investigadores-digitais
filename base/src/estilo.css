@@ -360,3 +360,115 @@ input.num.revela{border-color:var(--t-2);background:#fff1e6;color:var(--t-2d)}
 .tabela100 .cel.dez{background:#fff6e0}
 .tabela100 .cel.vazia{background:#fffdf8;outline:2px dashed var(--t-2);outline-offset:-3px}
 .tabela100 input.num{width:100%;max-width:3em;border-width:2px;padding:4px 0;font-size:1rem}
+
+/* ==========================================================
+   Minijogos (V3.5): puzzle, ligar os pontos, apanhar e percurso
+   ========================================================== */
+.ficha{display:inline-flex;align-items:center;justify-content:center;gap:.25em;min-width:2.2em;padding:.15em .55em;border-radius:12px;background:#fff;border:2px solid var(--t-1l);font-weight:900;font-size:1.05rem;line-height:1.2;color:var(--ink)}
+.ficha .manuscrita{font-size:1.35em;line-height:1.3}
+.ficha.boa{border-color:var(--ok);background:var(--okl)}
+.ficha.ma{border-color:#e8a29b;background:#fdecea;text-decoration:line-through;text-decoration-color:rgba(192,57,43,.6)}
+.rotulo{font-weight:900;font-size:1.2rem;margin-right:4px}
+.pergunta-jogo{font-weight:800;font-size:1.1rem;margin:8px 0 4px;text-align:center}
+/* puzzle */
+.puzzle{display:flex;gap:16px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.puzzle-modelo{margin:0;width:96px;padding:6px;border-radius:14px;background:#fff;border:2px dashed var(--t-1l);text-align:center}
+.puzzle-modelo img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.puzzle-modelo figcaption{font-size:.9rem}
+.puzzle-tab{display:grid;gap:5px;width:min(78vw,330px);aspect-ratio:1;padding:5px;border-radius:18px;background:var(--t-1l);transition:gap .4s,padding .4s}
+body.quadro .puzzle-tab{width:min(80vw,420px)}
+.puzzle-peca{border:none;border-radius:10px;background-color:#fffdf6;background-repeat:no-repeat;cursor:grab;box-shadow:0 3px 0 rgba(0,0,0,.12);transition:transform .15s,box-shadow .15s,border-radius .4s;padding:0;outline-offset:2px}
+.puzzle-peca:hover{transform:scale(1.03)}
+.puzzle-peca.escolhida{outline:4px solid var(--t-2);transform:scale(1.06);z-index:1}
+.puzzle-peca.no-sitio{box-shadow:inset 0 0 0 3px rgba(107,191,89,.55),0 3px 0 rgba(0,0,0,.12)}
+.puzzle-peca.encaixa{animation:salta .35s}
+.puzzle-peca.a-arrastar{opacity:.5}
+.puzzle-tab.feito{gap:0;padding:0;background:#fffdf6;box-shadow:0 0 0 4px var(--ok)}
+.puzzle-tab.feito .puzzle-peca{border-radius:0;box-shadow:none;cursor:default;transform:none}
+.puzzle-depois{text-align:center;margin-top:10px}
+.puzzle-depois .opcao{font-size:1.7rem}
+.puzzle-palavra{display:flex;gap:18px;justify-content:center;align-items:baseline;font-size:2rem}
+.puzzle-palavra b{font-weight:900}
+.puzzle-palavra .manuscrita{font-size:1.15em}
+/* ligar os pontos */
+.pontos{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+.pontos-svg{width:min(80vw,380px);aspect-ratio:1;background:#fffdf6;border-radius:18px;border:2px solid #e3e9f1;touch-action:manipulation}
+body.quadro .pontos-svg{width:min(80vw,470px)}
+.pontos-linhas line{stroke:var(--t-2);stroke-width:2.4;stroke-linecap:round}
+.ponto{cursor:pointer;outline:none}
+.ponto .alvo{fill:transparent}
+.ponto .bola{fill:#2D3142;transition:r .15s,fill .15s}
+.ponto .num{font:900 5.2px var(--ff);fill:#5a6170;pointer-events:none}
+.ponto:hover .bola,.ponto:focus .bola{r:4.2}
+.ponto.feito .bola{fill:var(--t-2)}
+.ponto.feito .num{fill:#c9a27a}
+.ponto.proximo .bola{fill:#ffb000;animation:pulsoPonto 1s ease-in-out infinite}
+.ponto.proximo .num{fill:#b07400;font-size:6.4px}
+.ponto.abana{animation:abana .45s}
+@keyframes pulsoPonto{50%{r:5.2}}
+.pontos-linhas line{stroke-linejoin:round}
+.pontos-svg.completo .pontos-linhas line{opacity:.25}
+.pontos-linhas .suave{fill:none;stroke:var(--t-2);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;animation:aparece .5s ease-out}
+@keyframes aparece{from{opacity:0}}
+.pontos-svg.completo .ponto .num{opacity:0;transition:opacity .4s}
+.pontos-revela{display:flex;flex-direction:column;align-items:center;gap:10px}
+.pontos-letra{display:flex;gap:16px;align-items:baseline;padding:6px 20px;border-radius:18px;background:#fff;border:3px solid var(--ok)}
+.pontos-letra b{font-size:4rem;font-weight:900;line-height:1}
+.pontos-letra .manuscrita{font-size:3.6rem;line-height:1.2}
+.pontos-exemplos{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:260px}
+.pontos-exemplos .ficha{font-size:1.15rem}
+/* apanhar */
+.apanhar{display:flex;flex-direction:column;gap:8px;align-items:center}
+.apanhar-topo{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;width:min(100%,760px)}
+.apanhar-alvos{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.apanhar-alvos.grande .ficha{font-size:1.6rem}
+.apanhar-meta{display:flex;gap:4px}
+.apanhar-meta i{width:18px;height:18px;border-radius:50%;border:2px solid var(--t-1l);background:#fff;transition:background .2s,transform .2s}
+.apanhar-meta i.cheia{background:var(--ok);border-color:var(--ok);transform:scale(1.15)}
+.apanhar-campo{position:relative;width:min(100%,760px);height:min(56vh,420px);border-radius:20px;overflow:hidden;touch-action:none;cursor:none;
+  background:linear-gradient(#d9efff,#f3fbff 70%,#e7f5df 70%,#cfe9bf);border:3px solid #cfe3f3}
+.apanhar-campo:not(.a-jogar){cursor:default}
+.apanhar-inicio{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;background:rgba(255,255,255,.82);z-index:3}
+.apanhar-cesto{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:110px;text-align:center;font-size:4.4rem;line-height:1;pointer-events:none;z-index:2;transition:left .06s linear}
+.apanhar-cesto .emo>img{height:1.1em;width:1.3em}
+.apanhar-cesto.boa{animation:cestoBoa .35s}
+.apanhar-cesto.ma{animation:abana .45s}
+@keyframes cestoBoa{50%{transform:translateX(-50%) scale(1.18)}}
+.cai{position:absolute;top:0;padding:.18em .55em;min-width:2.2em;text-align:center;border-radius:16px;background:#fff;border:3px solid var(--t-1);box-shadow:0 4px 0 rgba(0,0,0,.12);font-weight:900;font-size:1.7rem;line-height:1.25;pointer-events:none;will-change:transform;white-space:nowrap}
+.cai .manuscrita{font-size:1.15em;line-height:1.2}
+body.contraste .cai{border-color:#000}
+/* percurso */
+.percurso-alvo{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:8px;font-size:1.15rem}
+.percurso-alvo b .manuscrita{font-size:1.4em}
+.percurso{display:flex;gap:14px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+.percurso-mapa{width:min(100%,640px);position:relative}
+body.quadro .percurso-mapa{width:min(100%,760px)}
+.percurso-tab{position:relative;display:grid;gap:4px;padding:6px;border-radius:18px;background:#b9dca4;border:3px solid #8fc276;height:100%;box-sizing:border-box}
+.pc-casa{position:relative;border:none;border-radius:10px;background:#e9f6dc;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:2px;cursor:pointer;min-width:0}
+.pc-casa.obst{background:#cfe6bd;cursor:default}
+.pc-casa .obst{font-size:2rem}
+.pc-casa.vizinha{box-shadow:inset 0 0 0 3px rgba(255,200,87,.9)}
+.pc-casa .ficha{font-size:clamp(.8rem,2.3vw,1.45rem);padding:.1em .3em;min-width:0;max-width:100%;overflow:hidden}
+.pc-casa .ficha.longa{font-size:clamp(.7rem,1.8vw,1.15rem)}
+.pc-casa .ficha.muito-longa{font-size:clamp(.62rem,1.45vw,.98rem);padding:.1em .15em}
+.pc-casa.apanhada{background:#f6fbef}
+.pc-casa.abana{animation:abana .45s}
+.pc-casa .saida{font-size:2rem}
+.pc-casa.fechada .saida{opacity:.35;filter:grayscale(1)}
+.pc-casa.fechada::after{content:'🔒';position:absolute;right:4px;bottom:2px;font-size:1rem}
+.pc-casa.aberta{background:#fff3c9;animation:salta .6s 2}
+.pc-ticlas{position:absolute;transform:translate(-50%,-50%);transition:left .18s ease,top .18s ease;pointer-events:none;z-index:2;display:flex;align-items:center;justify-content:center}
+.pc-ticlas img{width:92%;height:92%;object-fit:contain;filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+.pc-ticlas.bate{animation:abana .35s}
+.pc-ticlas.mau img{filter:drop-shadow(0 0 6px #e74c3c)}
+.percurso-lado{display:flex;flex-direction:column;gap:12px;align-items:center}
+.percurso-saco{display:flex;flex-wrap:wrap;gap:5px;align-items:center;justify-content:center;max-width:220px;padding:8px;border-radius:14px;background:#fff;border:2px solid var(--t-1l)}
+.percurso-saco i{font-style:normal;min-width:2.2em;min-height:1.9em;padding:0 .3em;border-radius:10px;background:var(--okl);border:2px solid var(--ok);display:inline-flex;align-items:center;justify-content:center;font-weight:900}
+.percurso-saco i.vazio{background:#f3f4f6;border:2px dashed #c9ced6}
+.percurso-saco i .manuscrita{font-size:1.2em}
+.percurso-saco.abana{animation:abana .45s}
+.percurso-setas{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,56px);gap:6px}
+.percurso-setas .seta{padding:0;font-size:1.6rem;display:flex;align-items:center;justify-content:center}
+.percurso-setas .cima{grid-column:2;grid-row:1}.percurso-setas .esq{grid-column:1;grid-row:2}.percurso-setas .baixo{grid-column:2;grid-row:2}.percurso-setas .dir{grid-column:3;grid-row:2}
+@media (max-width:620px){.pc-casa .obst,.pc-casa .saida{font-size:1.3rem}.pc-casa .ficha{font-size:.75rem}.cai{font-size:1.3rem}}
+@media (prefers-reduced-motion:reduce){.ponto.proximo .bola,.pc-casa.aberta{animation:none}}

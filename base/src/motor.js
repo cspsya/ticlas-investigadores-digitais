@@ -4,11 +4,11 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.4';
+const VERSAO = 'V3.5';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
-const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100'];
+const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100', 'puzzle', 'pontos', 'apanhar', 'percurso'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
-const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, copiar: 60, pares: 20, classificar: 20, ordenar: 45, mab: 60, cadeia: 70, reta: 35, tabela100: 110 };
+const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 60, frase: 180, ditado: 45, copiar: 60, pares: 20, classificar: 20, ordenar: 45, mab: 60, cadeia: 70, reta: 35, tabela100: 110, puzzle: 70, pontos: 50, apanhar: 120, percurso: 150 };
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
@@ -214,6 +214,7 @@ function validarAula(a) {
     }
   });
   e.push(...validarExtra(a));
+  e.push(...validarJogos(a));
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -445,7 +446,7 @@ function iniciarRonda() {
     h('div', { class: 'nav' }, btAnterior,
       h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
-  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens }[ronda.tipo];
+  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens, puzzle: rondaItens, pontos: rondaItens, apanhar: rondaItens, percurso: rondaItens }[ronda.tipo];
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
@@ -1513,6 +1514,417 @@ function abrirFerramentaMAB() {
     h('div', { class: 'linha', style: 'margin-top:10px' }, h('button', { class: 'btn azul', onclick: () => j.remove() }, '✔ OK')));
   j.querySelector('.cartao').classList.add('larga');
 }
+
+/* ==========================================================
+   Minijogos (V3.5): puzzle, pontos (ligar os pontos), apanhar (letras que caem)
+   e percurso (labirinto com letras e palavras). Sem som: tudo tem pistas visuais.
+   Funcionam com rato, toque e teclado (setas).
+   ========================================================== */
+Object.assign(EXTRA_ICONES, { puzzle: '🧩', pontos: '✏️', apanhar: '🧺', percurso: '🗺️' });
+const TIPOS_JOGO = ['puzzle', 'pontos', 'apanhar', 'percurso'];
+// erros num minijogo → estrelas (um engano ainda vale 3 estrelas)
+const errosJogo = n => n <= 1 ? 0 : n <= 3 ? 1 : 2;
+
+/* ---------- formas para ligar os pontos (coordenadas de 0 a 100) ----------
+   Cada forma é uma lista de traços; cada traço é uma lista de pontos [x, y].
+   Um ponto que repete outro já usado não leva número: a linha liga-se sozinha a ele. */
+const FORMAS_PONTOS = {
+  p: [[[32, 96], [32, 76], [32, 56], [32, 36], [40, 28], [52, 25], [63, 29], [70, 39], [71, 51], [65, 61], [54, 66], [42, 64], [32, 56]]],
+  t: [[[46, 10], [46, 34], [46, 56], [47, 74], [53, 85], [63, 87], [71, 81]], [[29, 34], [46, 34], [64, 34]]],
+  P: [[[30, 94], [30, 74], [30, 54], [30, 34], [30, 14], [47, 14], [61, 19], [68, 31], [62, 43], [48, 49], [30, 54]]],
+  T: [[[16, 16], [33, 16], [50, 16], [67, 16], [84, 16]], [[50, 16], [50, 36], [50, 56], [50, 76], [50, 94]]]
+};
+
+/* ---------- validação ---------- */
+function validarJogos(a) {
+  const e = [], txt = v => typeof v === 'string' && v.trim() !== '';
+  const lista = (v, min) => Array.isArray(v) && v.length >= min && v.every(txt);
+  a.rondas.forEach((r, ri) => {
+    if (!r || !TIPOS_JOGO.includes(r.tipo) || !Array.isArray(r.itens)) return;
+    const onde = `Ronda ${ri + 1}${r.titulo ? ' («' + r.titulo + '»)' : ''}`;
+    r.itens.forEach((it, ii) => {
+      const w = `${onde}, item ${ii + 1}`;
+      if (!it || typeof it !== 'object' || Array.isArray(it)) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (r.tipo === 'puzzle') {
+        if (!txt(it.emoji) && !txt(it.imagem)) e.push(`${w}: o puzzle precisa de «emoji» ou «imagem».`);
+        if (it.pecas != null && ![4, 6, 9].includes(it.pecas)) e.push(`${w}: «pecas» tem de ser 4, 6 ou 9.`);
+        if (it.certa != null && (!txt(it.certa) || !lista(it.erradas, 1) || it.erradas.includes(it.certa))) e.push(`${w}: com «certa» são precisas «erradas» (diferentes da certa).`);
+      }
+      if (r.tipo === 'pontos') {
+        const tracos = it.pontos || FORMAS_PONTOS[it.forma];
+        if (!tracos) e.push(`${w}: indica «forma» (${Object.keys(FORMAS_PONTOS).join(', ')}) ou «pontos».`);
+        else if (!Array.isArray(tracos) || !tracos.length || !tracos.every(tr => Array.isArray(tr) && tr.length >= 2 && tr.every(p => Array.isArray(p) && p.length === 2 && p.every(n => typeof n === 'number' && n >= 0 && n <= 100)))) e.push(`${w}: «pontos» tem de ser uma lista de traços com pontos [x, y] de 0 a 100.`);
+        if (it.exemplos != null && !lista(it.exemplos, 1)) e.push(`${w}: «exemplos» tem de ser uma lista de textos.`);
+      }
+      if (r.tipo === 'apanhar' || r.tipo === 'percurso') {
+        if (!lista(it.certas, 2)) e.push(`${w}: «certas» tem de ter pelo menos 2 textos.`);
+        if (!lista(it.erradas, 1)) e.push(`${w}: «erradas» tem de ter pelo menos 1 texto.`);
+        if (lista(it.certas, 1) && lista(it.erradas, 1) && it.certas.some(x => it.erradas.includes(x))) e.push(`${w}: há textos que estão nas certas e nas erradas.`);
+      }
+      if (r.tipo === 'apanhar' && it.meta != null && (!Number.isInteger(it.meta) || it.meta < 3 || it.meta > 20)) e.push(`${w}: «meta» tem de ser um número de 3 a 20.`);
+      if (r.tipo === 'percurso') {
+        if (Array.isArray(it.certas) && it.certas.length > 7) e.push(`${w}: no percurso usa no máximo 7 certas.`);
+        if (Array.isArray(it.erradas) && it.erradas.length > 8) e.push(`${w}: no percurso usa no máximo 8 erradas.`);
+      }
+    });
+  });
+  return e;
+}
+
+/* ---------- utilidades ---------- */
+let MAPA_EMOJIS = null;
+function imagemDe(it) {
+  if (it.imagem) return it.imagem;
+  const e = String(it.emoji || '');
+  if (!MAPA_EMOJIS) { try { MAPA_EMOJIS = JSON.parse(($('#emojis-svg') || {}).textContent || '{}'); } catch (x) { MAPA_EMOJIS = {}; } }
+  const src = MAPA_EMOJIS[e.replace(/️/g, '')];
+  if (src) return src;
+  const cv = document.createElement('canvas'); cv.width = cv.height = 256;
+  const g = cv.getContext('2d');
+  g.font = '200px "Segoe UI Emoji","Noto Color Emoji",sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(e, 128, 140);
+  return cv.toDataURL();
+}
+// teclas de direção enquanto o elemento estiver no ecrã
+function aoTeclado(el, fn) {
+  const ouvir = ev => { if (!el.isConnected) { document.removeEventListener('keydown', ouvir); return; } fn(ev); };
+  document.addEventListener('keydown', ouvir);
+}
+// animação que para sozinha quando o elemento sai do ecrã
+function animar(el, passo) {
+  let antes = performance.now();
+  const ciclo = agora => {
+    if (!el.isConnected) return;
+    const dt = Math.min(50, agora - antes); antes = agora;
+    if (passo(dt) !== false) requestAnimationFrame(ciclo);
+  };
+  requestAnimationFrame(ciclo);
+}
+const ficha = (texto, classe) => h('span', { class: 'ficha ' + (classe || '') }, rico(texto));
+
+/* ---------- puzzle ---------- */
+function itemPuzzle(ri, ronda, it, area, contador, proximo) {
+  const n = apoio() ? 4 : (it.pecas || ronda.pecas || 6);
+  const [cols, rows] = n === 4 ? [2, 2] : n === 9 ? [3, 3] : [3, 2];
+  const src = imagemDe(it);
+  const c = criarItem(ri, it, it.certa ? 1 + (it.erradas || []).length : 0, () => t('respostaCerta', { r: semMarca(it.certa) }));
+  let ordem = baralhar([...Array(n).keys()]);
+  while (ordem.every((p, k) => p === k)) ordem = baralhar(ordem);
+  let escolhida = null, feito = false;
+  const tab = h('div', { class: 'puzzle-tab', style: `grid-template-columns:repeat(${cols},1fr);grid-template-rows:repeat(${rows},1fr)` });
+  const celulas = ordem.map((_, k) => {
+    const b = h('button', { class: 'puzzle-peca', type: 'button', draggable: 'true', 'aria-label': t('i_puzzle') });
+    b.onclick = () => tocar(k);
+    b.addEventListener('dragstart', ev => { ev.dataTransfer.setData('text/plain', String(k)); b.classList.add('a-arrastar'); });
+    b.addEventListener('dragend', () => b.classList.remove('a-arrastar'));
+    b.addEventListener('dragover', ev => ev.preventDefault());
+    b.addEventListener('drop', ev => { ev.preventDefault(); const de = +ev.dataTransfer.getData('text/plain'); if (!Number.isNaN(de)) trocar(de, k); });
+    return b;
+  });
+  tab.append(...celulas);
+  function desenhar() {
+    celulas.forEach((b, k) => {
+      const p = ordem[k], col = p % cols, lin = Math.floor(p / cols);
+      b.style.backgroundImage = `url("${src}")`;
+      b.style.backgroundSize = `${cols * 100}% ${rows * 100}%`;
+      b.style.backgroundPosition = `${cols > 1 ? col / (cols - 1) * 100 : 0}% ${rows > 1 ? lin / (rows - 1) * 100 : 0}%`;
+      b.classList.toggle('no-sitio', p === k);
+      b.classList.toggle('escolhida', escolhida === k);
+    });
+  }
+  function tocar(k) {
+    if (feito) return;
+    if (escolhida === null) { escolhida = k; desenhar(); return; }
+    const a = escolhida; escolhida = null;
+    if (a !== k) trocar(a, k); else desenhar();
+  }
+  function trocar(a, b) {
+    if (feito || a === b) return;
+    [ordem[a], ordem[b]] = [ordem[b], ordem[a]]; escolhida = null;
+    som('clique'); desenhar();
+    if (ordem[a] === a) celulas[a].classList.add('encaixa');
+    if (ordem[b] === b) celulas[b].classList.add('encaixa');
+    depois(400, () => celulas.forEach(x => x.classList.remove('encaixa')));
+    if (ordem.every((p, k) => p === k)) completo();
+  }
+  const depoisPuzzle = h('div', { class: 'puzzle-depois', hidden: true });
+  function completo() {
+    feito = true; tab.classList.add('feito'); celulas.forEach(b => { b.disabled = true; b.draggable = false; });
+    festa(tab, 10); poseMascote('ideia', true); dizerBalao(t('conseguiste'));
+    const palavra = it.palavra ? h('div', { class: 'puzzle-palavra' }, h('b', null, it.palavra), h('span', { class: 'manuscrita' }, it.palavra)) : null;
+    if (!it.certa) { depoisPuzzle.hidden = false; encher(depoisPuzzle, palavra); c.acertou(null, it.palavra ? '«' + it.palavra + '»' : ''); return; }
+    const opcoes = baralhar([it.certa, ...(apoio() ? [sorteio(it.erradas)] : it.erradas)]);
+    const botoes = opcoes.map(op => h('button', { class: 'opcao', type: 'button', onclick: ev => {
+      if (c.resolvido || c.bloqueado) return;
+      if (op === it.certa) { botoes.forEach(x => x.disabled = true); if (palavra) depoisPuzzle.prepend(palavra); c.acertou(ev.currentTarget, ''); }
+      else c.errou(ev.currentTarget);
+    } }, rico(op)));
+    depoisPuzzle.hidden = false;
+    encher(depoisPuzzle, h('p', { class: 'pergunta-jogo' }, rico(it.pergunta || t('puzzle_pergunta'), false)), h('div', { class: 'opcoes' }, botoes));
+  }
+  c.aoContinuar(proximo);
+  desenhar();
+  encher(area, cabecalhoRonda(ronda, 'i_puzzle', contador),
+    h('div', { class: 'puzzle' }, h('figure', { class: 'puzzle-modelo' }, h('img', { src, alt: it.alt || it.palavra || '' }), h('figcaption', null, '👀')), tab),
+    depoisPuzzle, c.nos);
+}
+
+/* ---------- ligar os pontos ---------- */
+function itemPontos(ri, ronda, it, area, contador, proximo) {
+  const tracos = it.pontos || FORMAS_PONTOS[it.forma];
+  const c = criarItem(ri, it, 0, null);
+  // pontos únicos (numerados) e passos a percorrer
+  const pontos = [], passos = [];
+  tracos.forEach((tr, ti) => tr.forEach(([x, y], pi) => {
+    let k = pontos.findIndex(p => Math.abs(p.x - x) < 0.5 && Math.abs(p.y - y) < 0.5);
+    const auto = k >= 0;
+    if (!auto) { k = pontos.length; pontos.push({ x, y, n: k + 1 }); }
+    passos.push({ k, auto, novo: pi === 0, traco: ti });
+  }));
+  let pos = 0, erros = 0;
+  const linhas = s('g', { class: 'pontos-linhas' });
+  const cx = pontos.reduce((a, p) => a + p.x, 0) / pontos.length, cy = pontos.reduce((a, p) => a + p.y, 0) / pontos.length;
+  const marcas = pontos.map(p => {
+    // o número fica do lado de fora da forma, para não tapar outros pontos
+    let dx = p.x - cx, dy = p.y - cy; const d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
+    const g = s('g', { class: 'ponto', tabindex: '0', role: 'button', 'aria-label': String(p.n) },
+      s('circle', { class: 'alvo', cx: p.x, cy: p.y, r: 7 }),
+      s('circle', { class: 'bola', cx: p.x, cy: p.y, r: 3.2 }),
+      s('text', { x: p.x + dx * 7.5, y: p.y + dy * 7.5 + 1.9, class: 'num', 'text-anchor': 'middle' }, String(p.n)));
+    g.addEventListener('click', () => clicar(p.n - 1));
+    g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); clicar(p.n - 1); } });
+    return g;
+  });
+  const svg = s('svg', { viewBox: '-6 -6 112 112', class: 'pontos-svg' }, linhas, ...marcas);
+  const revela = h('div', { class: 'pontos-revela', hidden: true });
+  function ligar(a, b) { linhas.append(s('line', { x1: pontos[a].x, y1: pontos[a].y, x2: pontos[b].x, y2: pontos[b].y })); }
+  function avancarAuto() {
+    while (pos < passos.length && passos[pos].auto) {
+      const ant = passos[pos - 1];
+      if (!passos[pos].novo && ant) ligar(ant.k, passos[pos].k);
+      pos++;
+    }
+    marcas.forEach(m => m.classList.remove('proximo'));
+    if (pos < passos.length && (apoio() || erros > 0 || pos === 0)) marcas[passos[pos].k].classList.add('proximo');
+  }
+  function clicar(k) {
+    if (c.resolvido || pos >= passos.length) return;
+    const passo = passos[pos];
+    if (k !== passo.k) {
+      if (marcas[k].classList.contains('feito')) return; // tocar num ponto já ligado não conta
+      erros++; som('errado'); poseMascote('duvida', true);
+      c.fb.className = 'feedback bad'; c.fb.textContent = t('pontos_segue', { n: pontos[passo.k].n });
+      marcas[k].classList.remove('abana'); void marcas[k].getBBox(); marcas[k].classList.add('abana');
+      marcas[passo.k].classList.add('proximo');
+      return;
+    }
+    c.fb.className = 'feedback'; c.fb.textContent = '';
+    const ant = passos[pos - 1];
+    if (!passo.novo && ant) ligar(ant.k, k);
+    marcas[k].classList.add('feito'); som('clique');
+    pos++; avancarAuto();
+    if (pos >= passos.length) terminar();
+  }
+  function suave() {
+    // um caminho curvo por cada traço (passa pelos pontos médios), como uma letra escrita
+    tracos.forEach(tr => {
+      const q = tr.map(([x, y]) => ({ x, y }));
+      if (q.length < 3) { linhas.append(s('path', { class: 'suave', d: `M${q[0].x} ${q[0].y}L${q[1].x} ${q[1].y}` })); return; }
+      let d = `M${q[0].x} ${q[0].y}`;
+      for (let i = 1; i < q.length - 1; i++) d += ` Q${q[i].x} ${q[i].y} ${(q[i].x + q[i + 1].x) / 2} ${(q[i].y + q[i + 1].y) / 2}`;
+      d += ` L${q[q.length - 1].x} ${q[q.length - 1].y}`;
+      linhas.append(s('path', { class: 'suave', d }));
+    });
+  }
+  function terminar() {
+    svg.classList.add('completo'); suave();
+    const letra = it.letra || it.forma || '';
+    revela.hidden = false;
+    encher(revela,
+      letra ? h('div', { class: 'pontos-letra' }, h('b', null, letra), h('span', { class: 'manuscrita' }, letra)) : null,
+      it.exemplos ? h('div', { class: 'pontos-exemplos' }, it.exemplos.map(x => ficha(x))) : null);
+    c.erros = errosJogo(erros);
+    c.acertou(null, letra ? t('pontos_descobre', { l: letra }) : '');
+  }
+  c.aoContinuar(proximo);
+  encher(area, cabecalhoRonda(ronda, 'i_pontos', contador), (it.emoji || it.imagem || it.pergunta) ? blocoPergunta(it, it.pergunta || null, null) : null,
+    h('div', { class: 'pontos' }, svg, revela), c.nos);
+  avancarAuto();
+}
+
+/* ---------- apanhar o que cai ---------- */
+function itemApanhar(ri, ronda, it, area, contador, proximo) {
+  const meta = apoio() ? Math.min(it.meta || 8, 6) : (it.meta || 8);
+  const vel = (apoio() ? 0.65 : 1) * (it.velocidade || 1);
+  const c = criarItem(ri, it, 0, null);
+  let apanhadas = 0, erradas = 0, cestoX = 50, a_jogar = false, ate = 600, fichas = [];
+  const progresso = h('div', { class: 'apanhar-meta', 'aria-label': `${apanhadas} / ${meta}` }, [...Array(meta)].map(() => h('i')));
+  const cesto = h('div', { class: 'apanhar-cesto' }, h('span', { class: 'cesto-emoji' }, '🧺'));
+  const campo = h('div', { class: 'apanhar-campo' }, cesto);
+  const alvos = h('div', { class: 'apanhar-alvos' }, h('span', { class: 'rotulo' }, '✅'), it.certas.map(x => ficha(x, 'boa')));
+  const inicio = h('div', { class: 'apanhar-inicio' },
+    h('div', { class: 'apanhar-alvos grande' }, h('span', { class: 'rotulo' }, '🧺 ✅'), it.certas.map(x => ficha(x, 'boa'))),
+    h('div', { class: 'apanhar-alvos grande' }, h('span', { class: 'rotulo' }, '🚫'), baralhar(it.erradas).slice(0, 4).map(x => ficha(x, 'ma'))),
+    h('button', { class: 'btn grande', type: 'button', onclick: comecar }, t('comecar')));
+  campo.append(inicio);
+  function moverPara(x) { cestoX = Math.max(6, Math.min(94, x)); cesto.style.left = cestoX + '%'; }
+  campo.addEventListener('pointermove', ev => { const r = campo.getBoundingClientRect(); moverPara((ev.clientX - r.left) / r.width * 100); });
+  campo.addEventListener('pointerdown', ev => { const r = campo.getBoundingClientRect(); moverPara((ev.clientX - r.left) / r.width * 100); });
+  aoTeclado(campo, ev => {
+    if (!a_jogar) return;
+    if (ev.key === 'ArrowLeft') { ev.preventDefault(); moverPara(cestoX - 7); }
+    if (ev.key === 'ArrowRight') { ev.preventDefault(); moverPara(cestoX + 7); }
+  });
+  function comecar() {
+    inicio.remove(); a_jogar = true; campo.classList.add('a-jogar');
+    animar(campo, passo);
+  }
+  function largar() {
+    const certa = Math.random() < 0.5;
+    const texto = sorteio(certa ? it.certas : it.erradas);
+    const el = h('div', { class: 'cai' }, rico(texto));
+    const x = 8 + Math.random() * 84;
+    el.style.left = x + '%';
+    campo.append(el);
+    fichas.push({ el, x, y: -50, certa, v: (55 + Math.random() * 30 + apanhadas * 4) * vel });
+  }
+  function passo(dt) {
+    if (!a_jogar) return false;
+    ate -= dt;
+    if (ate <= 0) { largar(); ate = (1250 - apanhadas * 35) / vel; }
+    const H = campo.clientHeight, W = campo.clientWidth, cx = cestoX / 100 * W, larg = cesto.offsetWidth;
+    const topoCesto = H - cesto.offsetHeight * 0.85;
+    fichas = fichas.filter(f => {
+      f.y += f.v * dt / 1000;
+      f.el.style.transform = `translate(-50%, ${f.y}px)`;
+      const fx = f.x / 100 * W, baixo = f.y + f.el.offsetHeight;
+      if (baixo >= topoCesto && baixo <= H && Math.abs(fx - cx) < larg / 2 + f.el.offsetWidth / 4) { apanhou(f); return false; }
+      if (f.y > H) { f.el.remove(); return false; }
+      return true;
+    });
+    return a_jogar;
+  }
+  function apanhou(f) {
+    f.el.remove();
+    if (f.certa) {
+      apanhadas++; som('certo');
+      progresso.children[apanhadas - 1].classList.add('cheia');
+      cesto.classList.remove('boa', 'ma'); void cesto.offsetWidth; cesto.classList.add('boa');
+      c.fb.className = 'feedback ok'; c.fb.textContent = `${apanhadas} / ${meta}`;
+      if (apanhadas >= meta) acabar();
+    } else {
+      erradas++; som('errado'); poseMascote('duvida', true);
+      cesto.classList.remove('boa', 'ma'); void cesto.offsetWidth; cesto.classList.add('ma');
+      c.fb.className = 'feedback bad'; c.fb.textContent = t('apanhar_errada');
+    }
+  }
+  function acabar() {
+    a_jogar = false; campo.classList.remove('a-jogar'); campo.classList.add('fim');
+    fichas.forEach(f => f.el.remove()); fichas = [];
+    festa(cesto, 16);
+    c.erros = errosJogo(erradas);
+    c.acertou(null, `${apanhadas} / ${meta}` + (erradas ? '' : ' ⭐'));
+  }
+  c.aoContinuar(proximo);
+  encher(area, cabecalhoRonda(ronda, 'i_apanhar', contador),
+    h('div', { class: 'apanhar' }, h('div', { class: 'apanhar-topo' }, alvos, progresso), campo), c.nos);
+}
+
+/* ---------- percurso (labirinto) ---------- */
+function itemPercurso(ri, ronda, it, area, contador, proximo) {
+  const C = apoio() ? 6 : (it.colunas || 7), L = apoio() ? 4 : (it.linhas || 5);
+  const certas = it.certas.slice(0, apoio() ? 4 : 7), erradasTx = baralhar(it.erradas).slice(0, apoio() ? 3 : 8);
+  const c = criarItem(ri, it, 0, null);
+  const id = (x, y) => y * C + x, xy = k => [k % C, Math.floor(k / C)];
+  const inicio = 0, saida = C * L - 1;
+  // gera um mapa em que dá para apanhar tudo e chegar à saída sem pisar as erradas
+  let mapa;
+  for (let tent = 0; tent < 300 && !mapa; tent++) {
+    const livres = baralhar([...Array(C * L).keys()].filter(k => k !== inicio && k !== saida && k !== 1 && k !== C));
+    const nObs = tent < 200 ? Math.round(C * L * 0.16) : Math.round(C * L * 0.08);
+    const m = Array(C * L).fill(null);
+    let p = 0;
+    certas.forEach(tx => { m[livres[p++]] = { tipo: 'certa', tx }; });
+    erradasTx.forEach(tx => { m[livres[p++]] = { tipo: 'errada', tx }; });
+    for (let o = 0; o < nObs; o++) m[livres[p++]] = { tipo: 'obst', tx: sorteio(['🌳', '🪨', '🌲', '🌳']) };
+    const visto = new Set([inicio]), fila = [inicio];
+    while (fila.length) {
+      const [x, y] = xy(fila.shift());
+      [[1, 0], [-1, 0], [0, 1], [0, -1]].forEach(([dx, dy]) => {
+        const nx = x + dx, ny = y + dy; if (nx < 0 || ny < 0 || nx >= C || ny >= L) return;
+        const k = id(nx, ny); if (visto.has(k) || (m[k] && m[k].tipo !== 'certa')) return;
+        visto.add(k); fila.push(k);
+      });
+    }
+    if (visto.has(saida) && m.every((v, k) => !v || v.tipo !== 'certa' || visto.has(k))) mapa = m;
+  }
+  let pos = inicio, faltam = certas.length, erros = 0, feito = false;
+  const saco = h('div', { class: 'percurso-saco' }, h('span', { class: 'rotulo' }, '🎒'), certas.map(() => h('i', { class: 'vazio' })));
+  const tab = h('div', { class: 'percurso-tab', style: `grid-template-columns:repeat(${C},1fr)` });
+  const casas = mapa.map((v, k) => {
+    const b = h('button', { class: 'pc-casa' + (v ? ' ' + v.tipo : ''), type: 'button', tabindex: '-1' },
+      v && v.tipo === 'obst' ? h('span', { class: 'obst' }, v.tx) : v ? ficha(v.tx, semMarca(v.tx).length >= 6 ? 'muito-longa' : semMarca(v.tx).length >= 5 ? 'longa' : '') : k === saida ? h('span', { class: 'saida' }, '🌰') : null);
+    b.onclick = () => { const [x, y] = xy(pos), [a, bq] = xy(k); if (Math.abs(x - a) + Math.abs(y - bq) === 1) mover(a - x, bq - y); };
+    return b;
+  });
+  tab.append(...casas);
+  const ticlas = h('div', { class: 'pc-ticlas' }, h('img', { src: MASCOTE.ola, alt: 'Ticl@s' }));
+  ticlas.style.width = 100 / C + '%'; ticlas.style.height = 100 / L + '%';
+  tab.append(ticlas);
+  casas[saida].classList.add('fechada');
+  function colocar() {
+    const [x, y] = xy(pos);
+    ticlas.style.left = (x + 0.5) / C * 100 + '%'; ticlas.style.top = (y + 0.5) / L * 100 + '%';
+    casas.forEach((b, k) => { const [a, bq] = xy(k); b.classList.toggle('vizinha', !feito && Math.abs(x - a) + Math.abs(y - bq) === 1); });
+  }
+  function bate(classe) { ticlas.classList.remove('bate', 'mau'); void ticlas.offsetWidth; ticlas.classList.add(classe); }
+  function mover(dx, dy) {
+    if (feito || c.resolvido) return;
+    const [x, y] = xy(pos), nx = x + dx, ny = y + dy;
+    if (nx < 0 || ny < 0 || nx >= C || ny >= L) { bate('bate'); return; }
+    const k = id(nx, ny), v = mapa[k];
+    if (v && v.tipo === 'obst') { bate('bate'); c.fb.className = 'feedback'; c.fb.textContent = t('percurso_bloqueado'); return; }
+    if (v && v.tipo === 'errada') {
+      erros++; som('errado'); poseMascote('duvida', true); bate('mau');
+      casas[k].classList.remove('abana'); void casas[k].offsetWidth; casas[k].classList.add('abana');
+      c.fb.className = 'feedback bad'; c.fb.textContent = t('percurso_errada');
+      return;
+    }
+    if (k === saida && faltam > 0) {
+      bate('bate'); c.fb.className = 'feedback bad'; c.fb.textContent = t('percurso_falta', { n: faltam });
+      saco.classList.remove('abana'); void saco.offsetWidth; saco.classList.add('abana');
+      return;
+    }
+    pos = k; colocar(); som('clique');
+    c.fb.className = 'feedback'; c.fb.textContent = '';
+    if (v && v.tipo === 'certa') {
+      mapa[k] = null; faltam--;
+      const f = casas[k].querySelector('.ficha'); if (f) f.remove();
+      casas[k].classList.remove('certa'); casas[k].classList.add('apanhada');
+      const vazio = saco.querySelector('i.vazio'); if (vazio) { vazio.classList.remove('vazio'); vazio.replaceChildren(rico(v.tx)); }
+      som('certo');
+      if (!faltam) { casas[saida].classList.remove('fechada'); casas[saida].classList.add('aberta'); c.fb.className = 'feedback ok'; c.fb.textContent = t('percurso_saida'); }
+    }
+    if (k === saida) {
+      feito = true; colocar(); festa(ticlas, 18);
+      c.erros = errosJogo(erros);
+      c.acertou(null, '');
+    }
+  }
+  const seta = (rot, dx, dy, cl) => h('button', { class: 'btn seta ' + cl, type: 'button', 'aria-label': rot, onclick: () => mover(dx, dy) }, rot);
+  const comando = h('div', { class: 'percurso-setas' }, seta('⬆', 0, -1, 'cima'), seta('⬅', -1, 0, 'esq'), seta('⬇', 0, 1, 'baixo'), seta('➡', 1, 0, 'dir'));
+  aoTeclado(tab, ev => {
+    const d = { ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0], w: [0, -1], s: [0, 1], a: [-1, 0], d: [1, 0] }[ev.key];
+    if (d && !c.resolvido) { ev.preventDefault(); mover(...d); }
+  });
+  c.aoContinuar(proximo);
+  encher(area, cabecalhoRonda(ronda, 'i_percurso', contador),
+    h('div', { class: 'percurso-alvo' }, h('span', { class: 'rotulo' }, '🎒 ✅'), it.alvo ? h('b', null, rico(it.alvo, false)) : certas.map(x => ficha(x, 'boa'))),
+    h('div', { class: 'percurso' }, h('div', { class: 'percurso-mapa', style: `aspect-ratio:${C}/${L}` }, tab), h('div', { class: 'percurso-lado' }, saco, comando)),
+    c.nos);
+  colocar();
+}
+Object.assign(EXTRA_ITENS, { puzzle: itemPuzzle, pontos: itemPontos, apanhar: itemApanhar, percurso: itemPercurso });
 
 (function arrancar() {
   $('#btAcess').onclick = abrirAcessibilidade;
