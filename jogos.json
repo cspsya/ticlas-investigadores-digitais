@@ -771,5 +771,31 @@
       "Rato: clicar e arrastar",
       "Teclado: escrita de frases"
     ]
+  },
+  {
+    "id": "2026-11-24-1ano-revisao-p-t-minijogos",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "Jogos do P e do T",
+    "descricao": "Segunda versão da revisão das letras p e t, com minijogos: escrita no teclado a partir da letra manuscrita, ligar os pontos para descobrir a letra, apanhar as letras certas que caem, puzzles, ordenar as letras de palavras simples e percursos para recolher letras e palavras.",
+    "disciplina": "Português",
+    "data": "2026-11-24",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-24_1ano_Portugues_Jogos_P_T_v2.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Puzzles, pontos, letras que caem e percursos com o p e o t!",
+    "focoTic": [
+      "Teclado: letras e setas",
+      "Rato: mover, tocar e arrastar"
+    ],
+    "ilustracao": {
+      "tipo": "letras",
+      "letras": [
+        "p",
+        "t",
+        "🧩"
+      ]
+    }
   }
 ]
