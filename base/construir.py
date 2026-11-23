@@ -33,12 +33,12 @@ SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
 AULAS = RAIZ / "aulas"
 MODELO = BASE / "modelo-jogo.html"
-TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar", "mab", "cadeia", "reta", "tabela100"]
+TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
 MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
 SEGUNDOS = {"escolher": 30, "verdadeiro_falso": 25, "completar": 35, "escrever": 60, "frase": 180,
             "ditado": 45, "copiar": 60, "pares": 20, "classificar": 20, "ordenar": 45,
-            "mab": 60, "cadeia": 70, "reta": 35, "tabela100": 110}
+            "mab": 60, "cadeia": 70, "reta": 35, "tabela100": 110, "puzzle": 70, "pontos": 50, "apanhar": 120, "percurso": 150}
 CACHE = BASE / ".cache-emojis"
 NOTO = "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u{}.svg"
 COPIAVEIS = re.compile(r"^[A-Za-zÇçÁÉÍÓÚáéíóúÀàÂÊÔâêôÃÕãõ .,!?-]+$")  # o mesmo que COPIAVEIS em src/motor.js
@@ -56,6 +56,45 @@ def tem_texto(v):
 
 def inteiro(v):
     return isinstance(v, int) and not isinstance(v, bool)
+
+
+FORMAS_PONTOS = ("p", "t", "P", "T")  # as mesmas de FORMAS_PONTOS em src/motor.js
+
+
+def validar_minijogo(tipo, it, w):
+    """Minijogos (V3.5): as mesmas regras de validarJogos() em src/motor.js."""
+    e = []
+    lista = lambda v, n: isinstance(v, list) and len(v) >= n and all(tem_texto(x) for x in v)
+    if tipo == "puzzle":
+        if not tem_texto(it.get("emoji")) and not tem_texto(it.get("imagem")):
+            e.append(f"{w}: o puzzle precisa de «emoji» ou «imagem».")
+        if it.get("pecas") is not None and it["pecas"] not in (4, 6, 9):
+            e.append(f"{w}: «pecas» tem de ser 4, 6 ou 9.")
+        if it.get("certa") is not None and (not tem_texto(it["certa"]) or not lista(it.get("erradas"), 1) or it["certa"] in it["erradas"]):
+            e.append(f"{w}: com «certa» são precisas «erradas» (diferentes da certa).")
+    elif tipo == "pontos":
+        tr = it.get("pontos")
+        if tr is None and it.get("forma") not in FORMAS_PONTOS:
+            e.append(f"{w}: indica «forma» ({', '.join(FORMAS_PONTOS)}) ou «pontos».")
+        elif tr is not None and not (isinstance(tr, list) and tr and all(isinstance(t, list) and len(t) >= 2 and all(isinstance(p, list) and len(p) == 2 and all(isinstance(n, (int, float)) and 0 <= n <= 100 for n in p) for p in t) for t in tr)):
+            e.append(f"{w}: «pontos» tem de ser uma lista de traços com pontos [x, y] de 0 a 100.")
+        if it.get("exemplos") is not None and not lista(it["exemplos"], 1):
+            e.append(f"{w}: «exemplos» tem de ser uma lista de textos.")
+    else:
+        if not lista(it.get("certas"), 2):
+            e.append(f"{w}: «certas» tem de ter pelo menos 2 textos.")
+        if not lista(it.get("erradas"), 1):
+            e.append(f"{w}: «erradas» tem de ter pelo menos 1 texto.")
+        if lista(it.get("certas"), 1) and lista(it.get("erradas"), 1) and set(it["certas"]) & set(it["erradas"]):
+            e.append(f"{w}: há textos que estão nas certas e nas erradas.")
+        if tipo == "apanhar" and it.get("meta") is not None and not (inteiro(it["meta"]) and 3 <= it["meta"] <= 20):
+            e.append(f"{w}: «meta» tem de ser um número de 3 a 20.")
+        if tipo == "percurso":
+            if isinstance(it.get("certas"), list) and len(it["certas"]) > 7:
+                e.append(f"{w}: no percurso usa no máximo 7 certas.")
+            if isinstance(it.get("erradas"), list) and len(it["erradas"]) > 8:
+                e.append(f"{w}: no percurso usa no máximo 8 erradas.")
+    return e
 
 
 def validar_matematica(tipo, it, w):
@@ -143,7 +182,7 @@ def validar(a):
                 if len({norm(x) for x in er}) != len(er):
                     e.append(f"{w}: há opções repetidas em «erradas».")
 
-            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar", "mab", "cadeia", "reta", "tabela100") and not isinstance(it, dict):
+            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso") and not isinstance(it, dict):
                 e.append(f"{w}: tem de ser um objeto {{ ... }}.")
                 continue
             if isinstance(it, dict) and "maiusculas" in it and not isinstance(it["maiusculas"], bool):
@@ -201,6 +240,8 @@ def validar(a):
                     e.append(f"{w}: as peças são todas iguais.")
             elif tipo in ("mab", "cadeia", "reta", "tabela100"):
                 e.extend(validar_matematica(tipo, it, w))
+            elif tipo in ("puzzle", "pontos", "apanhar", "percurso"):
+                e.extend(validar_minijogo(tipo, it, w))
         if tipo == "pares":
             ok = [p for p in itens if isinstance(p, list) and len(p) == 2]
             esq, dirt = [norm(p[0]) for p in ok], [norm(p[1]) for p in ok]
