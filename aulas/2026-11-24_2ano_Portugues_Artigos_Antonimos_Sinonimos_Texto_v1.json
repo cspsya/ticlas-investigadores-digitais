@@ -1,0 +1,782 @@
+{
+  "id": "2026-11-24-ticlas-2ano-artigos-antonimos-sinonimos-texto",
+  "titulo": "Artigos, antónimos, sinónimos e o texto em parágrafos",
+  "ano": 2,
+  "turma": "2.º ano",
+  "disciplina": "Português",
+  "data": "2026-11-24",
+  "descricao": "Determinantes artigos (definidos e indefinidos), antónimos e sinónimos, leitura de um texto com 3 parágrafos (título, parágrafos, personagens) e escrita de frases e de um texto com início, meio e fim",
+  "resumo": "Investiga artigos, contrários e sinónimos e escreve a tua história em 3 parágrafos!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: escrita de frases e parágrafos"
+  ],
+  "objetivo": "Usar os artigos certos, descobrir antónimos e sinónimos, encontrar os parágrafos e as personagens de um texto e escrever uma história em 3 parágrafos.",
+  "minutos": 60,
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "completar",
+      "visual": "baloes",
+      "titulo": "Balões dos artigos",
+      "instrucao": "Lê a frase. Rebenta o balão com o artigo que falta.",
+      "itens": [
+        {
+          "frase": "Vi ___ gato no telhado.",
+          "emoji": "🐱",
+          "certa": "um",
+          "erradas": [
+            "uma",
+            "umas"
+          ],
+          "explicacao": "um gato: gato é masculino e singular."
+        },
+        {
+          "frase": "___ flores do jardim são bonitas.",
+          "emoji": "🌸",
+          "certa": "As",
+          "erradas": [
+            "Os",
+            "A"
+          ],
+          "explicacao": "As flores: feminino e plural."
+        },
+        {
+          "frase": "Comi ___ maçã vermelha.",
+          "emoji": "🍎",
+          "certa": "uma",
+          "erradas": [
+            "um",
+            "umas"
+          ],
+          "explicacao": "uma maçã: feminino e singular."
+        },
+        {
+          "frase": "O esquilo guardou ___ nozes na toca.",
+          "emoji": "🌰",
+          "certa": "as",
+          "erradas": [
+            "os",
+            "a"
+          ],
+          "explicacao": "as nozes: feminino e plural."
+        },
+        {
+          "frase": "Na praia apanhei ___ conchas.",
+          "emoji": "🐚",
+          "certa": "umas",
+          "erradas": [
+            "uns",
+            "uma"
+          ],
+          "explicacao": "umas conchas: feminino e plural."
+        },
+        {
+          "frase": "___ cão da Inês chama-se Bobi.",
+          "emoji": "🐶",
+          "certa": "O",
+          "erradas": [
+            "A",
+            "Os"
+          ],
+          "explicacao": "O cão: masculino e singular."
+        },
+        {
+          "frase": "Comprei ___ livros novos.",
+          "emoji": "📚",
+          "certa": "uns",
+          "erradas": [
+            "umas",
+            "um"
+          ],
+          "explicacao": "uns livros: masculino e plural."
+        },
+        {
+          "frase": "Os meninos jogam com ___ bola.",
+          "emoji": "⚽",
+          "certa": "a",
+          "erradas": [
+            "o",
+            "os"
+          ],
+          "explicacao": "a bola: feminino e singular."
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Caixas dos artigos",
+      "instrucao": "Os artigos definidos são o, a, os, as. Os artigos indefinidos são um, uma, uns, umas. Põe cada grupo de palavras na caixa certa.",
+      "caixas": [
+        "Definido (o, a, os, as)",
+        "Indefinido (um, uma, uns, umas)"
+      ],
+      "itens": [
+        [
+          "o livro",
+          "Definido (o, a, os, as)"
+        ],
+        [
+          "a casa",
+          "Definido (o, a, os, as)"
+        ],
+        [
+          "os gatos",
+          "Definido (o, a, os, as)"
+        ],
+        [
+          "as flores",
+          "Definido (o, a, os, as)"
+        ],
+        [
+          "um lápis",
+          "Indefinido (um, uma, uns, umas)"
+        ],
+        [
+          "uma mesa",
+          "Indefinido (um, uma, uns, umas)"
+        ],
+        [
+          "uns sapatos",
+          "Indefinido (um, uma, uns, umas)"
+        ],
+        [
+          "umas bolas",
+          "Indefinido (um, uma, uns, umas)"
+        ]
+      ]
+    },
+    {
+      "tipo": "pares",
+      "titulo": "Liga os contrários",
+      "instrucao": "Os antónimos são palavras com significado contrário. Liga cada palavra ao seu antónimo.",
+      "itens": [
+        [
+          "alto",
+          "baixo"
+        ],
+        [
+          "grande",
+          "pequeno"
+        ],
+        [
+          "cheio",
+          "vazio"
+        ],
+        [
+          "quente",
+          "frio"
+        ],
+        [
+          "rápido",
+          "lento"
+        ],
+        [
+          "abrir",
+          "fechar"
+        ],
+        [
+          "novo",
+          "velho"
+        ],
+        [
+          "subir",
+          "descer"
+        ]
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Comboio dos sinónimos",
+      "instrucao": "Os sinónimos são palavras com significado igual ou parecido. Escolhe a carruagem com o sinónimo.",
+      "itens": [
+        {
+          "pergunta": "Qual é o sinónimo de «contente»?",
+          "emoji": "😊",
+          "certa": "alegre",
+          "erradas": [
+            "triste",
+            "zangado"
+          ],
+          "explicacao": "contente = alegre"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «bonito»?",
+          "emoji": "🦋",
+          "certa": "lindo",
+          "erradas": [
+            "feio",
+            "pequeno"
+          ],
+          "explicacao": "bonito = lindo"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «rápido»?",
+          "emoji": "🚀",
+          "certa": "veloz",
+          "erradas": [
+            "lento",
+            "pesado"
+          ],
+          "explicacao": "rápido = veloz"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «começar»?",
+          "emoji": "🏁",
+          "certa": "iniciar",
+          "erradas": [
+            "acabar",
+            "parar"
+          ],
+          "explicacao": "começar = iniciar"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «falar»?",
+          "emoji": "💬",
+          "certa": "conversar",
+          "erradas": [
+            "calar",
+            "ouvir"
+          ],
+          "explicacao": "falar = conversar"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «prenda»?",
+          "emoji": "🎁",
+          "certa": "presente",
+          "erradas": [
+            "caixa",
+            "festa"
+          ],
+          "explicacao": "prenda = presente"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «medo»?",
+          "emoji": "😱",
+          "certa": "receio",
+          "erradas": [
+            "coragem",
+            "alegria"
+          ],
+          "explicacao": "medo = receio"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «olhar»?",
+          "emoji": "👀",
+          "certa": "observar",
+          "erradas": [
+            "ouvir",
+            "fechar"
+          ],
+          "explicacao": "olhar = observar"
+        }
+      ]
+    },
+    {
+      "tipo": "classificar",
+      "titulo": "Sinónimo ou antónimo?",
+      "instrucao": "Lê cada par de palavras. Significam o mesmo (sinónimos) ou o contrário (antónimos)? Põe na caixa certa.",
+      "caixas": [
+        "Sinónimos (=)",
+        "Antónimos (≠)"
+      ],
+      "itens": [
+        [
+          "alto – baixo",
+          "Antónimos (≠)"
+        ],
+        [
+          "contente – alegre",
+          "Sinónimos (=)"
+        ],
+        [
+          "fácil – difícil",
+          "Antónimos (≠)"
+        ],
+        [
+          "bonito – lindo",
+          "Sinónimos (=)"
+        ],
+        [
+          "ligar – desligar",
+          "Antónimos (≠)"
+        ],
+        [
+          "rápido – veloz",
+          "Sinónimos (=)"
+        ],
+        [
+          "perto – longe",
+          "Antónimos (≠)"
+        ],
+        [
+          "acabar – terminar",
+          "Sinónimos (=)"
+        ],
+        [
+          "entrar – sair",
+          "Antónimos (≠)"
+        ],
+        [
+          "início – começo",
+          "Sinónimos (=)"
+        ]
+      ]
+    },
+    {
+      "tipo": "completar",
+      "visual": "aviao",
+      "titulo": "Avião das frases",
+      "instrucao": "Lê a frase e o que está entre parênteses. Leva o avião até à palavra que falta.",
+      "itens": [
+        {
+          "frase": "O elefante é grande e o rato é ___. (contrário de grande)",
+          "emoji": "🐘",
+          "certa": "pequeno",
+          "erradas": [
+            "enorme",
+            "alto"
+          ],
+          "explicacao": "grande ≠ pequeno"
+        },
+        {
+          "frase": "Bebi o leite todo e o copo ficou ___. (contrário de cheio)",
+          "emoji": "🥛",
+          "certa": "vazio",
+          "erradas": [
+            "cheio",
+            "grande"
+          ],
+          "explicacao": "cheio ≠ vazio"
+        },
+        {
+          "frase": "A sopa está quente, mas o gelado está ___. (contrário de quente)",
+          "emoji": "🍦",
+          "certa": "frio",
+          "erradas": [
+            "quente",
+            "morno"
+          ],
+          "explicacao": "quente ≠ frio"
+        },
+        {
+          "frase": "O esquilo sobe à árvore e depois ___. (contrário de sobe)",
+          "emoji": "🐿️",
+          "certa": "desce",
+          "erradas": [
+            "sobe",
+            "salta"
+          ],
+          "explicacao": "sobe ≠ desce"
+        },
+        {
+          "frase": "A tartaruga é lenta, mas a lebre é ___. (contrário de lenta)",
+          "emoji": "🐢",
+          "certa": "rápida",
+          "erradas": [
+            "lenta",
+            "pequena"
+          ],
+          "explicacao": "lenta ≠ rápida"
+        },
+        {
+          "frase": "A Inês está contente, ou seja, está ___. (sinónimo de contente)",
+          "emoji": "🙂",
+          "certa": "alegre",
+          "erradas": [
+            "triste",
+            "cansada"
+          ],
+          "explicacao": "contente = alegre"
+        },
+        {
+          "frase": "O carro é rápido, ou seja, é ___. (sinónimo de rápido)",
+          "emoji": "🚗",
+          "certa": "veloz",
+          "erradas": [
+            "lento",
+            "pesado"
+          ],
+          "explicacao": "rápido = veloz"
+        },
+        {
+          "frase": "A aula vai acabar, ou seja, vai ___. (sinónimo de acabar)",
+          "emoji": "🏫",
+          "certa": "terminar",
+          "erradas": [
+            "começar",
+            "iniciar"
+          ],
+          "explicacao": "acabar = terminar"
+        }
+      ]
+    },
+    {
+      "tipo": "escolher",
+      "titulo": "Detetive do texto",
+      "instrucao": "Lê o texto com atenção. Depois responde à pergunta. Lembra-te: cada parágrafo começa com um espaço no início da linha.",
+      "itens": [
+        {
+          "pergunta": "Qual é o título do texto?",
+          "certa": "A bola perdida",
+          "erradas": [
+            "O jardim",
+            "O senhor Alberto"
+          ],
+          "explicacao": "O título está em cima, antes do texto.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Quantos parágrafos tem o texto?",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "6"
+          ],
+          "dica": "Conta as linhas que começam com um espaço.",
+          "explicacao": "O texto tem 3 parágrafos: cada um começa com um espaço no início da linha.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Quem são as personagens do texto?",
+          "certa": "o Rui, a Inês e o senhor Alberto",
+          "erradas": [
+            "o Rui e a Inês",
+            "a bola, o muro e o jardim"
+          ],
+          "explicacao": "As personagens são quem participa na história: o Rui, a Inês e o senhor Alberto.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Onde foram brincar o Rui e a Inês?",
+          "certa": "no jardim",
+          "erradas": [
+            "na escola",
+            "na praia"
+          ],
+          "explicacao": "1.º parágrafo: «foram brincar para o jardim».",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Em que parágrafo a bola cai no quintal do senhor Alberto?",
+          "certa": "no 2.º parágrafo",
+          "erradas": [
+            "no 1.º parágrafo",
+            "no 3.º parágrafo"
+          ],
+          "explicacao": "É no 2.º parágrafo, o meio da história.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Que personagem teve uma ideia?",
+          "certa": "a Inês",
+          "erradas": [
+            "o Rui",
+            "o senhor Alberto"
+          ],
+          "explicacao": "2.º parágrafo: «a Inês teve uma ideia».",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Que palavra do texto é o antónimo de «triste»?",
+          "certa": "contentes",
+          "erradas": [
+            "perdida",
+            "azul"
+          ],
+          "explicacao": "triste ≠ contente. Está no 3.º parágrafo.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "No 1.º parágrafo, qual destes é um artigo indefinido?",
+          "certa": "uma (uma bola azul)",
+          "erradas": [
+            "o (o jardim)",
+            "a (a irmã)"
+          ],
+          "explicacao": "um, uma, uns, umas são artigos indefinidos.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        },
+        {
+          "pergunta": "Que parágrafo conta o fim da história?",
+          "certa": "o 3.º parágrafo",
+          "erradas": [
+            "o 1.º parágrafo",
+            "o 2.º parágrafo"
+          ],
+          "explicacao": "1.º parágrafo: início. 2.º: meio. 3.º: fim.",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIwIDUxOCIgd2lkdGg9IjExMjAiIGhlaWdodD0iNTE4Ij4KPHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjExMDgiIGhlaWdodD0iNTA2IiByeD0iMjgiIGZpbGw9IiNmZmZkZjYiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CjxsaW5lIHgxPSI1MiIgeTE9IjgwIiB4Mj0iNTIiIHkyPSI0ODgiIHN0cm9rZT0iI2YzYjlhMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CjxnPjxsaW5lIHgxPSI0MCIgeTE9IjE0NCIgeDI9IjEwODAiIHkyPSIxNDQiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMTk4IiB4Mj0iMTA4MCIgeTI9IjE5OCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSIyNTIiIHgyPSIxMDgwIiB5Mj0iMjUyIiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjMwNiIgeDI9IjEwODAiIHkyPSIzMDYiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjQwIiB5MT0iMzYwIiB4Mj0iMTA4MCIgeTI9IjM2MCIgc3Ryb2tlPSIjY2ZlM2YzIiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iNDAiIHkxPSI0MTQiIHgyPSIxMDgwIiB5Mj0iNDE0IiBzdHJva2U9IiNjZmUzZjMiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSI0MCIgeTE9IjQ2OCIgeDI9IjEwODAiIHkyPSI0NjgiIHN0cm9rZT0iI2NmZTNmMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPgo8dGV4dCB4PSI1NjAuMCIgeT0iNzQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2MwNTYyYSI+QSBib2xhIHBlcmRpZGE8L3RleHQ+CjxnIGZvbnQtZmFtaWx5PSJTZWdvZSBVSSwgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZmlsbD0iIzJiMmIyYiI+PHRleHQgeD0iMTQwIiB5PSIxMzIiPk51bWEgbWFuaMOjIGRlIHNvbCwgbyBSdWkgZSBhIGlybcOjIEluw6pzIGZvcmFtIGJyaW5jYXI8L3RleHQ+PHRleHQgeD0iNzAiIHk9IjE4NiI+cGFyYSBvIGphcmRpbS4gTGV2YXJhbSB1bWEgYm9sYSBhenVsLjwvdGV4dD48dGV4dCB4PSIxNDAiIHk9IjI1NCI+RGUgcmVwZW50ZSwgYSBib2xhIHNhbHRvdSBvIG11cm8gZSBjYWl1IG5vIHF1aW50YWwgZG88L3RleHQ+PHRleHQgeD0iNzAiIHk9IjMwOCI+c2VuaG9yIEFsYmVydG8uIE8gUnVpIGZpY291IHRyaXN0ZSwgbWFzIGEgSW7DqnMgdGV2ZSB1bWEgaWRlaWEuPC90ZXh0Pjx0ZXh0IHg9IjE0MCIgeT0iMzc2Ij5PIHNlbmhvciBBbGJlcnRvIGFicml1IGEgcG9ydGEgZSBkZXZvbHZldSBhIGJvbGEuIE9zPC90ZXh0Pjx0ZXh0IHg9IjcwIiB5PSI0MzAiPmlybcOjb3MgYWdyYWRlY2VyYW0gZSB2b2x0YXJhbSBhIGJyaW5jYXIsIG11aXRvIGNvbnRlbnRlcy48L3RleHQ+PC9nPgo8L3N2Zz4=",
+          "imagemGrande": true,
+          "alt": "A bola perdida. Numa manhã de sol, o Rui e a irmã Inês foram brincar para o jardim. Levaram uma bola azul. De repente, a bola saltou o muro e caiu no quintal do senhor Alberto. O Rui ficou triste, mas a Inês teve uma ideia. O senhor Alberto abriu a porta e devolveu a bola. Os irmãos agradeceram e voltaram a brincar, muito contentes."
+        }
+      ]
+    },
+    {
+      "tipo": "ordenar",
+      "titulo": "Início, meio e fim",
+      "instrucao": "Cada história tem 3 parágrafos: início, meio e fim. Toca nas partes pela ordem certa.",
+      "itens": [
+        {
+          "pergunta": "Ordena a história.",
+          "emoji": "🌻",
+          "pecas": [
+            "A Ana semeou uma semente.",
+            "Todos os dias, regou a terra.",
+            "Na primavera, nasceu uma flor."
+          ]
+        },
+        {
+          "pergunta": "Ordena a história.",
+          "emoji": "🎂",
+          "pecas": [
+            "O Pedro fez anos.",
+            "Os amigos cantaram os parabéns.",
+            "No fim, comeram o bolo."
+          ]
+        },
+        {
+          "pergunta": "Ordena a história.",
+          "emoji": "☂️",
+          "pecas": [
+            "Começou a chover.",
+            "A Inês abriu o guarda-chuva.",
+            "Chegou a casa sem se molhar."
+          ]
+        },
+        {
+          "pergunta": "Ordena a história.",
+          "emoji": "🌰",
+          "pecas": [
+            "O Ticl@s encontrou uma noz.",
+            "Tentou abri-la com os dentes.",
+            "Por fim, comeu a noz."
+          ]
+        },
+        {
+          "pergunta": "Ordena a história.",
+          "emoji": "🚌",
+          "pecas": [
+            "O autocarro chegou à paragem.",
+            "Os meninos entraram.",
+            "O autocarro partiu para a escola."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "ordenar",
+      "titulo": "Frases baralhadas",
+      "instrucao": "Toca nas palavras pela ordem certa. A frase começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🐿️",
+          "pecas": [
+            "O",
+            "esquilo",
+            "guardou",
+            "uma",
+            "noz."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "✏️",
+          "pecas": [
+            "A",
+            "Inês",
+            "tem",
+            "uns",
+            "lápis",
+            "novos."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🌳",
+          "pecas": [
+            "Os",
+            "meninos",
+            "brincam",
+            "no",
+            "jardim."
+          ]
+        },
+        {
+          "pergunta": "Ordena a frase.",
+          "emoji": "🐦",
+          "pecas": [
+            "Um",
+            "pássaro",
+            "canta",
+            "na",
+            "árvore."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Investigador escritor",
+      "instrucao": "Escreve uma frase tua no teclado. Começa com letra maiúscula e acaba com ponto final.",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase com o artigo «uma» e o nome de um animal.",
+          "emoji": "🐾",
+          "palavra": "uma",
+          "minPalavras": 4
+        },
+        {
+          "pergunta": "Escreve uma frase com os antónimos «grande» e «pequeno».",
+          "emoji": "🐘",
+          "palavra": "pequeno",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase com «alegre», que é sinónimo de «contente».",
+          "emoji": "😊",
+          "palavra": "alegre",
+          "minPalavras": 4
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "A minha história em 3 parágrafos",
+      "instrucao": "Vais escrever a história «O Ticl@s e a noz perdida», um parágrafo de cada vez. No fim, as tuas frases aparecem juntas, como um texto.",
+      "itens": [
+        {
+          "pergunta": "1.º parágrafo – INÍCIO. Quem são as personagens? Onde estão? Exemplo: «Numa tarde de outono, o Ticl@s e a amiga Lia...»",
+          "emoji": "🐿️",
+          "minPalavras": 8
+        },
+        {
+          "pergunta": "2.º parágrafo – MEIO. O que aconteceu? Como procuraram a noz?",
+          "emoji": "🔍",
+          "minPalavras": 8
+        },
+        {
+          "pergunta": "3.º parágrafo – FIM. Como acabou a história? Como se sentiram as personagens?",
+          "emoji": "🎉",
+          "minPalavras": 8
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos contrários",
+      "instrucao": "Descobre os pares de antónimos.",
+      "itens": [
+        [
+          "dia",
+          "noite"
+        ],
+        [
+          "entrar",
+          "sair"
+        ],
+        [
+          "perto",
+          "longe"
+        ],
+        [
+          "fácil",
+          "difícil"
+        ],
+        [
+          "muito",
+          "pouco"
+        ],
+        [
+          "molhado",
+          "seco"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Apanha o Ticl@s",
+      "instrucao": "Apanha o Ticl@s quando aparecer a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Qual é o antónimo de «abrir»?",
+          "certa": "fechar",
+          "erradas": [
+            "ligar",
+            "entrar"
+          ],
+          "explicacao": "abrir ≠ fechar"
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «lindo»?",
+          "certa": "bonito",
+          "erradas": [
+            "feio",
+            "alto"
+          ],
+          "explicacao": "lindo = bonito"
+        },
+        {
+          "pergunta": "Qual é um artigo indefinido?",
+          "certa": "umas",
+          "erradas": [
+            "as",
+            "os"
+          ],
+          "explicacao": "um, uma, uns, umas são indefinidos."
+        },
+        {
+          "pergunta": "Qual é o sinónimo de «acabar»?",
+          "certa": "terminar",
+          "erradas": [
+            "começar",
+            "iniciar"
+          ],
+          "explicacao": "acabar = terminar"
+        },
+        {
+          "pergunta": "Qual completa? «___ pássaros cantam.»",
+          "certa": "Os",
+          "erradas": [
+            "As",
+            "O"
+          ],
+          "explicacao": "Os pássaros: masculino e plural."
+        },
+        {
+          "pergunta": "Qual é o antónimo de «velho»?",
+          "certa": "novo",
+          "erradas": [
+            "antigo",
+            "grande"
+          ],
+          "explicacao": "velho ≠ novo"
+        }
+      ]
+    }
+  ]
+}
