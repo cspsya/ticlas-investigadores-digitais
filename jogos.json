@@ -716,5 +716,23 @@
     },
     "resumo": "Investiga o Funchal com o teu grupo e ajuda a completar o BI da cidade!",
     "focoTic": "Pesquisa de informação"
+  },
+  {
+    "id": "2026-11-24-ticlas-2ano-artigos-antonimos-sinonimos-texto",
+    "turma": "2.º ano",
+    "ano": 2,
+    "titulo": "Artigos, antónimos, sinónimos e o texto em parágrafos",
+    "descricao": "Determinantes artigos (definidos e indefinidos), antónimos e sinónimos, leitura de um texto com 3 parágrafos (título, parágrafos, personagens) e escrita de frases e de um texto com início, meio e fim",
+    "disciplina": "Português",
+    "data": "2026-11-24",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-24_2ano_Portugues_Artigos_Antonimos_Sinonimos_Texto_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Investiga artigos, contrários e sinónimos e escreve a tua história em 3 parágrafos!",
+    "focoTic": [
+      "Rato: clicar e arrastar",
+      "Teclado: escrita de frases e parágrafos"
+    ]
   }
 ]
