@@ -214,6 +214,7 @@ function validarAula(a) {
     }
   });
   e.push(...validarExtra(a));
+  e.push(...validarAlgoritmo(a));
   e.push(...validarJogos(a));
   e.push(...validarConsulta(a));
   e.push(...validarFilmes(a));
@@ -459,7 +460,7 @@ function iniciarRonda() {
     h('div', { class: 'nav' }, btAnterior,
       h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
-  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens, puzzle: rondaItens, pontos: rondaItens, apanhar: rondaItens, percurso: rondaItens }[ronda.tipo];
+  const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, algoritmo: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens, puzzle: rondaItens, pontos: rondaItens, apanhar: rondaItens, percurso: rondaItens }[ronda.tipo];
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
@@ -2188,6 +2189,299 @@ function validarFilmes(a) {
   cenas(a.abertura, 'Abertura');
   a.rondas.forEach((r, ri) => { if (r) cenas(r.animacao, `Ronda ${ri + 1}${r.titulo ? ' («' + r.titulo + '»)' : ''}, animação`); });
   return e;
+}
+
+/* ==========================================================
+   Algoritmo da adição com MAB (V3.9): "tipo": "algoritmo".
+   Item: { "compras": [["🎒", "mochila", 47], ["📕", "livro", 28]], "pergunta": "…" }
+         ou { "parcelas": [47, 28] } (2 ou 3 parcelas; soma até 999).
+   Opcional: "unidade" (por omissão "€" quando há compras), "dica", "explicacao".
+   O aluno trabalha coluna a coluna, das unidades para as centenas:
+   junta as peças na linha «Tudo junto», conta-as, faz as trocas
+   (10 cubos → 1 barra, 10 barras → 1 placa) e escreve o algarismo na conta em pé.
+   O que «vai» aparece por cima da coluna seguinte, ligado à peça trocada.
+   ========================================================== */
+TIPOS.push('algoritmo');
+SEGUNDOS.algoritmo = 150;
+EXTRA_ICONES.algoritmo = '🧾';
+EXTRA_ITENS.algoritmo = itemAlgoritmo;
+
+const ALG_VAL = { u: 1, d: 10, c: 100 };
+const ALG_SUP = { u: 'd', d: 'c' };
+const ALG_COR = { c: '#E8834A', d: '#5BA3D0', u: '#5aa748' };
+
+function parcelasAlg(it) {
+  if (Array.isArray(it.compras)) return it.compras.map(c => (Array.isArray(c) ? c[2] : undefined));
+  return Array.isArray(it.parcelas) ? it.parcelas : [];
+}
+function validarAlgoritmo(a) {
+  const e = [];
+  a.rondas.forEach((r, ri) => {
+    if (!r || r.tipo !== 'algoritmo' || !Array.isArray(r.itens)) return;
+    const onde = `Ronda ${ri + 1}${r.titulo ? ' («' + r.titulo + '»)' : ''}`;
+    r.itens.forEach((it, ii) => {
+      const w = `${onde}, item ${ii + 1}`;
+      if (!it || typeof it !== 'object' || Array.isArray(it)) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (it.compras !== undefined && (!Array.isArray(it.compras) || !it.compras.every(c => Array.isArray(c) && c.length === 3 && temTexto(c[1])))) { e.push(`${w}: cada compra tem de ser ["emoji", "nome", preço].`); return; }
+      const p = parcelasAlg(it);
+      if (p.length < 2 || p.length > 3 || !p.every(x => inteiro(x) && x >= 1 && x <= 999)) e.push(`${w}: indica 2 ou 3 «compras» (ou «parcelas») com números inteiros de 1 a 999.`);
+      else if (p.reduce((s, x) => s + x, 0) > 999) e.push(`${w}: a soma tem de ser no máximo 999 (o MAB só tem centenas, dezenas e unidades).`);
+    });
+  });
+  return e;
+}
+
+/* peças pequenas, à mesma escala: cubo 1×1, barra deitada 10×1, placa 10×10 */
+function svgBlocoAlg(k) {
+  const [cols, rows] = k === 'c' ? [10, 10] : k === 'd' ? [10, 1] : [1, 1];
+  const cel = 10, d = 3, cor = CORES_MAB[k], W = cols * cel + d, H = rows * cel + d, f = 0.062;
+  let lin = '';
+  for (let i = 1; i < cols; i++) lin += `<line x1="${i * cel}" y1="${d}" x2="${i * cel}" y2="${H}"/>`;
+  for (let j = 1; j < rows; j++) lin += `<line x1="0" y1="${d + j * cel}" x2="${cols * cel}" y2="${d + j * cel}"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:${(W * f).toFixed(3)}rem;height:${(H * f).toFixed(3)}rem" aria-hidden="true" focusable="false">` +
+    `<polygon points="0,${d} ${d},0 ${W},0 ${cols * cel},${d}" fill="${cor.t}" stroke="${cor.l}" stroke-width=".7"/>` +
+    `<polygon points="${cols * cel},${d} ${W},0 ${W},${H - d} ${cols * cel},${H}" fill="${cor.s}" stroke="${cor.l}" stroke-width=".7"/>` +
+    `<rect x="0" y="${d}" width="${cols * cel}" height="${rows * cel}" fill="${cor.f}" stroke="${cor.l}" stroke-width="1"/>` +
+    `<g stroke="${cor.l}" stroke-width=".6" opacity=".75">${lin}</g></svg>`;
+}
+function pecaAlg(k, classe) {
+  const p = h('span', { class: 'alg-peca' + (classe ? ' ' + classe : '') });
+  p.innerHTML = svgBlocoAlg(k);
+  return p;
+}
+const digitoAlg = (n, k) => Math.floor(n / ALG_VAL[k]) % 10;
+
+function itemAlgoritmo(ri, ronda, it, area, contador, proximo) {
+  const parc = parcelasAlg(it), soma = parc.reduce((s, x) => s + x, 0);
+  const compras = Array.isArray(it.compras) ? it.compras : null;
+  const unid = it.unidade !== undefined ? String(it.unidade) : compras ? '€' : '';
+  const comU = n => n + (unid ? ' ' + unid : '');
+  const cols = soma >= 100 ? ['c', 'd', 'u'] : soma >= 10 ? ['d', 'u'] : ['u'];
+  const ordem = cols.slice().reverse();                     // u → d → c
+  const nomes = parc.map((p, i) => (compras ? compras[i][1] : (i + 1) + '.ª'));
+  const tot = { c: 0, d: 0, u: 0 }, vai = { c: 0, d: 0, u: 0 }, vem = { c: 0, d: 0, u: 0 }, junto = {};
+  let passo = 0, fase = 'juntar', erros = 0, tent = 0, ocupado = false, feito = false;
+  const limite = apoio() ? 3 : 2;
+
+  /* ---------- talão (lista de compras) ---------- */
+  const totalTalao = h('span', { class: 'p' }, '? ' + unid);
+  const talao = compras ? h('div', { class: 'talao', role: 'group', 'aria-label': t('alg_lista') },
+    h('h3', null, '🧾 ' + t('alg_lista')),
+    compras.map(c => h('div', { class: 'talao-linha' }, h('span', { class: 'e', 'aria-hidden': 'true' }, c[0]), h('span', { class: 'n' }, c[1]), h('span', { class: 'p' }, comU(c[2])))),
+    h('div', { class: 'talao-linha talao-total' }, h('span', { class: 'n' }, t('alg_total')), totalTalao)) : null;
+
+  /* ---------- conta em pé ---------- */
+  const conta = h('div', { class: 'conta', style: `grid-template-columns:auto repeat(${cols.length},auto)`, role: 'group', 'aria-label': t('alg_conta') });
+  const celConta = { c: [], d: [], u: [] }, vaiEl = {}, res = {};
+  conta.append(h('span'));
+  cols.forEach(k => { const c = h('span', { class: 'cab', style: 'background:' + ALG_COR[k], title: t('mab_' + k) }, k.toUpperCase()); celConta[k].push(c); conta.append(c); });
+  conta.append(h('span'));
+  cols.forEach(k => { vaiEl[k] = h('span', { class: 'cel vai', 'aria-label': t('alg_vaiLabel') }); celConta[k].push(vaiEl[k]); conta.append(vaiEl[k]); });
+  parc.forEach((p, i) => {
+    conta.append(h('span', { class: 'cel sinal' }, i === parc.length - 1 ? '+' : ''));
+    cols.forEach(k => { const c = h('span', { class: 'cel' }, p >= ALG_VAL[k] ? digitoAlg(p, k) : ''); celConta[k].push(c); conta.append(c); });
+  });
+  conta.append(h('span', { class: 'linha-soma' }));
+  conta.append(h('span'));
+  cols.forEach(k => {
+    res[k] = h('input', { class: 'num', inputmode: 'numeric', maxlength: '1', autocomplete: 'off', disabled: true, 'aria-label': t('alg_pEscrever', { col: t('mab_' + k).toLowerCase() }) });
+    res[k].addEventListener('input', () => { res[k].value = res[k].value.replace(/\D/g, '').slice(-1); res[k].classList.remove('mal'); });
+    res[k].addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); confirmarDigito(); } });
+    const c = h('span', { class: 'cel' }, res[k]); celConta[k].push(c); conta.append(c);
+  });
+
+  /* ---------- tabuleiro do MAB: uma linha por compra + linha «Tudo junto» ---------- */
+  const largura = { c: 'minmax(8.2rem,1.3fr)', d: 'minmax(7.4rem,1.1fr)', u: 'minmax(5.4rem,.9fr)' };
+  const tab = h('div', { class: 'alg-mab', style: `grid-template-columns:minmax(4.6rem,auto) ${cols.map(k => largura[k]).join(' ')}` });
+  const cab = {}, celP = parc.map(() => ({})), celT = {}, contT = {}, badgeT = {};
+  tab.append(h('span'));
+  cols.forEach(k => { cab[k] = h('div', { class: 'alg-cab', style: 'background:' + ALG_COR[k] }, h('strong', null, k.toUpperCase()), h('small', null, t('mab_' + k))); tab.append(cab[k]); });
+  const contentor = (k, extra) => h('div', { class: 'alg-pecas alg-' + k + (extra ? ' ' + extra : '') });
+  const desenharPecas = (cx, k, n, classe) => { for (let i = 0; i < n; i++) { if (k === 'u' && i && i % 10 === 0) cx.append(h('span', { class: 'quebra' })); cx.append(pecaAlg(k, classe)); } };
+  parc.forEach((p, i) => {
+    tab.append(h('div', { class: 'alg-rot' }, compras ? h('span', { class: 'e', 'aria-hidden': 'true' }, compras[i][0]) : null, h('b', null, comU(p))));
+    cols.forEach(k => {
+      const cx = contentor(k), n = p >= ALG_VAL[k] ? digitoAlg(p, k) : 0;
+      desenharPecas(cx, k, n);
+      celP[i][k] = h('div', { class: 'alg-cel' }, cx, apoio() && n ? h('span', { class: 'alg-n' }, n) : null);
+      tab.append(celP[i][k]);
+    });
+  });
+  tab.append(h('div', { class: 'alg-sep' }));
+  tab.append(h('div', { class: 'alg-rot tudo' }, h('span', { class: 'e', 'aria-hidden': 'true' }, '🧺'), h('b', null, t('alg_juntos'))));
+  cols.forEach(k => {
+    contT[k] = contentor(k, 'junto');
+    badgeT[k] = h('span', { class: 'alg-n', hidden: true }, '0');
+    celT[k] = h('div', { class: 'alg-cel tot' }, contT[k], badgeT[k]);
+    tab.append(celT[k]);
+  });
+
+  /* ---------- painel do passo ---------- */
+  const etapa = h('div', { class: 'etapa' });
+  const texto = h('p');
+  const controlos = h('div', { class: 'linha' });
+  const btPista = apoio() ? h('button', { class: 'btn leve', type: 'button', onclick: () => { dica.hidden = false; dica.textContent = '💡 ' + pistaAtual(); poseMascote('ideia'); } }, t('pista')) : null;
+  const fb = h('div', { class: 'feedback', role: 'status', 'aria-live': 'polite' });
+  const dica = h('div', { class: 'dica', hidden: true });
+  const explica = it.explicacao ? h('div', { class: 'explica', hidden: true }, it.explicacao) : null;
+  const btContinuar = h('button', { class: 'btn azul', hidden: true, onclick: () => { calar(); proximo(); } }, t('continuar'));
+  const painelPasso = h('div', { class: 'alg-passo', role: 'group' }, etapa, texto, controlos, fb, dica, explica, btPista, btContinuar);
+
+  const kAtual = () => ordem[passo];
+  const temPecas = k => parc.some(p => p >= ALG_VAL[k] && digitoAlg(p, k) > 0);
+  const contagem = k => tot[k];
+  const dizer = (txt, classe) => { fb.className = 'feedback' + (classe ? ' ' + classe : ''); fb.textContent = txt; };
+  const pistaAtual = () => ({ juntar: t('alg_pista_juntar'), contar: t('alg_pista_contar'), decidir: t('alg_pista_decidir'), escrever: t('alg_pista_escrever') }[fase] || '');
+  function errar(msg) {
+    erros++; tent++; som('errado'); poseMascote('duvida', true); dizerBalao(t('pensaOutra'));
+    dizer(msg, 'bad');
+    if (it.dica && erros === 1) { dica.hidden = false; dica.textContent = '💡 ' + it.dica; }
+    ocupado = true; depois(650, () => { ocupado = false; });
+  }
+  function marcarColuna() {
+    cols.forEach(k => {
+      const on = !feito && k === kAtual();
+      celConta[k].forEach(c => c.classList.toggle('ativa', on));
+      cab[k].classList.toggle('ativa', on);
+      celT[k].classList.toggle('ativa', on);
+      parc.forEach((_, i) => celP[i][k].classList.toggle('ativa', on && fase === 'juntar'));
+    });
+  }
+  function atualizarBadges() { cols.forEach(k => { badgeT[k].textContent = tot[k]; badgeT[k].hidden = !apoio() || !(junto[k] || vai[k]); }); }
+
+  function mostrarPasso() {
+    const k = kAtual();
+    tent = 0; dica.hidden = true;
+    etapa.textContent = t('alg_passo', { a: passo + 1, b: ordem.length }) + ' · ' + t('mab_' + k);
+    etapa.style.color = ALG_COR[k];
+    painelPasso.style.borderColor = ALG_COR[k];
+    let fala = '';
+    if (fase === 'juntar') {
+      fala = t('alg_pJuntar_' + k);
+      encher(controlos, h('button', { class: 'btn amarelo grande', type: 'button', onclick: juntar }, t('alg_juntar_' + k)));
+    } else if (fase === 'contar') {
+      fala = t('alg_pContar_' + k);
+      const campo = campoNumero({ maxlength: '2' }), bt = h('button', { class: 'btn', type: 'button' }, t('confirmar'));
+      const ok = () => {
+        if (ocupado || !campo.value) { campo.focus(); return; }
+        const v = Number(campo.value), n = contagem(k);
+        if (v === n) { campo.disabled = bt.disabled = true; campo.classList.add('certo'); som('certo'); dizer(t('certo') + ' ' + n + ' ' + t('alg_pl_' + k) + '.', 'ok'); fase = 'decidir'; depois(500, mostrarPasso); return; }
+        errar(t('alg_contaMal', { partes: partesColuna(k) }));
+        campo.classList.add('mal'); campo.select();
+        if (tent >= limite) { campo.value = n; campo.disabled = bt.disabled = true; dizer(t('alg_revela', { n }), 'bad'); fase = 'decidir'; depois(1400, mostrarPasso); }
+      };
+      bt.onclick = ok; campo.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); ok(); } });
+      encher(controlos, h('span', { class: 'alg-pergunta-n' }, t('alg_pl_' + k) + ':'), campo, bt);
+      if (prefs.modo === 'computador') depois(60, () => campo.focus({ preventScroll: true }));
+    } else if (fase === 'decidir') {
+      fala = t('alg_pDecidir', { n: contagem(k), pecas: t('alg_pl_' + k) });
+      encher(controlos,
+        ALG_SUP[k] ? h('button', { class: 'btn amarelo', type: 'button', onclick: trocar }, t('alg_trocar_' + k)) : null,
+        h('button', { class: 'btn azul', type: 'button', onclick: irEscrever }, t('alg_escrever')));
+    } else if (fase === 'escrever') {
+      fala = t('alg_pEscrever', { col: t('mab_' + k).toLowerCase() });
+      res[k].disabled = false; res[k].classList.add('atual');
+      encher(controlos, h('span', { class: 'alg-seta' }, '⬅️ ' + t('alg_naConta')), h('button', { class: 'btn', type: 'button', onclick: confirmarDigito }, t('confirmar')));
+      depois(60, () => res[k].focus({ preventScroll: true }));
+    }
+    texto.textContent = fala;
+    marcarColuna(); atualizarBadges();
+    if (somLigado()) lerSequencia([fala]);
+  }
+  function partesColuna(k) {
+    const p = parc.map((x, i) => [x >= ALG_VAL[k] ? digitoAlg(x, k) : 0, nomes[i]]).filter(([n]) => n).map(([n, nome]) => `${n} (${nome})`);
+    if (vai[k]) p.push(`${vai[k]} (${t('alg_troca')})`);
+    return p.length ? p.join(' + ') : '0';
+  }
+  function juntar() {
+    if (ocupado) return;
+    const k = kAtual();
+    ocupado = true; som('certo');
+    let atraso = 0;
+    parc.forEach((p, i) => {
+      const pecas = celP[i][k].querySelectorAll('.alg-peca');
+      pecas.forEach(pc => pc.classList.add('usada'));
+      const n = p >= ALG_VAL[k] ? digitoAlg(p, k) : 0;
+      for (let j = 0; j < n; j++) {
+        depois(atraso, () => { if (k === 'u' && tot.u && tot.u % 10 === 0) contT.u.append(h('span', { class: 'quebra' })); contT[k].append(pecaAlg(k, 'entra')); tot[k]++; atualizarBadges(); });
+        atraso += 70;
+      }
+    });
+    junto[k] = true;
+    depois(atraso + 250, () => { ocupado = false; fase = 'contar'; dizer(''); mostrarPasso(); });
+  }
+  function reorganizar(k) { // volta a desenhar a coluna «Tudo junto» (as peças da troca ficam com contorno amarelo)
+    contT[k].replaceChildren();
+    desenharPecas(contT[k], k, tot[k] - vem[k]);
+    desenharPecas(contT[k], k, vem[k], 'vem');
+  }
+  function trocar() {
+    if (ocupado) return;
+    const k = kAtual(), sup = ALG_SUP[k];
+    if (!sup || tot[k] < 10) { errar(t('alg_naoTroca')); return; }
+    ocupado = true; som('certo');
+    const pecas = [...contT[k].querySelectorAll('.alg-peca')].slice(0, 10);
+    pecas.forEach(pc => pc.classList.add('sai'));
+    depois(420, () => {
+      tot[k] -= 10; vem[k] = Math.min(vem[k], tot[k]);
+      reorganizar(k);
+      tot[sup]++; vai[sup]++; vem[sup]++;
+      contT[sup].append(pecaAlg(sup, 'vem entra'));
+      vaiEl[sup].textContent = vai[sup];
+      vaiEl[sup].classList.remove('pop'); void vaiEl[sup].offsetWidth; vaiEl[sup].classList.add('pop');
+      atualizarBadges();
+      poseMascote('ideia', true); dizerBalao(t('alg_vaiBalao', { n: vai[sup] }));
+      dizer(t('alg_trocou_' + k, { n: tot[k] }), 'ok');
+      texto.textContent = t('alg_pDecidir', { n: tot[k], pecas: t('alg_pl_' + k) });
+      ocupado = false;
+    });
+  }
+  function irEscrever() {
+    if (ocupado) return;
+    const k = kAtual();
+    if (tot[k] >= 10) { errar(t('alg_aindaTroca')); return; }
+    fase = 'escrever'; dizer(''); mostrarPasso();
+  }
+  function confirmarDigito() {
+    const k = kAtual();
+    if (fase !== 'escrever' || ocupado) return;
+    const campo = res[k];
+    if (!campo.value) { campo.focus(); return; }
+    const v = Number(campo.value), n = tot[k];
+    if (v === n) { campo.disabled = true; campo.classList.remove('atual'); campo.classList.add('certo'); som('certo'); avancar(); return; }
+    const vaiDaqui = ALG_SUP[k] ? vai[ALG_SUP[k]] : 0;
+    errar(vaiDaqui && v === vaiDaqui ? t('alg_digitoVai', { n: v }) : t('alg_digitoMal'));
+    campo.classList.add('mal'); campo.select();
+    if (tent >= limite) { campo.value = n; campo.disabled = true; campo.classList.remove('atual'); dizer(t('alg_revela', { n }), 'bad'); depois(1300, avancar); }
+  }
+  function avancar() {
+    if (passo < ordem.length - 1) { passo++; fase = temPecas(ordem[passo]) ? 'juntar' : 'contar'; if (fase === 'contar') junto[ordem[passo]] = true; dizer(''); mostrarPasso(); return; }
+    terminar();
+  }
+  function terminar() {
+    feito = true; fase = 'fim'; marcarColuna();
+    const p = erros === 0 ? 3 : erros === 1 ? 2 : erros <= 3 ? 1 : 0;
+    est.pontos[ri] += p; est.maximos[ri] += 3; atualizarEstrelas(); guardarProgresso();
+    som('certo'); poseMascote('trofeu', true); dizerBalao(p === 3 ? t('primeira') : t('conseguiste'));
+    totalTalao.textContent = comU(soma); totalTalao.classList.add('certo');
+    conta.classList.add('feita');
+    encher(controlos); texto.textContent = parc.map(comU).join(' + ') + ' = ' + comU(soma);
+    etapa.textContent = '✅ ' + t('alg_feito');
+    etapa.style.color = ''; painelPasso.style.borderColor = 'var(--ok)'; painelPasso.classList.add('feito');
+    dizer(t('certo') + ' ' + (compras ? t('alg_custa', { n: comU(soma) }) : ''), 'ok');
+    dica.hidden = true; if (btPista) btPista.hidden = true;
+    if (explica) explica.hidden = false;
+    festa(conta, 30);
+    btContinuar.hidden = false; btContinuar.focus({ preventScroll: true });
+  }
+
+  const pergunta = it.pergunta || (compras ? t('alg_pergunta') : parc.join(' + ') + ' = ?');
+  encher(area, cabecalhoRonda(ronda, 'i_algoritmo', contador),
+    blocoPergunta(it, pergunta, pergunta),
+    painelPasso,
+    h('div', { class: 'alg' }, h('div', { class: 'alg-esq' }, talao, conta), tab));
+  if (!temPecas(ordem[0])) { fase = 'contar'; junto[ordem[0]] = true; }
+  mostrarPasso();
 }
 
 /* ==========================================================

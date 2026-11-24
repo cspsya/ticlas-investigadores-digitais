@@ -33,12 +33,12 @@ SRC = BASE / "src"
 EXEMPLO = BASE / "exemplos" / "exemplo-2ano-grupos-consonanticos.json"
 AULAS = RAIZ / "aulas"
 MODELO = BASE / "modelo-jogo.html"
-TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso"]
+TIPOS = ["escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "pares", "classificar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso", "algoritmo"]
 FASES = ["aquecimento", "desafios", "escrita", "bonus"]
 MESES = ["jan.", "fev.", "mar.", "abr.", "mai.", "jun.", "jul.", "ago.", "set.", "out.", "nov.", "dez."]
 SEGUNDOS = {"escolher": 30, "verdadeiro_falso": 25, "completar": 35, "escrever": 60, "frase": 180,
             "ditado": 45, "copiar": 60, "pares": 20, "classificar": 20, "ordenar": 45,
-            "mab": 60, "cadeia": 70, "reta": 35, "tabela100": 110, "puzzle": 70, "pontos": 50, "apanhar": 120, "percurso": 150}
+            "mab": 60, "cadeia": 70, "reta": 35, "tabela100": 110, "puzzle": 70, "pontos": 50, "apanhar": 120, "percurso": 150, "algoritmo": 150}
 CACHE = BASE / ".cache-emojis"
 NOTO = "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u{}.svg"
 COPIAVEIS = re.compile(r"^[A-Za-zÇçÁÉÍÓÚáéíóúÀàÂÊÔâêôÃÕãõ .,!?-]+$")  # o mesmo que COPIAVEIS em src/motor.js
@@ -141,6 +141,22 @@ def validar_matematica(tipo, it, w):
     return e
 
 
+def validar_algoritmo(it, w):
+    """Algoritmo da adição com MAB (V3.9): as mesmas regras de validarAlgoritmo() em src/motor.js."""
+    compras = it.get("compras")
+    if compras is not None:
+        if not isinstance(compras, list) or not all(isinstance(c, list) and len(c) == 3 and tem_texto(c[1]) for c in compras):
+            return [f"{w}: cada compra tem de ser [\"emoji\", \"nome\", preço]."]
+        p = [c[2] for c in compras]
+    else:
+        p = it.get("parcelas") if isinstance(it.get("parcelas"), list) else []
+    if not 2 <= len(p) <= 3 or not all(inteiro(x) and 1 <= x <= 999 for x in p):
+        return [f"{w}: indica 2 ou 3 «compras» (ou «parcelas») com números inteiros de 1 a 999."]
+    if sum(p) > 999:
+        return [f"{w}: a soma tem de ser no máximo 999 (o MAB só tem centenas, dezenas e unidades)."]
+    return []
+
+
 def validar(a):
     """As mesmas regras de validarAula() em src/motor.js."""
     e = []
@@ -182,7 +198,7 @@ def validar(a):
                 if len({norm(x) for x in er}) != len(er):
                     e.append(f"{w}: há opções repetidas em «erradas».")
 
-            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso") and not isinstance(it, dict):
+            if tipo in ("escolher", "verdadeiro_falso", "completar", "escrever", "ditado", "copiar", "ordenar", "mab", "cadeia", "reta", "tabela100", "puzzle", "pontos", "apanhar", "percurso", "algoritmo") and not isinstance(it, dict):
                 e.append(f"{w}: tem de ser um objeto {{ ... }}.")
                 continue
             if isinstance(it, dict) and "maiusculas" in it and not isinstance(it["maiusculas"], bool):
@@ -242,6 +258,8 @@ def validar(a):
                 e.extend(validar_matematica(tipo, it, w))
             elif tipo in ("puzzle", "pontos", "apanhar", "percurso"):
                 e.extend(validar_minijogo(tipo, it, w))
+            elif tipo == "algoritmo":
+                e.extend(validar_algoritmo(it, w))
         if tipo == "pares":
             ok = [p for p in itens if isinstance(p, list) and len(p) == 2]
             esq, dirt = [norm(p[0]) for p in ok], [norm(p[1]) for p in ok]

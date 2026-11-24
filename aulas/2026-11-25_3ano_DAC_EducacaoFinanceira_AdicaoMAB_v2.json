@@ -1,0 +1,604 @@
+{
+  "id": "2026-11-25-3ano-educacao-financeira-adicao-mab",
+  "titulo": "Às compras com o Ticl@s: a adição com o MAB",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-25",
+  "descricao": "DAC Educação Financeira: algoritmo da adição com o MAB virtual, somando os preços de listas de compras (com e sem transporte, até 999); necessidades e desejos; o dinheiro chega?; escrita de frases sobre poupar",
+  "resumo": "Ajuda o Ticl@s a somar a lista de compras com o MAB!",
+  "focoTic": [
+    "Rato: clicar",
+    "Teclado: escrever números e frases"
+  ],
+  "ilustracao": {
+    "tipo": "numeros",
+    "conta": [
+      "47",
+      "+",
+      "28"
+    ]
+  },
+  "objetivo": "Somar os preços de uma lista de compras com o algoritmo da adição, usando o MAB para perceber as trocas («e vai um»).",
+  "minutos": 60,
+  "ferramentaMAB": true,
+  "consulta": [
+    {
+      "id": "mab",
+      "emoji": "🧱",
+      "titulo": "O MAB",
+      "paragrafos": [
+        "O **MAB** (material multibásico) ajuda-nos a ver os números e a fazer contas."
+      ],
+      "lista": [
+        "🟩 **1 cubo** vale 1: é uma **unidade**.",
+        "🟦 **1 barra** vale 10: são 10 cubos, uma **dezena**.",
+        "🟧 **1 placa** vale 100: são 10 barras, uma **centena**."
+      ],
+      "tabela": [
+        [
+          "Número",
+          "Placas (C)",
+          "Barras (D)",
+          "Cubos (U)"
+        ],
+        [
+          "37",
+          "0",
+          "3",
+          "7"
+        ],
+        [
+          "125",
+          "1",
+          "2",
+          "5"
+        ],
+        [
+          "208",
+          "2",
+          "0",
+          "8"
+        ]
+      ],
+      "lembra": "10 cubos trocam-se por 1 barra. 10 barras trocam-se por 1 placa."
+    },
+    {
+      "id": "conta-em-pe",
+      "emoji": "✏️",
+      "titulo": "A conta em pé (algoritmo da adição)",
+      "paragrafos": [
+        "Para somar preços, escrevemos os números uns por baixo dos outros: **unidades** por baixo de unidades, **dezenas** por baixo de dezenas e **centenas** por baixo de centenas.",
+        "Exemplo: 47 + 28. Nas unidades, 7 + 8 = 15. Escrevemos o **5** e **vai 1** para as dezenas. Nas dezenas, 4 + 2 + 1 = 7. O resultado é **75**."
+      ],
+      "lista": [
+        "1. Começa pelas **unidades**: junta os cubos e conta-os.",
+        "2. Se houver **10 ou mais**, troca 10 cubos por 1 barra. Essa barra é o **1 que vai** para as dezenas.",
+        "3. Escreve o algarismo das unidades: só os cubos que ficaram.",
+        "4. Faz o mesmo nas **dezenas** (soma também o que vai!) e, por fim, nas **centenas**."
+      ],
+      "tabela": [
+        [
+          "Conta",
+          "Dezenas (D)",
+          "Unidades (U)"
+        ],
+        [
+          "vai",
+          "1",
+          "–"
+        ],
+        [
+          "47",
+          "4",
+          "7"
+        ],
+        [
+          "+ 28",
+          "2",
+          "8"
+        ],
+        [
+          "= 75",
+          "7",
+          "5"
+        ]
+      ],
+      "lembra": "Começa sempre pela direita, pelas unidades, e não te esqueças do que vai!"
+    },
+    {
+      "id": "dinheiro",
+      "emoji": "💶",
+      "titulo": "Gastar com cabeça",
+      "paragrafos": [
+        "Uma **necessidade** é algo de que precisamos para viver bem: comida, água, roupa, casa, material escolar.",
+        "Um **desejo** é algo de que gostamos, mas sem o qual conseguimos viver: brinquedos, gomas, jogos novos.",
+        "Antes de comprar, **soma os preços** e compara o total com o dinheiro que tens."
+      ],
+      "lista": [
+        "Se o total for **menor** do que o dinheiro que tens: chega e ainda sobra.",
+        "Se o total for **igual**: chega à justa, não sobra nada.",
+        "Se o total for **maior**: o dinheiro não chega."
+      ],
+      "lembra": "**Poupar** é guardar dinheiro hoje para o que precisamos ou desejamos amanhã."
+    }
+  ],
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "mab",
+      "titulo": "Preços com o MAB",
+      "instrucao": "Representa cada preço com o MAB ou descobre o preço que o MAB mostra.",
+      "consulta": "mab",
+      "itens": [
+        {
+          "modo": "construir",
+          "numero": 37,
+          "pergunta": "🎒 Representa o preço da mochila (em euros):",
+          "dica": "3 barras e 7 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 125,
+          "pergunta": "🚲 Representa o preço da bicicleta (em euros):",
+          "dica": "1 placa, 2 barras e 5 cubos."
+        },
+        {
+          "modo": "construir",
+          "numero": 208,
+          "pergunta": "🎸 Representa o preço da guitarra (em euros):",
+          "dica": "2 placas, nenhuma barra e 8 cubos."
+        },
+        {
+          "modo": "ler",
+          "d": 4,
+          "u": 13,
+          "pergunta": "🏷️ Que preço mostra o MAB? Atenção: há mais de 10 cubos!",
+          "dica": "13 cubos = 1 barra e 3 cubos. Então ficam 5 barras e 3 cubos.",
+          "explicacao": "4 barras e 13 cubos: 40 + 13 = 53."
+        },
+        {
+          "modo": "construir",
+          "numero": 254,
+          "pergunta": "📚 Representa o preço da estante (em euros):",
+          "dica": "2 placas, 5 barras e 4 cubos."
+        },
+        {
+          "modo": "ler",
+          "c": 1,
+          "d": 12,
+          "u": 5,
+          "pergunta": "🏷️ Que preço mostra o MAB? Atenção: há mais de 10 barras!",
+          "dica": "12 barras = 1 placa e 2 barras. Então ficam 2 placas, 2 barras e 5 cubos.",
+          "explicacao": "1 placa, 12 barras e 5 cubos: 100 + 120 + 5 = 225."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "algoritmo",
+      "titulo": "Compras pequenas",
+      "instrucao": "Soma os preços com o MAB e faz a conta em pé, a começar pelas unidades.",
+      "consulta": "conta-em-pe",
+      "itens": [
+        {
+          "compras": [
+            [
+              "📕",
+              "livro",
+              14
+            ],
+            [
+              "🖍️",
+              "lápis de cor",
+              23
+            ]
+          ],
+          "pergunta": "Quanto custam o livro e os lápis de cor juntos?",
+          "explicacao": "4 + 3 = 7 unidades e 1 + 2 = 3 dezenas. Não houve trocas: 14 + 23 = 37."
+        },
+        {
+          "compras": [
+            [
+              "⚽",
+              "bola",
+              18
+            ],
+            [
+              "🧢",
+              "boné",
+              15
+            ]
+          ],
+          "pergunta": "Quanto custam a bola e o boné juntos?",
+          "explicacao": "8 + 5 = 13: escreve-se o 3 e vai 1. Nas dezenas, 1 + 1 + 1 = 3. Total: 33 €."
+        },
+        {
+          "compras": [
+            [
+              "🎒",
+              "mochila",
+              29
+            ],
+            [
+              "✏️",
+              "estojo",
+              16
+            ]
+          ],
+          "pergunta": "Quanto custam a mochila e o estojo juntos?",
+          "explicacao": "9 + 6 = 15: escreve-se o 5 e vai 1. Nas dezenas, 2 + 1 + 1 = 4. Total: 45 €."
+        },
+        {
+          "compras": [
+            [
+              "👟",
+              "sapatilhas",
+              65
+            ],
+            [
+              "🧥",
+              "casaco",
+              48
+            ]
+          ],
+          "pergunta": "Quanto custam as sapatilhas e o casaco juntos?",
+          "explicacao": "5 + 8 = 13: escreve-se o 3 e vai 1. Nas dezenas, 6 + 4 + 1 = 11: escreve-se o 1 e vai 1 para as centenas. Total: 113 €."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "algoritmo",
+      "titulo": "Compras grandes",
+      "instrucao": "Agora com centenas! Junta, conta, troca e escreve: unidades, dezenas e centenas.",
+      "consulta": "conta-em-pe",
+      "itens": [
+        {
+          "compras": [
+            [
+              "🚲",
+              "bicicleta",
+              125
+            ],
+            [
+              "🔒",
+              "cadeado",
+              32
+            ]
+          ],
+          "pergunta": "Quanto custam a bicicleta e o cadeado juntos?",
+          "explicacao": "Não houve trocas: 125 + 32 = 157."
+        },
+        {
+          "compras": [
+            [
+              "🛴",
+              "trotinete",
+              138
+            ],
+            [
+              "🎒",
+              "mochila",
+              45
+            ]
+          ],
+          "pergunta": "Quanto custam a trotinete e a mochila juntas?",
+          "explicacao": "8 + 5 = 13: vai 1. Dezenas: 3 + 4 + 1 = 8. Centenas: 1. Total: 183 €."
+        },
+        {
+          "compras": [
+            [
+              "📚",
+              "estante",
+              254
+            ],
+            [
+              "🪑",
+              "cadeira",
+              72
+            ]
+          ],
+          "pergunta": "Quanto custam a estante e a cadeira juntas?",
+          "explicacao": "Unidades: 4 + 2 = 6. Dezenas: 5 + 7 = 12: escreve-se o 2 e vai 1 para as centenas. Centenas: 2 + 1 = 3. Total: 326 €."
+        },
+        {
+          "compras": [
+            [
+              "⛺",
+              "tenda",
+              167
+            ],
+            [
+              "🥾",
+              "botas de caminhada",
+              85
+            ]
+          ],
+          "pergunta": "Quanto custam a tenda e as botas juntas?",
+          "explicacao": "Unidades: 7 + 5 = 12, vai 1. Dezenas: 6 + 8 + 1 = 15, vai 1. Centenas: 1 + 1 = 2. Total: 252 €."
+        },
+        {
+          "compras": [
+            [
+              "🛋️",
+              "sofá",
+              389
+            ],
+            [
+              "🖼️",
+              "quadro",
+              94
+            ]
+          ],
+          "pergunta": "Quanto custam o sofá e o quadro juntos?",
+          "explicacao": "Unidades: 9 + 4 = 13, vai 1. Dezenas: 8 + 9 + 1 = 18, vai 1. Centenas: 3 + 1 = 4. Total: 483 €."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Preciso ou quero?",
+      "instrucao": "Arruma cada compra: é uma necessidade (preciso) ou um desejo (quero)?",
+      "consulta": "dinheiro",
+      "caixas": [
+        "🧺 Preciso",
+        "🎁 Quero"
+      ],
+      "itens": [
+        [
+          "🍞 pão",
+          "🧺 Preciso"
+        ],
+        [
+          "💧 água",
+          "🧺 Preciso"
+        ],
+        [
+          "🧥 casaco para o inverno",
+          "🧺 Preciso"
+        ],
+        [
+          "🪥 escova de dentes",
+          "🧺 Preciso"
+        ],
+        [
+          "📒 caderno para a escola",
+          "🧺 Preciso"
+        ],
+        [
+          "🎮 jogo novo",
+          "🎁 Quero"
+        ],
+        [
+          "🍬 gomas",
+          "🎁 Quero"
+        ],
+        [
+          "🧸 peluche",
+          "🎁 Quero"
+        ],
+        [
+          "🎈 balões",
+          "🎁 Quero"
+        ],
+        [
+          "🕶️ óculos de sol da moda",
+          "🎁 Quero"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "O dinheiro chega?",
+      "instrucao": "Soma os preços (podes abrir o 🧱 MAB) e compara com o dinheiro que tens.",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "pergunta": "Tens 100 €. Queres comprar um 📕 livro de 45 € e uma ⚽ bola de 38 €. O dinheiro chega?",
+          "certa": "Sim, chega e ainda sobra dinheiro.",
+          "erradas": [
+            "Não chega.",
+            "Chega à justa: não sobra nada."
+          ],
+          "dica": "Soma 45 + 38 e compara com 100.",
+          "explicacao": "45 + 38 = 83. 83 é menor do que 100: chega e sobram 17 €."
+        },
+        {
+          "pergunta": "Tens 50 €. Queres comprar um 🧢 boné de 17 € e umas 🧦 meias de 36 €. O dinheiro chega?",
+          "certa": "Não chega.",
+          "erradas": [
+            "Sim, chega e ainda sobra dinheiro.",
+            "Chega à justa: não sobra nada."
+          ],
+          "dica": "Soma 17 + 36 e compara com 50.",
+          "explicacao": "17 + 36 = 53. 53 é maior do que 50: faltam 3 €."
+        },
+        {
+          "pergunta": "Tens 200 €. Queres comprar uma 🛴 trotinete de 128 € e um 🔒 cadeado de 72 €. O dinheiro chega?",
+          "certa": "Chega à justa: não sobra nada.",
+          "erradas": [
+            "Sim, chega e ainda sobra dinheiro.",
+            "Não chega."
+          ],
+          "dica": "Soma 128 + 72 e compara com 200.",
+          "explicacao": "128 + 72 = 200. É igual ao dinheiro que tens: chega à justa."
+        },
+        {
+          "pergunta": "Tens 150 €. Queres comprar umas 👟 sapatilhas de 69 € e um 🧥 casaco de 75 €. O dinheiro chega?",
+          "certa": "Sim, chega e ainda sobra dinheiro.",
+          "erradas": [
+            "Não chega.",
+            "Chega à justa: não sobra nada."
+          ],
+          "dica": "Soma 69 + 75 e compara com 150.",
+          "explicacao": "69 + 75 = 144. 144 é menor do que 150: chega e sobram 6 €."
+        },
+        {
+          "pergunta": "Tens 300 €. Queres comprar uma 📚 estante de 214 € e uma 🪑 cadeira de 95 €. O dinheiro chega?",
+          "certa": "Não chega.",
+          "erradas": [
+            "Sim, chega e ainda sobra dinheiro.",
+            "Chega à justa: não sobra nada."
+          ],
+          "dica": "Soma 214 + 95 e compara com 300.",
+          "explicacao": "214 + 95 = 309. 309 é maior do que 300: faltam 9 €."
+        },
+        {
+          "pergunta": "Tens 80 €. Queres comprar uma 🎒 mochila de 46 € e um ✏️ estojo de 34 €. O dinheiro chega?",
+          "certa": "Chega à justa: não sobra nada.",
+          "erradas": [
+            "Sim, chega e ainda sobra dinheiro.",
+            "Não chega."
+          ],
+          "dica": "Soma 46 + 34 e compara com 80.",
+          "explicacao": "46 + 34 = 80. É igual ao dinheiro que tens: chega à justa."
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Frases do dinheiro",
+      "instrucao": "Escreve frases completas: começa com letra maiúscula e termina com ponto final.",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "pergunta": "A Rita comprou um 📕 livro de 45 € e uma ⚽ bola de 38 €. Escreve uma frase a dizer quanto gastou ao todo.",
+          "palavra": "83",
+          "minPalavras": 5,
+          "dica": "Faz primeiro a conta 45 + 38. Podes usar o 🧱 MAB."
+        },
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa para a qual gostavas de poupar dinheiro. Usa a palavra «poupar».",
+          "palavra": "poupar",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa de que precisas (uma necessidade). Usa a palavra «preciso».",
+          "palavra": "preciso",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "algoritmo",
+      "titulo": "Lista de três compras",
+      "instrucao": "Desafio! Três preços para somar: junta as três linhas em cada coluna.",
+      "consulta": "conta-em-pe",
+      "itens": [
+        {
+          "compras": [
+            [
+              "🍎",
+              "fruta",
+              24
+            ],
+            [
+              "🥖",
+              "pão",
+              13
+            ],
+            [
+              "🧀",
+              "queijo",
+              18
+            ]
+          ],
+          "pergunta": "Quanto custa a compra do lanche da turma?",
+          "explicacao": "Unidades: 4 + 3 + 8 = 15, vai 1. Dezenas: 2 + 1 + 1 + 1 = 5. Total: 55 €."
+        },
+        {
+          "compras": [
+            [
+              "🎨",
+              "tintas",
+              36
+            ],
+            [
+              "🖌️",
+              "pincéis",
+              27
+            ],
+            [
+              "📒",
+              "bloco de desenho",
+              19
+            ]
+          ],
+          "pergunta": "Quanto custa o material de pintura?",
+          "explicacao": "Unidades: 6 + 7 + 9 = 22: são duas trocas, vão 2! Dezenas: 3 + 2 + 1 + 2 = 8. Total: 82 €."
+        },
+        {
+          "compras": [
+            [
+              "🚲",
+              "bicicleta",
+              215
+            ],
+            [
+              "🔒",
+              "cadeado",
+              48
+            ],
+            [
+              "🔦",
+              "luz",
+              26
+            ]
+          ],
+          "pergunta": "Quanto custam a bicicleta, o cadeado e a luz?",
+          "explicacao": "Unidades: 5 + 8 + 6 = 19, vai 1. Dezenas: 1 + 4 + 2 + 1 = 8. Centenas: 2. Total: 289 €."
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "titulo": "Gastar tudo, sem sobrar nada",
+      "instrucao": "Escolhe o par de compras que custa exatamente o dinheiro que tens.",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "pergunta": "Tens 100 € e queres gastar tudo, sem sobrar nada. Que par de compras escolhes?",
+          "certa": "🧢 63 € + 🧦 37 €",
+          "erradas": [
+            "🧢 63 € + 🎒 47 €",
+            "📕 54 € + 🧦 37 €"
+          ],
+          "explicacao": "63 + 37 = 100. (63 + 47 = 110 e 54 + 37 = 91.)"
+        },
+        {
+          "pergunta": "Tens 100 € e queres gastar tudo, sem sobrar nada. Que par de compras escolhes?",
+          "certa": "⚽ 45 € + 👕 55 €",
+          "erradas": [
+            "⚽ 45 € + 🧢 65 €",
+            "👕 55 € + 📕 35 €"
+          ],
+          "explicacao": "45 + 55 = 100. (45 + 65 = 110 e 55 + 35 = 90.)"
+        },
+        {
+          "pergunta": "Tens 100 € e queres gastar tudo, sem sobrar nada. Que par de compras escolhes?",
+          "certa": "🎒 78 € + ✏️ 22 €",
+          "erradas": [
+            "🎒 78 € + 📕 32 €",
+            "🎒 78 € + 🖍️ 12 €"
+          ],
+          "explicacao": "78 + 22 = 100. (78 + 32 = 110 e 78 + 12 = 90.)"
+        },
+        {
+          "pergunta": "Tens 200 € e queres gastar tudo, sem sobrar nada. Que par de compras escolhes?",
+          "certa": "🛴 136 € + 🔒 64 €",
+          "erradas": [
+            "🛴 136 € + 👟 74 €",
+            "🛴 136 € + 🧢 54 €"
+          ],
+          "explicacao": "136 + 64 = 200. (136 + 74 = 210 e 136 + 54 = 190.)"
+        }
+      ]
+    }
+  ]
+}

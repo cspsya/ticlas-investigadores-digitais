@@ -60,9 +60,9 @@ Obrigatórios: `titulo`, `ano` (1 a 4, sem aspas) e `rondas`. Para publicar com 
 - `instrucao` é opcional (há uma instrução por omissão para cada tipo).
 - `baralhar: true` baralha a ordem dos itens. As **opções de resposta são sempre baralhadas**.
 
-### Os 13 tipos de atividade
+### Os tipos de atividade
 
-Os 9 tipos gerais estão na tabela abaixo; os 4 tipos de Matemática (`mab`, `cadeia`, `reta`, `tabela100`) estão na secção seguinte.
+Os tipos gerais estão na tabela abaixo; os tipos de Matemática (`mab`, `cadeia`, `reta`, `tabela100` e `algoritmo`) estão nas secções seguintes.
 
 | Tipo | Itens | Exemplo |
 |---|---|---|
@@ -155,6 +155,14 @@ Transforma o mapa de missões num castelo de salas fechadas:
 | `reta` ler | `modo: "ler"`, `inicio`, `fim`, `passo`, `marca`, `erradas` (opcional) | `{"modo":"ler","inicio":0,"fim":100,"passo":10,"marca":30,"erradas":[3,40]}` — sem `erradas`, o aluno escreve o número. |
 | `reta` colocar | `modo: "colocar"`, `inicio`, `fim`, `passo`, `numero`, `rotulos` (opcional) | `{"modo":"colocar","inicio":20,"fim":100,"passo":10,"rotulos":[20,40,60,80,100],"numero":68}` — o aluno toca no espaço entre duas marcas onde fica o número (posição aproximada). O número não pode coincidir com uma marca. |
 | `tabela100` | `inicio` (1, 11, 21…), `linhas`, `lacunas` | `{"inicio":21,"linhas":3,"lacunas":[23,26,34,47]}` — no modo apoio só aparece metade das lacunas. |
+
+### Algoritmo da adição com MAB (V3.9)
+
+| Tipo | Itens | Exemplo |
+|---|---|---|
+| `algoritmo` | `compras` (2 ou 3 × `["emoji", "nome", preço]`) ou `parcelas` (2 ou 3 números); soma até 999; opcional `pergunta`, `unidade` (por omissão «€» com compras), `dica`, `explicacao` | `{"compras":[["🎒","mochila",29],["✏️","estojo",16]],"pergunta":"Quanto custam a mochila e o estojo juntos?"}` |
+
+O aluno vê a lista de compras (talão), a conta em pé e um tabuleiro de MAB com uma linha por compra e a linha «Tudo junto». Trabalha coluna a coluna, das unidades para as centenas: **junta** as peças, **conta-as**, decide se faz a **troca** (10 cubos → 1 barra, 10 barras → 1 placa) e **escreve o algarismo** na conta. A peça trocada aparece com contorno amarelo na coluna seguinte e o algarismo que «vai» aparece por cima dessa coluna. Erros com mensagens próprias (contagem com as parcelas, troca antes do tempo, escrever o algarismo que vai). Estrelas: 3 sem erros, 2 com um erro, 1 com dois ou três, 0 com mais. No perfil de apoio, cada célula mostra quantas peças tem e há o botão «Pedir pista» em cada passo. Exemplo: `aulas/2026-11-25_3ano_DAC_EducacaoFinanceira_AdicaoMAB_v2.json`.
 
 Nas aulas com rondas `mab` aparece no cabeçalho o botão **🧱 MAB**, um MAB livre que o aluno pode abrir em qualquer missão (por exemplo, nos «amigos do 100»). Para o mostrar numa aula sem rondas de MAB: `"ferramentaMAB": true`; para o esconder: `false`. Exemplo completo: `aulas/2026-11-09_2ano_Matematica_CalculoMental_MAB_v1.json`.
 
