@@ -334,7 +334,7 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const DPR=()=>Math.min(window.devicePixelRatio||1,2);
 const sceneDPR=(w,h)=>Math.min(DPR(),Math.max(1,Math.sqrt(1800000/Math.max(1,w*h))));
 const STORE='ticlas_mundo_blocos_v1';
-let SAVE={}; try{SAVE=JSON.parse(localStorage.getItem(STORE))||{}}catch(e){SAVE={}}
+let SAVE={}; try{const data=JSON.parse(localStorage.getItem(STORE));if(data&&typeof data==='object'&&!Array.isArray(data))SAVE=data}catch(e){SAVE={}}
 function persist(){try{localStorage.setItem(STORE,JSON.stringify(SAVE))}catch(e){}}
 function el(tag,cls,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -519,7 +519,7 @@ const GSTR=new Map(),GSTRCOL=new Map();
   w.arvore(7,12).arvore(15,10).arvore(10,18);
   for(const [k,b] of w.m){const [x,y,z]=k.split(',').map(Number);const X=x+GC0-12,Y=y+GC0-12,Z=z+7;GSTR.set(X+','+Y+','+Z,b.m);const c=X*GN+Y;GSTRCOL.set(c,Math.max(GSTRCOL.get(c)||0,Z))}})();
 const GDCOL=new Map();
-function gMarkCol(x,y,z){for(const [a,b] of [[0,0],[1,0],[-1,0],[0,1],[0,-1]]){const c=(x+a)*GN+(y+b);GDCOL.set(c,Math.max(GDCOL.has(c)?GDCOL.get(c):0,z))}}
+function gMarkCol(x,y,z){for(const [a,b] of [[0,0],[1,0],[-1,0],[0,1],[0,-1]]){if(x+a<0||x+a>=GN||y+b<0||y+b>=GN)continue;const c=(x+a)*GN+(y+b);GDCOL.set(c,Math.max(GDCOL.has(c)?GDCOL.get(c):0,z))}}
 function gGet(x,y,z){if(x<0||y<0||x>=GN||y>=GN||z<0)return null;const col=x*GN+y;
   if(GDCOL.has(col)){const d=S.blocks.get(x+','+y+','+z);if(d)return d.m}
   if(GSTRCOL.has(col)){const sm=GSTR.get(x+','+y+','+z);if(sm)return sm}
@@ -567,14 +567,14 @@ function drawMap(){if(S.mode!=='giant')return;const c=$('#miniCv'),d=DPR(),n=150
   $('#miniTx').textContent='📍 x '+Math.floor(S.g.x)+' · y '+Math.floor(S.g.y)}
 function gMove(dxs,dys){const v=PICK&&PICK.v&&PICK.v.giant?PICK.v:gView(cv.clientWidth,cv.clientHeight);const a=dxs/v.hw,b=dys/v.hh;const d=rotV(-(a+b)/2,-(b-a)/2,(4-S.rot)%4);
   S.g.x=Math.max(0,Math.min(GN-1,S.g.x+d[0]));S.g.y=Math.max(0,Math.min(GN-1,S.g.y+d[1]))}
-function gLoad(){const m=new Map();GDCOL.clear();for(const a of (SAVE['giant_'+S.year]||[])){const k=K(a[0],a[1],a[2]);m.set(k,{m:a[3]||null});gMarkCol(a[0],a[1],a[2])}return m}
+function gLoad(){const m=new Map();GDCOL.clear();for(const a of (Array.isArray(SAVE['giant_'+S.year])?SAVE['giant_'+S.year]:[])){if(!validBlock(a,GN,GZ,true)||a[2]===0)continue;const k=K(a[0],a[1],a[2]);m.set(k,{m:a[3]||null});gMarkCol(a[0],a[1],a[2])}return m}
 let gSaveT=0;function gFlush(){if(!gSaveT)return;clearTimeout(gSaveT);gSaveT=0;persist()}
 function gSave(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m||0])}
   SAVE['giant_'+S.year]=a;SAVE['giantCam_'+S.year]=[Math.round(S.g.x),Math.round(S.g.y)];clearTimeout(gSaveT);gSaveT=setTimeout(gFlush,400)}
 window.addEventListener('pagehide',gFlush);document.addEventListener('visibilitychange',()=>{if(document.hidden)gFlush()});
 function gSet(k,m){const [x,y,z]=k.split(',').map(Number);const prev=S.blocks.get(k);S.blocks.delete(k);
   const base=gGet(x,y,z);if(base!==m)S.blocks.set(k,{m});gMarkCol(x,y,z);return prev}
-function startGiant(){S.mode='giant';S.world=null;S.ch=null;S.N=GN;S.rot=0;S.hz=GZ;S.cam={z:1,x:0,y:0};const c=SAVE['giantCam_'+S.year];S.g={x:c?c[0]:GC0,y:c?c[1]:GC0+4};setupGame();resetWorld()}
+function startGiant(){S.mode='giant';S.world=null;S.ch=null;S.N=GN;S.rot=0;S.hz=GZ;S.cam={z:1,x:0,y:0};const c=SAVE['giantCam_'+S.year],ok=Array.isArray(c)&&c.length===2&&c.every(v=>Number.isFinite(v)&&v>=0&&v<GN);S.g={x:ok?c[0]:GC0,y:ok?c[1]:GC0+4};setupGame();resetWorld()}
 
 /* ================= geometria ================= */
 const K=(x,y,z)=>x+','+y+','+z;
@@ -718,9 +718,9 @@ function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   WORLDS.forEach((wd,i)=>{const c=el('button','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
   list.forEach((ch,i)=>{const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
-  requestAnimationFrame(()=>{
+  requestAnimationFrame(()=>{if(S.year!==y||!$('#menu').classList.contains('on')||!gc.isConnected)return;
     {const gcv=gc.querySelector('canvas'),d=DPR();gcv.width=gcv.clientWidth*d;gcv.height=gcv.clientHeight*d;const g=gcv.getContext('2d');g.imageSmoothingEnabled=false;const m=gMapImg(),sz=Math.min(gcv.width,gcv.height);g.drawImage(m,(gcv.width-sz)/2,0,sz,sz)}
-    const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?10:7,fb.size?6:4);
+    const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?20:7,fb.size?Math.max(6,maxZB(fb)+1.5):4);
     $$('#cardsW .card.world:not(.giant)').forEach((c,i)=>{const wd=WORLDS[i],b=loadSaved('w2_'+wd.id+'_'+y,wd.gen);renderMini(c.querySelector('canvas'),{blocks:b,sprites:[]},WN,Math.max(3,maxZB(b)+1.5))});
     $$('#cards .card:not(.free)').forEach((c,i)=>{const ch=list[i];const all=[...(ch.fixed||[]),...(ch.obst||[]),...(ch.t==='build'?ch.targets:[])];
       const sp=[];if(ch.t==='code'){if(ch.flag)sp.push({kind:'flag',x:ch.flag.x,y:ch.flag.y});(ch.acorns||[]).forEach(a=>sp.push({kind:'acorn',x:a[0],y:a[1]}));sp.push({kind:'agent',x:ch.start.x,y:ch.start.y,d:ch.start.d})}
@@ -729,7 +729,8 @@ function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
 /* ---------- arranque dos modos ---------- */
 const isFree=()=>S.mode==='free'||S.mode==='world';
 const freeKey=()=>S.mode==='world'?'w2_'+S.world.id+'_'+S.year:'free'+S.year;
-function loadSaved(key,gen){const sv=SAVE[key];if(!sv)return gen?gen():new Map();const m=new Map();for(const a of sv)if(MATS[a[3]])m.set(K(a[0],a[1],a[2]),{m:a[3]});return m}
+function validBlock(a,N,Z,empty=false){return Array.isArray(a)&&a.length>=4&&a.slice(0,3).every(Number.isInteger)&&a[0]>=0&&a[0]<N&&a[1]>=0&&a[1]<N&&a[2]>=0&&a[2]<Z&&(Object.prototype.hasOwnProperty.call(MATS,a[3])||(empty&&(a[3]===0||a[3]===null)))}
+function loadSaved(key,gen){const sv=SAVE[key];if(!Array.isArray(sv))return gen?gen():new Map();const m=new Map();const N=key.startsWith('free')?20:WN;for(const a of sv)if(validBlock(a,N,64))m.set(K(a[0],a[1],a[2]),{m:a[3]});return m}
 function loadFree(){return loadSaved(freeKey(),S.mode==='world'?S.world.gen:null)}
 function saveFree(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m])}SAVE[freeKey()]=a;persist()}
 function maxZB(m){let z=0;for(const k of m.keys())z=Math.max(z,+k.split(',')[2]);return z}
@@ -737,7 +738,7 @@ function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=20;S.hz=8;S.rot=0;
 function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=WN;S.rot=0;S.hz=Math.max(8,maxZB(S.world.gen())+3);S.cam={z:S.world.zoom||1.4,x:0,y:0};setupGame();resetWorld()}
 function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
   S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
-function setupGame(){if(S.mode!=='practice'){practice=null;$('#practiceGuide').hidden=true}show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',training=S.mode==='practice',free=isFree()||gi||training,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
+function setupGame(){S.runId++;S.running=false;setRunUI(false);drag=null;pointers.clear();pinch=null;PICK=null;S.prog=S.mode==='code'?S.prog:[];if(S.mode!=='practice'){practice=null;$('#practiceGuide').hidden=true}show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',training=S.mode==='practice',free=isFree()||gi||training,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
   $('#gTt').textContent=training?'Oficina de treino · Como jogar':gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
   $('#gTx').textContent=training?'Aprende a construir seguindo os passos do Ticl@s.':gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
   $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';
@@ -748,7 +749,7 @@ function setupGame(){if(S.mode!=='practice'){practice=null;$('#practiceGuide').h
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
   $('#btnReset').innerHTML=training?'↺ Recomeçar treino':(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
   setTool('place');
-  if(code){buildCmds();$('#pGoal').textContent='Meta: '+S.ch.best+' peças';$('#codeTip').textContent=S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.'}
+  if(code){buildCmds();setRunUI(false);$('#pGoal').textContent='Meta: '+S.ch.best+' peças';$('#codeTip').textContent=S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.'}
 }
 function resetWorld(){
   const ch=S.ch;S.blocks=S.mode==='giant'?gLoad():S.mode==='practice'?new Map():isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
@@ -792,7 +793,7 @@ function doPlace(p){if(S.mode==='practice')practiceEvent('place');if(S.mode==='g
   afterChange()}
 function doErase(h){if(!h||h.kind!=='block')return;if(S.mode==='practice'&&!h.locked)practiceEvent('erase');
   if(S.mode==='giant'){if(h.locked){if(!S.lockWarn){toast('A rocha do fundo do mundo não se pode apagar.');S.lockWarn=true}return}S.undo.push({op:'g',k:h.key,prev:gSet(h.key,null)});S.eraseKey=null;return afterChange()}if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
-  const b=S.blocks.get(h.key);S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
+  const b=S.blocks.get(h.key);if(!b)return;S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
 function undo(){const u=S.undo.pop();if(!u)return;if(S.mode==='practice')practiceEvent('undo');if(u.op==='g'){if(u.prev)S.blocks.set(u.k,u.prev);else S.blocks.delete(u.k);return afterChange()}if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
 function afterChange(){if(S.mode==='giant')gSave();if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
 function buildStatus(ch){const tset=new Map(ch.targets.map(t=>[K(t.x,t.y,t.z),t.m]));let ok=0,filled=0;const wrong=new Set(),extra=new Set();
@@ -802,7 +803,7 @@ function checkBuild(){const st=buildStatus(S.ch);$('#counter').textContent='🧱
   const complete=st.ok===st.total&&st.extra.size===0;
   if(S.year===1||st.filled===st.total){st.wrong.forEach(k=>S.marks.add(k));st.extra.forEach(k=>S.marks.add(k))}
   if(complete&&!S.done){S.done=true;const n=(S.year===1||!S.help)?3:2;award(n);
-    const completed=S.ch;setTimeout(()=>{if(S.ch===completed&&S.mode==='build'&&S.done&&$('#game').classList.contains('on'))celebrate(n,n<3?'Da próxima vez, tenta sem ajuda para ganhares 3 estrelas.':null)},400)}
+    const completed=S.ch,token=S.runId;setTimeout(()=>{if(S.ch===completed&&S.runId===token&&S.mode==='build'&&S.done&&$('#game').classList.contains('on'))celebrate(n,n<3?'Da próxima vez, tenta sem ajuda para ganhares 3 estrelas.':null)},400)}
   else if(!complete&&st.filled===st.total&&S.year>1){if(!S.warned){toast(st.wrong.size?'Quase! Há blocos com o material errado (a vermelho).':'Quase! Há blocos a mais (a vermelho).');S.warned=true}}
   else if(st.filled<st.total)S.warned=false;
   const hidden=S.ch.targets.some(t=>!S.blocks.has(K(t.x,t.y,t.z))&&[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1]].every(([a,b,c])=>S.blocks.has(K(t.x+a,t.y+b,t.z+c))));
@@ -819,8 +820,7 @@ const CMD={fwd:{l:'Avançar',c:'c-fwd'},left:{l:'Virar à esquerda',c:'c-left'},
 const CHIP={fwd:'Avançar',left:'Esquerda',right:'Direita',place:'Colocar'};
 function buildCmds(){const c=$('#cmds');c.innerHTML='';for(const t of S.ch.cmds){const b=el('button','cmd '+CMD[t].c,IC[t]+'<span>'+CMD[t].l+'</span>');b.dataset.c=t;b.onclick=()=>addCmd(t);c.append(b)}}
 const countP=l=>l.reduce((a,i)=>a+1+(i.body?countP(i.body):0),0);
-function addCmd(t){if(S.running)return;if(countP(S.prog)>=24){toast('O programa já está muito comprido!');return}
-  const open=S.prog.find(i=>i.open);
+function addCmd(t){if(S.running)return;const open=S.prog.find(i=>i.open);if(countP(S.prog)>=24&&!(t==='rep'&&open)){toast('O programa já está muito comprido!');return}
   if(t==='rep'){if(open)open.open=false;else S.prog.push({t:'rep',n:2,body:[],open:true})}
   else(open?open.body:S.prog).push({t});
   renderProg()}
@@ -855,7 +855,7 @@ const ERR={edge:'Ups! O Ticl@s ia sair do mundo.',block:'Ups! Há um obstáculo 
 function setRunUI(on){$('#btnRun').innerHTML=on?'⏹ Parar':'▶ Executar';$('#btnRun').classList.toggle('stop',on);$$('#cmds .cmd').forEach(b=>b.disabled=on);$('#btnClearProg').disabled=on}
 async function run(){
   if(S.running){S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld();return}
-  if(!S.prog.length){toast('Primeiro junta peças ao programa.');return}
+  if(!S.prog.length){toast('Primeiro junta peças ao programa.');return}if(S.prog.some(i=>i.t==='rep'&&!i.body.length)){toast('Junta instruções dentro de cada Repetir.');return}
   S.prog.forEach(i=>{if(i.open)i.open=false});renderProg();resetCodeWorld();
   const my=++S.runId;S.running=true;setRunUI(true);let err=null;
   for(const st of flatten()){if(my!==S.runId)return;markChip(st);err=await step(st.t,my);if(my!==S.runId)return;if(err)break;await sleep(110)}
@@ -886,7 +886,7 @@ function zoomAt(k,mx,my){if(S.mode==='giant'){S.cam.z=Math.min(2,Math.max(.75,S.
 cv.addEventListener('pointerdown',e=>{if(S.mode==='code'||S.running)return;if(e.button!==0&&e.button!==2&&e.button!==1)return;try{cv.setPointerCapture(e.pointerId)}catch(_){};pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>1){drag=null;S.hover=null;S.eraseKey=null;const p=[...pointers.values()];pinch={distance:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)};requestRender();return}drag={id:e.pointerId,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y}});
 cv.addEventListener('pointerup',e=>{pointers.delete(e.pointerId);if(pinch){if(!pointers.size)pinch=null;drag=null;if(S.mode==='giant')gSave();return}const d=drag;drag=null;if(!d||d.id!==e.pointerId||S.mode==='code')return;if(d.moved||d.b===1){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
   render();const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
-  const h2=hit(e);if(S.tool==='place')S.hover=placeTarget(h2);render()});
+  const h2=hit(e);if(S.tool==='place'&&e.pointerType!=='touch')S.hover=placeTarget(h2);else S.hover=null;render()});
 function cancelPointer(e){pointers.delete(e.pointerId);if(!pointers.size)pinch=null;if(drag&&drag.id===e.pointerId)drag=null;S.hover=null;S.eraseKey=null;requestRender()}cv.addEventListener('pointercancel',cancelPointer);cv.addEventListener('lostpointercapture',cancelPointer);
 cv.addEventListener('wheel',e=>{if(!podeMover())return;e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2)},{passive:false});
 cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
@@ -910,7 +910,7 @@ $('#gHome').onclick=()=>{S.g={x:GC0,y:GC0+4};S.hover=null;gSave();render()};
 $('#rotR').onclick=()=>{practiceEvent('rotate');S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
 $('#btnRun').onclick=run;
 $('#btnCodeReset').onclick=()=>{S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld()};
-$('#btnClearProg').onclick=()=>{if(S.running)return;S.prog=[];renderProg()};
+$('#btnClearProg').onclick=()=>{if(S.running)return;S.runId++;S.prog=[];renderProg();resetCodeWorld()};
 $$('.ybtn').forEach(b=>b.onclick=()=>openMenu(+b.dataset.y));
 $('#mBack').onclick=()=>show('home');$('#btnHome').onclick=()=>{closeModal();show('home')};
 $('#gMenu').onclick=()=>openMenu(S.year);
@@ -923,7 +923,7 @@ document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')|
   else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){practiceEvent('rotate');S.rot=(S.rot+1)%4;render();renderModel()}
   else if(podeMover()&&e.key.startsWith('Arrow')){e.preventDefault();const st=60;if(S.mode==='giant'){gMove(e.key==='ArrowLeft'?st:e.key==='ArrowRight'?-st:0,e.key==='ArrowUp'?st:e.key==='ArrowDown'?-st:0);gSave();return requestRender()}if(e.key==='ArrowLeft')S.cam.x+=st;if(e.key==='ArrowRight')S.cam.x-=st;if(e.key==='ArrowUp')S.cam.y+=st;if(e.key==='ArrowDown')S.cam.y-=st;limitarCam();render()}
   else if(podeMover()&&(e.key==='+'||e.key==='-')){zoomAt(e.key==='+'?1.3:1/1.3,0,0)}});
-new ResizeObserver(()=>{render();renderModel()}).observe($('#stage'));
+if(typeof ResizeObserver==='function')new ResizeObserver(()=>{render();renderModel()}).observe($('#stage'));else window.addEventListener('resize',()=>{render();renderModel()});
 
 /* ---------- tema ---------- */
 const sel=$('#thSel');sel.append(new Option('Tema automático (data)','auto'));for(const k in TH)sel.append(new Option(TH[k].nome,k));
