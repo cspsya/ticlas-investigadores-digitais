@@ -215,6 +215,7 @@ function validarAula(a) {
   });
   e.push(...validarExtra(a));
   e.push(...validarJogos(a));
+  e.push(...validarConsulta(a));
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -410,6 +411,9 @@ function ecraMapa() {
   $('#app').replaceChildren(h('div', null,
     h('div', { class: 'mapa-topo' }, mascote(todas ? 'trofeu' : 'aponta'),
       h('div', null, h('h2', { class: 'titulo-ronda' }, t('escolheMissao')), h('p', { class: 'instrucao' }, AULA.titulo))),
+    temConsulta() ? h('button', { class: 'consulta-faixa', onclick: () => abrirConsulta() },
+      h('span', { class: 'consulta-faixa-icone', 'aria-hidden': 'true' }, '📖'),
+      h('span', null, h('strong', null, t('consulta')), h('small', null, t('consultaSub')))) : null,
     h('div', { class: 'mapa' }, principais.map((ri, k) => cartao(ri, k, 'principal', false))),
     bonus.length ? h('div', { class: 'grupo-titulo' }, todas ? nomeFase('bonus') : t('bonusFechado')) : null,
     bonus.length ? h('div', { class: 'mapa' }, bonus.map((ri, k) => cartao(ri, k, 'bonus', !todas))) : null,
@@ -474,7 +478,8 @@ function cabecalhoRonda(ronda, chaveInstrucao, contador, fala) {
   return [
     h('div', { class: 'linha-titulo' },
       h('h2', { class: 'titulo-ronda' }, ronda.titulo || nomeFase(ronda.fase)),
-      fala && somLigado() ? h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(fala()) }, '🔊') : null),
+      fala && somLigado() ? h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(fala()) }, '🔊') : null,
+      botaoRever(ronda)),
     h('p', { class: 'instrucao' }, instr + (contador ? ' · ' + contador : ''), traducao)
   ];
 }
@@ -1926,6 +1931,109 @@ function itemPercurso(ri, ronda, it, area, contador, proximo) {
 }
 Object.assign(EXTRA_ITENS, { puzzle: itemPuzzle, pontos: itemPontos, apanhar: itemApanhar, percurso: itemPercurso });
 
+
+/* ==========================================================
+   Caderno do Ticl@s (V3.6): páginas de consulta com a matéria da aula.
+   "consulta": [{ "id", "titulo", "emoji", "paragrafos": [...], "lista": [...],
+                  "tabela": [[cabeçalho...], [linha...]], "imagem", "alt" }]
+   Numa ronda, "consulta": "id" mostra o botão «📖 Rever» que abre essa página.
+   Texto entre **…** aparece a negrito. Sem som: tudo se lê no ecrã.
+   ========================================================== */
+const temConsulta = () => Array.isArray(AULA && AULA.consulta) && AULA.consulta.length > 0;
+function textoRico(s) {
+  return String(s).split(/\*\*(.+?)\*\*/g).map((p, i) => i % 2 ? h('b', null, p) : p);
+}
+function botaoRever(ronda) {
+  if (!temConsulta() || !ronda || !ronda.consulta) return null;
+  const k = AULA.consulta.findIndex(p => p.id === ronda.consulta);
+  if (k < 0) return null;
+  return h('button', { class: 'rever', title: t('rever'), onclick: () => abrirConsulta(k) }, '📖 ', t('rever'));
+}
+function abrirConsulta(inicio) {
+  if (!temConsulta()) return;
+  calar();
+  const paginas = AULA.consulta;
+  const corpo = h('div', { class: 'consulta' });
+  const j = janela(corpo);
+  j.querySelector('.cartao').classList.add('larga');
+  const fechar = () => { calar(); j.remove(); document.removeEventListener('keydown', teclas); };
+  j.onclick = e => { if (e.target === j) fechar(); };
+  let atual = Number.isInteger(inicio) ? inicio : -1;
+  function teclas(e) {
+    if (e.key === 'Escape') fechar();
+    else if (atual >= 0 && e.key === 'ArrowRight' && atual < paginas.length - 1) { atual++; mostrar(); }
+    else if (atual >= 0 && e.key === 'ArrowLeft' && atual > 0) { atual--; mostrar(); }
+  }
+  document.addEventListener('keydown', teclas);
+  const topo = () => h('div', { class: 'consulta-topo' },
+    h('img', { class: 'consulta-mascote', src: MASCOTE.ideia || MASCOTE.aponta || '', alt: '' }),
+    h('div', null, h('h2', { class: 'titulo-ronda' }, '📖 ' + t('consulta')), h('p', { class: 'instrucao' }, AULA.titulo)),
+    h('button', { class: 'icon consulta-fechar', 'aria-label': t('fechar'), title: t('fechar'), onclick: fechar }, '✖'));
+  function mostrar() {
+    calar();
+    if (atual < 0) {
+      encher(corpo, topo(), h('p', { class: 'consulta-intro' }, t('consultaSub')),
+        h('div', { class: 'consulta-indice' }, paginas.map((p, k) =>
+          h('button', { class: 'consulta-cartao', onclick: () => { atual = k; mostrar(); } },
+            h('span', { class: 'consulta-num' }, k + 1),
+            h('span', { class: 'consulta-emoji', 'aria-hidden': 'true' }, p.emoji || '📄'),
+            h('strong', null, p.titulo)))),
+        h('div', { class: 'linha', style: 'margin-top:12px' }, h('button', { class: 'btn', onclick: fechar }, '✔ ' + t('fechar'))));
+      corpo.querySelector('.consulta-cartao')?.focus({ preventScroll: true });
+      return;
+    }
+    const p = paginas[atual];
+    const lerPagina = () => lerSequencia([p.titulo, ...(p.paragrafos || []), ...(p.lista || [])].map(s => String(s).replace(/\*\*/g, '')));
+    const tabela = Array.isArray(p.tabela) && p.tabela.length ? h('div', { class: 'consulta-tabela-wrap' }, h('table', { class: 'consulta-tabela' },
+      h('thead', null, h('tr', null, p.tabela[0].map(c => h('th', null, textoRico(c))))),
+      h('tbody', null, p.tabela.slice(1).map(l => h('tr', null, l.map(c => h('td', null, textoRico(c)))))))) : null;
+    encher(corpo, topo(),
+      h('article', { class: 'consulta-pagina' },
+        h('div', { class: 'consulta-cabeca' },
+          h('span', { class: 'consulta-emoji grande', 'aria-hidden': 'true' }, p.emoji || '📄'),
+          h('div', null, h('small', null, t('pagina', { a: atual + 1, b: paginas.length })), h('h3', null, p.titulo)),
+          somLigado() ? h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: lerPagina }, '🔊') : null),
+        p.imagem ? h('img', { class: 'consulta-img', src: p.imagem, alt: p.alt || '' }) : null,
+        ...(p.paragrafos || []).map(s => h('p', null, textoRico(s))),
+        Array.isArray(p.lista) && p.lista.length ? h('ul', null, p.lista.map(s => h('li', null, textoRico(s)))) : null,
+        tabela,
+        p.lembra ? h('div', { class: 'consulta-lembra' }, h('span', { 'aria-hidden': 'true' }, '💡 '), textoRico(p.lembra)) : null),
+      h('div', { class: 'nav consulta-nav' },
+        h('button', { class: 'btn leve', disabled: atual === 0 || null, onclick: () => { atual--; mostrar(); } }, t('anterior')),
+        h('button', { class: 'btn leve', onclick: () => { atual = -1; mostrar(); } }, '☰ ' + t('indice')),
+        atual < paginas.length - 1
+          ? h('button', { class: 'btn azul', onclick: () => { atual++; mostrar(); } }, t('proximo'))
+          : h('button', { class: 'btn', onclick: fechar }, '✔ ' + t('fechar'))));
+    corpo.scrollTop = 0; j.querySelector('.cartao').scrollTop = 0;
+  }
+  mostrar();
+}
+function validarConsulta(a) {
+  const e = [], txt = v => typeof v === 'string' && v.trim() !== '';
+  if (a.consulta === undefined) {
+    a.rondas.forEach((r, ri) => { if (r && r.consulta) e.push(`Ronda ${ri + 1}: tem «consulta» mas a aula não tem páginas de «consulta».`); });
+    return e;
+  }
+  if (!Array.isArray(a.consulta) || !a.consulta.length) return ['«consulta» tem de ser uma lista de páginas.'];
+  const ids = new Set();
+  a.consulta.forEach((p, k) => {
+    const w = `Página de consulta ${k + 1}`;
+    if (!p || typeof p !== 'object' || Array.isArray(p)) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+    if (!txt(p.titulo)) e.push(`${w}: falta o «titulo».`);
+    if (p.id !== undefined) { if (!txt(p.id)) e.push(`${w}: «id» tem de ser texto.`); else if (ids.has(p.id)) e.push(`${w}: o «id» «${p.id}» está repetido.`); else ids.add(p.id); }
+    const temP = Array.isArray(p.paragrafos) && p.paragrafos.length, temL = Array.isArray(p.lista) && p.lista.length, temT = Array.isArray(p.tabela) && p.tabela.length;
+    if (!temP && !temL && !temT) e.push(`${w}: precisa de «paragrafos», «lista» ou «tabela».`);
+    if (p.paragrafos !== undefined && !(Array.isArray(p.paragrafos) && p.paragrafos.every(txt))) e.push(`${w}: «paragrafos» tem de ser uma lista de textos.`);
+    if (p.lista !== undefined && !(Array.isArray(p.lista) && p.lista.every(txt))) e.push(`${w}: «lista» tem de ser uma lista de textos.`);
+    if (p.tabela !== undefined && !(Array.isArray(p.tabela) && p.tabela.length >= 2 && p.tabela.every(l => Array.isArray(l) && l.length === p.tabela[0].length && l.every(c => txt(c) || typeof c === 'number'))))
+      e.push(`${w}: «tabela» tem de ter um cabeçalho e linhas com o mesmo número de colunas.`);
+  });
+  a.rondas.forEach((r, ri) => {
+    if (r && r.consulta !== undefined && !ids.has(r.consulta)) e.push(`Ronda ${ri + 1}: «consulta» «${r.consulta}» não corresponde a nenhuma página (usa o «id» da página).`);
+  });
+  return e;
+}
+
 (function arrancar() {
   $('#btAcess').onclick = abrirAcessibilidade;
   $('#btProf').onclick = abrirProfessor;
@@ -1942,6 +2050,7 @@ Object.assign(EXTRA_ITENS, { puzzle: itemPuzzle, pontos: itemPontos, apanhar: it
   if (erros.length) { ecraErros(erros); return; }
   // botão MAB no cabeçalho: nas aulas com rondas de MAB ou com "ferramentaMAB": true
   if ($('#btMab')) $('#btMab').hidden = !(AULA.ferramentaMAB === true || (AULA.ferramentaMAB !== false && AULA.rondas.some(r => r && r.tipo === 'mab')));
+  if ($('#btConsulta')) { $('#btConsulta').hidden = !temConsulta(); $('#btConsulta').onclick = () => abrirConsulta(); $('#btConsulta').title = t('consulta'); }
   document.title = AULA.titulo + ' · Investigadores Digitais';
   $('#subtitulo').textContent = 'com o Ticl@s · ' + AULA.titulo;
   ecraInicio();

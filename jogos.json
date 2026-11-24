@@ -800,5 +800,23 @@
         "🧩"
       ]
     }
+  },
+  {
+    "id": "2026-11-24-4ano-primeira-dinastia",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Viagem à 1.ª Dinastia com o Ticl@s",
+    "descricao": "História de Portugal: formação do reino, os nove reis da 1.ª dinastia e os seus cognomes, a Reconquista no mapa, fontes históricas e friso cronológico",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-11-24",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-24_4ano_EstudoDoMeio_1Dinastia_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Viaja até à Idade Média e descobre os nove reis da 1.ª dinastia!",
+    "focoTic": [
+      "Rato: arrastar",
+      "Teclado: escrever frases"
+    ]
   }
 ]

@@ -251,6 +251,47 @@ def validar(a):
                 e.append(f"{onde}: no jogo da memória um texto não pode aparecer dos dois lados.")
     if not any(isinstance(r, dict) and r.get("fase") != "bonus" for r in rondas):
         e.append("Tem de existir pelo menos uma ronda que não seja de bónus.")
+    e.extend(validar_consulta(a))
+    return e
+
+
+def validar_consulta(a):
+    """Caderno do Ticl@s (V3.6): as mesmas regras de validarConsulta() em src/motor.js."""
+    e, rondas = [], [r for r in a.get("rondas", []) if isinstance(r, dict)]
+    consulta = a.get("consulta")
+    if consulta is None:
+        for ri, r in enumerate(a.get("rondas", []), 1):
+            if isinstance(r, dict) and r.get("consulta"):
+                e.append(f"Ronda {ri}: tem «consulta» mas a aula não tem páginas de «consulta».")
+        return e
+    if not isinstance(consulta, list) or not consulta:
+        return ["«consulta» tem de ser uma lista de páginas."]
+    ids = set()
+    textos = lambda v: isinstance(v, list) and all(tem_texto(x) for x in v)
+    for k, p in enumerate(consulta, 1):
+        w = f"Página de consulta {k}"
+        if not isinstance(p, dict):
+            e.append(f"{w}: tem de ser um objeto {{ ... }}."); continue
+        if not tem_texto(p.get("titulo")):
+            e.append(f"{w}: falta o «titulo».")
+        if "id" in p:
+            if not isinstance(p["id"], str) or not p["id"].strip():
+                e.append(f"{w}: «id» tem de ser texto.")
+            elif p["id"] in ids:
+                e.append(f"{w}: o «id» «{p['id']}» está repetido.")
+            else:
+                ids.add(p["id"])
+        if not any(isinstance(p.get(c), list) and p.get(c) for c in ("paragrafos", "lista", "tabela")):
+            e.append(f"{w}: precisa de «paragrafos», «lista» ou «tabela».")
+        for c in ("paragrafos", "lista"):
+            if c in p and not textos(p[c]):
+                e.append(f"{w}: «{c}» tem de ser uma lista de textos.")
+        tb = p.get("tabela")
+        if tb is not None and not (isinstance(tb, list) and len(tb) >= 2 and all(isinstance(l, list) and len(l) == len(tb[0]) and all(tem_texto(c) for c in l) for l in tb)):
+            e.append(f"{w}: «tabela» tem de ter um cabeçalho e linhas com o mesmo número de colunas.")
+    for ri, r in enumerate(a.get("rondas", []), 1):
+        if isinstance(r, dict) and "consulta" in r and r["consulta"] not in ids:
+            e.append(f"Ronda {ri}: «consulta» «{r['consulta']}» não corresponde a nenhuma página (usa o «id» da página).")
     return e
 
 

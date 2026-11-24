@@ -95,6 +95,23 @@ Opções de aspeto em `escolher` (`"visual"`):
 | `buracos` | O Ticl@s salta de buracos com uma resposta; toca-se quando aparece a certa. Sem pressa: ele volta sempre a aparecer. |
 | `aviao` | Toca-se numa nuvem (ou usa-se ▲ ▼ e «Apanhar!», ou as setas do teclado) e o avião voa até ela. |
 
+### Caderno do Ticl@s — páginas de consulta (V3.6, opcional)
+
+Para os alunos poderem consultar a matéria quando têm dúvidas, acrescenta à aula uma lista `consulta`:
+
+```json
+"consulta": [
+  { "id": "reis", "emoji": "👑", "titulo": "Os nove reis",
+    "paragrafos": ["Texto com **negrito**."],
+    "lista": ["Ponto 1", "Ponto 2"],
+    "tabela": [["Rei", "Cognome"], ["D. Dinis", "o Lavrador"]],
+    "imagem": "data:image/svg+xml;base64,...", "alt": "descrição",
+    "lembra": "Caixa verde com uma dica final." }
+]
+```
+
+Cada página precisa de `titulo` e de `paragrafos`, `lista` ou `tabela`. Numa ronda, `"consulta": "reis"` mostra o botão **📖 Rever a matéria**, que abre essa página. Com páginas de consulta aparece também o botão 📖 no cabeçalho e a faixa «Caderno do Ticl@s» no mapa de missões (índice, Anterior/Próximo, setas do teclado e Esc para fechar; 🔊 lê a página com o som ligado). Exemplo: `aulas/2026-11-24_4ano_EstudoDoMeio_1Dinastia_v1.json`.
+
 ### Tipos de Matemática (V3.4)
 
 | Tipo | Itens | Exemplo |
