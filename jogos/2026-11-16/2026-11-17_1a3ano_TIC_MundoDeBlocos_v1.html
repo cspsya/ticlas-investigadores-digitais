@@ -152,6 +152,77 @@ footer{text-align:center;font-size:12.5px;padding:5px;background:#FFF1E0;border-
 body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
 @media print {#ticlas-voltar-portal,#ticlas-nav-portal {display:none!important}}
 </style>
+<style>
+/* Interface 2: área de trabalho, inventário e navegação */
+:root{--ui-ink:#263b45;--ui-muted:#536975;--ui-line:#d5e0e4;--ui-bg:#f0f4f5;--ui-blue:#28617b;--ui-accent:#c56835}
+html,body{background:var(--ui-bg);color:var(--ui-ink)}
+#app{height:100vh;height:100dvh;min-height:0}
+header{flex:none;min-height:54px;padding:5px 12px;gap:8px;background:#fff;border-bottom:1px solid var(--ui-line)}
+header .logo{width:39px;height:42px}header h1{font-size:20px;color:var(--ui-ink)}header h1 small{font-size:12px;color:var(--ui-muted)}
+header .badge,.hbtn{border:1px solid var(--ui-line);border-radius:8px;color:var(--ui-blue);background:#f7fafb}
+.hbtn{min-height:36px;font-family:Nunito,sans-serif;font-size:13px;font-weight:800}
+#ticlas-voltar-portal{min-height:36px;font-size:13px;border-width:1px;border-radius:8px;padding:7px 10px}
+footer{flex:none;font-size:11px;padding:3px 8px;background:#fff;color:var(--ui-muted);border-top:1px solid var(--ui-line)}
+#home{background:radial-gradient(ellipse at 50% 20%,#fff,#edf4f3 70%,#e2ecef);gap:24px;justify-content:safe center}
+.hero .big{width:clamp(120px,19vw,220px);height:clamp(130px,22vw,230px);animation:none}
+.bubble{border:1px solid var(--ui-line);border-radius:16px;box-shadow:0 8px 24px #24495810;color:var(--ui-ink);font-size:clamp(18px,2vw,22px)}
+.bubble:before{display:none}
+.years{gap:12px}.ybtn{min-width:190px;border-radius:14px;padding:18px 22px;box-shadow:0 4px 0 #0002;text-align:left;font-size:30px}
+.y1{background:#a85c2e}.y2{background:#28617b}.y3{background:#377550}
+.ybtn small{margin-top:5px;font:700 14px/1.4 Nunito,sans-serif}
+#menu{background:var(--ui-bg);padding:16px 20px;gap:13px}
+.mhead h2,.sec{color:var(--ui-ink)}.sec{font-size:19px;margin:8px 0 0}
+.cards{grid-template-columns:repeat(auto-fill,minmax(164px,1fr));gap:12px}
+.card{min-width:0;appearance:none;text-align:center;border:1px solid var(--ui-line);border-radius:12px;padding:8px;box-shadow:0 2px 6px #203b4510;gap:5px}
+.card.world,.card.free{border:1px solid var(--ui-line);box-shadow:0 2px 6px #203b4510;background:#fff}
+.card.world{border-top:3px solid #5b95aa}.card.free{border-top:3px solid #578c66}.card.code{border-top:3px solid #8e7cc3}
+.card:hover{transform:translateY(-2px);box-shadow:0 5px 12px #203b4520}
+.card canvas{width:100%;height:110px;max-width:210px;border-radius:8px}.card .ct{font-size:17px;color:var(--ui-ink)}.card .cn{font:800 12px Nunito,sans-serif;color:var(--ui-muted)}
+.cbar{flex:none;gap:8px;padding:8px 12px;border-bottom:1px solid var(--ui-line);background:#fff}
+.cbar .tt{font:800 12px/1.2 Nunito,sans-serif;color:var(--ui-muted);margin-bottom:3px}
+.cbar .tx{font-size:clamp(14px,1.35vw,17px);color:var(--ui-ink);line-height:1.3}
+.nbtn{border-radius:8px;padding:8px 10px;min-height:38px;font:800 13px Nunito,sans-serif;background:var(--ui-blue);box-shadow:none}
+.nbtn.home{background:#fff;color:var(--ui-blue);border:1px solid var(--ui-line);box-shadow:none}
+.gbody{gap:8px;padding:8px;background:#e5ecef;overflow:hidden}
+.stage{border:1px solid #bacbd3;border-radius:12px;min-height:0}
+.panel{width:clamp(220px,24vw,265px);flex:none;border:1px solid var(--ui-line);border-radius:12px;background:#fff;padding:9px;gap:8px;scrollbar-width:thin;overscroll-behavior:contain}
+.panel>*{flex-shrink:0}.plbl{font:800 14px Nunito,sans-serif;color:var(--ui-ink)}
+#modelBox{border:1px solid var(--ui-line);border-radius:9px}
+#modelCv{height:clamp(100px,20vh,145px)}#counter{border:1px solid var(--ui-line);font-size:13px;color:var(--ui-ink)}
+.tools{gap:5px}.tbtn{min-height:42px;font:800 14px Nunito,sans-serif;border:1px solid var(--ui-line);border-radius:8px;color:var(--ui-ink)}
+.tbtn.on{border:2px solid var(--ui-blue);background:#e8f3f8;color:#174861}
+.tbtn[data-tool="erase"].on{border-color:#a43f36;background:#fcecea;color:#8c3029}
+.inventory-head{display:flex;align-items:center;justify-content:space-between;gap:6px}
+#selectedMaterial{font-size:12px;font-weight:800;color:var(--ui-blue);text-align:right}
+#palette{display:flex;flex-direction:column;gap:7px}
+.mat-group{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+.mat-label{grid-column:1/-1;font-size:11px;font-weight:800;letter-spacing:.02em;color:var(--ui-muted);margin:0}
+.mbtn{position:relative;border:1px solid var(--ui-line);border-radius:7px;min-width:0;min-height:48px;padding:1px 1px 3px;font-size:11px;color:var(--ui-ink);line-height:1.15;transition:none}
+.mbtn canvas{width:32px;height:32px}.mbtn.on{border:2px solid var(--ui-blue);background:#e8f3f8;transform:none}
+.mbtn.on:after{content:'✓';position:absolute;top:1px;right:3px;color:var(--ui-blue);font-size:12px;font-weight:900}
+.abtn{border-radius:8px;min-height:37px;background:#edf1f3;color:var(--ui-ink);font:800 13px Nunito,sans-serif;border:1px solid var(--ui-line)}
+.abtn.help{background:#fff2c9;color:#624b13;border-color:#e9d7a0}
+.abtn.run{background:#377550;font-size:17px;color:white;box-shadow:none}
+.abtn.run.stop{background:#a43f36;box-shadow:none}
+.tip{background:#f3f6f7;border-radius:7px;padding:7px;color:var(--ui-muted);font-size:12px}
+.rot,.cam{bottom:8px;gap:4px;background:#fffffff0;border:1px solid #c8d6db;border-radius:10px;padding:4px;box-shadow:0 2px 8px #203b4518}
+.rot{left:8px}.cam{right:8px}.rbtn{width:38px;height:38px;border:1px solid #c6d8e0;border-radius:7px;background:#fff;color:var(--ui-blue);font-size:24px;box-shadow:none}
+.rlbl{font:800 11px Nunito,sans-serif;color:var(--ui-muted);background:none;padding:0 4px}
+#mini{right:8px;top:8px;border:1px solid var(--ui-line);border-radius:10px;box-shadow:0 2px 10px #203b4518;padding:6px}
+#miniCv{width:clamp(88px,12vw,130px);height:clamp(88px,12vw,130px)}#miniTx{color:var(--ui-muted);font-size:11px}
+#mini .abtn{font-size:11px;min-height:29px;padding:4px}
+.cmd{border-radius:8px;min-height:42px;box-shadow:none;font-size:14px}
+#prog{border-color:#b7cbd3;border-radius:9px;min-height:110px}
+.pinfo{color:var(--ui-muted)}
+button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #c56835;outline-offset:2px}
+button:disabled{cursor:default}
+@media(max-height:740px) and (min-width:761px){.panel{gap:6px;padding:7px}.mat-group{gap:3px}.mbtn{min-height:43px}.mbtn canvas{width:27px;height:27px}#modelCv{height:100px}.tip{padding:5px}.inventory-head{margin-top:0}.cbar{padding:6px 9px}}
+@media(max-width:980px){.rlbl{display:none}.gbody{gap:5px;padding:5px}header .badge{display:none}}
+@media(min-width:761px){.gbody{flex-direction:row}.panel{max-height:none}}
+@media(max-width:760px){header{flex-wrap:wrap;gap:5px;padding:5px 8px}header .sp{display:none}header h1{flex:1;font-size:17px}header .logo{width:32px;height:36px}header .hbtn{min-height:32px;padding:4px 7px}#ticlas-voltar-portal{font-size:12px;min-height:32px;padding:4px 7px}.cbar{flex-wrap:wrap;gap:5px;padding:5px 8px}.cbar .info{order:3;flex-basis:100%}.nbtn{min-height:32px;padding:5px 8px}.gbody{flex-direction:column}.stage{flex:1;min-height:150px}.panel{width:auto;max-height:43%;min-height:100px;padding:7px}.panel .mat-group{grid-template-columns:repeat(6,minmax(0,1fr))}.mbtn{min-height:43px}.mbtn canvas{width:28px;height:28px}#modelCv{height:95px}.hero{gap:10px}.years{gap:9px}.ybtn{min-width:160px;font-size:24px;padding:12px 16px}.bubble{padding:12px}.cards{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}#menu{padding:10px}.rbtn{width:34px;height:34px}.rot,.cam{bottom:5px}.rot{left:5px}.cam{right:5px}}
+@media(max-width:380px){.panel .mat-group{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.hero .big,.modal,.bigstars span.on,.confetti{animation:none}.card,.ybtn,.chip{transition:none}}
+</style>
 </head>
 <body>
 <div id="app">
@@ -161,7 +232,7 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
     <span class="sp"></span>
     <span class="badge" id="thBadge"></span>
     <select class="hbtn" id="thSel" title="Tema (professora)"></select>
-    <button class="hbtn" id="btnFull" title="Ecrã inteiro">⛶</button>
+    <button class="hbtn" id="btnFull" title="Ecrã inteiro" aria-label="Ecrã inteiro">⛶</button>
     <button class="hbtn" id="btnHome">⌂ Início</button>
   
     <a id="ticlas-voltar-portal" href="https://cspsya.github.io/ticlas-investigadores-digitais/" aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s"><span aria-hidden="true">←</span> Voltar ao Ticl@s</a>
@@ -222,7 +293,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             <button class="tbtn on" data-tool="place">✚ Colocar</button>
             <button class="tbtn" data-tool="erase">✖ Apagar</button>
           </div>
-          <div id="palette"></div>
+          <div class="inventory-head"><span class="plbl">Materiais</span><span id="selectedMaterial" aria-live="polite"></span></div>
+          <div id="palette" aria-label="Inventário de materiais"></div>
           <div class="row">
             <button class="abtn" id="btnUndo">↶ Desfazer</button>
             <button class="abtn" id="btnReset">🗑 Recomeçar</button>
@@ -635,11 +707,11 @@ function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cards=$('#cards');cards.innerHTML='';const list=CH[y];const sv=SAVE['y'+y]||{};
   let tot=0;list.forEach((c,i)=>tot+=sv[i]||0);$('#mStars').textContent='★ '+tot+' / '+list.length*3;
   const cw=$('#cardsW');cw.innerHTML='';
-  const fc=el('div','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
+  const fc=el('button','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
   fc.onclick=startFree;cw.append(fc);
-  const gc=el('div','card world giant','<canvas></canvas><div class="cn">1000 × 1000</div><div class="ct">Mundo gigante</div><div class="stars">🗺️</div>');gc.onclick=startGiant;cw.append(gc);
-  WORLDS.forEach((wd,i)=>{const c=el('div','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
-  list.forEach((ch,i)=>{const c=el('div','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
+  const gc=el('button','card world giant','<canvas></canvas><div class="cn">1000 × 1000</div><div class="ct">Mundo gigante</div><div class="stars">🗺️</div>');gc.onclick=startGiant;cw.append(gc);
+  WORLDS.forEach((wd,i)=>{const c=el('button','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
+  list.forEach((ch,i)=>{const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
   requestAnimationFrame(()=>{
     {const gcv=gc.querySelector('canvas'),d=DPR();gcv.width=gcv.clientWidth*d;gcv.height=gcv.clientHeight*d;const g=gcv.getContext('2d');g.imageSmoothingEnabled=false;const m=gMapImg(),sz=Math.min(gcv.width,gcv.height);g.drawImage(m,(gcv.width-sz)/2,0,sz,sz)}
@@ -663,7 +735,7 @@ function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;
 function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',free=isFree()||gi,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
   $('#gTt').textContent=gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
   $('#gTx').textContent=gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
-  $('#gPrev').style.visibility=$('#gNext').style.visibility=free?'hidden':'visible';
+  $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
   $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#zAll').style.display=gi?'none':'';$('#mini').style.display=gi?'block':'none';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
@@ -707,7 +779,7 @@ function placeTarget(h){if(!h)return null;let p;
   if(h.kind==='ghost')p={x:h.wx,y:h.wy,z:h.z};else if(h.kind==='ground')p={x:h.wx,y:h.wy,z:0};
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
   if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (isFree()?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
-function setTool(t){S.tool=t;$$('.tbtn').forEach(b=>b.classList.toggle('on',b.dataset.tool===t));S.hover=null;S.eraseKey=null}
+function setTool(t){S.tool=t;$('.tbtn').forEach(b=>{const active=b.dataset.tool===t;b.classList.toggle('on',active);b.setAttribute('aria-pressed',String(active))});S.hover=null;S.eraseKey=null;const label=$('#selectedMaterial');if(label)label.textContent=t==='erase'?'A apagar':MATS[S.mat].nome;requestRender()}
 function doPlace(p){if(S.mode==='giant'){const k=K(p.x,p.y,p.z);S.undo.push({op:'g',k,prev:gSet(k,S.mat)});return afterChange()}
   S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
   if(S.mode==='build'&&S.year===1){const t=S.ch.targets.find(t=>t.x===p.x&&t.y===p.y&&t.z===p.z);
@@ -815,8 +887,7 @@ cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
 cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
-const pal=$('#palette');MORDER.forEach(m=>{const b=el('button','mbtn'+(m===S.mat?' on':''));b.title=MATS[m].nome;b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));
-  b.onclick=()=>{S.mat=m;$$('.mbtn').forEach(x=>x.classList.toggle('on',x===b));setTool('place')};pal.append(b)});
+const pal=$('#palette');const groups=[['Natureza',['relva','terra','folhas','areia','neve','agua']],['Construção',['tabuas','tronco','pedra','tijolo','telhado','vidro']]];for(const [name,mats] of groups){const group=el('div','mat-group');group.setAttribute('role','group');group.setAttribute('aria-label',name);group.append(el('div','mat-label',name));for(const m of mats){const b=el('button','mbtn'+(m===S.mat?' on':''));b.type='button';b.title=MATS[m].nome;b.setAttribute('aria-pressed',String(m===S.mat));b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));b.onclick=()=>{S.mat=m;$('.mbtn').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',String(x===b))});setTool('place')};group.append(b)}pal.append(group)}
 $('#btnUndo').onclick=undo;
 $('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='giant'){delete SAVE['giant_'+S.year];persist()}else if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
