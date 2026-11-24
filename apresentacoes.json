@@ -1,5 +1,22 @@
 [
   {
+    "id": "2026-11-25_3ano_Educacao_Financeira",
+    "categoria": "apresentacao",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Educação Financeira com o Ticl@s",
+    "descricao": "Vídeo-apresentação narrada para o quadro (9 cenas, cerca de 5 min), sem cálculos: bens e serviços, o euro (moedas, notas, cartão e telemóvel), o trabalho e o salário, o orçamento (dinheiro que entra e que sai), necessidades e desejos, poupar com um objetivo, gastar bem (lista, comparar preços, não desperdiçar), cinco regras de ouro e certificado. A professora pode parar em qualquer cena para conversar com a turma.",
+    "disciplina": "Educação Financeira",
+    "data": "2026-11-25",
+    "semana": "23–27 nov. 2026",
+    "url": "apresentacoes/2026-11-23/Ticlas_Educacao_Financeira_3ano.html",
+    "duracao": "5 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "resumo": "Aprende com o Ticl@s a usar bem o dinheiro: ganhar, escolher, poupar e gastar bem.",
+    "focoTic": "Apresentação multimédia"
+  },
+  {
     "id": "2026-11-17_3ano_O_Funchal",
     "categoria": "apresentacao",
     "turma": "3.º ano",
