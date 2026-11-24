@@ -836,5 +836,29 @@
       "Rato: arrastar",
       "Teclado: escrever frases"
     ]
+  },
+  {
+    "id": "2026-11-24-ticlas-4ano-mundo-de-blocos",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Mundo de Blocos com o Ticl@s",
+    "descricao": "Oito missões de construção e programação, três desafios interdisciplinares e projetos arquitetónicos e urbanos. Preparação para a transição para Minecraft Education e MakeCode. Progresso local.",
+    "disciplina": "TIC",
+    "data": "2026-11-17",
+    "semana": "Todo o ano letivo",
+    "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
+    "duracao": "Flexível",
+    "estado": "em validação",
+    "tipo": "Jogo de construção",
+    "ilustracao": {
+      "tipo": "digital"
+    },
+    "resumo": "Planeia, constrói e programa projetos complexos antes de explorar o Minecraft Education.",
+    "focoTic": [
+      "Algoritmos e repetições",
+      "Decomposição e resolução de problemas",
+      "Projetos digitais"
+    ],
+    "permanente": true
   }
 ]
