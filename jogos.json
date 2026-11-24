@@ -634,12 +634,12 @@
     "turma": "1.º ano",
     "ano": 1,
     "titulo": "Mundo de Blocos com o Ticl@s",
-    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education, sem leitura e sem som: 5 desafios de construção a partir de um modelo a cores (torre, muro, árvore, escada e piscina), com contornos brancos que mostram onde vai cada bloco, construção livre e 5 mundos prontos (aldeia, ilha, castelo, quinta e montanha de neve) e um mundo gigante de 1000 × 1000 com mapa. Estrelas guardadas no computador.",
+    "descricao": "Cinco missões de construção a partir de modelos, com orientação espacial e utilização do rato. Inclui oficina de treino, construção livre, cinco mundos predefinidos e mundo gigante de 1000 × 1000 blocos. Progresso guardado localmente.",
     "disciplina": "TIC",
     "data": "2026-11-17",
-    "semana": "16–20 nov. 2026",
+    "semana": "Todo o ano letivo",
     "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
-    "duracao": "10 min (prémio) ou mais",
+    "duracao": "Flexível",
     "estado": "em validação",
     "tipo": "Jogo de construção",
     "ilustracao": {
@@ -650,19 +650,20 @@
       "Rato: clicar",
       "Orientação no espaço",
       "Construção 3D"
-    ]
+    ],
+    "permanente": true
   },
   {
     "id": "2026-11-17-ticlas-2ano-mundo-de-blocos",
     "turma": "2.º ano",
     "ano": 2,
     "titulo": "Mundo de Blocos com o Ticl@s",
-    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education: 4 desafios de construção (padrão alternado, torres e escada com números no chão, piscina) e 2 desafios de programação do Ticl@s com Avançar e Virar, mais construção livre e 5 mundos prontos (aldeia, ilha, castelo, quinta e montanha de neve) e um mundo gigante de 1000 × 1000 com mapa. Sem som.",
+    "descricao": "Quatro missões de construção e duas de programação, com padrões, contagem e algoritmos. Inclui oficina de treino, construção livre, cinco mundos predefinidos e mundo gigante de 1000 × 1000 blocos. Progresso guardado localmente.",
     "disciplina": "TIC",
     "data": "2026-11-17",
-    "semana": "16–20 nov. 2026",
+    "semana": "Todo o ano letivo",
     "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
-    "duracao": "10 min (prémio) ou mais",
+    "duracao": "Flexível",
     "estado": "em validação",
     "tipo": "Jogo de construção",
     "ilustracao": {
@@ -673,19 +674,20 @@
       "Rato: clicar",
       "Pensamento computacional",
       "Construção 3D"
-    ]
+    ],
+    "permanente": true
   },
   {
     "id": "2026-11-17-ticlas-3ano-mundo-de-blocos",
     "turma": "3.º ano",
     "ano": 3,
     "titulo": "Mundo de Blocos com o Ticl@s",
-    "descricao": "Mundo de blocos em 3D, ao estilo do Minecraft Education: 2 desafios de construção só com o modelo (casa e ponte) e 4 desafios de programação com o bloco Repetir (bolotas, ziguezague, construir um muro, volta ao quadrado), com meta de peças para 3 estrelas, mais construção livre e 5 mundos prontos (aldeia, ilha, castelo, quinta e montanha de neve) e um mundo gigante de 1000 × 1000 com mapa. Sem som.",
+    "descricao": "Duas missões de construção e quatro de programação, com planeamento e ciclos de repetição. Inclui oficina de treino, construção livre, cinco mundos predefinidos e mundo gigante de 1000 × 1000 blocos. Progresso guardado localmente.",
     "disciplina": "TIC",
     "data": "2026-11-17",
-    "semana": "16–20 nov. 2026",
+    "semana": "Todo o ano letivo",
     "url": "jogos/2026-11-16/2026-11-17_1a3ano_TIC_MundoDeBlocos_v1.html",
-    "duracao": "10 min (prémio) ou mais",
+    "duracao": "Flexível",
     "estado": "em validação",
     "tipo": "Jogo de construção",
     "ilustracao": {
@@ -696,7 +698,8 @@
       "Programação: sequências e repetição",
       "Pensamento computacional",
       "Construção 3D"
-    ]
+    ],
+    "permanente": true
   },
   {
     "id": "2026-11-17-3ano-pesquisa-funchal",
