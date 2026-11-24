@@ -254,7 +254,7 @@ button:disabled{cursor:default}
 #buildPanel{gap:6px}#equipmentPanel{order:5}#modelBox{order:0}#buildPanel>.tools{order:1}#buildPanel>.inventory-head{order:2}#quickBar{order:3}#inventoryTabs{order:4}#palette{order:5}#inventoryProgress{order:6}#buildPanel>.row{order:7}#btnHelp{order:8}#projectTools{order:9}#practiceGuide{order:10}#buildTip{order:11}
 #inventoryTabs button:focus-visible,.quick-bar button:focus-visible{outline:2px solid #37738d;outline-offset:2px}
 @media(pointer:coarse){.inventory-tabs button,.quick-bar .mbtn{min-height:44px}}@media(min-width:1000px){#buildPanel{width:clamp(210px,21vw,250px)}}
-</style></head>
+</style><style>#outfitBadge{position:absolute;bottom:8px;left:8px;z-index:3;display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.94);border:1px solid #b8cbd5;border-radius:9px;padding:4px 7px;color:#25455b;cursor:pointer;font:800 11px Nunito,sans-serif;max-width:155px;text-align:left}#outfitBadge[hidden]{display:none}#outfitMini{width:42px;height:49px}#outfitLabel{max-width:90px}#btnOutfit{width:100%;margin-top:5px}.outfit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:54vh;overflow:auto;text-align:left}.outfit-card{border:1px solid #c0d1da;border-radius:10px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px}.outfit-card canvas{width:85px;height:100px}.outfit-card strong{font-size:13px}.outfit-card .tip{font-size:11px;min-height:2em;text-align:center}.outfit-card .abtn{width:100%;min-height:36px}.outfit-card.selected{border:2px solid #408362;background:#edf7ef}.outfit-card.locked canvas{opacity:.65;filter:saturate(.5)}.modal:has(.outfit-list){max-width:530px;max-height:91dvh;overflow:auto}@media(max-width:500px){#outfitBadge{bottom:5px;left:5px;max-width:105px}#outfitMini{width:32px;height:38px}#outfitLabel{font-size:10px}}</style></head>
 <body>
 <div id="app">
   <header>
@@ -285,7 +285,7 @@ button:disabled{cursor:default}
       <div class="mhead">
         <button class="nbtn home" id="mBack">⌂ Início</button>
         <h2 id="mTitle">1.º ano</h2>
-        <span class="badge" id="mStars"></span><button class="nbtn home" id="btnGalleryMenu">Os meus projetos</button>
+        <span class="badge" id="mStars"></span><button class="nbtn home" id="btnGalleryMenu">Os meus projetos</button><button class="nbtn home" id="btnOutfitMenu">O meu Ticl@s</button>
       </div>
       <h3 class="sec">Construir à vontade</h3>
       <div class="cards" id="cardsW"></div><div class="mission-menu-head"><h3 class="sec">Explorar mundos gigantes</h3><span id="giantProgress" aria-live="polite"></span></div><div class="cards" id="giantCards"></div><div id="freeCodeEntry" hidden><h3 class="sec">Laboratório de programação</h3><button class="nbtn" id="btnFreeCode">Criar o meu programa</button></div>
@@ -303,7 +303,7 @@ button:disabled{cursor:default}
       <div class="gbody">
         <div class="stage" id="stage">
           <canvas id="cv"></canvas>
-          <canvas id="fx"></canvas>
+          <canvas id="fx"></canvas><button id="outfitBadge" type="button" aria-label="Personalizar o Ticl@s" title="Personalizar o Ticl@s"><canvas id="outfitMini"></canvas><span id="outfitLabel"></span></button>
           <div id="toast"><span class="ic tic" data-pose="ideia"></span><span id="toastTx"></span></div>
           <div class="rot">
             <button class="rbtn" id="rotL" title="Rodar o mundo">⟲</button>
@@ -324,7 +324,7 @@ button:disabled{cursor:default}
             <button class="tbtn on" data-tool="place">✚ Colocar</button>
             <button class="tbtn" data-tool="erase">✖ Apagar</button><button class="tbtn" id="toolPick" data-tool="pick">Copiar material</button><button class="tbtn" id="toolPaint" data-tool="paint">Substituir</button><button class="tbtn" id="toolColumn" data-tool="column">Coluna ×3</button><button class="tbtn" id="toolFloor" data-tool="floor">Piso 3×3</button>
           </div>
-          <div id="equipmentPanel" hidden><div class="plbl">Equipamento</div><div id="equipmentTools" class="tools"></div><div id="equipmentHint" class="tip" aria-live="polite"></div><button id="btnCraft" class="abtn">Oficina de fabrico</button><div id="craftSummary" class="tip" aria-live="polite"></div></div><div class="inventory-head"><span class="plbl">Inventário</span><span id="selectedMaterial" aria-live="polite"></span></div><div id="quickBar" class="quick-bar" aria-label="Materiais recentes"></div><div id="inventoryTabs" class="inventory-tabs" role="group" aria-label="Categorias do inventário"></div>
+          <div id="equipmentPanel" hidden><div class="plbl">Equipamento</div><div id="equipmentTools" class="tools"></div><div id="equipmentHint" class="tip" aria-live="polite"></div><button id="btnOutfit" class="abtn">Equipar o Ticl@s</button><button id="btnCraft" class="abtn">Oficina de fabrico</button><div id="craftSummary" class="tip" aria-live="polite"></div></div><div class="inventory-head"><span class="plbl">Inventário</span><span id="selectedMaterial" aria-live="polite"></span></div><div id="quickBar" class="quick-bar" aria-label="Materiais recentes"></div><div id="inventoryTabs" class="inventory-tabs" role="group" aria-label="Categorias do inventário"></div>
           <div id="palette" aria-label="Inventário de materiais"></div><div id="inventoryProgress" class="tip" aria-live="polite"></div>
           <div class="row">
             <button class="abtn" id="btnUndo">↶ Desfazer</button>
@@ -662,7 +662,7 @@ function drawGhost(ctx,v,x,y,z,faces,meta,hover,faint){
     ctx.strokeStyle=faint?'rgba(255,255,255,.5)':'rgba(255,255,255,.95)';ctx.stroke();ctx.setLineDash([]);
     if(faces&&meta)faces.push({q,meta,n:FN[nm]})}
 }
-function squirrel(ctx,x,y,s,right){const u=s/10;ctx.save();ctx.translate(x,y);if(!right)ctx.scale(-1,1);
+function squirrel(ctx,x,y,s,right,outfit=null){const u=s/10;ctx.save();ctx.translate(x,y);if(!right)ctx.scale(-1,1);
   ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(0,0,4.2*u,1.6*u,0,0,Math.PI*2);ctx.fill();
   ctx.lineWidth=Math.max(1,.45*u);ctx.strokeStyle='#7A3E14';
   const E=(cx,cy,rx,ry,rot,fill,st)=>{ctx.beginPath();ctx.ellipse(cx*u,cy*u,rx*u,ry*u,rot,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill();if(st!==false)ctx.stroke()};
@@ -672,6 +672,7 @@ function squirrel(ctx,x,y,s,right){const u=s/10;ctx.save();ctx.translate(x,y);if
   ctx.beginPath();ctx.moveTo(.4*u,-10.4*u);ctx.lineTo(.9*u,-13.2*u);ctx.lineTo(2.6*u,-10.9*u);ctx.closePath();ctx.fillStyle='#D9843A';ctx.fill();ctx.stroke();
   E(1.6,-8.4,3,2.8,0,'#D9843A');E(3.4,-7.6,1.5,1.1,0,'#FCE6C8',false);
   E(4.7,-8,.5,.42,0,'#3B2416',false);E(2.6,-9.1,.75,.85,0,'#222',false);E(2.85,-9.4,.26,.26,0,'#fff',false);E(2.3,-7.1,.5,.4,0,'rgba(242,140,122,.6)',false);
+  if(outfit&&outfit!=='normal')drawProtectiveGear(ctx,u,outfit);
   ctx.restore()}
 function drawSprite(ctx,v,sp,rx,ry){const c=v.P(rx+.5,ry+.5,0),s=v.hw;
   if(sp.kind==='flag'){ctx.fillStyle='rgba(0,0,0,.2)';ctx.beginPath();ctx.ellipse(c[0],c[1],s*.3,s*.13,0,0,Math.PI*2);ctx.fill();
@@ -688,9 +689,9 @@ function drawSprite(ctx,v,sp,rx,ry){const c=v.P(rx+.5,ry+.5,0),s=v.hw;
     const tip=v.P(rx+.5+dx*.78,ry+.5+dy*.78,0),b1=v.P(rx+.5+dx*.3-dy*.3,ry+.5+dy*.3+dx*.3,0),b2=v.P(rx+.5+dx*.3+dy*.3,ry+.5+dy*.3-dx*.3,0);
     poly(ctx,[tip,b1,b2]);ctx.fillStyle='#FFC857';ctx.fill();ctx.strokeStyle='#B97A00';ctx.lineWidth=2;ctx.stroke();
     const right=(dx-dy)>0;
-    if(AG.complete&&AG.naturalWidth){const h=s*1.95,w=h*AG.naturalWidth/AG.naturalHeight;ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(c[0],c[1]+s*.05,s*.42,s*.16,0,0,Math.PI*2);ctx.fill();
+    const outfit=activeOutfit();if(outfit==='normal'&&AG.complete&&AG.naturalWidth){const h=s*1.95,w=h*AG.naturalWidth/AG.naturalHeight;ctx.fillStyle='rgba(0,0,0,.22)';ctx.beginPath();ctx.ellipse(c[0],c[1]+s*.05,s*.42,s*.16,0,0,Math.PI*2);ctx.fill();
       ctx.save();ctx.translate(c[0]+(right?-1:1)*s*.12,c[1]+s*.1);if(!right)ctx.scale(-1,1);ctx.imageSmoothingEnabled=true;ctx.drawImage(AG,-w/2,-h,w,h);ctx.restore()}
-    else squirrel(ctx,c[0],c[1]+s*.05,s*1.05,right)}
+    else squirrel(ctx,c[0],c[1]+s*.05,s*1.05,right,outfit)}
 }
 
 /* cena: {N, blocks(Map), ghosts, foot, sprites, hover, eraseKey, marks} */
@@ -802,7 +803,7 @@ function setupGame(){S.bucketFilled=false;S.newWorlds=0;S.newMaterials=0;stopSpe
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
   $('#btnReset').innerHTML=training?'↺ Recomeçar treino':(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
-  refreshInventory();setTool('place');
+  refreshInventory();setTool('place');updateOutfitBadge();
   if(code){buildCmds();setRunUI(false);$('#pGoal').textContent=sandbox?'Sem limite de objetivo':'Meta: '+S.ch.best+' peças';$('#codeTip').textContent=sandbox?'Experimenta movimentos, rotações, blocos e repetições. Cada execução começa num terreno vazio.':S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.';if(sandbox){const select=$('#freeCodeMat');select.replaceChildren();for(const m of MORDER.filter(materialAvailable)){const o=el('option');o.value=m;o.textContent=MATS[m].nome;select.append(o)}if(!materialAvailable(S.ch.place))S.ch.place='tabuas';select.value=S.ch.place;$('#freeCodeStatus').textContent='Pronto para executar.'}}
 }
 function resetWorld(){
@@ -1086,8 +1087,12 @@ const RECIPES=[
 {id:'mosaico',name:'Mosaico',need:{pedra:2,la_branca:1},out:{mosaico:2},level:3,bench:true},
 {id:'balde',name:'Balde',need:{ferro:3},out:{balde:1},level:4,bench:true},
 {id:'lanterna',name:'Lanterna',need:{ferro:1,cobre:1},out:{lanterna:1},level:4,bench:true},
-{id:'forno',name:'Forno',need:{pedra:8},out:{forno:1},level:5,bench:true}];
-const craftNames={cabo:'Cabo de madeira',picareta:'Picareta de pedra',pa:'Pá de pedra',machado:'Machado de pedra',tesoura:'Tesoura',balde:'Balde'};
+{id:'forno',name:'Forno',need:{pedra:8},out:{forno:1},level:5,bench:true},
+{id:'fato_mergulho',name:'Fato de mergulho',need:{la_azul:2,vidro:1},out:{fato_mergulho:1},level:3,bench:true},
+{id:'fato_termico',name:'Fato térmico',need:{la_branca:3,la_vermelha:1},out:{fato_termico:1},level:3,bench:true},
+{id:'armadura_exploracao',name:'Armadura de exploração',need:{ferro:3,cobre:2,la_branca:1},out:{armadura_exploracao:1},level:4,bench:true},
+{id:'fato_tecnologico',name:'Fato tecnológico',need:{ferro:2,cristal:2,ouro:1},out:{fato_tecnologico:1},level:5,bench:true}];
+const craftNames={cabo:'Cabo de madeira',picareta:'Picareta de pedra',pa:'Pá de pedra',machado:'Machado de pedra',tesoura:'Tesoura',balde:'Balde',fato_mergulho:'Fato de mergulho',fato_termico:'Fato térmico',armadura_exploracao:'Armadura de exploração',fato_tecnologico:'Fato tecnológico'};
 const craftName=k=>MATS[k]?.nome||craftNames[k]||k;
 function craftAllowed(){return $('#game').classList.contains('on')&&(isFree()||S.mode==='giant')&&giantCompleted(S.year)>=1}
 function craftSlot(){return 'ano'+S.year}
@@ -1099,8 +1104,34 @@ function collectResource(m){if(!craftAllowed()||!Object.prototype.hasOwnProperty
 function recipeReady(r,state){return giantCompleted(S.year)>=inventoryNeed(r.level)&&(!r.bench||state.bench)&&Object.entries(r.need).every(([k,n])=>(state.bag[k]||0)>=n)&&Object.entries(r.out).every(([k,n])=>(state.bag[k]||0)+n<=CRAFT_MAX)}
 function fabricate(id){if(!craftAllowed())return false;const r=RECIPES.find(x=>x.id===id),state=craftState();if(!r||!recipeReady(r,state))return false;for(const [k,n] of Object.entries(r.need))state.bag[k]-=n;for(const [k,n] of Object.entries(r.out))state.bag[k]=(state.bag[k]||0)+n;if(id==='bancada')state.bench=true;if(!state.done.includes(id))state.done.push(id);if(!craftWrite(state))return false;updateCraftSummary();return true}
 function updateCraftSummary(){const b=$('#btnCraft'),summary=$('#craftSummary');if(!b||!summary)return;const ok=craftAllowed(),st=craftState();b.textContent=ok?'Oficina de fabrico':'Oficina de fabrico · 🔒';summary.textContent=ok?st.done.length+' / '+RECIPES.length+' receitas concluídas.':'Conclui uma missão para abrir a oficina.'}
-function craftChip(k,n){const e=el('span','craft-chip');if(MATS[k])e.append(cubeIcon(k,30));const label=el('span');label.textContent=n+' × '+craftName(k);e.append(label);return e}
+function craftChip(k,n){const e=el('span','craft-chip');if(MATS[k])e.append(cubeIcon(k,30));else if(OUTFITS.some(o=>o.id===k))e.append(outfitCanvas(k,30,36));const label=el('span');label.textContent=n+' × '+craftName(k);e.append(label);return e}
 function showCraft(message=''){if(!craftAllowed()){toast('Conclui uma missão para desbloquear a oficina.');return}if(!craftStart()){toast('Não foi possível guardar os recursos iniciais.');return}const st=craftState();modal('<h3>Oficina de fabrico</h3><p>Recolhe recursos com as ferramentas. Junta os ingredientes para fabricar objetos. A construção livre continua ilimitada.</p>',[{t:'Fechar',c:'go'}]);const m=$('#modal'),row=m.lastElementChild,bag=el('div','craft-bag'),list=el('div','craft-list'),info=el('div','craft-note');info.textContent=(message?message+' · ':'')+(st.bench?'Bancada disponível.':'Fabrica uma bancada para abrir mais receitas.')+' '+st.done.length+' de '+RECIPES.length+' receitas realizadas.';for(const [k,n] of Object.entries(st.bag))if(n>0)bag.append(craftChip(k,n));if(!bag.children.length)bag.append(el('span',null,'Mochila vazia'));m.insertBefore(info,row);m.insertBefore(bag,row);for(const r of RECIPES){const card=el('div','craft-item'),title=el('strong'),formula=el('div','craft-formula'),button=el('button','abtn'),note=el('div','craft-note');title.textContent=r.name+(st.done.includes(r.id)?' · Concluída':'');for(const [k,n] of Object.entries(r.need))formula.append(craftChip(k,n));formula.append(el('span',null,'→'));for(const [k,n] of Object.entries(r.out))formula.append(craftChip(k,n));const ready=recipeReady(r,st);button.disabled=!ready;button.textContent='Fabricar';note.textContent=giantCompleted(S.year)<inventoryNeed(r.level)?'Bloqueada: conclui '+inventoryNeed(r.level)+' missões.':r.bench&&!st.bench?'Necessitas de uma bancada.':ready?'Ingredientes disponíveis.':'Faltam ingredientes ou espaço na mochila.';button.onclick=()=>{if(fabricate(r.id))showCraft('Fabricaste: '+r.name);else showCraft('Não foi possível fabricar. Verifica os recursos.')};card.append(title,formula,note,button);list.append(card)}m.insertBefore(list,row);updateCraftSummary()}
+/* Fase 9 — personalização de proteção, sem combate e sem alterar a avaliação. */
+const OUTFITS=[
+{id:'normal',name:'Ticl@s original',desc:'A mascote de sempre.',level:0,color:'#D9843A'},
+{id:'construtor',name:'Construtor',desc:'Capacete e colete de segurança.',level:1,color:'#E9AB35'},
+{id:'explorador',name:'Explorador',desc:'Mochila, botas e colete de campo.',level:2,color:'#63865B'},
+{id:'fato_mergulho',name:'Mergulhador',desc:'Fato e óculos para exploração aquática.',level:3,color:'#348CA7',craft:true},
+{id:'fato_termico',name:'Explorador polar',desc:'Casaco, gorro e botas para o frio.',level:3,color:'#5289BD',craft:true},
+{id:'armadura_exploracao',name:'Armadura de exploração',desc:'Proteção reforçada para aventuras.',level:4,color:'#8197A8',craft:true},
+{id:'fato_tecnologico',name:'Explorador tecnológico',desc:'Fato tecnológico de proteção.',level:5,color:'#7865B0',craft:true}];
+function outfitAvailable(id){const o=OUTFITS.find(x=>x.id===id);return !!o&&giantCompleted(S.year)>=inventoryNeed(o.level)&&(!o.craft||craftState().done.includes(id))}
+function activeOutfit(){const id=SAVE['outfit_'+S.year];return outfitAvailable(id)?id:'normal'}
+function drawProtectiveGear(ctx,u,id){const o=OUTFITS.find(x=>x.id===id);if(!o)return;const color=o.color;
+ const box=(x,y,w,h,c)=>{ctx.fillStyle=c;ctx.fillRect(x*u,y*u,w*u,h*u)};
+ const ellipse=(x,y,rx,ry,c)=>{ctx.beginPath();ctx.ellipse(x*u,y*u,rx*u,ry*u,0,0,Math.PI*2);ctx.fillStyle=c;ctx.fill();ctx.strokeStyle='#354958';ctx.lineWidth=.3*u;ctx.stroke()};
+ if(id==='construtor'){ellipse(.2,-3.5,2.7,2.8,color);box(-1.8,-4.9,4.1,.65,'#f5f0d4');box(-1.8,-2.7,4.1,.65,'#f5f0d4');ellipse(1.3,-10.45,3.1,1.6,color);box(-1.8,-9.8,6.7,.5,'#d18e20')}
+ else if(id==='explorador'){ellipse(-2.6,-4.1,1.7,2.6,'#836548');ellipse(.3,-3.7,2.5,2.9,color);box(-.8,-6,.6,4.1,'#c8b681');box(1.1,-6,.6,4.1,'#c8b681');ellipse(1.1,-10.5,3.2,1.1,'#77895c')}
+ else if(id==='fato_mergulho'){ellipse(.2,-3.6,2.7,3.2,color);ellipse(-2.6,-4,1.25,2.5,'#b2c7cb');box(.9,-9.9,3.3,1.4,'#244f65');ellipse(2.7,-9.3,.9,.6,'#91d8e8');box(3.8,-10.2,.5,2.8,'#e4b95c')}
+ else if(id==='fato_termico'){ellipse(.2,-3.6,2.9,3.3,color);box(-1.8,-5.1,4.2,.6,'#e6eff4');box(-1.8,-2.7,4.2,.6,'#e6eff4');ellipse(1.3,-10.7,2.9,1.8,color);ellipse(1.1,-12.5,.75,.75,'#e5edf0')}
+ else{ellipse(.2,-3.7,2.8,3.2,color);ellipse(-2,-5,1.1,1.1,'#d0dae2');ellipse(2.2,-5,1.1,1.1,'#d0dae2');box(-1.5,-4.8,3.3,1,'#d8e6e9');ellipse(1.3,-10.5,3.1,1.8,color);box(-.7,-10,4.8,.6,id==='fato_tecnologico'?'#7de5ed':'#d5e0e7');if(id==='fato_tecnologico')ellipse(.4,-3.9,.75,.75,'#7de5ed')}
+ ellipse(-.6,-.35,1.4,.65,'#475c68');ellipse(1.8,-.35,1.4,.65,'#475c68');
+}
+function outfitCanvas(id,w=100,h=118){const c=el('canvas');const d=DPR();c.width=Math.round(w*d);c.height=Math.round(h*d);const ctx=c.getContext('2d');ctx.setTransform(d,0,0,d,0,0);ctx.clearRect(0,0,w,h);squirrel(ctx,w*.48,h*.86,Math.min(w*.66,h*.62),true,id);return c}
+function updateOutfitBadge(){const b=$('#outfitBadge'),c=$('#outfitMini');const visible=$('#game').classList.contains('on')&&(inventoryCreative()||freeCoding());b.hidden=!visible;if(!visible)return;const id=activeOutfit(),o=OUTFITS.find(x=>x.id===id);$('#outfitLabel').textContent=o.name;const p=outfitCanvas(id,42,49);c.width=p.width;c.height=p.height;const ctx=c.getContext('2d');ctx.drawImage(p,0,0)}
+function equipOutfit(id){if(!outfitAvailable(id))return false;const key='outfit_'+S.year,old=SAVE[key];SAVE[key]=id;if(!persist()){if(old===undefined)delete SAVE[key];else SAVE[key]=old;return false}updateOutfitBadge();render();return true}
+function showOutfits(){const inGame=$('#game').classList.contains('on');if(!inGame&&!$('#menu').classList.contains('on'))return;modal('<h3>O meu Ticl@s</h3><p>Escolhe um equipamento de proteção. Desbloqueia novos fatos com as missões e fabrica alguns na oficina. Os fatos são de personalização, sem combate.</p>',[{t:'Fechar',c:'go'}]);const m=$('#modal'),row=m.lastElementChild,list=el('div','outfit-list'),current=activeOutfit();for(const o of OUTFITS){const ok=outfitAvailable(o.id),selected=current===o.id,card=el('div','outfit-card'+(selected?' selected':'')+(ok?'':' locked')),title=el('strong'),desc=el('div','tip'),req=el('div','tip'),b=el('button','abtn');title.textContent=o.name;desc.textContent=o.desc;req.textContent=ok?(selected?'Equipado':'Disponível'):giantCompleted(S.year)<inventoryNeed(o.level)?'Conclui '+inventoryNeed(o.level)+' missões.':'Fabrica este fato na oficina.';b.textContent=selected?'Equipado':ok?'Equipar':'Bloqueado';b.disabled=selected||!ok;b.onclick=()=>{if(equipOutfit(o.id))showOutfits();else toast('Não foi possível guardar o equipamento.')};card.append(outfitCanvas(o.id),title,desc,req,b);list.append(card)}m.insertBefore(list,row);if(inGame&&craftAllowed()){const b=el('button','abtn','Abrir oficina de fabrico');b.onclick=()=>showCraft();m.insertBefore(b,row)}}
+$('#btnOutfitMenu').onclick=showOutfits;$('#btnOutfit').onclick=showOutfits;$('#outfitBadge').onclick=showOutfits;
 $('#btnCraft').onclick=()=>showCraft();
 $('#btnUndo').onclick=undo;
 $('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='practice'){practice=0;updatePractice()}else if(S.mode==='giant'||isFree()){gFlush();const key=S.mode==='giant'?giantKey(S.year):freeKey(),old=SAVE[key];if(S.mode==='free')SAVE[key]=[];else delete SAVE[key];if(!persist()){if(old===undefined)delete SAVE[key];else SAVE[key]=old;toast('Não foi possível repor o mundo. A construção atual foi conservada.',6000);return}}resetWorld()}}])};
