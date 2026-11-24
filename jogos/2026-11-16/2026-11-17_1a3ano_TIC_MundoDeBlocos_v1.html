@@ -680,7 +680,7 @@ const S={cam:{z:1,x:0,y:0},year:1,mode:null,idx:0,ch:null,N:10,hz:6,tool:'place'
   hover:null,eraseKey:null,agent:null,acorns:[],placed:[],prog:[],running:false,runId:0,lockWarn:false};
 let PICK=null;
 
-function show(id){gFlush();$('.scr').forEach(s=>s.classList.toggle('on',s.id===id));if(id!=='game'){S.runId++;S.running=false}
+function show(id){gFlush();$$('.scr').forEach(s=>s.classList.toggle('on',s.id===id));if(id!=='game'){S.runId++;S.running=false}
   if(id==='game')requestAnimationFrame(()=>{render();renderModel()})}
 
 /* ---------- toast / modal / confettis ---------- */
@@ -779,7 +779,7 @@ function placeTarget(h){if(!h)return null;let p;
   if(h.kind==='ghost')p={x:h.wx,y:h.wy,z:h.z};else if(h.kind==='ground')p={x:h.wx,y:h.wy,z:0};
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
   if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (isFree()?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
-function setTool(t){S.tool=t;$('.tbtn').forEach(b=>{const active=b.dataset.tool===t;b.classList.toggle('on',active);b.setAttribute('aria-pressed',String(active))});S.hover=null;S.eraseKey=null;const label=$('#selectedMaterial');if(label)label.textContent=t==='erase'?'A apagar':MATS[S.mat].nome;requestRender()}
+function setTool(t){S.tool=t;$$('.tbtn').forEach(b=>{const active=b.dataset.tool===t;b.classList.toggle('on',active);b.setAttribute('aria-pressed',String(active))});S.hover=null;S.eraseKey=null;const label=$('#selectedMaterial');if(label)label.textContent=t==='erase'?'A apagar':MATS[S.mat].nome;requestRender()}
 function doPlace(p){if(S.mode==='giant'){const k=K(p.x,p.y,p.z);S.undo.push({op:'g',k,prev:gSet(k,S.mat)});return afterChange()}
   S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
   if(S.mode==='build'&&S.year===1){const t=S.ch.targets.find(t=>t.x===p.x&&t.y===p.y&&t.z===p.z);
@@ -887,7 +887,7 @@ cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
 cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
-const pal=$('#palette');const groups=[['Natureza',['relva','terra','folhas','areia','neve','agua']],['Construção',['tabuas','tronco','pedra','tijolo','telhado','vidro']]];for(const [name,mats] of groups){const group=el('div','mat-group');group.setAttribute('role','group');group.setAttribute('aria-label',name);group.append(el('div','mat-label',name));for(const m of mats){const b=el('button','mbtn'+(m===S.mat?' on':''));b.type='button';b.title=MATS[m].nome;b.setAttribute('aria-pressed',String(m===S.mat));b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));b.onclick=()=>{S.mat=m;$('.mbtn').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',String(x===b))});setTool('place')};group.append(b)}pal.append(group)}
+const pal=$('#palette');const groups=[['Natureza',['relva','terra','folhas','areia','neve','agua']],['Construção',['tabuas','tronco','pedra','tijolo','telhado','vidro']]];for(const [name,mats] of groups){const group=el('div','mat-group');group.setAttribute('role','group');group.setAttribute('aria-label',name);group.append(el('div','mat-label',name));for(const m of mats){const b=el('button','mbtn'+(m===S.mat?' on':''));b.type='button';b.title=MATS[m].nome;b.setAttribute('aria-pressed',String(m===S.mat));b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));b.onclick=()=>{S.mat=m;$$('.mbtn').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',String(x===b))});setTool('place')};group.append(b)}pal.append(group)}
 $('#btnUndo').onclick=undo;
 $('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='giant'){delete SAVE['giant_'+S.year];persist()}else if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
