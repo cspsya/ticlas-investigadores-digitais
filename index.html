@@ -557,10 +557,10 @@ function mostrar(){
   b.onclick=()=>{tipoAtual=id;semanaEscolhida='';mostrar()};abas.append(b)
  });area.append(abas);
  const permanentes=meus.filter(d=>ePermanente(d)&&!eApresentacao(d));
- if(tipoAtual==='atividade'&&permanentes.length){const bloco=el('section','permanentes');bloco.append(el('h3','','Atividades permanentes'),el('p','','Disponíveis durante todo o ano letivo.'));const g=el('div','cartoes');permanentes.forEach(d=>g.append(cartao(d)));bloco.append(g);area.append(bloco)}
+ const mostrarPermanentes=()=>{if(tipoAtual==='atividade'&&permanentes.length){const bloco=el('section','permanentes');bloco.append(el('h3','','Atividades permanentes'),el('p','','Disponíveis durante todo o ano letivo.'));const g=el('div','cartoes');permanentes.forEach(d=>g.append(cartao(d)));bloco.append(g);area.append(bloco)}};
  const lista=meus.filter(d=>!ePermanente(d)&&eApresentacao(d)===(tipoAtual==='apresentacao'));
  if(!lista.length){
-  if(tipoAtual==='atividade'&&permanentes.length)return;
+  if(tipoAtual==='atividade'&&permanentes.length){mostrarPermanentes();return;}
   const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';
   const t=el('div');t.append(el('b','',tipoAtual==='atividade'?'Ainda não há atividades.':'Ainda não há apresentações.'),
    el('span','','Os recursos serão apresentados aqui à medida que forem publicados.'));
@@ -585,6 +585,7 @@ function mostrar(){
    b.onclick=()=>{semanaEscolhida=k;mostrar();$('#missoes').scrollIntoView({block:'start'})};r.append(b)});
   area.append(r)
  }
+ mostrarPermanentes();
 }
 
 function escolher(n,{rolar=true}={}){
