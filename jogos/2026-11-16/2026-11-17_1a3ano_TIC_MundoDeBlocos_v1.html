@@ -569,7 +569,7 @@ function gMove(dxs,dys){const v=PICK&&PICK.v&&PICK.v.giant?PICK.v:gView(cv.clien
   S.g.x=Math.max(0,Math.min(GN-1,S.g.x+d[0]));S.g.y=Math.max(0,Math.min(GN-1,S.g.y+d[1]))}
 function gLoad(){const m=new Map();GDCOL.clear();for(const a of (Array.isArray(SAVE['giant_'+S.year])?SAVE['giant_'+S.year]:[])){if(!validBlock(a,GN,GZ,true)||a[2]===0)continue;const k=K(a[0],a[1],a[2]);m.set(k,{m:a[3]||null});gMarkCol(a[0],a[1],a[2])}return m}
 let gSaveT=0;function gFlush(){if(!gSaveT)return;clearTimeout(gSaveT);gSaveT=0;persist()}
-function gSave(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m||0])}
+function gSave(){if(S.mode!=='giant'||!S.g)return;const a=[];for(const [k,b] of S.blocks){const p=k.split(',').map(Number);a.push([p[0],p[1],p[2],b.m||0])}
   SAVE['giant_'+S.year]=a;SAVE['giantCam_'+S.year]=[Math.round(S.g.x),Math.round(S.g.y)];clearTimeout(gSaveT);gSaveT=setTimeout(gFlush,400)}
 window.addEventListener('pagehide',gFlush);document.addEventListener('visibilitychange',()=>{if(document.hidden)gFlush()});
 function gSet(k,m){const [x,y,z]=k.split(',').map(Number);const prev=S.blocks.get(k);S.blocks.delete(k);
@@ -700,7 +700,8 @@ function confetti(){const cols=['#E8834A','#FFC857','#6BBF59','#5BA3D0','#F28DB2
     c.style.animationDuration=(1.8+Math.random()*1.6)+'s';c.style.animationDelay=(Math.random()*.4)+'s';if(Math.random()<.4)c.style.borderRadius='50%';
     document.body.append(c);setTimeout(()=>c.remove(),4200)}}
 const starsHTML=n=>{let s='';for(let i=0;i<3;i++)s+=i<n?'<b>★</b>':'★';return s};
-function award(n){const k='y'+S.year;SAVE[k]=SAVE[k]||{};SAVE[k][S.idx]=Math.max(SAVE[k][S.idx]||0,n);persist()}
+function savedStars(v){return Number.isInteger(v)&&v>=0&&v<=3?v:0}
+function award(n){const k='y'+S.year;if(!SAVE[k]||typeof SAVE[k]!=='object'||Array.isArray(SAVE[k]))SAVE[k]={};SAVE[k][S.idx]=Math.max(savedStars(SAVE[k][S.idx]),n);persist()}
 function celebrate(n,extra){confetti();const t=['Muito bem!','Excelente!','Fantástico!','Grande construção!'][Math.floor(Math.random()*4)];
   let st='';for(let i=0;i<3;i++)st+=`<span class="${i<n?'on':''}" style="animation-delay:${.2+i*.25}s">★</span>`;
   const last=S.idx>=CH[S.year].length-1;
@@ -710,13 +711,13 @@ function celebrate(n,extra){confetti();const t=['Muito bem!','Excelente!','Fant�
 /* ---------- menu ---------- */
 function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cards=$('#cards');cards.innerHTML='';const list=CH[y];const sv=SAVE['y'+y]||{};
-  let tot=0;list.forEach((c,i)=>tot+=sv[i]||0);$('#mStars').textContent='★ '+tot+' / '+list.length*3;
+  let tot=0;list.forEach((c,i)=>tot+=savedStars(sv[i]));$('#mStars').textContent='★ '+tot+' / '+list.length*3;
   const cw=$('#cardsW');cw.innerHTML='';
   const fc=el('button','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
   fc.onclick=startFree;cw.append(fc);
   const gc=el('button','card world giant','<canvas></canvas><div class="cn">1000 × 1000</div><div class="ct">Mundo gigante</div><div class="stars">🗺️</div>');gc.onclick=startGiant;cw.append(gc);
   WORLDS.forEach((wd,i)=>{const c=el('button','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
-  list.forEach((ch,i)=>{const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(sv[i]||0)}</div>`);
+  list.forEach((ch,i)=>{const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(savedStars(sv[i]))}</div>`);
     c.onclick=()=>startCh(i);cards.append(c)});
   requestAnimationFrame(()=>{if(S.year!==y||!$('#menu').classList.contains('on')||!gc.isConnected)return;
     {const gcv=gc.querySelector('canvas'),d=DPR();gcv.width=gcv.clientWidth*d;gcv.height=gcv.clientHeight*d;const g=gcv.getContext('2d');g.imageSmoothingEnabled=false;const m=gMapImg(),sz=Math.min(gcv.width,gcv.height);g.drawImage(m,(gcv.width-sz)/2,0,sz,sz)}
@@ -753,7 +754,7 @@ function setupGame(){S.runId++;S.running=false;setRunUI(false);drag=null;pointer
 }
 function resetWorld(){
   const ch=S.ch;S.blocks=S.mode==='giant'?gLoad():S.mode==='practice'?new Map():isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
-  S.undo=[];S.help=false;S.done=false;S.warned=false;S.marks=new Set();S.hover=null;S.eraseKey=null;S.lockWarn=false;
+  S.runId++;S.undo=[];S.help=false;S.done=false;S.warned=false;S.hidWarn=false;S.marks=new Set();S.hover=null;S.eraseKey=null;S.lockWarn=false;
   $('#btnHelp').disabled=false;
   if(S.mode==='code')resetCodeWorld(true);
   if(S.mode==='build')checkBuild();
@@ -793,7 +794,7 @@ function doPlace(p){if(S.mode==='practice')practiceEvent('place');if(S.mode==='g
   afterChange()}
 function doErase(h){if(!h||h.kind!=='block')return;if(S.mode==='practice'&&!h.locked)practiceEvent('erase');
   if(S.mode==='giant'){if(h.locked){if(!S.lockWarn){toast('A rocha do fundo do mundo não se pode apagar.');S.lockWarn=true}return}S.undo.push({op:'g',k:h.key,prev:gSet(h.key,null)});S.eraseKey=null;return afterChange()}if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
-  const b=S.blocks.get(h.key);if(!b)return;S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
+  const b=S.blocks.get(h.key);if(!b)return;S.blocks.delete(h.key);S.done=false;S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
 function undo(){const u=S.undo.pop();if(!u)return;if(S.mode==='practice')practiceEvent('undo');if(u.op==='g'){if(u.prev)S.blocks.set(u.k,u.prev);else S.blocks.delete(u.k);return afterChange()}if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
 function afterChange(){if(S.mode==='giant')gSave();if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
 function buildStatus(ch){const tset=new Map(ch.targets.map(t=>[K(t.x,t.y,t.z),t.m]));let ok=0,filled=0;const wrong=new Set(),extra=new Set();
@@ -855,7 +856,7 @@ const ERR={edge:'Ups! O Ticl@s ia sair do mundo.',block:'Ups! Há um obstáculo 
 function setRunUI(on){$('#btnRun').innerHTML=on?'⏹ Parar':'▶ Executar';$('#btnRun').classList.toggle('stop',on);$$('#cmds .cmd').forEach(b=>b.disabled=on);$('#btnClearProg').disabled=on}
 async function run(){
   if(S.running){S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld();return}
-  if(!S.prog.length){toast('Primeiro junta peças ao programa.');return}if(S.prog.some(i=>i.t==='rep'&&!i.body.length)){toast('Junta instruções dentro de cada Repetir.');return}
+  if(S.mode!=='code')return;if(!S.prog.length){toast('Primeiro junta peças ao programa.');return}if(S.prog.some(i=>i.t==='rep'&&!i.body.length)){toast('Junta instruções dentro de cada Repetir.');return}
   S.prog.forEach(i=>{if(i.open)i.open=false});renderProg();resetCodeWorld();
   const my=++S.runId;S.running=true;setRunUI(true);let err=null;
   for(const st of flatten()){if(my!==S.runId)return;markChip(st);err=await step(st.t,my);if(my!==S.runId)return;if(err)break;await sleep(110)}
@@ -881,13 +882,13 @@ $('#btnGuide').onclick=()=>modal(tic('ola')+'<h3>Aprender a jogar</h3><p>Experim
 const cv=$('#cv');
 let drag=null;const pointers=new Map();let pinch=null;const podeMover=()=>isFree()||S.mode==='giant'||S.mode==='practice';
 function limitarCam(){const lx=cv.clientWidth*S.cam.z/2,ly=cv.clientHeight*S.cam.z/2;S.cam.x=Math.max(-lx,Math.min(lx,S.cam.x));S.cam.y=Math.max(-ly,Math.min(ly,S.cam.y))}
-function zoomAt(k,mx,my){if(S.mode==='giant'){S.cam.z=Math.min(2,Math.max(.75,S.cam.z*k));S.hover=null;return requestRender()}
-  const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;render()}
+function zoomAt(k,mx,my){if(S.mode==='giant'){S.cam.z=Math.min(2,Math.max(.75,S.cam.z*k));S.hover=null;S.eraseKey=null;return requestRender()}
+  const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;S.eraseKey=null;render()}
 cv.addEventListener('pointerdown',e=>{if(S.mode==='code'||S.running)return;if(e.button!==0&&e.button!==2&&e.button!==1)return;try{cv.setPointerCapture(e.pointerId)}catch(_){};pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>1){drag=null;S.hover=null;S.eraseKey=null;const p=[...pointers.values()];pinch={distance:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)};requestRender();return}drag={id:e.pointerId,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y}});
-cv.addEventListener('pointerup',e=>{pointers.delete(e.pointerId);if(pinch){if(!pointers.size)pinch=null;drag=null;if(S.mode==='giant')gSave();return}const d=drag;drag=null;if(!d||d.id!==e.pointerId||S.mode==='code')return;if(d.moved||d.b===1){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
+cv.addEventListener('pointerup',e=>{pointers.delete(e.pointerId);if(pinch){if(!pointers.size)pinch=null;drag=null;if(S.mode==='giant'&&!pointers.size)gSave();return}const d=drag;drag=null;if(!d||d.id!==e.pointerId||S.mode==='code')return;if(d.moved||d.b===1){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
   render();const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
   const h2=hit(e);if(S.tool==='place'&&e.pointerType!=='touch')S.hover=placeTarget(h2);else S.hover=null;render()});
-function cancelPointer(e){pointers.delete(e.pointerId);if(!pointers.size)pinch=null;if(drag&&drag.id===e.pointerId)drag=null;S.hover=null;S.eraseKey=null;requestRender()}cv.addEventListener('pointercancel',cancelPointer);cv.addEventListener('lostpointercapture',cancelPointer);
+function cancelPointer(e){pointers.delete(e.pointerId);if(!pointers.size)pinch=null;if(drag&&drag.id===e.pointerId){if(drag.moved&&S.mode==='giant')gSave();drag=null}S.hover=null;S.eraseKey=null;requestRender()}cv.addEventListener('pointercancel',cancelPointer);cv.addEventListener('lostpointercapture',cancelPointer);
 cv.addEventListener('wheel',e=>{if(!podeMover())return;e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2)},{passive:false});
 cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
   if(pointers.has(e.pointerId))pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch){if(pointers.size>=2&&podeMover()){const p=[...pointers.values()],dist=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y),r=cv.getBoundingClientRect();if(pinch.distance>5&&dist>5)zoomAt(dist/pinch.distance,(p[0].x+p[1].x)/2-r.left-r.width/2,(p[0].y+p[1].y)/2-r.top-r.height/2);pinch.distance=dist}return}
@@ -914,8 +915,8 @@ $('#btnClearProg').onclick=()=>{if(S.running)return;S.runId++;S.prog=[];renderPr
 $$('.ybtn').forEach(b=>b.onclick=()=>openMenu(+b.dataset.y));
 $('#mBack').onclick=()=>show('home');$('#btnHome').onclick=()=>{closeModal();show('home')};
 $('#gMenu').onclick=()=>openMenu(S.year);
-$('#gPrev').onclick=()=>{if(S.idx>0)startCh(S.idx-1)};
-$('#gNext').onclick=()=>{if(S.idx<CH[S.year].length-1)startCh(S.idx+1)};
+$('#gPrev').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx>0)startCh(S.idx-1)};
+$('#gNext').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx<CH[S.year].length-1)startCh(S.idx+1)};
 $('#btnFull').onclick=()=>{const d=document;if(d.fullscreenElement)d.exitFullscreen();else if(d.documentElement.requestFullscreen)d.documentElement.requestFullscreen().catch(()=>{})};
 document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on')||e.target.closest('input,select,textarea,button,[contenteditable]'))return;
   if(!e.ctrlKey&&!e.metaKey&&!e.altKey&&S.mode!=='code'&&['b','e'].includes(e.key.toLowerCase())){setTool(e.key.toLowerCase()==='b'?'place':'erase');return}
