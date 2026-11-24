@@ -242,7 +242,7 @@ button:disabled{cursor:default}
 .mission-hint{background:#fff3d7}
 .modal{max-height:90dvh;overflow:auto}.modal:has(.mission-info){max-width:480px}.modal:has(.mission-info) .ic{height:90px;width:96px}.modal:has(.mission-info) h3{font-size:25px}
 @media(max-width:760px){#btnMission{font-size:12px}.mission-card-skill{min-height:0}}
-</style><style>#projectTools{border-top:1px solid var(--ui-line);padding-top:8px}#projectTools[hidden]{display:none}#projectTools .row{margin:6px 0}#projectTools .tip{font-size:11px}</style></head>
+</style><style>#projectTools{border-top:1px solid var(--ui-line);padding-top:8px}#projectTools[hidden]{display:none}#projectTools .row{margin:6px 0}#projectTools .tip{font-size:11px}</style><style>.gallery-modal{max-width:620px}.gallery-list{display:grid;gap:8px;text-align:left;margin:12px 0;max-height:48vh;overflow:auto}.gallery-item{border:1px solid var(--ui-line);border-radius:10px;padding:10px}.gallery-item strong{display:block;overflow-wrap:anywhere}.gallery-item small{display:block;color:var(--ui-muted);margin:4px 0 8px}.gallery-item .row{flex-wrap:wrap}.gallery-item .abtn{font-size:12px;padding:7px}.gallery-input{width:100%;border:1px solid var(--ui-line);border-radius:8px;padding:10px;font:inherit}.gallery-error{color:#a43f36;font-size:13px;min-height:1em}.modal:has(.gallery-list){max-width:620px}</style></head>
 <body>
 <div id="app">
   <header>
@@ -273,7 +273,7 @@ button:disabled{cursor:default}
       <div class="mhead">
         <button class="nbtn home" id="mBack">⌂ Início</button>
         <h2 id="mTitle">1.º ano</h2>
-        <span class="badge" id="mStars"></span>
+        <span class="badge" id="mStars"></span><button class="nbtn home" id="btnGalleryMenu">Os meus projetos</button>
       </div>
       <h3 class="sec">Construir à vontade</h3>
       <div class="cards" id="cardsW"></div>
@@ -319,7 +319,7 @@ button:disabled{cursor:default}
             <button class="abtn" id="btnReset">🗑 Recomeçar</button>
           </div>
           <button class="abtn help" id="btnHelp">💡 Ajuda (mostra os contornos)</button>
-          <div id="projectTools" hidden><div class="plbl">O meu projeto</div><div class="row"><button class="abtn" id="btnExport">Exportar</button><button class="abtn" id="btnImport">Importar</button></div><input id="projectFile" type="file" accept=".json,.ticlas,application/json" hidden><div class="tip">Guarda um ficheiro para continuar noutro computador.</div></div><div id="practiceGuide" hidden role="status" class="tip"></div><div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
+          <div id="projectTools" hidden><div class="plbl">O meu projeto</div><div class="row"><button class="abtn" id="btnExport">Exportar</button><button class="abtn" id="btnImport">Importar</button></div><div class="row"><button class="abtn" id="btnGallerySave">Guardar na galeria</button><button class="abtn" id="btnGalleryOpen">Galeria</button></div><input id="projectFile" type="file" accept=".json,.ticlas,application/json" hidden><div class="tip">Guarda um ficheiro para continuar noutro computador.</div></div><div id="practiceGuide" hidden role="status" class="tip"></div><div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
         </aside>
         <aside class="panel" id="codePanel">
           <div class="plbl">Peças de código</div>
@@ -925,6 +925,23 @@ async function readProject(file){const context=projectContext(),token=S.runId;if
 }
 $('#btnExport').onclick=downloadProject;$('#btnImport').onclick=()=>{if(projectContext()){$('#projectFile').value='';$('#projectFile').click()}};
 $('#projectFile').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];e.target.value='';readProject(file)});
+
+/* ---------- galeria local (fase 7.2) ---------- */
+const GALLERY_STORE='ticlas_mundo_blocos_gallery_v1',GALLERY_LIMIT=30;
+function galleryRead(){try{const a=JSON.parse(localStorage.getItem(GALLERY_STORE));if(!Array.isArray(a))return [];return a.filter(x=>x&&typeof x.id==='string'&&typeof x.title==='string'&&x.title.length<=60&&x.project&&[1,2,3].includes(x.project.year))}catch(e){return []}}
+function galleryWrite(items){try{localStorage.setItem(GALLERY_STORE,JSON.stringify(items));return true}catch(e){return false}}
+function galleryTitle(v){return typeof v==='string'?v.trim().slice(0,60):''}
+function gallerySave(title){title=galleryTitle(title);if(!title)throw Error('Escreve um título.');const items=galleryRead();if(items.length>=GALLERY_LIMIT)throw Error('A galeria está cheia. Exporta ou elimina um projeto primeiro.');const p=makeProject();validateProject(p);const item={id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2),title,date:new Date().toISOString(),project:p};if(!galleryWrite([...items,item]))throw Error('Não há espaço para guardar. Exporta o projeto para um ficheiro.');return item}
+function galleryDelete(id){const items=galleryRead();return galleryWrite(items.filter(x=>x.id!==id))}
+function galleryRename(id,title){title=galleryTitle(title);if(!title)return false;const items=galleryRead();if(!items.some(x=>x.id===id))return false;return galleryWrite(items.map(x=>x.id===id?{...x,title}:x))}
+function galleryNameDialog(id=null){const token=S.runId,old=id?galleryRead().find(x=>x.id===id):null;if(id&&!old)return;modal('<h3>'+(id?'Alterar título':'Guardar projeto na galeria')+'</h3><p>Escolhe um título para a construção. Não escrevas nomes de alunos.</p>',[{t:'Cancelar',f:()=>{if(id)showGallery()}},{t:'Guardar',c:'go',f:()=>{}}]);const m=$('#modal'),row=m.lastElementChild,input=el('input','gallery-input'),err=el('div','gallery-error');input.maxLength=60;input.placeholder='Ex.: A minha aldeia';input.value=old?old.title:'';input.setAttribute('aria-label','Título do projeto');m.insertBefore(input,row);m.insertBefore(err,row);const save=()=>{try{if(token!==S.runId)throw Error('A atividade mudou.');if(id){if(!galleryRename(id,input.value))throw Error('Não foi possível alterar o título.');showGallery()}else{gallerySave(input.value);closeModal();toast('Projeto guardado na galeria.')}}catch(e){err.textContent=e.message}};row.lastElementChild.onclick=save;input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();save()}});input.focus()}
+function galleryWorldLabel(p){return p.mode==='free'?'Construção livre':p.mode==='giant'?'Mundo gigante':(WORLDS.find(w=>w.id===p.world)?.nome||'Mundo')}
+function galleryRestore(item){try{const p=validateProject(item.project);if(p.year!==S.year)throw Error('Este projeto pertence a outro ano.');const current=projectContext();if(sameProject(p,current))return installProject(p,current,S.runId);
+  gFlush();const key=p.mode==='giant'?'giant_'+p.year:p.mode==='free'?'free'+p.year:'w2_'+p.world+'_'+p.year,ck='giantCam_'+p.year,old=SAVE[key],cam=SAVE[ck];SAVE[key]=p.blocks;if(p.mode==='giant')SAVE[ck]=p.camera;try{localStorage.setItem(STORE,JSON.stringify(SAVE))}catch(e){if(old===undefined)delete SAVE[key];else SAVE[key]=old;if(p.mode==='giant'){if(cam===undefined)delete SAVE[ck];else SAVE[ck]=cam}throw Error('Não foi possível guardar. O trabalho atual foi conservado.')}
+  if(p.mode==='free')startFree();else if(p.mode==='giant')startGiant();else startWorld(WORLDS.findIndex(w=>w.id===p.world));toast('Projeto recuperado. A cópia na galeria foi conservada.');return true}catch(e){modal('<h3>Não foi possível abrir</h3><p>O projeto não pôde ser recuperado. Verifica o espaço disponível e a compatibilidade.</p>',[{t:'Voltar à galeria',f:showGallery}]);return false}}
+function galleryDownload(item){try{validateProject(item.project);const blob=new Blob([JSON.stringify(item.project)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='ticlas-projeto-'+item.id.replace(/[^a-z0-9-]/gi,'')+'.ticlas';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}catch(e){modal('<h3>Não foi possível exportar</h3><p>O projeto poderá estar danificado.</p>',[{t:'Voltar',f:showGallery}])}}
+function showGallery(){const items=galleryRead().filter(x=>x.project.year===S.year);modal('<h3>Os meus projetos</h3><p>Cópias guardadas neste navegador. Exporta os trabalhos importantes para um ficheiro.</p>',[{t:'Fechar',c:'go'}]);const m=$('#modal'),list=el('div','gallery-list'),row=m.lastElementChild; if(!items.length){const p=el('p');p.textContent='Ainda não há projetos guardados neste ano.';list.append(p)}for(const item of items.slice().reverse()){const card=el('div','gallery-item'),title=el('strong'),meta=el('small'),actions=el('div','row');title.textContent=item.title;meta.textContent=galleryWorldLabel(item.project)+' · '+(Number.isFinite(Date.parse(item.date))?new Date(item.date).toLocaleDateString('pt-PT'):'Data desconhecida');card.append(title,meta,actions);const add=(label,fn)=>{const b=el('button','abtn');b.textContent=label;b.onclick=fn;actions.append(b)};add('Abrir',()=>modal('<h3>Recuperar projeto?</h3><p>Vai substituir o trabalho em curso no mundo de destino. A cópia da galeria fica guardada.</p>',[{t:'Cancelar',f:showGallery},{t:'Abrir projeto',c:'go',f:()=>galleryRestore(item)}]));add('Título',()=>galleryNameDialog(item.id));add('Exportar',()=>galleryDownload(item));add('Eliminar',()=>modal('<h3>Eliminar esta cópia?</h3><p>O trabalho em curso não será eliminado.</p>',[{t:'Cancelar',f:showGallery},{t:'Eliminar',c:'go',f:()=>{if(galleryDelete(item.id))showGallery();else modal('<h3>Não foi possível eliminar</h3>',[{t:'Voltar',f:showGallery}])}}]));list.append(card)}m.insertBefore(list,row)}
+$('#btnGalleryMenu').onclick=showGallery;$('#btnGalleryOpen').onclick=showGallery;$('#btnGallerySave').onclick=()=>{if(projectContext())galleryNameDialog()};
 
 /* ---------- eventos ---------- */
 let practice=null;
