@@ -407,7 +407,8 @@ footer .contentor{align-items:center}
 .tabela .etiquetas{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .etiqueta{display:inline-block;font-size:12.5px;font-weight:700;line-height:1.3;padding:3px 9px;border-radius:999px;background:#e6f3f0;color:#1f6b66}
 @media(max-width:640px){.escolhe{grid-template-columns:1fr}.escolhe img{width:96px}.anteriores button{font-size:14px;padding:8px 12px}}
-</style></head>
+</style><style>.permanentes{margin:18px 0 26px;padding:16px;border:1px solid #b8cdc1;border-radius:16px;background:#f2f7f3}.permanentes h3,.titulo-semana{margin:0 0 8px;font-size:1.25rem}.permanentes>p{margin:0 0 14px;color:var(--tinta-2)}.titulo-semana{margin-top:12px}</style>
+</head>
 <body>
 <a class="pular" href="#missoes">Saltar para os recursos</a>
 <section class="mundo" aria-labelledby="pergunta">
@@ -474,6 +475,7 @@ let dados=[],ano=0,tipoAtual='atividade',semanaEscolhida='';
 
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function norm(s){return String(s||'').toLocaleLowerCase('pt-PT').normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function ePermanente(d){return d.permanente===true}
 function eApresentacao(d){return /apresenta|aula/i.test(String(d.categoria||d.tipo||''))}
 function turmaBonita(t){const m=String(t).match(/^(\d)\s*\.?º?\s*([A-Z])$/i);return m?m[1]+'.º '+m[2].toUpperCase():t}
 function eTurmaAno(t){return !/^\d\.º [A-Z]$/.test(turmaBonita(t))}
@@ -526,7 +528,7 @@ function cartao(d){
   const tb=el('span','turma',turmaBonita(d.turma));tb.dataset.ano=d.ano;if(eTurmaAno(d.turma))tb.classList.add('turma-ano');il.append(tb);
   const corpo=el('div','corpo');
   /* «resumo» é o texto para os alunos; sem ele usa-se a «descricao». A descrição completa fica na tabela dos professores. */
-  corpo.append(el('span','disciplina',(eApresentacao(d)?'Aula e apresentação · ':'Atividade semanal · ')+(d.disciplina||'')),el('h3','',d.titulo),el('p','',d.resumo||d.descricao||''));
+  corpo.append(el('span','disciplina',(eApresentacao(d)?'Aula e apresentação · ':ePermanente(d)?'Atividade permanente · ':'Atividade semanal · ')+(d.disciplina||'')),el('h3','',d.titulo),el('p','',d.resumo||d.descricao||''));
   const info=el('div','info');
   if(d.duracao){const s=el('span');s.innerHTML=ICONE_TEMPO;s.append(d.duracao);info.append(s)}
   {const s=el('span');s.innerHTML=ICONE_JOGO;s.append(d.tipo||'Jogo interativo');info.append(s)}
@@ -554,13 +556,17 @@ function mostrar(){
   const b=el('button','recurso-aba',nome);b.type='button';b.setAttribute('aria-pressed',String(tipoAtual===id));
   b.onclick=()=>{tipoAtual=id;semanaEscolhida='';mostrar()};abas.append(b)
  });area.append(abas);
- const lista=meus.filter(d=>eApresentacao(d)===(tipoAtual==='apresentacao'));
+ const permanentes=meus.filter(d=>ePermanente(d)&&!eApresentacao(d));
+ if(tipoAtual==='atividade'&&permanentes.length){const bloco=el('section','permanentes');bloco.append(el('h3','','Atividades permanentes'),el('p','','Disponíveis durante todo o ano letivo.'));const g=el('div','cartoes');permanentes.forEach(d=>g.append(cartao(d)));bloco.append(g);area.append(bloco)}
+ const lista=meus.filter(d=>!ePermanente(d)&&eApresentacao(d)===(tipoAtual==='apresentacao'));
  if(!lista.length){
+  if(tipoAtual==='atividade'&&permanentes.length)return;
   const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';
   const t=el('div');t.append(el('b','',tipoAtual==='atividade'?'Ainda não há atividades.':'Ainda não há apresentações.'),
    el('span','','Os recursos serão apresentados aqui à medida que forem publicados.'));
   v.append(img,t);area.append(v);return
  }
+ if(tipoAtual==='atividade'&&permanentes.length)area.append(el('h3','titulo-semana','Atividades semanais'));
  const semanas=[...new Set(lista.map(d=>segunda(d.data)))].sort().reverse();
  const hoje=new Date();hoje.setHours(12);const atual=segunda(hoje.toISOString().slice(0,10));
  const destaque=semanas.find(k=>k<=atual)||semanas[semanas.length-1];
@@ -617,7 +623,7 @@ function tabela(){
     const et=el('div','etiquetas');focosDe(d).forEach(x=>et.append(el('span','etiqueta',x)));
     if(et.childElementCount)t2.append(et);
     const t5=el('td');const a=el('a','','Abrir');a.href=d.url;a.setAttribute('aria-label','Abrir '+d.titulo);t5.append(a);
-    tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',d.semana||''),t5);tb.append(tr)})}
+    tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',ePermanente(d)?'Todo o ano letivo':d.semana||''),t5);tb.append(tr)})}
 $('#f-tipo').addEventListener('change',tabela);$('#f-ano').addEventListener('change',tabela);$('#f-foco').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
 
 Promise.all([
