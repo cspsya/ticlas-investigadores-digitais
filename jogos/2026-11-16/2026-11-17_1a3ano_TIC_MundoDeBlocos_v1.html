@@ -223,7 +223,12 @@ button:disabled{cursor:default}
 @media(max-width:380px){.panel .mat-group{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.hero .big,.modal,.bigstars span.on,.confetti{animation:none}.card,.ybtn,.chip{transition:none}}
 </style>
-</head>
+<style>
+#practiceGuide{background:#e9f4ed;border:1px solid #a9ccb5;color:#24563a;font-size:14px;padding:9px}
+#practiceGuide[hidden]{display:none}.guide-step{font-size:13px;font-weight:800;color:#28617b}.guide-progress{height:6px;background:#e5ecef;border-radius:8px;overflow:hidden;margin:10px 0}.guide-progress i{display:block;height:100%;background:#377550}
+@media(pointer:coarse){.rbtn{min-width:42px;min-height:42px}.mbtn{min-height:48px}}
+@media(max-width:760px){#btnGuide{font-size:12px}}
+</style></head>
 <body>
 <div id="app">
   <header>
@@ -233,7 +238,7 @@ button:disabled{cursor:default}
     <span class="badge" id="thBadge"></span>
     <select class="hbtn" id="thSel" title="Tema (professora)"></select>
     <button class="hbtn" id="btnFull" title="Ecrã inteiro" aria-label="Ecrã inteiro">⛶</button>
-    <button class="hbtn" id="btnHome">⌂ Início</button>
+    <button class="hbtn" id="btnGuide" title="Aprender a jogar">Como jogar</button><button class="hbtn" id="btnHome">⌂ Início</button>
   
     <a id="ticlas-voltar-portal" href="https://cspsya.github.io/ticlas-investigadores-digitais/" aria-label="Voltar à página inicial do Ticl@s" title="Voltar à página inicial do Ticl@s"><span aria-hidden="true">←</span> Voltar ao Ticl@s</a>
   </header>
@@ -300,7 +305,7 @@ button:disabled{cursor:default}
             <button class="abtn" id="btnReset">🗑 Recomeçar</button>
           </div>
           <button class="abtn help" id="btnHelp">💡 Ajuda (mostra os contornos)</button>
-          <div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
+          <div id="practiceGuide" hidden role="status" class="tip"></div><div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
         </aside>
         <aside class="panel" id="codePanel">
           <div class="plbl">Peças de código</div>
@@ -680,7 +685,7 @@ const S={cam:{z:1,x:0,y:0},year:1,mode:null,idx:0,ch:null,N:10,hz:6,tool:'place'
   hover:null,eraseKey:null,agent:null,acorns:[],placed:[],prog:[],running:false,runId:0,lockWarn:false};
 let PICK=null;
 
-function show(id){gFlush();$$('.scr').forEach(s=>s.classList.toggle('on',s.id===id));if(id!=='game'){S.runId++;S.running=false}
+function show(id){gFlush();if(id!=='game'){drag=null;pointers.clear();pinch=null;practice=null;$('#practiceGuide').hidden=true}$$('.scr').forEach(s=>s.classList.toggle('on',s.id===id));if(id!=='game'){S.runId++;S.running=false}
   if(id==='game')requestAnimationFrame(()=>{render();renderModel()})}
 
 /* ---------- toast / modal / confettis ---------- */
@@ -732,21 +737,21 @@ function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=20;S.hz=8;S.rot=0;
 function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=WN;S.rot=0;S.hz=Math.max(8,maxZB(S.world.gen())+3);S.cam={z:S.world.zoom||1.4,x:0,y:0};setupGame();resetWorld()}
 function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
   S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
-function setupGame(){show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',free=isFree()||gi,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
-  $('#gTt').textContent=gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
-  $('#gTx').textContent=gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
+function setupGame(){if(S.mode!=='practice'){practice=null;$('#practiceGuide').hidden=true}show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',training=S.mode==='practice',free=isFree()||gi||training,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
+  $('#gTt').textContent=training?'Oficina de treino · Como jogar':gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
+  $('#gTx').textContent=training?'Aprende a construir seguindo os passos do Ticl@s.':gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
   $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
   $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#zAll').style.display=gi?'none':'';$('#mini').style.display=gi?'block':'none';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
-  $('#btnReset').innerHTML=(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
+  $('#btnReset').innerHTML=training?'↺ Recomeçar treino':(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
   setTool('place');
   if(code){buildCmds();$('#pGoal').textContent='Meta: '+S.ch.best+' peças';$('#codeTip').textContent=S.ch.meta||'Junta as peças pela ordem certa e carrega em Executar.'}
 }
 function resetWorld(){
-  const ch=S.ch;S.blocks=S.mode==='giant'?gLoad():isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
+  const ch=S.ch;S.blocks=S.mode==='giant'?gLoad():S.mode==='practice'?new Map():isFree()?loadFree():mapOf([...((ch&&ch.fixed)||[]),...((ch&&ch.obst)||[])],true);
   S.undo=[];S.help=false;S.done=false;S.warned=false;S.marks=new Set();S.hover=null;S.eraseKey=null;S.lockWarn=false;
   $('#btnHelp').disabled=false;
   if(S.mode==='code')resetCodeWorld(true);
@@ -780,15 +785,15 @@ function placeTarget(h){if(!h)return null;let p;
   else{const dv=rotV(h.n[0],h.n[1],(4-S.rot)%4);p={x:h.wx+dv[0],y:h.wy+dv[1],z:h.z+h.n[2]}}
   if(p.x<0||p.y<0||p.x>=S.N||p.y>=S.N||p.z<0||p.z>=Math.ceil(S.hz)+ (isFree()?0:1)||S.blocks.has(K(p.x,p.y,p.z)))return null;return p}
 function setTool(t){S.tool=t;$$('.tbtn').forEach(b=>{const active=b.dataset.tool===t;b.classList.toggle('on',active);b.setAttribute('aria-pressed',String(active))});S.hover=null;S.eraseKey=null;const label=$('#selectedMaterial');if(label)label.textContent=t==='erase'?'A apagar':MATS[S.mat].nome;requestRender()}
-function doPlace(p){if(S.mode==='giant'){const k=K(p.x,p.y,p.z);S.undo.push({op:'g',k,prev:gSet(k,S.mat)});return afterChange()}
+function doPlace(p){if(S.mode==='practice')practiceEvent('place');if(S.mode==='giant'){const k=K(p.x,p.y,p.z);S.undo.push({op:'g',k,prev:gSet(k,S.mat)});return afterChange()}
   S.blocks.set(K(p.x,p.y,p.z),{m:S.mat});S.undo.push({op:'add',k:K(p.x,p.y,p.z),m:S.mat});
   if(S.mode==='build'&&S.year===1){const t=S.ch.targets.find(t=>t.x===p.x&&t.y===p.y&&t.z===p.z);
     if(!t)toast('Esse bloco não está no modelo. Usa os contornos brancos.');else if(t.m!==S.mat)toast('Olha para o modelo: esse bloco é de outro material.')}
   afterChange()}
-function doErase(h){if(!h||h.kind!=='block')return;
+function doErase(h){if(!h||h.kind!=='block')return;if(S.mode==='practice'&&!h.locked)practiceEvent('erase');
   if(S.mode==='giant'){if(h.locked){if(!S.lockWarn){toast('A rocha do fundo do mundo não se pode apagar.');S.lockWarn=true}return}S.undo.push({op:'g',k:h.key,prev:gSet(h.key,null)});S.eraseKey=null;return afterChange()}if(h.locked){if(!S.lockWarn){toast('Esse bloco faz parte do desafio e não se pode apagar.');S.lockWarn=true}return}
   const b=S.blocks.get(h.key);S.blocks.delete(h.key);S.undo.push({op:'del',k:h.key,m:b.m});S.eraseKey=null;afterChange()}
-function undo(){const u=S.undo.pop();if(!u)return;if(u.op==='g'){if(u.prev)S.blocks.set(u.k,u.prev);else S.blocks.delete(u.k);return afterChange()}if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
+function undo(){const u=S.undo.pop();if(!u)return;if(S.mode==='practice')practiceEvent('undo');if(u.op==='g'){if(u.prev)S.blocks.set(u.k,u.prev);else S.blocks.delete(u.k);return afterChange()}if(u.op==='add')S.blocks.delete(u.k);else S.blocks.set(u.k,{m:u.m});S.done=false;afterChange()}
 function afterChange(){if(S.mode==='giant')gSave();if(isFree())saveFree();if(S.mode==='build')checkBuild();render()}
 function buildStatus(ch){const tset=new Map(ch.targets.map(t=>[K(t.x,t.y,t.z),t.m]));let ok=0,filled=0;const wrong=new Set(),extra=new Set();
   for(const [k,m] of tset){const b=S.blocks.get(k);if(b){filled++;if(b.m===m)ok++;else wrong.add(k)}}
@@ -797,7 +802,7 @@ function checkBuild(){const st=buildStatus(S.ch);$('#counter').textContent='🧱
   const complete=st.ok===st.total&&st.extra.size===0;
   if(S.year===1||st.filled===st.total){st.wrong.forEach(k=>S.marks.add(k));st.extra.forEach(k=>S.marks.add(k))}
   if(complete&&!S.done){S.done=true;const n=(S.year===1||!S.help)?3:2;award(n);
-    setTimeout(()=>celebrate(n,n<3?'Da próxima vez, tenta sem ajuda para ganhares 3 estrelas.':null),400)}
+    const completed=S.ch;setTimeout(()=>{if(S.ch===completed&&S.mode==='build'&&S.done&&$('#game').classList.contains('on'))celebrate(n,n<3?'Da próxima vez, tenta sem ajuda para ganhares 3 estrelas.':null)},400)}
   else if(!complete&&st.filled===st.total&&S.year>1){if(!S.warned){toast(st.wrong.size?'Quase! Há blocos com o material errado (a vermelho).':'Quase! Há blocos a mais (a vermelho).');S.warned=true}}
   else if(st.filled<st.total)S.warned=false;
   const hidden=S.ch.targets.some(t=>!S.blocks.has(K(t.x,t.y,t.z))&&[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1]].every(([a,b,c])=>S.blocks.has(K(t.x+a,t.y+b,t.z+c))));
@@ -843,7 +848,7 @@ async function step(t,my){const a=S.agent,N=S.ch.N;
   if(t==='left'||t==='right'){a.d=(a.d+(t==='right'?1:3))%4;render();await sleep(330);return null}
   const nx=a.x+D[a.d][0],ny=a.y+D[a.d][1],out=nx<0||ny<0||nx>=N||ny>=N;
   if(t==='fwd'){if(out||S.blocks.has(K(nx,ny,0))){await tween(a,a.x+D[a.d][0]*.28,a.y+D[a.d][1]*.28,my,160);await tween(a,a.x,a.y,my,160);return out?'edge':'block'}
-    await tween(a,nx,ny,my,330);a.x=nx;a.y=ny;a.fx=nx;a.fy=ny;const i=S.acorns.findIndex(c=>c[0]===nx&&c[1]===ny);if(i>=0){S.acorns.splice(i,1);render()}return null}
+    await tween(a,nx,ny,my,330);if(my!==S.runId)return null;a.x=nx;a.y=ny;a.fx=nx;a.fy=ny;const i=S.acorns.findIndex(c=>c[0]===nx&&c[1]===ny);if(i>=0){S.acorns.splice(i,1);render()}return null}
   if(t==='place'){if(out)return 'noplace';if(S.blocks.has(K(nx,ny,0)))return 'occupied';S.blocks.set(K(nx,ny,0),{m:S.ch.place});S.placed.push(K(nx,ny,0));render();await sleep(330);return null}
   return null}
 const ERR={edge:'Ups! O Ticl@s ia sair do mundo.',block:'Ups! Há um obstáculo no caminho.',noplace:'Não há espaço para colocar o bloco ali.',occupied:'Já existe um bloco à frente do Ticl@s.'};
@@ -854,7 +859,7 @@ async function run(){
   S.prog.forEach(i=>{if(i.open)i.open=false});renderProg();resetCodeWorld();
   const my=++S.runId;S.running=true;setRunUI(true);let err=null;
   for(const st of flatten()){if(my!==S.runId)return;markChip(st);err=await step(st.t,my);if(my!==S.runId)return;if(err)break;await sleep(110)}
-  S.running=false;setRunUI(false);markChip(null);
+  if(my!==S.runId)return;S.running=false;setRunUI(false);markChip(null);
   if(err)return fail(ERR[err]);evaluate()}
 function evaluate(){const ch=S.ch,probs=[];
   if(S.acorns.length)probs.push(S.acorns.length===1?'Ainda falta 1 bolota.':'Ainda faltam '+S.acorns.length+' bolotas.');
@@ -863,23 +868,30 @@ function evaluate(){const ch=S.ch,probs=[];
   if(ch.flag&&!(S.agent.x===ch.flag.x&&S.agent.y===ch.flag.y))probs.push('O Ticl@s não terminou na bandeira.');
   if(probs.length)return fail(probs.join(' '));
   const n=countP(S.prog),st=n<=ch.best?3:2;award(st);
-  setTimeout(()=>celebrate(st,st<3?`Conseguiste com ${n} peças. Consegues com ${ch.best}?`:`Programa perfeito: só ${n} ${n===1?'peça':'peças'}!`),250)}
+  const completed=S.ch,runToken=S.runId;setTimeout(()=>{if(S.ch===completed&&S.runId===runToken&&S.mode==='code'&&$('#game').classList.contains('on'))celebrate(st,st<3?`Conseguiste com ${n} peças. Consegues com ${ch.best}?`:`Programa perfeito: só ${n} ${n===1?'peça':'peças'}!`)},250)}
 function fail(msg){modal(`${tic('duvida')}<h3>Quase!</h3><p>${msg}</p>`,[{t:'↺ Tentar de novo',c:'go',f:()=>resetCodeWorld()}])}
 
 /* ---------- eventos ---------- */
+let practice=null;
+const practiceSteps=[['material','Escolhe um material no inventário.'],['place','Clica ou toca no terreno para colocar um bloco.'],['rotate','Carrega numa das setas de rotação.'],['erase','Escolhe Apagar e retira o bloco que colocaste.'],['undo','Carrega em Desfazer para recuperar o bloco.']];
+function updatePractice(){const g=$('#practiceGuide');g.hidden=practice===null;if(practice===null)return;g.replaceChildren();const title=el('div','guide-step',practice>=practiceSteps.length?'Treino concluído!':'Passo '+(practice+1)+' de '+practiceSteps.length);g.append(title);const bar=el('div','guide-progress');const fill=el('i');fill.style.width=(100*Math.min(practice,practiceSteps.length)/practiceSteps.length)+'%';bar.append(fill);g.append(bar);g.append(el('div',null,practice>=practiceSteps.length?'Já sabes construir! Volta aos desafios ou continua a praticar.':practiceSteps[practice][1]));}
+function practiceEvent(action){if(S.mode!=='practice'||practice===null||practice>=practiceSteps.length)return;if(practiceSteps[practice][0]===action){practice++;updatePractice()}}
+function startPractice(){S.runId++;S.running=false;S.mode='practice';S.world=null;S.ch=null;S.N=8;S.hz=5;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];practice=0;setupGame();resetWorld();updatePractice()}
+$('#btnGuide').onclick=()=>modal(tic('ola')+'<h3>Aprender a jogar</h3><p>Experimenta as ferramentas numa oficina de treino. As tuas construções guardadas não serão alteradas.</p><p>Para programar, escolhe um desafio de código, junta as instruções e carrega em Executar.</p>',[{t:'Cancelar'},{t:'Começar treino',c:'go',f:startPractice}]);
 const cv=$('#cv');
-let drag=null;const podeMover=()=>isFree()||S.mode==='giant';
+let drag=null;const pointers=new Map();let pinch=null;const podeMover=()=>isFree()||S.mode==='giant'||S.mode==='practice';
 function limitarCam(){const lx=cv.clientWidth*S.cam.z/2,ly=cv.clientHeight*S.cam.z/2;S.cam.x=Math.max(-lx,Math.min(lx,S.cam.x));S.cam.y=Math.max(-ly,Math.min(ly,S.cam.y))}
 function zoomAt(k,mx,my){if(S.mode==='giant'){S.cam.z=Math.min(2,Math.max(.75,S.cam.z*k));S.hover=null;return requestRender()}
   const z2=Math.min(4,Math.max(1,S.cam.z*k));k=z2/S.cam.z;S.cam.x=mx-k*(mx-S.cam.x);S.cam.y=my-k*(my-S.cam.y);S.cam.z=z2;limitarCam();S.hover=null;render()}
-cv.addEventListener('pointerdown',e=>{if(S.mode==='code')return;drag={x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y};try{cv.setPointerCapture(e.pointerId)}catch(_){}});
-cv.addEventListener('pointerup',e=>{const d=drag;drag=null;if(!d||S.mode==='code')return;if(d.moved){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
-  const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
+cv.addEventListener('pointerdown',e=>{if(S.mode==='code'||S.running)return;if(e.button!==0&&e.button!==2&&e.button!==1)return;try{cv.setPointerCapture(e.pointerId)}catch(_){};pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>1){drag=null;S.hover=null;S.eraseKey=null;const p=[...pointers.values()];pinch={distance:Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y)};requestRender();return}drag={id:e.pointerId,x:e.clientX,y:e.clientY,lx:e.clientX,ly:e.clientY,b:e.button,moved:false,cx:S.cam.x,cy:S.cam.y}});
+cv.addEventListener('pointerup',e=>{pointers.delete(e.pointerId);if(pinch){if(!pointers.size)pinch=null;drag=null;if(S.mode==='giant')gSave();return}const d=drag;drag=null;if(!d||d.id!==e.pointerId||S.mode==='code')return;if(d.moved||d.b===1){cv.style.cursor='grab';if(S.mode==='giant')gSave();return}
+  render();const h=hit(e);if(h){if(S.tool==='erase'||d.b===2)doErase(h);else if(d.b===0){const p=placeTarget(h);if(p)doPlace(p)}}
   const h2=hit(e);if(S.tool==='place')S.hover=placeTarget(h2);render()});
-cv.addEventListener('pointercancel',()=>{drag=null});
+function cancelPointer(e){pointers.delete(e.pointerId);if(!pointers.size)pinch=null;if(drag&&drag.id===e.pointerId)drag=null;S.hover=null;S.eraseKey=null;requestRender()}cv.addEventListener('pointercancel',cancelPointer);cv.addEventListener('lostpointercapture',cancelPointer);
 cv.addEventListener('wheel',e=>{if(!podeMover())return;e.preventDefault();const r=cv.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:1/1.15,e.clientX-r.left-r.width/2,e.clientY-r.top-r.height/2)},{passive:false});
 cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
-  if(drag){if(!podeMover())return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.hypot(dx,dy)>7)drag.moved=true;
+  if(pointers.has(e.pointerId))pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pinch){if(pointers.size>=2&&podeMover()){const p=[...pointers.values()],dist=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y),r=cv.getBoundingClientRect();if(pinch.distance>5&&dist>5)zoomAt(dist/pinch.distance,(p[0].x+p[1].x)/2-r.left-r.width/2,(p[0].y+p[1].y)/2-r.top-r.height/2);pinch.distance=dist}return}
+  if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.hypot(dx,dy)>(e.pointerType==='touch'?10:7))drag.moved=true;if(!podeMover())return;
     if(drag.moved){if(S.mode==='giant'){gMove(e.clientX-drag.lx,e.clientY-drag.ly);drag.lx=e.clientX;drag.ly=e.clientY}else{S.cam.x=drag.cx+dx;S.cam.y=drag.cy+dy;limitarCam()}S.hover=null;S.eraseKey=null;cv.style.cursor='grabbing';requestRender()}return}
   const old=S.hover,oldErase=S.eraseKey,h=hit(e);
   if(S.tool==='place'){S.hover=placeTarget(h);S.eraseKey=null}else{S.hover=null;S.eraseKey=h&&h.kind==='block'&&!h.locked?h.key:null}
@@ -887,15 +899,15 @@ cv.addEventListener('pointermove',e=>{if(S.mode==='code'||S.running)return;
 cv.addEventListener('pointerleave',()=>{S.hover=null;S.eraseKey=null;render()});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 $$('.tbtn').forEach(b=>b.onclick=()=>setTool(b.dataset.tool));
-const pal=$('#palette');const groups=[['Natureza',['relva','terra','folhas','areia','neve','agua']],['Construção',['tabuas','tronco','pedra','tijolo','telhado','vidro']]];for(const [name,mats] of groups){const group=el('div','mat-group');group.setAttribute('role','group');group.setAttribute('aria-label',name);group.append(el('div','mat-label',name));for(const m of mats){const b=el('button','mbtn'+(m===S.mat?' on':''));b.type='button';b.title=MATS[m].nome;b.setAttribute('aria-pressed',String(m===S.mat));b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));b.onclick=()=>{S.mat=m;$$('.mbtn').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',String(x===b))});setTool('place')};group.append(b)}pal.append(group)}
+const pal=$('#palette');const groups=[['Natureza',['relva','terra','folhas','areia','neve','agua']],['Construção',['tabuas','tronco','pedra','tijolo','telhado','vidro']]];for(const [name,mats] of groups){const group=el('div','mat-group');group.setAttribute('role','group');group.setAttribute('aria-label',name);group.append(el('div','mat-label',name));for(const m of mats){const b=el('button','mbtn'+(m===S.mat?' on':''));b.type='button';b.title=MATS[m].nome;b.setAttribute('aria-pressed',String(m===S.mat));b.append(cubeIcon(m,42));b.append(el('span',null,MATS[m].nome));b.onclick=()=>{S.mat=m;practiceEvent('material');$$('.mbtn').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',String(x===b))});setTool('place')};group.append(b)}pal.append(group)}
 $('#btnUndo').onclick=undo;
-$('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='giant'){delete SAVE['giant_'+S.year];persist()}else if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
+$('#btnReset').onclick=()=>{const wd=S.mode==='world'||S.mode==='giant';modal(`${tic('apontar')}<h3>${wd?'Repor o mundo?':S.mode==='free'?'Limpar tudo?':'Recomeçar?'}</h3><p>${wd?'O mundo volta ao início e as tuas construções desaparecem.':'Os blocos que colocaste vão desaparecer.'}</p>`,[{t:'Não'},{t:'Sim',c:'go',f:()=>{if(S.mode==='practice'){practice=0;updatePractice()}else if(S.mode==='giant'){delete SAVE['giant_'+S.year];persist()}else if(wd){delete SAVE[freeKey()];persist()}else if(S.mode==='free'){S.blocks=new Map();saveFree()}resetWorld()}}])};
 $('#btnHelp').onclick=()=>{if(S.help)return;S.help=true;$('#btnHelp').disabled=true;checkBuild();render();toast('Os contornos brancos mostram onde vão os blocos.')};
-$('#rotL').onclick=()=>{S.rot=(S.rot+3)%4;S.hover=null;render();renderModel()};
+$('#rotL').onclick=()=>{practiceEvent('rotate');S.rot=(S.rot+3)%4;S.hover=null;render();renderModel()};
 $('#zIn').onclick=()=>zoomAt(1.3,0,0);$('#zOut').onclick=()=>zoomAt(1/1.3,0,0);$('#zAll').onclick=()=>{S.cam={z:1,x:0,y:0};S.hover=null;render()};
 $('#miniCv').addEventListener('pointerdown',e=>{const r=e.currentTarget.getBoundingClientRect();S.g.x=Math.max(0,Math.min(GN-1,(e.clientX-r.left)/r.width*GN));S.g.y=Math.max(0,Math.min(GN-1,(e.clientY-r.top)/r.height*GN));S.hover=null;gSave();render()});
 $('#gHome').onclick=()=>{S.g={x:GC0,y:GC0+4};S.hover=null;gSave();render()};
-$('#rotR').onclick=()=>{S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
+$('#rotR').onclick=()=>{practiceEvent('rotate');S.rot=(S.rot+1)%4;S.hover=null;render();renderModel()};
 $('#btnRun').onclick=run;
 $('#btnCodeReset').onclick=()=>{S.runId++;S.running=false;setRunUI(false);markChip(null);resetCodeWorld()};
 $('#btnClearProg').onclick=()=>{if(S.running)return;S.prog=[];renderProg()};
@@ -905,9 +917,10 @@ $('#gMenu').onclick=()=>openMenu(S.year);
 $('#gPrev').onclick=()=>{if(S.idx>0)startCh(S.idx-1)};
 $('#gNext').onclick=()=>{if(S.idx<CH[S.year].length-1)startCh(S.idx+1)};
 $('#btnFull').onclick=()=>{const d=document;if(d.fullscreenElement)d.exitFullscreen();else if(d.documentElement.requestFullscreen)d.documentElement.requestFullscreen().catch(()=>{})};
-document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on'))return;
+document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on')||e.target.closest('input,select,textarea,button,[contenteditable]'))return;
+  if(!e.ctrlKey&&!e.metaKey&&!e.altKey&&S.mode!=='code'&&['b','e'].includes(e.key.toLowerCase())){setTool(e.key.toLowerCase()==='b'?'place':'erase');return}
   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'&&S.mode!=='code'){e.preventDefault();undo()}
-  else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){S.rot=(S.rot+1)%4;render();renderModel()}
+  else if(e.key.toLowerCase()==='r'&&!e.ctrlKey){practiceEvent('rotate');S.rot=(S.rot+1)%4;render();renderModel()}
   else if(podeMover()&&e.key.startsWith('Arrow')){e.preventDefault();const st=60;if(S.mode==='giant'){gMove(e.key==='ArrowLeft'?st:e.key==='ArrowRight'?-st:0,e.key==='ArrowUp'?st:e.key==='ArrowDown'?-st:0);gSave();return requestRender()}if(e.key==='ArrowLeft')S.cam.x+=st;if(e.key==='ArrowRight')S.cam.x-=st;if(e.key==='ArrowUp')S.cam.y+=st;if(e.key==='ArrowDown')S.cam.y-=st;limitarCam();render()}
   else if(podeMover()&&(e.key==='+'||e.key==='-')){zoomAt(e.key==='+'?1.3:1/1.3,0,0)}});
 new ResizeObserver(()=>{render();renderModel()}).observe($('#stage'));
