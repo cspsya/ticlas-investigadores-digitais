@@ -242,7 +242,7 @@ button:disabled{cursor:default}
 .mission-hint{background:#fff3d7}
 .modal{max-height:90dvh;overflow:auto}.modal:has(.mission-info){max-width:480px}.modal:has(.mission-info) .ic{height:90px;width:96px}.modal:has(.mission-info) h3{font-size:25px}
 @media(max-width:760px){#btnMission{font-size:12px}.mission-card-skill{min-height:0}}
-</style></head>
+</style><style>#projectTools{border-top:1px solid var(--ui-line);padding-top:8px}#projectTools[hidden]{display:none}#projectTools .row{margin:6px 0}#projectTools .tip{font-size:11px}</style></head>
 <body>
 <div id="app">
   <header>
@@ -319,7 +319,7 @@ button:disabled{cursor:default}
             <button class="abtn" id="btnReset">🗑 Recomeçar</button>
           </div>
           <button class="abtn help" id="btnHelp">💡 Ajuda (mostra os contornos)</button>
-          <div id="practiceGuide" hidden role="status" class="tip"></div><div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
+          <div id="projectTools" hidden><div class="plbl">O meu projeto</div><div class="row"><button class="abtn" id="btnExport">Exportar</button><button class="abtn" id="btnImport">Importar</button></div><input id="projectFile" type="file" accept=".json,.ticlas,application/json" hidden><div class="tip">Guarda um ficheiro para continuar noutro computador.</div></div><div id="practiceGuide" hidden role="status" class="tip"></div><div class="tip" id="buildTip">Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.</div>
         </aside>
         <aside class="panel" id="codePanel">
           <div class="plbl">Peças de código</div>
@@ -766,7 +766,7 @@ function setupGame(){S.runId++;S.running=false;setRunUI(false);drag=null;pointer
   $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';$('#btnMission').style.display=free?'none':'';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
   $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#zAll').style.display=gi?'none':'';$('#mini').style.display=gi?'block':'none';$('#codePanel').style.display=code?'flex':'none';
-  $('#modelBox').style.display=S.mode==='build'?'block':'none';
+  $('#modelBox').style.display=S.mode==='build'?'block':'none';$('#projectTools').hidden=!(isFree()||gi);
   $('#btnHelp').style.display=(S.mode==='build'&&S.year>1)?'block':'none';
   $('#buildTip').textContent=S.mode==='build'&&S.year===1?'Olha para o modelo: escolhe o material certo e clica nos contornos brancos.':'Dica: o botão direito do rato também apaga. Roda o mundo para construir do outro lado.';
   $('#btnReset').innerHTML=training?'↺ Recomeçar treino':(wd||gi)?'↺ Repor o mundo':free?'🗑 Limpar tudo':'🗑 Recomeçar';
@@ -892,6 +892,39 @@ function evaluate(){const ch=S.ch,probs=[];
   const n=countP(S.prog),st=n<=ch.best?3:2;award(st);
   const completed=S.ch,runToken=S.runId;setTimeout(()=>{if(S.ch===completed&&S.runId===runToken&&S.mode==='code'&&$('#game').classList.contains('on'))celebrate(st,st<3?`Conseguiste com ${n} peças. Consegues com ${ch.best}?`:`Programa perfeito: só ${n} ${n===1?'peça':'peças'}!`)},250)}
 function fail(msg){modal(`${tic('duvida')}<h3>Quase!</h3><p>${msg}</p>`,[{t:'↺ Tentar de novo',c:'go',f:()=>resetCodeWorld()}])}
+
+/* ---------- projetos portáteis (fase 7.1) ---------- */
+const PROJECT_FORMAT='ticlas-mundo-blocos',PROJECT_VERSION=1,PROJECT_MAX_BYTES=12*1024*1024,PROJECT_MAX_BLOCKS=400000;
+function projectContext(){if(!isFree()&&S.mode!=='giant')return null;return {mode:S.mode,year:S.year,world:S.mode==='world'?S.world.id:null}}
+function sameProject(a,b){return !!a&&!!b&&a.mode===b.mode&&a.year===b.year&&a.world===b.world}
+function makeProject(){const c=projectContext();if(!c)throw Error('Abre um mundo de construção livre.');return {format:PROJECT_FORMAT,version:PROJECT_VERSION,terrainVersion:1,...c,blocks:[...S.blocks].map(([k,b])=>[...k.split(',').map(Number),b.m||0]),camera:S.mode==='giant'?[Math.round(S.g.x),Math.round(S.g.y)]:null}}
+function validateProject(p){
+  if(!p||typeof p!=='object'||Array.isArray(p)||p.format!==PROJECT_FORMAT||p.version!==PROJECT_VERSION||p.terrainVersion!==1)throw Error('Formato ou versão de projeto incompatível.');
+  if(![1,2,3].includes(p.year)||!['free','world','giant'].includes(p.mode))throw Error('Ano ou tipo de mundo inválido.');
+  if(p.mode==='world'?!WORLDS.some(w=>w.id===p.world):p.world!==null)throw Error('Mundo desconhecido.');
+  const giant=p.mode==='giant',N=giant?GN:p.mode==='free'?20:WN,Z=giant?GZ:p.mode==='free'?8:Math.max(8,maxZB(WORLDS.find(w=>w.id===p.world).gen())+3);
+  if(!Array.isArray(p.blocks)||p.blocks.length>Math.min(PROJECT_MAX_BLOCKS,N*N*Z))throw Error('Número de blocos inválido ou demasiado elevado.');
+  if(giant?(!Array.isArray(p.camera)||p.camera.length!==2||!p.camera.every(v=>Number.isInteger(v)&&v>=0&&v<GN)):p.camera!==null)throw Error('Posição da câmara inválida.');
+  const seen=new Set(),blocks=[];
+  for(const a of p.blocks){if(!Array.isArray(a)||a.length!==4||!validBlock(a,N,Z,giant)||(giant&&a[2]===0))throw Error('O ficheiro contém blocos ou coordenadas inválidos.');const k=K(a[0],a[1],a[2]);if(seen.has(k))throw Error('O ficheiro contém blocos repetidos.');seen.add(k);blocks.push([a[0],a[1],a[2],a[3]||0])}
+  return {mode:p.mode,year:p.year,world:p.world,blocks,camera:giant?p.camera.slice():null}
+}
+function downloadProject(){try{const p=makeProject();validateProject(p);const content=JSON.stringify(p);if(content.length>PROJECT_MAX_BYTES)throw Error('O projeto excede o tamanho máximo permitido.');const blob=new Blob([content],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='ticlas-'+p.year+'ano-'+(p.world||p.mode)+'-'+new Date().toISOString().slice(0,10)+'.ticlas';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Ficheiro de projeto preparado.')}catch(e){toast(e.message||'Não foi possível exportar o projeto.')}}
+function installProject(p,context,token){
+  if(token!==S.runId||!sameProject(context,projectContext())||!sameProject(p,context))return false;
+  gFlush();const key=p.mode==='giant'?'giant_'+p.year:freeKey(),cameraKey='giantCam_'+p.year,old=SAVE[key],oldCam=SAVE[cameraKey];
+  SAVE[key]=p.blocks;if(p.mode==='giant')SAVE[cameraKey]=p.camera;
+  try{localStorage.setItem(STORE,JSON.stringify(SAVE))}catch(e){if(old===undefined)delete SAVE[key];else SAVE[key]=old;if(p.mode==='giant'){if(oldCam===undefined)delete SAVE[cameraKey];else SAVE[cameraKey]=oldCam}toast('Não foi possível guardar. O trabalho atual não foi substituído.');return false}
+  if(p.mode==='giant')S.g={x:p.camera[0],y:p.camera[1]};resetWorld();toast('Projeto importado com sucesso.');return true
+}
+async function readProject(file){const context=projectContext(),token=S.runId;if(!context||!file)return;
+  try{if(file.size>PROJECT_MAX_BYTES)throw Error('O ficheiro é demasiado grande.');const p=validateProject(JSON.parse(await file.text()));if(token!==S.runId||!sameProject(context,projectContext()))return;
+    if(!sameProject(p,context))throw Error('Abre o mesmo ano e o mesmo tipo de mundo do projeto antes de o importar.');
+    modal(tic('duvida')+'<h3>Importar projeto?</h3><p>Este ficheiro vai substituir a construção deste mundo. Exporta primeiro o trabalho atual se o quiseres conservar.</p><p>'+p.blocks.length+' registos de blocos no ficheiro.</p>',[{t:'Cancelar'},{t:'Substituir',c:'go',f:()=>installProject(p,context,token)}]);
+  }catch(e){if(token===S.runId&&sameProject(context,projectContext()))toast(e instanceof SyntaxError?'O ficheiro não contém um projeto válido.':e.message||'Não foi possível importar o ficheiro.',6000)}
+}
+$('#btnExport').onclick=downloadProject;$('#btnImport').onclick=()=>{if(projectContext()){$('#projectFile').value='';$('#projectFile').click()}};
+$('#projectFile').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];e.target.value='';readProject(file)});
 
 /* ---------- eventos ---------- */
 let practice=null;
