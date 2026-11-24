@@ -130,6 +130,21 @@ Cada cena precisa de `texto` (a legenda; `**…**` fica destacado). Opcional: `t
 - **Painel do professor (⚙️):** «Animações: permitir saltar (⏭️)».
 - Sem som por omissão; no modo quadro (som ligado) o Ticl@s lê as legendas. A duração estimada da aula inclui as animações.
 
+### Escape room (V3.8, opcional)
+
+Transforma o mapa de missões num castelo de salas fechadas:
+
+```json
+"escape": { "titulo": "🏰 Fuga do Castelo", "historia": "O Ticl@s ficou fechado…", "palavra": "DINASTIA",
+            "cadeado": "Ordena as letras…", "pista": "Aparece depois de 2 tentativas erradas.", "vitoria": "O portão abriu-se!" },
+"rondas": [ { "titulo": "Portão do castelo", "icone": "🏰", "chave": "S", … }, … ]
+```
+
+- Cada sala (ronda principal) pode ter uma `chave` (letra ou número) e um `icone`. Ao terminar a sala, o aluno vê «🔓 Sala aberta!» e ganha a chave, que fica na barra de chaves do mapa.
+- As salas abrem por ordem (`"sequencial": false` deixa-as todas abertas; a navegação livre do painel do professor também).
+- No fim, o **cadeado final** pede a `palavra` secreta (sem distinguir maiúsculas nem acentos). As chaves podem vir baralhadas, para os alunos terem de pensar; o construtor confirma que as chaves têm exatamente as letras da palavra. Depois de 2 tentativas erradas aparece a `pista`.
+- Funciona com o Caderno do Ticl@s, as animações e os bónus (que abrem quando todas as salas estiverem feitas). Exemplo: `aulas/2026-11-25_4ano_EstudoDoMeio_1Dinastia_EscapeRoom_v1.json`.
+
 ### Tipos de Matemática (V3.4)
 
 | Tipo | Itens | Exemplo |

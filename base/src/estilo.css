@@ -573,3 +573,31 @@ body.contraste .filme-legenda{background:#000}
 @media (max-width:700px){.filme-ecra{aspect-ratio:auto;min-height:420px}.filme-palco{left:4%;top:44px;bottom:30%}.filme-ticlas{width:70px;bottom:auto;top:30px;left:auto;right:8px}}
 @media (prefers-reduced-motion: reduce){.filme-ecra *{animation-duration:.01s!important;animation-delay:0s!important}}
 .rever+.rever{margin-left:0}
+
+/* ---------- Escape room (V3.8) ---------- */
+.escape-chaves{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 12px;padding:10px 14px;border-radius:16px;background:#3b2a1d;color:#FFE7A8;box-shadow:inset 0 2px 8px rgba(0,0,0,.35)}
+.escape-chaves-rotulo{font-weight:900;margin-right:6px}
+.chave-slot{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:52px;padding:0 8px;border-radius:10px;font-weight:900;font-size:1.5rem;color:#5a3610;background:linear-gradient(#FFE08A,#E9B44C);border:2px solid #9a6a1c;box-shadow:0 3px 0 #7a5214;font-family:var(--ft,inherit)}
+.chave-slot.vazia{background:#5a4535;color:#b59f86;border-color:#6d5544;box-shadow:none}
+.chave-slot.grande{min-width:64px;height:76px;font-size:2.4rem}
+.missao.sala{background:linear-gradient(180deg,#fbf6ec,#efe4d0);border-color:#cdb898}
+.missao.sala.fechada{filter:grayscale(.6);opacity:.75}
+.missao.sala.feita{background:linear-gradient(180deg,#f2fbe9,#e1f2d2)}
+.cadeado-final{border:3px dashed #9a6a1c!important;background:linear-gradient(180deg,#fff6d9,#f6e2ae)!important}
+.cadeado-final.feita{border-style:solid!important}
+.chave-ganha{display:flex;align-items:center;justify-content:center;gap:14px;margin:12px auto;padding:12px 18px;max-width:520px;border-radius:18px;background:#3b2a1d;color:#FFE7A8;text-align:left;animation:filmePop .6s both}
+.chave-ganha strong{display:block;font-size:1.15rem}
+.chave-ganha small{display:block;font-weight:700;opacity:.9}
+.chave-icone{font-size:2.6rem;animation:chaveRoda 1.2s ease-out both}
+.cadeado{display:flex;justify-content:center;margin:6px 0}
+.cadeado-icone{font-size:clamp(70px,12vw,120px);line-height:1}
+.cadeado.treme{animation:treme .5s}
+.cadeado.aberto .cadeado-icone{animation:filmePop .7s both}
+.cadeado-campo{font:inherit;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;letter-spacing:.35em;text-transform:uppercase;text-align:center;padding:10px 14px;border-radius:14px;border:3px solid #9a6a1c;max-width:420px;width:100%}
+.cadeado-msg{text-align:center;font-weight:800;color:var(--t-2d,#a33d00);min-height:1.4em}
+.escape-vitoria{text-align:center}
+.escape-palavra{display:flex;justify-content:center;flex-wrap:wrap;gap:6px;margin:10px 0 16px}
+@keyframes treme{0%,100%{transform:none}20%{transform:translateX(-10px) rotate(-4deg)}40%{transform:translateX(10px) rotate(4deg)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+@keyframes chaveRoda{from{transform:rotate(-200deg) scale(.3);opacity:0}to{transform:none;opacity:1}}
+body.contraste .escape-chaves,body.contraste .chave-ganha{background:#000;color:#fff}
+@media (prefers-reduced-motion: reduce){.chave-icone,.cadeado.treme,.chave-ganha{animation:none}}

@@ -1,0 +1,988 @@
+{
+  "id": "2026-11-25-4ano-primeira-dinastia-escape",
+  "titulo": "Escape Room: Fuga do Castelo",
+  "ano": 4,
+  "turma": "4.º ano",
+  "disciplina": "Estudo do Meio",
+  "data": "2026-11-25",
+  "descricao": "Revisões da 1.ª dinastia em escape room: 8 salas (formação do reino, reis e cognomes, fontes, mapa, séculos e datas, sociedade, «Quem sou eu?» e escrita), chaves com letras e cadeado final",
+  "resumo": "O Ticl@s ficou fechado no castelo! Abre as 8 salas e descobre a palavra secreta.",
+  "focoTic": [
+    "Rato: arrastar",
+    "Teclado: escrever frases"
+  ],
+  "objetivo": "Rever a 1.ª dinastia: abre as 8 salas do castelo, recolhe as chaves e descobre a palavra secreta.",
+  "minutos": 60,
+  "consulta": [
+    {
+      "id": "antes",
+      "emoji": "🏛️",
+      "titulo": "Antes de haver Portugal",
+      "paragrafos": [
+        "Há muitos séculos, a Península Ibérica foi ocupada pelos **Romanos**. Mais tarde, no ano de 711, chegaram os **Muçulmanos**, vindos do norte de África, que ocuparam quase toda a península.",
+        "Os reis cristãos do norte começaram então a lutar para recuperar essas terras. A esta luta chamamos **Reconquista Cristã**.",
+        "Por volta de 1096, o rei de Leão e Castela, **Afonso VI**, entregou o **Condado Portucalense** a **D. Henrique**, que tinha casado com a sua filha, **D. Teresa**.",
+        "D. Henrique e D. Teresa foram os pais de **D. Afonso Henriques**. Segundo a tradição, ele nasceu em **Guimarães**, por isso esta cidade é conhecida como o **«berço de Portugal»**."
+      ],
+      "lembra": "Ordem: Romanos → Muçulmanos → Condado Portucalense → Reino de Portugal."
+    },
+    {
+      "id": "nascimento",
+      "emoji": "🤴",
+      "titulo": "O nascimento de Portugal",
+      "paragrafos": [
+        "Quando D. Henrique morreu, **D. Teresa** passou a governar o condado. D. Afonso Henriques não concordava com a mãe e lutou contra ela.",
+        "Em **1128**, venceu a **Batalha de São Mamede**, perto de Guimarães, e passou a governar o Condado Portucalense.",
+        "Em **1143**, no **Tratado de Zamora**, o rei de Leão e Castela reconheceu D. Afonso Henriques como **rei de Portugal**. Por isso, 1143 é considerado o ano do nascimento de Portugal.",
+        "Em **1179**, o **Papa** reconheceu Portugal como reino independente, através de um documento chamado **bula**."
+      ],
+      "tabela": [
+        [
+          "Ano",
+          "Acontecimento"
+        ],
+        [
+          "1096",
+          "D. Henrique recebe o Condado Portucalense"
+        ],
+        [
+          "1128",
+          "Batalha de São Mamede"
+        ],
+        [
+          "1143",
+          "Tratado de Zamora: nasce o reino de Portugal"
+        ],
+        [
+          "1147",
+          "Conquista de Santarém e de Lisboa"
+        ],
+        [
+          "1179",
+          "Bula do Papa: Portugal é reconhecido como reino"
+        ]
+      ]
+    },
+    {
+      "id": "reis",
+      "emoji": "👑",
+      "titulo": "Os nove reis da 1.ª dinastia",
+      "paragrafos": [
+        "Uma **dinastia** é uma sequência de reis da mesma família. A 1.ª dinastia também se chama **dinastia Afonsina** (por causa de D. Afonso Henriques) ou **dinastia de Borgonha** (a família de D. Henrique).",
+        "Durou de **1143** a **1383** e teve **9 reis**. Cada rei ficou conhecido por um **cognome**, uma espécie de alcunha que lembra uma característica ou um feito."
+      ],
+      "tabela": [
+        [
+          "N.º",
+          "Rei",
+          "Cognome",
+          "Reinou"
+        ],
+        [
+          "1.º",
+          "D. Afonso Henriques",
+          "o Conquistador",
+          "1143–1185"
+        ],
+        [
+          "2.º",
+          "D. Sancho I",
+          "o Povoador",
+          "1185–1211"
+        ],
+        [
+          "3.º",
+          "D. Afonso II",
+          "o Gordo",
+          "1211–1223"
+        ],
+        [
+          "4.º",
+          "D. Sancho II",
+          "o Capelo",
+          "1223–1248"
+        ],
+        [
+          "5.º",
+          "D. Afonso III",
+          "o Bolonhês",
+          "1248–1279"
+        ],
+        [
+          "6.º",
+          "D. Dinis",
+          "o Lavrador",
+          "1279–1325"
+        ],
+        [
+          "7.º",
+          "D. Afonso IV",
+          "o Bravo",
+          "1325–1357"
+        ],
+        [
+          "8.º",
+          "D. Pedro I",
+          "o Justiceiro",
+          "1357–1367"
+        ],
+        [
+          "9.º",
+          "D. Fernando",
+          "o Formoso",
+          "1367–1383"
+        ]
+      ],
+      "lembra": "Truque: os primeiros nomes alternam — Afonso, Sancho, Afonso, Sancho, Afonso — e depois vêm Dinis, Afonso, Pedro e Fernando."
+    },
+    {
+      "id": "obras",
+      "emoji": "📜",
+      "titulo": "O que fez cada rei",
+      "lista": [
+        "**D. Afonso Henriques, o Conquistador** – venceu em São Mamede e conquistou muitas terras aos Muçulmanos, como Santarém e Lisboa.",
+        "**D. Sancho I, o Povoador** – mandou povoar as terras conquistadas e deu forais a muitas povoações.",
+        "**D. Afonso II, o Gordo** – mandou fazer as primeiras leis gerais do reino. O seu testamento, de 1214, é um dos documentos mais antigos escritos em português.",
+        "**D. Sancho II, o Capelo** – continuou as conquistas no Alentejo e no Algarve.",
+        "**D. Afonso III, o Bolonhês** – viveu em Bolonha, em França, antes de ser rei. Conquistou Faro em 1249 e terminou a Reconquista no território português.",
+        "**D. Dinis, o Lavrador** – protegeu a agricultura e mandou alargar o Pinhal de Leiria. Criou a primeira universidade (1290), assinou o Tratado de Alcanices (1297) e mandou escrever os documentos do reino em português. Era poeta. Casou com a **Rainha Santa Isabel** (lenda do milagre das rosas).",
+        "**D. Afonso IV, o Bravo** – mostrou grande coragem na Batalha do Salado (1340), contra os Muçulmanos.",
+        "**D. Pedro I, o Justiceiro** – castigava com rigor quem não cumpria a lei. É famosa a sua história com D. Inês de Castro; os dois estão sepultados no Mosteiro de Alcobaça.",
+        "**D. Fernando, o Formoso** – último rei da 1.ª dinastia. Fez a Lei das Sesmarias, que obrigava a cultivar as terras abandonadas. Morreu em 1383."
+      ]
+    },
+    {
+      "id": "reconquista",
+      "emoji": "🗺️",
+      "titulo": "A Reconquista e o território",
+      "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iNS41IiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjkxLjUiIHk9IjE5MS42IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5TYW50YXLDqW08L3RleHQ+PGNpcmNsZSBjeD0iOTQuMSIgY3k9IjEyOS40IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTAzLjEiIHk9IjEzMy40IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5Db2ltYnJhPC90ZXh0PjxjaXJjbGUgY3g9IjExNy4yIiBjeT0iMzIwLjgiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxMjYuMiIgeT0iMzI0LjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkZhcm88L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTA5LjUiIHk9IjU5LjYiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkd1aW1hcsOjZXM8L3RleHQ+PGNpcmNsZSBjeD0iNjEuMyIgY3k9IjIxOC44IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNzAuMyIgeT0iMjIyLjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkxpc2JvYTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI4NS41IiB5PSIxNjEuNiIgZm9udC1zaXplPSIxMS41IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjM0IxRjQ3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgcGFpbnQtb3JkZXI9InN0cm9rZSI+TGVpcmlhPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIyMjAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyRjgwQzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCAyMCAyMjApIiBsZXR0ZXItc3BhY2luZz0iMiI+T0NFQU5PIEFUTMOCTlRJQ088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI0MCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UkVJTk8gREUgTEXDg088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI1NCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RSBDQVNURUxBPC90ZXh0PjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4NiAxMDApIj48cG9seWdvbiBwb2ludHM9IjAsLTIyIDYsMCAwLC00IC02LDAiIGZpbGw9IiM1QjQ2MzYiLz48cG9seWdvbiBwb2ludHM9IjAsMjIgNiwwIDAsNCAtNiwwIiBmaWxsPSIjQjlBODhDIi8+PHRleHQgeD0iMCIgeT0iLTI2IiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5OPC90ZXh0Pjx0ZXh0IHg9IjAiIHk9IjM2IiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TPC90ZXh0PjwvZz48dGV4dCB4PSIyMjYiIHk9IjE1OCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzVCNDYzNiI+TGVnZW5kYTwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y3RDI3QSIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIxODEiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmVpbm8gZW0gMTE0MzwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE5NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzlGRDNBOCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyMDciIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q29ucXVpc3RhcyBkZTwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjIyMCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij4xMTQ3IGEgMTI0ODwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjIzNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y0QTlBMCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyNDUiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+QWxnYXJ2ZSAoMTI0OSk8L3RleHQ+PGxpbmUgeDE9IjIyNiIgeTE9IjI2OCIgeDI9IjI0NCIgeTI9IjI2OCIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjI1MCIgeT0iMjcyIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPlJpbzwvdGV4dD48Y2lyY2xlIGN4PSIyMzUiIGN5PSIyOTAiIHI9IjgiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjUwIiB5PSIyOTQiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q2lkYWRlPC90ZXh0Pjwvc3ZnPg==",
+      "alt": "Mapa de Portugal com os rios, as cidades de Guimarães, Coimbra, Leiria, Santarém, Lisboa e Faro e as cores do crescimento do reino",
+      "paragrafos": [
+        "Quando Portugal nasceu, os Muçulmanos ainda ocupavam o sul. Os reis portugueses foram conquistando as terras **de norte para sul**.",
+        "Em **1147**, D. Afonso Henriques conquistou **Santarém** e **Lisboa**. Em Lisboa teve a ajuda dos **cruzados**, cavaleiros cristãos que iam a caminho da Terra Santa.",
+        "O **Algarve** foi a última região a ser conquistada: **D. Afonso III** conquistou **Faro** em **1249**.",
+        "Em **1297**, D. Dinis assinou com Castela o **Tratado de Alcanices**, que fixou as fronteiras de Portugal. São quase as mesmas de hoje!",
+        "**Guimarães** fica entre os rios Minho e Douro. **Coimbra** fica junto ao rio Mondego; lá está sepultado D. Afonso Henriques, no Mosteiro de Santa Cruz. **Leiria** fica entre o Mondego e o Tejo, perto do mar. **Santarém** e **Lisboa** ficam junto ao rio Tejo. **Faro** fica no litoral sul."
+      ],
+      "lembra": "O rio Minho faz a fronteira a norte; do outro lado fica a Galiza, que pertencia ao Reino de Leão."
+    },
+    {
+      "id": "sociedade",
+      "emoji": "🏰",
+      "titulo": "A vida no reino",
+      "paragrafos": [
+        "A sociedade estava dividida em três grupos: o **clero** (padres e monges, que rezavam), a **nobreza** (senhores e cavaleiros, que combatiam) e o **povo** (que trabalhava).",
+        "A maior parte das pessoas vivia **no campo** e trabalhava na **agricultura**.",
+        "Os **castelos** serviam para defender as terras e as pessoas dos ataques inimigos.",
+        "Os reis davam **forais** às povoações: documentos com os **direitos e deveres** dos habitantes. Assim atraíam pessoas para as terras conquistadas.",
+        "As **Cortes** eram reuniões do rei com representantes dos grupos sociais. Nas **Cortes de Leiria**, em **1254**, o povo participou pela primeira vez.",
+        "A **Lei das Sesmarias**, de D. Fernando, obrigava a cultivar as terras abandonadas, para haver mais alimentos."
+      ]
+    },
+    {
+      "id": "fontes",
+      "emoji": "🔍",
+      "titulo": "As fontes históricas",
+      "paragrafos": [
+        "Como sabemos o que aconteceu há tantos anos? Os historiadores estudam **fontes históricas**: tudo o que ficou do passado e nos dá informações sobre ele."
+      ],
+      "tabela": [
+        [
+          "Fontes escritas 📜",
+          "Fontes materiais 🏰"
+        ],
+        [
+          "Documentos escritos: tratados, forais, bulas, testamentos, leis, cantigas e livros",
+          "Construções e objetos: castelos, mosteiros, igrejas, túmulos, moedas, armas e ferramentas"
+        ],
+        [
+          "Ex.: Tratado de Zamora, testamento de D. Afonso II",
+          "Ex.: Castelo de Guimarães, Mosteiro de Alcobaça"
+        ]
+      ],
+      "lembra": "Pergunta a ti próprio: «Tem palavras escritas?» Se sim, é uma fonte escrita. Se é uma construção ou um objeto, é uma fonte material."
+    },
+    {
+      "id": "tempo",
+      "emoji": "⏳",
+      "titulo": "Contar o tempo",
+      "paragrafos": [
+        "Um **friso cronológico** é uma linha onde pomos os acontecimentos **do mais antigo para o mais recente**.",
+        "Para ordenar datas, compara primeiro os **milhares**, depois as **centenas**, as **dezenas** e as **unidades**. Exemplo: 1128 vem antes de 1143.",
+        "Um **século** tem **100 anos**. Os anos de **1101 a 1200** formam o **século XII**; de 1201 a 1300, o século XIII; de 1301 a 1400, o século XIV.",
+        "Para saber quantos anos passaram entre duas datas, faz uma **subtração**: 1383 − 1143 = **240 anos**."
+      ],
+      "tabela": [
+        [
+          "Século",
+          "Anos",
+          "Na 1.ª dinastia"
+        ],
+        [
+          "XII",
+          "1101–1200",
+          "1143: nasce o reino"
+        ],
+        [
+          "XIII",
+          "1201–1300",
+          "1249: conquista de Faro"
+        ],
+        [
+          "XIV",
+          "1301–1400",
+          "1383: morre D. Fernando"
+        ]
+      ]
+    },
+    {
+      "id": "escrever",
+      "emoji": "✍️",
+      "titulo": "Como escrever uma boa frase",
+      "lista": [
+        "Começa com **letra maiúscula**.",
+        "Os nomes próprios também levam maiúscula: **D. Dinis**, **Lisboa**, **Zamora**.",
+        "Escreve **pelo menos 8 palavras** e explica a tua ideia com palavras como **porque**, **por isso** ou **quando**.",
+        "Termina com **ponto final**.",
+        "No fim, **relê** a frase para ver se falta alguma palavra ou algum acento."
+      ],
+      "paragrafos": [
+        "Exemplo: **A Rainha Santa Isabel era casada com D. Dinis e, segundo a lenda, transformou pão em rosas.**"
+      ],
+      "lembra": "Se não te lembras de um facto, volta ao índice do caderno e consulta a página certa."
+    }
+  ],
+  "escape": {
+    "titulo": "🏰 Fuga do Castelo",
+    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas**, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
+    "palavra": "DINASTIA",
+    "cadeado": "As 8 letras das chaves estão **baralhadas**! Ordena-as e escreve a palavra secreta que abre o portão do castelo.",
+    "pista": "É o nome que se dá a uma **sequência de reis da mesma família**. A 1.ª chamou-se Afonsina.",
+    "vitoria": "O portão abriu-se e o Ticl@s está livre! És um verdadeiro investigador da 1.ª dinastia."
+  },
+  "abertura": [
+    {
+      "emoji": "🏰 🌙",
+      "titulo": "Fuga do Castelo",
+      "texto": "Já conheces a 1.ª dinastia. Mas, atenção: o Ticl@s ficou **fechado no castelo**!",
+      "pose": "duvida"
+    },
+    {
+      "emoji": "🚪 🔒 🚪 🔒",
+      "texto": "O castelo tem **8 salas** fechadas. Para abrir cada sala, tens de resolver os desafios."
+    },
+    {
+      "emoji": "🔑",
+      "texto": "Em cada sala encontras uma **chave com uma letra**. Guarda-as bem!"
+    },
+    {
+      "emoji": "🔐",
+      "texto": "No fim, as letras formam a **palavra secreta** que abre o portão do castelo."
+    },
+    {
+      "emoji": "📖",
+      "texto": "Tens dúvidas? Consulta o **Caderno do Ticl@s**. Boa sorte, investigador!",
+      "pose": "ideia"
+    }
+  ],
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "verdadeiro_falso",
+      "baralhar": true,
+      "titulo": "Portão do castelo",
+      "icone": "🏰",
+      "chave": "S",
+      "consulta": "nascimento",
+      "instrucao": "Para entrar no castelo, decide se cada frase é verdadeira ou falsa.",
+      "itens": [
+        {
+          "afirmacao": "O Condado Portucalense existiu antes do Reino de Portugal.",
+          "verdade": true,
+          "emoji": "📜"
+        },
+        {
+          "afirmacao": "D. Teresa era filha do rei de Leão e Castela, Afonso VI.",
+          "verdade": true,
+          "emoji": "👸"
+        },
+        {
+          "afirmacao": "A Batalha de São Mamede aconteceu depois do Tratado de Zamora.",
+          "verdade": false,
+          "emoji": "⚔️",
+          "explicacao": "São Mamede foi em 1128 e Zamora em 1143: a batalha foi antes."
+        },
+        {
+          "afirmacao": "Em 1143, Portugal passou a ser um reino.",
+          "verdade": true,
+          "emoji": "👑"
+        },
+        {
+          "afirmacao": "O Papa reconheceu Portugal como reino antes de 1143.",
+          "verdade": false,
+          "emoji": "⛪",
+          "explicacao": "O Papa só o reconheceu em 1179, com uma bula."
+        },
+        {
+          "afirmacao": "D. Afonso Henriques lutou contra a sua própria mãe.",
+          "verdade": true,
+          "emoji": "🤴"
+        },
+        {
+          "afirmacao": "Os Romanos ocuparam a Península Ibérica depois dos Muçulmanos.",
+          "verdade": false,
+          "emoji": "🏛️",
+          "explicacao": "Os Romanos vieram primeiro; os Muçulmanos chegaram em 711."
+        },
+        {
+          "afirmacao": "A Reconquista avançou do sul para o norte.",
+          "verdade": false,
+          "emoji": "🧭",
+          "explicacao": "Avançou de norte para sul: os Muçulmanos estavam no sul."
+        },
+        {
+          "afirmacao": "O Tratado de Alcanices fixou as fronteiras de Portugal com Castela.",
+          "verdade": true,
+          "emoji": "🗺️"
+        },
+        {
+          "afirmacao": "Os forais eram moedas de ouro que o rei oferecia.",
+          "verdade": false,
+          "emoji": "🪙",
+          "explicacao": "Os forais eram documentos com os direitos e deveres dos habitantes."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Sala do trono",
+      "icone": "👑",
+      "chave": "A",
+      "consulta": "reis",
+      "instrucao": "Os reis desarrumaram-se! Ordena do primeiro para o último.",
+      "itens": [
+        {
+          "emoji": "👑",
+          "pecas": [
+            "D. Afonso Henriques",
+            "D. Sancho I",
+            "D. Afonso II"
+          ]
+        },
+        {
+          "emoji": "👑",
+          "pecas": [
+            "D. Sancho II",
+            "D. Afonso III",
+            "D. Dinis"
+          ]
+        },
+        {
+          "emoji": "👑",
+          "pecas": [
+            "D. Afonso IV",
+            "D. Pedro I",
+            "D. Fernando"
+          ]
+        },
+        {
+          "emoji": "🏷️",
+          "pecas": [
+            "o Conquistador",
+            "o Povoador",
+            "o Gordo",
+            "o Capelo"
+          ],
+          "dica": "Os cognomes seguem a ordem dos reis: o 1.º rei foi o Conquistador."
+        },
+        {
+          "emoji": "🏷️",
+          "pecas": [
+            "o Bolonhês",
+            "o Lavrador",
+            "o Bravo",
+            "o Justiceiro",
+            "o Formoso"
+          ]
+        },
+        {
+          "emoji": "📅",
+          "pecas": [
+            "Conquista de Lisboa",
+            "Conquista de Faro",
+            "Tratado de Alcanices",
+            "Morte de D. Fernando"
+          ],
+          "dica": "1147, 1249, 1297 e 1383."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "baralhar": true,
+      "titulo": "Biblioteca do mosteiro",
+      "icone": "📚",
+      "chave": "I",
+      "consulta": "fontes",
+      "instrucao": "Arruma a biblioteca: cada fonte vai para a caixa certa.",
+      "caixas": [
+        "📜 Fonte escrita",
+        "🏰 Fonte material"
+      ],
+      "itens": [
+        [
+          "Livro de leis de D. Afonso II",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Carta escrita por um rei",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Livro de cantigas medievais",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Tratado de Alcanices",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Lei das Sesmarias",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Foral de uma vila",
+          "📜 Fonte escrita"
+        ],
+        [
+          "Castelo de Leiria",
+          "🏰 Fonte material"
+        ],
+        [
+          "Mosteiro de Santa Cruz",
+          "🏰 Fonte material"
+        ],
+        [
+          "Moeda medieval",
+          "🏰 Fonte material"
+        ],
+        [
+          "Escudo de um cavaleiro",
+          "🏰 Fonte material"
+        ],
+        [
+          "Muralha de uma cidade",
+          "🏰 Fonte material"
+        ],
+        [
+          "Túmulo de D. Pedro I",
+          "🏰 Fonte material"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "titulo": "Sala dos mapas",
+      "icone": "🗺️",
+      "chave": "D",
+      "consulta": "reconquista",
+      "instrucao": "Observa o mapa: os números, os rios e as cores.",
+      "itens": [
+        {
+          "pergunta": "Que cidade está no número 5?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Lisboa",
+          "erradas": [
+            "Santarém",
+            "Leiria"
+          ],
+          "dica": "Fica onde o rio Tejo chega ao mar."
+        },
+        {
+          "pergunta": "Que cidade está no número 4?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Guimarães",
+          "erradas": [
+            "Coimbra",
+            "Faro"
+          ]
+        },
+        {
+          "pergunta": "Que cidade está no número 3?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Faro",
+          "erradas": [
+            "Lisboa",
+            "Santarém"
+          ]
+        },
+        {
+          "pergunta": "Que cidade está no número 2?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Coimbra",
+          "erradas": [
+            "Leiria",
+            "Guimarães"
+          ],
+          "dica": "Fica junto ao rio Mondego."
+        },
+        {
+          "pergunta": "Que cidade está no número 1?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Santarém",
+          "erradas": [
+            "Lisboa",
+            "Coimbra"
+          ]
+        },
+        {
+          "pergunta": "Que cidade está no número 6?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Leiria",
+          "erradas": [
+            "Coimbra",
+            "Santarém"
+          ]
+        },
+        {
+          "pergunta": "Entre que rios fica o número 4?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Minho e Douro",
+          "erradas": [
+            "Douro e Mondego",
+            "Tejo e Guadiana"
+          ]
+        },
+        {
+          "pergunta": "Que número é uma cidade conquistada em 1147?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "1",
+          "erradas": [
+            "2",
+            "4"
+          ],
+          "explicacao": "Em 1147 foram conquistadas Santarém (1) e Lisboa (5)."
+        },
+        {
+          "pergunta": "De que cor está a região conquistada em 1249?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI4Mi41IiB5PSIxOTIuMSIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MTwvdGV4dD48Y2lyY2xlIGN4PSI5NC4xIiBjeT0iMTI5LjQiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iOTQuMSIgeT0iMTMzLjkiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjI8L3RleHQ+PGNpcmNsZSBjeD0iMTE3LjIiIGN5PSIzMjAuOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSIxMTcuMiIgeT0iMzI1LjMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjM8L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSIxMCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjEwMC41IiB5PSI2MC4xIiBmb250LXNpemU9IjEzIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj40PC90ZXh0PjxjaXJjbGUgY3g9IjYxLjMiIGN5PSIyMTguOCIgcj0iMTAiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48dGV4dCB4PSI2MS4zIiB5PSIyMjMuMyIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjEwIiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iNzYuNSIgeT0iMTYyLjEiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjY8L3RleHQ+PHRleHQgeD0iMjAiIHk9IjIyMCIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJGODBDOSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDIwIDIyMCkiIGxldHRlci1zcGFjaW5nPSIyIj5PQ0VBTk8gQVRMw4JOVElDTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjQwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SRUlOTyBERSBMRcODTzwvdGV4dD48dGV4dCB4PSIyODYiIHk9IjU0IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5FIENBU1RFTEE8L3RleHQ+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjg2IDEwMCkiPjxwb2x5Z29uIHBvaW50cz0iMCwtMjIgNiwwIDAsLTQgLTYsMCIgZmlsbD0iIzVCNDYzNiIvPjxwb2x5Z29uIHBvaW50cz0iMCwyMiA2LDAgMCw0IC02LDAiIGZpbGw9IiNCOUE4OEMiLz48dGV4dCB4PSIwIiB5PSItMjYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiM1QjQ2MzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk48L3RleHQ+PHRleHQgeD0iMCIgeT0iMzYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiM3QTY1NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlM8L3RleHQ+PC9nPjx0ZXh0IHg9IjIyNiIgeT0iMTU4IiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2Ij5MZWdlbmRhPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTcwIiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjdEMjdBIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjE4MSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5SZWlubyBlbSAxMTQzPC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMTk2IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjOUZEM0E4IiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjIwNyIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5Db25xdWlzdGFzIGRlPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iMjIwIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPjExNDcgYSAxMjQ4PC90ZXh0PjxyZWN0IHg9IjIyNiIgeT0iMjM0IiB3aWR0aD0iMTgiIGhlaWdodD0iMTQiIHJ4PSIzIiBmaWxsPSIjRjRBOUEwIiBzdHJva2U9IiM1QjQ2MzYiLz48dGV4dCB4PSIyNTAiIHk9IjI0NSIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5BbGdhcnZlICgxMjQ5KTwvdGV4dD48bGluZSB4MT0iMjI2IiB5MT0iMjY4IiB4Mj0iMjQ0IiB5Mj0iMjY4IiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi41Ii8+PHRleHQgeD0iMjUwIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmlvPC90ZXh0PjxjaXJjbGUgY3g9IjIzNSIgY3k9IjI5MCIgcj0iOCIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjI5NCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij5DaWRhZGU8L3RleHQ+PC9zdmc+",
+          "imagemGrande": true,
+          "alt": "Mapa de Portugal com os rios Minho, Douro, Mondego, Tejo e Guadiana, seis cidades numeradas de 1 a 6 e três cores que mostram o crescimento do reino de norte para sul",
+          "certa": "Rosa",
+          "erradas": [
+            "Amarelo",
+            "Verde"
+          ],
+          "explicacao": "A rosa é o Algarve, conquistado por D. Afonso III."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "titulo": "Torre do relógio",
+      "icone": "⏳",
+      "chave": "T",
+      "consulta": "tempo",
+      "instrucao": "O relógio da torre parou! Faz as contas e completa.",
+      "itens": [
+        {
+          "frase": "O ano de 1128 pertence ao século ___.",
+          "emoji": "🔢",
+          "certa": "XII",
+          "erradas": [
+            "XI",
+            "XIII"
+          ],
+          "dica": "De 1101 a 1200 é o século XII."
+        },
+        {
+          "frase": "O ano de 1249 pertence ao século ___.",
+          "emoji": "🔢",
+          "certa": "XIII",
+          "erradas": [
+            "XII",
+            "XIV"
+          ]
+        },
+        {
+          "frase": "O ano de 1383 pertence ao século ___.",
+          "emoji": "🔢",
+          "certa": "XIV",
+          "erradas": [
+            "XIII",
+            "XV"
+          ]
+        },
+        {
+          "frase": "Um século tem ___ anos.",
+          "emoji": "💯",
+          "certa": "100",
+          "erradas": [
+            "10",
+            "1000"
+          ]
+        },
+        {
+          "frase": "O século XII vai de 1101 a ___.",
+          "emoji": "📅",
+          "certa": "1200",
+          "erradas": [
+            "1199",
+            "1300"
+          ]
+        },
+        {
+          "frase": "De 1143 a 1179 passaram ___ anos.",
+          "emoji": "🧮",
+          "certa": "36",
+          "erradas": [
+            "26",
+            "46"
+          ],
+          "dica": "1179 − 1143"
+        },
+        {
+          "frase": "D. Afonso Henriques reinou de 1143 a 1185, ou seja, ___ anos.",
+          "emoji": "🧮",
+          "certa": "42",
+          "erradas": [
+            "32",
+            "52"
+          ],
+          "dica": "1185 − 1143"
+        },
+        {
+          "frase": "D. Dinis reinou de 1279 a 1325, ou seja, ___ anos.",
+          "emoji": "🧮",
+          "certa": "46",
+          "erradas": [
+            "36",
+            "56"
+          ],
+          "dica": "1325 − 1279"
+        },
+        {
+          "frase": "Entre a conquista de Lisboa (1147) e a de Faro (1249) passaram ___ anos.",
+          "emoji": "🧮",
+          "certa": "102",
+          "erradas": [
+            "92",
+            "112"
+          ],
+          "dica": "1249 − 1147"
+        },
+        {
+          "frase": "A 1.ª dinastia passou por ___ séculos: o XII, o XIII e o XIV.",
+          "emoji": "⏳",
+          "certa": "3",
+          "erradas": [
+            "2",
+            "4"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "baralhar": true,
+      "titulo": "Salão das Cortes",
+      "icone": "🗣️",
+      "chave": "N",
+      "consulta": "sociedade",
+      "instrucao": "Liga cada palavra ao seu significado.",
+      "itens": [
+        [
+          "clero",
+          "padres e monges, que rezavam"
+        ],
+        [
+          "nobreza",
+          "senhores e cavaleiros, que combatiam"
+        ],
+        [
+          "povo",
+          "quem trabalhava nos campos e nos ofícios"
+        ],
+        [
+          "foral",
+          "direitos e deveres de uma povoação"
+        ],
+        [
+          "Cortes",
+          "reunião do rei com os grupos sociais"
+        ],
+        [
+          "castelo",
+          "construção para defender as terras"
+        ],
+        [
+          "Lei das Sesmarias",
+          "obrigava a cultivar as terras abandonadas"
+        ],
+        [
+          "cruzados",
+          "cavaleiros cristãos que ajudaram a conquistar Lisboa"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "baralhar": true,
+      "titulo": "Cripta dos reis",
+      "icone": "⚱️",
+      "chave": "A",
+      "consulta": "obras",
+      "instrucao": "Na cripta, cada túmulo tem uma pista. Descobre quem é.",
+      "itens": [
+        {
+          "pergunta": "O meu cognome lembra que mandei povoar as terras conquistadas.",
+          "emoji": "🏘️",
+          "certa": "D. Sancho I",
+          "erradas": [
+            "D. Sancho II",
+            "D. Afonso II"
+          ]
+        },
+        {
+          "pergunta": "Sou neto de Afonso VI e o meu pai chamava-se D. Henrique.",
+          "emoji": "🤴",
+          "certa": "D. Afonso Henriques",
+          "erradas": [
+            "D. Sancho I",
+            "D. Afonso III"
+          ]
+        },
+        {
+          "pergunta": "Reinei 46 anos e assinei o tratado que fixou as fronteiras do reino.",
+          "emoji": "🗺️",
+          "certa": "D. Dinis",
+          "erradas": [
+            "D. Afonso III",
+            "D. Fernando"
+          ]
+        },
+        {
+          "pergunta": "Antes de reinar vivi em França; o meu cognome lembra essa terra.",
+          "emoji": "🧳",
+          "certa": "D. Afonso III",
+          "erradas": [
+            "D. Afonso IV",
+            "D. Pedro I"
+          ]
+        },
+        {
+          "pergunta": "O meu reinado terminou em 1383 e, com ele, acabou a 1.ª dinastia.",
+          "emoji": "🏁",
+          "certa": "D. Fernando",
+          "erradas": [
+            "D. Pedro I",
+            "D. Afonso IV"
+          ]
+        },
+        {
+          "pergunta": "Fui o 3.º rei e mandei fazer as primeiras leis gerais do reino.",
+          "emoji": "📜",
+          "certa": "D. Afonso II",
+          "erradas": [
+            "D. Sancho II",
+            "D. Dinis"
+          ]
+        },
+        {
+          "pergunta": "Sou filho de D. Afonso IV e o meu cognome fala de justiça.",
+          "emoji": "⚖️",
+          "certa": "D. Pedro I",
+          "erradas": [
+            "D. Fernando",
+            "D. Dinis"
+          ]
+        },
+        {
+          "pergunta": "Fui o 7.º rei e mostrei grande coragem na Batalha do Salado.",
+          "emoji": "🐎",
+          "certa": "D. Afonso IV",
+          "erradas": [
+            "D. Afonso Henriques",
+            "D. Sancho II"
+          ]
+        },
+        {
+          "pergunta": "Fui o 4.º rei e chamavam-me «o Capelo».",
+          "emoji": "🛡️",
+          "certa": "D. Sancho II",
+          "erradas": [
+            "D. Sancho I",
+            "D. Afonso II"
+          ]
+        },
+        {
+          "pergunta": "Fui mulher de D. Dinis e, segundo a lenda, transformei pão em rosas.",
+          "emoji": "🌹",
+          "certa": "Rainha Santa Isabel",
+          "erradas": [
+            "D. Teresa",
+            "D. Inês de Castro"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Torre do cronista",
+      "icone": "✍️",
+      "chave": "I",
+      "consulta": "escrever",
+      "instrucao": "A última sala só abre com frases bem escritas: maiúscula no início, ideia completa e ponto final.",
+      "itens": [
+        {
+          "pergunta": "Explica por que razão o ano de 1143 é tão importante para Portugal.",
+          "minPalavras": 8,
+          "emoji": "👑",
+          "dica": "O que aconteceu no Tratado de Zamora?"
+        },
+        {
+          "pergunta": "Escolhe uma fonte histórica da 1.ª dinastia e explica se é escrita ou material.",
+          "minPalavras": 8,
+          "emoji": "🔍",
+          "dica": "Tem palavras escritas? Então é escrita. É uma construção ou um objeto? Então é material."
+        },
+        {
+          "pergunta": "Escreve uma frase com os cognomes de dois reis da 1.ª dinastia.",
+          "minPalavras": 8,
+          "emoji": "🏷️",
+          "dica": "Por exemplo: o Povoador, o Lavrador, o Bravo…"
+        },
+        {
+          "pergunta": "Imagina que eras um cavaleiro na conquista de Lisboa, em 1147. Escreve o que viste.",
+          "minPalavras": 10,
+          "emoji": "⛵",
+          "dica": "Quem ajudou D. Afonso Henriques? Onde fica Lisboa?"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória dos cognomes",
+      "consulta": "reis",
+      "instrucao": "Jogo da memória: encontra cada rei e o seu cognome.",
+      "itens": [
+        [
+          "D. Afonso Henriques",
+          "o Conquistador"
+        ],
+        [
+          "D. Sancho I",
+          "o Povoador"
+        ],
+        [
+          "D. Dinis",
+          "o Lavrador"
+        ],
+        [
+          "D. Afonso IV",
+          "o Bravo"
+        ],
+        [
+          "D. Pedro I",
+          "o Justiceiro"
+        ],
+        [
+          "D. Fernando",
+          "o Formoso"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "baralhar": true,
+      "titulo": "Balões do castelo",
+      "consulta": "obras",
+      "instrucao": "Rebenta o balão com a resposta certa.",
+      "itens": [
+        {
+          "pergunta": "Segundo a tradição, onde nasceu D. Afonso Henriques?",
+          "emoji": "🏰",
+          "certa": "Guimarães",
+          "erradas": [
+            "Coimbra",
+            "Lisboa"
+          ]
+        },
+        {
+          "pergunta": "Que rei criou a primeira universidade?",
+          "emoji": "🎓",
+          "certa": "D. Dinis",
+          "erradas": [
+            "D. Sancho I",
+            "D. Pedro I"
+          ]
+        },
+        {
+          "pergunta": "Que região foi conquistada em último lugar?",
+          "emoji": "🏖️",
+          "certa": "O Algarve",
+          "erradas": [
+            "O Alentejo",
+            "O Minho"
+          ]
+        },
+        {
+          "pergunta": "Que documento do Papa reconheceu o reino, em 1179?",
+          "emoji": "⛪",
+          "certa": "Uma bula",
+          "erradas": [
+            "Um foral",
+            "Um tratado"
+          ]
+        },
+        {
+          "pergunta": "Onde fica Coimbra?",
+          "emoji": "🌊",
+          "certa": "Junto ao rio Mondego",
+          "erradas": [
+            "Junto ao rio Minho",
+            "Junto ao rio Guadiana"
+          ]
+        },
+        {
+          "pergunta": "Quantos reis teve a 1.ª dinastia?",
+          "emoji": "👑",
+          "certa": "9",
+          "erradas": [
+            "7",
+            "11"
+          ]
+        }
+      ]
+    }
+  ]
+}

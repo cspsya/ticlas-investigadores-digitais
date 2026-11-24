@@ -818,5 +818,23 @@
       "Rato: arrastar",
       "Teclado: escrever frases"
     ]
+  },
+  {
+    "id": "2026-11-25-4ano-primeira-dinastia-escape",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Escape Room: Fuga do Castelo",
+    "descricao": "Revisões da 1.ª dinastia em escape room: 8 salas (formação do reino, reis e cognomes, fontes, mapa, séculos e datas, sociedade, «Quem sou eu?» e escrita), chaves com letras e cadeado final",
+    "disciplina": "Estudo do Meio",
+    "data": "2026-11-25",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-25_4ano_EstudoDoMeio_1Dinastia_EscapeRoom_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "O Ticl@s ficou fechado no castelo! Abre as 8 salas e descobre a palavra secreta.",
+    "focoTic": [
+      "Rato: arrastar",
+      "Teclado: escrever frases"
+    ]
   }
 ]

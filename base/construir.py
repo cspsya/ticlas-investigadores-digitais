@@ -253,8 +253,33 @@ def validar(a):
         e.append("Tem de existir pelo menos uma ronda que não seja de bónus.")
     e.extend(validar_consulta(a))
     e.extend(validar_filmes(a))
+    e.extend(validar_escape(a))
     return e
 
+
+def norm_escape(x):
+    x = unicodedata.normalize("NFD", str(x or ""))
+    return "".join(ch for ch in x if unicodedata.category(ch) != "Mn" and ch.isalnum()).upper()
+
+
+def validar_escape(a):
+    """Escape room (V3.8): as mesmas regras de validarEscape() em src/motor.js."""
+    E = a.get("escape")
+    if E is None:
+        return []
+    if not isinstance(E, dict):
+        return ["«escape» tem de ser um objeto { ... }."]
+    e = []
+    if not tem_texto(E.get("palavra")):
+        e.append("Escape room: falta a «palavra» secreta do cadeado final.")
+    rondas = [r for r in a.get("rondas", []) if isinstance(r, dict)]
+    for ri, r in enumerate(a.get("rondas", []), 1):
+        if isinstance(r, dict) and "chave" in r and not (tem_texto(str(r["chave"])) and len(str(r["chave"])) <= 4):
+            e.append(f"Ronda {ri}: «chave» tem de ser uma letra, um número ou um texto curto (até 4 caracteres).")
+    chaves = [str(r["chave"]) for r in rondas if r.get("fase") != "bonus" and "chave" in r]
+    if tem_texto(E.get("palavra")) and chaves and sorted(norm_escape("".join(chaves))) != sorted(norm_escape(E["palavra"])):
+        e.append(f"Escape room: as chaves das salas («{' '.join(chaves)}») não têm exatamente as letras da palavra «{E['palavra']}».")
+    return e
 
 POSES = ["ola", "aponta", "duvida", "ideia", "portatil", "trofeu"]
 
