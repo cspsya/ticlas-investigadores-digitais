@@ -232,6 +232,16 @@ button:disabled{cursor:default}
 /* Paisagem: fundo decorativo sem interferir com a seleção dos blocos. */
 .stage{background:radial-gradient(ellipse at 30% 8%,#ffffff65 0,transparent 42%),linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 100%)}
 .stage:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 66%,#51778b0b 100%)}
+</style><style>
+.mission-menu-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px}.mission-menu-head .sec{margin:8px 0 0}
+#missionProgress{font-size:13px;font-weight:800;color:var(--ui-muted)}
+.mission-card-skill{font:700 11px/1.3 Nunito,sans-serif;color:var(--ui-muted);min-height:2.6em;display:flex;align-items:center;text-align:center}
+.mission-card-done{font:800 11px Nunito,sans-serif;color:#377550}
+.mission-info{font:800 12px Nunito,sans-serif;color:var(--ui-blue);letter-spacing:.01em}
+.mission-objective,.mission-hint{font-size:15px!important;text-align:left;background:#eef4f7;border-radius:9px;padding:10px 12px}
+.mission-hint{background:#fff3d7}
+.modal{max-height:90dvh;overflow:auto}.modal:has(.mission-info){max-width:480px}.modal:has(.mission-info) .ic{height:90px;width:96px}.modal:has(.mission-info) h3{font-size:25px}
+@media(max-width:760px){#btnMission{font-size:12px}.mission-card-skill{min-height:0}}
 </style></head>
 <body>
 <div id="app">
@@ -267,15 +277,15 @@ button:disabled{cursor:default}
       </div>
       <h3 class="sec">Construir à vontade</h3>
       <div class="cards" id="cardsW"></div>
-      <h3 class="sec">Desafios</h3>
+      <div class="mission-menu-head"><h3 class="sec">Missões do Ticl@s</h3><span id="missionProgress" aria-live="polite"></span></div>
       <div class="cards" id="cards"></div>
     </section>
 
     <section class="scr" id="game">
       <div class="cbar">
-        <button class="nbtn home" id="gMenu">☰ Desafios</button>
+        <button class="nbtn home" id="gMenu">☰ Missões</button>
         <button class="nbtn" id="gPrev">◀ Anterior</button>
-        <div class="info"><div class="tt" id="gTt"></div><div class="tx" id="gTx"></div></div>
+        <div class="info"><div class="tt" id="gTt"></div><div class="tx" id="gTx"></div></div><button class="nbtn home" id="btnMission" title="Consultar a missão e a pista">A minha missão</button>
         <button class="nbtn" id="gNext">Próximo ▶</button>
       </div>
       <div class="gbody">
@@ -446,6 +456,11 @@ const CH={
   {t:'code',titulo:'O construtor',txt:'Programa o Ticl@s para construir o muro de 4 tijolos (contornos brancos).',N:7,start:{x:1,y:1,d:0},targets:[1,2,3,4].map(y=>B(2,y,0,'tijolo')),place:'tijolo',cmds:['fwd','left','right','place','rep'],best:5,meta:'O bloco aparece à frente do Ticl@s. Consegues com 5 peças?'},
   {t:'code',titulo:'A volta ao quadrado',txt:'Apanha as 3 bolotas e volta à bandeira de partida.',N:6,start:{x:1,y:1,d:0},acorns:[[4,1],[4,4],[1,4]],flag:{x:1,y:1},cmds:['fwd','left','right','rep'],best:5,meta:'Usa o Repetir: consegues com 5 peças?'}
 ]};
+
+// Narrativas independentes das regras de avaliação e das coordenadas originais.
+const MISSIONS={"1":[["A torre de vigia","O Ticl@s quer ver a aldeia do alto. Ajuda-o a construir uma torre.","Observa o modelo e começa pelo bloco de baixo.","A torre está pronta! O Ticl@s já pode observar a aldeia.","Orientação espacial"],["Um muro para o jardim","O jardim do Ticl@s precisa de um pequeno muro de proteção.","Coloca os blocos de pedra lado a lado.","O jardim ganhou um muro!","Sequências e alinhamento"],["Uma árvore para a aldeia","O Ticl@s quer criar um lugar com sombra para descansar.","Constrói primeiro o tronco e depois acrescenta as folhas.","A aldeia ganhou uma árvore!","Formas e relações espaciais"],["A escada do miradouro","O Ticl@s precisa de uma escada para chegar a um local mais alto.","Compara a altura de cada coluna com o modelo.","O caminho para o miradouro está pronto!","Ordenação e alturas"],["Uma piscina para os amigos","O Ticl@s quer preparar um espaço para brincar com os amigos.","Faz a margem de areia e coloca a água no centro.","A piscina está pronta para receber os amigos!","Interior e exterior"]],"2":[["O muro dos padrões","O Ticl@s começou um muro com dois materiais diferentes. Descobre a regra para o terminar.","Observa os dois blocos iniciais e identifica a ordem que se repete.","Terminaste o muro seguindo o padrão!","Regularidades"],["Duas torres na praça","A praça da aldeia precisa de duas torres com alturas diferentes.","Conta os blocos de cada torre antes de construir.","As duas torres têm as alturas certas!","Contagem e comparação"],["A escada crescente","O Ticl@s quer uma escada em que cada coluna tenha mais um bloco do que a anterior.","Conta os blocos de cada coluna: 1, 2, 3 e 4.","Construíste uma escada com alturas crescentes!","Sequências numéricas"],["A piscina da aldeia","Os habitantes pediram uma piscina maior, com uma margem de areia.","Observa onde ficam os quatro blocos de água e a margem.","A nova piscina está pronta!","Contagem e organização espacial"],["O caminho até à bandeira","O Ticl@s tem de chegar à bandeira para assinalar o local de encontro.","Observa a direção do Ticl@s e conta as casas do percurso.","O Ticl@s chegou ao ponto de encontro!","Algoritmos e sequências"],["Um desvio no caminho","Um muro interrompeu o percurso do Ticl@s. Ajuda-o a encontrar outro caminho.","Planeia o percurso antes de executar. Lembra-te de que rodar não significa avançar.","Encontraste um caminho sem atravessar o muro!","Resolução de problemas"]],"3":[["Uma casa para a aldeia","Chegou um novo vizinho à aldeia. O Ticl@s precisa da tua ajuda para construir uma casa.","Roda o modelo para observar os cantos, a porta e a janela.","O novo vizinho já tem uma casa!","Modelação e orientação espacial"],["Uma ponte sobre o rio","O rio separa duas margens da aldeia. Constrói uma passagem para as unir.","Começa pelos pilares e coloca as tábuas por cima do rio.","As duas margens estão ligadas!","Planeamento de construções"],["A recolha de bolotas","O Ticl@s está a recolher bolotas para guardar. Ajuda-o a apanhar todas e a chegar à bandeira.","Procura uma instrução que possa ser repetida várias vezes.","Recolheste todas as bolotas e chegaste à bandeira!","Ciclos de repetição"],["O percurso em ziguezague","Os arbustos dificultam a passagem do Ticl@s. Descobre um percurso seguro.","Procura uma sequência de movimentos que se repita.","O Ticl@s atravessou os arbustos em segurança!","Padrões em algoritmos"],["O construtor programável","O Ticl@s quer construir um muro automaticamente. Prepara um programa que coloque quatro tijolos.","O bloco é colocado à frente do Ticl@s. Planeia os movimentos e as rotações.","O programa construiu o muro!","Automatização e algoritmos"],["A volta ao quadrado","O Ticl@s vai recolher três bolotas e regressar ao ponto de partida.","Identifica os lados e as rotações que se repetem ao percorrer um quadrado.","Recolheste as bolotas e regressaste à partida!","Ciclos e orientação espacial"]]};
+function missionFor(y,i){return MISSIONS[y]&&MISSIONS[y][i]||null}
+function currentMission(){return (S.mode==='build'||S.mode==='code')?missionFor(S.year,S.idx):null}
 
 /* ================= mundos prontos ================= */
 const WN=24;
@@ -700,6 +715,7 @@ function modal(html,btns){const m=$('#modal');m.innerHTML=html;const row=el('div
   for(const b of btns){const bt=el('button','abtn '+(b.c||''),b.t);bt.onclick=()=>{closeModal();b.f&&b.f()};row.append(bt)}
   m.append(row);$('#ov').classList.add('on')}
 function closeModal(){$('#ov').classList.remove('on')}
+function showMission(hint=false){const m=currentMission();if(!m||S.running)return;const ch=S.ch;modal(`${tic('ola')}<div class="mission-info">MISSÃO ${S.idx+1} · ${S.year}.º ANO · ${m[4]}</div><h3>${m[0]}</h3><p>${m[1]}</p><p class="mission-objective"><strong>Objetivo:</strong> ${ch.txt}</p>${hint?`<p class="mission-hint"><strong>Pista:</strong> ${m[2]}</p>`:''}`,[...(hint?[]:[{t:'Ver pista',f:()=>showMission(true)}]),{t:'Continuar missão',c:'go'}])}
 function confetti(){const cols=['#E8834A','#FFC857','#6BBF59','#5BA3D0','#F28DB2','#8E7CC3'];
   for(let i=0;i<70;i++){const c=el('div','confetti');c.style.left=Math.random()*100+'vw';c.style.background=cols[i%cols.length];
     c.style.animationDuration=(1.8+Math.random()*1.6)+'s';c.style.animationDelay=(Math.random()*.4)+'s';if(Math.random()<.4)c.style.borderRadius='50%';
@@ -709,21 +725,21 @@ function savedStars(v){return Number.isInteger(v)&&v>=0&&v<=3?v:0}
 function award(n){const k='y'+S.year;if(!SAVE[k]||typeof SAVE[k]!=='object'||Array.isArray(SAVE[k]))SAVE[k]={};SAVE[k][S.idx]=Math.max(savedStars(SAVE[k][S.idx]),n);persist()}
 function celebrate(n,extra){confetti();const t=['Muito bem!','Excelente!','Fantástico!','Grande construção!'][Math.floor(Math.random()*4)];
   let st='';for(let i=0;i<3;i++)st+=`<span class="${i<n?'on':''}" style="animation-delay:${.2+i*.25}s">★</span>`;
-  const last=S.idx>=CH[S.year].length-1;
-  modal(`${tic('trofeu')}<h3>${t}</h3><div class="bigstars">${st}</div>${extra?`<p>${extra}</p>`:'<p>Desafio concluído!</p>'}`,
-    [{t:'↺ Repetir',f:()=>startCh(S.idx)},{t:last?'☰ Desafios':'Próximo ▶',c:'go',f:()=>last?openMenu(S.year):startCh(S.idx+1)}])}
+  const last=S.idx>=CH[S.year].length-1,m=currentMission();
+  modal(`${tic('trofeu')}<h3>${t}</h3><div class="bigstars">${st}</div>${m?`<p>${m[3]}</p>`:'<p>Missão concluída!</p>'}${extra?`<p>${extra}</p>`:''}`,
+    [{t:'↺ Repetir',f:()=>startCh(S.idx)},{t:last?'☰ Missões':'Próxima missão ▶',c:'go',f:()=>last?openMenu(S.year):startCh(S.idx+1,true)}])}
 
 /* ---------- menu ---------- */
 function openMenu(y){S.year=y;show('menu');$('#mTitle').textContent=y+'.º ano';
   const cards=$('#cards');cards.innerHTML='';const list=CH[y];const sv=SAVE['y'+y]||{};
-  let tot=0;list.forEach((c,i)=>tot+=savedStars(sv[i]));$('#mStars').textContent='★ '+tot+' / '+list.length*3;
+  let tot=0,done=0;list.forEach((c,i)=>{const stars=savedStars(sv[i]);tot+=stars;if(stars>0)done++});$('#mStars').textContent='★ '+tot+' / '+list.length*3;$('#missionProgress').textContent=done+' de '+list.length+' missões concluídas';
   const cw=$('#cardsW');cw.innerHTML='';
   const fc=el('button','card free','<canvas></canvas><div class="cn">Mundo vazio</div><div class="ct">Construção livre</div><div class="stars">🧱</div>');
   fc.onclick=startFree;cw.append(fc);
   const gc=el('button','card world giant','<canvas></canvas><div class="cn">1000 × 1000</div><div class="ct">Mundo gigante</div><div class="stars">🗺️</div>');gc.onclick=startGiant;cw.append(gc);
   WORLDS.forEach((wd,i)=>{const c=el('button','card world',`<canvas></canvas><div class="cn">Mundo pronto${SAVE['w2_'+wd.id+'_'+y]?' · a continuar':''}</div><div class="ct">${wd.nome}</div><div class="stars">🌍</div>`);c.onclick=()=>startWorld(i);cw.append(c)});
-  list.forEach((ch,i)=>{const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">${ch.t==='code'?'Programar':'Construir'} · ${i+1}</div><div class="ct">${ch.titulo}</div><div class="stars">${starsHTML(savedStars(sv[i]))}</div>`);
-    c.onclick=()=>startCh(i);cards.append(c)});
+  list.forEach((ch,i)=>{const m=missionFor(y,i),stars=savedStars(sv[i]);const c=el('button','card'+(ch.t==='code'?' code':''),`<canvas></canvas><div class="cn">Missão ${i+1} · ${ch.t==='code'?'Programar':'Construir'}</div><div class="ct">${m?m[0]:ch.titulo}</div><div class="mission-card-skill">${m?m[4]:''}</div><div class="stars">${starsHTML(stars)}</div><div class="mission-card-done">${stars?'Concluída':'Por explorar'}</div>`);
+    c.onclick=()=>startCh(i,true);cards.append(c)});
   requestAnimationFrame(()=>{if(S.year!==y||!$('#menu').classList.contains('on')||!gc.isConnected)return;
     {const gcv=gc.querySelector('canvas'),d=DPR();gcv.width=gcv.clientWidth*d;gcv.height=gcv.clientHeight*d;const g=gcv.getContext('2d');g.imageSmoothingEnabled=false;const m=gMapImg(),sz=Math.min(gcv.width,gcv.height);g.drawImage(m,(gcv.width-sz)/2,0,sz,sz)}
     const fb=loadSaved('free'+y);renderMini(fc.querySelector('canvas'),{blocks:fb.size?fb:mapOf(CH[1][2].targets),sprites:[]},fb.size?20:7,fb.size?Math.max(6,maxZB(fb)+1.5):4);
@@ -742,12 +758,12 @@ function saveFree(){const a=[];for(const [k,b] of S.blocks){const p=k.split(',')
 function maxZB(m){let z=0;for(const k of m.keys())z=Math.max(z,+k.split(',')[2]);return z}
 function startFree(){S.mode='free';S.world=null;S.ch=null;S.N=20;S.hz=8;S.rot=0;S.cam={z:1.4,x:0,y:0};setupGame();resetWorld()}
 function startWorld(i){S.mode='world';S.world=WORLDS[i];S.ch=null;S.N=WN;S.rot=0;S.hz=Math.max(8,maxZB(S.world.gen())+3);S.cam={z:S.world.zoom||1.4,x:0,y:0};setupGame();resetWorld()}
-function startCh(i){S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
-  S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld()}
+function startCh(i,intro=false){if(!CH[S.year]||!CH[S.year][i])return;S.idx=i;S.ch=CH[S.year][i];S.mode=S.ch.t;S.N=S.ch.N;S.rot=0;S.cam={z:1,x:0,y:0};S.prog=[];S.runId++;S.running=false;
+  S.hz=S.mode==='code'?3:Math.max(3,maxZ(S.ch.targets)+2.5);setupGame();resetWorld();if(intro)showMission(false)}
 function setupGame(){S.runId++;S.running=false;setRunUI(false);drag=null;pointers.clear();pinch=null;PICK=null;S.prog=S.mode==='code'?S.prog:[];if(S.mode!=='practice'){practice=null;$('#practiceGuide').hidden=true}show('game');clearTimeout(toastT);$('#toast').classList.remove('on');closeModal();const gi=S.mode==='giant',training=S.mode==='practice',free=isFree()||gi||training,code=S.mode==='code',wd=S.mode==='world'?S.world:null;
-  $('#gTt').textContent=training?'Oficina de treino · Como jogar':gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Desafio ${S.idx+1} de ${CH[S.year].length} · ${S.ch.titulo}`;
+  $('#gTt').textContent=training?'Oficina de treino · Como jogar':gi?S.year+'.º ano · Mundo gigante · 1000 × 1000':wd?S.year+'.º ano · Mundo pronto · '+wd.nome:free?S.year+'.º ano · Construção livre':`${S.year}.º ano · ${code?'Programar':'Construir'} · Missão ${S.idx+1} de ${CH[S.year].length} · ${currentMission()?.[0]||S.ch.titulo}`;
   $('#gTx').textContent=training?'Aprende a construir seguindo os passos do Ticl@s.':gi?'Explora um mundo enorme com mar, praias, florestas e montanhas. Começas na aldeia: usa o mapa para não te perderes!':wd?wd.txt:free?'Constrói o que quiseres! Escolhe um material e clica no chão.':S.ch.txt;
-  $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';
+  $('#gPrev').style.display=$('#gNext').style.display=free?'none':'';$('#btnMission').style.display=free?'none':'';
   if(!free){$('#gPrev').disabled=S.idx===0;$('#gNext').disabled=S.idx>=CH[S.year].length-1}
   $('#buildPanel').style.display=code?'none':'flex';$('#camBox').style.display=free?'flex':'none';$('#zAll').style.display=gi?'none':'';$('#mini').style.display=gi?'block':'none';$('#codePanel').style.display=code?'flex':'none';
   $('#modelBox').style.display=S.mode==='build'?'block':'none';
@@ -920,8 +936,9 @@ $('#btnClearProg').onclick=()=>{if(S.running)return;S.runId++;S.prog=[];renderPr
 $$('.ybtn').forEach(b=>b.onclick=()=>openMenu(+b.dataset.y));
 $('#mBack').onclick=()=>show('home');$('#btnHome').onclick=()=>{closeModal();show('home')};
 $('#gMenu').onclick=()=>openMenu(S.year);
-$('#gPrev').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx>0)startCh(S.idx-1)};
-$('#gNext').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx<CH[S.year].length-1)startCh(S.idx+1)};
+$('#gPrev').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx>0)startCh(S.idx-1,true)};
+$('#gNext').onclick=()=>{if((S.mode==='build'||S.mode==='code')&&S.idx<CH[S.year].length-1)startCh(S.idx+1,true)};
+$('#btnMission').onclick=()=>showMission(true);
 $('#btnFull').onclick=()=>{const d=document;if(d.fullscreenElement)d.exitFullscreen();else if(d.documentElement.requestFullscreen)d.documentElement.requestFullscreen().catch(()=>{})};
 document.addEventListener('keydown',e=>{if(!$('#game').classList.contains('on')||$('#ov').classList.contains('on')||e.target.closest('input,select,textarea,button,[contenteditable]'))return;
   if(!e.ctrlKey&&!e.metaKey&&!e.altKey&&S.mode!=='code'&&['b','e'].includes(e.key.toLowerCase())){setTool(e.key.toLowerCase()==='b'?'place':'erase');return}
