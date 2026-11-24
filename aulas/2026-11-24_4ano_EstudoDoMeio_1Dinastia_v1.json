@@ -307,6 +307,25 @@
           "emoji": "👶",
           "explicacao": "Nasceu filho dos condes D. Henrique e D. Teresa. Tornou-se rei depois de muitas lutas."
         }
+      ],
+      "animacao": [
+        {
+          "itens": [
+            "🏛️ Romanos",
+            "🌙 Muçulmanos",
+            "⚔️ Reconquista Cristã"
+          ],
+          "texto": "Primeiro vieram os **Romanos**, depois os **Muçulmanos**. Os cristãos do norte começaram a **Reconquista**."
+        },
+        {
+          "emoji": "🤴 👸 👶",
+          "texto": "**D. Henrique** e **D. Teresa** governavam o Condado Portucalense. O filho, **D. Afonso Henriques**, não nasceu rei: só o foi mais tarde."
+        },
+        {
+          "emoji": "🌙",
+          "texto": "Quando Portugal nasceu, os Muçulmanos ainda ocupavam o **sul** da Península Ibérica.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -376,6 +395,67 @@
           ],
           "dica": "D. Fernando foi o último rei da 1.ª dinastia."
         }
+      ],
+      "animacao": [
+        {
+          "titulo": "Friso cronológico",
+          "friso": [
+            [
+              "1128",
+              "São Mamede"
+            ],
+            [
+              "1143",
+              "Zamora"
+            ],
+            [
+              "1147",
+              "Lisboa"
+            ],
+            [
+              "1179",
+              "Bula do Papa"
+            ]
+          ],
+          "texto": "Num **friso cronológico**, os acontecimentos ficam por ordem: do **mais antigo** para o **mais recente**."
+        },
+        {
+          "emoji": "⚔️",
+          "titulo": "1128 · Batalha de São Mamede",
+          "texto": "D. Afonso Henriques venceu a mãe, **D. Teresa**, e passou a governar o condado."
+        },
+        {
+          "emoji": "✍️ 👑",
+          "titulo": "1143 · Tratado de Zamora",
+          "texto": "O rei de Leão e Castela reconheceu D. Afonso Henriques como **rei de Portugal**."
+        },
+        {
+          "emoji": "⛪ 📜",
+          "titulo": "1179 · Bula do Papa",
+          "texto": "O **Papa** reconheceu Portugal como reino independente."
+        },
+        {
+          "friso": [
+            [
+              "1249",
+              "Faro"
+            ],
+            [
+              "1290",
+              "Universidade"
+            ],
+            [
+              "1297",
+              "Alcanices"
+            ],
+            [
+              "1383",
+              "Morte de D. Fernando"
+            ]
+          ],
+          "texto": "Para ordenar datas, compara as **centenas** e depois as **dezenas**: 1249 vem antes de 1290.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -422,6 +502,47 @@
           "👑 D. Fernando",
           "o Formoso"
         ]
+      ],
+      "animacao": [
+        {
+          "itens": [
+            "👑 D. Afonso Henriques",
+            "👑 D. Sancho I",
+            "👑 D. Afonso II",
+            "👑 D. Sancho II",
+            "👑 D. Afonso III",
+            "👑 D. Dinis",
+            "👑 D. Afonso IV",
+            "👑 D. Pedro I",
+            "👑 D. Fernando"
+          ],
+          "texto": "A 1.ª dinastia teve **9 reis**. Repara: Afonso, Sancho, Afonso, Sancho, Afonso… e depois Dinis, Afonso, Pedro e Fernando."
+        },
+        {
+          "emoji": "🏷️",
+          "titulo": "O que é um cognome?",
+          "texto": "Um **cognome** é uma alcunha que lembra uma característica ou um feito do rei."
+        },
+        {
+          "itens": [
+            "D. Afonso Henriques · **o Conquistador**",
+            "D. Sancho I · **o Povoador**",
+            "D. Afonso II · **o Gordo**",
+            "D. Sancho II · **o Capelo**",
+            "D. Afonso III · **o Bolonhês**"
+          ],
+          "texto": "Os primeiros cinco reis e os seus cognomes."
+        },
+        {
+          "itens": [
+            "D. Dinis · **o Lavrador**",
+            "D. Afonso IV · **o Bravo**",
+            "D. Pedro I · **o Justiceiro**",
+            "D. Fernando · **o Formoso**"
+          ],
+          "texto": "E os últimos quatro. **D. Fernando** foi o último rei da 1.ª dinastia.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -456,6 +577,26 @@
           "o Bolonhês",
           "viveu em Bolonha, em França, antes de ser rei"
         ]
+      ],
+      "animacao": [
+        {
+          "emoji": "⚔️ 🏘️",
+          "texto": "**O Conquistador** conquistou muitas terras aos Muçulmanos. **O Povoador** mandou povoar as terras conquistadas."
+        },
+        {
+          "emoji": "🌾 🌲",
+          "texto": "**D. Dinis, o Lavrador**, protegeu a agricultura e mandou plantar pinhais."
+        },
+        {
+          "emoji": "🐎 ⚖️",
+          "texto": "**O Bravo** mostrou grande coragem nas batalhas. **O Justiceiro** castigava com rigor quem não cumpria a lei."
+        },
+        {
+          "emoji": "🗺️",
+          "titulo": "o Bolonhês",
+          "texto": "**D. Afonso III** viveu em **Bolonha**, em França, antes de ser rei.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -562,6 +703,33 @@
             "D. Pedro I",
             "D. Dinis"
           ]
+        }
+      ],
+      "animacao": [
+        {
+          "emoji": "🕵️",
+          "titulo": "Detetive de reis",
+          "texto": "Nesta missão, cada rei fala de si. Procura as **pistas**: datas, batalhas, leis e pessoas.",
+          "pose": "duvida"
+        },
+        {
+          "itens": [
+            "1128 · São Mamede → **D. Afonso Henriques**",
+            "1214 · testamento → **D. Afonso II**",
+            "1249 · Faro → **D. Afonso III**",
+            "1340 · Salado → **D. Afonso IV**"
+          ],
+          "texto": "Algumas **datas** ajudam a descobrir o rei."
+        },
+        {
+          "itens": [
+            "🌹 Rainha Santa Isabel → **D. Dinis**",
+            "💔 D. Inês de Castro → **D. Pedro I**",
+            "🌾 Lei das Sesmarias → **D. Fernando**",
+            "👸 D. Teresa → mãe de **D. Afonso Henriques**"
+          ],
+          "texto": "Algumas **pessoas** e **leis** também são pistas.",
+          "pose": "ideia"
         }
       ]
     },
@@ -675,6 +843,31 @@
             "Tejo"
           ]
         }
+      ],
+      "animacao": [
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iNS41IiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjkxLjUiIHk9IjE5MS42IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5TYW50YXLDqW08L3RleHQ+PGNpcmNsZSBjeD0iOTQuMSIgY3k9IjEyOS40IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTAzLjEiIHk9IjEzMy40IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5Db2ltYnJhPC90ZXh0PjxjaXJjbGUgY3g9IjExNy4yIiBjeT0iMzIwLjgiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxMjYuMiIgeT0iMzI0LjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkZhcm88L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTA5LjUiIHk9IjU5LjYiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkd1aW1hcsOjZXM8L3RleHQ+PGNpcmNsZSBjeD0iNjEuMyIgY3k9IjIxOC44IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNzAuMyIgeT0iMjIyLjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkxpc2JvYTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI4NS41IiB5PSIxNjEuNiIgZm9udC1zaXplPSIxMS41IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjM0IxRjQ3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgcGFpbnQtb3JkZXI9InN0cm9rZSI+TGVpcmlhPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIyMjAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyRjgwQzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCAyMCAyMjApIiBsZXR0ZXItc3BhY2luZz0iMiI+T0NFQU5PIEFUTMOCTlRJQ088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI0MCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UkVJTk8gREUgTEXDg088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI1NCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RSBDQVNURUxBPC90ZXh0PjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4NiAxMDApIj48cG9seWdvbiBwb2ludHM9IjAsLTIyIDYsMCAwLC00IC02LDAiIGZpbGw9IiM1QjQ2MzYiLz48cG9seWdvbiBwb2ludHM9IjAsMjIgNiwwIDAsNCAtNiwwIiBmaWxsPSIjQjlBODhDIi8+PHRleHQgeD0iMCIgeT0iLTI2IiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5OPC90ZXh0Pjx0ZXh0IHg9IjAiIHk9IjM2IiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TPC90ZXh0PjwvZz48dGV4dCB4PSIyMjYiIHk9IjE1OCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzVCNDYzNiI+TGVnZW5kYTwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y3RDI3QSIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIxODEiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmVpbm8gZW0gMTE0MzwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE5NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzlGRDNBOCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyMDciIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q29ucXVpc3RhcyBkZTwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjIyMCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij4xMTQ3IGEgMTI0ODwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjIzNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y0QTlBMCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyNDUiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+QWxnYXJ2ZSAoMTI0OSk8L3RleHQ+PGxpbmUgeDE9IjIyNiIgeTE9IjI2OCIgeDI9IjI0NCIgeTI9IjI2OCIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjI1MCIgeT0iMjcyIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPlJpbzwvdGV4dD48Y2lyY2xlIGN4PSIyMzUiIGN5PSIyOTAiIHI9IjgiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjUwIiB5PSIyOTQiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q2lkYWRlPC90ZXh0Pjwvc3ZnPg==",
+          "efeito": "revelar",
+          "texto": "O reino cresceu **de norte para sul**. As cores mostram as terras conquistadas aos Muçulmanos.",
+          "alt": "Mapa de Portugal com os rios e as cidades de Guimarães, Coimbra, Leiria, Santarém, Lisboa e Faro"
+        },
+        {
+          "emoji": "🌊 ⛵",
+          "titulo": "1147",
+          "texto": "D. Afonso Henriques conquistou **Santarém** e **Lisboa**, junto ao rio **Tejo**. Em Lisboa teve a ajuda dos **cruzados**."
+        },
+        {
+          "emoji": "🏖️",
+          "titulo": "1249",
+          "texto": "O **Algarve** foi a última região conquistada: **Faro**, por **D. Afonso III**."
+        },
+        {
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNjAgMzQwIiBmb250LWZhbWlseT0iTnVuaXRvLEFyaWFsLHNhbnMtc2VyaWYiPjxjbGlwUGF0aCBpZD0ibW9sZHVyYSI+PHJlY3Qgd2lkdGg9IjM2MCIgaGVpZ2h0PSIzNDAiIHJ4PSIxNCIvPjwvY2xpcFBhdGg+PGcgY2xpcC1wYXRoPSJ1cmwoI21vbGR1cmEpIj48cmVjdCB3aWR0aD0iMzYwIiBoZWlnaHQ9IjM0MCIgZmlsbD0iI0VGRTZEMyIvPjxwb2x5Z29uIHBvaW50cz0iMzYwLDM0MCAzNjAsMzE0LjggMTQxLjYsMzE0LjggMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjggNjcuNyw0LjAgMCwwIDAsMzQwIiBmaWxsPSIjRENFRkZCIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0icHQiPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBjbGlwLXBhdGg9InVybCgjcHQpIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzYwIiBoZWlnaHQ9IjE2Ni4wIiBmaWxsPSIjRjdEMjdBIi8+PHJlY3QgeD0iMCIgeT0iMTY2LjAiIHdpZHRoPSIzNjAiIGhlaWdodD0iMTI5LjAiIGZpbGw9IiM5RkQzQTgiLz48cmVjdCB4PSIwIiB5PSIyOTUuMCIgd2lkdGg9IjM2MCIgaGVpZ2h0PSI0NS4wIiBmaWxsPSIjRjRBOUEwIi8+PC9nPjxwb2x5Z29uIHBvaW50cz0iNzMuNywyOS44IDc5LjMsMjUuMCA4My45LDIwLjIgOTYuNCwxNy4yIDEwNC43LDEzLjAgMTEwLjIsMTkuMCAxMTAuMiwzMy40IDExOC41LDMwLjQgMTMyLjQsMjkuMiAxNDEuNiwyMy44IDE1MC45LDI5LjIgMTY0LjcsMjUuMCAxODAuOSwyNS4wIDE4MC45LDQxLjIgMTkyLjUsNDEuOCAxOTcuNSw0Ny4yIDE4Ny44LDU4LjAgMTc0LjQsNzAuMCAxNjMuNCw4MC4yIDE2OS40LDkxLjAgMTY2LjYsMTE1LjAgMTY5LjQsMTI3LjAgMTU4LjcsMTMxLjIgMTY2LjEsMTQwLjggMTU4LjcsMTYxLjggMTM1LjYsMTYyLjQgMTQ2LjMsMTc1LjAgMTQ5LjUsMTkwLjAgMTYyLjQsMjAwLjIgMTYxLjAsMjA5LjIgMTUwLjksMjE3LjAgMTQ2LjMsMjM2LjIgMTU1LjUsMjUxLjIgMTYyLjksMjUwLjAgMTQ4LjYsMjYzLjIgMTM3LjAsMjg2LjAgMTM5LjMsMjk4LjAgMTQxLjYsMzExLjIgMTMwLjEsMzE3LjIgMTE3LjIsMzIzLjggMTA0LjcsMzE3LjIgODguNSwzMTQuOCA4Mi41LDMxNy4yIDY4LjIsMzIwLjggNzEuNCwzMTAuMCA3Ny4wLDI4OS4wIDc3LjAsMjY4LjAgNzMuNywyNTYuMCA3Ny45LDIzNS4wIDcyLjMsMjMzLjIgNTguNSwyMzYuOCA2MC44LDIyNC44IDY2LjMsMjIyLjQgNzAuMCwyMTQuMCA2NC4wLDIxOC44IDU4LjUsMjIwLjYgNDQuNiwyMTUuOCA0OC4zLDIwNS4wIDUxLjUsMTgwLjQgNjQuNSwxNjYuMCA3Mi4zLDEzMy4wIDc5LjMsMTA0LjggODMuMCw3My42IDc3LjksNTMuMiA3My43LDI5LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCNDYzNiIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTA0LjcsMTMuMCA5Ni40LDE3LjIgODMuOSwyMC4yIDczLjcsMjkuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTk3LjUsNDcuMiAxODcuOCw1OC4wIDE3NC40LDcwLjAgMTYzLjQsODAuMiAxMzQuNyw3MC42IDEyMy4yLDcyLjQgMTA0LjcsNzYuMCA4My4wLDczLjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjEzNC43LDExNi44IDExOC41LDEyNC4wIDEwNC43LDEyNy4wIDk0LjEsMTMwLjAgNzMuNywxMzMuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBvbHlsaW5lIHBvaW50cz0iMTM1LjYsMTYyLjQgMTE4LjUsMTcyLjAgMTA0LjcsMTc0LjQgODIuNSwxODcuNiA2OC42LDIwNS4wIDY2LjMsMjE3LjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJGODBDOSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwb2x5bGluZSBwb2ludHM9IjE2MS4wLDIwOS4yIDE0OS4wLDIxNy42IDE0MS42LDIzNS4wIDEzNC43LDI2Mi4wIDEyOS42LDI4My42IDEzOS4zLDI5OC4wIDE0MS42LDMxMS4yIiBmaWxsPSJub25lIiBzdHJva2U9IiMyRjgwQzkiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSI5MC44IiB5PSI4LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCA5MC44IDguOCkiPk1pbmhvPC90ZXh0Pjx0ZXh0IHg9IjE0My45IiB5PSI2Mi44IiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKDAgMTQzLjkgNjIuOCkiPkRvdXJvPC90ZXh0Pjx0ZXh0IHg9IjEyNS41IiB5PSIxMTMuMiIgZm9udC1zaXplPSIxMSIgZm9udC1zdHlsZT0iaXRhbGljIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjMUY1Rjk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDEyNS41IDExMy4yKSI+TW9uZGVnbzwvdGV4dD48dGV4dCB4PSIxMTYuMiIgeT0iMTY0LjgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzFGNUY5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgdHJhbnNmb3JtPSJyb3RhdGUoMCAxMTYuMiAxNjQuOCkiPlRlam88L3RleHQ+PHRleHQgeD0iMTMxLjUiIHk9IjI0NC4wIiBmb250LXNpemU9IjExIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtd2VpZ2h0PSI4MDAiIGZpbGw9IiMxRjVGOTkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC03MiAxMzEuNSAyNDQuMCkiPkd1YWRpYW5hPC90ZXh0PjxjaXJjbGUgY3g9IjgyLjUiIGN5PSIxODcuNiIgcj0iNS41IiBmaWxsPSIjN0EyRThDIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjkxLjUiIHk9IjE5MS42IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5TYW50YXLDqW08L3RleHQ+PGNpcmNsZSBjeD0iOTQuMSIgY3k9IjEyOS40IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTAzLjEiIHk9IjEzMy40IiBmb250LXNpemU9IjExLjUiIGZvbnQtd2VpZ2h0PSI5MDAiIGZpbGw9IiMzQjFGNDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIiBwYWludC1vcmRlcj0ic3Ryb2tlIj5Db2ltYnJhPC90ZXh0PjxjaXJjbGUgY3g9IjExNy4yIiBjeT0iMzIwLjgiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxMjYuMiIgeT0iMzI0LjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkZhcm88L3RleHQ+PGNpcmNsZSBjeD0iMTAwLjUiIGN5PSI1NS42IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTA5LjUiIHk9IjU5LjYiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkd1aW1hcsOjZXM8L3RleHQ+PGNpcmNsZSBjeD0iNjEuMyIgY3k9IjIxOC44IiByPSI1LjUiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNzAuMyIgeT0iMjIyLjgiIGZvbnQtc2l6ZT0iMTEuNSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzNCMUY0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMiIHBhaW50LW9yZGVyPSJzdHJva2UiPkxpc2JvYTwvdGV4dD48Y2lyY2xlIGN4PSI3Ni41IiBjeT0iMTU3LjYiIHI9IjUuNSIgZmlsbD0iIzdBMkU4QyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI4NS41IiB5PSIxNjEuNiIgZm9udC1zaXplPSIxMS41IiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjM0IxRjQ3IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgcGFpbnQtb3JkZXI9InN0cm9rZSI+TGVpcmlhPC90ZXh0Pjx0ZXh0IHg9IjIwIiB5PSIyMjAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyRjgwQzkiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHRyYW5zZm9ybT0icm90YXRlKC05MCAyMCAyMjApIiBsZXR0ZXItc3BhY2luZz0iMiI+T0NFQU5PIEFUTMOCTlRJQ088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI0MCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UkVJTk8gREUgTEXDg088L3RleHQ+PHRleHQgeD0iMjg2IiB5PSI1NCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0iIzdBNjU0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RSBDQVNURUxBPC90ZXh0PjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4NiAxMDApIj48cG9seWdvbiBwb2ludHM9IjAsLTIyIDYsMCAwLC00IC02LDAiIGZpbGw9IiM1QjQ2MzYiLz48cG9seWdvbiBwb2ludHM9IjAsMjIgNiwwIDAsNCAtNiwwIiBmaWxsPSIjQjlBODhDIi8+PHRleHQgeD0iMCIgeT0iLTI2IiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjNUI0NjM2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5OPC90ZXh0Pjx0ZXh0IHg9IjAiIHk9IjM2IiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iODAwIiBmaWxsPSIjN0E2NTQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5TPC90ZXh0PjwvZz48dGV4dCB4PSIyMjYiIHk9IjE1OCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iIzVCNDYzNiI+TGVnZW5kYTwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE3MCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y3RDI3QSIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIxODEiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+UmVpbm8gZW0gMTE0MzwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjE5NiIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzlGRDNBOCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyMDciIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q29ucXVpc3RhcyBkZTwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjIyMCIgZm9udC1zaXplPSIxMC41IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM0IyRjI1Ij4xMTQ3IGEgMTI0ODwvdGV4dD48cmVjdCB4PSIyMjYiIHk9IjIzNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iI0Y0QTlBMCIgc3Ryb2tlPSIjNUI0NjM2Ii8+PHRleHQgeD0iMjUwIiB5PSIyNDUiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+QWxnYXJ2ZSAoMTI0OSk8L3RleHQ+PGxpbmUgeDE9IjIyNiIgeTE9IjI2OCIgeDI9IjI0NCIgeTI9IjI2OCIgc3Ryb2tlPSIjMkY4MEM5IiBzdHJva2Utd2lkdGg9IjIuNSIvPjx0ZXh0IHg9IjI1MCIgeT0iMjcyIiBmb250LXNpemU9IjEwLjUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzQjJGMjUiPlJpbzwvdGV4dD48Y2lyY2xlIGN4PSIyMzUiIGN5PSIyOTAiIHI9IjgiIGZpbGw9IiM3QTJFOEMiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjUwIiB5PSIyOTQiIGZvbnQtc2l6ZT0iMTAuNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNCMkYyNSI+Q2lkYWRlPC90ZXh0Pjwvc3ZnPg==",
+          "efeito": "zoom",
+          "texto": "Observa os **rios**: Minho, Douro, Mondego, Tejo e Guadiana. Eles ajudam-te a encontrar as cidades.",
+          "pose": "aponta",
+          "alt": "Mapa de Portugal com os rios e as cidades de Guimarães, Coimbra, Leiria, Santarém, Lisboa e Faro"
+        }
       ]
     },
     {
@@ -735,6 +928,31 @@
           "verdade": true,
           "emoji": "🌱"
         }
+      ],
+      "animacao": [
+        {
+          "itens": [
+            "⛪ Clero · rezava",
+            "🛡️ Nobreza · combatia",
+            "🌾 Povo · trabalhava"
+          ],
+          "texto": "A sociedade tinha **três grupos**: o clero, a nobreza e o povo."
+        },
+        {
+          "emoji": "🌾 🏰",
+          "texto": "Quase todos viviam **no campo**, da agricultura. Os **castelos** defendiam as terras e as pessoas."
+        },
+        {
+          "emoji": "📜",
+          "titulo": "Forais",
+          "texto": "Os **forais** davam a cada povoação os seus **direitos e deveres**."
+        },
+        {
+          "emoji": "🗣️",
+          "titulo": "Cortes de Leiria · 1254",
+          "texto": "Nas **Cortes**, o rei reunia-se com os grupos sociais. Em 1254, o **povo** participou pela primeira vez.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -789,6 +1007,34 @@
           "Túmulo de D. Inês de Castro",
           "🏰 Fonte material"
         ]
+      ],
+      "animacao": [
+        {
+          "emoji": "🔍",
+          "titulo": "Fontes históricas",
+          "texto": "Os historiadores descobrem o passado através de **fontes históricas**: tudo o que ficou desse tempo."
+        },
+        {
+          "itens": [
+            "📜 tratados",
+            "📜 forais",
+            "📜 testamentos",
+            "📜 bulas",
+            "📜 cantigas"
+          ],
+          "texto": "As **fontes escritas** têm palavras escritas: documentos, leis, cantigas…"
+        },
+        {
+          "itens": [
+            "🏰 castelos",
+            "⛪ mosteiros",
+            "⚱️ túmulos",
+            "🪙 moedas",
+            "⚔️ espadas"
+          ],
+          "texto": "As **fontes materiais** são construções e objetos.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -884,6 +1130,41 @@
             "3.ª"
           ]
         }
+      ],
+      "animacao": [
+        {
+          "titulo": "Século XII",
+          "friso": [
+            [
+              "1101",
+              "início"
+            ],
+            [
+              "1143",
+              "nasce Portugal"
+            ],
+            [
+              "1200",
+              "fim"
+            ]
+          ],
+          "texto": "Um **século** tem 100 anos. De **1101 a 1200** é o **século XII**."
+        },
+        {
+          "emoji": "🧮",
+          "titulo": "1383 − 1143 = 240",
+          "texto": "Para saber quanto tempo durou a 1.ª dinastia, faz uma **subtração**: 240 anos."
+        },
+        {
+          "emoji": "🗣️ 📜",
+          "texto": "**D. Dinis** mandou escrever os documentos do reino em **português**, em vez de latim."
+        },
+        {
+          "emoji": "👑",
+          "titulo": "Dinastia Afonsina",
+          "texto": "A 1.ª dinastia também se chama **Afonsina** ou **de Borgonha**.",
+          "pose": "ideia"
+        }
       ]
     },
     {
@@ -917,6 +1198,28 @@
           "minPalavras": 8,
           "emoji": "🏘️",
           "dica": "O foral dava direitos e deveres aos habitantes: o que passaram a poder fazer?"
+        }
+      ],
+      "animacao": [
+        {
+          "emoji": "✍️ 📖",
+          "titulo": "Cronista do reino",
+          "texto": "Um **cronista** escrevia a história dos reis. Hoje, o cronista és tu!",
+          "pose": "portatil"
+        },
+        {
+          "itens": [
+            "🔠 Maiúscula no início",
+            "✏️ Pelo menos 8 palavras",
+            "💬 Explica: porque…, por isso…",
+            "⚫ Ponto final"
+          ],
+          "texto": "Uma boa frase começa com **maiúscula**, explica uma ideia e acaba com **ponto final**."
+        },
+        {
+          "emoji": "📖",
+          "texto": "Se tiveres dúvidas, abre o **Caderno do Ticl@s** no botão 📖.",
+          "pose": "ideia"
         }
       ]
     },
@@ -1034,6 +1337,56 @@
           ]
         }
       ]
+    }
+  ],
+  "abertura": [
+    {
+      "emoji": "🐿️ ⏳ 🏰",
+      "titulo": "Viagem à Idade Média",
+      "texto": "Olá! Hoje vamos viajar quase **900 anos** no tempo, até ao nascimento de **Portugal**.",
+      "pose": "ola"
+    },
+    {
+      "friso": [
+        [
+          "218 a.C.",
+          "Romanos"
+        ],
+        [
+          "711",
+          "Muçulmanos"
+        ],
+        [
+          "1096",
+          "Condado Portucalense"
+        ],
+        [
+          "1143",
+          "Reino de Portugal"
+        ]
+      ],
+      "texto": "Antes de Portugal, a Península Ibérica foi ocupada pelos **Romanos** e, mais tarde, pelos **Muçulmanos**."
+    },
+    {
+      "emoji": "⚔️ 🛡️",
+      "titulo": "Reconquista Cristã",
+      "texto": "Os reis cristãos do norte lutaram para recuperar as terras ocupadas pelos Muçulmanos."
+    },
+    {
+      "emoji": "🤴 👸",
+      "titulo": "Condado Portucalense",
+      "texto": "O rei de Leão e Castela entregou o **Condado Portucalense** a **D. Henrique** e a **D. Teresa**, os pais de **D. Afonso Henriques**."
+    },
+    {
+      "emoji": "🏰",
+      "titulo": "Guimarães",
+      "texto": "Segundo a tradição, D. Afonso Henriques nasceu em **Guimarães**, o «berço de Portugal»."
+    },
+    {
+      "emoji": "👑 👑 👑 👑 👑 👑 👑 👑 👑",
+      "titulo": "1.ª dinastia: 1143 – 1383",
+      "texto": "Vais conhecer os **9 reis** da 1.ª dinastia. Lê com atenção: cada animação tem **pistas** para as missões!",
+      "pose": "ideia"
     }
   ]
 }

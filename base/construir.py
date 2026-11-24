@@ -252,6 +252,42 @@ def validar(a):
     if not any(isinstance(r, dict) and r.get("fase") != "bonus" for r in rondas):
         e.append("Tem de existir pelo menos uma ronda que não seja de bónus.")
     e.extend(validar_consulta(a))
+    e.extend(validar_filmes(a))
+    return e
+
+
+POSES = ["ola", "aponta", "duvida", "ideia", "portatil", "trofeu"]
+
+
+def validar_filmes(a):
+    """Animações (V3.7): as mesmas regras de validarFilmes() em src/motor.js."""
+    e = []
+
+    def cenas(lista, onde):
+        if lista is None:
+            return
+        if not isinstance(lista, list) or not lista:
+            e.append(f"{onde}: tem de ser uma lista de cenas."); return
+        for k, c in enumerate(lista, 1):
+            w = f"{onde}, cena {k}"
+            if not isinstance(c, dict):
+                e.append(f"{w}: tem de ser um objeto {{ ... }}."); continue
+            if not tem_texto(c.get("texto")):
+                e.append(f"{w}: falta o «texto» (a legenda).")
+            if "itens" in c and not (isinstance(c["itens"], list) and all(tem_texto(x) for x in c["itens"])):
+                e.append(f"{w}: «itens» tem de ser uma lista de textos.")
+            if "friso" in c and not (isinstance(c["friso"], list) and all(isinstance(x, list) and len(x) == 2 and all(tem_texto(y) for y in x) for x in c["friso"])):
+                e.append(f"{w}: «friso» tem de ser uma lista de pares [data, texto].")
+            if "pose" in c and c["pose"] not in POSES:
+                e.append(f"{w}: «pose» tem de ser uma destas: {', '.join(POSES)}.")
+            if "efeito" in c and c["efeito"] not in ("zoom", "revelar"):
+                e.append(f"{w}: «efeito» tem de ser «zoom» ou «revelar».")
+            if "duracao" in c and not (isinstance(c["duracao"], (int, float)) and not isinstance(c["duracao"], bool) and 2 <= c["duracao"] <= 60):
+                e.append(f"{w}: «duracao» tem de ser um número de 2 a 60 (segundos).")
+    cenas(a.get("abertura"), "Abertura")
+    for ri, r in enumerate(a.get("rondas", []), 1):
+        if isinstance(r, dict):
+            cenas(r.get("animacao"), f"Ronda {ri}" + (f" («{r['titulo']}»)" if r.get("titulo") else "") + ", animação")
     return e
 
 
@@ -298,14 +334,26 @@ def validar_consulta(a):
 FATOR_ANO = {1: 1.5, 2: 1.2, 3: 1.0, 4: 0.9}  # os mais novos demoram mais em cada item
 
 
-def minutos(rondas, ano=3):
-    s = 0
+def segundos_cena(c, ano):
+    """Igual a duracaoCena() em src/motor.js (perfil turma, sem som)."""
+    if isinstance(c.get("duracao"), (int, float)) and not isinstance(c.get("duracao"), bool) and c["duracao"] > 0:
+        return c["duracao"]
+    pal = lambda x: len(str(x or "").replace("**", "").split())
+    n = pal(c.get("texto")) + pal(c.get("titulo")) + sum(pal(x) for x in c.get("itens", [])) + sum(pal(x[1]) + 1 for x in c.get("friso", []) if isinstance(x, list) and len(x) == 2)
+    s = 2.5 + n * {1: 0.9, 2: 0.75, 3: 0.6, 4: 0.5}.get(ano, 0.6) + (len(c.get("itens", [])) + len(c.get("friso", []))) * 0.6
+    return min(30, max(5, s))
+
+
+def minutos(rondas, ano=3, abertura=None):
+    s = filmes = 0
     for r in rondas:
         s += 30
         for it in r.get("itens", []):
             livre = r["tipo"] == "escrever" and isinstance(it, dict) and "resposta" not in it
             s += SEGUNDOS["frase"] if livre else SEGUNDOS.get(r["tipo"], 30)
-    return max(1, round(s * FATOR_ANO.get(ano, 1.0) / 60))
+        filmes += sum(segundos_cena(c, ano) for c in (r.get("animacao") or []) if isinstance(c, dict))
+    filmes += sum(segundos_cena(c, ano) for c in (abertura or []) if isinstance(c, dict))
+    return max(1, round((s * FATOR_ANO.get(ano, 1.0) + filmes) / 60))
 
 
 def json_seguro(aula):
@@ -419,10 +467,10 @@ def relatorio(aula, erros):
     princ = [r for r in aula["rondas"] if r.get("fase") != "bonus"]
     bonus = [r for r in aula["rondas"] if r.get("fase") == "bonus"]
     print(f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas + {len(bonus)} de bónus · "
-          f"≈ {minutos(princ, aula['ano'])} min (+ {minutos(bonus, aula['ano'])} min de bónus)" if bonus else
-          f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas · ≈ {minutos(princ, aula['ano'])} min")
+          f"≈ {minutos(princ, aula['ano'], aula.get('abertura'))} min (+ {minutos(bonus, aula['ano'])} min de bónus)" if bonus else
+          f"✓ Conteúdo válido: «{aula['titulo']}» · {len(princ)} rondas · ≈ {minutos(princ, aula['ano'], aula.get('abertura'))} min")
     alvo = aula.get("minutos")
-    if isinstance(alvo, (int, float)) and minutos(princ, aula["ano"]) < 0.6 * alvo:
+    if isinstance(alvo, (int, float)) and minutos(princ, aula["ano"], aula.get("abertura")) < 0.6 * alvo:
         print(f"  ! Aviso: a duração estimada é bem inferior aos {alvo} min indicados. Acrescenta itens ou rondas.")
     return True
 
@@ -456,7 +504,7 @@ def registar(aula, url, id_padrao):
         "turma": aula["turma"], "ano": aula["ano"], "titulo": aula["titulo"],
         "descricao": aula.get("descricao") or aula.get("objetivo") or "",
         "disciplina": aula["disciplina"], "data": aula["data"], "semana": texto_semana, "url": url,
-        "duracao": f"até {aula['minutos']} min" if aula.get("minutos") else f"≈ {minutos(principais, aula['ano'])} min",
+        "duracao": f"até {aula['minutos']} min" if aula.get("minutos") else f"≈ {minutos(principais, aula['ano'], aula.get('abertura'))} min",
         "estado": aula.get("estado", "em validação"),
     }
     antigo = next((c for c in catalogo if c.get("id") == registo["id"]), None)

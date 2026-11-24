@@ -4,7 +4,7 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.5';
+const VERSAO = 'V3.7';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
 const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100', 'puzzle', 'pontos', 'apanhar', 'percurso'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
@@ -216,6 +216,7 @@ function validarAula(a) {
   e.push(...validarExtra(a));
   e.push(...validarJogos(a));
   e.push(...validarConsulta(a));
+  e.push(...validarFilmes(a));
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -223,21 +224,24 @@ const FATOR_ANO = { 1: 1.5, 2: 1.2, 3: 1.0, 4: 0.9 }; // os mais novos demoram m
 function minutosEstimados(rondas) {
   const s = rondas.reduce((t, r) => t + 30 + (r.itens || []).reduce((u, it) =>
     u + (r.tipo === 'escrever' && it && it.resposta === undefined ? SEGUNDOS.frase : (SEGUNDOS[r.tipo] || 30)), 0), 0);
-  return Math.max(1, Math.round(s * (FATOR_ANO[AULA && AULA.ano] || 1) / 60));
+  // animações (V3.7): o tempo de cada cena não depende do ano (já é calculado para ele)
+  const cenas = l => Array.isArray(l) ? l.reduce((u, c) => u + (c && typeof c === 'object' ? duracaoCena(c) / 1000 : 0), 0) : 0;
+  const filmes = rondas.reduce((t, r) => t + cenas(r.animacao), 0) + (rondas.some(r => r.fase !== 'bonus') ? cenas(AULA && AULA.abertura) : 0);
+  return Math.max(1, Math.round((s * (FATOR_ANO[AULA && AULA.ano] || 1) + filmes) / 60));
 }
 
 /* ---------- estado ---------- */
 const PREF = 'ticlas3-preferencias';
 let prefs = Object.assign({ modo: 'computador', perfil: 'turma', escala: 1, contraste: false, legivel: false, tema: 'auto', livre: false, lingua: 'pt' }, ler(PREF) || {});
 let AULA = null, MASCOTE = {};
-const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], numero: '', concluido: false, profOk: false };
+const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, numero: '', concluido: false, profOk: false };
 const somLigado = () => prefs.som === true || (prefs.som !== false && prefs.modo === 'quadro');
 const apoio = () => prefs.perfil === 'apoio';
 const listaRondas = seq => AULA.rondas.map((r, i) => ({ r, i })).filter(x => seq === 'bonus' ? x.r.fase === 'bonus' : x.r.fase !== 'bonus').map(x => x.i);
 const prefixoProgresso = () => 'ticlas3:' + (AULA.id || AULA.titulo) + ':';
 const chaveProgresso = () => prefixoProgresso() + (est.numero || 'sem-numero');
 function guardarProgresso() {
-  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, concluido: est.concluido, atualizado: new Date().toISOString() });
+  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, vistas: est.vistas, concluido: est.concluido, atualizado: new Date().toISOString() });
 }
 function totalEstrelas() { return Object.values(est.pontos).reduce((a, b) => a + b, 0); }
 function totalMaximo() { return Object.values(est.maximos).reduce((a, b) => a + b, 0); }
@@ -379,10 +383,11 @@ function ecraInicio() {
 }
 function comecar(continuar) {
   const g = continuar ? ler(chaveProgresso()) : null;
-  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], concluido: false }, g || {});
+  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, concluido: false }, g || {});
+  if (!est.vistas) est.vistas = {};
   if (!g) apagar(chaveProgresso());
   if (audio && audio.state === 'suspended') audio.resume();
-  ecraMapa();
+  if (temCenas(AULA.abertura) && !est.vistas.abertura) ecraAbertura(); else ecraMapa();
 }
 
 /* ---------- mapa de missões: escolha livre, pausa e retoma ---------- */
@@ -419,6 +424,7 @@ function ecraMapa() {
     bonus.length ? h('div', { class: 'mapa' }, bonus.map((ri, k) => cartao(ri, k, 'bonus', !todas))) : null,
     h('div', { class: 'nav' },
       h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
+      temCenas(AULA.abertura) ? h('button', { class: 'btn leve', onclick: () => verFilme(AULA.abertura, AULA.titulo) }, '🎬 ' + t('filmeAbertura')) : null,
       todas ? h('button', { class: 'btn', id: 'btResultado', onclick: () => { est.seq = 'principal'; ecraFim(); } }, t('resultado')) : h('span'))));
 }
 
@@ -451,6 +457,16 @@ function iniciarRonda() {
       h('button', { class: 'btn leve', id: 'btMissoes', onclick: ecraMapa }, t('missoes')),
       btProximo));
   const motor = { escolher: rondaItens, verdadeiro_falso: rondaItens, completar: rondaItens, escrever: rondaItens, ditado: rondaItens, copiar: rondaItens, ordenar: rondaItens, pares: rondaPares, classificar: rondaClassificar, mab: rondaItens, cadeia: rondaItens, reta: rondaItens, tabela100: rondaItens, puzzle: rondaItens, pontos: rondaItens, apanhar: rondaItens, percurso: rondaItens }[ronda.tipo];
+  if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
+    const palco = $('#app .palco'); palco.classList.add('filme-ativo');
+    btProximo.disabled = true;
+    encher(area, filme(ronda.animacao, {
+      titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'),
+      aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); },
+      aoContinuar: () => { palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); }
+    }));
+    return;
+  }
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
@@ -479,7 +495,7 @@ function cabecalhoRonda(ronda, chaveInstrucao, contador, fala) {
     h('div', { class: 'linha-titulo' },
       h('h2', { class: 'titulo-ronda' }, ronda.titulo || nomeFase(ronda.fase)),
       fala && somLigado() ? h('button', { class: 'ouvir', 'aria-label': t('ouvir'), title: t('ouvir'), onclick: () => lerSequencia(fala()) }, '🔊') : null,
-      botaoRever(ronda)),
+      botaoAnimacao(ronda), botaoRever(ronda)),
     h('p', { class: 'instrucao' }, instr + (contador ? ' · ' + contador : ''), traducao)
   ];
 }
@@ -1170,6 +1186,7 @@ function painelProfessor() {
     h('label', null, 'Língua da interface', sel(prefs.lingua, Object.entries(LINGUAS), v => mudar('lingua', v))),
     h('label', null, 'Som e narração', h('input', { type: 'checkbox', checked: somLigado() || null, onchange: e => mudar('som', e.target.checked) })),
     h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
+    h('label', null, 'Animações: permitir saltar (⏭️)', h('input', { type: 'checkbox', checked: prefs.saltarFilmes || null, onchange: e => mudar('saltarFilmes', e.target.checked) })),
     h('label', null, 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
       class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); est.seq = s; est.p = +k; j.remove(); iniciarRonda(); }
     }, 'Ir'))),
@@ -2031,6 +2048,141 @@ function validarConsulta(a) {
   a.rondas.forEach((r, ri) => {
     if (r && r.consulta !== undefined && !ids.has(r.consulta)) e.push(`Ronda ${ri + 1}: «consulta» «${r.consulta}» não corresponde a nenhuma página (usa o «id» da página).`);
   });
+  return e;
+}
+
+/* ==========================================================
+   Animações (V3.7): «filmes» sem som, com legendas, antes do jogo e de cada missão.
+   "abertura": [cenas]  → antes do mapa de missões
+   Numa ronda, "animacao": [cenas] → antes da missão. Obrigatórias: o botão para
+   começar só aparece no fim (a professora pode permitir saltar no painel ⚙️).
+   Cena: { "texto" (legenda, obrigatório), "titulo", "emoji" (um ou vários, separados
+   por espaços), "imagem" + "alt" + "efeito" ("zoom" ou "revelar"), "itens" (aparecem
+   um a um), "friso" ([[data, texto], ...]), "pose" do Ticl@s, "duracao" (segundos) }
+   ========================================================== */
+const POSES = ['ola', 'aponta', 'duvida', 'ideia', 'portatil', 'trofeu'];
+const temCenas = c => Array.isArray(c) && c.length > 0;
+const semMovimentoFilme = () => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } };
+function duracaoCena(c) {
+  if (typeof c.duracao === 'number' && c.duracao > 0) return c.duracao * 1000;
+  const palavras = s => String(s || '').replace(/\*\*/g, '').split(/\s+/).filter(Boolean).length;
+  const n = palavras(c.texto) + palavras(c.titulo) + (c.itens || []).reduce((s, x) => s + palavras(x), 0) + (c.friso || []).reduce((s, x) => s + palavras(x[1]) + 1, 0);
+  const porPalavra = { 1: 0.9, 2: 0.75, 3: 0.6, 4: 0.5 }[AULA.ano] || 0.6;
+  let s = 2.5 + n * porPalavra + ((c.itens || []).length + (c.friso || []).length) * 0.6;
+  if (apoio()) s *= 1.3;
+  if (somLigado()) s = Math.max(s, palavras(c.texto) * 0.45 + 2);
+  return Math.round(Math.min(30, Math.max(5, s)) * 1000);
+}
+// Leitor: devolve o elemento; opcoes = { titulo, botao, aoTerminar, aoContinuar, livre }
+function filme(cenas, opcoes) {
+  let k = 0, decorrido = 0, pausa = false, fim = false, intervalo = null;
+  const total = cenas.map(duracaoCena);
+  const barras = h('div', { class: 'filme-barras', 'aria-hidden': 'true' }, cenas.map(() => h('span', null, h('i'))));
+  const palco = h('div', { class: 'filme-palco' });
+  const legenda = h('div', { class: 'filme-legenda', 'aria-live': 'polite' });
+  const ticlas = h('img', { class: 'filme-ticlas', alt: '' });
+  const ecra = h('div', { class: 'filme-ecra' + (semMovimentoFilme() ? ' sem-movimento' : '') }, barras,
+    h('div', { class: 'filme-rotulo' }, '🎬 ', opcoes.titulo || ''), palco, ticlas, legenda);
+  const btAnt = h('button', { class: 'btn leve', 'aria-label': t('filmeAnterior'), title: t('filmeAnterior'), onclick: () => irPara(k - 1) }, '⏮️');
+  const btPausa = h('button', { class: 'btn leve filme-pausa', onclick: () => fim ? recomecar() : alternar() });
+  const contador = h('span', { class: 'filme-contador' });
+  const btSaltar = (opcoes.livre || prefs.saltarFilmes) ? h('button', { class: 'btn leve', onclick: () => terminar(true) }, '⏭️ ' + t('filmeSaltar')) : null;
+  const btSeguir = h('button', { class: 'btn', disabled: true, onclick: () => { parar(); calar(); opcoes.aoContinuar && opcoes.aoContinuar(); } }, opcoes.botao || '▶');
+  const aviso = h('div', { class: 'filme-aviso' }, '⏳ ', t('filmeEspera'));
+  const raiz = h('div', { class: 'filme' }, ecra,
+    h('div', { class: 'filme-controlos' }, btAnt, btPausa, contador, h('span', { class: 'filme-espaco' }), btSaltar, btSeguir), aviso);
+  function desenhar() {
+    calar();
+    const c = cenas[k];
+    decorrido = 0;
+    contador.textContent = t('filmeCena', { a: k + 1, b: cenas.length });
+    btAnt.disabled = k === 0;
+    [...barras.children].forEach((b, i) => { b.firstChild.style.width = i < k ? '100%' : '0%'; });
+    ticlas.src = MASCOTE[POSES.includes(c.pose) ? c.pose : (k === 0 ? 'ola' : k === cenas.length - 1 ? 'ideia' : 'aponta')] || MASCOTE.ola;
+    ticlas.classList.remove('entra'); void ticlas.offsetWidth; ticlas.classList.add('entra');
+    const dur = total[k] / 1000;
+    const visual = [];
+    if (c.titulo) visual.push(h('h3', { class: 'filme-titulo' }, textoRico(c.titulo)));
+    if (c.emoji) {
+      const emojis = String(c.emoji).trim().split(/\s+/);
+      visual.push(h('div', { class: 'filme-emojis' + (emojis.length > 3 ? ' muitos' : '') }, emojis.map((e, i) => h('span', { style: `animation-delay:${(0.25 + i * Math.min(0.7, dur * 0.4 / emojis.length)).toFixed(2)}s` }, e))));
+    }
+    if (c.imagem) visual.push(h('div', { class: 'filme-img ' + (c.efeito === 'revelar' ? 'revelar' : 'zoom'), style: `--dur:${dur}s` }, h('img', { src: c.imagem, alt: c.alt || '' })));
+    if (Array.isArray(c.itens) && c.itens.length) {
+      const passo = Math.min(1.1, (dur * 0.6) / c.itens.length);
+      visual.push(h('div', { class: 'filme-itens' + (c.itens.length > 6 ? ' muitos' : '') }, c.itens.map((x, i) => h('span', { style: `animation-delay:${(0.4 + i * passo).toFixed(2)}s` }, textoRico(x)))));
+    }
+    if (Array.isArray(c.friso) && c.friso.length) {
+      const passo = Math.min(1.2, (dur * 0.6) / c.friso.length);
+      visual.push(h('div', { class: 'filme-friso', style: `--n:${c.friso.length};--dur:${(passo * c.friso.length).toFixed(2)}s` }, h('i', { class: 'linha-tempo' }),
+        c.friso.map(([d, x], i) => h('div', { class: 'marco', style: `animation-delay:${(0.4 + i * passo).toFixed(2)}s` }, h('b', null, d), h('span', { class: 'ponto' }), h('small', null, textoRico(x))))));
+    }
+    encher(palco, visual);
+    palco.classList.toggle('so-texto', !visual.length);
+    encher(legenda, h('span', { class: 'filme-frase' }, textoRico(c.texto)));
+    if (somLigado()) falar(String(c.texto).replace(/\*\*/g, ''));
+  }
+  function passo() {
+    if (pausa || fim || document.hidden || !raiz.isConnected) { if (!raiz.isConnected) parar(); return; }
+    decorrido += 100;
+    const b = barras.children[k]; if (b) b.firstChild.style.width = Math.min(100, decorrido / total[k] * 100) + '%';
+    if (decorrido >= total[k]) { if (k < cenas.length - 1) { k++; desenhar(); } else terminar(false); }
+  }
+  function alternar() { pausa = !pausa; ecra.classList.toggle('pausado', pausa); btPausa.textContent = pausa ? '▶ ' + t('filmeContinuar') : '⏸️ ' + t('filmePausa'); if (pausa) calar(); }
+  function irPara(n) { if (n < 0 || n >= cenas.length) return; if (fim) { fim = false; aviso.hidden = false; btPausa.textContent = '⏸️ ' + t('filmePausa'); } k = n; pausa = false; ecra.classList.remove('pausado', 'terminado'); btPausa.textContent = '⏸️ ' + t('filmePausa'); desenhar(); }
+  function terminar(saltou) {
+    fim = true; pausa = false; ecra.classList.remove('pausado'); ecra.classList.add('terminado');
+    [...barras.children].forEach(b => { b.firstChild.style.width = '100%'; });
+    btSeguir.disabled = false; aviso.hidden = true;
+    btPausa.textContent = '🔁 ' + t('filmeVerOutra');
+    if (!saltou) { ticlas.src = MASCOTE.trofeu || ticlas.src; festa(btSeguir, 14); }
+    opcoes.aoTerminar && opcoes.aoTerminar();
+    btSeguir.focus({ preventScroll: true });
+  }
+  function recomecar() { irPara(0); }
+  function parar() { clearInterval(intervalo); intervalo = null; }
+  btPausa.textContent = '⏸️ ' + t('filmePausa');
+  desenhar();
+  intervalo = setInterval(passo, 100);
+  if (opcoes.livre) { btSeguir.disabled = false; aviso.hidden = true; }
+  return raiz;
+}
+function ecraAbertura() {
+  limparTimers(); calar();
+  $('#app').replaceChildren(h('div', null,
+    h('div', { class: 'etiqueta' }, h('span', null, '🎬 ' + t('filmeAbertura')), h('span', { class: 'fase' }, AULA.titulo)),
+    filme(AULA.abertura, { titulo: AULA.titulo, botao: '▶ ' + t('filmeMissoes'), aoTerminar: () => { est.vistas.abertura = true; guardarProgresso(); }, aoContinuar: ecraMapa })));
+}
+// ver outra vez, numa janela (sem obrigação)
+function verFilme(cenas, titulo) {
+  const j = janela();
+  j.querySelector('.cartao').classList.add('larga', 'cartao-filme');
+  const fechar = () => { calar(); j.remove(); };
+  j.onclick = e => { if (e.target === j) fechar(); };
+  encher(j.querySelector('.cartao'), filme(cenas, { titulo, botao: '✔ ' + t('fechar'), livre: true, aoContinuar: fechar }));
+}
+function botaoAnimacao(ronda) {
+  if (!ronda || !temCenas(ronda.animacao)) return null;
+  return h('button', { class: 'rever', title: t('filmeVer'), onclick: () => verFilme(ronda.animacao, ronda.titulo) }, '🎬 ', t('filmeVer'));
+}
+function validarFilmes(a) {
+  const e = [], txt = v => typeof v === 'string' && v.trim() !== '';
+  const cenas = (lista, onde) => {
+    if (lista === undefined) return;
+    if (!Array.isArray(lista) || !lista.length) { e.push(`${onde}: tem de ser uma lista de cenas.`); return; }
+    lista.forEach((c, k) => {
+      const w = `${onde}, cena ${k + 1}`;
+      if (!c || typeof c !== 'object' || Array.isArray(c)) { e.push(`${w}: tem de ser um objeto { ... }.`); return; }
+      if (!txt(c.texto)) e.push(`${w}: falta o «texto» (a legenda).`);
+      if (c.itens !== undefined && !(Array.isArray(c.itens) && c.itens.every(txt))) e.push(`${w}: «itens» tem de ser uma lista de textos.`);
+      if (c.friso !== undefined && !(Array.isArray(c.friso) && c.friso.every(x => Array.isArray(x) && x.length === 2 && x.every(y => txt(y) || typeof y === 'number')))) e.push(`${w}: «friso» tem de ser uma lista de pares [data, texto].`);
+      if (c.pose !== undefined && !POSES.includes(c.pose)) e.push(`${w}: «pose» tem de ser uma destas: ${POSES.join(', ')}.`);
+      if (c.efeito !== undefined && !['zoom', 'revelar'].includes(c.efeito)) e.push(`${w}: «efeito» tem de ser «zoom» ou «revelar».`);
+      if (c.duracao !== undefined && !(typeof c.duracao === 'number' && c.duracao >= 2 && c.duracao <= 60)) e.push(`${w}: «duracao» tem de ser um número de 2 a 60 (segundos).`);
+    });
+  };
+  cenas(a.abertura, 'Abertura');
+  a.rondas.forEach((r, ri) => { if (r) cenas(r.animacao, `Ronda ${ri + 1}${r.titulo ? ' («' + r.titulo + '»)' : ''}, animação`); });
   return e;
 }
 

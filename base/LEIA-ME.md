@@ -112,6 +112,24 @@ Para os alunos poderem consultar a matéria quando têm dúvidas, acrescenta à 
 
 Cada página precisa de `titulo` e de `paragrafos`, `lista` ou `tabela`. Numa ronda, `"consulta": "reis"` mostra o botão **📖 Rever a matéria**, que abre essa página. Com páginas de consulta aparece também o botão 📖 no cabeçalho e a faixa «Caderno do Ticl@s» no mapa de missões (índice, Anterior/Próximo, setas do teclado e Esc para fechar; 🔊 lê a página com o som ligado). Exemplo: `aulas/2026-11-24_4ano_EstudoDoMeio_1Dinastia_v1.json`.
 
+### Animações obrigatórias — abertura e antes de cada missão (V3.7, opcional)
+
+Pequenos «filmes» sem som, com legendas grandes e o Ticl@s, para rever a matéria antes de jogar:
+
+```json
+"abertura": [
+  { "emoji": "🐿️ ⏳ 🏰", "titulo": "Viagem à Idade Média", "texto": "Olá! Hoje vamos viajar no tempo…", "pose": "ola" },
+  { "friso": [["1128", "São Mamede"], ["1143", "Zamora"]], "texto": "Num **friso cronológico**…" }
+],
+"rondas": [ { "titulo": "…", "animacao": [ { "itens": ["👑 D. Dinis", "👑 D. Pedro I"], "texto": "…" } ], … } ]
+```
+
+Cada cena precisa de `texto` (a legenda; `**…**` fica destacado). Opcional: `titulo`, `emoji` (vários, separados por espaços, aparecem um a um), `imagem` + `alt` + `efeito` (`zoom` ou `revelar`, de cima para baixo), `itens` (aparecem um a um), `friso` (pares [data, texto] numa linha do tempo), `pose` do Ticl@s (`ola`, `aponta`, `duvida`, `ideia`, `portatil`, `trofeu`) e `duracao` em segundos (por omissão é calculada pelo número de palavras e pelo ano; mais 30 % no perfil de apoio).
+
+- **Obrigatórias:** a `abertura` passa antes do mapa de missões e a `animacao` de cada ronda antes da missão. O botão para continuar só fica ativo no fim; pode-se pausar e voltar à cena anterior, mas não avançar. Fica registado no progresso: ao voltar à mesma missão, já não é obrigatória (há o botão «🎬 Ver a animação» e, no mapa de missões, «🎬 Abertura»).
+- **Painel do professor (⚙️):** «Animações: permitir saltar (⏭️)».
+- Sem som por omissão; no modo quadro (som ligado) o Ticl@s lê as legendas. A duração estimada da aula inclui as animações.
+
 ### Tipos de Matemática (V3.4)
 
 | Tipo | Itens | Exemplo |
