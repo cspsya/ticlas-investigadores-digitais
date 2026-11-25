@@ -886,5 +886,31 @@
         "28"
       ]
     }
+  },
+  {
+    "id": "2026-11-25-3ano-educacao-financeira-compras-simples",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Às compras com o Ticl@s (versão simples)",
+    "descricao": "DAC Educação Financeira, versão simples sem MAB e sem algoritmo: comparar preços (<, >, =), estratégias de cálculo mental (somar dezenas, dobros, amigos do 10, dezena + unidades), necessidades e desejos, o dinheiro chega?, vocabulário (poupar, orçamento, salário) e frases sobre o dinheiro",
+    "disciplina": "Matemática",
+    "data": "2026-11-25",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-25_3ano_DAC_EducacaoFinanceira_ComprasSimples_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Faz as compras com o Ticl@s: compara, soma e poupa!",
+    "focoTic": [
+      "Rato: clicar e arrastar",
+      "Teclado: escrever números e frases"
+    ],
+    "ilustracao": {
+      "tipo": "numeros",
+      "conta": [
+        "10",
+        "+",
+        "5"
+      ]
+    }
   }
 ]
