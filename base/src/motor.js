@@ -219,6 +219,7 @@ function validarAula(a) {
   e.push(...validarConsulta(a));
   e.push(...validarFilmes(a));
   e.push(...validarEscape(a));
+  if (a.animacoes !== undefined && !['obrigatorias', 'opcionais'].includes(a.animacoes)) e.push('«animacoes» tem de ser «obrigatorias» ou «opcionais».');
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -464,11 +465,13 @@ function iniciarRonda() {
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
-    encher(area, filme(ronda.animacao, {
-      titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'),
-      aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); },
-      aoContinuar: () => { palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); }
+    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); };
+    const ver = livre => encher(area, filme(ronda.animacao, {
+      titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'), livre,
+      aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); }, aoContinuar: comecar
     }));
+    if (filmesOpcionais()) encher(area, escolhaFilme(ronda.titulo || nomeFase(ronda.fase), () => ver(true), comecar, t('filmeComecar')));
+    else ver(false);
     return;
   }
   motor(ri, ronda, area);
@@ -2091,7 +2094,7 @@ function filme(cenas, opcoes) {
   const btAnt = h('button', { class: 'btn leve', 'aria-label': t('filmeAnterior'), title: t('filmeAnterior'), onclick: () => irPara(k - 1) }, '⏮️');
   const btPausa = h('button', { class: 'btn leve filme-pausa', onclick: () => fim ? recomecar() : alternar() });
   const contador = h('span', { class: 'filme-contador' });
-  const btSaltar = (opcoes.livre || prefs.saltarFilmes) ? h('button', { class: 'btn leve', onclick: () => terminar(true) }, '⏭️ ' + t('filmeSaltar')) : null;
+  const btSaltar = (!opcoes.livre && prefs.saltarFilmes) ? h('button', { class: 'btn leve', onclick: () => terminar(true) }, '⏭️ ' + t('filmeSaltar')) : null;
   const btSeguir = h('button', { class: 'btn', disabled: true, onclick: () => { parar(); calar(); opcoes.aoContinuar && opcoes.aoContinuar(); } }, opcoes.botao || '▶');
   const aviso = h('div', { class: 'filme-aviso' }, '⏳ ', t('filmeEspera'));
   const raiz = h('div', { class: 'filme' }, ecra,
@@ -2154,9 +2157,24 @@ function filme(cenas, opcoes) {
 }
 function ecraAbertura() {
   limparTimers(); calar();
-  $('#app').replaceChildren(h('div', null,
+  const seguir = () => { est.vistas.abertura = true; guardarProgresso(); ecraMapa(); };
+  const ver = livre => $('#app').replaceChildren(h('div', null,
     h('div', { class: 'etiqueta' }, h('span', null, '🎬 ' + t('filmeAbertura')), h('span', { class: 'fase' }, AULA.titulo)),
-    filme(AULA.abertura, { titulo: AULA.titulo, botao: '▶ ' + t('filmeMissoes'), aoTerminar: () => { est.vistas.abertura = true; guardarProgresso(); }, aoContinuar: ecraMapa })));
+    filme(AULA.abertura, { titulo: AULA.titulo, botao: '▶ ' + t('filmeMissoes'), livre, aoTerminar: () => { est.vistas.abertura = true; guardarProgresso(); }, aoContinuar: seguir })));
+  if (filmesOpcionais()) $('#app').replaceChildren(h('div', null, escolhaFilme(AULA.titulo, () => ver(true), seguir, t('filmeMissoes'))));
+  else ver(false);
+}
+// V3.10: "animacoes": "opcionais" → o aluno escolhe se vê a animação (e pode avançar quando quiser)
+const filmesOpcionais = () => AULA && AULA.animacoes === 'opcionais';
+function escolhaFilme(titulo, aoVer, aoSaltar, rotuloSaltar) {
+  return h('div', { class: 'filme-escolha' },
+    h('img', { class: 'filme-escolha-mascote', src: MASCOTE.duvida || MASCOTE.aponta || '', alt: '' }),
+    h('div', null,
+      h('small', null, '🎬 ' + titulo),
+      h('h3', null, t('filmeEscolha')),
+      h('div', { class: 'linha' },
+        h('button', { class: 'btn azul', onclick: aoVer }, '🎬 ' + t('filmeSim')),
+        h('button', { class: 'btn', onclick: aoSaltar }, '▶ ' + rotuloSaltar))));
 }
 // ver outra vez, numa janela (sem obrigação)
 function verFilme(cenas, titulo) {

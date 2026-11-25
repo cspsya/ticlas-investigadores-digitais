@@ -272,6 +272,8 @@ def validar(a):
     e.extend(validar_consulta(a))
     e.extend(validar_filmes(a))
     e.extend(validar_escape(a))
+    if "animacoes" in a and a["animacoes"] not in ("obrigatorias", "opcionais"):
+        e.append("«animacoes» tem de ser «obrigatorias» ou «opcionais».")
     return e
 
 

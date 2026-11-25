@@ -681,3 +681,10 @@ body.contraste .alg-mab{background:#fff;border-color:#000}
 body.contraste .conta .cel.ativa{background:#ff0;box-shadow:0 0 0 2px #000}
 @media (prefers-reduced-motion: reduce){.alg-peca.entra,.alg-peca.sai,.conta .vai.pop,.conta input.atual,.alg-passo .btn.amarelo.grande{animation:none}}
 @media print{.alg-passo .linha{display:none}}
+
+/* ---------- Animações opcionais (V3.10) ---------- */
+.filme-escolha{display:flex;align-items:center;gap:18px;padding:22px 24px;border-radius:22px;border:3px solid var(--t-1,#E8834A);background:radial-gradient(120% 90% at 70% 20%,#fffdf6 0%,var(--t-fundo,#FFF8F0) 60%,var(--t-fundo2,#FDEBD6) 100%);animation:filmeSobe .4s both}
+.filme-escolha-mascote{width:120px;height:auto;flex:none}
+.filme-escolha small{font-weight:900;color:var(--t-1d,#7a3b12);opacity:.85}
+.filme-escolha h3{margin:4px 0 14px;font-size:clamp(1.15rem,2.4vw,1.5rem)}
+@media (max-width:600px){.filme-escolha{flex-direction:column;text-align:center}.filme-escolha .linha{justify-content:center}}

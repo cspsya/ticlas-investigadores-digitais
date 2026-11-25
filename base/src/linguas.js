@@ -607,3 +607,14 @@ Object.assign(T.ne, {
 });
 Object.assign(T.hi, { mab_c: 'सैकड़ा', mab_d: 'दहाई', mab_u: 'इकाई' });
 Object.assign(T.ne, { mab_c: 'सय', mab_d: 'दहाइ', mab_u: 'एकाइ' });
+
+/* Animações opcionais (V3.10) */
+Object.assign(T.pt, { filmeEscolha: 'Queres ver a animação com a matéria antes de começar?', filmeSim: 'Ver a animação' });
+Object.assign(T.en, { filmeEscolha: 'Do you want to watch the animation about the topic before you start?', filmeSim: 'Watch the animation' });
+Object.assign(T.es, { filmeEscolha: '¿Quieres ver la animación con el tema antes de empezar?', filmeSim: 'Ver la animación' });
+Object.assign(T.fr, { filmeEscolha: 'Veux-tu voir l’animation sur la leçon avant de commencer ?', filmeSim: 'Voir l’animation' });
+Object.assign(T.de, { filmeEscolha: 'Möchtest du vor dem Start die Animation zum Thema ansehen?', filmeSim: 'Animation ansehen' });
+Object.assign(T.it, { filmeEscolha: 'Vuoi guardare l’animazione sull’argomento prima di iniziare?', filmeSim: 'Guarda l’animazione' });
+Object.assign(T.uk, { filmeEscolha: 'Хочеш переглянути анімацію з темою перед початком?', filmeSim: 'Переглянути анімацію' });
+Object.assign(T.hi, { filmeEscolha: 'क्या तुम शुरू करने से पहले विषय का एनिमेशन देखना चाहते हो?', filmeSim: 'एनिमेशन देखो' });
+Object.assign(T.ne, { filmeEscolha: 'सुरु गर्नुअघि विषयको एनिमेसन हेर्न चाहन्छौ?', filmeSim: 'एनिमेसन हेर' });

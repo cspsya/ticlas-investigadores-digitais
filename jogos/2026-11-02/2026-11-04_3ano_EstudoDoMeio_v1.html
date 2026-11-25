@@ -689,6 +689,13 @@ body.contraste .alg-mab{background:#fff;border-color:#000}
 body.contraste .conta .cel.ativa{background:#ff0;box-shadow:0 0 0 2px #000}
 @media (prefers-reduced-motion: reduce){.alg-peca.entra,.alg-peca.sai,.conta .vai.pop,.conta input.atual,.alg-passo .btn.amarelo.grande{animation:none}}
 @media print{.alg-passo .linha{display:none}}
+
+/* ---------- Animações opcionais (V3.10) ---------- */
+.filme-escolha{display:flex;align-items:center;gap:18px;padding:22px 24px;border-radius:22px;border:3px solid var(--t-1,#E8834A);background:radial-gradient(120% 90% at 70% 20%,#fffdf6 0%,var(--t-fundo,#FFF8F0) 60%,var(--t-fundo2,#FDEBD6) 100%);animation:filmeSobe .4s both}
+.filme-escolha-mascote{width:120px;height:auto;flex:none}
+.filme-escolha small{font-weight:900;color:var(--t-1d,#7a3b12);opacity:.85}
+.filme-escolha h3{margin:4px 0 14px;font-size:clamp(1.15rem,2.4vw,1.5rem)}
+@media (max-width:600px){.filme-escolha{flex-direction:column;text-align:center}.filme-escolha .linha{justify-content:center}}
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · letra manuscrita e tipo «copiar»
    Letra: Playwrite PT (TypeTogether / Google Fonts, SIL Open Font License 1.1),
@@ -1714,6 +1721,17 @@ Object.assign(T.ne, {
 });
 Object.assign(T.hi, { mab_c: 'सैकड़ा', mab_d: 'दहाई', mab_u: 'इकाई' });
 Object.assign(T.ne, { mab_c: 'सय', mab_d: 'दहाइ', mab_u: 'एकाइ' });
+
+/* Animações opcionais (V3.10) */
+Object.assign(T.pt, { filmeEscolha: 'Queres ver a animação com a matéria antes de começar?', filmeSim: 'Ver a animação' });
+Object.assign(T.en, { filmeEscolha: 'Do you want to watch the animation about the topic before you start?', filmeSim: 'Watch the animation' });
+Object.assign(T.es, { filmeEscolha: '¿Quieres ver la animación con el tema antes de empezar?', filmeSim: 'Ver la animación' });
+Object.assign(T.fr, { filmeEscolha: 'Veux-tu voir l’animation sur la leçon avant de commencer ?', filmeSim: 'Voir l’animation' });
+Object.assign(T.de, { filmeEscolha: 'Möchtest du vor dem Start die Animation zum Thema ansehen?', filmeSim: 'Animation ansehen' });
+Object.assign(T.it, { filmeEscolha: 'Vuoi guardare l’animazione sull’argomento prima di iniziare?', filmeSim: 'Guarda l’animazione' });
+Object.assign(T.uk, { filmeEscolha: 'Хочеш переглянути анімацію з темою перед початком?', filmeSim: 'Переглянути анімацію' });
+Object.assign(T.hi, { filmeEscolha: 'क्या तुम शुरू करने से पहले विषय का एनिमेशन देखना चाहते हो?', filmeSim: 'एनिमेशन देखो' });
+Object.assign(T.ne, { filmeEscolha: 'सुरु गर्नुअघि विषयको एनिमेसन हेर्न चाहन्छौ?', filmeSim: 'एनिमेसन हेर' });
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · motor
    Para criar um jogo novo NÃO se altera este código:
@@ -1935,6 +1953,7 @@ function validarAula(a) {
   e.push(...validarConsulta(a));
   e.push(...validarFilmes(a));
   e.push(...validarEscape(a));
+  if (a.animacoes !== undefined && !['obrigatorias', 'opcionais'].includes(a.animacoes)) e.push('«animacoes» tem de ser «obrigatorias» ou «opcionais».');
   if (!a.rondas.some(r => r && r.fase !== 'bonus')) e.push('Tem de existir pelo menos uma ronda que não seja de bónus.');
   return e;
 }
@@ -2180,11 +2199,13 @@ function iniciarRonda() {
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
-    encher(area, filme(ronda.animacao, {
-      titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'),
-      aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); },
-      aoContinuar: () => { palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); }
+    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); };
+    const ver = livre => encher(area, filme(ronda.animacao, {
+      titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'), livre,
+      aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); }, aoContinuar: comecar
     }));
+    if (filmesOpcionais()) encher(area, escolhaFilme(ronda.titulo || nomeFase(ronda.fase), () => ver(true), comecar, t('filmeComecar')));
+    else ver(false);
     return;
   }
   motor(ri, ronda, area);
@@ -3807,7 +3828,7 @@ function filme(cenas, opcoes) {
   const btAnt = h('button', { class: 'btn leve', 'aria-label': t('filmeAnterior'), title: t('filmeAnterior'), onclick: () => irPara(k - 1) }, '⏮️');
   const btPausa = h('button', { class: 'btn leve filme-pausa', onclick: () => fim ? recomecar() : alternar() });
   const contador = h('span', { class: 'filme-contador' });
-  const btSaltar = (opcoes.livre || prefs.saltarFilmes) ? h('button', { class: 'btn leve', onclick: () => terminar(true) }, '⏭️ ' + t('filmeSaltar')) : null;
+  const btSaltar = (!opcoes.livre && prefs.saltarFilmes) ? h('button', { class: 'btn leve', onclick: () => terminar(true) }, '⏭️ ' + t('filmeSaltar')) : null;
   const btSeguir = h('button', { class: 'btn', disabled: true, onclick: () => { parar(); calar(); opcoes.aoContinuar && opcoes.aoContinuar(); } }, opcoes.botao || '▶');
   const aviso = h('div', { class: 'filme-aviso' }, '⏳ ', t('filmeEspera'));
   const raiz = h('div', { class: 'filme' }, ecra,
@@ -3870,9 +3891,24 @@ function filme(cenas, opcoes) {
 }
 function ecraAbertura() {
   limparTimers(); calar();
-  $('#app').replaceChildren(h('div', null,
+  const seguir = () => { est.vistas.abertura = true; guardarProgresso(); ecraMapa(); };
+  const ver = livre => $('#app').replaceChildren(h('div', null,
     h('div', { class: 'etiqueta' }, h('span', null, '🎬 ' + t('filmeAbertura')), h('span', { class: 'fase' }, AULA.titulo)),
-    filme(AULA.abertura, { titulo: AULA.titulo, botao: '▶ ' + t('filmeMissoes'), aoTerminar: () => { est.vistas.abertura = true; guardarProgresso(); }, aoContinuar: ecraMapa })));
+    filme(AULA.abertura, { titulo: AULA.titulo, botao: '▶ ' + t('filmeMissoes'), livre, aoTerminar: () => { est.vistas.abertura = true; guardarProgresso(); }, aoContinuar: seguir })));
+  if (filmesOpcionais()) $('#app').replaceChildren(h('div', null, escolhaFilme(AULA.titulo, () => ver(true), seguir, t('filmeMissoes'))));
+  else ver(false);
+}
+// V3.10: "animacoes": "opcionais" → o aluno escolhe se vê a animação (e pode avançar quando quiser)
+const filmesOpcionais = () => AULA && AULA.animacoes === 'opcionais';
+function escolhaFilme(titulo, aoVer, aoSaltar, rotuloSaltar) {
+  return h('div', { class: 'filme-escolha' },
+    h('img', { class: 'filme-escolha-mascote', src: MASCOTE.duvida || MASCOTE.aponta || '', alt: '' }),
+    h('div', null,
+      h('small', null, '🎬 ' + titulo),
+      h('h3', null, t('filmeEscolha')),
+      h('div', { class: 'linha' },
+        h('button', { class: 'btn azul', onclick: aoVer }, '🎬 ' + t('filmeSim')),
+        h('button', { class: 'btn', onclick: aoSaltar }, '▶ ' + rotuloSaltar))));
 }
 // ver outra vez, numa janela (sem obrigação)
 function verFilme(cenas, titulo) {

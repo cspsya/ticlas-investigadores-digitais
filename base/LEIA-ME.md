@@ -128,6 +128,7 @@ Cada cena precisa de `texto` (a legenda; `**…**` fica destacado). Opcional: `t
 
 - **Obrigatórias:** a `abertura` passa antes do mapa de missões e a `animacao` de cada ronda antes da missão. O botão para continuar só fica ativo no fim; pode-se pausar e voltar à cena anterior, mas não avançar. Fica registado no progresso: ao voltar à mesma missão, já não é obrigatória (há o botão «🎬 Ver a animação» e, no mapa de missões, «🎬 Abertura»).
 - **Painel do professor (⚙️):** «Animações: permitir saltar (⏭️)».
+- **Animações à escolha do aluno (V3.10):** com `"animacoes": "opcionais"` na aula, antes da abertura e de cada missão aparece a pergunta «Queres ver a animação com a matéria antes de começar?», com os botões «🎬 Ver a animação» e «▶ Começar a missão». Se o aluno escolher ver, pode avançar quando quiser. Sem este campo, as animações continuam obrigatórias.
 - Sem som por omissão; no modo quadro (som ligado) o Ticl@s lê as legendas. A duração estimada da aula inclui as animações.
 
 ### Escape room (V3.8, opcional)
