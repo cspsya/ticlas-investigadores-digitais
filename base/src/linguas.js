@@ -618,3 +618,12 @@ Object.assign(T.it, { filmeEscolha: 'Vuoi guardare l’animazione sull’argomen
 Object.assign(T.uk, { filmeEscolha: 'Хочеш переглянути анімацію з темою перед початком?', filmeSim: 'Переглянути анімацію' });
 Object.assign(T.hi, { filmeEscolha: 'क्या तुम शुरू करने से पहले विषय का एनिमेशन देखना चाहते हो?', filmeSim: 'एनिमेशन देखो' });
 Object.assign(T.ne, { filmeEscolha: 'सुरु गर्नुअघि विषयको एनिमेसन हेर्न चाहन्छौ?', filmeSim: 'एनिमेसन हेर' });
+T.pt.escPorAbrir = 'Por abrir';
+T.en.escPorAbrir = 'Not opened yet';
+T.es.escPorAbrir = 'Por abrir';
+T.fr.escPorAbrir = 'À ouvrir';
+T.de.escPorAbrir = 'Noch zu öffnen';
+T.it.escPorAbrir = 'Da aprire';
+T.uk.escPorAbrir = 'Ще не відчинено';
+T.hi.escPorAbrir = 'अभी खोलना है';
+T.ne.escPorAbrir = 'खोल्न बाँकी';

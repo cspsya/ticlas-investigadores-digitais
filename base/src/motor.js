@@ -2533,7 +2533,7 @@ function ecraMapaEscape() {
   const todas = principais.every(ri => est.feitas[ri]);
   const sala = (ri, k) => {
     const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = !feita && salaFechada(k, principais);
-    const atual = !feita && !fechada;
+    const atual = !feita && !fechada && k === principais.findIndex(x => !est.feitas[x]);
     return h('button', {
       class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: (fechada && !prefs.livre) || null,
       onclick: () => { est.seq = 'principal'; est.p = k; iniciarRonda(); }
@@ -2543,7 +2543,7 @@ function ecraMapaEscape() {
       h('strong', null, r.titulo || t('escSala', { n: k + 1 })),
       h('small', null, t('escSala', { n: k + 1 })),
       feita ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
-        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, t('sugestao')));
+        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('sugestao') : t('escPorAbrir')));
   };
   const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: (!todas && !prefs.livre) || null, onclick: ecraCadeado },
     h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, est.escapou ? '🏆' : todas ? '🔐' : '🔒'),

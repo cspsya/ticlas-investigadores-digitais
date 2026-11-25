@@ -255,11 +255,12 @@
   ],
   "escape": {
     "titulo": "🏰 Fuga do Castelo",
-    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas**, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
+    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem que quiseres, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
     "palavra": "DINASTIA",
     "cadeado": "As 8 letras das chaves estão **baralhadas**! Ordena-as e escreve a palavra secreta que abre o portão do castelo.",
     "pista": "É o nome que se dá a uma **sequência de reis da mesma família**. A 1.ª chamou-se Afonsina.",
-    "vitoria": "O portão abriu-se e o Ticl@s está livre! És um verdadeiro investigador da 1.ª dinastia."
+    "vitoria": "O portão abriu-se e o Ticl@s está livre! És um verdadeiro investigador da 1.ª dinastia.",
+    "sequencial": false
   },
   "abertura": [
     {

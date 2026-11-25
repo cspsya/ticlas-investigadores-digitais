@@ -2113,6 +2113,15 @@ Object.assign(T.it, { filmeEscolha: 'Vuoi guardare l’animazione sull’argomen
 Object.assign(T.uk, { filmeEscolha: 'Хочеш переглянути анімацію з темою перед початком?', filmeSim: 'Переглянути анімацію' });
 Object.assign(T.hi, { filmeEscolha: 'क्या तुम शुरू करने से पहले विषय का एनिमेशन देखना चाहते हो?', filmeSim: 'एनिमेशन देखो' });
 Object.assign(T.ne, { filmeEscolha: 'सुरु गर्नुअघि विषयको एनिमेसन हेर्न चाहन्छौ?', filmeSim: 'एनिमेसन हेर' });
+T.pt.escPorAbrir = 'Por abrir';
+T.en.escPorAbrir = 'Not opened yet';
+T.es.escPorAbrir = 'Por abrir';
+T.fr.escPorAbrir = 'À ouvrir';
+T.de.escPorAbrir = 'Noch zu öffnen';
+T.it.escPorAbrir = 'Da aprire';
+T.uk.escPorAbrir = 'Ще не відчинено';
+T.hi.escPorAbrir = 'अभी खोलना है';
+T.ne.escPorAbrir = 'खोल्न बाँकी';
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · motor
    Para criar um jogo novo NÃO se altera este código:
@@ -4648,7 +4657,7 @@ function ecraMapaEscape() {
   const todas = principais.every(ri => est.feitas[ri]);
   const sala = (ri, k) => {
     const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = !feita && salaFechada(k, principais);
-    const atual = !feita && !fechada;
+    const atual = !feita && !fechada && k === principais.findIndex(x => !est.feitas[x]);
     return h('button', {
       class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: (fechada && !prefs.livre) || null,
       onclick: () => { est.seq = 'principal'; est.p = k; iniciarRonda(); }
@@ -4658,7 +4667,7 @@ function ecraMapaEscape() {
       h('strong', null, r.titulo || t('escSala', { n: k + 1 })),
       h('small', null, t('escSala', { n: k + 1 })),
       feita ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
-        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, t('sugestao')));
+        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('sugestao') : t('escPorAbrir')));
   };
   const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: (!todas && !prefs.livre) || null, onclick: ecraCadeado },
     h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, est.escapou ? '🏆' : todas ? '🔐' : '🔒'),
