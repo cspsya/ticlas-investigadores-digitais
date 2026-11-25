@@ -1,0 +1,600 @@
+{
+  "id": "2026-11-25-3ano-educacao-financeira-compras-simples",
+  "titulo": "Às compras com o Ticl@s (versão simples)",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Matemática",
+  "data": "2026-11-25",
+  "descricao": "DAC Educação Financeira, versão simples sem MAB e sem algoritmo: comparar preços (<, >, =), estratégias de cálculo mental (somar dezenas, dobros, amigos do 10, dezena + unidades), necessidades e desejos, o dinheiro chega?, vocabulário (poupar, orçamento, salário) e frases sobre o dinheiro",
+  "resumo": "Faz as compras com o Ticl@s: compara, soma e poupa!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: escrever números e frases"
+  ],
+  "ilustracao": {
+    "tipo": "numeros",
+    "conta": [
+      "10",
+      "+",
+      "5"
+    ]
+  },
+  "objetivo": "Comparar preços e usar estratégias de cálculo mental simples em situações de compra.",
+  "minutos": 60,
+  "consulta": [
+    {
+      "id": "estrategias",
+      "emoji": "🤔",
+      "titulo": "Estratégias de cálculo",
+      "paragrafos": [
+        "Para saber quanto custam as compras, podemos fazer contas de cabeça com estratégias simples."
+      ],
+      "lista": [
+        "**Somar dezenas:** 20 + 30 é como 2 dezenas + 3 dezenas = 5 dezenas = 50.",
+        "**Dobros:** 2 cadernos de 5 € = o dobro de 5 = 10 €.",
+        "**Amigos do 10:** 7 + 3, 6 + 4, 8 + 2 fazem 10.",
+        "**Dezena + unidades:** 40 + 5 = 45."
+      ],
+      "lembra": "Para comparar preços: < quer dizer «é menor do que» e > quer dizer «é maior do que»."
+    },
+    {
+      "id": "dinheiro",
+      "emoji": "💶",
+      "titulo": "Usar bem o dinheiro",
+      "paragrafos": [
+        "Uma **necessidade** é algo de que precisamos para viver: comida, água, roupa, casa, material escolar.",
+        "Um **desejo** é algo de que gostamos, mas sem o qual conseguimos viver: brinquedos, gomas, jogos novos.",
+        "Antes de comprar, pensa no total das compras e vê se o dinheiro que tens chega."
+      ],
+      "lista": [
+        "**Poupar** é guardar dinheiro para usar mais tarde.",
+        "O **orçamento** é um plano para o dinheiro, feito antes de gastar.",
+        "O **salário** é o dinheiro que se ganha com o trabalho."
+      ],
+      "lembra": "Primeiro as necessidades, depois os desejos!"
+    }
+  ],
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "titulo": "Qual é mais barato?",
+      "instrucao": "Olha para os preços e escolhe o produto mais barato.",
+      "itens": [
+        {
+          "pergunta": "Qual é mais barato?",
+          "emoji": "🍎",
+          "certa": "🍎 Maçãs: 2 €",
+          "erradas": [
+            "🍌 Bananas: 3 €"
+          ],
+          "explicacao": "2 é menor do que 3."
+        },
+        {
+          "pergunta": "Qual é mais barato?",
+          "emoji": "📒",
+          "certa": "📒 Caderno: 4 €",
+          "erradas": [
+            "📕 Livro: 9 €"
+          ],
+          "explicacao": "4 é menor do que 9."
+        },
+        {
+          "pergunta": "Qual é mais barato?",
+          "emoji": "⚽",
+          "certa": "⚽ Bola: 12 €",
+          "erradas": [
+            "🧢 Boné: 15 €",
+            "🎒 Mochila: 21 €"
+          ],
+          "explicacao": "12 é o preço mais baixo."
+        },
+        {
+          "pergunta": "Qual é mais caro?",
+          "emoji": "👟",
+          "certa": "👟 Sapatilhas: 40 €",
+          "erradas": [
+            "🧦 Meias: 4 €",
+            "🧥 Casaco: 30 €"
+          ],
+          "explicacao": "40 é o preço mais alto."
+        },
+        {
+          "pergunta": "Qual é mais barato?",
+          "emoji": "🧃",
+          "certa": "🧃 Sumo B: 1 €",
+          "erradas": [
+            "🧃 Sumo A: 2 €"
+          ],
+          "explicacao": "Os sumos são iguais: escolhemos o mais barato."
+        },
+        {
+          "pergunta": "Qual é mais caro?",
+          "emoji": "🚲",
+          "certa": "🚲 Bicicleta: 90 €",
+          "erradas": [
+            "🛴 Trotinete: 60 €",
+            "🔒 Cadeado: 9 €"
+          ],
+          "explicacao": "90 é o preço mais alto."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "titulo": "Compara os preços",
+      "instrucao": "Escolhe o sinal certo: < (menor), > (maior) ou = (igual).",
+      "consulta": "estrategias",
+      "itens": [
+        {
+          "frase": "12 € ___ 21 €",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "12 é menor do que 21."
+        },
+        {
+          "frase": "30 € ___ 13 €",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "30 é maior do que 13."
+        },
+        {
+          "frase": "45 € ___ 45 €",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "Os preços são iguais."
+        },
+        {
+          "frase": "9 € ___ 19 €",
+          "certa": "<",
+          "erradas": [
+            ">",
+            "="
+          ],
+          "explicacao": "9 é menor do que 19."
+        },
+        {
+          "frase": "60 € ___ 59 €",
+          "certa": ">",
+          "erradas": [
+            "<",
+            "="
+          ],
+          "explicacao": "60 é maior do que 59."
+        },
+        {
+          "frase": "5 € + 5 € ___ 10 €",
+          "certa": "=",
+          "erradas": [
+            "<",
+            ">"
+          ],
+          "explicacao": "5 + 5 = 10: é igual."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "Cálculo de cabeça",
+      "instrucao": "Usa a estratégia indicada e escolhe o total.",
+      "consulta": "estrategias",
+      "itens": [
+        {
+          "pergunta": "Somar dezenas: 🧢 boné 20 € + ⚽ bola 30 €",
+          "emoji": "🤔",
+          "certa": "50 €",
+          "erradas": [
+            "5 €",
+            "23 €"
+          ],
+          "explicacao": "2 dezenas + 3 dezenas = 5 dezenas = 50."
+        },
+        {
+          "pergunta": "Dobro: 2 cadernos 📒 de 5 € cada",
+          "emoji": "🤔",
+          "certa": "10 €",
+          "erradas": [
+            "7 €",
+            "55 €"
+          ],
+          "explicacao": "O dobro de 5 é 10."
+        },
+        {
+          "pergunta": "Dezena + unidades: 🧥 casaco 40 € + 🧦 meias 5 €",
+          "emoji": "🤔",
+          "certa": "45 €",
+          "erradas": [
+            "90 €",
+            "54 €"
+          ],
+          "explicacao": "40 + 5 = 45."
+        },
+        {
+          "pergunta": "Amigos do 10: 🍎 maçãs 6 € + 🍞 pão 4 €",
+          "emoji": "🤔",
+          "certa": "10 €",
+          "erradas": [
+            "2 €",
+            "64 €"
+          ],
+          "explicacao": "6 e 4 são amigos do 10."
+        },
+        {
+          "pergunta": "Dobro: 2 bolas ⚽ de 15 € cada",
+          "emoji": "🤔",
+          "certa": "30 €",
+          "erradas": [
+            "17 €",
+            "25 €"
+          ],
+          "explicacao": "O dobro de 15 é 30."
+        },
+        {
+          "pergunta": "Somar dezenas: 🛴 trotinete 50 € + 🎒 mochila 40 €",
+          "emoji": "🤔",
+          "certa": "90 €",
+          "erradas": [
+            "9 €",
+            "54 €"
+          ],
+          "explicacao": "5 dezenas + 4 dezenas = 9 dezenas = 90."
+        },
+        {
+          "pergunta": "Dezena + unidades: 📕 livro 30 € + ✏️ lápis 8 €",
+          "emoji": "🤔",
+          "certa": "38 €",
+          "erradas": [
+            "11 €",
+            "83 €"
+          ],
+          "explicacao": "30 + 8 = 38."
+        },
+        {
+          "pergunta": "Amigos do 10: 🍬 7 € + 🧃 5 € + 🍪 3 €. Junta primeiro os amigos do 10!",
+          "emoji": "🤔",
+          "certa": "15 €",
+          "erradas": [
+            "14 €",
+            "10 €"
+          ],
+          "explicacao": "7 + 3 = 10. Depois, 10 + 5 = 15."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Amigos do 10",
+      "instrucao": "Liga os preços que, juntos, fazem 10 €.",
+      "consulta": "estrategias",
+      "itens": [
+        [
+          "1 €",
+          "9 €"
+        ],
+        [
+          "2 €",
+          "8 €"
+        ],
+        [
+          "3 €",
+          "7 €"
+        ],
+        [
+          "4 €",
+          "6 €"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Preciso ou quero?",
+      "instrucao": "Arruma cada compra: é uma necessidade (preciso) ou um desejo (quero)?",
+      "consulta": "dinheiro",
+      "caixas": [
+        "🧺 Preciso",
+        "🎁 Quero"
+      ],
+      "itens": [
+        [
+          "🍞 pão",
+          "🧺 Preciso"
+        ],
+        [
+          "💧 água",
+          "🧺 Preciso"
+        ],
+        [
+          "🧥 casaco para o inverno",
+          "🧺 Preciso"
+        ],
+        [
+          "🪥 escova de dentes",
+          "🧺 Preciso"
+        ],
+        [
+          "📒 caderno para a escola",
+          "🧺 Preciso"
+        ],
+        [
+          "🎮 jogo novo",
+          "🎁 Quero"
+        ],
+        [
+          "🍬 gomas",
+          "🎁 Quero"
+        ],
+        [
+          "🧸 peluche",
+          "🎁 Quero"
+        ],
+        [
+          "🎈 balões",
+          "🎁 Quero"
+        ],
+        [
+          "🕶️ óculos de sol da moda",
+          "🎁 Quero"
+        ],
+        [
+          "💡 conta da luz",
+          "🧺 Preciso"
+        ],
+        [
+          "🎟️ bilhete para o cinema",
+          "🎁 Quero"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "O dinheiro chega?",
+      "instrucao": "Pensa no total com uma estratégia e compara com o dinheiro que tens.",
+      "consulta": "estrategias",
+      "itens": [
+        {
+          "pergunta": "Tens 10 €. Queres um 🧃 sumo de 3 € e uma 🥪 sandes de 4 €. O dinheiro chega?",
+          "certa": "Sim, chega.",
+          "erradas": [
+            "Não chega."
+          ],
+          "explicacao": "3 + 4 = 7. 7 é menor do que 10: chega."
+        },
+        {
+          "pergunta": "Tens 50 €. Queres uma ⚽ bola de 20 € e um 🧢 boné de 20 €. O dinheiro chega?",
+          "certa": "Sim, chega.",
+          "erradas": [
+            "Não chega."
+          ],
+          "explicacao": "O dobro de 20 é 40. 40 é menor do que 50: chega."
+        },
+        {
+          "pergunta": "Tens 30 €. Queres umas 👟 sapatilhas de 20 € e um 🧥 casaco de 20 €. O dinheiro chega?",
+          "certa": "Não chega.",
+          "erradas": [
+            "Sim, chega."
+          ],
+          "explicacao": "O dobro de 20 é 40. 40 é maior do que 30: não chega."
+        },
+        {
+          "pergunta": "Tens 10 €. Queres umas 🍬 gomas de 6 € e um 🍦 gelado de 4 €. O dinheiro chega?",
+          "certa": "Sim, chega.",
+          "erradas": [
+            "Não chega."
+          ],
+          "explicacao": "6 e 4 são amigos do 10: chega à justa."
+        },
+        {
+          "pergunta": "Tens 60 €. Queres uma 🛴 trotinete de 50 € e um 🔒 cadeado de 20 €. O dinheiro chega?",
+          "certa": "Não chega.",
+          "erradas": [
+            "Sim, chega."
+          ],
+          "explicacao": "5 dezenas + 2 dezenas = 7 dezenas = 70. 70 é maior do que 60: não chega."
+        },
+        {
+          "pergunta": "Tens 50 €. Queres um 📕 livro de 40 € e um ✏️ lápis de 5 €. O dinheiro chega?",
+          "certa": "Sim, chega.",
+          "erradas": [
+            "Não chega."
+          ],
+          "explicacao": "40 + 5 = 45. 45 é menor do que 50: chega."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Palavras do dinheiro",
+      "instrucao": "Toca numa palavra e depois no que ela quer dizer.",
+      "consulta": "dinheiro",
+      "itens": [
+        [
+          "🐷 Poupar",
+          "Guardar dinheiro para mais tarde"
+        ],
+        [
+          "📋 Orçamento",
+          "Um plano para o dinheiro"
+        ],
+        [
+          "💼 Salário",
+          "Dinheiro ganho com o trabalho"
+        ],
+        [
+          "🧺 Necessidade",
+          "Algo de que precisamos"
+        ],
+        [
+          "🎁 Desejo",
+          "Algo de que gostamos, mas não precisamos"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Primeiro, depois...",
+      "instrucao": "Põe os passos pela ordem certa.",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "emoji": "🐷",
+          "pergunta": "Como se poupa para comprar uma bola?",
+          "pecas": [
+            "Escolho um objetivo.",
+            "Guardo um pouco de cada vez.",
+            "Tenho paciência.",
+            "Compro a bola!"
+          ]
+        },
+        {
+          "emoji": "🛒",
+          "pergunta": "Como se vai às compras com cabeça?",
+          "pecas": [
+            "Faço uma lista.",
+            "Vou à loja.",
+            "Comparo os preços.",
+            "Pago só o que está na lista."
+          ]
+        },
+        {
+          "emoji": "📋",
+          "pergunta": "Como se faz um orçamento?",
+          "pecas": [
+            "Vejo o dinheiro que entra.",
+            "Pago primeiro as necessidades.",
+            "Guardo uma parte para poupar.",
+            "Se sobrar, uso nos desejos."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Frases do dinheiro",
+      "instrucao": "Escreve frases completas: começa com letra maiúscula e termina com ponto final.",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa para a qual gostavas de poupar dinheiro. Usa a palavra «poupar».",
+          "palavra": "poupar",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa de que precisas (uma necessidade). Usa a palavra «preciso».",
+          "palavra": "preciso",
+          "minPalavras": 5
+        },
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa que desejas. Usa a palavra «quero».",
+          "palavra": "quero",
+          "minPalavras": 5
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "apanhar",
+      "titulo": "Apanha as necessidades",
+      "instrucao": "Mexe o rato para levar o cesto. Apanha só as necessidades!",
+      "itens": [
+        {
+          "certas": [
+            "🍞 pão",
+            "💧 água",
+            "🥛 leite",
+            "🧥 casaco",
+            "📒 caderno"
+          ],
+          "erradas": [
+            "🍬 gomas",
+            "🎮 jogo",
+            "🎈 balões",
+            "🧸 peluche",
+            "🍭 chupa"
+          ],
+          "meta": 8
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "verdadeiro_falso",
+      "titulo": "Verdadeiro ou falso?",
+      "instrucao": "Lê com atenção e decide: é verdadeiro ou falso?",
+      "consulta": "dinheiro",
+      "itens": [
+        {
+          "afirmacao": "Em Portugal, o nosso dinheiro é o euro.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "Poupar é gastar o dinheiro todo de uma vez.",
+          "verdade": false,
+          "explicacao": "Poupar é guardar dinheiro para usar mais tarde."
+        },
+        {
+          "afirmacao": "Antes de ir às compras, é boa ideia fazer uma lista.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "Um jogo novo é uma necessidade.",
+          "verdade": false,
+          "explicacao": "Gostamos de jogos, mas conseguimos viver sem eles: é um desejo."
+        },
+        {
+          "afirmacao": "Apagar a luz quando saímos de um quarto ajuda a poupar.",
+          "verdade": true
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória do dinheiro",
+      "instrucao": "Vira duas cartas e encontra os pares: a palavra e o desenho.",
+      "itens": [
+        [
+          "🐷",
+          "mealheiro"
+        ],
+        [
+          "💶",
+          "nota"
+        ],
+        [
+          "🪙",
+          "moeda"
+        ],
+        [
+          "💳",
+          "cartão"
+        ],
+        [
+          "🧾",
+          "talão"
+        ],
+        [
+          "🛒",
+          "carrinho"
+        ]
+      ]
+    }
+  ]
+}
