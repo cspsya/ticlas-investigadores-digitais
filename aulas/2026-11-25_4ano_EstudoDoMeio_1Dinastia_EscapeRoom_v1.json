@@ -13,6 +13,7 @@
   ],
   "objetivo": "Rever a 1.ª dinastia: abre as 8 salas do castelo, recolhe as chaves e descobre a palavra secreta.",
   "minutos": 60,
+  "animacoes": "opcionais",
   "consulta": [
     {
       "id": "antes",
