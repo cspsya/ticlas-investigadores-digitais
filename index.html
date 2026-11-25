@@ -408,6 +408,7 @@ footer .contentor{align-items:center}
 .etiqueta{display:inline-block;font-size:12.5px;font-weight:700;line-height:1.3;padding:3px 9px;border-radius:999px;background:#e6f3f0;color:#1f6b66}
 @media(max-width:640px){.escolhe{grid-template-columns:1fr}.escolhe img{width:96px}.anteriores button{font-size:14px;padding:8px 12px}}
 </style><style>.permanentes{margin:18px 0 26px;padding:16px;border:1px solid #b8cdc1;border-radius:16px;background:#f2f7f3}.permanentes h3,.titulo-semana{margin:0 0 8px;font-size:1.25rem}.permanentes>p{margin:0 0 14px;color:var(--tinta-2)}.titulo-semana{margin-top:12px}</style>
+<style>#professores .dominio-prof{background:#e5edf8;color:#234b72}#professores #f-dominio{max-width:100%;min-width:0}#contagem-prof{margin:8px 0 12px}#limpar-prof{min-height:47px}</style>
 </head>
 <body>
 <a class="pular" href="#missoes">Saltar para os recursos</a>
@@ -444,16 +445,20 @@ footer .contentor{align-items:center}
 <section class="professores" id="professores" aria-labelledby="t-prof">
   <div class="contentor">
     <h2 id="t-prof">Para professores</h2>
-    <p class="intro">Todas as missões publicadas, de todas as semanas. Cada missão é um ficheiro HTML que funciona no browser, no painel ou no computador. Para abrir um ano diretamente no painel, use o endereço com o ano no fim, por exemplo <code>#ano-2</code>.</p>
+    <p class="intro">Catálogo de todos os recursos publicados. Filtre pelos quatro domínios do DoTIC, por competências instrumentais ou por pensamento computacional (categorias complementares). A classificação baseia-se nas competências registadas no catálogo. Cada missão é um ficheiro HTML que funciona no browser, no painel ou no computador. Para abrir um ano diretamente no painel, use o endereço com o ano no fim, por exemplo <code>#ano-2</code>.</p>
     <div class="filtros">
       <div class="chips" id="chips" role="group" aria-label="Filtrar por disciplina"></div>
       <label class="so-leitor" for="f-tipo">Tipo</label><select id="f-tipo"><option value="todos">Todos os recursos</option><option value="atividade">Atividades</option><option value="apresentacao">Apresentações</option></select><label class="so-leitor" for="f-ano">Ano</label>
       <select id="f-ano"><option value="0">Todos os anos</option><option value="1">1.º ano</option><option value="2">2.º ano</option><option value="3">3.º ano</option><option value="4">4.º ano</option></select>
-      <label class="so-leitor" for="f-foco">Competência TIC</label>
+      <label class="so-leitor" for="f-dominio">Domínio curricular TIC</label>
+<select id="f-dominio"><option value="">Todos os domínios TIC</option><option>Cidadania Digital</option><option>Investigar e Pesquisar</option><option>Comunicar e Colaborar</option><option>Criar e Inovar</option><option value="pc">Pensamento Computacional</option><option value="transversal">Competências instrumentais / articulação</option><option value="pendente">Por classificar</option></select>
+<label class="so-leitor" for="f-foco">Competência TIC</label>
       <select id="f-foco" hidden><option value="">Todas as competências TIC</option></select>
       <label class="so-leitor" for="f-texto">Procurar</label>
       <input id="f-texto" type="search" placeholder="Procurar por turma, título ou conteúdo" autocomplete="off">
+      <button type="button" class="chip" id="limpar-prof">Limpar filtros</button>
     </div>
+    <p class="nota" id="contagem-prof" role="status"></p>
     <div class="tabela-scroll"><table class="tabela">
       <thead><tr><th>Turma</th><th>Missão</th><th class="col-disc">Disciplina</th><th class="col-semana">Semana</th><th><span class="so-leitor">Abrir</span></th></tr></thead>
       <tbody id="linhas"></tbody>
@@ -605,6 +610,22 @@ $('#ouvir').addEventListener('click',()=>falar(fala1.textContent+' '+pergunta.te
 ticlas.addEventListener('animationend',()=>ticlas.classList.remove('entra'),{once:true});
 
 /* ---------- catálogo dos professores ---------- */
+const DOMINIOS=['Cidadania Digital','Investigar e Pesquisar','Comunicar e Colaborar','Criar e Inovar'];
+function dominiosDe(d){
+ const explicitos=Array.isArray(d.dominiosTic)?d.dominiosTic:d.dominiosTic?[d.dominiosTic]:null;
+ if(explicitos)return explicitos.filter(x=>DOMINIOS.includes(x));
+ const f=norm(focosDe(d).join(' ')),t=norm(d.titulo),disciplina=norm(d.disciplina);
+ const resultado=[];
+ if(/cidadania digital/.test(disciplina)||/seguranca digital|regras da sala tic/.test(f)||/sala tic com o ticl@s/.test(t))resultado.push(DOMINIOS[0]);
+ if(/pesquisa/.test(f)&&! /video-apresentacao/.test(t))resultado.push(DOMINIOS[1]);
+ if(/correio eletronico|comunicacao digital|colaboracao digital/.test(f))resultado.push(DOMINIOS[2]);
+ if(/construcao 3d|projetos digitais/.test(f))resultado.push(DOMINIOS[3]);
+ return resultado;
+}
+function pcDe(d){return /pensamento computacional|programacao|algoritmos e repeticoes/.test(norm([d.disciplina,...focosDe(d)].join(' ')))}
+function transversalDe(d){return /rato|teclado|computador|perifericos/.test(norm(focosDe(d).join(' ')))||/portugues|matematica|estudo do meio|educacao financeira/.test(norm(d.disciplina))}
+function categoriaDominio(d,k){const ds=dominiosDe(d);return !k||ds.includes(k)||(k==='pc'&&pcDe(d))||(k==='transversal'&&transversalDe(d))||(k==='pendente'&&!ds.length&&!pcDe(d)&&!transversalDe(d))}
+
 let disc='';
 function disciplinas(){const s=new Set();dados.forEach(d=>String(d.disciplina||'').split(/\s+e\s+|,\s*/).forEach(x=>x.trim()&&s.add(x.trim())));return [...s].sort((a,b)=>a.localeCompare(b,'pt'))}
 function chips(){const box=$('#chips');box.replaceChildren();['',...disciplinas()].forEach(nome=>{const b=el('button','chip',nome||'Todas');b.type='button';b.setAttribute('aria-pressed',String(nome===disc));b.onclick=()=>{disc=nome;chips();tabela()};box.append(b)})}
@@ -615,16 +636,19 @@ function focos(){
 }
 function tabela(){
   const fa=Number($('#f-ano').value),ft=$('#f-tipo').value,ff=$('#f-foco').value,q=norm($('#f-texto').value.trim()),tb=$('#linhas');tb.replaceChildren();
-  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(ft==='todos'||eApresentacao(d)===(ft==='apresentacao'))&&(!disc||String(d.disciplina).includes(disc))&&(!ff||focosDe(d).includes(ff))&&(!q||norm([d.titulo,d.descricao,d.resumo,d.disciplina,d.turma,turmaBonita(d.turma),d.semana,...focosDe(d)].join(' ')).includes(q)))
+  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(ft==='todos'||eApresentacao(d)===(ft==='apresentacao'))&&(!disc||String(d.disciplina).includes(disc))&&categoriaDominio(d,$('#f-dominio').value)&&(!ff||focosDe(d).includes(ff))&&(!q||norm([d.titulo,d.descricao,d.resumo,d.disciplina,d.turma,turmaBonita(d.turma),d.semana,...focosDe(d),...dominiosDe(d)].join(' ')).includes(q)))
     .sort((a,b)=>segunda(b.data).localeCompare(segunda(a.data))||a.ano-b.ano||a.turma.localeCompare(b.turma));
+  $('#contagem-prof').textContent=r.length+' de '+dados.length+' recursos';
   if(!r.length){const tr=el('tr'),td=el('td','nada','Nenhuma missão com estes filtros.');td.colSpan=5;tr.append(td);tb.append(tr);return}
   r.forEach(d=>{const tr=el('tr');const t1=el('td');const p=el('span','ponto',turmaBonita(d.turma));p.dataset.ano=d.ano;t1.append(p);
     const t2=el('td');t2.append(el('b','',d.titulo));
     if(d.descricao)t2.append(el('span','resumo-prof',d.descricao));
     const et=el('div','etiquetas');focosDe(d).forEach(x=>et.append(el('span','etiqueta',x)));
+    const dt=el('div','etiquetas');dominiosDe(d).forEach(x=>dt.append(el('span','etiqueta dominio-prof',x)));if(pcDe(d))dt.append(el('span','etiqueta dominio-prof','Pensamento Computacional'));if(transversalDe(d))dt.append(el('span','etiqueta','Competências instrumentais / articulação'));if(!dt.childElementCount)dt.append(el('span','etiqueta','Por classificar'));t2.append(dt);
     if(et.childElementCount)t2.append(et);
     const t5=el('td');const a=el('a','','Abrir');a.href=d.url;a.setAttribute('aria-label','Abrir '+d.titulo);t5.append(a);
     tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',ePermanente(d)?'Todo o ano letivo':d.semana||''),t5);tb.append(tr)})}
+$('#f-dominio').addEventListener('change',tabela);$('#limpar-prof').addEventListener('click',()=>{disc='';$('#f-ano').value='0';$('#f-tipo').value='todos';$('#f-foco').value='';$('#f-dominio').value='';$('#f-texto').value='';chips();tabela()});
 $('#f-tipo').addEventListener('change',tabela);$('#f-ano').addEventListener('change',tabela);$('#f-foco').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
 
 Promise.all([
