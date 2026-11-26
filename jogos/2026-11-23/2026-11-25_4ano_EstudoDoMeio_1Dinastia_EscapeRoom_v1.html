@@ -767,37 +767,6 @@ body.contraste .tk.brilha{background:#000;color:#fff}
 @media (max-width:620px){.casa{min-width:50px}.casa .letra-manus{font-size:1.5rem}.caderno .manuscrita{font-size:2rem}.tk{height:34px;font-size:.66rem}}
 @media print{.teclado-pt{display:none}}
 @media (prefers-reduced-motion:reduce){.tk.brilha,.casa.atual .escrita-letra{animation:none}}
-
-/* Fuga do Castelo — identidade medieval exclusiva */
-body.castelo:not(.contraste){background:radial-gradient(ellipse at 50% 8%,#67513d 0,transparent 55%),repeating-linear-gradient(0deg,transparent 0 47px,#18161266 48px 51px),repeating-linear-gradient(90deg,#302c27 0 95px,#211f1b 96px 99px);color:#34271d}
-body.castelo:not(.contraste) .wrap{max-width:1180px;padding-top:20px}
-body.castelo:not(.contraste) .decor{opacity:.35}
-body.castelo:not(.contraste) .decor span{animation:none}
-body.castelo:not(.contraste) .marca,body.castelo:not(.contraste) .marca small,body.castelo:not(.contraste) .foot{color:#f1dfb2}
-body.castelo:not(.contraste) .painel{background:radial-gradient(ellipse at center,#fff8e7,#e7d5ac);border:5px double #a88a51;border-radius:10px;box-shadow:0 12px 36px #0008,inset 0 0 32px #9a703322;padding:clamp(12px,2vw,24px)}
-body.castelo:not(.contraste) .titulo-ronda,body.castelo:not(.contraste) .inicio h1{font-family:Georgia,'Times New Roman',serif;color:#542c20}
-body.castelo:not(.contraste):not(.legivel) .escape .titulo-ronda{font-size:clamp(1.5rem,4vw,2.3rem)}
-body.castelo.legivel .titulo-ronda,body.castelo.legivel .inicio h1{font-family:inherit}
-body.castelo:not(.contraste) .mapa-topo{border-bottom:3px double #a88a51;padding-bottom:12px}
-body.castelo:not(.contraste) .escape-chaves{border:2px solid #b49758;border-radius:8px;background:linear-gradient(100deg,#30251e,#59412c)}
-body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
-body.castelo:not(.contraste) .missao.sala{min-height:190px;padding:32px 10px 14px;border:3px solid #a88a51;border-radius:48% 48% 8px 8px / 28% 28% 8px 8px;background:repeating-linear-gradient(90deg,#5c3827 0 29px,#422a20 30px 32px);color:#fff1ce;box-shadow:0 5px 0 #3b281b,inset 0 0 0 5px #20160f45;animation:none}
-body.castelo:not(.contraste) .missao.sala small,body.castelo:not(.contraste) .missao.sala .missao-estado{color:#f5dfae}
-body.castelo:not(.contraste) .missao.sala .missao-num{background:#e5c17c;color:#342419;left:50%;top:7px;transform:translateX(-50%)}
-body.castelo:not(.contraste) .missao.sala.fechada{background:repeating-linear-gradient(90deg,#45413a 0 29px,#302d28 30px 32px);filter:none;opacity:1;border-color:#777064;box-shadow:0 5px 0 #29251f}
-body.castelo:not(.contraste) .missao.sala.sugerida{border-color:#d3a63d;box-shadow:0 0 0 3px #d3a63d55,0 5px 0 #805b27;background:repeating-linear-gradient(90deg,#805332 0 29px,#5d3824 30px 32px)}
-body.castelo:not(.contraste) .missao.sala.feita:not(.fechada){background:linear-gradient(#395340,#263b2d);border-color:#85986e}
-body.castelo:not(.contraste) .cadeado-final{background:linear-gradient(#64432b,#32251d)!important;border:4px double #d2af62!important}
-body.castelo:not(.contraste) .cadeado-final.fechada{background:linear-gradient(#45413a,#302d28)!important;border-color:#777064!important}
-body.castelo:not(.contraste) .pergunta{background:#fff8e7;border:3px double #b59a68;border-radius:8px}
-body.castelo:not(.contraste) .opcao,body.castelo:not(.contraste) .peca{border-radius:8px}
-body.castelo:not(.contraste) .btn{border-radius:8px}
-body.castelo:not(.contraste) .btn.leve{background:#fff8e7}
-body.castelo:not(.contraste) .fase{background:#e4cfa2;color:#503521}
-body.castelo:not(.contraste) .consulta-faixa{border-color:#a88a51}
-@media(max-width:540px){body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.castelo:not(.contraste) .missao.sala{min-height:175px;font-size:.85rem;padding-inline:6px}body.castelo:not(.contraste) .painel{padding:10px}}
-@media print{body.castelo:not(.contraste){background:#fff}}
-
 </style>
 <style id="ticlas-estilo-portal">
 #ticlas-voltar-portal {
@@ -1099,12 +1068,12 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
   ],
   "escape": {
     "titulo": "🏰 Fuga do Castelo",
-    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem indicada, começando pela primeira, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
+    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem que quiseres, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
     "palavra": "DINASTIA",
     "cadeado": "As 8 letras das chaves estão **baralhadas**! Ordena-as e escreve a palavra secreta que abre o portão do castelo.",
     "pista": "É o nome que se dá a uma **sequência de reis da mesma família**. A 1.ª chamou-se Afonsina.",
     "vitoria": "O portão abriu-se e o Ticl@s está livre! És um verdadeiro investigador da 1.ª dinastia.",
-    "sequencial": true
+    "sequencial": false
   },
   "abertura": [
     {
@@ -2791,7 +2760,6 @@ const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
-  castelo: { nome: 'Castelo medieval', c: ['#78512f','#51301e','#dfd0ac','#813b32','#54241e','#f5ecd5','#e3d2ab'], d: ['⚜️','🛡️','📜','🔑'], a: '' },
   neutro:      { nome: 'Neutro (Investigadores)', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e6f3f5'], d: ['🔍', '💡', '⭐', '💻'], a: '' },
   regresso:    { nome: 'Regresso às aulas', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e9f2fb'], d: ['🎒', '✏️', '📚', '🖍️'], a: '🎒' },
   outono:      { nome: 'Outono', c: ['#b0632a', '#6e3a14', '#f8e6d6', '#5f8a2a', '#43631b', '#fff8ef', '#f6e3cf'], d: ['🍂', '🍁', '🍄', '🌰'], a: '🍂' },
@@ -3075,13 +3043,12 @@ function calar() { try { if (temFala()) speechSynthesis.cancel(); } catch (e) { 
 function atualizarBotaoSom() { const b = $('#btSom'); if (b) { b.textContent = somLigado() ? '🔊' : '🔇'; b.setAttribute('aria-pressed', String(somLigado())); } }
 
 /* ---------- aparência: tema, acessibilidade, modo, língua ---------- */
-function temaAtual() { if (modoEscape()) return 'castelo'; if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
+function temaAtual() { if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
 function aplicarAparencia() {
   const tema = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
   ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, tema.c[i]));
   s.setProperty('--escala', prefs.escala);
   const b = document.body;
-  b.classList.toggle('castelo', modoEscape());
   b.classList.toggle('contraste', !!prefs.contraste); b.classList.toggle('legivel', !!prefs.legivel);
   b.classList.toggle('quadro', prefs.modo === 'quadro');
   b.className = b.className.replace(/\bano-\d\b/g, '').trim(); if (AULA && AULA.ano) b.classList.add('ano-' + AULA.ano);
@@ -3217,7 +3184,6 @@ function ecraMapa() {
 function iniciarRonda() {
   limparTimers(); calar();
   const lista = listaRondas(est.seq);
-  if (modoEscape() && est.seq === 'principal' && est.p < lista.length && salaFechada(est.p, lista)) { ecraMapa(); return; }
   if (est.p >= lista.length) {
     if (est.seq === 'principal' && !lista.every(ri => est.feitas[ri])) { ecraMapa(); return; }
     if (est.seq === 'principal' && modoEscape() && !est.escapou) { ecraCadeado(); return; }
@@ -3225,13 +3191,13 @@ function iniciarRonda() {
   }
   const ri = lista[est.p], ronda = AULA.rondas[ri];
   RONDA = ronda;
-  est.pontos[ri] = 0; est.maximos[ri] = 0; if (!modoEscape()) delete est.feitas[ri];
+  est.pontos[ri] = 0; est.maximos[ri] = 0; delete est.feitas[ri];
   guardarProgresso(); atualizarEstrelas();
   const progresso = h('div', { class: 'progresso', 'aria-hidden': 'true' },
     lista.map((x, k) => h('i', { class: k === est.p ? 'atual' : est.feitas[x] ? 'feito' : '' })));
   const area = h('div', { class: 'area', id: 'area' });
   const btAnterior = h('button', { class: 'btn leve', id: 'btAnterior', disabled: est.p === 0, onclick: () => { est.p--; iniciarRonda(); } }, t('anterior'));
-  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: modoEscape() || !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
+  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
   $('#app').replaceChildren(
     progresso,
     h('div', { class: 'etiqueta' },
@@ -3247,7 +3213,7 @@ function iniciarRonda() {
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
-    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = modoEscape() || !prefs.livre; encher(area); motor(ri, ronda, area); };
+    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); };
     const ver = livre => encher(area, filme(ronda.animacao, {
       titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'), livre,
       aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); }, aoContinuar: comecar
@@ -5294,7 +5260,7 @@ const modoEscape = () => !!(AULA && AULA.escape && typeof AULA.escape === 'objec
 const normEscape = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]/gu, '').toUpperCase();
 function salaFechada(k, principais) {
   if (AULA.escape.sequencial === false || k === 0) return false;
-  return !principais.slice(0, k).every(ri => est.feitas[ri]);
+  return !est.feitas[principais[k - 1]];
 }
 function barraChaves(principais) {
   const salas = principais.filter(ri => AULA.rondas[ri].chave !== undefined);
@@ -5314,20 +5280,20 @@ function ecraMapaEscape() {
   const E = AULA.escape, principais = listaRondas('principal'), bonus = listaRondas('bonus');
   const todas = principais.every(ri => est.feitas[ri]);
   const sala = (ri, k) => {
-    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = salaFechada(k, principais);
+    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = !feita && salaFechada(k, principais);
     const atual = !feita && !fechada && k === principais.findIndex(x => !est.feitas[x]);
     return h('button', {
-      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: fechada || null,
+      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: (fechada && !prefs.livre) || null,
       onclick: () => { est.seq = 'principal'; est.p = k; iniciarRonda(); }
     },
       h('span', { class: 'missao-num' }, k + 1),
-      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, fechada ? '🔒' : feita ? '🔓' : (r.icone || '🚪')),
+      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, feita ? '🔓' : fechada ? '🔒' : (r.icone || '🚪')),
       h('strong', null, r.titulo || t('escSala', { n: k + 1 })),
       h('small', null, t('escSala', { n: k + 1 })),
-      feita && !fechada ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
-        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? 'Entrar nesta sala' : t('escPorAbrir')));
+      feita ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
+        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('sugestao') : t('escPorAbrir')));
   };
-  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: !todas || null, onclick: ecraCadeado },
+  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: (!todas && !prefs.livre) || null, onclick: ecraCadeado },
     h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, est.escapou ? '🏆' : todas ? '🔐' : '🔒'),
     h('strong', null, t('escCadeado')),
     h('small', null, est.escapou ? t('escLivre') : t('escCadeadoSub')));
@@ -5352,7 +5318,6 @@ function ecraMapaEscape() {
 function ecraCadeado() {
   limparTimers(); calar();
   const E = AULA.escape, principais = listaRondas('principal');
-  if (!principais.every(ri => est.feitas[ri])) { ecraMapa(); return; }
   let erros = 0;
   const msg = h('p', { class: 'cadeado-msg', 'aria-live': 'polite' });
   const pista = h('div', { class: 'consulta-lembra', hidden: true }, '💡 ', textoRico(E.pista || ''));
