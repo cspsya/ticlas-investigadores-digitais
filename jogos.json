@@ -1004,7 +1004,7 @@
     "titulo": "O Percurso de Natal",
     "disciplina": "TIC",
     "data": "2026-11-26",
-    "semana": "23–27 nov. 2026",
+    "semana": "Todo o ano letivo",
     "duracao": "até 60 min",
     "estado": "em validação",
     "tipo": "Jogo de programação",
@@ -1017,7 +1017,8 @@
     "focoTic": [
       "Algoritmos e repetições",
       "Encontrar e corrigir erros"
-    ]
+    ],
+    "permanente": true
   },
   {
     "id": "2026-11-26-3ano-percurso-de-natal",
@@ -1026,7 +1027,7 @@
     "titulo": "O Percurso de Natal",
     "disciplina": "TIC",
     "data": "2026-11-26",
-    "semana": "23–27 nov. 2026",
+    "semana": "Todo o ano letivo",
     "duracao": "até 60 min",
     "estado": "em validação",
     "tipo": "Jogo de programação",
@@ -1039,7 +1040,8 @@
     "focoTic": [
       "Algoritmos e repetições",
       "Orientação e direção"
-    ]
+    ],
+    "permanente": true
   },
   {
     "id": "2026-11-26-4ano-percurso-de-natal",
@@ -1048,7 +1050,7 @@
     "titulo": "O Percurso de Natal",
     "disciplina": "TIC",
     "data": "2026-11-26",
-    "semana": "23–27 nov. 2026",
+    "semana": "Todo o ano letivo",
     "duracao": "até 60 min",
     "estado": "em validação",
     "tipo": "Jogo de programação",
@@ -1061,6 +1063,7 @@
     "focoTic": [
       "Funções e repetições",
       "Decomposição e resolução de problemas"
-    ]
+    ],
+    "permanente": true
   }
 ]
