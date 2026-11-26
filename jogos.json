@@ -975,5 +975,26 @@
       "Algoritmos e repetições",
       "Condições e depuração"
     ]
+  },
+  {
+    "id": "2026-11-26-1ano-hora-do-codigo-escape-natal",
+    "turma": "1.º ano",
+    "ano": 1,
+    "titulo": "Escape Room: O Código Secreto do Natal",
+    "descricao": "Hora do Código: 4 missões de programação com setas (sequências, repetir, observar e escolher, padrões), cofre de 4 algarismos, 3 desafios bónus e estrelas",
+    "disciplina": "TIC",
+    "data": "2026-11-26",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-26_1ano_TIC_HoraDoCodigo_EscapeNatal_v6.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Ajuda o Ticl@s a abrir o cofre e a salvar o Natal!",
+    "focoTic": [
+      "Rato: clicar",
+      "Algoritmos e repetições"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
