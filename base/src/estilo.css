@@ -688,3 +688,36 @@ body.contraste .conta .cel.ativa{background:#ff0;box-shadow:0 0 0 2px #000}
 .filme-escolha small{font-weight:900;color:var(--t-1d,#7a3b12);opacity:.85}
 .filme-escolha h3{margin:4px 0 14px;font-size:clamp(1.15rem,2.4vw,1.5rem)}
 @media (max-width:600px){.filme-escolha{flex-direction:column;text-align:center}.filme-escolha .linha{justify-content:center}}
+
+/* ==========================================================
+   Tema «Castelo medieval» (V3.11): por omissão nos escape rooms;
+   pode ser escolhido no painel do professor em qualquer jogo.
+   ========================================================== */
+body.castelo:not(.contraste){background:radial-gradient(ellipse at 50% 8%,#67513d 0,transparent 55%),repeating-linear-gradient(0deg,transparent 0 47px,#18161266 48px 51px),repeating-linear-gradient(90deg,#302c27 0 95px,#211f1b 96px 99px);color:#34271d}
+body.castelo:not(.contraste) .wrap{max-width:1180px;padding-top:20px}
+body.castelo:not(.contraste) .decor{opacity:.35}
+body.castelo:not(.contraste) .decor span{animation:none}
+body.castelo:not(.contraste) .marca,body.castelo:not(.contraste) .marca small,body.castelo:not(.contraste) .foot{color:#f1dfb2}
+body.castelo:not(.contraste) .painel{background:radial-gradient(ellipse at center,#fff8e7,#e7d5ac);border:5px double #a88a51;border-radius:10px;box-shadow:0 12px 36px #0008,inset 0 0 32px #9a703322;padding:clamp(12px,2vw,24px)}
+body.castelo:not(.contraste) .titulo-ronda,body.castelo:not(.contraste) .inicio h1{font-family:Georgia,'Times New Roman',serif;color:#542c20}
+body.castelo:not(.contraste):not(.legivel) .escape .titulo-ronda{font-size:clamp(1.5rem,4vw,2.3rem)}
+body.castelo.legivel .titulo-ronda,body.castelo.legivel .inicio h1{font-family:inherit}
+body.castelo:not(.contraste) .mapa-topo{border-bottom:3px double #a88a51;padding-bottom:12px}
+body.castelo:not(.contraste) .escape-chaves{border:2px solid #b49758;border-radius:8px;background:linear-gradient(100deg,#30251e,#59412c)}
+body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
+body.castelo:not(.contraste) .missao.sala{min-height:190px;padding:32px 10px 14px;border:3px solid #a88a51;border-radius:48% 48% 8px 8px / 28% 28% 8px 8px;background:repeating-linear-gradient(90deg,#5c3827 0 29px,#422a20 30px 32px);color:#fff1ce;box-shadow:0 5px 0 #3b281b,inset 0 0 0 5px #20160f45;animation:none}
+body.castelo:not(.contraste) .missao.sala small,body.castelo:not(.contraste) .missao.sala .missao-estado{color:#f5dfae}
+body.castelo:not(.contraste) .missao.sala .missao-num{background:#e5c17c;color:#342419;left:50%;top:7px;transform:translateX(-50%)}
+body.castelo:not(.contraste) .missao.sala.fechada{background:repeating-linear-gradient(90deg,#45413a 0 29px,#302d28 30px 32px);filter:none;opacity:1;border-color:#777064;box-shadow:0 5px 0 #29251f}
+body.castelo:not(.contraste) .missao.sala.sugerida{border-color:#d3a63d;box-shadow:0 0 0 3px #d3a63d55,0 5px 0 #805b27;background:repeating-linear-gradient(90deg,#805332 0 29px,#5d3824 30px 32px)}
+body.castelo:not(.contraste) .missao.sala.feita:not(.fechada){background:linear-gradient(#395340,#263b2d);border-color:#85986e}
+body.castelo:not(.contraste) .cadeado-final{background:linear-gradient(#64432b,#32251d)!important;border:4px double #d2af62!important}
+body.castelo:not(.contraste) .cadeado-final.fechada{background:linear-gradient(#45413a,#302d28)!important;border-color:#777064!important}
+body.castelo:not(.contraste) .pergunta{background:#fff8e7;border:3px double #b59a68;border-radius:8px}
+body.castelo:not(.contraste) .opcao,body.castelo:not(.contraste) .peca{border-radius:8px}
+body.castelo:not(.contraste) .btn{border-radius:8px}
+body.castelo:not(.contraste) .btn.leve{background:#fff8e7}
+body.castelo:not(.contraste) .fase{background:#e4cfa2;color:#503521}
+body.castelo:not(.contraste) .consulta-faixa{border-color:#a88a51}
+@media(max-width:540px){body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.castelo:not(.contraste) .missao.sala{min-height:175px;font-size:.85rem;padding-inline:6px}body.castelo:not(.contraste) .painel{padding:10px}}
+@media print{body.castelo:not(.contraste){background:#fff}}

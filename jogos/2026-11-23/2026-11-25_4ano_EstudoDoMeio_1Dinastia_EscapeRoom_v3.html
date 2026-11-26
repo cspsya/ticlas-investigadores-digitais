@@ -696,6 +696,39 @@ body.contraste .conta .cel.ativa{background:#ff0;box-shadow:0 0 0 2px #000}
 .filme-escolha small{font-weight:900;color:var(--t-1d,#7a3b12);opacity:.85}
 .filme-escolha h3{margin:4px 0 14px;font-size:clamp(1.15rem,2.4vw,1.5rem)}
 @media (max-width:600px){.filme-escolha{flex-direction:column;text-align:center}.filme-escolha .linha{justify-content:center}}
+
+/* ==========================================================
+   Tema «Castelo medieval» (V3.11): por omissão nos escape rooms;
+   pode ser escolhido no painel do professor em qualquer jogo.
+   ========================================================== */
+body.castelo:not(.contraste){background:radial-gradient(ellipse at 50% 8%,#67513d 0,transparent 55%),repeating-linear-gradient(0deg,transparent 0 47px,#18161266 48px 51px),repeating-linear-gradient(90deg,#302c27 0 95px,#211f1b 96px 99px);color:#34271d}
+body.castelo:not(.contraste) .wrap{max-width:1180px;padding-top:20px}
+body.castelo:not(.contraste) .decor{opacity:.35}
+body.castelo:not(.contraste) .decor span{animation:none}
+body.castelo:not(.contraste) .marca,body.castelo:not(.contraste) .marca small,body.castelo:not(.contraste) .foot{color:#f1dfb2}
+body.castelo:not(.contraste) .painel{background:radial-gradient(ellipse at center,#fff8e7,#e7d5ac);border:5px double #a88a51;border-radius:10px;box-shadow:0 12px 36px #0008,inset 0 0 32px #9a703322;padding:clamp(12px,2vw,24px)}
+body.castelo:not(.contraste) .titulo-ronda,body.castelo:not(.contraste) .inicio h1{font-family:Georgia,'Times New Roman',serif;color:#542c20}
+body.castelo:not(.contraste):not(.legivel) .escape .titulo-ronda{font-size:clamp(1.5rem,4vw,2.3rem)}
+body.castelo.legivel .titulo-ronda,body.castelo.legivel .inicio h1{font-family:inherit}
+body.castelo:not(.contraste) .mapa-topo{border-bottom:3px double #a88a51;padding-bottom:12px}
+body.castelo:not(.contraste) .escape-chaves{border:2px solid #b49758;border-radius:8px;background:linear-gradient(100deg,#30251e,#59412c)}
+body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
+body.castelo:not(.contraste) .missao.sala{min-height:190px;padding:32px 10px 14px;border:3px solid #a88a51;border-radius:48% 48% 8px 8px / 28% 28% 8px 8px;background:repeating-linear-gradient(90deg,#5c3827 0 29px,#422a20 30px 32px);color:#fff1ce;box-shadow:0 5px 0 #3b281b,inset 0 0 0 5px #20160f45;animation:none}
+body.castelo:not(.contraste) .missao.sala small,body.castelo:not(.contraste) .missao.sala .missao-estado{color:#f5dfae}
+body.castelo:not(.contraste) .missao.sala .missao-num{background:#e5c17c;color:#342419;left:50%;top:7px;transform:translateX(-50%)}
+body.castelo:not(.contraste) .missao.sala.fechada{background:repeating-linear-gradient(90deg,#45413a 0 29px,#302d28 30px 32px);filter:none;opacity:1;border-color:#777064;box-shadow:0 5px 0 #29251f}
+body.castelo:not(.contraste) .missao.sala.sugerida{border-color:#d3a63d;box-shadow:0 0 0 3px #d3a63d55,0 5px 0 #805b27;background:repeating-linear-gradient(90deg,#805332 0 29px,#5d3824 30px 32px)}
+body.castelo:not(.contraste) .missao.sala.feita:not(.fechada){background:linear-gradient(#395340,#263b2d);border-color:#85986e}
+body.castelo:not(.contraste) .cadeado-final{background:linear-gradient(#64432b,#32251d)!important;border:4px double #d2af62!important}
+body.castelo:not(.contraste) .cadeado-final.fechada{background:linear-gradient(#45413a,#302d28)!important;border-color:#777064!important}
+body.castelo:not(.contraste) .pergunta{background:#fff8e7;border:3px double #b59a68;border-radius:8px}
+body.castelo:not(.contraste) .opcao,body.castelo:not(.contraste) .peca{border-radius:8px}
+body.castelo:not(.contraste) .btn{border-radius:8px}
+body.castelo:not(.contraste) .btn.leve{background:#fff8e7}
+body.castelo:not(.contraste) .fase{background:#e4cfa2;color:#503521}
+body.castelo:not(.contraste) .consulta-faixa{border-color:#a88a51}
+@media(max-width:540px){body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.castelo:not(.contraste) .missao.sala{min-height:175px;font-size:.85rem;padding-inline:6px}body.castelo:not(.contraste) .painel{padding:10px}}
+@media print{body.castelo:not(.contraste){background:#fff}}
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · letra manuscrita e tipo «copiar»
    Letra: Playwrite PT (TypeTogether / Google Fonts, SIL Open Font License 1.1),
@@ -767,37 +800,6 @@ body.contraste .tk.brilha{background:#000;color:#fff}
 @media (max-width:620px){.casa{min-width:50px}.casa .letra-manus{font-size:1.5rem}.caderno .manuscrita{font-size:2rem}.tk{height:34px;font-size:.66rem}}
 @media print{.teclado-pt{display:none}}
 @media (prefers-reduced-motion:reduce){.tk.brilha,.casa.atual .escrita-letra{animation:none}}
-
-/* Fuga do Castelo — identidade medieval exclusiva */
-body.castelo:not(.contraste){background:radial-gradient(ellipse at 50% 8%,#67513d 0,transparent 55%),repeating-linear-gradient(0deg,transparent 0 47px,#18161266 48px 51px),repeating-linear-gradient(90deg,#302c27 0 95px,#211f1b 96px 99px);color:#34271d}
-body.castelo:not(.contraste) .wrap{max-width:1180px;padding-top:20px}
-body.castelo:not(.contraste) .decor{opacity:.35}
-body.castelo:not(.contraste) .decor span{animation:none}
-body.castelo:not(.contraste) .marca,body.castelo:not(.contraste) .marca small,body.castelo:not(.contraste) .foot{color:#f1dfb2}
-body.castelo:not(.contraste) .painel{background:radial-gradient(ellipse at center,#fff8e7,#e7d5ac);border:5px double #a88a51;border-radius:10px;box-shadow:0 12px 36px #0008,inset 0 0 32px #9a703322;padding:clamp(12px,2vw,24px)}
-body.castelo:not(.contraste) .titulo-ronda,body.castelo:not(.contraste) .inicio h1{font-family:Georgia,'Times New Roman',serif;color:#542c20}
-body.castelo:not(.contraste):not(.legivel) .escape .titulo-ronda{font-size:clamp(1.5rem,4vw,2.3rem)}
-body.castelo.legivel .titulo-ronda,body.castelo.legivel .inicio h1{font-family:inherit}
-body.castelo:not(.contraste) .mapa-topo{border-bottom:3px double #a88a51;padding-bottom:12px}
-body.castelo:not(.contraste) .escape-chaves{border:2px solid #b49758;border-radius:8px;background:linear-gradient(100deg,#30251e,#59412c)}
-body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
-body.castelo:not(.contraste) .missao.sala{min-height:190px;padding:32px 10px 14px;border:3px solid #a88a51;border-radius:48% 48% 8px 8px / 28% 28% 8px 8px;background:repeating-linear-gradient(90deg,#5c3827 0 29px,#422a20 30px 32px);color:#fff1ce;box-shadow:0 5px 0 #3b281b,inset 0 0 0 5px #20160f45;animation:none}
-body.castelo:not(.contraste) .missao.sala small,body.castelo:not(.contraste) .missao.sala .missao-estado{color:#f5dfae}
-body.castelo:not(.contraste) .missao.sala .missao-num{background:#e5c17c;color:#342419;left:50%;top:7px;transform:translateX(-50%)}
-body.castelo:not(.contraste) .missao.sala.fechada{background:repeating-linear-gradient(90deg,#45413a 0 29px,#302d28 30px 32px);filter:none;opacity:1;border-color:#777064;box-shadow:0 5px 0 #29251f}
-body.castelo:not(.contraste) .missao.sala.sugerida{border-color:#d3a63d;box-shadow:0 0 0 3px #d3a63d55,0 5px 0 #805b27;background:repeating-linear-gradient(90deg,#805332 0 29px,#5d3824 30px 32px)}
-body.castelo:not(.contraste) .missao.sala.feita:not(.fechada){background:linear-gradient(#395340,#263b2d);border-color:#85986e}
-body.castelo:not(.contraste) .cadeado-final{background:linear-gradient(#64432b,#32251d)!important;border:4px double #d2af62!important}
-body.castelo:not(.contraste) .cadeado-final.fechada{background:linear-gradient(#45413a,#302d28)!important;border-color:#777064!important}
-body.castelo:not(.contraste) .pergunta{background:#fff8e7;border:3px double #b59a68;border-radius:8px}
-body.castelo:not(.contraste) .opcao,body.castelo:not(.contraste) .peca{border-radius:8px}
-body.castelo:not(.contraste) .btn{border-radius:8px}
-body.castelo:not(.contraste) .btn.leve{background:#fff8e7}
-body.castelo:not(.contraste) .fase{background:#e4cfa2;color:#503521}
-body.castelo:not(.contraste) .consulta-faixa{border-color:#a88a51}
-@media(max-width:540px){body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.castelo:not(.contraste) .missao.sala{min-height:175px;font-size:.85rem;padding-inline:6px}body.castelo:not(.contraste) .painel{padding:10px}}
-@media print{body.castelo:not(.contraste){background:#fff}}
-
 </style>
 <style id="ticlas-estilo-portal">
 #ticlas-voltar-portal {
@@ -2788,13 +2790,15 @@ T.it.escPorAbrir = 'Da aprire';
 T.uk.escPorAbrir = 'Ще не відчинено';
 T.hi.escPorAbrir = 'अभी खोलना है';
 T.ne.escPorAbrir = 'खोल्न बाँकी';
+// Escape room (V3.11): nos escape rooms, «ronda» passa a «sala» e «missões» a «mapa do castelo» (aplicado por aplicarTextosEscape)
+const T_ESCAPE = {"pt": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Conquistaste {a} de {b} estrelas.", "missoes": "🏰 Mapa do castelo", "filmeComecar": "Entrar na sala", "filmeMissoes": "Ver o castelo", "bonusFechado": "Os desafios bónus abrem quando abrires todas as salas.", "escEntrar": "Entrar nesta sala"}, "en": {"ronda": "Room {a} of {b}", "repetirRonda": "🔁 Repeat", "estrelasRonda": "You earned {a} of {b} stars.", "missoes": "🏰 Castle map", "filmeComecar": "Enter the room", "filmeMissoes": "See the castle", "bonusFechado": "Bonus challenges unlock when you open all the rooms.", "escEntrar": "Enter this room"}, "es": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Has ganado {a} de {b} estrellas.", "missoes": "🏰 Mapa del castillo", "filmeComecar": "Entrar en la sala", "filmeMissoes": "Ver el castillo", "bonusFechado": "Los retos extra se desbloquean cuando abras todas las salas.", "escEntrar": "Entrar en esta sala"}, "fr": {"ronda": "Salle {a} sur {b}", "repetirRonda": "🔁 Rejouer", "estrelasRonda": "Tu as gagné {a} étoiles sur {b}.", "missoes": "🏰 Plan du château", "filmeComecar": "Entrer dans la salle", "filmeMissoes": "Voir le château", "bonusFechado": "Les défis bonus se débloquent quand tu as ouvert toutes les salles.", "escEntrar": "Entrer dans cette salle"}, "de": {"ronda": "Raum {a} von {b}", "repetirRonda": "🔁 Wiederholen", "estrelasRonda": "Du hast {a} von {b} Sternen gesammelt.", "missoes": "🏰 Burgplan", "filmeComecar": "Raum betreten", "filmeMissoes": "Zur Burg", "bonusFechado": "Die Bonusaufgaben werden frei, wenn du alle Räume geöffnet hast.", "escEntrar": "Diesen Raum betreten"}, "it": {"ronda": "Stanza {a} di {b}", "repetirRonda": "🔁 Ripeti", "estrelasRonda": "Hai conquistato {a} stelle su {b}.", "missoes": "🏰 Mappa del castello", "filmeComecar": "Entra nella stanza", "filmeMissoes": "Vedi il castello", "bonusFechado": "Le sfide bonus si sbloccano quando apri tutte le stanze.", "escEntrar": "Entra in questa stanza"}, "uk": {"ronda": "Кімната {a} з {b}", "repetirRonda": "🔁 Повторити", "estrelasRonda": "Ти здобув(ла) {a} з {b} зірок.", "missoes": "🏰 Мапа замку", "filmeComecar": "Увійти до кімнати", "filmeMissoes": "Переглянути замок", "bonusFechado": "Бонусні завдання відкриються, коли відчиниш усі кімнати.", "escEntrar": "Увійти до цієї кімнати"}, "hi": {"ronda": "कमरा {a} / {b}", "repetirRonda": "🔁 दोहराएँ", "estrelasRonda": "तुमने {b} में से {a} तारे जीते।", "missoes": "🏰 किले का नक्शा", "filmeComecar": "कमरे में जाओ", "filmeMissoes": "किला देखो", "bonusFechado": "सभी कमरे खोलने पर बोनस चुनौतियाँ खुलेंगी।", "escEntrar": "इस कमरे में जाओ"}, "ne": {"ronda": "कोठा {a} / {b}", "repetirRonda": "🔁 दोहोर्‍याउ", "estrelasRonda": "तिमीले {b} मध्ये {a} तारा जित्यौ।", "missoes": "🏰 किल्लाको नक्सा", "filmeComecar": "कोठामा पस", "filmeMissoes": "किल्ला हेर", "bonusFechado": "सबै कोठा खोलेपछि बोनस चुनौतीहरू खुल्छन्।", "escEntrar": "यो कोठामा पस"}};
 /* ==========================================================
    Investigadores Digitais · Jogo-base V3 · motor
    Para criar um jogo novo NÃO se altera este código:
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.8';
+const VERSAO = 'V3.11';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
 const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100', 'puzzle', 'pontos', 'apanhar', 'percurso'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
@@ -2802,7 +2806,6 @@ const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
-  castelo: { nome: 'Castelo medieval', c: ['#78512f','#51301e','#dfd0ac','#813b32','#54241e','#f5ecd5','#e3d2ab'], d: ['⚜️','🛡️','📜','🔑'], a: '' },
   neutro:      { nome: 'Neutro (Investigadores)', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e6f3f5'], d: ['🔍', '💡', '⭐', '💻'], a: '' },
   regresso:    { nome: 'Regresso às aulas', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e9f2fb'], d: ['🎒', '✏️', '📚', '🖍️'], a: '🎒' },
   outono:      { nome: 'Outono', c: ['#b0632a', '#6e3a14', '#f8e6d6', '#5f8a2a', '#43631b', '#fff8ef', '#f6e3cf'], d: ['🍂', '🍁', '🍄', '🌰'], a: '🍂' },
@@ -2816,7 +2819,8 @@ const TEMAS = {
   pascoa:      { nome: 'Páscoa', c: ['#5f9e59', '#3d6e38', '#e6f3e4', '#d9578a', '#a63a63', '#fffaf8', '#eef6ea'], d: ['🐣', '🌷', '🥚', '🐰'], a: '🐣' },
   festadaflor: { nome: 'Festa da Flor', c: ['#c93f80', '#8e2459', '#fbe3ef', '#e2802a', '#a85c12', '#fff8fb', '#fae5ef'], d: ['🌺', '🌸', '🌷', '💐'], a: '🌺' },
   crianca:     { nome: 'Dia da Criança', c: ['#3a8fd6', '#1e5a8f', '#e3f0fb', '#f07a24', '#b5550f', '#fffaf2', '#e6f1fb'], d: ['🎈', '🧸', '🎨', '⚽'], a: '🎈' },
-  verao:       { nome: 'Verão', c: ['#1a9bb5', '#0e6476', '#dff4f8', '#e28a12', '#a8620a', '#fffdf5', '#dff3f7'], d: ['☀️', '🏖️', '🌊', '🐚'], a: '🕶️' }
+  verao:       { nome: 'Verão', c: ['#1a9bb5', '#0e6476', '#dff4f8', '#e28a12', '#a8620a', '#fffdf5', '#dff3f7'], d: ['☀️', '🏖️', '🌊', '🐚'], a: '🕶️' },
+  castelo: { nome: 'Castelo medieval', c: ['#78512f','#51301e','#dfd0ac','#813b32','#54241e','#f5ecd5','#e3d2ab'], d: ['⚜️','🛡️','📜','🔑'], a: '' }
 };
 function pascoa(ano) { // algoritmo de Meeus/Jones/Butcher
   const a = ano % 19, b = Math.floor(ano / 100), c = ano % 100, d = Math.floor(b / 4), e = b % 4,
@@ -3086,13 +3090,15 @@ function calar() { try { if (temFala()) speechSynthesis.cancel(); } catch (e) { 
 function atualizarBotaoSom() { const b = $('#btSom'); if (b) { b.textContent = somLigado() ? '🔊' : '🔇'; b.setAttribute('aria-pressed', String(somLigado())); } }
 
 /* ---------- aparência: tema, acessibilidade, modo, língua ---------- */
-function temaAtual() { if (modoEscape()) return 'castelo'; if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
+// Escape room (V3.11): tema próprio e fixo; por omissão o castelo medieval. "tema": "auto" devolve a escolha à professora.
+function temaEscape() { if (!modoEscape()) return null; const x = AULA.escape.tema ?? 'castelo'; return x !== 'auto' && TEMAS[x] ? x : null; }
+function temaAtual() { const te = temaEscape(); if (te) return te; if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
 function aplicarAparencia() {
   const tema = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
   ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, tema.c[i]));
   s.setProperty('--escala', prefs.escala);
   const b = document.body;
-  b.classList.toggle('castelo', modoEscape());
+  b.classList.toggle('castelo', temaAtual() === 'castelo');
   b.classList.toggle('contraste', !!prefs.contraste); b.classList.toggle('legivel', !!prefs.legivel);
   b.classList.toggle('quadro', prefs.modo === 'quadro');
   b.className = b.className.replace(/\bano-\d\b/g, '').trim(); if (AULA && AULA.ano) b.classList.add('ano-' + AULA.ano);
@@ -4005,7 +4011,7 @@ function painelProfessor() {
   const j = janela(
     h('h3', null, '⚙️ Painel do professor'),
     h('div', { class: 'info' }, `«${AULA.titulo}» · ${principais.length} rondas + ${bonus.length} de bónus · ${nItens} itens · duração estimada ≈ ${minutosEstimados(principais.map(i => AULA.rondas[i]))} min (+ ${minutosEstimados(bonus.map(i => AULA.rondas[i]))} min de bónus) · tema de hoje: ${TEMAS[temaDoDia()].nome} · voz em português: ${voz ? voz.name : 'não encontrada neste computador'} · motor ${VERSAO}`),
-    modoEscape() ? h('p', { class: 'info' }, 'Tema: Castelo medieval (fixo neste escape room).') : h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
+    temaEscape() ? h('p', { class: 'info' }, `Tema: ${TEMAS[temaEscape()].nome} (fixo neste escape room).`) : h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
     h('label', null, 'Modo', sel(prefs.modo, [['quadro', 'Quadro interativo'], ['computador', 'Computador']], v => { delete prefs.som; mudar('modo', v); })),
     h('label', null, 'Perfil', sel(prefs.perfil, [['turma', 'Turma'], ['apoio', 'Apoio']], v => mudar('perfil', v))),
     h('label', null, 'Língua da interface', sel(prefs.lingua, Object.entries(LINGUAS), v => mudar('lingua', v))),
@@ -5349,8 +5355,7 @@ function chaveGanha(ronda) {
     h('div', null, h('strong', null, t('escChave')), h('small', null, t('escGuarda'))),
     h('span', { class: 'chave-slot grande' }, String(ronda.chave)));
 }
-/* Escape room v3: textos de sala, melhor pontuação, próxima sala disponível e desbloqueio pela professora */
-const T_ESCAPE = {"pt": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Conquistaste {a} de {b} estrelas.", "missoes": "🏰 Mapa do castelo", "filmeComecar": "Entrar na sala", "filmeMissoes": "Ver o castelo", "bonusFechado": "Os desafios bónus abrem quando abrires todas as salas.", "escEntrar": "Entrar nesta sala"}, "en": {"ronda": "Room {a} of {b}", "repetirRonda": "🔁 Repeat", "estrelasRonda": "You earned {a} of {b} stars.", "missoes": "🏰 Castle map", "filmeComecar": "Enter the room", "filmeMissoes": "See the castle", "bonusFechado": "Bonus challenges unlock when you open all the rooms.", "escEntrar": "Enter this room"}, "es": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Has ganado {a} de {b} estrellas.", "missoes": "🏰 Mapa del castillo", "filmeComecar": "Entrar en la sala", "filmeMissoes": "Ver el castillo", "bonusFechado": "Los retos extra se desbloquean cuando abras todas las salas.", "escEntrar": "Entrar en esta sala"}, "fr": {"ronda": "Salle {a} sur {b}", "repetirRonda": "🔁 Rejouer", "estrelasRonda": "Tu as gagné {a} étoiles sur {b}.", "missoes": "🏰 Plan du château", "filmeComecar": "Entrer dans la salle", "filmeMissoes": "Voir le château", "bonusFechado": "Les défis bonus se débloquent quand tu as ouvert toutes les salles.", "escEntrar": "Entrer dans cette salle"}, "de": {"ronda": "Raum {a} von {b}", "repetirRonda": "🔁 Wiederholen", "estrelasRonda": "Du hast {a} von {b} Sternen gesammelt.", "missoes": "🏰 Burgplan", "filmeComecar": "Raum betreten", "filmeMissoes": "Zur Burg", "bonusFechado": "Die Bonusaufgaben werden frei, wenn du alle Räume geöffnet hast.", "escEntrar": "Diesen Raum betreten"}, "it": {"ronda": "Stanza {a} di {b}", "repetirRonda": "🔁 Ripeti", "estrelasRonda": "Hai conquistato {a} stelle su {b}.", "missoes": "🏰 Mappa del castello", "filmeComecar": "Entra nella stanza", "filmeMissoes": "Vedi il castello", "bonusFechado": "Le sfide bonus si sbloccano quando apri tutte le stanze.", "escEntrar": "Entra in questa stanza"}, "uk": {"ronda": "Кімната {a} з {b}", "repetirRonda": "🔁 Повторити", "estrelasRonda": "Ти здобув(ла) {a} з {b} зірок.", "missoes": "🏰 Мапа замку", "filmeComecar": "Увійти до кімнати", "filmeMissoes": "Переглянути замок", "bonusFechado": "Бонусні завдання відкриються, коли відчиниш усі кімнати.", "escEntrar": "Увійти до цієї кімнати"}, "hi": {"ronda": "कमरा {a} / {b}", "repetirRonda": "🔁 दोहराएँ", "estrelasRonda": "तुमने {b} में से {a} तारे जीते।", "missoes": "🏰 किले का नक्शा", "filmeComecar": "कमरे में जाओ", "filmeMissoes": "किला देखो", "bonusFechado": "सभी कमरे खोलने पर बोनस चुनौतियाँ खुलेंगी।", "escEntrar": "इस कमरे में जाओ"}, "ne": {"ronda": "कोठा {a} / {b}", "repetirRonda": "🔁 दोहोर्‍याउ", "estrelasRonda": "तिमीले {b} मध्ये {a} तारा जित्यौ।", "missoes": "🏰 किल्लाको नक्सा", "filmeComecar": "कोठामा पस", "filmeMissoes": "किल्ला हेर", "bonusFechado": "सबै कोठा खोलेपछि बोनस चुनौतीहरू खुल्छन्।", "escEntrar": "यो कोठामा पस"}};
+/* Escape room (V3.11): textos de sala, melhor pontuação, próxima sala disponível e desbloqueio pela professora */
 function aplicarTextosEscape() { Object.keys(T_ESCAPE).forEach(l => { if (T[l]) Object.assign(T[l], T_ESCAPE[l]); }); }
 function proximaSalaPorAbrir() { // próxima sala ainda sem chave e já acessível
   const pr = listaRondas('principal');
@@ -5478,6 +5483,8 @@ function validarEscape(a) {
   const e = [], E = a.escape, txt = v => typeof v === 'string' && v.trim() !== '';
   if (!E || typeof E !== 'object' || Array.isArray(E)) return ['«escape» tem de ser um objeto { ... }.'];
   if (!txt(E.palavra)) e.push('Escape room: falta a «palavra» secreta do cadeado final.');
+  if (E.tema !== undefined && !(E.tema === 'auto' || TEMAS[E.tema])) e.push(`Escape room: «tema» tem de ser "auto" ou um destes: ${Object.keys(TEMAS).join(', ')}.`);
+  if (E.historiaAberto !== undefined && !txt(E.historiaAberto)) e.push('Escape room: «historiaAberto» tem de ser um texto.');
   const chaves = a.rondas.filter(r => r && r.fase !== 'bonus' && r.chave !== undefined).map(r => String(r.chave));
   a.rondas.forEach((r, ri) => { if (r && r.chave !== undefined && !(txt(String(r.chave)) && String(r.chave).length <= 4)) e.push(`Ronda ${ri + 1}: «chave» tem de ser uma letra, um número ou um texto curto (até 4 caracteres).`); });
   if (txt(E.palavra) && chaves.length) {

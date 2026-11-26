@@ -4,7 +4,7 @@
    muda-se apenas o bloco AULA (JSON) no ficheiro HTML.
    ========================================================== */
 
-const VERSAO = 'V3.8';
+const VERSAO = 'V3.11';
 const PASS_HASH = '0ab6d63e627eaf2f63a43514d1722ec6de93c49fc7452a9de39fe1882e2f0d98'; // a mesma palavra-passe dos outros jogos do Ticl@s
 const TIPOS = ['escolher', 'verdadeiro_falso', 'completar', 'escrever', 'ditado', 'copiar', 'pares', 'classificar', 'ordenar', 'mab', 'cadeia', 'reta', 'tabela100', 'puzzle', 'pontos', 'apanhar', 'percurso'];
 const FASES = ['aquecimento', 'desafios', 'escrita', 'bonus'];
@@ -25,7 +25,8 @@ const TEMAS = {
   pascoa:      { nome: 'Páscoa', c: ['#5f9e59', '#3d6e38', '#e6f3e4', '#d9578a', '#a63a63', '#fffaf8', '#eef6ea'], d: ['🐣', '🌷', '🥚', '🐰'], a: '🐣' },
   festadaflor: { nome: 'Festa da Flor', c: ['#c93f80', '#8e2459', '#fbe3ef', '#e2802a', '#a85c12', '#fff8fb', '#fae5ef'], d: ['🌺', '🌸', '🌷', '💐'], a: '🌺' },
   crianca:     { nome: 'Dia da Criança', c: ['#3a8fd6', '#1e5a8f', '#e3f0fb', '#f07a24', '#b5550f', '#fffaf2', '#e6f1fb'], d: ['🎈', '🧸', '🎨', '⚽'], a: '🎈' },
-  verao:       { nome: 'Verão', c: ['#1a9bb5', '#0e6476', '#dff4f8', '#e28a12', '#a8620a', '#fffdf5', '#dff3f7'], d: ['☀️', '🏖️', '🌊', '🐚'], a: '🕶️' }
+  verao:       { nome: 'Verão', c: ['#1a9bb5', '#0e6476', '#dff4f8', '#e28a12', '#a8620a', '#fffdf5', '#dff3f7'], d: ['☀️', '🏖️', '🌊', '🐚'], a: '🕶️' },
+  castelo: { nome: 'Castelo medieval', c: ['#78512f','#51301e','#dfd0ac','#813b32','#54241e','#f5ecd5','#e3d2ab'], d: ['⚜️','🛡️','📜','🔑'], a: '' }
 };
 function pascoa(ano) { // algoritmo de Meeus/Jones/Butcher
   const a = ano % 19, b = Math.floor(ano / 100), c = ano % 100, d = Math.floor(b / 4), e = b % 4,
@@ -237,14 +238,14 @@ function minutosEstimados(rondas) {
 const PREF = 'ticlas3-preferencias';
 let prefs = Object.assign({ modo: 'computador', perfil: 'turma', escala: 1, contraste: false, legivel: false, tema: 'auto', livre: false, lingua: 'pt' }, ler(PREF) || {});
 let AULA = null, MASCOTE = {};
-const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, numero: '', concluido: false, profOk: false };
+const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, melhor: {}, desbloqueadas: {}, chavesProf: {}, numero: '', concluido: false, profOk: false };
 const somLigado = () => prefs.som === true || (prefs.som !== false && prefs.modo === 'quadro');
 const apoio = () => prefs.perfil === 'apoio';
 const listaRondas = seq => AULA.rondas.map((r, i) => ({ r, i })).filter(x => seq === 'bonus' ? x.r.fase === 'bonus' : x.r.fase !== 'bonus').map(x => x.i);
 const prefixoProgresso = () => 'ticlas3:' + (AULA.id || AULA.titulo) + ':';
 const chaveProgresso = () => prefixoProgresso() + (est.numero || 'sem-numero');
 function guardarProgresso() {
-  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, vistas: est.vistas, escapou: est.escapou, concluido: est.concluido, atualizado: new Date().toISOString() });
+  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, vistas: est.vistas, escapou: est.escapou, melhor: est.melhor, desbloqueadas: est.desbloqueadas, chavesProf: est.chavesProf, concluido: est.concluido, atualizado: new Date().toISOString() });
 }
 function totalEstrelas() { return Object.values(est.pontos).reduce((a, b) => a + b, 0); }
 function totalMaximo() { return Object.values(est.maximos).reduce((a, b) => a + b, 0); }
@@ -295,12 +296,15 @@ function calar() { try { if (temFala()) speechSynthesis.cancel(); } catch (e) { 
 function atualizarBotaoSom() { const b = $('#btSom'); if (b) { b.textContent = somLigado() ? '🔊' : '🔇'; b.setAttribute('aria-pressed', String(somLigado())); } }
 
 /* ---------- aparência: tema, acessibilidade, modo, língua ---------- */
-function temaAtual() { if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
+// Escape room (V3.11): tema próprio e fixo; por omissão o castelo medieval. "tema": "auto" devolve a escolha à professora.
+function temaEscape() { if (!modoEscape()) return null; const x = AULA.escape.tema ?? 'castelo'; return x !== 'auto' && TEMAS[x] ? x : null; }
+function temaAtual() { const te = temaEscape(); if (te) return te; if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
 function aplicarAparencia() {
   const tema = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
   ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, tema.c[i]));
   s.setProperty('--escala', prefs.escala);
   const b = document.body;
+  b.classList.toggle('castelo', temaAtual() === 'castelo');
   b.classList.toggle('contraste', !!prefs.contraste); b.classList.toggle('legivel', !!prefs.legivel);
   b.classList.toggle('quadro', prefs.modo === 'quadro');
   b.className = b.className.replace(/\bano-\d\b/g, '').trim(); if (AULA && AULA.ano) b.classList.add('ano-' + AULA.ano);
@@ -386,7 +390,7 @@ function ecraInicio() {
 }
 function comecar(continuar) {
   const g = continuar ? ler(chaveProgresso()) : null;
-  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, concluido: false }, g || {});
+  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, melhor: {}, desbloqueadas: {}, chavesProf: {}, concluido: false }, g || {});
   if (!est.vistas) est.vistas = {};
   if (!g) apagar(chaveProgresso());
   if (audio && audio.state === 'suspended') audio.resume();
@@ -434,8 +438,9 @@ function ecraMapa() {
 
 /* ---------- moldura de cada ronda ---------- */
 function iniciarRonda() {
-  limparTimers(); calar();
+  limparTimers(); calar(); reporMelhor();
   const lista = listaRondas(est.seq);
+  if (modoEscape() && est.seq === 'principal' && est.p < lista.length && salaFechada(est.p, lista)) { ecraMapa(); return; }
   if (est.p >= lista.length) {
     if (est.seq === 'principal' && !lista.every(ri => est.feitas[ri])) { ecraMapa(); return; }
     if (est.seq === 'principal' && modoEscape() && !est.escapou) { ecraCadeado(); return; }
@@ -443,13 +448,16 @@ function iniciarRonda() {
   }
   const ri = lista[est.p], ronda = AULA.rondas[ri];
   RONDA = ronda;
-  est.pontos[ri] = 0; est.maximos[ri] = 0; delete est.feitas[ri];
+  // escape room: repetir uma sala já aberta não tira a chave e guarda a melhor pontuação
+  const repetir = modoEscape() && est.seq === 'principal' && est.feitas[ri];
+  if (repetir) { est.melhor = est.melhor || {}; est.melhor[ri] = { p: est.pontos[ri] || 0, m: est.maximos[ri] || 0 }; }
+  est.pontos[ri] = 0; est.maximos[ri] = 0; if (!modoEscape()) delete est.feitas[ri];
   guardarProgresso(); atualizarEstrelas();
   const progresso = h('div', { class: 'progresso', 'aria-hidden': 'true' },
     lista.map((x, k) => h('i', { class: k === est.p ? 'atual' : est.feitas[x] ? 'feito' : '' })));
   const area = h('div', { class: 'area', id: 'area' });
   const btAnterior = h('button', { class: 'btn leve', id: 'btAnterior', disabled: est.p === 0, onclick: () => { est.p--; iniciarRonda(); } }, t('anterior'));
-  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
+  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: modoEscape() || !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
   $('#app').replaceChildren(
     progresso,
     h('div', { class: 'etiqueta' },
@@ -465,7 +473,7 @@ function iniciarRonda() {
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
-    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); };
+    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = modoEscape() || !prefs.livre; encher(area); motor(ri, ronda, area); };
     const ver = livre => encher(area, filme(ronda.animacao, {
       titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'), livre,
       aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); }, aoContinuar: comecar
@@ -477,20 +485,40 @@ function iniciarRonda() {
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
-  est.feitas[ri] = true; guardarProgresso();
+  est.feitas[ri] = true;
+  const escapeSala = modoEscape() && est.seq === 'principal';
   const lista = listaRondas(est.seq), ultima = est.p === lista.length - 1;
   const tudoFeito = est.seq === 'bonus' || lista.every(x => est.feitas[x]);
-  poseMascote('trofeu', true); dizerBalao(t('rondaConcluida')); som('fim'); festa(null, 40);
-  const bt = $('#btProximo'); bt.disabled = false;
+  const ganhas = est.pontos[ri], possiveis = est.maximos[ri];
+  est.melhor = est.melhor || {};
+  const antes = est.melhor[ri]; delete est.melhor[ri];
+  if (antes && antes.p > (est.pontos[ri] || 0)) { est.pontos[ri] = antes.p; est.maximos[ri] = antes.m; }
+  if (est.chavesProf) delete est.chavesProf[ri]; // o aluno abriu a sala sozinho
+  guardarProgresso(); atualizarEstrelas();
+  poseMascote('trofeu', true); dizerBalao(escapeSala ? t('escAberta') : t('rondaConcluida')); som('fim'); festa(null, 40);
+  let rotulo, seguir, vaiAoMapa = false;
+  if (escapeSala) {
+    const k = proximaSalaPorAbrir();
+    if (k >= 0) { rotulo = t('escProxima') + ' ▶'; seguir = () => { est.p = k; guardarProgresso(); iniciarRonda(); }; }
+    else if (!tudoFeito) { rotulo = t('missoes'); seguir = ecraMapa; vaiAoMapa = true; }
+    else { rotulo = est.escapou ? t('verResultado') : '🔐 ' + t('escCadeado'); seguir = () => { est.p = lista.length; guardarProgresso(); iniciarRonda(); }; }
+  } else {
+    rotulo = ultima ? (tudoFeito ? t('verResultado') : t('missoes')) : t('proximaRonda');
+    seguir = () => { est.p++; guardarProgresso(); iniciarRonda(); };
+    vaiAoMapa = ultima && !tudoFeito;
+  }
+  const bt = $('#btProximo');
+  if (escapeSala) bt.replaceWith(h('button', { class: bt.className, id: 'btProximo', onclick: seguir }, t('proximo')));
+  else bt.disabled = false;
   encher($('#area'), h('div', { style: 'text-align:center;padding:20px 0' },
     h('div', { class: 'estrelas-grandes' }, '⭐'),
-    h('h2', { class: 'titulo-ronda' }, modoEscape() && est.seq === 'principal' ? '🔓 ' + t('escAberta') : t('rondaConcluida')),
-    h('p', { class: 'instrucao' }, t('estrelasRonda', { a: est.pontos[ri], b: est.maximos[ri] })),
+    h('h2', { class: 'titulo-ronda' }, escapeSala ? '🔓 ' + t('escAberta') : t('rondaConcluida')),
+    h('p', { class: 'instrucao' }, t('estrelasRonda', { a: ganhas, b: possiveis })),
     est.seq === 'principal' ? chaveGanha(AULA.rondas[ri]) : null,
     h('div', { class: 'linha' },
       h('button', { class: 'btn leve', onclick: iniciarRonda }, t('repetirRonda')),
-      est.seq === 'principal' ? h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')) : null,
-      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? (tudoFeito ? (modoEscape() && est.seq === 'principal' && !est.escapou ? '🔐 ' + t('escCadeado') : t('verResultado')) : t('missoes')) : (modoEscape() && est.seq === 'principal' ? t('escProxima') : t('proximaRonda'))))));
+      est.seq === 'principal' && !vaiAoMapa ? h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')) : null,
+      h('button', { class: 'btn', id: 'btSeguinte', onclick: seguir }, rotulo))));
   $('#btSeguinte').focus({ preventScroll: true });
 }
 
@@ -1185,19 +1213,22 @@ function painelProfessor() {
   const mudar = (k, v) => { prefs[k] = v; guardarPrefs(); aplicarAparencia(); };
   const nItens = AULA.rondas.reduce((s, r) => s + r.itens.length, 0);
   const voz = vozPT();
+  const ref = { remove: () => j.remove() };
   const j = janela(
     h('h3', null, '⚙️ Painel do professor'),
     h('div', { class: 'info' }, `«${AULA.titulo}» · ${principais.length} rondas + ${bonus.length} de bónus · ${nItens} itens · duração estimada ≈ ${minutosEstimados(principais.map(i => AULA.rondas[i]))} min (+ ${minutosEstimados(bonus.map(i => AULA.rondas[i]))} min de bónus) · tema de hoje: ${TEMAS[temaDoDia()].nome} · voz em português: ${voz ? voz.name : 'não encontrada neste computador'} · motor ${VERSAO}`),
-    h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
+    temaEscape() ? h('p', { class: 'info' }, `Tema: ${TEMAS[temaEscape()].nome} (fixo neste escape room).`) : h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
     h('label', null, 'Modo', sel(prefs.modo, [['quadro', 'Quadro interativo'], ['computador', 'Computador']], v => { delete prefs.som; mudar('modo', v); })),
     h('label', null, 'Perfil', sel(prefs.perfil, [['turma', 'Turma'], ['apoio', 'Apoio']], v => mudar('perfil', v))),
     h('label', null, 'Língua da interface', sel(prefs.lingua, Object.entries(LINGUAS), v => mudar('lingua', v))),
     h('label', null, 'Som e narração', h('input', { type: 'checkbox', checked: somLigado() || null, onchange: e => mudar('som', e.target.checked) })),
-    h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
+    modoEscape() ? null : h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
     h('label', null, 'Animações: permitir saltar (⏭️)', h('input', { type: 'checkbox', checked: prefs.saltarFilmes || null, onchange: e => mudar('saltarFilmes', e.target.checked) })),
-    h('label', null, 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
-      class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); est.seq = s; est.p = +k; j.remove(); iniciarRonda(); }
+    h('label', null, modoEscape() ? 'Ir para a sala (fica desbloqueada)' : 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
+      class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); if (s === 'principal' && modoEscape()) { est.desbloqueadas = est.desbloqueadas || {}; est.desbloqueadas[principais[+k]] = true; } est.seq = s; est.p = +k; guardarProgresso(); j.remove(); iniciarRonda(); }
     }, 'Ir'))),
+    modoEscape() ? h('label', null, 'Todos os desafios abertos (salas e bónus por qualquer ordem, neste computador)', h('input', { type: 'checkbox', checked: prefs.escapeAberto || null, onchange: e => { mudar('escapeAberto', e.target.checked); if ($('#app .escape')) ecraMapa(); j.remove(); painelProfessor(); } })) : null,
+    modoEscape() ? painelEscape(ref) : null,
     h('h4', { style: 'margin:12px 0 4px' }, 'Resultados neste computador'),
     tabelaResultados(),
     h('p', { style: 'font-size:.7rem;color:var(--muted)' }, 'Cada computador guarda apenas os resultados de quem jogou nele, identificados pelo número do aluno (sem nomes). As alterações de modo, perfil e língua aplicam-se na ronda seguinte ou ao voltar ao início.'),
@@ -2512,7 +2543,9 @@ const modoEscape = () => !!(AULA && AULA.escape && typeof AULA.escape === 'objec
 const normEscape = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]/gu, '').toUpperCase();
 function salaFechada(k, principais) {
   if (AULA.escape.sequencial === false || k === 0) return false;
-  return !est.feitas[principais[k - 1]];
+  if (prefs.escapeAberto) return false; // painel do professor: todos os desafios abertos
+  if (est.desbloqueadas && est.desbloqueadas[principais[k]]) return false; // desbloqueada no painel do professor
+  return !principais.slice(0, k).every(ri => est.feitas[ri]);
 }
 function barraChaves(principais) {
   const salas = principais.filter(ri => AULA.rondas[ri].chave !== undefined);
@@ -2528,39 +2561,80 @@ function chaveGanha(ronda) {
     h('div', null, h('strong', null, t('escChave')), h('small', null, t('escGuarda'))),
     h('span', { class: 'chave-slot grande' }, String(ronda.chave)));
 }
+/* Escape room (V3.11): textos de sala, melhor pontuação, próxima sala disponível e desbloqueio pela professora */
+function aplicarTextosEscape() { Object.keys(T_ESCAPE).forEach(l => { if (T[l]) Object.assign(T[l], T_ESCAPE[l]); }); }
+function proximaSalaPorAbrir() { // próxima sala ainda sem chave e já acessível
+  const pr = listaRondas('principal');
+  for (let d = 1; d <= pr.length; d++) { const k = (est.p + d) % pr.length; if (!est.feitas[pr[k]] && !salaFechada(k, pr)) return k; }
+  return -1;
+}
+function reporMelhor() { // sala repetida e abandonada a meio: volta a melhor pontuação
+  const m = est.melhor || {}, salas = Object.keys(m);
+  est.melhor = {};
+  if (!salas.length) return;
+  salas.forEach(ri => { est.pontos[ri] = m[ri].p; est.maximos[ri] = m[ri].m; });
+  guardarProgresso(); atualizarEstrelas();
+}
+function painelEscape(j) { // secção do painel do professor
+  const pr = listaRondas('principal');
+  if ($('#app .inicio')) return h('div', null, h('h4', { style: 'margin:12px 0 4px' }, '🔓 Desbloquear salas'),
+    h('p', { class: 'info' }, 'Primeiro o aluno entra no jogo (com o seu número). Depois abre este painel para desbloquear salas ou dar chaves.'));
+  est.desbloqueadas = est.desbloqueadas || {}; est.chavesProf = est.chavesProf || {};
+  const atualizar = () => { guardarProgresso(); atualizarEstrelas(); j.remove(); if ($('#app .escape')) ecraMapa(); painelProfessor(); };
+  const linhas = pr.map((ri, k) => {
+    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = salaFechada(k, pr);
+    const estado = feita ? (est.chavesProf[ri] ? `🔑 ${r.chave} (dada pela professora)` : `🔑 ${r.chave}`)
+      : fechada ? '🔒 fechada' : est.desbloqueadas[ri] ? '🔓 desbloqueada' : 'por abrir';
+    return h('tr', null, h('td', null, `${k + 1}. ${r.titulo}`), h('td', null, estado),
+      h('td', null, h('span', { class: 'linha', style: 'justify-content:flex-start;gap:6px;flex-wrap:nowrap' },
+        fechada ? h('button', { class: 'btn leve', style: 'padding:5px 9px;font-size:.8rem;min-height:0;box-shadow:none;white-space:nowrap', onclick: () => { est.desbloqueadas[ri] = true; atualizar(); } }, '🔓 Desbloquear') : null,
+        feita ? null : h('button', { class: 'btn leve', style: 'padding:5px 9px;font-size:.8rem;min-height:0;box-shadow:none;white-space:nowrap', onclick: () => {
+          if (!confirm(`Dar a chave «${r.chave}» da sala ${k + 1} sem a resolver?`)) return;
+          est.feitas[ri] = true; est.chavesProf[ri] = true; est.pontos[ri] = est.pontos[ri] || 0; est.maximos[ri] = est.maximos[ri] || 0; atualizar();
+        } }, '🔑 Dar a chave'))));
+  });
+  return h('div', null,
+    h('h4', { style: 'margin:12px 0 4px' }, `🔓 Desbloquear salas · aluno n.º ${est.numero || '—'}`),
+    h('p', { class: 'info' }, 'Desbloquear deixa o aluno entrar na sala sem ter aberto as anteriores. Dar a chave conta a sala como aberta (sem estrelas), para quem ficar preso.'),
+    h('table', { class: 'resultados' }, h('tbody', null, linhas)),
+    prefs.escapeAberto ? h('p', { class: 'info' }, 'Todos os desafios estão abertos neste computador. Para voltar à ordem das salas, desliga a opção acima.') : h('div', { class: 'linha', style: 'justify-content:flex-start;margin-top:6px' },
+      h('button', { class: 'btn leve', onclick: () => { pr.forEach(ri => { est.desbloqueadas[ri] = true; }); atualizar(); } }, '🔓 Desbloquear todas'),
+      h('button', { class: 'btn leve', onclick: () => { est.desbloqueadas = {}; atualizar(); } }, '🔒 Repor a ordem das salas')));
+}
 function ecraMapaEscape() {
+  reporMelhor();
   const E = AULA.escape, principais = listaRondas('principal'), bonus = listaRondas('bonus');
   const todas = principais.every(ri => est.feitas[ri]);
   const sala = (ri, k) => {
-    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = !feita && salaFechada(k, principais);
+    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = salaFechada(k, principais);
     const atual = !feita && !fechada && k === principais.findIndex(x => !est.feitas[x]);
     return h('button', {
-      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: (fechada && !prefs.livre) || null,
+      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: fechada || null,
       onclick: () => { est.seq = 'principal'; est.p = k; iniciarRonda(); }
     },
       h('span', { class: 'missao-num' }, k + 1),
-      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, feita ? '🔓' : fechada ? '🔒' : (r.icone || '🚪')),
+      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, fechada ? '🔒' : feita ? '🔓' : (r.icone || '🚪')),
       h('strong', null, r.titulo || t('escSala', { n: k + 1 })),
       h('small', null, t('escSala', { n: k + 1 })),
-      feita ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
-        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('sugestao') : t('escPorAbrir')));
+      feita && !fechada ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
+        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('escEntrar') : t('escPorAbrir')));
   };
-  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: (!todas && !prefs.livre) || null, onclick: ecraCadeado },
+  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: !todas || null, onclick: ecraCadeado },
     h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, est.escapou ? '🏆' : todas ? '🔐' : '🔒'),
     h('strong', null, t('escCadeado')),
     h('small', null, est.escapou ? t('escLivre') : t('escCadeadoSub')));
   $('#app').replaceChildren(h('div', { class: 'escape' },
     h('div', { class: 'mapa-topo' }, mascote(est.escapou ? 'trofeu' : 'aponta'),
-      h('div', null, h('h2', { class: 'titulo-ronda' }, E.titulo || AULA.titulo), E.historia ? h('p', { class: 'instrucao' }, textoRico(E.historia)) : null)),
+      h('div', null, h('h2', { class: 'titulo-ronda' }, E.titulo || AULA.titulo), E.historia ? h('p', { class: 'instrucao' }, textoRico(prefs.escapeAberto && E.historiaAberto ? E.historiaAberto : E.historia)) : null)),
     temConsulta() ? h('button', { class: 'consulta-faixa', onclick: () => abrirConsulta() },
       h('span', { class: 'consulta-faixa-icone', 'aria-hidden': 'true' }, '📖'),
       h('span', null, h('strong', null, t('consulta')), h('small', null, t('consultaSub')))) : null,
     barraChaves(principais),
     h('div', { class: 'mapa' }, principais.map((ri, k) => sala(ri, k)), final),
-    bonus.length ? h('div', { class: 'grupo-titulo' }, todas ? nomeFase('bonus') : t('bonusFechado')) : null,
+    bonus.length ? h('div', { class: 'grupo-titulo' }, (todas || prefs.escapeAberto) ? nomeFase('bonus') : t('bonusFechado')) : null,
     bonus.length ? h('div', { class: 'mapa' }, bonus.map((ri, k) => h('button', {
-      class: 'missao' + (est.feitas[ri] ? ' feita' : ''), disabled: !todas || null, onclick: () => { est.seq = 'bonus'; est.p = k; iniciarRonda(); }
-    }, h('span', { class: 'missao-num' }, '★'), h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, todas ? iconeRonda(AULA.rondas[ri]) : '🔒'),
+      class: 'missao' + (est.feitas[ri] ? ' feita' : ''), disabled: !(todas || prefs.escapeAberto) || null, onclick: () => { est.seq = 'bonus'; est.p = k; iniciarRonda(); }
+    }, h('span', { class: 'missao-num' }, '★'), h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, (todas || prefs.escapeAberto) ? iconeRonda(AULA.rondas[ri]) : '🔒'),
       h('strong', null, AULA.rondas[ri].titulo || nomeFase('bonus')), h('small', null, nomeFase('bonus'))))) : null,
     h('div', { class: 'nav' },
       h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
@@ -2568,8 +2642,10 @@ function ecraMapaEscape() {
       est.escapou ? h('button', { class: 'btn', id: 'btResultado', onclick: () => { est.seq = 'principal'; ecraFim(); } }, t('resultado')) : h('span'))));
 }
 function ecraCadeado() {
+  reporMelhor();
   limparTimers(); calar();
   const E = AULA.escape, principais = listaRondas('principal');
+  if (!principais.every(ri => est.feitas[ri])) { ecraMapa(); return; }
   let erros = 0;
   const msg = h('p', { class: 'cadeado-msg', 'aria-live': 'polite' });
   const pista = h('div', { class: 'consulta-lembra', hidden: true }, '💡 ', textoRico(E.pista || ''));
@@ -2613,6 +2689,8 @@ function validarEscape(a) {
   const e = [], E = a.escape, txt = v => typeof v === 'string' && v.trim() !== '';
   if (!E || typeof E !== 'object' || Array.isArray(E)) return ['«escape» tem de ser um objeto { ... }.'];
   if (!txt(E.palavra)) e.push('Escape room: falta a «palavra» secreta do cadeado final.');
+  if (E.tema !== undefined && !(E.tema === 'auto' || TEMAS[E.tema])) e.push(`Escape room: «tema» tem de ser "auto" ou um destes: ${Object.keys(TEMAS).join(', ')}.`);
+  if (E.historiaAberto !== undefined && !txt(E.historiaAberto)) e.push('Escape room: «historiaAberto» tem de ser um texto.');
   const chaves = a.rondas.filter(r => r && r.fase !== 'bonus' && r.chave !== undefined).map(r => String(r.chave));
   a.rondas.forEach((r, ri) => { if (r && r.chave !== undefined && !(txt(String(r.chave)) && String(r.chave).length <= 4)) e.push(`Ronda ${ri + 1}: «chave» tem de ser uma letra, um número ou um texto curto (até 4 caracteres).`); });
   if (txt(E.palavra) && chaves.length) {
@@ -2636,6 +2714,7 @@ function validarEscape(a) {
   catch (e) { erros = ['O bloco AULA não é JSON válido: ' + e.message + '. Verifica vírgulas, aspas e chavetas.']; }
   aplicarAparencia();
   if (erros.length) { ecraErros(erros); return; }
+  if (modoEscape()) aplicarTextosEscape();
   // botão MAB no cabeçalho: nas aulas com rondas de MAB ou com "ferramentaMAB": true
   if ($('#btMab')) $('#btMab').hidden = !(AULA.ferramentaMAB === true || (AULA.ferramentaMAB !== false && AULA.rondas.some(r => r && r.tipo === 'mab')));
   if ($('#btConsulta')) { $('#btConsulta').hidden = !temConsulta(); $('#btConsulta').onclick = () => abrirConsulta(); $('#btConsulta').title = t('consulta'); }

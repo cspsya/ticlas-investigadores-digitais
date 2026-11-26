@@ -137,14 +137,19 @@ Transforma o mapa de missões num castelo de salas fechadas:
 
 ```json
 "escape": { "titulo": "🏰 Fuga do Castelo", "historia": "O Ticl@s ficou fechado…", "palavra": "DINASTIA",
-            "cadeado": "Ordena as letras…", "pista": "Aparece depois de 2 tentativas erradas.", "vitoria": "O portão abriu-se!" },
+            "cadeado": "Ordena as letras…", "pista": "Aparece depois de 2 tentativas erradas.", "vitoria": "O portão abriu-se!",
+            "historiaAberto": "Abre as 8 salas pela ordem que quiseres…", "tema": "castelo" },
 "rondas": [ { "titulo": "Portão do castelo", "icone": "🏰", "chave": "S", … }, … ]
 ```
 
 - Cada sala (ronda principal) pode ter uma `chave` (letra ou número) e um `icone`. Ao terminar a sala, o aluno vê «🔓 Sala aberta!» e ganha a chave, que fica na barra de chaves do mapa.
-- As salas abrem por ordem (`"sequencial": false` deixa-as todas abertas; a navegação livre do painel do professor também).
+- As salas abrem por ordem: cada sala só abre quando todas as anteriores estiverem feitas (`"sequencial": false` deixa-as todas abertas). Voltar a uma sala já aberta não tira a chave e fica a melhor pontuação.
 - No fim, o **cadeado final** pede a `palavra` secreta (sem distinguir maiúsculas nem acentos). As chaves podem vir baralhadas, para os alunos terem de pensar; o construtor confirma que as chaves têm exatamente as letras da palavra. Depois de 2 tentativas erradas aparece a `pista`.
-- Funciona com o Caderno do Ticl@s, as animações e os bónus (que abrem quando todas as salas estiverem feitas). Exemplo: `aulas/2026-11-25_4ano_EstudoDoMeio_1Dinastia_EscapeRoom_v1.json`.
+- Funciona com o Caderno do Ticl@s, as animações e os bónus (que abrem quando todas as salas estiverem feitas). Exemplo: `aulas/2026-11-25_4ano_EstudoDoMeio_1Dinastia_EscapeRoom_v3.json`.
+- **Tema «Castelo medieval» (V3.11):** os escape rooms usam por omissão o tema `castelo` (fundo de pedra, pergaminho e salas em forma de porta), fixo e independente da data. Para outro tema: `"tema": "natal"` (ou outro tema do motor) dentro de `escape`; `"tema": "auto"` devolve a escolha à professora. O tema «Castelo medieval» também pode ser escolhido no painel do professor em qualquer jogo.
+- Nos escape rooms, os textos falam de salas: «Sala 2 de 8», «Entrar na sala», «🏰 Mapa do castelo», «🔁 Repetir» (nas 9 línguas).
+- `historiaAberto` (opcional): texto do mapa quando a professora deixa todos os desafios abertos (por exemplo, «Abre as 8 salas pela ordem que quiseres…»).
+- **Painel do professor (V3.11):** «Todos os desafios abertos» (salas e bónus por qualquer ordem, guardado nesse computador); para o aluno que está a jogar, «🔓 Desbloquear» uma sala, «🔑 Dar a chave» (a sala conta como aberta, sem estrelas), «Desbloquear todas» e «Repor a ordem das salas»; «Ir para a sala» desbloqueia a sala escolhida. O cadeado final pede sempre as chaves todas. A navegação livre não se aplica aos escape rooms.
 
 ### Tipos de Matemática (V3.4)
 
