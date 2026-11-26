@@ -1,0 +1,939 @@
+{
+  "id": "2026-11-27-1B-letras-p-t-l-v2",
+  "titulo": "As letras p, t e l",
+  "ano": 1,
+  "turma": "1.º B",
+  "disciplina": "Português",
+  "data": "2026-11-27",
+  "minutos": 60,
+  "descricao": "Apresentação da letra l e consolidação do p e do t, com as palavras do manual: ligar os pontos, som inicial, classificar por letra, sílabas la/le/li/lo/lu, ligar desenho e palavra manuscrita, construir palavras e frases, escrita no teclado e desafios de pensamento computacional (padrões, seguir e escolher códigos de setas, caça ao erro e regra secreta).",
+  "resumo": "Descobre a letra l e brinca com o p e o t!",
+  "focoTic": [
+    "Teclado: escrever",
+    "Rato: tocar, arrastar e mover",
+    "Pensamento computacional"
+  ],
+  "objetivo": "Vamos conhecer a letra l e juntar o p, o t e o l para ler e escrever palavras.",
+  "ilustracao": {
+    "tipo": "letras",
+    "letras": [
+      "p",
+      "t",
+      "l"
+    ]
+  },
+  "abertura": [
+    {
+      "emoji": "🎉 ✨",
+      "titulo": "Uma letra nova!",
+      "texto": "Olá! Hoje trago uma letra nova: o **l**.",
+      "pose": "ola"
+    },
+    {
+      "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjAwIj48Zz48cmVjdCB4PSIyMiIgeT0iMTQiIHdpZHRoPSIxMzYiIGhlaWdodD0iMTUwIiByeD0iMjIiIGZpbGw9IiNmZmZhZjIiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTk3LjUgMzkuMiBROTcuNSA2Mi4yIDk3LjUgNzMuNyBROTcuNSA4NS4yIDk3LjUgOTUuNSBROTcuNSAxMDUuOSA5OS4yIDExMy45IFExMDAuOSAxMjIuMCAxMDUuMCAxMjcuMiBRMTA5LjAgMTMyLjMgMTE0LjggMTMyLjMgTDEyMC41IDEzMi4zIiBmaWxsPSJub25lIiBzdHJva2U9IiM1YTM0MTciIHN0cm9rZS13aWR0aD0iMTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjx0ZXh0IHg9IjkwIiB5PSIxOTAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzZiM2QxYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cGVxdWVubzwvdGV4dD48L2c+PGc+PHJlY3QgeD0iMTcyIiB5PSIxNCIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNTAiIHJ4PSIyMiIgZmlsbD0iI2ZmZmFmMiIgc3Ryb2tlPSIjZTg4MzRhIiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMTkwIDM0IFYxNDYgSDI2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWEzNDE3IiBzdHJva2Utd2lkdGg9IjEzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSIyNDAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNmIzZDFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ncmFuZGU8L3RleHQ+PC9nPjxnPjxyZWN0IHg9IjMyMiIgeT0iMTQiIHdpZHRoPSIxMzYiIGhlaWdodD0iMTUwIiByeD0iMjIiIGZpbGw9IiNmZmZhZjIiIHN0cm9rZT0iIzViYTNkMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTM0MS4yIDEzNS4zIFEzNjAuMiAxMjkuNyAzNzMuMSAxMjAuMiBRMzg2LjAgMTEwLjYgMzkzLjggOTguMyBRNDAxLjcgODYuMCA0MDUuMCA3My43IFE0MDguNCA2MS40IDQwNS4wIDUxLjMgUTQwMS43IDQxLjIgMzkyLjcgMzcuOCBRMzgzLjggMzQuNSAzNzkuMyA0Mi4zIFEzNzQuOCA1MC4yIDM3My4xIDYyLjUgUTM3MS40IDc0LjggMzcyLjAgODcuMSBRMzcyLjYgOTkuNCAzNzguMiAxMTYuMiBRMzgzLjggMTMzLjAgMzkyLjcgMTM0LjcgUTQwMS43IDEzNi40IDQxMC42IDEzMy42IFE0MTkuNiAxMzAuOCA0MjYuMyAxMjUuMiBMNDMzLjAgMTE5LjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNGZhMCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSIzOTAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNmIzZDFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7DoCBtw6NvPC90ZXh0PjwvZz48L3N2Zz4=",
+      "alt": "A letra l pequena, a letra L grande e a letra l escrita à mão",
+      "efeito": "zoom",
+      "texto": "O **l** pequeno, o **L** grande e o **l** escrito à mão.",
+      "pose": "aponta"
+    },
+    {
+      "emoji": "🌙 🦁 🔍",
+      "texto": "**l** de lua, de leão e de lupa.",
+      "pose": "ideia"
+    },
+    {
+      "emoji": "🦆 🕸️ 🌷",
+      "texto": "Também vamos brincar com o **p** e o **t**. Vamos lá!",
+      "pose": "trofeu"
+    }
+  ],
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "pontos",
+      "titulo": "A letra escondida",
+      "instrucao": "Liga os pontos pela ordem: 1, 2, 3… Que letra vai aparecer?",
+      "itens": [
+        {
+          "pontos": [
+            [
+              [
+                50,
+                8
+              ],
+              [
+                50,
+                28
+              ],
+              [
+                50,
+                48
+              ],
+              [
+                50,
+                66
+              ],
+              [
+                53,
+                80
+              ],
+              [
+                60,
+                89
+              ],
+              [
+                70,
+                89
+              ]
+            ]
+          ],
+          "letra": "l",
+          "exemplos": [
+            "🌙 lua",
+            "🦁 leão",
+            "🔍 lupa"
+          ]
+        },
+        {
+          "pontos": [
+            [
+              [
+                30,
+                10
+              ],
+              [
+                30,
+                30
+              ],
+              [
+                30,
+                50
+              ],
+              [
+                30,
+                70
+              ],
+              [
+                30,
+                90
+              ],
+              [
+                50,
+                90
+              ],
+              [
+                70,
+                90
+              ],
+              [
+                84,
+                90
+              ]
+            ]
+          ],
+          "letra": "L",
+          "exemplos": [
+            "🦁 Leão",
+            "🌙 Lua",
+            "🔍 Lupa"
+          ]
+        },
+        {
+          "pergunta": "Agora, a letra escrita à mão!",
+          "pontos": [
+            [
+              [
+                10,
+                94
+              ],
+              [
+                27,
+                89
+              ],
+              [
+                50,
+                72
+              ],
+              [
+                64,
+                50
+              ],
+              [
+                70,
+                28
+              ],
+              [
+                64,
+                10
+              ],
+              [
+                48,
+                4
+              ],
+              [
+                40,
+                18
+              ],
+              [
+                37,
+                40
+              ],
+              [
+                38,
+                62
+              ],
+              [
+                48,
+                92
+              ],
+              [
+                64,
+                95
+              ],
+              [
+                80,
+                90
+              ],
+              [
+                92,
+                80
+              ]
+            ]
+          ],
+          "letra": "l",
+          "exemplos": [
+            "[[lua]]",
+            "[[lupa]]",
+            "[[lata]]"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Toca no som do início",
+      "instrucao": "Olha para o desenho. Toca no Ticl@s que tem a primeira letra.",
+      "itens": [
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🦁",
+          "certa": "l [[l]]",
+          "erradas": [
+            "t [[t]]",
+            "p [[p]]"
+          ],
+          "explicacao": "le · ão — leão começa por l."
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🐢",
+          "certa": "t [[t]]",
+          "erradas": [
+            "l [[l]]",
+            "p [[p]]"
+          ],
+          "explicacao": "tar · ta · ru · ga — começa por t."
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🍋",
+          "certa": "l [[l]]",
+          "erradas": [
+            "p [[p]]",
+            "t [[t]]"
+          ],
+          "explicacao": "li · mão — começa por l."
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "🥁",
+          "certa": "t [[t]]",
+          "erradas": [
+            "p [[p]]",
+            "l [[l]]"
+          ],
+          "explicacao": "tam · bor — começa por t."
+        },
+        {
+          "pergunta": "Com que letra começa?",
+          "emoji": "✏️",
+          "certa": "l [[l]]",
+          "erradas": [
+            "p [[p]]",
+            "t [[t]]"
+          ],
+          "explicacao": "lá · pis — começa por l."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Arruma: p, t ou l?",
+      "instrucao": "Toca num desenho e depois na caixa da letra com que começa.",
+      "caixas": [
+        "p [[p]]",
+        "t [[t]]",
+        "l [[l]]"
+      ],
+      "itens": [
+        [
+          "🌙 lua",
+          "l [[l]]"
+        ],
+        [
+          "🐼 panda",
+          "p [[p]]"
+        ],
+        [
+          "⛺ tenda",
+          "t [[t]]"
+        ],
+        [
+          "💡 lâmpada",
+          "l [[l]]"
+        ],
+        [
+          "🍐 pera",
+          "p [[p]]"
+        ],
+        [
+          "✂️ tesoura",
+          "t [[t]]"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "completar",
+      "visual": "baloes",
+      "letra": "manuscrita",
+      "titulo": "Balões das sílabas",
+      "instrucao": "Que sílaba falta? Rebenta o balão certo.",
+      "itens": [
+        {
+          "frase": "___a",
+          "emoji": "🌙",
+          "certa": "lu",
+          "erradas": [
+            "la",
+            "li"
+          ],
+          "explicacao": "lu · a — lua"
+        },
+        {
+          "frase": "___ão",
+          "emoji": "🦁",
+          "certa": "le",
+          "erradas": [
+            "lo",
+            "la"
+          ],
+          "explicacao": "le · ão — leão"
+        },
+        {
+          "frase": "___ta",
+          "emoji": "🥫",
+          "certa": "la",
+          "erradas": [
+            "lu",
+            "le"
+          ],
+          "explicacao": "la · ta — lata"
+        },
+        {
+          "frase": "___pa",
+          "emoji": "🔍",
+          "certa": "lu",
+          "erradas": [
+            "li",
+            "lo"
+          ],
+          "explicacao": "lu · pa — lupa"
+        },
+        {
+          "frase": "tu___pa",
+          "emoji": "🌷",
+          "certa": "li",
+          "erradas": [
+            "le",
+            "la"
+          ],
+          "explicacao": "tu · li · pa — tulipa"
+        },
+        {
+          "frase": "lei___",
+          "emoji": "🥛",
+          "certa": "te",
+          "erradas": [
+            "pe",
+            "le"
+          ],
+          "explicacao": "lei · te — leite"
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "🤖 Padrões das letras",
+      "instrucao": "Pensamento computacional: descobre o padrão. O que vem a seguir?",
+      "itens": [
+        {
+          "pergunta": "🦆 🌙 🦆 🌙 🦆 ___",
+          "certa": "🌙",
+          "erradas": [
+            "🦆",
+            "🔍"
+          ],
+          "explicacao": "O padrão é pato, lua, pato, lua…"
+        },
+        {
+          "pergunta": "p · t · l · p · t · ___",
+          "certa": "l [[l]]",
+          "erradas": [
+            "p [[p]]",
+            "t [[t]]"
+          ],
+          "explicacao": "p, t, l repete-se: p, t, l, p, t, l."
+        },
+        {
+          "pergunta": "la · le · li · lo · ___",
+          "certa": "lu",
+          "erradas": [
+            "la",
+            "li"
+          ],
+          "explicacao": "As vogais vão pela ordem: a, e, i, o, u."
+        },
+        {
+          "pergunta": "🦆 🦆 🌷 🦆 🦆 🌷 🦆 ___",
+          "certa": "🦆",
+          "erradas": [
+            "🌷",
+            "🔍"
+          ],
+          "explicacao": "Dois patos e uma tulipa: o padrão repete-se."
+        },
+        {
+          "pergunta": "pa · ta · la · pa · ta · ___",
+          "certa": "la",
+          "erradas": [
+            "pa",
+            "ta"
+          ],
+          "explicacao": "pa, ta, la repete-se."
+        },
+        {
+          "pergunta": "pé · pá · pé · pá · ___",
+          "certa": "pé",
+          "erradas": [
+            "pá",
+            "pau"
+          ],
+          "explicacao": "pé, pá, pé, pá… a seguir vem pé."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "letra": "manuscrita",
+      "juntar": "",
+      "titulo": "Constrói a palavra",
+      "instrucao": "Toca nas sílabas pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "🔍",
+          "pecas": [
+            "lu",
+            "pa"
+          ]
+        },
+        {
+          "emoji": "🦁",
+          "pecas": [
+            "le",
+            "ão"
+          ]
+        },
+        {
+          "emoji": "🥛",
+          "pecas": [
+            "lei",
+            "te"
+          ]
+        },
+        {
+          "emoji": "🌷",
+          "pecas": [
+            "tu",
+            "li",
+            "pa"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "🤖 Código do Ticl@s",
+      "instrucao": "Pensamento computacional: segue as setas, casa a casa, a partir da casa verde.",
+      "itens": [
+        {
+          "pergunta": "Segue o código: → → ↓  Onde para o Ticl@s?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNkZmYwZDgiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNTQuMCIgY3k9IjQ4LjAiIHI9IjI0IiBmaWxsPSIjNWI4ZjJhIi8+PHBhdGggZD0iTTQ2LjAgMzUuMCBMNjguMCA0OC4wIEw0Ni4wIDYxLjAgWiIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjU0LjAiIHk9IjkwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzZjZiMWEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmluw61jaW88L3RleHQ+PHJlY3QgeD0iMTAzIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjM4LjAiIHk9IjY0LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bHVhPC90ZXh0PjxyZWN0IHg9IjI4NyIgeT0iMTEiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjExIiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjEwMyIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxOTUiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjM4LjAiIHk9IjE1Ni4wIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyYjJmNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnRlaWE8L3RleHQ+PHJlY3QgeD0iMjg3IiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjExIiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjEwMyIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZkZWJkMyIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxNDYuMCIgeT0iMjQ4LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cMOpPC90ZXh0PjxyZWN0IHg9IjE5NSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+",
+          "imagemGrande": true,
+          "certa": "teia",
+          "erradas": [
+            "lua",
+            "pé"
+          ],
+          "dica": "Começa na casa verde e anda uma casa por cada seta.",
+          "explicacao": "→ → ↓ — o Ticl@s chega a «teia»."
+        },
+        {
+          "pergunta": "Segue o código: ↑ → →  Onde para o Ticl@s?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTAzIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTQ2LjAiIHk9IjY0LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cGF0bzwvdGV4dD48cmVjdCB4PSIxOTUiIHk9IjExIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjExIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMSIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMDMiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmRlYmQzIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjIzOC4wIiB5PSIxNTYuMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5sZWl0ZTwvdGV4dD48cmVjdCB4PSIyODciIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTEiIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNkZmYwZDgiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNTQuMCIgY3k9IjIzMi4wIiByPSIyNCIgZmlsbD0iIzViOGYyYSIvPjxwYXRoIGQ9Ik00Ni4wIDIxOS4wIEw2OC4wIDIzMi4wIEw0Ni4wIDI0NS4wIFoiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSI1NC4wIiB5PSIyNzQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzNmNmIxYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+aW7DrWNpbzwvdGV4dD48cmVjdCB4PSIxMDMiIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjI4NyIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZkZWJkMyIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIzMzAuMCIgeT0iMjQ4LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bHVwYTwvdGV4dD48L3N2Zz4=",
+          "imagemGrande": true,
+          "certa": "leite",
+          "erradas": [
+            "pato",
+            "lupa"
+          ],
+          "dica": "Começa na casa verde e anda uma casa por cada seta.",
+          "explicacao": "↑ → → — o Ticl@s chega a «leite»."
+        },
+        {
+          "pergunta": "Segue o código: ↓ ← ←  Onde para o Ticl@s?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTQuMCIgeT0iNjQuMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5wb3RlPC90ZXh0PjxyZWN0IHg9IjEwMyIgeT0iMTEiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE5NSIgeT0iMTEiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjI4NyIgeT0iMTEiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZGZmMGQ4IiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjMzMC4wIiBjeT0iNDguMCIgcj0iMjQiIGZpbGw9IiM1YjhmMmEiLz48cGF0aCBkPSJNMzIyLjAgMzUuMCBMMzQ0LjAgNDguMCBMMzIyLjAgNjEuMCBaIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iMzMwLjAiIHk9IjkwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzZjZiMWEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmluw61jaW88L3RleHQ+PHJlY3QgeD0iMTEiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTAzIiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmRlYmQzIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE0Ni4wIiB5PSIxNTYuMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5wacOjbzwvdGV4dD48cmVjdCB4PSIxOTUiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjg3IiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjExIiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjEwMyIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxOTUiIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjg3IiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmRlYmQzIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjMzMC4wIiB5PSIyNDguMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5sYXRhPC90ZXh0Pjwvc3ZnPg==",
+          "imagemGrande": true,
+          "certa": "pião",
+          "erradas": [
+            "lata",
+            "pote"
+          ],
+          "dica": "Começa na casa verde e anda uma casa por cada seta.",
+          "explicacao": "↓ ← ← — o Ticl@s chega a «pião»."
+        },
+        {
+          "pergunta": "Segue o código: → → →  Onde para o Ticl@s?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTAzIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjM4LjAiIHk9IjY0LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cGlsb3RvPC90ZXh0PjxyZWN0IHg9IjI4NyIgeT0iMTEiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjExIiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZGZmMGQ4IiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxjaXJjbGUgY3g9IjU0LjAiIGN5PSIxNDAuMCIgcj0iMjQiIGZpbGw9IiM1YjhmMmEiLz48cGF0aCBkPSJNNDYuMCAxMjcuMCBMNjguMCAxNDAuMCBMNDYuMCAxNTMuMCBaIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTQuMCIgeT0iMTgyIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzZjZiMWEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmluw61jaW88L3RleHQ+PHJlY3QgeD0iMTAzIiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE5NSIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMzMwLjAiIHk9IjE1Ni4wIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyYjJmNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnR1bGlwYTwvdGV4dD48cmVjdCB4PSIxMSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMDMiIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTQ2LjAiIHk9IjI0OC4wIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyYjJmNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmFwaXRvPC90ZXh0PjxyZWN0IHg9IjE5NSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+",
+          "imagemGrande": true,
+          "certa": "tulipa",
+          "erradas": [
+            "piloto",
+            "apito"
+          ],
+          "dica": "Começa na casa verde e anda uma casa por cada seta.",
+          "explicacao": "→ → → — o Ticl@s chega a «tulipa»."
+        },
+        {
+          "pergunta": "Que código leva o Ticl@s até «leão»?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNkZmYwZDgiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGNpcmNsZSBjeD0iNTQuMCIgY3k9IjQ4LjAiIHI9IjI0IiBmaWxsPSIjNWI4ZjJhIi8+PHBhdGggZD0iTTQ2LjAgMzUuMCBMNjguMCA0OC4wIEw0Ni4wIDYxLjAgWiIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjU0LjAiIHk9IjkwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMzZjZiMWEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmluw61jaW88L3RleHQ+PHJlY3QgeD0iMTAzIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjg3IiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMzMwLjAiIHk9IjY0LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cGF1PC90ZXh0PjxyZWN0IHg9IjExIiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjEwMyIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxOTUiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjM4LjAiIHk9IjE1Ni4wIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMyYjJmNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPmxlw6NvPC90ZXh0PjxyZWN0IHg9IjI4NyIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZkZWJkMyIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSI1NC4wIiB5PSIyNDguMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ww6E8L3RleHQ+PHJlY3QgeD0iMTAzIiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE5NSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+",
+          "imagemGrande": true,
+          "certa": "→ → ↓",
+          "erradas": [
+            "↓ ↓ →",
+            "→ ↓"
+          ],
+          "dica": "Experimenta com o dedo: uma casa por cada seta.",
+          "explicacao": "→ → ↓ — chega a «leão»."
+        },
+        {
+          "pergunta": "Que código leva o Ticl@s até «lula»?",
+          "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgMjkyIj48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjI4OCIgcng9IjE4IiBmaWxsPSIjZmZmOGYwIiBzdHJva2U9IiNiNTY1MmIiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9IjExIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTAzIiB5PSIxMSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZGViZDMiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTQ2LjAiIHk9IjY0LjAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzJiMmY0NSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+bHVsYTwvdGV4dD48cmVjdCB4PSIxOTUiIHk9IjExIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIyODciIHk9IjExIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMSIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMDMiIHk9IjEwMyIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMTk1IiB5PSIxMDMiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmRlYmQzIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjIzOC4wIiB5PSIxNTYuMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5waXBhPC90ZXh0PjxyZWN0IHg9IjI4NyIgeT0iMTAzIiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMSIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2RmZjBkOCIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSI1NC4wIiBjeT0iMjMyLjAiIHI9IjI0IiBmaWxsPSIjNWI4ZjJhIi8+PHBhdGggZD0iTTQ2LjAgMjE5LjAgTDY4LjAgMjMyLjAgTDQ2LjAgMjQ1LjAgWiIgZmlsbD0iI2ZmZiIvPjx0ZXh0IHg9IjU0LjAiIHk9IjI3NCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjM2Y2YjFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5pbsOtY2lvPC90ZXh0PjxyZWN0IHg9IjEwMyIgeT0iMTk1IiB3aWR0aD0iODYiIGhlaWdodD0iODYiIHJ4PSIxMiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTNjOWE4IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxOTUiIHk9IjE5NSIgd2lkdGg9Ijg2IiBoZWlnaHQ9Ijg2IiByeD0iMTIiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2UzYzlhOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHJlY3QgeD0iMjg3IiB5PSIxOTUiIHdpZHRoPSI4NiIgaGVpZ2h0PSI4NiIgcng9IjEyIiBmaWxsPSIjZmRlYmQzIiBzdHJva2U9IiNlM2M5YTgiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjMzMC4wIiB5PSIyNDguMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMmIyZjQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj50YXR1PC90ZXh0Pjwvc3ZnPg==",
+          "imagemGrande": true,
+          "certa": "→ ↑ ↑",
+          "erradas": [
+            "↑ → →",
+            "→ → ↑"
+          ],
+          "dica": "Experimenta com o dedo: uma casa por cada seta.",
+          "explicacao": "→ ↑ ↑ — chega a «lula»."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "titulo": "🤖 Caça ao erro",
+      "instrucao": "Pensamento computacional: o Ticl@s enganou-se a escrever. Encontra a palavra certa!",
+      "itens": [
+        {
+          "pergunta": "O Ticl@s escreveu «lau». Qual é a palavra certa?",
+          "emoji": "🌙",
+          "certa": "lua",
+          "erradas": [
+            "lau",
+            "ula"
+          ],
+          "explicacao": "l-u-a: lua."
+        },
+        {
+          "pergunta": "O Ticl@s escreveu «tapo». Qual é a palavra certa?",
+          "emoji": "🦆",
+          "certa": "pato",
+          "erradas": [
+            "tapo",
+            "pota"
+          ],
+          "explicacao": "pa-to: pato."
+        },
+        {
+          "pergunta": "O Ticl@s escreveu «tala». Qual é a palavra certa?",
+          "emoji": "🥫",
+          "certa": "lata",
+          "erradas": [
+            "tala",
+            "lato"
+          ],
+          "explicacao": "la-ta: lata."
+        },
+        {
+          "pergunta": "O Ticl@s escreveu «tupila». Qual é a palavra certa?",
+          "emoji": "🌷",
+          "certa": "tulipa",
+          "erradas": [
+            "tupila",
+            "lutipa"
+          ],
+          "explicacao": "tu-li-pa: tulipa."
+        },
+        {
+          "pergunta": "O Ticl@s escreveu «pula». Qual é a palavra certa?",
+          "emoji": "🔍",
+          "certa": "lupa",
+          "erradas": [
+            "pula",
+            "lapu"
+          ],
+          "explicacao": "lu-pa: lupa."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "🤖 A regra secreta",
+      "instrucao": "Pensamento computacional: lê a palavra. Tem a letra l? Põe-na na caixa certa.",
+      "caixas": [
+        "tem l [[l]]",
+        "não tem l"
+      ],
+      "itens": [
+        [
+          "piloto",
+          "tem l [[l]]"
+        ],
+        [
+          "tapete",
+          "não tem l"
+        ],
+        [
+          "papoila",
+          "tem l [[l]]"
+        ],
+        [
+          "apito",
+          "não tem l"
+        ],
+        [
+          "paleta",
+          "tem l [[l]]"
+        ],
+        [
+          "pião",
+          "não tem l"
+        ],
+        [
+          "Paulo",
+          "tem l [[l]]"
+        ],
+        [
+          "pote",
+          "não tem l"
+        ]
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Da mão para o teclado",
+      "instrucao": "Olha para a palavra escrita à mão e escreve-a no teclado. A tecla que brilha é a próxima!",
+      "itens": [
+        {
+          "palavra": "lua",
+          "emoji": "🌙"
+        },
+        {
+          "palavra": "lupa",
+          "emoji": "🔍"
+        },
+        {
+          "palavra": "leão",
+          "emoji": "🦁"
+        },
+        {
+          "palavra": "tulipa",
+          "emoji": "🌷"
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "ordenar",
+      "juntar": " ",
+      "titulo": "Constrói a frase",
+      "instrucao": "Olha para o desenho. Toca nas palavras pela ordem certa.",
+      "itens": [
+        {
+          "emoji": "🦆",
+          "pecas": [
+            "O",
+            "pato",
+            "pia."
+          ]
+        },
+        {
+          "emoji": "🦁",
+          "pecas": [
+            "Olá,",
+            "leão!"
+          ]
+        },
+        {
+          "emoji": "🌷",
+          "pecas": [
+            "A",
+            "tulipa",
+            "é",
+            "tua."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "copiar",
+      "titulo": "Copia a frase",
+      "instrucao": "Copia a frase no teclado. Segue as teclas que brilham: letra grande, espaço e ponto final!",
+      "itens": [
+        {
+          "palavra": "O pato pia.",
+          "emoji": "🦆"
+        },
+        {
+          "palavra": "Olá, leão!",
+          "emoji": "🦁"
+        },
+        {
+          "palavra": "A tulipa é tua.",
+          "emoji": "🌷"
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "titulo": "Liga o desenho à palavra",
+      "instrucao": "Toca no desenho e depois na palavra escrita à mão.",
+      "itens": [
+        [
+          "🌙",
+          "[[lua]]"
+        ],
+        [
+          "🦁",
+          "[[leão]]"
+        ],
+        [
+          "🔍",
+          "[[lupa]]"
+        ],
+        [
+          "🥫",
+          "[[lata]]"
+        ],
+        [
+          "🥛",
+          "[[leite]]"
+        ],
+        [
+          "🌷",
+          "[[tulipa]]"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "apanhar",
+      "titulo": "Apanha o l",
+      "instrucao": "Mexe o rato para levar o cesto. Apanha só as letras que estão na lista verde!",
+      "itens": [
+        {
+          "certas": [
+            "l",
+            "[[l]]"
+          ],
+          "erradas": [
+            "t",
+            "[[t]]",
+            "i",
+            "f",
+            "p",
+            "[[p]]"
+          ],
+          "meta": 8
+        },
+        {
+          "certas": [
+            "L",
+            "[[L]]"
+          ],
+          "erradas": [
+            "T",
+            "[[T]]",
+            "E",
+            "F",
+            "P",
+            "[[P]]"
+          ],
+          "meta": 8
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "puzzle",
+      "titulo": "Puzzles do Ticl@s",
+      "instrucao": "Toca em duas peças para as trocar e monta o desenho. Depois escolhe a primeira letra.",
+      "itens": [
+        {
+          "emoji": "🦁",
+          "palavra": "leão",
+          "certa": "l [[l]]",
+          "erradas": [
+            "t [[t]]",
+            "p [[p]]"
+          ]
+        },
+        {
+          "emoji": "🌷",
+          "palavra": "tulipa",
+          "certa": "t [[t]]",
+          "erradas": [
+            "l [[l]]",
+            "p [[p]]"
+          ]
+        },
+        {
+          "emoji": "🦆",
+          "palavra": "pato",
+          "certa": "p [[p]]",
+          "erradas": [
+            "t [[t]]",
+            "l [[l]]"
+          ]
+        },
+        {
+          "emoji": "🍋",
+          "palavra": "limão",
+          "certa": "l [[l]]",
+          "erradas": [
+            "p [[p]]",
+            "t [[t]]"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "percurso",
+      "titulo": "Percurso do l",
+      "instrucao": "Usa as setas do teclado. Apanha as letras l e chega à castanha 🌰. Foge das outras letras!",
+      "itens": [
+        {
+          "alvo": "l [[l]]",
+          "certas": [
+            "l",
+            "[[l]]",
+            "l",
+            "[[l]]",
+            "l"
+          ],
+          "erradas": [
+            "t",
+            "[[t]]",
+            "i",
+            "f",
+            "p",
+            "[[p]]"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "apanhar",
+      "titulo": "Apanha as sílabas do l",
+      "instrucao": "Apanha só as sílabas que estão na lista verde!",
+      "itens": [
+        {
+          "certas": [
+            "la",
+            "le",
+            "li",
+            "lo",
+            "lu"
+          ],
+          "erradas": [
+            "ta",
+            "te",
+            "pa",
+            "po",
+            "tu",
+            "pi"
+          ],
+          "meta": 10,
+          "velocidade": 0.9
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória: à mão e no teclado",
+      "instrucao": "Vira duas cartas e encontra a mesma palavra escrita à mão e no teclado.",
+      "itens": [
+        [
+          "lua",
+          "[[lua]]"
+        ],
+        [
+          "lupa",
+          "[[lupa]]"
+        ],
+        [
+          "lata",
+          "[[lata]]"
+        ],
+        [
+          "leão",
+          "[[leão]]"
+        ],
+        [
+          "pato",
+          "[[pato]]"
+        ],
+        [
+          "teia",
+          "[[teia]]"
+        ]
+      ]
+    }
+  ]
+}
