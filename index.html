@@ -409,6 +409,7 @@ footer .contentor{align-items:center}
 @media(max-width:640px){.escolhe{grid-template-columns:1fr}.escolhe img{width:96px}.anteriores button{font-size:14px;padding:8px 12px}}
 </style><style>.permanentes{margin:18px 0 26px;padding:16px;border:1px solid #b8cdc1;border-radius:16px;background:#f2f7f3}.permanentes h3,.titulo-semana{margin:0 0 8px;font-size:1.25rem}.permanentes>p{margin:0 0 14px;color:var(--tinta-2)}.titulo-semana{margin-top:12px}</style>
 <style>#professores .dominio-prof{background:#e5edf8;color:#234b72}#professores #f-dominio{max-width:100%;min-width:0}#contagem-prof{margin:8px 0 12px}#limpar-prof{min-height:47px}</style>
+<style>.modalidade-grupo{margin:12px 0 24px}.modalidade-titulo{font-size:1.05rem;margin:0 0 12px;padding:8px 12px;border-left:4px solid #3475a5;background:#edf5fa;border-radius:6px;color:#23455e}.modalidade-titulo.aec{border-color:#38836e;background:#edf6f1;color:#245747}#catalogo-ano{scroll-margin-top:16px}</style>
 </head>
 <body>
 <a class="pular" href="#missoes">Saltar para os recursos</a>
@@ -450,7 +451,7 @@ footer .contentor{align-items:center}
       <div class="chips" id="chips" role="group" aria-label="Filtrar por disciplina"></div>
       <label class="so-leitor" for="f-tipo">Tipo</label><select id="f-tipo"><option value="todos">Todos os recursos</option><option value="atividade">Atividades</option><option value="apresentacao">Apresentações</option></select><label class="so-leitor" for="f-ano">Ano</label>
       <select id="f-ano"><option value="0">Todos os anos</option><option value="1">1.º ano</option><option value="2">2.º ano</option><option value="3">3.º ano</option><option value="4">4.º ano</option></select>
-      <label class="so-leitor" for="f-dominio">Domínio curricular TIC</label>
+      <label class="so-leitor" for="f-modalidade">Modalidade</label><select id="f-modalidade"><option value="">Todas as modalidades</option><option value="curricular">TIC Curricular</option><option value="aec">TIC AEC</option></select><label class="so-leitor" for="f-dominio">Domínio curricular TIC</label>
 <select id="f-dominio"><option value="">Todos os domínios TIC</option><option>Cidadania Digital</option><option>Investigar e Pesquisar</option><option>Comunicar e Colaborar</option><option>Criar e Inovar</option><option value="pc">Pensamento Computacional</option><option value="transversal">Competências instrumentais / articulação</option><option value="pendente">Por classificar</option></select>
 <label class="so-leitor" for="f-foco">Competência TIC</label>
       <select id="f-foco" hidden><option value="">Todas as competências TIC</option></select>
@@ -476,10 +477,12 @@ footer .contentor{align-items:center}
 const ANOS={1:'1.º ano',2:'2.º ano',3:'3.º ano',4:'4.º ano'};
 const $=s=>document.querySelector(s);
 const area=$('#area'),ticlas=$('#ticlas'),fala1=$('#fala-1'),pergunta=$('#pergunta');
-let dados=[],ano=0,tipoAtual='atividade',semanaEscolhida='';
+let dados=[],ano=0,tipoAtual='atividade',semanaEscolhida='',catalogoModalidade='';
 
 function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
 function norm(s){return String(s||'').toLocaleLowerCase('pt-PT').normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function modalidadesDe(d){const m=Array.isArray(d.modalidade)?d.modalidade:d.modalidade?[d.modalidade]:[];const valid=m.map(norm).filter(x=>x==='curricular'||x==='aec');if(valid.length)return [...new Set(valid)];return /portugues|matematica|estudo do meio/.test(norm(d.disciplina))?['curricular']:['aec']}
+function gruposModalidade(lista,destino){for(const [id,nome] of [['curricular','TIC Curricular'],['aec','TIC AEC']]){const itens=lista.filter(d=>modalidadesDe(d).includes(id));if(!itens.length)continue;const sec=el('section','modalidade-grupo');sec.append(el('h3','modalidade-titulo '+id,nome));const g=el('div','cartoes');itens.forEach(d=>g.append(cartao(d)));sec.append(g);destino.append(sec)}}
 function ePermanente(d){return d.permanente===true}
 function eApresentacao(d){return /apresenta|aula/i.test(String(d.categoria||d.tipo||''))}
 function turmaBonita(t){const m=String(t).match(/^(\d)\s*\.?º?\s*([A-Z])$/i);return m?m[1]+'.º '+m[2].toUpperCase():t}
@@ -561,17 +564,18 @@ function mostrar(){
   const b=el('button','recurso-aba',nome);b.type='button';b.setAttribute('aria-pressed',String(tipoAtual===id));
   b.onclick=()=>{tipoAtual=id;semanaEscolhida='';mostrar()};abas.append(b)
  });area.append(abas);
+ const explorar=()=>{if(tipoAtual!=='atividade')return;const bloco=el('section','permanentes');bloco.append(el('h3','','Explorar todas as atividades'));const nav=el('div','recurso-abas');nav.setAttribute('role','group');nav.setAttribute('aria-label','Modalidade do catálogo');for(const [id,nome] of [['curricular','TIC Curricular'],['aec','TIC AEC']]){const b=el('button','recurso-aba',nome);b.type='button';b.setAttribute('aria-pressed',String(catalogoModalidade===id));b.onclick=()=>{catalogoModalidade=catalogoModalidade===id?'':id;mostrar();$('#catalogo-ano').scrollIntoView({block:'start'})};nav.append(b)}bloco.id='catalogo-ano';bloco.append(nav);if(catalogoModalidade){const itens=meus.filter(d=>!eApresentacao(d)&&modalidadesDe(d).includes(catalogoModalidade)).sort((a,b)=>b.data.localeCompare(a.data));if(!itens.length)bloco.append(el('p','','Ainda não há atividades nesta modalidade.'));else{const g=el('div','cartoes');itens.forEach(d=>g.append(cartao(d)));bloco.append(g)}}area.append(bloco)};
  const permanentes=meus.filter(d=>ePermanente(d)&&!eApresentacao(d));
  const mostrarPermanentes=()=>{if(tipoAtual==='atividade'&&permanentes.length){const bloco=el('section','permanentes');bloco.append(el('h3','','Atividades permanentes'),el('p','','Disponíveis durante todo o ano letivo.'));const g=el('div','cartoes');permanentes.forEach(d=>g.append(cartao(d)));bloco.append(g);area.append(bloco)}};
  const lista=meus.filter(d=>!ePermanente(d)&&eApresentacao(d)===(tipoAtual==='apresentacao'));
  if(!lista.length){
-  if(tipoAtual==='atividade'&&permanentes.length){mostrarPermanentes();return;}
+  if(tipoAtual==='atividade'&&permanentes.length){mostrarPermanentes();explorar();return;}
   const v=el('div','vazio'),img=el('img');img.src='assets/ticlas-duvida.webp';img.alt='';
   const t=el('div');t.append(el('b','',tipoAtual==='atividade'?'Ainda não há atividades.':'Ainda não há apresentações.'),
    el('span','','Os recursos serão apresentados aqui à medida que forem publicados.'));
-  v.append(img,t);area.append(v);return
+  v.append(img,t);area.append(v);explorar();return
  }
- if(tipoAtual==='atividade'&&permanentes.length)area.append(el('h3','titulo-semana','Atividades semanais'));
+ if(tipoAtual==='atividade')area.append(el('h3','titulo-semana','Atividades da semana'));
  const semanas=[...new Set(lista.map(d=>segunda(d.data)))].sort().reverse();
  const hoje=new Date();hoje.setHours(12);const atual=segunda(hoje.toISOString().slice(0,10));
  const destaque=semanas.find(k=>k<=atual)||semanas[semanas.length-1];
@@ -579,7 +583,7 @@ function mostrar(){
  const nomeSemana=k=>{const d=lista.find(x=>segunda(x.data)===k);return d.semana||'Semana de '+k};
  if(semanaEscolhida!==destaque)area.append(el('p','semana-ver','Missões da semana '+nomeSemana(semanaEscolhida)));
  const itens=lista.filter(d=>segunda(d.data)===semanaEscolhida);
- const g=el('div','cartoes');itens.forEach(d=>g.append(cartao(d)));area.append(g);
+ if(tipoAtual==='atividade')gruposModalidade(itens,area);else{const g=el('div','cartoes');itens.forEach(d=>g.append(cartao(d)));area.append(g)}
  /* Missões anteriores: botões discretos por baixo, só as últimas semanas (o catálogo completo está na zona dos professores). */
  const antes=semanas.filter(k=>k<destaque).slice(0,3);
  if(antes.length){
@@ -590,11 +594,11 @@ function mostrar(){
    b.onclick=()=>{semanaEscolhida=k;mostrar();$('#missoes').scrollIntoView({block:'start'})};r.append(b)});
   area.append(r)
  }
- mostrarPermanentes();
+ mostrarPermanentes();explorar();
 }
 
 function escolher(n,{rolar=true}={}){
-  ano=n;semanaEscolhida='';document.querySelectorAll('.placa button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ano)===n)));
+  ano=n;semanaEscolhida='';catalogoModalidade='';document.querySelectorAll('.placa button').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.ano)===n)));
   const tem=dados.some(d=>Number(d.ano)===n);
   fala1.textContent=tem?'Boa escolha! Escolhe atividades ou apresentações.':'Ainda não há recursos neste ano.';
   pergunta.textContent=tem?'Vamos aprender!':'Volta em breve!';
@@ -636,7 +640,7 @@ function focos(){
 }
 function tabela(){
   const fa=Number($('#f-ano').value),ft=$('#f-tipo').value,ff=$('#f-foco').value,q=norm($('#f-texto').value.trim()),tb=$('#linhas');tb.replaceChildren();
-  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(ft==='todos'||eApresentacao(d)===(ft==='apresentacao'))&&(!disc||String(d.disciplina).includes(disc))&&categoriaDominio(d,$('#f-dominio').value)&&(!ff||focosDe(d).includes(ff))&&(!q||norm([d.titulo,d.descricao,d.resumo,d.disciplina,d.turma,turmaBonita(d.turma),d.semana,...focosDe(d),...dominiosDe(d)].join(' ')).includes(q)))
+  const r=dados.filter(d=>(!fa||Number(d.ano)===fa)&&(ft==='todos'||eApresentacao(d)===(ft==='apresentacao'))&&(!disc||String(d.disciplina).includes(disc))&&(!$('#f-modalidade').value||modalidadesDe(d).includes($('#f-modalidade').value))&&categoriaDominio(d,$('#f-dominio').value)&&(!ff||focosDe(d).includes(ff))&&(!q||norm([d.titulo,d.descricao,d.resumo,d.disciplina,d.turma,turmaBonita(d.turma),d.semana,...focosDe(d),...dominiosDe(d)].join(' ')).includes(q)))
     .sort((a,b)=>segunda(b.data).localeCompare(segunda(a.data))||a.ano-b.ano||a.turma.localeCompare(b.turma));
   $('#contagem-prof').textContent=r.length+' de '+dados.length+' recursos';
   if(!r.length){const tr=el('tr'),td=el('td','nada','Nenhuma missão com estes filtros.');td.colSpan=5;tr.append(td);tb.append(tr);return}
@@ -644,11 +648,11 @@ function tabela(){
     const t2=el('td');t2.append(el('b','',d.titulo));
     if(d.descricao)t2.append(el('span','resumo-prof',d.descricao));
     const et=el('div','etiquetas');focosDe(d).forEach(x=>et.append(el('span','etiqueta',x)));
-    const dt=el('div','etiquetas');dominiosDe(d).forEach(x=>dt.append(el('span','etiqueta dominio-prof',x)));if(pcDe(d))dt.append(el('span','etiqueta dominio-prof','Pensamento Computacional'));if(transversalDe(d))dt.append(el('span','etiqueta','Competências instrumentais / articulação'));if(!dt.childElementCount)dt.append(el('span','etiqueta','Por classificar'));t2.append(dt);
+    const dt=el('div','etiquetas');modalidadesDe(d).forEach(m=>dt.append(el('span','etiqueta',m==='curricular'?'TIC Curricular':'TIC AEC')));dominiosDe(d).forEach(x=>dt.append(el('span','etiqueta dominio-prof',x)));if(pcDe(d))dt.append(el('span','etiqueta dominio-prof','Pensamento Computacional'));if(transversalDe(d))dt.append(el('span','etiqueta','Competências instrumentais / articulação'));if(dt.childElementCount===modalidadesDe(d).length)dt.append(el('span','etiqueta','Por classificar'));t2.append(dt);
     if(et.childElementCount)t2.append(et);
     const t5=el('td');const a=el('a','','Abrir');a.href=d.url;a.setAttribute('aria-label','Abrir '+d.titulo);t5.append(a);
     tr.append(t1,t2,el('td','col-disc',d.disciplina||''),el('td','col-semana',ePermanente(d)?'Todo o ano letivo':d.semana||''),t5);tb.append(tr)})}
-$('#f-dominio').addEventListener('change',tabela);$('#limpar-prof').addEventListener('click',()=>{disc='';$('#f-ano').value='0';$('#f-tipo').value='todos';$('#f-foco').value='';$('#f-dominio').value='';$('#f-texto').value='';chips();tabela()});
+$('#f-modalidade').addEventListener('change',tabela);$('#f-dominio').addEventListener('change',tabela);$('#limpar-prof').addEventListener('click',()=>{disc='';$('#f-ano').value='0';$('#f-tipo').value='todos';$('#f-foco').value='';$('#f-dominio').value='';$('#f-modalidade').value='';$('#f-texto').value='';chips();tabela()});
 $('#f-tipo').addEventListener('change',tabela);$('#f-ano').addEventListener('change',tabela);$('#f-foco').addEventListener('change',tabela);$('#f-texto').addEventListener('input',tabela);
 
 Promise.all([
