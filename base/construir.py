@@ -283,7 +283,7 @@ def norm_escape(x):
 
 
 def validar_escape(a):
-    """Escape room (V3.8): as mesmas regras de validarEscape() em src/motor.js."""
+    """Escape room (V3.8, tema V3.11): as mesmas regras de validarEscape() em src/motor.js."""
     E = a.get("escape")
     if E is None:
         return []
@@ -292,6 +292,11 @@ def validar_escape(a):
     e = []
     if not tem_texto(E.get("palavra")):
         e.append("Escape room: falta a «palavra» secreta do cadeado final.")
+    temas = re.findall(r"^  (\w+): +\{ nome:", (SRC / "motor.js").read_text(encoding="utf-8"), re.M)
+    if "tema" in E and not (E["tema"] == "auto" or E["tema"] in temas):
+        e.append(f"Escape room: «tema» tem de ser \"auto\" ou um destes: {', '.join(temas)}.")
+    if "historiaAberto" in E and not tem_texto(E.get("historiaAberto")):
+        e.append("Escape room: «historiaAberto» tem de ser um texto.")
     rondas = [r for r in a.get("rondas", []) if isinstance(r, dict)]
     for ri, r in enumerate(a.get("rondas", []), 1):
         if isinstance(r, dict) and "chave" in r and not (tem_texto(str(r["chave"])) and len(str(r["chave"])) <= 4):
