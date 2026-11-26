@@ -918,7 +918,7 @@
     "turma": "4.º ano",
     "ano": 4,
     "titulo": "Escape Room: O Código Secreto do Natal",
-    "descricao": "Hora do Código: 6 missões de programação por blocos (sequências, repetições, condições, depuração e funções), cofre final, 5 desafios bónus na Oficina Secreta e estrelas por eficiência",
+    "descricao": "Hora do Código: 6 missões de programação por blocos (sequências, repetições, condições, depuração e funções), cofre final, 5 desafios bónus na Oficina Secreta e estrelas por eficiência · 8 línguas",
     "disciplina": "TIC",
     "data": "2026-11-26",
     "semana": "23–27 nov. 2026",
@@ -948,7 +948,7 @@
     "ilustracao": {
       "tipo": "digital"
     },
-    "descricao": "Hora do Código: 6 missões de programação por blocos com setas (sequências, repetições, observar e escolher, encontrar o erro), cofre final, 3 desafios bónus e estrelas por eficiência",
+    "descricao": "Hora do Código: 6 missões de programação por blocos com setas (sequências, repetições, observar e escolher, encontrar o erro), cofre final, 3 desafios bónus e estrelas por eficiência · 8 línguas",
     "url": "jogos/2026-11-23/2026-11-26_2ano_TIC_HoraDoCodigo_EscapeNatal_v6.html",
     "focoTic": [
       "Algoritmos e repetições",
@@ -969,7 +969,7 @@
     "ilustracao": {
       "tipo": "digital"
     },
-    "descricao": "Hora do Código: 6 missões de programação por blocos (sequências, repetições, condições, depuração e funções), cofre final, 4 desafios bónus e estrelas por eficiência",
+    "descricao": "Hora do Código: 6 missões de programação por blocos (sequências, repetições, condições, depuração e funções), cofre final, 4 desafios bónus e estrelas por eficiência · 8 línguas",
     "url": "jogos/2026-11-23/2026-11-26_3ano_TIC_HoraDoCodigo_EscapeNatal_v6.html",
     "focoTic": [
       "Algoritmos e repetições",
@@ -981,7 +981,7 @@
     "turma": "1.º ano",
     "ano": 1,
     "titulo": "Escape Room: O Código Secreto do Natal",
-    "descricao": "Hora do Código: 4 missões de programação com setas (sequências, repetir, observar e escolher, padrões), cofre de 4 algarismos, 3 desafios bónus e estrelas",
+    "descricao": "Hora do Código: 4 missões de programação com setas (sequências, repetir, observar e escolher, padrões), cofre de 4 algarismos, 3 desafios bónus e estrelas · 8 línguas",
     "disciplina": "TIC",
     "data": "2026-11-26",
     "semana": "23–27 nov. 2026",
@@ -1012,7 +1012,7 @@
     "ilustracao": {
       "tipo": "digital"
     },
-    "descricao": "14 níveis de programação por blocos com setas, no estilo Lightbot: sequências, o bloco Repetir e correção de erros, com ajuda que mostra o caminho",
+    "descricao": "14 níveis de programação por blocos com setas, no estilo Lightbot: sequências, o bloco Repetir e correção de erros, com ajuda que mostra o caminho · 8 línguas",
     "url": "jogos/2026-11-23/2026-11-26_2ano_TIC_PercursoDeNatal_v1.html",
     "focoTic": [
       "Algoritmos e repetições",
@@ -1035,7 +1035,7 @@
     "ilustracao": {
       "tipo": "digital"
     },
-    "descricao": "14 níveis de programação por blocos no estilo Lightbot: avançar e virar, o bloco Repetir e correção de erros, com ajuda que mostra o caminho",
+    "descricao": "14 níveis de programação por blocos no estilo Lightbot: avançar e virar, o bloco Repetir e correção de erros, com ajuda que mostra o caminho · 8 línguas",
     "url": "jogos/2026-11-23/2026-11-26_3ano_TIC_PercursoDeNatal_v1.html",
     "focoTic": [
       "Algoritmos e repetições",
@@ -1058,7 +1058,7 @@
     "ilustracao": {
       "tipo": "digital"
     },
-    "descricao": "14 níveis de programação por blocos no estilo Lightbot: revisão de repetições, o bloco Função e Repetir dentro de Repetir, com correção de erros",
+    "descricao": "14 níveis de programação por blocos no estilo Lightbot: revisão de repetições, o bloco Função e Repetir dentro de Repetir, com correção de erros · 8 línguas",
     "url": "jogos/2026-11-23/2026-11-26_4ano_TIC_PercursoDeNatal_v1.html",
     "focoTic": [
       "Funções e repetições",
