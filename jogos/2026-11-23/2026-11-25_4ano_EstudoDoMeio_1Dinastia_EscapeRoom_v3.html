@@ -767,6 +767,37 @@ body.contraste .tk.brilha{background:#000;color:#fff}
 @media (max-width:620px){.casa{min-width:50px}.casa .letra-manus{font-size:1.5rem}.caderno .manuscrita{font-size:2rem}.tk{height:34px;font-size:.66rem}}
 @media print{.teclado-pt{display:none}}
 @media (prefers-reduced-motion:reduce){.tk.brilha,.casa.atual .escrita-letra{animation:none}}
+
+/* Fuga do Castelo — identidade medieval exclusiva */
+body.castelo:not(.contraste){background:radial-gradient(ellipse at 50% 8%,#67513d 0,transparent 55%),repeating-linear-gradient(0deg,transparent 0 47px,#18161266 48px 51px),repeating-linear-gradient(90deg,#302c27 0 95px,#211f1b 96px 99px);color:#34271d}
+body.castelo:not(.contraste) .wrap{max-width:1180px;padding-top:20px}
+body.castelo:not(.contraste) .decor{opacity:.35}
+body.castelo:not(.contraste) .decor span{animation:none}
+body.castelo:not(.contraste) .marca,body.castelo:not(.contraste) .marca small,body.castelo:not(.contraste) .foot{color:#f1dfb2}
+body.castelo:not(.contraste) .painel{background:radial-gradient(ellipse at center,#fff8e7,#e7d5ac);border:5px double #a88a51;border-radius:10px;box-shadow:0 12px 36px #0008,inset 0 0 32px #9a703322;padding:clamp(12px,2vw,24px)}
+body.castelo:not(.contraste) .titulo-ronda,body.castelo:not(.contraste) .inicio h1{font-family:Georgia,'Times New Roman',serif;color:#542c20}
+body.castelo:not(.contraste):not(.legivel) .escape .titulo-ronda{font-size:clamp(1.5rem,4vw,2.3rem)}
+body.castelo.legivel .titulo-ronda,body.castelo.legivel .inicio h1{font-family:inherit}
+body.castelo:not(.contraste) .mapa-topo{border-bottom:3px double #a88a51;padding-bottom:12px}
+body.castelo:not(.contraste) .escape-chaves{border:2px solid #b49758;border-radius:8px;background:linear-gradient(100deg,#30251e,#59412c)}
+body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:14px}
+body.castelo:not(.contraste) .missao.sala{min-height:190px;padding:32px 10px 14px;border:3px solid #a88a51;border-radius:48% 48% 8px 8px / 28% 28% 8px 8px;background:repeating-linear-gradient(90deg,#5c3827 0 29px,#422a20 30px 32px);color:#fff1ce;box-shadow:0 5px 0 #3b281b,inset 0 0 0 5px #20160f45;animation:none}
+body.castelo:not(.contraste) .missao.sala small,body.castelo:not(.contraste) .missao.sala .missao-estado{color:#f5dfae}
+body.castelo:not(.contraste) .missao.sala .missao-num{background:#e5c17c;color:#342419;left:50%;top:7px;transform:translateX(-50%)}
+body.castelo:not(.contraste) .missao.sala.fechada{background:repeating-linear-gradient(90deg,#45413a 0 29px,#302d28 30px 32px);filter:none;opacity:1;border-color:#777064;box-shadow:0 5px 0 #29251f}
+body.castelo:not(.contraste) .missao.sala.sugerida{border-color:#d3a63d;box-shadow:0 0 0 3px #d3a63d55,0 5px 0 #805b27;background:repeating-linear-gradient(90deg,#805332 0 29px,#5d3824 30px 32px)}
+body.castelo:not(.contraste) .missao.sala.feita:not(.fechada){background:linear-gradient(#395340,#263b2d);border-color:#85986e}
+body.castelo:not(.contraste) .cadeado-final{background:linear-gradient(#64432b,#32251d)!important;border:4px double #d2af62!important}
+body.castelo:not(.contraste) .cadeado-final.fechada{background:linear-gradient(#45413a,#302d28)!important;border-color:#777064!important}
+body.castelo:not(.contraste) .pergunta{background:#fff8e7;border:3px double #b59a68;border-radius:8px}
+body.castelo:not(.contraste) .opcao,body.castelo:not(.contraste) .peca{border-radius:8px}
+body.castelo:not(.contraste) .btn{border-radius:8px}
+body.castelo:not(.contraste) .btn.leve{background:#fff8e7}
+body.castelo:not(.contraste) .fase{background:#e4cfa2;color:#503521}
+body.castelo:not(.contraste) .consulta-faixa{border-color:#a88a51}
+@media(max-width:540px){body.castelo:not(.contraste) .mapa{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}body.castelo:not(.contraste) .missao.sala{min-height:175px;font-size:.85rem;padding-inline:6px}body.castelo:not(.contraste) .painel{padding:10px}}
+@media print{body.castelo:not(.contraste){background:#fff}}
+
 </style>
 <style id="ticlas-estilo-portal">
 #ticlas-voltar-portal {
@@ -1068,12 +1099,13 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
   ],
   "escape": {
     "titulo": "🏰 Fuga do Castelo",
-    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem que quiseres, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
+    "historia": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem indicada, começando pela primeira, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final.",
     "palavra": "DINASTIA",
     "cadeado": "As 8 letras das chaves estão **baralhadas**! Ordena-as e escreve a palavra secreta que abre o portão do castelo.",
     "pista": "É o nome que se dá a uma **sequência de reis da mesma família**. A 1.ª chamou-se Afonsina.",
     "vitoria": "O portão abriu-se e o Ticl@s está livre! És um verdadeiro investigador da 1.ª dinastia.",
-    "sequencial": false
+    "sequencial": true,
+    "historiaAberto": "O Ticl@s ficou fechado no castelo! Abre as **8 salas** pela ordem que quiseres, recolhe as **chaves** e descobre a **palavra secreta** do cadeado final."
   },
   "abertura": [
     {
@@ -1210,7 +1242,7 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
       "icone": "👑",
       "chave": "A",
       "consulta": "reis",
-      "instrucao": "Os reis desarrumaram-se! Ordena do primeiro para o último.",
+      "instrucao": "Os reis e os acontecimentos desarrumaram-se! Põe tudo pela ordem certa.",
       "itens": [
         {
           "emoji": "👑",
@@ -1218,7 +1250,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "D. Afonso Henriques",
             "D. Sancho I",
             "D. Afonso II"
-          ]
+          ],
+          "pergunta": "Ordena os reis, do primeiro para o último."
         },
         {
           "emoji": "👑",
@@ -1226,7 +1259,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "D. Sancho II",
             "D. Afonso III",
             "D. Dinis"
-          ]
+          ],
+          "pergunta": "Ordena os reis, do primeiro para o último."
         },
         {
           "emoji": "👑",
@@ -1234,7 +1268,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "D. Afonso IV",
             "D. Pedro I",
             "D. Fernando"
-          ]
+          ],
+          "pergunta": "Ordena os reis, do primeiro para o último."
         },
         {
           "emoji": "🏷️",
@@ -1244,7 +1279,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "o Gordo",
             "o Capelo"
           ],
-          "dica": "Os cognomes seguem a ordem dos reis: o 1.º rei foi o Conquistador."
+          "dica": "Os cognomes seguem a ordem dos reis: o 1.º rei foi o Conquistador.",
+          "pergunta": "Ordena os cognomes pela ordem dos reis."
         },
         {
           "emoji": "🏷️",
@@ -1254,7 +1290,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "o Bravo",
             "o Justiceiro",
             "o Formoso"
-          ]
+          ],
+          "pergunta": "Ordena os cognomes pela ordem dos reis."
         },
         {
           "emoji": "📅",
@@ -1264,7 +1301,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "Tratado de Alcanices",
             "Morte de D. Fernando"
           ],
-          "dica": "1147, 1249, 1297 e 1383."
+          "dica": "1147, 1249, 1297 e 1383.",
+          "pergunta": "Ordena os acontecimentos, do mais antigo para o mais recente."
         },
         {
           "emoji": "⏳",
@@ -1273,7 +1311,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "Muçulmanos",
             "Condado Portucalense",
             "Reino de Portugal"
-          ]
+          ],
+          "pergunta": "Ordena os acontecimentos, do mais antigo para o mais recente."
         },
         {
           "emoji": "📅",
@@ -1283,7 +1322,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "Conquista de Lisboa",
             "Bula do Papa"
           ],
-          "dica": "1128, 1143, 1147 e 1179."
+          "dica": "1128, 1143, 1147 e 1179.",
+          "pergunta": "Ordena os acontecimentos, do mais antigo para o mais recente."
         },
         {
           "emoji": "📅",
@@ -1293,7 +1333,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
             "Batalha do Salado",
             "Lei das Sesmarias"
           ],
-          "dica": "1290, 1297, 1340 e 1375."
+          "dica": "1290, 1297, 1340 e 1375.",
+          "pergunta": "Ordena os acontecimentos, do mais antigo para o mais recente."
         }
       ],
       "animacao": [
@@ -1589,7 +1630,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
           "texto": "Pista: **Lisboa** e **Santarém** ficam junto ao **Tejo**; **Coimbra** fica junto ao **Mondego**.",
           "pose": "ideia"
         }
-      ]
+      ],
+      "baralhar": true
     },
     {
       "fase": "desafios",
@@ -1793,8 +1835,8 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
           "alcunha de um rei"
         ],
         [
-          "dinastia",
-          "sequência de reis da mesma família"
+          "cronista",
+          "quem escrevia a história do reino"
         ]
       ],
       "animacao": [
@@ -1819,11 +1861,11 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
       "tipo": "escolher",
       "visual": "cartoes",
       "baralhar": true,
-      "titulo": "Cripta dos reis",
-      "icone": "⚱️",
+      "titulo": "Galeria das personagens",
+      "icone": "👥",
       "chave": "A",
       "consulta": "obras",
-      "instrucao": "Na cripta, cada túmulo tem uma pista. Descobre quem é.",
+      "instrucao": "Na galeria, cada retrato tem uma pista. Descobre quem é.",
       "itens": [
         {
           "pergunta": "O meu cognome lembra que mandei povoar as terras conquistadas.",
@@ -1947,7 +1989,7 @@ body > #ticlas-nav-portal + .app {min-height:calc(100% - 56px)}
       "animacao": [
         {
           "emoji": "⚱️",
-          "titulo": "Sala 7 · Cripta dos reis",
+          "titulo": "Sala 7 · Galeria das personagens",
           "texto": "Os cognomes são pistas: **Povoador**, **Lavrador**, **Bravo**, **Justiceiro**…"
         },
         {
@@ -2760,6 +2802,7 @@ const SEGUNDOS = { escolher: 30, verdadeiro_falso: 25, completar: 35, escrever: 
 
 /* ---------- temas: só mudam cores, decoração e acessório da mascote ---------- */
 const TEMAS = {
+  castelo: { nome: 'Castelo medieval', c: ['#78512f','#51301e','#dfd0ac','#813b32','#54241e','#f5ecd5','#e3d2ab'], d: ['⚜️','🛡️','📜','🔑'], a: '' },
   neutro:      { nome: 'Neutro (Investigadores)', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e6f3f5'], d: ['🔍', '💡', '⭐', '💻'], a: '' },
   regresso:    { nome: 'Regresso às aulas', c: ['#5BA3D0', '#285775', '#e6f3f5', '#E8834A', '#b9582e', '#FFF8F0', '#e9f2fb'], d: ['🎒', '✏️', '📚', '🖍️'], a: '🎒' },
   outono:      { nome: 'Outono', c: ['#b0632a', '#6e3a14', '#f8e6d6', '#5f8a2a', '#43631b', '#fff8ef', '#f6e3cf'], d: ['🍂', '🍁', '🍄', '🌰'], a: '🍂' },
@@ -2985,14 +3028,14 @@ function minutosEstimados(rondas) {
 const PREF = 'ticlas3-preferencias';
 let prefs = Object.assign({ modo: 'computador', perfil: 'turma', escala: 1, contraste: false, legivel: false, tema: 'auto', livre: false, lingua: 'pt' }, ler(PREF) || {});
 let AULA = null, MASCOTE = {};
-const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, numero: '', concluido: false, profOk: false };
+const est = { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, melhor: {}, desbloqueadas: {}, chavesProf: {}, numero: '', concluido: false, profOk: false };
 const somLigado = () => prefs.som === true || (prefs.som !== false && prefs.modo === 'quadro');
 const apoio = () => prefs.perfil === 'apoio';
 const listaRondas = seq => AULA.rondas.map((r, i) => ({ r, i })).filter(x => seq === 'bonus' ? x.r.fase === 'bonus' : x.r.fase !== 'bonus').map(x => x.i);
 const prefixoProgresso = () => 'ticlas3:' + (AULA.id || AULA.titulo) + ':';
 const chaveProgresso = () => prefixoProgresso() + (est.numero || 'sem-numero');
 function guardarProgresso() {
-  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, vistas: est.vistas, escapou: est.escapou, concluido: est.concluido, atualizado: new Date().toISOString() });
+  guardar(chaveProgresso(), { seq: est.seq, p: est.p, pontos: est.pontos, maximos: est.maximos, feitas: est.feitas, frases: est.frases, vistas: est.vistas, escapou: est.escapou, melhor: est.melhor, desbloqueadas: est.desbloqueadas, chavesProf: est.chavesProf, concluido: est.concluido, atualizado: new Date().toISOString() });
 }
 function totalEstrelas() { return Object.values(est.pontos).reduce((a, b) => a + b, 0); }
 function totalMaximo() { return Object.values(est.maximos).reduce((a, b) => a + b, 0); }
@@ -3043,12 +3086,13 @@ function calar() { try { if (temFala()) speechSynthesis.cancel(); } catch (e) { 
 function atualizarBotaoSom() { const b = $('#btSom'); if (b) { b.textContent = somLigado() ? '🔊' : '🔇'; b.setAttribute('aria-pressed', String(somLigado())); } }
 
 /* ---------- aparência: tema, acessibilidade, modo, língua ---------- */
-function temaAtual() { if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
+function temaAtual() { if (modoEscape()) return 'castelo'; if (prefs.tema && prefs.tema !== 'auto' && TEMAS[prefs.tema]) return prefs.tema; if (AULA && TEMAS[AULA.tema]) return AULA.tema; return temaDoDia(); }
 function aplicarAparencia() {
   const tema = TEMAS[temaAtual()] || TEMAS.neutro, s = document.documentElement.style;
   ['--t-1', '--t-1d', '--t-1l', '--t-2', '--t-2d', '--t-fundo', '--t-fundo2'].forEach((v, i) => s.setProperty(v, tema.c[i]));
   s.setProperty('--escala', prefs.escala);
   const b = document.body;
+  b.classList.toggle('castelo', modoEscape());
   b.classList.toggle('contraste', !!prefs.contraste); b.classList.toggle('legivel', !!prefs.legivel);
   b.classList.toggle('quadro', prefs.modo === 'quadro');
   b.className = b.className.replace(/\bano-\d\b/g, '').trim(); if (AULA && AULA.ano) b.classList.add('ano-' + AULA.ano);
@@ -3134,7 +3178,7 @@ function ecraInicio() {
 }
 function comecar(continuar) {
   const g = continuar ? ler(chaveProgresso()) : null;
-  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, concluido: false }, g || {});
+  Object.assign(est, { seq: 'principal', p: 0, pontos: {}, maximos: {}, feitas: {}, frases: [], vistas: {}, escapou: false, melhor: {}, desbloqueadas: {}, chavesProf: {}, concluido: false }, g || {});
   if (!est.vistas) est.vistas = {};
   if (!g) apagar(chaveProgresso());
   if (audio && audio.state === 'suspended') audio.resume();
@@ -3182,8 +3226,9 @@ function ecraMapa() {
 
 /* ---------- moldura de cada ronda ---------- */
 function iniciarRonda() {
-  limparTimers(); calar();
+  limparTimers(); calar(); reporMelhor();
   const lista = listaRondas(est.seq);
+  if (modoEscape() && est.seq === 'principal' && est.p < lista.length && salaFechada(est.p, lista)) { ecraMapa(); return; }
   if (est.p >= lista.length) {
     if (est.seq === 'principal' && !lista.every(ri => est.feitas[ri])) { ecraMapa(); return; }
     if (est.seq === 'principal' && modoEscape() && !est.escapou) { ecraCadeado(); return; }
@@ -3191,13 +3236,16 @@ function iniciarRonda() {
   }
   const ri = lista[est.p], ronda = AULA.rondas[ri];
   RONDA = ronda;
-  est.pontos[ri] = 0; est.maximos[ri] = 0; delete est.feitas[ri];
+  // escape room: repetir uma sala já aberta não tira a chave e guarda a melhor pontuação
+  const repetir = modoEscape() && est.seq === 'principal' && est.feitas[ri];
+  if (repetir) { est.melhor = est.melhor || {}; est.melhor[ri] = { p: est.pontos[ri] || 0, m: est.maximos[ri] || 0 }; }
+  est.pontos[ri] = 0; est.maximos[ri] = 0; if (!modoEscape()) delete est.feitas[ri];
   guardarProgresso(); atualizarEstrelas();
   const progresso = h('div', { class: 'progresso', 'aria-hidden': 'true' },
     lista.map((x, k) => h('i', { class: k === est.p ? 'atual' : est.feitas[x] ? 'feito' : '' })));
   const area = h('div', { class: 'area', id: 'area' });
   const btAnterior = h('button', { class: 'btn leve', id: 'btAnterior', disabled: est.p === 0, onclick: () => { est.p--; iniciarRonda(); } }, t('anterior'));
-  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
+  const btProximo = h('button', { class: 'btn azul', id: 'btProximo', disabled: modoEscape() || !prefs.livre, onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, est.p === lista.length - 1 ? t('terminar') : t('proximo'));
   $('#app').replaceChildren(
     progresso,
     h('div', { class: 'etiqueta' },
@@ -3213,7 +3261,7 @@ function iniciarRonda() {
   if (temCenas(ronda.animacao) && !est.vistas['r' + ri]) {
     const palco = $('#app .palco'); palco.classList.add('filme-ativo');
     btProximo.disabled = true;
-    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = !prefs.livre; encher(area); motor(ri, ronda, area); };
+    const comecar = () => { est.vistas['r' + ri] = true; guardarProgresso(); palco.classList.remove('filme-ativo'); btProximo.disabled = modoEscape() || !prefs.livre; encher(area); motor(ri, ronda, area); };
     const ver = livre => encher(area, filme(ronda.animacao, {
       titulo: ronda.titulo || nomeFase(ronda.fase), botao: '▶ ' + t('filmeComecar'), livre,
       aoTerminar: () => { est.vistas['r' + ri] = true; guardarProgresso(); }, aoContinuar: comecar
@@ -3225,20 +3273,40 @@ function iniciarRonda() {
   motor(ri, ronda, area);
 }
 function rondaConcluida(ri) {
-  est.feitas[ri] = true; guardarProgresso();
+  est.feitas[ri] = true;
+  const escapeSala = modoEscape() && est.seq === 'principal';
   const lista = listaRondas(est.seq), ultima = est.p === lista.length - 1;
   const tudoFeito = est.seq === 'bonus' || lista.every(x => est.feitas[x]);
-  poseMascote('trofeu', true); dizerBalao(t('rondaConcluida')); som('fim'); festa(null, 40);
-  const bt = $('#btProximo'); bt.disabled = false;
+  const ganhas = est.pontos[ri], possiveis = est.maximos[ri];
+  est.melhor = est.melhor || {};
+  const antes = est.melhor[ri]; delete est.melhor[ri];
+  if (antes && antes.p > (est.pontos[ri] || 0)) { est.pontos[ri] = antes.p; est.maximos[ri] = antes.m; }
+  if (est.chavesProf) delete est.chavesProf[ri]; // o aluno abriu a sala sozinho
+  guardarProgresso(); atualizarEstrelas();
+  poseMascote('trofeu', true); dizerBalao(escapeSala ? t('escAberta') : t('rondaConcluida')); som('fim'); festa(null, 40);
+  let rotulo, seguir, vaiAoMapa = false;
+  if (escapeSala) {
+    const k = proximaSalaPorAbrir();
+    if (k >= 0) { rotulo = t('escProxima') + ' ▶'; seguir = () => { est.p = k; guardarProgresso(); iniciarRonda(); }; }
+    else if (!tudoFeito) { rotulo = t('missoes'); seguir = ecraMapa; vaiAoMapa = true; }
+    else { rotulo = est.escapou ? t('verResultado') : '🔐 ' + t('escCadeado'); seguir = () => { est.p = lista.length; guardarProgresso(); iniciarRonda(); }; }
+  } else {
+    rotulo = ultima ? (tudoFeito ? t('verResultado') : t('missoes')) : t('proximaRonda');
+    seguir = () => { est.p++; guardarProgresso(); iniciarRonda(); };
+    vaiAoMapa = ultima && !tudoFeito;
+  }
+  const bt = $('#btProximo');
+  if (escapeSala) bt.replaceWith(h('button', { class: bt.className, id: 'btProximo', onclick: seguir }, t('proximo')));
+  else bt.disabled = false;
   encher($('#area'), h('div', { style: 'text-align:center;padding:20px 0' },
     h('div', { class: 'estrelas-grandes' }, '⭐'),
-    h('h2', { class: 'titulo-ronda' }, modoEscape() && est.seq === 'principal' ? '🔓 ' + t('escAberta') : t('rondaConcluida')),
-    h('p', { class: 'instrucao' }, t('estrelasRonda', { a: est.pontos[ri], b: est.maximos[ri] })),
+    h('h2', { class: 'titulo-ronda' }, escapeSala ? '🔓 ' + t('escAberta') : t('rondaConcluida')),
+    h('p', { class: 'instrucao' }, t('estrelasRonda', { a: ganhas, b: possiveis })),
     est.seq === 'principal' ? chaveGanha(AULA.rondas[ri]) : null,
     h('div', { class: 'linha' },
       h('button', { class: 'btn leve', onclick: iniciarRonda }, t('repetirRonda')),
-      est.seq === 'principal' ? h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')) : null,
-      h('button', { class: 'btn', id: 'btSeguinte', onclick: () => { est.p++; guardarProgresso(); iniciarRonda(); } }, ultima ? (tudoFeito ? (modoEscape() && est.seq === 'principal' && !est.escapou ? '🔐 ' + t('escCadeado') : t('verResultado')) : t('missoes')) : (modoEscape() && est.seq === 'principal' ? t('escProxima') : t('proximaRonda'))))));
+      est.seq === 'principal' && !vaiAoMapa ? h('button', { class: 'btn leve', onclick: ecraMapa }, t('missoes')) : null,
+      h('button', { class: 'btn', id: 'btSeguinte', onclick: seguir }, rotulo))));
   $('#btSeguinte').focus({ preventScroll: true });
 }
 
@@ -3933,19 +4001,22 @@ function painelProfessor() {
   const mudar = (k, v) => { prefs[k] = v; guardarPrefs(); aplicarAparencia(); };
   const nItens = AULA.rondas.reduce((s, r) => s + r.itens.length, 0);
   const voz = vozPT();
+  const ref = { remove: () => j.remove() };
   const j = janela(
     h('h3', null, '⚙️ Painel do professor'),
     h('div', { class: 'info' }, `«${AULA.titulo}» · ${principais.length} rondas + ${bonus.length} de bónus · ${nItens} itens · duração estimada ≈ ${minutosEstimados(principais.map(i => AULA.rondas[i]))} min (+ ${minutosEstimados(bonus.map(i => AULA.rondas[i]))} min de bónus) · tema de hoje: ${TEMAS[temaDoDia()].nome} · voz em português: ${voz ? voz.name : 'não encontrada neste computador'} · motor ${VERSAO}`),
-    h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
+    modoEscape() ? h('p', { class: 'info' }, 'Tema: Castelo medieval (fixo neste escape room).') : h('label', null, 'Tema', sel(prefs.tema, [['auto', 'Automático (pela data)'], ...Object.entries(TEMAS).map(([k, x]) => [k, x.nome])], v => mudar('tema', v))),
     h('label', null, 'Modo', sel(prefs.modo, [['quadro', 'Quadro interativo'], ['computador', 'Computador']], v => { delete prefs.som; mudar('modo', v); })),
     h('label', null, 'Perfil', sel(prefs.perfil, [['turma', 'Turma'], ['apoio', 'Apoio']], v => mudar('perfil', v))),
     h('label', null, 'Língua da interface', sel(prefs.lingua, Object.entries(LINGUAS), v => mudar('lingua', v))),
     h('label', null, 'Som e narração', h('input', { type: 'checkbox', checked: somLigado() || null, onchange: e => mudar('som', e.target.checked) })),
-    h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
+    modoEscape() ? null : h('label', null, 'Navegação livre (Próximo sempre ativo)', h('input', { type: 'checkbox', checked: prefs.livre || null, onchange: e => { mudar('livre', e.target.checked); const b = $('#btProximo'); if (b && e.target.checked) b.disabled = false; } })),
     h('label', null, 'Animações: permitir saltar (⏭️)', h('input', { type: 'checkbox', checked: prefs.saltarFilmes || null, onchange: e => mudar('saltarFilmes', e.target.checked) })),
-    h('label', null, 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
-      class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); est.seq = s; est.p = +k; j.remove(); iniciarRonda(); }
+    h('label', null, modoEscape() ? 'Ir para a sala (fica desbloqueada)' : 'Ir para a ronda', h('span', { class: 'linha' }, destino, h('button', {
+      class: 'btn azul', onclick: () => { if (!destino.value) return; const [s, k] = destino.value.split(':'); if (s === 'principal' && modoEscape()) { est.desbloqueadas = est.desbloqueadas || {}; est.desbloqueadas[principais[+k]] = true; } est.seq = s; est.p = +k; guardarProgresso(); j.remove(); iniciarRonda(); }
     }, 'Ir'))),
+    modoEscape() ? h('label', null, 'Todos os desafios abertos (salas e bónus por qualquer ordem, neste computador)', h('input', { type: 'checkbox', checked: prefs.escapeAberto || null, onchange: e => { mudar('escapeAberto', e.target.checked); if ($('#app .escape')) ecraMapa(); j.remove(); painelProfessor(); } })) : null,
+    modoEscape() ? painelEscape(ref) : null,
     h('h4', { style: 'margin:12px 0 4px' }, 'Resultados neste computador'),
     tabelaResultados(),
     h('p', { style: 'font-size:.7rem;color:var(--muted)' }, 'Cada computador guarda apenas os resultados de quem jogou nele, identificados pelo número do aluno (sem nomes). As alterações de modo, perfil e língua aplicam-se na ronda seguinte ou ao voltar ao início.'),
@@ -5260,7 +5331,9 @@ const modoEscape = () => !!(AULA && AULA.escape && typeof AULA.escape === 'objec
 const normEscape = s => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]/gu, '').toUpperCase();
 function salaFechada(k, principais) {
   if (AULA.escape.sequencial === false || k === 0) return false;
-  return !est.feitas[principais[k - 1]];
+  if (prefs.escapeAberto) return false; // painel do professor: todos os desafios abertos
+  if (est.desbloqueadas && est.desbloqueadas[principais[k]]) return false; // desbloqueada no painel do professor
+  return !principais.slice(0, k).every(ri => est.feitas[ri]);
 }
 function barraChaves(principais) {
   const salas = principais.filter(ri => AULA.rondas[ri].chave !== undefined);
@@ -5276,39 +5349,81 @@ function chaveGanha(ronda) {
     h('div', null, h('strong', null, t('escChave')), h('small', null, t('escGuarda'))),
     h('span', { class: 'chave-slot grande' }, String(ronda.chave)));
 }
+/* Escape room v3: textos de sala, melhor pontuação, próxima sala disponível e desbloqueio pela professora */
+const T_ESCAPE = {"pt": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Conquistaste {a} de {b} estrelas.", "missoes": "🏰 Mapa do castelo", "filmeComecar": "Entrar na sala", "filmeMissoes": "Ver o castelo", "bonusFechado": "Os desafios bónus abrem quando abrires todas as salas.", "escEntrar": "Entrar nesta sala"}, "en": {"ronda": "Room {a} of {b}", "repetirRonda": "🔁 Repeat", "estrelasRonda": "You earned {a} of {b} stars.", "missoes": "🏰 Castle map", "filmeComecar": "Enter the room", "filmeMissoes": "See the castle", "bonusFechado": "Bonus challenges unlock when you open all the rooms.", "escEntrar": "Enter this room"}, "es": {"ronda": "Sala {a} de {b}", "repetirRonda": "🔁 Repetir", "estrelasRonda": "Has ganado {a} de {b} estrellas.", "missoes": "🏰 Mapa del castillo", "filmeComecar": "Entrar en la sala", "filmeMissoes": "Ver el castillo", "bonusFechado": "Los retos extra se desbloquean cuando abras todas las salas.", "escEntrar": "Entrar en esta sala"}, "fr": {"ronda": "Salle {a} sur {b}", "repetirRonda": "🔁 Rejouer", "estrelasRonda": "Tu as gagné {a} étoiles sur {b}.", "missoes": "🏰 Plan du château", "filmeComecar": "Entrer dans la salle", "filmeMissoes": "Voir le château", "bonusFechado": "Les défis bonus se débloquent quand tu as ouvert toutes les salles.", "escEntrar": "Entrer dans cette salle"}, "de": {"ronda": "Raum {a} von {b}", "repetirRonda": "🔁 Wiederholen", "estrelasRonda": "Du hast {a} von {b} Sternen gesammelt.", "missoes": "🏰 Burgplan", "filmeComecar": "Raum betreten", "filmeMissoes": "Zur Burg", "bonusFechado": "Die Bonusaufgaben werden frei, wenn du alle Räume geöffnet hast.", "escEntrar": "Diesen Raum betreten"}, "it": {"ronda": "Stanza {a} di {b}", "repetirRonda": "🔁 Ripeti", "estrelasRonda": "Hai conquistato {a} stelle su {b}.", "missoes": "🏰 Mappa del castello", "filmeComecar": "Entra nella stanza", "filmeMissoes": "Vedi il castello", "bonusFechado": "Le sfide bonus si sbloccano quando apri tutte le stanze.", "escEntrar": "Entra in questa stanza"}, "uk": {"ronda": "Кімната {a} з {b}", "repetirRonda": "🔁 Повторити", "estrelasRonda": "Ти здобув(ла) {a} з {b} зірок.", "missoes": "🏰 Мапа замку", "filmeComecar": "Увійти до кімнати", "filmeMissoes": "Переглянути замок", "bonusFechado": "Бонусні завдання відкриються, коли відчиниш усі кімнати.", "escEntrar": "Увійти до цієї кімнати"}, "hi": {"ronda": "कमरा {a} / {b}", "repetirRonda": "🔁 दोहराएँ", "estrelasRonda": "तुमने {b} में से {a} तारे जीते।", "missoes": "🏰 किले का नक्शा", "filmeComecar": "कमरे में जाओ", "filmeMissoes": "किला देखो", "bonusFechado": "सभी कमरे खोलने पर बोनस चुनौतियाँ खुलेंगी।", "escEntrar": "इस कमरे में जाओ"}, "ne": {"ronda": "कोठा {a} / {b}", "repetirRonda": "🔁 दोहोर्‍याउ", "estrelasRonda": "तिमीले {b} मध्ये {a} तारा जित्यौ।", "missoes": "🏰 किल्लाको नक्सा", "filmeComecar": "कोठामा पस", "filmeMissoes": "किल्ला हेर", "bonusFechado": "सबै कोठा खोलेपछि बोनस चुनौतीहरू खुल्छन्।", "escEntrar": "यो कोठामा पस"}};
+function aplicarTextosEscape() { Object.keys(T_ESCAPE).forEach(l => { if (T[l]) Object.assign(T[l], T_ESCAPE[l]); }); }
+function proximaSalaPorAbrir() { // próxima sala ainda sem chave e já acessível
+  const pr = listaRondas('principal');
+  for (let d = 1; d <= pr.length; d++) { const k = (est.p + d) % pr.length; if (!est.feitas[pr[k]] && !salaFechada(k, pr)) return k; }
+  return -1;
+}
+function reporMelhor() { // sala repetida e abandonada a meio: volta a melhor pontuação
+  const m = est.melhor || {}, salas = Object.keys(m);
+  est.melhor = {};
+  if (!salas.length) return;
+  salas.forEach(ri => { est.pontos[ri] = m[ri].p; est.maximos[ri] = m[ri].m; });
+  guardarProgresso(); atualizarEstrelas();
+}
+function painelEscape(j) { // secção do painel do professor
+  const pr = listaRondas('principal');
+  if ($('#app .inicio')) return h('div', null, h('h4', { style: 'margin:12px 0 4px' }, '🔓 Desbloquear salas'),
+    h('p', { class: 'info' }, 'Primeiro o aluno entra no jogo (com o seu número). Depois abre este painel para desbloquear salas ou dar chaves.'));
+  est.desbloqueadas = est.desbloqueadas || {}; est.chavesProf = est.chavesProf || {};
+  const atualizar = () => { guardarProgresso(); atualizarEstrelas(); j.remove(); if ($('#app .escape')) ecraMapa(); painelProfessor(); };
+  const linhas = pr.map((ri, k) => {
+    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = salaFechada(k, pr);
+    const estado = feita ? (est.chavesProf[ri] ? `🔑 ${r.chave} (dada pela professora)` : `🔑 ${r.chave}`)
+      : fechada ? '🔒 fechada' : est.desbloqueadas[ri] ? '🔓 desbloqueada' : 'por abrir';
+    return h('tr', null, h('td', null, `${k + 1}. ${r.titulo}`), h('td', null, estado),
+      h('td', null, h('span', { class: 'linha', style: 'justify-content:flex-start;gap:6px;flex-wrap:nowrap' },
+        fechada ? h('button', { class: 'btn leve', style: 'padding:5px 9px;font-size:.8rem;min-height:0;box-shadow:none;white-space:nowrap', onclick: () => { est.desbloqueadas[ri] = true; atualizar(); } }, '🔓 Desbloquear') : null,
+        feita ? null : h('button', { class: 'btn leve', style: 'padding:5px 9px;font-size:.8rem;min-height:0;box-shadow:none;white-space:nowrap', onclick: () => {
+          if (!confirm(`Dar a chave «${r.chave}» da sala ${k + 1} sem a resolver?`)) return;
+          est.feitas[ri] = true; est.chavesProf[ri] = true; est.pontos[ri] = est.pontos[ri] || 0; est.maximos[ri] = est.maximos[ri] || 0; atualizar();
+        } }, '🔑 Dar a chave'))));
+  });
+  return h('div', null,
+    h('h4', { style: 'margin:12px 0 4px' }, `🔓 Desbloquear salas · aluno n.º ${est.numero || '—'}`),
+    h('p', { class: 'info' }, 'Desbloquear deixa o aluno entrar na sala sem ter aberto as anteriores. Dar a chave conta a sala como aberta (sem estrelas), para quem ficar preso.'),
+    h('table', { class: 'resultados' }, h('tbody', null, linhas)),
+    prefs.escapeAberto ? h('p', { class: 'info' }, 'Todos os desafios estão abertos neste computador. Para voltar à ordem das salas, desliga a opção acima.') : h('div', { class: 'linha', style: 'justify-content:flex-start;margin-top:6px' },
+      h('button', { class: 'btn leve', onclick: () => { pr.forEach(ri => { est.desbloqueadas[ri] = true; }); atualizar(); } }, '🔓 Desbloquear todas'),
+      h('button', { class: 'btn leve', onclick: () => { est.desbloqueadas = {}; atualizar(); } }, '🔒 Repor a ordem das salas')));
+}
 function ecraMapaEscape() {
+  reporMelhor();
   const E = AULA.escape, principais = listaRondas('principal'), bonus = listaRondas('bonus');
   const todas = principais.every(ri => est.feitas[ri]);
   const sala = (ri, k) => {
-    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = !feita && salaFechada(k, principais);
+    const r = AULA.rondas[ri], feita = est.feitas[ri], fechada = salaFechada(k, principais);
     const atual = !feita && !fechada && k === principais.findIndex(x => !est.feitas[x]);
     return h('button', {
-      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: (fechada && !prefs.livre) || null,
+      class: 'missao sala' + (feita ? ' feita' : '') + (atual ? ' sugerida' : '') + (fechada ? ' fechada' : ''), disabled: fechada || null,
       onclick: () => { est.seq = 'principal'; est.p = k; iniciarRonda(); }
     },
       h('span', { class: 'missao-num' }, k + 1),
-      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, feita ? '🔓' : fechada ? '🔒' : (r.icone || '🚪')),
+      h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, fechada ? '🔒' : feita ? '🔓' : (r.icone || '🚪')),
       h('strong', null, r.titulo || t('escSala', { n: k + 1 })),
       h('small', null, t('escSala', { n: k + 1 })),
-      feita ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
-        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('sugestao') : t('escPorAbrir')));
+      feita && !fechada ? h('span', { class: 'missao-estado' }, `🔑 ${r.chave !== undefined ? r.chave : '✔'} · ${est.pontos[ri] ?? 0}/${est.maximos[ri] ?? 0} ⭐`)
+        : fechada ? h('span', { class: 'missao-estado' }, t('escFechada')) : h('span', { class: 'missao-estado' }, atual ? t('escEntrar') : t('escPorAbrir')));
   };
-  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: (!todas && !prefs.livre) || null, onclick: ecraCadeado },
+  const final = h('button', { class: 'missao sala cadeado-final' + (est.escapou ? ' feita' : todas ? ' sugerida' : ' fechada'), disabled: !todas || null, onclick: ecraCadeado },
     h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, est.escapou ? '🏆' : todas ? '🔐' : '🔒'),
     h('strong', null, t('escCadeado')),
     h('small', null, est.escapou ? t('escLivre') : t('escCadeadoSub')));
   $('#app').replaceChildren(h('div', { class: 'escape' },
     h('div', { class: 'mapa-topo' }, mascote(est.escapou ? 'trofeu' : 'aponta'),
-      h('div', null, h('h2', { class: 'titulo-ronda' }, E.titulo || AULA.titulo), E.historia ? h('p', { class: 'instrucao' }, textoRico(E.historia)) : null)),
+      h('div', null, h('h2', { class: 'titulo-ronda' }, E.titulo || AULA.titulo), E.historia ? h('p', { class: 'instrucao' }, textoRico(prefs.escapeAberto && E.historiaAberto ? E.historiaAberto : E.historia)) : null)),
     temConsulta() ? h('button', { class: 'consulta-faixa', onclick: () => abrirConsulta() },
       h('span', { class: 'consulta-faixa-icone', 'aria-hidden': 'true' }, '📖'),
       h('span', null, h('strong', null, t('consulta')), h('small', null, t('consultaSub')))) : null,
     barraChaves(principais),
     h('div', { class: 'mapa' }, principais.map((ri, k) => sala(ri, k)), final),
-    bonus.length ? h('div', { class: 'grupo-titulo' }, todas ? nomeFase('bonus') : t('bonusFechado')) : null,
+    bonus.length ? h('div', { class: 'grupo-titulo' }, (todas || prefs.escapeAberto) ? nomeFase('bonus') : t('bonusFechado')) : null,
     bonus.length ? h('div', { class: 'mapa' }, bonus.map((ri, k) => h('button', {
-      class: 'missao' + (est.feitas[ri] ? ' feita' : ''), disabled: !todas || null, onclick: () => { est.seq = 'bonus'; est.p = k; iniciarRonda(); }
-    }, h('span', { class: 'missao-num' }, '★'), h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, todas ? iconeRonda(AULA.rondas[ri]) : '🔒'),
+      class: 'missao' + (est.feitas[ri] ? ' feita' : ''), disabled: !(todas || prefs.escapeAberto) || null, onclick: () => { est.seq = 'bonus'; est.p = k; iniciarRonda(); }
+    }, h('span', { class: 'missao-num' }, '★'), h('span', { class: 'missao-icone', 'aria-hidden': 'true' }, (todas || prefs.escapeAberto) ? iconeRonda(AULA.rondas[ri]) : '🔒'),
       h('strong', null, AULA.rondas[ri].titulo || nomeFase('bonus')), h('small', null, nomeFase('bonus'))))) : null,
     h('div', { class: 'nav' },
       h('button', { class: 'btn leve', onclick: ecraInicio }, t('inicio')),
@@ -5316,8 +5431,10 @@ function ecraMapaEscape() {
       est.escapou ? h('button', { class: 'btn', id: 'btResultado', onclick: () => { est.seq = 'principal'; ecraFim(); } }, t('resultado')) : h('span'))));
 }
 function ecraCadeado() {
+  reporMelhor();
   limparTimers(); calar();
   const E = AULA.escape, principais = listaRondas('principal');
+  if (!principais.every(ri => est.feitas[ri])) { ecraMapa(); return; }
   let erros = 0;
   const msg = h('p', { class: 'cadeado-msg', 'aria-live': 'polite' });
   const pista = h('div', { class: 'consulta-lembra', hidden: true }, '💡 ', textoRico(E.pista || ''));
@@ -5384,6 +5501,7 @@ function validarEscape(a) {
   catch (e) { erros = ['O bloco AULA não é JSON válido: ' + e.message + '. Verifica vírgulas, aspas e chavetas.']; }
   aplicarAparencia();
   if (erros.length) { ecraErros(erros); return; }
+  if (modoEscape()) aplicarTextosEscape();
   // botão MAB no cabeçalho: nas aulas com rondas de MAB ou com "ferramentaMAB": true
   if ($('#btMab')) $('#btMab').hidden = !(AULA.ferramentaMAB === true || (AULA.ferramentaMAB !== false && AULA.rondas.some(r => r && r.tipo === 'mab')));
   if ($('#btConsulta')) { $('#btConsulta').hidden = !temConsulta(); $('#btConsulta').onclick = () => abrirConsulta(); $('#btConsulta').title = t('consulta'); }
