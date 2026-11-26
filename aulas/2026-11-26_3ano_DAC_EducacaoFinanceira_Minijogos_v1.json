@@ -1,0 +1,755 @@
+{
+  "id": "2026-11-26-3ano-educacao-financeira-minijogos",
+  "titulo": "Educação Financeira com o Ticl@s: minijogos",
+  "ano": 3,
+  "turma": "3.º ano",
+  "disciplina": "Educação Financeira",
+  "data": "2026-11-26",
+  "descricao": "DAC Educação Financeira (Referencial de Educação Financeira, 1.º ciclo, e Caderno de Educação Financeira 1): necessidades e desejos, compras por impulso, rendimentos e despesas, orçamento e saldo, poupança, risco, imprevistos e seguros, meios de pagamento (história do dinheiro, moedas e notas de euro, cartão de débito, banco) e expressões populares sobre o dinheiro. Sem contas.",
+  "resumo": "Joga com o Ticl@s e aprende a usar bem o dinheiro!",
+  "focoTic": [
+    "Rato: clicar e arrastar",
+    "Teclado: setas e escrita de frases"
+  ],
+  "ilustracao": {
+    "tipo": "mistura"
+  },
+  "objetivo": "Distinguir necessidades de desejos, rendimentos de despesas e situações previsíveis de imprevistas; conhecer a poupança, os seguros e os meios de pagamento.",
+  "minutos": 60,
+  "consulta": [
+    {
+      "id": "necessidades",
+      "emoji": "🧺",
+      "titulo": "Necessidades e desejos",
+      "paragrafos": [
+        "Uma **necessidade** é algo **necessário** para viver bem: comida, água, roupa, casa, material escolar.",
+        "Um **desejo** é algo de que gostamos, mas que é **supérfluo**: conseguimos viver sem ele.",
+        "Uma **compra por impulso** é comprar sem pensar, só porque apetece no momento. Muitas vezes, depois arrependemo-nos."
+      ],
+      "lembra": "Antes de comprar, pergunta: preciso mesmo disto?"
+    },
+    {
+      "id": "orcamento",
+      "emoji": "📋",
+      "titulo": "Rendimentos, despesas e orçamento",
+      "paragrafos": [
+        "O **rendimento** (ou receita) é o dinheiro que **entra**: o salário, a pensão de reforma, a semanada ou a mesada.",
+        "A **despesa** é o dinheiro que **sai**: a renda da casa, a comida, a luz, a água, o passe.",
+        "O **orçamento** é um plano com os rendimentos e as despesas."
+      ],
+      "lista": [
+        "**Saldo positivo:** gastamos menos do que recebemos e sobra dinheiro.",
+        "**Saldo zero:** gastamos tudo o que recebemos.",
+        "**Saldo negativo:** gastamos mais do que recebemos e falta dinheiro."
+      ],
+      "lembra": "Nunca devemos gastar mais do que aquilo que recebemos."
+    },
+    {
+      "id": "poupanca",
+      "emoji": "🐷",
+      "titulo": "A poupança",
+      "paragrafos": [
+        "**Poupar** é não gastar todo o dinheiro que recebemos e guardar uma parte.",
+        "Com a poupança conseguimos comprar coisas mais tarde e enfrentar imprevistos.",
+        "Para poupar: escolhemos um objetivo, guardamos um pouco de cada vez e cortamos nas despesas supérfluas."
+      ],
+      "lembra": "Poupa tostões, terás milhões."
+    },
+    {
+      "id": "risco",
+      "emoji": "☂️",
+      "titulo": "Imprevistos e seguros",
+      "paragrafos": [
+        "Há situações **previsíveis** (sabemos que vão acontecer, como um aniversário) e **imprevisíveis** (acontecem de surpresa, como uma avaria).",
+        "Para os imprevistos, as famílias guardam dinheiro de reserva: um **pé-de-meia**.",
+        "Um **seguro** é um contrato: paga-se uma quantia a uma seguradora, que ajuda a pagar os prejuízos de um imprevisto."
+      ],
+      "lista": [
+        "🏫 **Seguro escolar:** acidentes na escola.",
+        "🚗 **Seguro automóvel:** acidentes com o carro (é obrigatório).",
+        "🏠 **Seguro da casa:** incêndios, inundações, assaltos.",
+        "🩺 **Seguro de saúde:** consultas e tratamentos."
+      ],
+      "lembra": "Mais vale prevenir do que remediar."
+    },
+    {
+      "id": "pagamento",
+      "emoji": "💳",
+      "titulo": "Meios de pagamento",
+      "paragrafos": [
+        "Antigamente fazia-se a **troca direta**: trocava-se um bem por outro. Depois usaram-se mercadorias valiosas, como o sal e o gado, seguiram-se as **moedas** de metal e as **notas** de papel. Hoje também se usa o **cartão de débito**.",
+        "O **euro** é a moeda oficial de Portugal e de muitos países da União Europeia. Outros países têm outras moedas, como a Suécia e a Dinamarca.",
+        "O **banco** guarda o dinheiro das pessoas numa conta, empresta dinheiro e facilita os pagamentos."
+      ],
+      "lista": [
+        "**Moedas:** 1, 2, 5, 10, 20 e 50 cêntimos; 1 e 2 euros.",
+        "**Notas:** 5, 10, 20, 50, 100 e 200 euros.",
+        "**Cartão de débito:** só funciona se houver dinheiro na conta; o código é secreto."
+      ],
+      "lembra": "O código do cartão nunca se diz a ninguém."
+    }
+  ],
+  "rondas": [
+    {
+      "fase": "aquecimento",
+      "tipo": "escolher",
+      "visual": "baloes",
+      "titulo": "Palavras do dinheiro",
+      "instrucao": "Lê a pista e rebenta o balão com a palavra certa.",
+      "consulta": "orcamento",
+      "itens": [
+        {
+          "pergunta": "Dinheiro que se recebe por trabalhar.",
+          "emoji": "💼",
+          "certa": "salário",
+          "erradas": [
+            "despesa",
+            "troco"
+          ]
+        },
+        {
+          "pergunta": "Dinheiro que os pais dão todas as semanas.",
+          "emoji": "📅",
+          "certa": "semanada",
+          "erradas": [
+            "pensão",
+            "seguro"
+          ]
+        },
+        {
+          "pergunta": "Dinheiro que gastamos.",
+          "emoji": "🧾",
+          "certa": "despesa",
+          "erradas": [
+            "rendimento",
+            "poupança"
+          ]
+        },
+        {
+          "pergunta": "Dinheiro que recebemos.",
+          "emoji": "💶",
+          "certa": "rendimento",
+          "erradas": [
+            "despesa",
+            "dívida"
+          ]
+        },
+        {
+          "pergunta": "Plano com os rendimentos e as despesas.",
+          "emoji": "📋",
+          "certa": "orçamento",
+          "erradas": [
+            "mealheiro",
+            "cartão"
+          ]
+        },
+        {
+          "pergunta": "Não gastar todo o dinheiro e guardar uma parte.",
+          "emoji": "🐷",
+          "certa": "poupar",
+          "erradas": [
+            "gastar",
+            "emprestar"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Necessário ou supérfluo?",
+      "instrucao": "Arruma cada despesa: é necessária ou supérflua?",
+      "consulta": "necessidades",
+      "caixas": [
+        "🧺 Necessário",
+        "🎁 Supérfluo"
+      ],
+      "itens": [
+        [
+          "🍞 comida do supermercado",
+          "🧺 Necessário"
+        ],
+        [
+          "💡 conta da luz",
+          "🧺 Necessário"
+        ],
+        [
+          "🚌 passe do autocarro para a escola",
+          "🧺 Necessário"
+        ],
+        [
+          "📒 material escolar",
+          "🧺 Necessário"
+        ],
+        [
+          "🦷 consulta no dentista",
+          "🧺 Necessário"
+        ],
+        [
+          "👟 ténis novos (os velhos romperam-se)",
+          "🧺 Necessário"
+        ],
+        [
+          "🐕 casaco da moda para o cão",
+          "🎁 Supérfluo"
+        ],
+        [
+          "🎮 terceiro jogo de futebol",
+          "🎁 Supérfluo"
+        ],
+        [
+          "📱 capa nova para o telemóvel",
+          "🎁 Supérfluo"
+        ],
+        [
+          "👕 mais uma t-shirt de marca",
+          "🎁 Supérfluo"
+        ],
+        [
+          "🍬 gomas todos os dias",
+          "🎁 Supérfluo"
+        ],
+        [
+          "🎤 bilhetes para um concerto",
+          "🎁 Supérfluo"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "apanhar",
+      "titulo": "Apanha o que é necessário",
+      "instrucao": "Mexe o rato para levar o cesto. Apanha só o que é necessário!",
+      "consulta": "necessidades",
+      "itens": [
+        {
+          "certas": [
+            "🍞 pão",
+            "💧 água",
+            "🥛 leite",
+            "🧥 casaco",
+            "📒 caderno",
+            "🪥 escova"
+          ],
+          "erradas": [
+            "🍬 gomas",
+            "🎮 jogo",
+            "🎈 balões",
+            "🧸 peluche",
+            "🍭 chupa",
+            "👑 coroa"
+          ],
+          "meta": 8
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "comboio",
+      "titulo": "Pensar antes de comprar",
+      "instrucao": "Escolhe a decisão mais acertada.",
+      "consulta": "necessidades",
+      "itens": [
+        {
+          "pergunta": "Vês uma caneta brilhante na papelaria, mas já tens canetas que escrevem bem.",
+          "emoji": "🖊️",
+          "certa": "Não compro: já tenho canetas.",
+          "erradas": [
+            "Compro já, é muito bonita!",
+            "Compro três, para ter mais."
+          ],
+          "explicacao": "Comprar sem precisar é uma compra por impulso."
+        },
+        {
+          "pergunta": "Os teus ténis romperam-se de tanto jogares à bola.",
+          "emoji": "👟",
+          "certa": "Preciso de ténis novos.",
+          "erradas": [
+            "Compro um boné em vez dos ténis.",
+            "Fico com os ténis rotos e compro gomas."
+          ],
+          "explicacao": "Os ténis são uma necessidade de curto prazo."
+        },
+        {
+          "pergunta": "Um amigo tem uma t-shirt de marca e tu também queres uma igual.",
+          "emoji": "👕",
+          "certa": "Penso: preciso mesmo dela?",
+          "erradas": [
+            "Peço logo dinheiro aos pais.",
+            "Gasto toda a semanada nela."
+          ],
+          "explicacao": "Querer o que os outros têm não é uma necessidade."
+        },
+        {
+          "pergunta": "Já gastaste a semanada e ainda é quarta-feira.",
+          "emoji": "📅",
+          "certa": "Para a próxima, faço um orçamento.",
+          "erradas": [
+            "Peço mais dinheiro todos os dias.",
+            "Gasto o dinheiro do lanche dos irmãos."
+          ],
+          "explicacao": "Um orçamento ajuda a fazer a semanada chegar até ao fim."
+        },
+        {
+          "pergunta": "Na loja, vês um brinquedo que não estava na tua lista.",
+          "emoji": "🧸",
+          "certa": "Sigo a lista e penso em casa.",
+          "erradas": [
+            "Compro sem pensar.",
+            "Choro até mo comprarem."
+          ],
+          "explicacao": "A lista ajuda a evitar compras por impulso."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Entra ou sai?",
+      "instrucao": "É dinheiro que entra (rendimento) ou que sai (despesa)?",
+      "consulta": "orcamento",
+      "caixas": [
+        "⬇️ Entra (rendimento)",
+        "⬆️ Sai (despesa)"
+      ],
+      "itens": [
+        [
+          "💼 salário da mãe",
+          "⬇️ Entra (rendimento)"
+        ],
+        [
+          "👴 pensão de reforma do avô",
+          "⬇️ Entra (rendimento)"
+        ],
+        [
+          "📅 semanada",
+          "⬇️ Entra (rendimento)"
+        ],
+        [
+          "🎂 dinheiro recebido no aniversário",
+          "⬇️ Entra (rendimento)"
+        ],
+        [
+          "🐕 pagamento por passear o cão da vizinha",
+          "⬇️ Entra (rendimento)"
+        ],
+        [
+          "🏠 renda da casa",
+          "⬆️ Sai (despesa)"
+        ],
+        [
+          "🛒 compras do supermercado",
+          "⬆️ Sai (despesa)"
+        ],
+        [
+          "💡 conta da luz",
+          "⬆️ Sai (despesa)"
+        ],
+        [
+          "🚌 passe do autocarro",
+          "⬆️ Sai (despesa)"
+        ],
+        [
+          "🥪 lanche no bar da escola",
+          "⬆️ Sai (despesa)"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "cartoes",
+      "titulo": "Que saldo é?",
+      "instrucao": "Lê a situação e escolhe o saldo do orçamento.",
+      "consulta": "orcamento",
+      "itens": [
+        {
+          "pergunta": "Recebeste a semanada e gastaste só uma parte. O resto foi para o mealheiro.",
+          "emoji": "🐷",
+          "certa": "➕ Saldo positivo",
+          "erradas": [
+            "➖ Saldo negativo",
+            "0️⃣ Saldo zero"
+          ],
+          "explicacao": "Gastaste menos do que recebeste: sobrou dinheiro."
+        },
+        {
+          "pergunta": "Gastaste mais do que recebeste e ficaste a dever dinheiro a um amigo.",
+          "emoji": "😟",
+          "certa": "➖ Saldo negativo",
+          "erradas": [
+            "➕ Saldo positivo",
+            "0️⃣ Saldo zero"
+          ],
+          "explicacao": "Gastaste mais do que recebeste: faltou dinheiro."
+        },
+        {
+          "pergunta": "Gastaste exatamente o que recebeste. Não sobrou nem faltou nada.",
+          "emoji": "⚖️",
+          "certa": "0️⃣ Saldo zero",
+          "erradas": [
+            "➕ Saldo positivo",
+            "➖ Saldo negativo"
+          ],
+          "explicacao": "Rendimentos iguais às despesas: o saldo é zero."
+        },
+        {
+          "pergunta": "A família pagou todas as despesas do mês e ainda guardou dinheiro para as férias.",
+          "emoji": "🏖️",
+          "certa": "➕ Saldo positivo",
+          "erradas": [
+            "➖ Saldo negativo",
+            "0️⃣ Saldo zero"
+          ],
+          "explicacao": "Sobrou dinheiro: o saldo é positivo."
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "escolher",
+      "visual": "buracos",
+      "titulo": "Como poupar mais?",
+      "instrucao": "O Ticl@s quer aumentar a poupança. Toca na boa ideia quando ela aparecer!",
+      "consulta": "poupanca",
+      "itens": [
+        {
+          "pergunta": "Que ideia ajuda a poupar?",
+          "emoji": "🥪",
+          "certa": "Levar o lanche de casa",
+          "erradas": [
+            "Comer um gelado todos os dias"
+          ]
+        },
+        {
+          "pergunta": "Que ideia ajuda a poupar?",
+          "emoji": "✏️",
+          "certa": "Usar os lápis até ao fim",
+          "erradas": [
+            "Comprar lápis novos a meio"
+          ]
+        },
+        {
+          "pergunta": "Que ideia ajuda a poupar?",
+          "emoji": "💡",
+          "certa": "Apagar a luz ao sair",
+          "erradas": [
+            "Deixar a luz sempre acesa"
+          ]
+        },
+        {
+          "pergunta": "Que ideia ajuda a poupar?",
+          "emoji": "🧸",
+          "certa": "Cuidar bem dos brinquedos",
+          "erradas": [
+            "Deitar fora o que se estraga"
+          ]
+        },
+        {
+          "pergunta": "Como se pode ganhar algum dinheiro extra?",
+          "emoji": "🪴",
+          "certa": "Regar as plantas da vizinha nas férias",
+          "erradas": [
+            "Pedir a semanada adiantada"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "Plano de poupança",
+      "instrucao": "Põe os passos pela ordem certa.",
+      "consulta": "poupanca",
+      "itens": [
+        {
+          "emoji": "🎯",
+          "pergunta": "Como se poupa para comprar um relógio?",
+          "pecas": [
+            "Escolho o objetivo: um relógio.",
+            "Faço um orçamento da semanada.",
+            "Corto nas despesas supérfluas.",
+            "Ponho dinheiro no mealheiro todas as semanas.",
+            "Compro o relógio!"
+          ]
+        },
+        {
+          "emoji": "🔧",
+          "pergunta": "A máquina de lavar avariou. O que faz uma família prevenida?",
+          "pecas": [
+            "A máquina avaria de surpresa.",
+            "A família usa o pé-de-meia.",
+            "Compra uma máquina nova.",
+            "Volta a poupar para repor o pé-de-meia."
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "classificar",
+      "titulo": "Previsível ou imprevisível?",
+      "instrucao": "Sabíamos que ia acontecer ou foi uma surpresa?",
+      "consulta": "risco",
+      "caixas": [
+        "📅 Previsível",
+        "⚡ Imprevisível"
+      ],
+      "itens": [
+        [
+          "🚌 renovar o passe do autocarro",
+          "📅 Previsível"
+        ],
+        [
+          "🎂 aniversário de casamento dos avós",
+          "📅 Previsível"
+        ],
+        [
+          "🏫 o ano letivo começa daqui a duas semanas",
+          "📅 Previsível"
+        ],
+        [
+          "🏖️ uma semana de férias na praia",
+          "📅 Previsível"
+        ],
+        [
+          "🌳 uma árvore caiu em cima do carro",
+          "⚡ Imprevisível"
+        ],
+        [
+          "📘 perdi o manual de Português",
+          "⚡ Imprevisível"
+        ],
+        [
+          "🚿 rebentou um cano na casa de banho",
+          "⚡ Imprevisível"
+        ],
+        [
+          "🐕 o cão fez um golpe numa orelha",
+          "⚡ Imprevisível"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "pares",
+      "titulo": "Que seguro ajuda?",
+      "instrucao": "Liga cada imprevisto ao seguro que ajuda a pagar os prejuízos.",
+      "consulta": "risco",
+      "itens": [
+        [
+          "🏫 Caí no recreio e fui ao hospital.",
+          "Seguro escolar"
+        ],
+        [
+          "🚗 O pai teve um pequeno acidente de carro.",
+          "Seguro automóvel"
+        ],
+        [
+          "🔥 Um curto-circuito queimou a garagem.",
+          "Seguro da casa"
+        ],
+        [
+          "🦷 A mãe foi ao dentista tratar uma cárie.",
+          "Seguro de saúde"
+        ]
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "ordenar",
+      "titulo": "A história do dinheiro",
+      "instrucao": "Põe por ordem, do mais antigo para o mais recente.",
+      "consulta": "pagamento",
+      "itens": [
+        {
+          "emoji": "⏳",
+          "pergunta": "Como se pagava ao longo do tempo?",
+          "pecas": [
+            "🔄 Troca direta",
+            "🧂 Sal e gado",
+            "🪙 Moedas de metal",
+            "💵 Notas de papel",
+            "💳 Cartão de débito"
+          ]
+        },
+        {
+          "emoji": "🪙",
+          "pergunta": "Ordena as moedas de euro, da que vale menos para a que vale mais.",
+          "pecas": [
+            "1 cêntimo",
+            "5 cêntimos",
+            "20 cêntimos",
+            "50 cêntimos",
+            "1 euro",
+            "2 euros"
+          ]
+        },
+        {
+          "emoji": "💶",
+          "pergunta": "Ordena as notas de euro, da que vale menos para a que vale mais.",
+          "pecas": [
+            "5 €",
+            "10 €",
+            "20 €",
+            "50 €",
+            "100 €",
+            "200 €"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "desafios",
+      "tipo": "verdadeiro_falso",
+      "titulo": "O banco e o cartão",
+      "instrucao": "Lê com atenção: é verdadeiro ou falso?",
+      "consulta": "pagamento",
+      "itens": [
+        {
+          "afirmacao": "O euro é a moeda oficial de Portugal.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "Todos os países do mundo usam o euro.",
+          "verdade": false,
+          "explicacao": "Muitos países têm outras moedas: o Brasil usa o real e o Japão usa o iene."
+        },
+        {
+          "afirmacao": "Um banco guarda o dinheiro das pessoas numa conta.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "Com o cartão de débito podemos pagar mesmo sem dinheiro na conta.",
+          "verdade": false,
+          "explicacao": "O cartão de débito só funciona se houver dinheiro na conta."
+        },
+        {
+          "afirmacao": "O código do cartão pode dizer-se aos amigos.",
+          "verdade": false,
+          "explicacao": "O código é secreto: nunca se diz a ninguém."
+        },
+        {
+          "afirmacao": "No multibanco pode-se levantar dinheiro e consultar o saldo.",
+          "verdade": true
+        },
+        {
+          "afirmacao": "Para comprar uma pastilha, o mais prático é pagar com moedas.",
+          "verdade": true
+        }
+      ]
+    },
+    {
+      "fase": "escrita",
+      "tipo": "escrever",
+      "titulo": "Antes de comprar, é preciso pensar",
+      "instrucao": "Escreve frases completas: começa com letra maiúscula e termina com ponto final.",
+      "consulta": "necessidades",
+      "itens": [
+        {
+          "pergunta": "Escreve uma frase a explicar a diferença entre uma necessidade e um desejo. Usa a palavra «necessidade».",
+          "palavra": "necessidade",
+          "minPalavras": 6
+        },
+        {
+          "pergunta": "Escreve uma frase sobre uma coisa para a qual gostavas de poupar. Usa a palavra «poupar».",
+          "palavra": "poupar",
+          "minPalavras": 6
+        },
+        {
+          "pergunta": "Escreve uma frase a dizer porque é importante ter um pé-de-meia. Usa a palavra «imprevistos».",
+          "palavra": "imprevistos",
+          "minPalavras": 6
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "percurso",
+      "titulo": "Labirinto do poupador",
+      "instrucao": "Usa as setas do teclado. Apanha as boas atitudes e chega à castanha 🌰. Foge das más!",
+      "itens": [
+        {
+          "alvo": "boas atitudes",
+          "certas": [
+            "poupo",
+            "penso",
+            "guardo",
+            "escolho",
+            "planeio"
+          ],
+          "erradas": [
+            "esbanjo",
+            "impulso",
+            "dívida",
+            "birra",
+            "luxo"
+          ]
+        }
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "titulo": "Expressões do dinheiro",
+      "instrucao": "Liga cada expressão ao que ela quer dizer.",
+      "consulta": "poupanca",
+      "itens": [
+        [
+          "Custar os olhos da cara",
+          "Ser muito caro"
+        ],
+        [
+          "Ser uma pechincha",
+          "Ser muito barato"
+        ],
+        [
+          "Ter um pé-de-meia",
+          "Ter dinheiro guardado"
+        ],
+        [
+          "Atirar dinheiro pela janela",
+          "Gastar mal o dinheiro"
+        ],
+        [
+          "Mais vale prevenir do que remediar",
+          "Proteger-se antes dos problemas"
+        ]
+      ]
+    },
+    {
+      "fase": "bonus",
+      "tipo": "pares",
+      "visual": "memoria",
+      "titulo": "Memória do dinheiro",
+      "instrucao": "Vira duas cartas e encontra os pares: o desenho e a palavra.",
+      "itens": [
+        [
+          "🐷",
+          "mealheiro"
+        ],
+        [
+          "💶",
+          "nota"
+        ],
+        [
+          "🪙",
+          "moeda"
+        ],
+        [
+          "💳",
+          "cartão"
+        ],
+        [
+          "🏦",
+          "banco"
+        ],
+        [
+          "🧾",
+          "talão"
+        ]
+      ]
+    }
+  ]
+}

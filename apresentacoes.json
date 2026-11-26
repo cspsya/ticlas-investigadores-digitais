@@ -1,5 +1,22 @@
 [
   {
+    "id": "2026-11-26_3ano_Gerir_Bem_o_Dinheiro",
+    "categoria": "apresentacao",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "Gerir bem o dinheiro com o Ticl@s",
+    "descricao": "Vídeo-apresentação narrada para o quadro (13 cenas, cerca de 7 min), com base no Referencial de Educação Financeira e no Caderno de Educação Financeira 1, sem perguntas nem contas: necessário e supérfluo, compras por impulso, rendimentos, despesas, orçamento e saldo, poupança, imprevistos, pé-de-meia e seguros, história do dinheiro, o euro e outras moedas, banco, cartão de débito e multibanco, cinco regras de ouro e certificado.",
+    "disciplina": "Educação Financeira",
+    "data": "2026-11-26",
+    "semana": "23–27 nov. 2026",
+    "url": "apresentacoes/2026-11-23/Ticlas_Gerir_Bem_o_Dinheiro_3ano.html",
+    "duracao": "7 min",
+    "estado": "em validação",
+    "tipo": "Apresentação interativa",
+    "resumo": "Aprende com o Ticl@s a gerir bem o dinheiro: necessidades, orçamento, poupança, imprevistos e pagamentos.",
+    "focoTic": "Apresentação multimédia"
+  },
+  {
     "id": "2026-11-25_3ano_Educacao_Financeira",
     "categoria": "apresentacao",
     "turma": "3.º ano",
