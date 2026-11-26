@@ -912,5 +912,26 @@
         "5"
       ]
     }
+  },
+  {
+    "id": "2026-11-26-4ano-hora-do-codigo-escape-natal",
+    "turma": "4.º ano",
+    "ano": 4,
+    "titulo": "Escape Room: O Código Secreto do Natal",
+    "descricao": "Hora do Código: 6 missões de programação por blocos (sequências, repetições, condições, depuração e funções), cofre final, 5 desafios bónus na Oficina Secreta e estrelas por eficiência",
+    "disciplina": "TIC",
+    "data": "2026-11-26",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-26_4ano_TIC_HoraDoCodigo_EscapeNatal_v6.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Ajuda o Ticl@s a recuperar o código secreto e a salvar o Natal!",
+    "focoTic": [
+      "Algoritmos e repetições",
+      "Condições e depuração"
+    ],
+    "ilustracao": {
+      "tipo": "digital"
+    }
   }
 ]
