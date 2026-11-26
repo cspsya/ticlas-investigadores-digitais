@@ -1065,5 +1065,32 @@
       "Decomposição e resolução de problemas"
     ],
     "permanente": true
+  },
+  {
+    "id": "2026-11-27-1B-letras-p-t-l-v2",
+    "turma": "1.º B",
+    "ano": 1,
+    "titulo": "As letras p, t e l",
+    "descricao": "Apresentação da letra l e consolidação do p e do t, com as palavras do manual: ligar os pontos, som inicial, classificar por letra, sílabas la/le/li/lo/lu, ligar desenho e palavra manuscrita, construir palavras e frases, escrita no teclado e desafios de pensamento computacional (padrões, seguir e escolher códigos de setas, caça ao erro e regra secreta).",
+    "disciplina": "Português",
+    "data": "2026-11-27",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-27_1B_Portugues_Letras_P_T_L_v2.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "resumo": "Descobre a letra l e brinca com o p e o t!",
+    "focoTic": [
+      "Teclado: escrever",
+      "Rato: tocar, arrastar e mover",
+      "Pensamento computacional"
+    ],
+    "ilustracao": {
+      "tipo": "letras",
+      "letras": [
+        "p",
+        "t",
+        "l"
+      ]
+    }
   }
 ]
