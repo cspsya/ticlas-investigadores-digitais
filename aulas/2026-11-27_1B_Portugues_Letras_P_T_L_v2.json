@@ -22,31 +22,6 @@
       "l"
     ]
   },
-  "abertura": [
-    {
-      "emoji": "🎉 ✨",
-      "titulo": "Uma letra nova!",
-      "texto": "Olá! Hoje trago uma letra nova: o **l**.",
-      "pose": "ola"
-    },
-    {
-      "imagem": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0ODAgMjAwIj48Zz48cmVjdCB4PSIyMiIgeT0iMTQiIHdpZHRoPSIxMzYiIGhlaWdodD0iMTUwIiByeD0iMjIiIGZpbGw9IiNmZmZhZjIiIHN0cm9rZT0iI2U4ODM0YSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTk3LjUgMzkuMiBROTcuNSA2Mi4yIDk3LjUgNzMuNyBROTcuNSA4NS4yIDk3LjUgOTUuNSBROTcuNSAxMDUuOSA5OS4yIDExMy45IFExMDAuOSAxMjIuMCAxMDUuMCAxMjcuMiBRMTA5LjAgMTMyLjMgMTE0LjggMTMyLjMgTDEyMC41IDEzMi4zIiBmaWxsPSJub25lIiBzdHJva2U9IiM1YTM0MTciIHN0cm9rZS13aWR0aD0iMTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjx0ZXh0IHg9IjkwIiB5PSIxOTAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzZiM2QxYSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+cGVxdWVubzwvdGV4dD48L2c+PGc+PHJlY3QgeD0iMTcyIiB5PSIxNCIgd2lkdGg9IjEzNiIgaGVpZ2h0PSIxNTAiIHJ4PSIyMiIgZmlsbD0iI2ZmZmFmMiIgc3Ryb2tlPSIjZTg4MzRhIiBzdHJva2Utd2lkdGg9IjQiLz48cGF0aCBkPSJNMTkwIDM0IFYxNDYgSDI2MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNWEzNDE3IiBzdHJva2Utd2lkdGg9IjEzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSIyNDAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNmIzZDFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5ncmFuZGU8L3RleHQ+PC9nPjxnPjxyZWN0IHg9IjMyMiIgeT0iMTQiIHdpZHRoPSIxMzYiIGhlaWdodD0iMTUwIiByeD0iMjIiIGZpbGw9IiNmZmZhZjIiIHN0cm9rZT0iIzViYTNkMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTTM0MS4yIDEzNS4zIFEzNjAuMiAxMjkuNyAzNzMuMSAxMjAuMiBRMzg2LjAgMTEwLjYgMzkzLjggOTguMyBRNDAxLjcgODYuMCA0MDUuMCA3My43IFE0MDguNCA2MS40IDQwNS4wIDUxLjMgUTQwMS43IDQxLjIgMzkyLjcgMzcuOCBRMzgzLjggMzQuNSAzNzkuMyA0Mi4zIFEzNzQuOCA1MC4yIDM3My4xIDYyLjUgUTM3MS40IDc0LjggMzcyLjAgODcuMSBRMzcyLjYgOTkuNCAzNzguMiAxMTYuMiBRMzgzLjggMTMzLjAgMzkyLjcgMTM0LjcgUTQwMS43IDEzNi40IDQxMC42IDEzMy42IFE0MTkuNiAxMzAuOCA0MjYuMyAxMjUuMiBMNDMzLjAgMTE5LjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFmNGZhMCIgc3Ryb2tlLXdpZHRoPSI5IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48dGV4dCB4PSIzOTAiIHk9IjE5MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNmIzZDFhIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7DoCBtw6NvPC90ZXh0PjwvZz48L3N2Zz4=",
-      "alt": "A letra l pequena, a letra L grande e a letra l escrita à mão",
-      "efeito": "zoom",
-      "texto": "O **l** pequeno, o **L** grande e o **l** escrito à mão.",
-      "pose": "aponta"
-    },
-    {
-      "emoji": "🌙 🦁 🔍",
-      "texto": "**l** de lua, de leão e de lupa.",
-      "pose": "ideia"
-    },
-    {
-      "emoji": "🦆 🕸️ 🌷",
-      "texto": "Também vamos brincar com o **p** e o **t**. Vamos lá!",
-      "pose": "trofeu"
-    }
-  ],
   "rondas": [
     {
       "fase": "aquecimento",
