@@ -1119,7 +1119,7 @@
     "turma": "3.º ano",
     "ano": 3,
     "titulo": "Devagar se vai ao longe no Natal — s, ss, c, ç",
-    "descricao": "Provérbio «Devagar se vai ao longe», leitura e compreensão do poema de Natal «A caminho da ceia», ortografia do som s (s, ss, c, ç): regras, classificar, completar e corrigir palavras, cópia de palavras e frases no teclado (em vez do ditado) e bónus «O caminho do ouriço».",
+    "descricao": "Provérbio «Devagar se vai ao longe», leitura e compreensão do poema de Natal «A caminho da ceia», ortografia do som s (s, ss, c, ç): regras, classificar, completar e corrigir palavras; cópia de palavras, frases e do texto num processador de texto semelhante ao Word (título a negrito e centrado), em vez do ditado; bónus «O caminho do ouriço».",
     "disciplina": "Português",
     "data": "2026-11-27",
     "semana": "23–27 nov. 2026",
@@ -1128,6 +1128,7 @@
     "estado": "em validação",
     "resumo": "Ajuda o ouriço a chegar à ceia e treina o s, ss, c e ç!",
     "focoTic": [
+      "Processador de texto: escrever, negrito e centrar",
       "Teclado: escrever palavras e frases",
       "Rato: clicar e arrastar"
     ],

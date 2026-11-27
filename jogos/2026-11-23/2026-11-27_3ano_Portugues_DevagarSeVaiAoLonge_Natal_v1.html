@@ -204,6 +204,61 @@ kbd{display:inline-block;min-width:1.7em;text-align:center;font-family:var(--fon
 .tabela th,.tabela td{border-bottom:1px solid var(--linha);padding:5px;text-align:left}
 .nota{background:var(--creme);border-radius:12px;padding:10px 12px;font-size:.92rem}
 .nota ol{margin:6px 0 0;padding-left:20px}
+
+/* Diálogo */
+.dlg{position:fixed;inset:0;background:rgba(20,40,60,.45);z-index:50;display:flex;align-items:center;justify-content:center;padding:16px}
+.dlg-in{background:#fff;border-radius:22px;padding:22px;max-width:440px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.dlg-in p{font-size:1.15rem;font-weight:800;margin:0 0 6px}
+.nav button:disabled.b-ini{opacity:.4}
+/* Ecrã largo (sem coluna da mascote) */
+.stage.largo{grid-template-columns:1fr}
+.stage.largo .mascote{display:none}
+.stage.largo .fala::before{display:none}
+/* Cópia do texto */
+.ct{display:grid;grid-template-columns:280px 1fr;gap:14px;align-items:start}
+.ct-lado{display:flex;flex-direction:column;gap:12px}
+.ct-rot{font-family:var(--fonte-titulo);font-weight:600;color:var(--verde-esc);margin-bottom:6px}
+.ct-modelo,.ct-passos{background:var(--creme);border:2px solid var(--linha);border-radius:16px;padding:10px 12px}
+.ct-modelo{font-size:1.02rem;line-height:1.5}
+.mtit{font-weight:800;margin-bottom:8px}
+.mest{margin-bottom:8px}
+.ml{display:flex;gap:6px;border-radius:8px;padding:0 4px}
+.ml .mk{width:1.1em;flex:none;font-weight:800;color:#1E7A1B}
+.ml.ok{color:#1E7A1B}
+.ml.atual{background:#FFF6D6;outline:2px solid var(--amarelo)}
+.ml.atual .mk{color:#B07800}
+.ml mark{background:#FAD3BF;color:#A8320E;border-radius:3px;padding:0 1px;text-decoration:underline}
+.ml mark.mais{font-size:.8rem}
+.ct-passos ol{margin:0;padding-left:22px;font-size:.95rem;font-weight:600}
+.ct-passos li{margin:0 0 8px;color:var(--suave)}
+.ct-passos li.atual{color:var(--texto);font-weight:800}
+.ct-passos li.ok{color:#1E7A1B;text-decoration:line-through;text-decoration-thickness:1px}
+.ct-passos li.ok::marker{content:"✔ "}
+.ct-passos .bt{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border:1px solid #9AA9BA;border-radius:4px;background:#fff;vertical-align:middle;padding:0 3px}
+.wd{border:1px solid #B9C3CE;border-radius:10px;overflow:hidden;background:#F3F2F1;box-shadow:0 4px 14px rgba(0,0,0,.08);font-family:"Segoe UI",Arial,sans-serif;min-width:0}
+.wd-tit{background:#2B579A;color:#fff;font-size:.9rem;padding:6px 12px;display:flex;align-items:center;gap:8px}
+.wd-abas{display:flex;gap:2px;background:#2B579A;padding:0 8px;overflow-x:auto}
+.wd-abas span{color:#fff;font-size:.85rem;padding:5px 10px;white-space:nowrap}
+.wd-abas span.on{background:#F3F2F1;color:#2B579A;border-radius:4px 4px 0 0;font-weight:700}
+.wd-fita{display:flex;flex-wrap:wrap;gap:4px;padding:6px 8px;border-bottom:1px solid #D5D9DE;background:#F3F2F1}
+.wd-grp{display:flex;flex-direction:column;align-items:center;gap:3px;padding:0 8px;border-right:1px solid #D5D9DE}
+.wd-grp:last-child{border-right:0}
+.wd-grp small{font-size:.7rem;color:#555}
+.wd-lin{display:flex;gap:3px;align-items:center}
+.wd-b{min-width:32px;height:32px;border:1px solid transparent;border-radius:4px;background:transparent;font-size:1rem;cursor:pointer;color:#222;display:inline-flex;align-items:center;justify-content:center;font-family:"Times New Roman",serif}
+.wd-b:hover{background:#E1E6EC;border-color:#C5CED8}
+.wd-b.realce{background:#FFF1B8;border:2px solid #E0A800}
+.wd-cor{position:relative;flex-direction:column;gap:0;line-height:1}
+.wd-cor span{font-weight:700;border-bottom:4px solid #c00000;padding:0 3px}
+.wd-cor input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.wd select{height:30px;border:1px solid #B9C3CE;border-radius:4px;background:#fff;font-size:.85rem}
+#wdFonte{width:130px}#wdTam{width:54px}
+.wd-regua{height:14px;margin:0 18px;background:repeating-linear-gradient(90deg,#fff 0 9px,#C8CED6 9px 10px);border:1px solid #D5D9DE;border-top:0}
+.wd-area{background:#E6E6E6;padding:16px;max-height:470px;overflow:auto}
+.wd-pag{background:#fff;min-height:420px;padding:36px 44px;box-shadow:0 1px 4px rgba(0,0,0,.25);font-family:Calibri,Carlito,Arial,sans-serif;font-size:19px;line-height:1.45;color:#111;outline:none;caret-color:#2B579A;word-break:break-word}
+.wd-pag:focus{box-shadow:0 0 0 3px #A7C4E8,0 1px 4px rgba(0,0,0,.25)}
+.wd-estado{background:#2B579A;color:#fff;font-size:.78rem;display:flex;gap:18px;padding:4px 12px;flex-wrap:wrap}
+@media (max-width:860px){.ct{grid-template-columns:1fr}.wd-pag{padding:20px;min-height:300px}}
 /* Confetti */
 .confete{position:fixed;top:-12px;width:10px;height:14px;z-index:30;pointer-events:none;animation:cai 1.8s linear forwards;border-radius:2px}
 @keyframes cai{to{transform:translateY(105vh) rotate(540deg)}}
@@ -364,9 +419,9 @@ const CORRIGIR = [
   {w:"sino",ok:true,e:"s no início da palavra."},
   {w:"pescosso",ok:false,c:"pescoço",e:"Esta palavra escreve-se com ç antes de o."}
 ];
-const COPIA_PAL = {turma:["sino","passas","ceia","abraço","missa","cidade","praça","canção"],apoio:["sino","passas","ceia","praça","doce"]};
+const COPIA_PAL = {turma:["sino","passas","ceia","abraço","cidade","canção"],apoio:["sino","passas","ceia","praça","doce"]};
 const COPIA_FRA = {
-  turma:["Devagar se vai ao longe.","O ouriço levou passas para a ceia.","A lebre escorregou no gelo da praça.","Os sinos tocam na cidade.","Ponho o cachecol ao pescoço, porque está frio."],
+  turma:["Devagar se vai ao longe.","O ouriço levou passas para a ceia.","A lebre escorregou no gelo da praça.","Ponho o cachecol ao pescoço, porque está frio."],
   apoio:["Devagar se vai ao longe.","O sino toca.","Está frio na praça."]
 };
 /* ===================== TEMAS POR DATA ===================== */
@@ -550,7 +605,7 @@ function motorCopia(area,id,lista,tipo){
     pinta();trackedTimeout(()=>inp.focus(),60);
     if(S.modo==="quadro")falar("Copia: "+m);
   }
-  function avancar(){i++;if(i<lista.length)mostra();else{registar(id,certas,lista.length);area.innerHTML=`<div class="palavra-grande">✍️ ${certas} / ${lista.length}</div><div class="caderno">${feitas.map(f=>`<p>${esc(f)}</p>`).join("")}</div>`;concluir(id,tipo==="pal"?"✔ Copiaste todas as palavras! Carrega em «Próximo».":"✔ Copiaste todas as frases com cuidado — devagar se vai ao longe!");}}
+  function avancar(){i++;if(i<lista.length)mostra();else{registar(id,certas,lista.length);area.innerHTML=`<div class="palavra-grande">✍️ ${certas} / ${lista.length}</div><div class="caderno">${feitas.map(f=>`<p>${esc(f)}</p>`).join("")}</div>`;concluir(id,tipo==="pal"?"✔ Copiaste todas as palavras! Carrega em «Próximo».":"✔ Copiaste todas as frases com cuidado! Agora vais copiar o texto no processador de texto.");}}
   function verifica(){
     const inp=area.querySelector("#esc");if(!inp)return;const m=lista[i];const t=inp.value.replace(/\s+/g," ").trim();
     if(!t){feedback(false,"Escreve primeiro na caixa branca.");inp.focus();return;}
@@ -711,6 +766,8 @@ const ECRAS=[
  render(a){motorCopia(a,"copiapal",apoio()?COPIA_PAL.apoio:COPIA_PAL.turma,"pal");}},
 {id:"copiafra",fase:"⌨️",pose:"portatil",tit:"Cópia de frases",txt:"Agora copia frases inteiras. Atenção às maiúsculas, aos espaços e ao ponto final!",
  render(a){motorCopia(a,"copiafra",apoio()?COPIA_FRA.apoio:COPIA_FRA.turma,"fra");}},
+{id:"copiatexto",fase:"⌨️",pose:"portatil",largo:true,tit:"Cópia do texto no processador de texto",txt:"Copia o título e os versos para a página, como no Word. Segue os passos da lista: no fim, o título fica a <b>negrito</b> e <b>centrado</b>.",
+ render(a){motorEditor(a);}},
 {id:"bonus",fase:"🎄",pose:"corre",tit:"Bónus: o caminho do ouriço",txt:"Cada resposta certa leva o Sebastião mais perto da ceia. Sem pressa: aqui ganha quem pensa!",livre:true,
  render(a){
   let pos=0,certas=0,tot=0;const META=10;
@@ -744,6 +801,194 @@ const ECRAS=[
   concluir("certificado");confetti(80);
  }}
 ];
+/* ===================== EDITOR DE TEXTO (semelhante ao Word) ===================== */
+const TEXTO_COPIA = {turma:[0,1], apoio:[0]};
+function normLinha(t){return String(t).replace(/ /g," ").replace(/[—–]/g,"-").replace(/^-\s*/,"- ").replace(/\s+/g," ").trim();}
+function dicaCar(ch){
+  if(ch===undefined)return "";
+  if(ch==="—")return "O travessão <b>—</b> escreve-se com o hífen <kbd>-</kbd> (ao lado do ponto final).";
+  if(ch==="ç")return "O <kbd>ç</kbd> está na tecla à direita do <kbd>L</kbd>.";
+  if(/[áéíóú]/.test(ch))return `Carrega primeiro em <kbd>´</kbd> (à direita do <kbd>+</kbd>) e depois em <kbd>${ch.normalize("NFD")[0]}</kbd>.`;
+  if(/[ãõ]/.test(ch))return `Carrega primeiro em <kbd>~</kbd> (à direita do <kbd>º</kbd>) e depois em <kbd>${ch.normalize("NFD")[0]}</kbd>.`;
+  if(/[ÁÉÍÓÚ]/.test(ch))return `Carrega em <kbd>´</kbd> e depois, com o <kbd>Shift ⇧</kbd> carregado, em <kbd>${ch.normalize("NFD")[0]}</kbd>.`;
+  if(ch!==ch.toLowerCase())return `Mantém o <kbd>Shift ⇧</kbd> carregado e carrega em <kbd>${ch}</kbd>.`;
+  if(ch==="!")return "<kbd>Shift ⇧</kbd> + <kbd>1</kbd> faz o ponto de exclamação.";
+  if(ch===":")return "<kbd>Shift ⇧</kbd> + <kbd>.</kbd> faz os dois pontos.";
+  if(ch==="…")return "As reticências são três pontos seguidos: <kbd>.</kbd><kbd>.</kbd><kbd>.</kbd>";
+  if(ch===",")return "A vírgula <kbd>,</kbd> está ao lado do <kbd>M</kbd>.";
+  if(ch===".")return "O ponto final <kbd>.</kbd> está ao lado da vírgula.";
+  if(ch===" ")return "Agora um espaço — a barra comprida do teclado.";
+  return "";
+}
+function linhasEditor(ed){
+  const L=[];let cur={t:"",el:null,nos:[]};
+  const flush=()=>{L.push(cur);cur={t:"",el:null,nos:[]};};
+  const bloco=n=>n.nodeType===1&&/^(DIV|P|H[1-6]|LI|UL|OL|BLOCKQUOTE)$/.test(n.nodeName);
+  (function w(n,blk){
+    for(const c of n.childNodes){
+      if(c.nodeType===3){if(c.nodeValue){cur.t+=c.nodeValue;cur.nos.push(c);}if(!cur.el)cur.el=blk;}
+      else if(c.nodeName==="BR"){if(!cur.el)cur.el=blk;flush();}
+      else if(bloco(c)){if(cur.t)flush();cur={t:"",el:null,nos:[]};w(c,c);if(cur.t)flush();cur={t:"",el:null,nos:[]};}
+      else if(c.nodeType===1)w(c,blk);
+    }
+  })(ed,ed);
+  if(cur.t)flush();
+  return L.map(l=>Object.assign(l,{n:normLinha(l.t)}));
+}
+function motorEditor(area){
+  const est=(apoio()?TEXTO_COPIA.apoio:TEXTO_COPIA.turma).map(k=>POEMA.estrofes[k]);
+  const modelo=[POEMA.titulo].concat(...est);          // linhas com texto, pela ordem
+  const fimEstrofe=[];let acc=0;est.forEach(e=>{acc+=e.length;fimEstrofe.push(acc);}); // índice (em modelo) do último verso de cada estrofe
+  let tentativas=0,feito=false;
+  const ico={
+    esq:'<svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 4h14M3 8h9M3 12h14M3 16h9" stroke="currentColor" stroke-width="2"/></svg>',
+    cen:'<svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 4h14M6 8h8M3 12h14M6 16h8" stroke="currentColor" stroke-width="2"/></svg>',
+    dir:'<svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 4h14M8 8h9M3 12h14M8 16h9" stroke="currentColor" stroke-width="2"/></svg>',
+    jus:'<svg viewBox="0 0 20 20" width="18" height="18"><path d="M3 4h14M3 8h14M3 12h14M3 16h14" stroke="currentColor" stroke-width="2"/></svg>'
+  };
+  area.innerHTML=`<div class="ct">
+   <div class="ct-lado">
+     <div class="ct-modelo"><div class="ct-rot">📄 Texto para copiar</div>
+       <div id="ctMod"></div></div>
+     <div class="ct-passos"><div class="ct-rot">✅ Passos</div><ol id="ctPassos"></ol></div>
+   </div>
+   <div class="wd" role="group" aria-label="Processador de texto">
+     <div class="wd-tit"><span class="wd-ic">📝</span>Natal.docx — Processador de texto</div>
+     <div class="wd-abas"><span>Ficheiro</span><span class="on">Base</span><span>Inserir</span><span>Esquema</span><span>Rever</span><span>Ver</span></div>
+     <div class="wd-fita">
+       <div class="wd-grp"><div class="wd-lin"><button class="wd-b" data-cmd="undo" title="Anular">↶</button><button class="wd-b" data-cmd="redo" title="Refazer">↷</button></div><small>Anular</small></div>
+       <div class="wd-grp"><div class="wd-lin">
+          <select id="wdFonte" title="Tipo de letra"><option>Calibri</option><option>Arial</option><option>Verdana</option><option>Times New Roman</option><option>Comic Sans MS</option></select>
+          <select id="wdTam" title="Tamanho do tipo de letra"><option value="3">12</option><option value="4">14</option><option value="5">18</option><option value="6">24</option><option value="7">36</option></select></div>
+          <div class="wd-lin"><button class="wd-b" data-cmd="bold" id="wdN" title="Negrito"><b>N</b></button><button class="wd-b" data-cmd="italic" title="Itálico"><i>I</i></button><button class="wd-b" data-cmd="underline" title="Sublinhado"><u>S</u></button>
+          <label class="wd-b wd-cor" title="Cor do tipo de letra"><span>A</span><input type="color" id="wdCor" value="#c00000"></label></div>
+          <small>Tipo de Letra</small></div>
+       <div class="wd-grp"><div class="wd-lin"><button class="wd-b" data-cmd="justifyLeft" title="Alinhar à esquerda">${ico.esq}</button><button class="wd-b" data-cmd="justifyCenter" id="wdCen" title="Centrar">${ico.cen}</button><button class="wd-b" data-cmd="justifyRight" title="Alinhar à direita">${ico.dir}</button><button class="wd-b" data-cmd="justifyFull" title="Justificar">${ico.jus}</button></div><small>Parágrafo</small></div>
+     </div>
+     <div class="wd-regua" aria-hidden="true"></div>
+     <div class="wd-area"><div class="wd-pag" id="wdPag" contenteditable="true" spellcheck="false" aria-label="Página do documento: escreve aqui"><div><br></div></div></div>
+     <div class="wd-estado"><span>Página 1 de 1</span><span id="wdPal">0 palavras</span><span>Português (Portugal)</span></div>
+   </div></div>
+   <div class="dicatecla" id="ctDica"></div>
+   <div class="linha-btn"><button class="btn" id="ctVer">Verificar ✔</button><span id="ctMais"></span></div>`;
+  const ed=area.querySelector("#wdPag");
+  try{document.execCommand("defaultParagraphSeparator",false,"div");document.execCommand("styleWithCSS",false,false);}catch(e){}
+  let selGuardada=null;
+  const guardaSel=()=>{const s=getSelection();if(s.rangeCount&&ed.contains(s.anchorNode))selGuardada=s.getRangeAt(0).cloneRange();};
+  const repoeSel=()=>{ed.focus();if(selGuardada){const s=getSelection();s.removeAllRanges();s.addRange(selGuardada);}};
+  document.addEventListener("selectionchange",guardaSel);
+  const cmd=(c,v)=>{repoeSel();try{document.execCommand(c,false,v);}catch(e){}guardaSel();analisa();};
+  area.querySelectorAll(".wd-b[data-cmd]").forEach(b=>{b.onmousedown=e=>e.preventDefault();b.onclick=()=>cmd(b.dataset.cmd);});
+  area.querySelector("#wdFonte").onchange=e=>cmd("fontName",e.target.value);
+  area.querySelector("#wdTam").onchange=e=>cmd("fontSize",e.target.value);
+  area.querySelector("#wdCor").oninput=e=>cmd("foreColor",e.target.value);
+  ed.addEventListener("paste",e=>{e.preventDefault();feedback(false,"Aqui não se cola: copia o texto letra a letra, com calma. 😉");});
+  ed.addEventListener("drop",e=>e.preventDefault());
+  ed.addEventListener("keydown",e=>{
+    if((e.ctrlKey||e.metaKey)&&!e.altKey){const k=e.key.toLowerCase();
+      if(k==="e"){e.preventDefault();cmd("justifyCenter");}
+      else if(k==="b"||k==="i"||k==="u"){e.preventDefault();cmd({b:"bold",i:"italic",u:"underline"}[k]);}
+      else if(k==="v"){e.preventDefault();feedback(false,"Aqui não se cola: copia o texto letra a letra, com calma. 😉");}}
+  });
+  ed.addEventListener("input",()=>{if(!ed.firstChild){ed.innerHTML="<div><br></div>";}analisa();limparFb();});
+  ed.addEventListener("keyup",analisa);ed.addEventListener("mouseup",analisa);
+  // clicar 3 vezes seleciona só essa linha (parágrafo), como no Word
+  ed.addEventListener("click",e=>{if(e.detail!==3)return;let n=e.target;while(n&&n!==ed&&!(n.nodeType===1&&/^(DIV|P)$/.test(n.nodeName)))n=n.parentNode;
+    if(!n||n===ed)return;const r=document.createRange();r.selectNodeContents(n);const s=getSelection();s.removeAllRanges();s.addRange(r);guardaSel();});
+
+  function estado(){
+    const L=linhasEditor(ed);
+    const cheias=L.filter(l=>l.n);
+    const ok=modelo.map((m,i)=>!!cheias[i]&&cheias[i].n===normLinha(m));
+    const tituloEl=cheias[0];
+    let negrito=false,centrado=false;
+    if(tituloEl&&ok[0]){
+      negrito=tituloEl.nos.filter(n=>n.nodeValue.trim()).every(n=>{const w=getComputedStyle(n.parentElement).fontWeight;return w==="bold"||+w>=600;});
+      const al=tituloEl.el&&tituloEl.el!==ed?getComputedStyle(tituloEl.el).textAlign:"";
+      centrado=/center/.test(al);
+    }
+    // linha em branco entre estrofes
+    let espaco=true;
+    if(fimEstrofe.length>1){
+      for(let k=0;k<fimEstrofe.length-1;k++){
+        const ult=cheias[fimEstrofe[k]],prox=cheias[fimEstrofe[k]+1];
+        if(!ult||!prox){espaco=false;continue;}
+        const iu=L.indexOf(ult),ip=L.indexOf(prox);
+        if(!(ip-iu>1&&L.slice(iu+1,ip).every(l=>!l.n)))espaco=false;
+      }
+    }
+    // centrar só o título: os versos ficam alinhados à esquerda
+    return {L,cheias,ok,negrito,centrado,espaco};
+  }
+  function analisa(){
+    if(!area.isConnected){document.removeEventListener("selectionchange",guardaSel);return;}
+    const E=estado();
+    const nPal=E.L.map(l=>l.n).join(" ").split(/\s+/).filter(Boolean).length;
+    area.querySelector("#wdPal").textContent=nPal+(nPal===1?" palavra":" palavras");
+    const atual=E.ok.indexOf(false);
+    // modelo com o estado de cada linha
+    let h="",i=0;
+    const linha=(txt,k)=>{
+      let cl=E.ok[k]?"ok":k===atual?"atual":"";let conteudo=esc(txt);
+      if(k===atual&&E.cheias[k]){const a=normLinha(E.cheias[k].t),m=normLinha(txt);let p=0;while(p<a.length&&p<m.length&&a[p]===m[p])p++;
+        const orig=[...txt];conteudo=orig.map((c,j)=>j===p?`<mark>${esc(c)}</mark>`:esc(c)).join("")+(p>=orig.length?" <mark class='mais'>⌫ letras a mais</mark>":"");}
+      return `<div class="ml ${cl}"><span class="mk">${E.ok[k]?"✔":k===atual?"✎":""}</span><span>${conteudo}</span></div>`;};
+    h+=`<div class="mtit">${linha(POEMA.titulo,0)}</div>`;i=1;
+    est.forEach((e,ei)=>{h+=`<div class="mest">`;e.forEach(v=>{h+=linha(v,i);i++;});h+=`</div>`;});
+    area.querySelector("#ctMod").innerHTML=h;
+    // dica da tecla seguinte
+    let d="";
+    if(atual>=0){const m=modelo[atual],esc_=E.cheias[atual]?E.cheias[atual].t.replace(/ /g," "):"";
+      const a=normLinha(esc_),mm=normLinha(m);let p=0;while(p<a.length&&p<mm.length&&a[p]===mm[p])p++;
+      if(E.cheias[atual]&&p<a.length)d="Há uma letra diferente na linha marcada com ✎: apaga com <kbd>⌫</kbd> e corrige.";
+      else if(E.cheias[atual]&&p>=mm.length)d="Linha completa! Carrega em <kbd>Enter ↵</kbd> para passar à linha seguinte.";
+      else if(!E.cheias[atual]&&E.L.length&&E.L[E.L.length-1].n)d="Linha completa! Carrega em <kbd>Enter ↵</kbd> para passar à linha seguinte."+(fimEstrofe.slice(0,-1).map(x=>x+1).includes(atual)?" Como começa uma estrofe nova, carrega <b>duas vezes</b> para deixar uma linha em branco.":"");
+      else{const prox=[...m][p];d=dicaCar(prox);}
+    }
+    const dd=area.querySelector("#ctDica");dd.innerHTML=d;dd.style.display=d?"block":"none";
+    // passos
+    const nv=modelo.length-1,vOk=E.ok.slice(1).filter(Boolean).length;
+    const passos=[
+      [E.ok[0],"Escreve o título <b>"+esc(POEMA.titulo)+"</b> e carrega em <kbd>Enter ↵</kbd>."],
+      [vOk===nv,`Copia os versos, um por linha: no fim de cada verso carrega em <kbd>Enter ↵</kbd>. <span class="cnt2">(${vOk} de ${nv})</span>`]
+    ];
+    if(fimEstrofe.length>1)passos.push([E.espaco&&vOk===nv,"Entre as estrofes deixa uma <b>linha em branco</b>."]);
+    passos.push([E.negrito,"Seleciona o título (clica <b>3 vezes</b> em cima dele) e carrega em <span class='bt'><b>N</b></span> <i>Negrito</i>."]);
+    passos.push([E.centrado,"Com o título selecionado, carrega em <span class='bt'>"+ico.cen+"</span> <i>Centrar</i>."]);
+    const primeiroPorFazer=passos.findIndex(p=>!p[0]);
+    area.querySelector("#ctPassos").innerHTML=passos.map((p,k)=>`<li class="${p[0]?"ok":k===primeiroPorFazer?"atual":""}">${p[1]}</li>`).join("");
+    area.querySelector("#wdN").classList.toggle("realce",E.ok[0]&&vOk===nv&&!E.negrito);
+    area.querySelector("#wdCen").classList.toggle("realce",E.ok[0]&&vOk===nv&&E.negrito&&!E.centrado);
+    if(!feito&&primeiroPorFazer<0)terminar(E);
+    return {E,passos};
+  }
+  function terminar(E){
+    feito=true;const certas=E.ok.filter(Boolean).length;
+    registar("copiatexto",tentativas===0?certas:Math.max(0,certas-tentativas),modelo.length);
+    concluir("copiatexto","✔ Texto copiado e formatado como no Word: título a negrito e centrado. Muito bem!");
+  }
+  area.querySelector("#ctVer").onclick=()=>{
+    const {E,passos}=analisa();if(feito)return;
+    tentativas++;somQuase();
+    const falta=passos.filter(p=>!p[0]).map(p=>"• "+p[1].replace(/<span class=.cnt2.*?<\/span>/,"")).join("<br>");
+    feedback(false,"Quase! Ainda falta:<br>"+falta);
+    if(tentativas>=3&&!area.querySelector("#ctSeg")){area.querySelector("#ctMais").innerHTML=`<button class="btn sec" id="ctSeg">Continuar ➜</button>`;
+      area.querySelector("#ctSeg").onclick=()=>{feito=true;registar("copiatexto",E.ok.filter(Boolean).length,modelo.length);concluir("copiatexto","Podes continuar. Na próxima aula tentamos outra vez!");};}
+  };
+  analisa();trackedTimeout(()=>{ed.focus();},80);
+}
+/* ===================== DIÁLOGO DE CONFIRMAÇÃO (funciona também dentro do Google Sites) ===================== */
+function confirmar(msg,simTxt,aoSim){
+  const d=document.createElement("div");d.className="dlg";d.setAttribute("role","alertdialog");d.setAttribute("aria-modal","true");
+  d.innerHTML=`<div class="dlg-in"><p>${msg}</p><div class="linha-btn"><button class="btn laranja" data-r="1">${simTxt}</button><button class="btn sec" data-r="0">Não, continuar</button></div></div>`;
+  document.body.appendChild(d);
+  const fecha=r=>{d.remove();document.removeEventListener("keydown",tecla);if(r)aoSim();};
+  const tecla=e=>{if(e.key==="Escape")fecha(false);};
+  document.addEventListener("keydown",tecla);
+  d.onclick=e=>{if(e.target===d)fecha(false);};
+  d.querySelectorAll("button").forEach(b=>b.onclick=()=>fecha(b.dataset.r==="1"));
+  d.querySelector('[data-r="0"]').focus();
+}
 /* ===================== NAVEGAÇÃO ===================== */
 function desenharProg(){
   const p=$("#prog");let h="",fase="";
@@ -754,6 +999,7 @@ function desenharProg(){
 function atualizarNav(){
   const e=ECRAS[S.idx];
   $("#bAnt").disabled=S.idx<=1;
+  $("#bIni").disabled=S.idx===0;
   $("#bProx").disabled=S.idx===0||S.idx>=ECRAS.length-1||!(S.feito[e.id]||e.livre);
   $("#bProx").textContent=e.id==="bonus"&&!S.feito.bonus?"Saltar ➡":"Próximo ➡";
   $("#cont").textContent=S.idx?`${S.idx} / ${ECRAS.length-1}`:"";
@@ -763,14 +1009,15 @@ function ir(k){
   S.idx=Math.max(0,Math.min(ECRAS.length-1,k));const e=ECRAS[S.idx];
   $("#megaImg").src=MASC[e.pose]||MASC.ola;
   $("#falaTit").textContent=e.tit;$("#falaTxt").innerHTML=e.txt;
-  limparFb();e.render($("#area"));
+  limparFb();$("#stage").classList.toggle("largo",!!e.largo);e.render($("#area"));
   desenharProg();atualizarNav();
   if(S.idx>0)falar(e.tit+". "+e.txt);
   try{$(".app").scrollIntoView({block:"start",behavior:"smooth"});}catch(err){}
 }
 function reiniciar(perguntar){
-  if(perguntar&&!confirm("Voltar ao início? O progresso desta sessão perde-se."))return;
-  S.feito={};S.pont={};S.guardado=false;atualizarEstrelas();ir(0);
+  const faz=()=>{S.feito={};S.pont={};S.guardado=false;atualizarEstrelas();ir(0);};
+  if(perguntar&&S.idx>0)confirmar("Queres voltar ao início? O progresso deste jogo perde-se.","Sim, voltar ao início",faz);
+  else faz();
 }
 /* ===================== PAINEL DA PROFESSORA ===================== */
 let profOk=false;
@@ -785,11 +1032,11 @@ function abrirProf(){
    <h4>Perfil e som</h4><label><input type="radio" name="pPerf" value="turma" ${S.perfil==="turma"?"checked":""}> Turma</label> &nbsp; <label><input type="radio" name="pPerf" value="apoio" ${S.perfil==="apoio"?"checked":""}> Apoio</label> &nbsp; | &nbsp; <label><input type="checkbox" id="pSom" ${S.som?"checked":""}> Som e narração</label>
    <h4>Ir para um ecrã</h4><div class="saltos">${ECRAS.map((e,k)=>`<button data-k="${k}">${k}. ${esc(e.tit)}</button>`).join("")}</div>
    <h4>Plano da aula (60 min)</h4><div class="nota"><ol>
-     <li><b>Aquecimento</b> (1–2): provérbio — ordenar e interpretar · 7 min</li>
-     <li><b>Leitura e compreensão</b> (3–5): poema, perguntas e caça às palavras · 15 min</li>
-     <li><b>Ortografia</b> (6–9): regras, classificar, completar e corrigir · 15 min</li>
-     <li><b>Cópia</b> (10–11): palavras e frases no teclado, em substituição do ditado · 18 min</li>
-     <li><b>Bónus</b> (12) para quem termina cedo · 5 min</li></ol>
+     <li><b>Aquecimento</b> (1–2): provérbio — ordenar e interpretar · 5 min</li>
+     <li><b>Leitura e compreensão</b> (3–5): poema, perguntas e caça às palavras · 13 min</li>
+     <li><b>Ortografia</b> (6–9): regras, classificar, completar e corrigir · 14 min</li>
+     <li><b>Cópia</b> (10–12), em substituição do ditado: palavras, frases e texto no processador de texto (título a negrito e centrado) · 23 min</li>
+     <li><b>Bónus</b> (13) para quem termina cedo · 5 min</li></ol>
      <p style="margin:8px 0 0">O excerto de «Versos diversos para meninos travessos» lê-se no manual. O poema «A caminho da ceia» é original e foi escrito para treinar os mesmos casos (s, ss, c, ç) com o tema do Natal e do inverno.</p></div>
    <h4>Resultados guardados neste computador (${res.length})</h4>
    ${res.length?`<table class="tabela"><tr><th>N.º</th><th>Data</th><th>Perfil</th><th>%</th><th>⭐</th></tr>${res.slice().reverse().map(r=>`<tr><td>${esc(r.n)}</td><td>${esc(r.d)}</td><td>${esc(r.p)}</td><td>${r.pct}%</td><td>${"⭐".repeat(r.e)}</td></tr>`).join("")}</table>`:"<p>Ainda não há resultados.</p>"}
@@ -800,7 +1047,7 @@ function abrirProf(){
   c.querySelectorAll("[name=pPerf]").forEach(r=>r.onchange=()=>{S.perfil=r.value;});
   c.querySelector("#pSom").onchange=e=>{S.som=e.target.checked;atualizarSom();};
   c.querySelectorAll(".saltos button").forEach(b=>b.onclick=()=>{if(!S.modo){S.modo="pc";}fecharProf();ir(+b.dataset.k);});
-  c.querySelector("#pLimpa").onclick=()=>{if(confirm("Apagar todos os resultados guardados neste computador?")){gravarLS(CHAVE+"_res",[]);abrirProf();}};
+  c.querySelector("#pLimpa").onclick=()=>confirmar("Apagar todos os resultados guardados neste computador?","Sim, apagar",()=>{gravarLS(CHAVE+"_res",[]);abrirProf();});
 }
 function fecharProf(){$("#modal").classList.remove("aberto");}
 /* ===================== ARRANQUE ===================== */
