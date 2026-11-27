@@ -1140,5 +1140,32 @@
         "ç"
       ]
     }
+  },
+  {
+    "id": "2026-11-27-3ano-biblioteca-das-silabas",
+    "turma": "3.º ano",
+    "ano": 3,
+    "titulo": "A Biblioteca das Sílabas",
+    "descricao": "Classificação de palavras quanto ao número de sílabas (monossílabos, dissílabos, trissílabos e polissílabos), a partir do texto «A biblioteca do avô», de Maria do Rosário Pedreira (os alunos fazem antes a cópia do texto): dividir palavras em sílabas, arrumar por classes, rebentar balões, escrever com hífen, descobrir o intruso, roda com palavras do texto, nomes de frutos e escrita de frases. Perfis turma e com ajuda; sem som.",
+    "disciplina": "Português",
+    "data": "2026-11-27",
+    "semana": "23–27 nov. 2026",
+    "url": "jogos/2026-11-23/2026-11-27_3ano_Portugues_BibliotecaDasSilabas_v1.html",
+    "duracao": "até 60 min",
+    "estado": "em validação",
+    "tipo": "Minijogos",
+    "resumo": "Ajuda o Ticl@s a arrumar as palavras pelo número de sílabas!",
+    "focoTic": [
+      "Teclado: hífen, acentos e escrita de frases",
+      "Rato: clicar"
+    ],
+    "ilustracao": {
+      "tipo": "letras",
+      "letras": [
+        "sí",
+        "la",
+        "bas"
+      ]
+    }
   }
 ]
